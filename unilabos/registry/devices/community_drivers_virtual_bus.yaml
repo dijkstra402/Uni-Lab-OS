@@ -1,0 +1,72 @@
+virtual_bus:
+  class:
+    module: unilabos.devices.generic.virtual_bus:VirtualBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_extra:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_extra
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Virtual BUS设备驱动。
+  category:
+  - 实验执行&合成设备
+  cover: ascii_stl__writer.webp
+  device_params:
+    支持操作数: '3'
+  manufacturer: Open Source
+  model:
+    name: Virtual BUS
+    type: device
+  name: Virtual BUS
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

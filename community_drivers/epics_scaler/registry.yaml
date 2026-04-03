@@ -1,0 +1,73 @@
+epics_scaler:
+  category:
+  - 电子天平
+  class:
+    action_value_mappings:
+      auto-match_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: match_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-match_names:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: match_names
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-select_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: select_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan_names:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.scaler.epics_scaler:EpicsScaler
+    status_types: {}
+    type: python
+  config_info: []
+  description: EPICS 计数器/定标器是由EPICS (Argonne National Lab)生产的电子天平。支持Signal, Slot, match name等操作。
+  handles: []
+  icon: epics_scaler.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    可控参数: chan_names
+    操作数: 3
+  manufacturer: EPICS (Argonne National Lab)
+  model:
+    name: Generic Epics Scaler 秤
+    type: device
+  name: EPICS 计数器/定标器
+  tags:
+  - 电子天平
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

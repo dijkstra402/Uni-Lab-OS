@@ -1,0 +1,92 @@
+pvi_device_connector:
+  class:
+    module: unilabos.devices.epics.pvi_device_connector:PviDeviceConnector
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-create_children_from_annotations:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_children_from_annotations
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connect_mock:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_mock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                mock:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connect_real:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_real
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                timeout:
+                  type: number
+                force_reconnect:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+  description: Pvi Device Connector驱动，支持create children from annotations/connect mock/connect
+    real。
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        prefix:
+          type: string
+          default: ''
+        error_hint:
+          type: string
+          default: ''
+  cover: pvi_device_connector.webp
+  device_params:
+    可控参数: device、force_reconnect、mock、timeout
+    操作数: 3
+  manufacturer: Generic
+  model:
+    name: Generic Pvi Device Connector
+    type: device
+  name: Pvi Device Connector 后处理设备
+  tags:
+  - 后处理设备
+  resource_type: device
+  icon: pvi_device_connector.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

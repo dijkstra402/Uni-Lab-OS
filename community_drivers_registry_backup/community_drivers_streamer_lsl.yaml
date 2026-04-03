@@ -1,0 +1,198 @@
+streamer_lsl:
+  class:
+    module: unilabos.devices.generic.streamer_lsl:StreamerLSL
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize_board:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_board
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                autodetect:
+                  type: string
+                port:
+                  type: string
+                daisy:
+                  type: string
+        goal_default:
+          autodetect: false
+        handles: {}
+      auto-init_board_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init_board_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_board_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_board_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sample:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create_lsl:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_lsl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                default:
+                  type: string
+                stream1:
+                  type: string
+                stream2:
+                  type: string
+        goal_default:
+          default: true
+        handles: {}
+      auto-cleanUp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cleanUp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_streaming:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_streaming
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_streaming:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_streaming
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-begin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: begin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-change_locations:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_locations
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                locs:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: OpenBCI LSL Data Streamer驱动（OpenBCI），支持initialize board/init board
+    settings/set board settings/send/create lsl等10个操作。
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        GUI:
+          type: string
+          default: false
+  cover: streamer_lsl.webp
+  device_params:
+    品牌: OpenBCI
+    功能: 参数配置
+    可控参数: autodetect、daisy、default、locs、port、sample、stream1、stream2
+    操作数: 10
+  manufacturer: OpenBCI
+  model:
+    name: OpenBCI OpenBCI LSL Data Streamer
+    type: device
+  name: OpenBCI LSL Data Streamer 后处理设备
+  tags:
+  - 后处理设备
+  resource_type: device
+  icon: streamer_lsl.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

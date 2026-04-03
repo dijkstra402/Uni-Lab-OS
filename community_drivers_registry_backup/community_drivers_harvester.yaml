@@ -1,0 +1,292 @@
+harvester:
+  class:
+    module: unilabos.devices.common.harvester_driver:Harvester
+    type: python
+    status_types:
+      image_acquirers: String
+      timer: String
+      cti_files: String
+      files: String
+      device_info_list: String
+      timeout_for_update: String
+      has_revised_device_info_list: String
+    action_value_mappings:
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-timeout_for_update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout_for_update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ms:
+                  type: string
+        goal_default:
+          ms: 0
+        handles: {}
+      auto-has_revised_device_info_list:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: has_revised_device_info_list
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                search_key:
+                  type: string
+                config:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create_image_acquirer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_image_acquirer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                list_index:
+                  type: string
+                id_:
+                  type: string
+                vendor:
+                  type: string
+                model:
+                  type: string
+                tl_type:
+                  type: string
+                user_defined_name:
+                  type: string
+                serial_number:
+                  type: string
+                version:
+                  type: string
+                sleep_duration:
+                  type: string
+                file_path:
+                  type: string
+                privilege:
+                  type: string
+                file_dict:
+                  type: string
+                auto_chunk_data_update:
+                  type: string
+        goal_default:
+          sleep_duration: 1.0e-06
+          privilege: exclusive
+          auto_chunk_data_update: true
+        handles: {}
+      auto-add_cti_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_cti_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file_path:
+                  type: string
+                check_existence:
+                  type: boolean
+                check_validity:
+                  type: boolean
+        goal_default:
+          check_existence: false
+          check_validity: false
+        handles: {}
+      auto-add_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file_path:
+                  type: string
+                check_existence:
+                  type: boolean
+                check_validity:
+                  type: boolean
+        goal_default:
+          check_existence: false
+          check_validity: false
+        handles: {}
+      auto-remove_cti_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_cti_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_cti_files:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_cti_files
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remove_files:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_files
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_device_info_list:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_device_info_list
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Is the class that works for you as Harvester Core
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        profile:
+          type: string
+          default: false
+        logger:
+          type: string
+          default: null
+        do_clean_up:
+          type: boolean
+          default: true
+        config:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置、图像采集、数据采集、运动控制
+    可控参数: auto_chunk_data_update、check_existence、check_validity、config、file_dict、file_path、id_、list_index
+    操作数: 13
+  manufacturer: ''
+  model:
+    name: '' harvester
+    type: device
+  name: harvester 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

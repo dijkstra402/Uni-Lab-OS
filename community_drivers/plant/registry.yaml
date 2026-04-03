@@ -1,0 +1,158 @@
+plant:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-quit:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: quit
+          type: object
+        type: UniLabJsonCommand
+      auto-read_probes:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                key:
+                  type: string
+              type: object
+          title: read_probes
+          type: object
+        type: UniLabJsonCommand
+      auto-run:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: run
+          type: object
+        type: UniLabJsonCommand
+      auto-start:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: start
+          type: object
+        type: UniLabJsonCommand
+      auto-is_connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-controler_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: controler_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_value:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.custom.generic.plant:Plant
+    status_types:
+      is_connected: String
+    type: python
+  config_info: []
+  description: Process Plant Controller驱动，支持quit/read probes/run/start/is connected等8个操作。
+  handles: []
+  icon: plant.webp
+  init_param_schema:
+    config:
+      properties:
+        name:
+          default: null
+          type: string
+        settings:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: current_value、key、settings
+    操作数: 8
+  manufacturer: Open Source
+  model:
+    name: Generic Process Plant Controller 控制器
+    type: device
+  name: Process Plant
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

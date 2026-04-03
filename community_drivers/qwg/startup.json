@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "test_qwg",
+      "name": "QuTech QWG Qubit Waveform Generator",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "qwg",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "name": "",
+        "transport": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "dio calibration",
+      "description": "dio calibration",
+      "device": "test_qwg",
+      "action": "auto-dio_calibration",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "calibrate dio protocol",
+      "description": "calibrate dio protocol",
+      "device": "test_qwg",
+      "action": "auto-calibrate_dio_protocol",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "output dio calibration data",
+      "description": "output dio calibration data",
+      "device": "test_qwg",
+      "action": "auto-output_dio_calibration_data",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "QuTech QWG Qubit Waveform Generator 工作流",
+    "description": "QuTech QWG Qubit Waveform Generator 自动生成工作流",
+    "instrument": "QuTech QWG Qubit Waveform Generator",
+    "generated_by": "driver-finder"
+  }
+}

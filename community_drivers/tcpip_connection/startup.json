@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "test_tcpip_connection",
+      "name": "Test TCPIPConnection",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "tcpip_connection",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "connection_parameters": {}
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_tcpip_connection",
+      "action": "auto-open_connection",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "connection listener",
+      "description": "自动补充动作: connection_listener",
+      "device": "test_tcpip_connection",
+      "action": "auto-connection_listener",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "close connection",
+      "description": "自动补充动作: close_connection",
+      "device": "test_tcpip_connection",
+      "action": "auto-close_connection",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "is connection open",
+      "description": "自动补充动作: is_connection_open",
+      "device": "test_tcpip_connection",
+      "action": "auto-is_connection_open",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "transmit",
+      "description": "自动补充动作: transmit",
+      "device": "test_tcpip_connection",
+      "action": "auto-transmit",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "receive",
+      "description": "自动补充动作: receive",
+      "device": "test_tcpip_connection",
+      "action": "auto-receive",
+      "action_args": {
+        "retries": 3
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "TCPIPConnection 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "TCPIPConnection",
+    "generated_by": "driver-finder"
+  }
+}

@@ -1,0 +1,185 @@
+community.device.independent.metrohm_autolab_pgstat:
+  category:
+  - electrochemical
+  - community_independent_hq_metrohm_autolab_pgstat
+  class:
+    action_value_mappings:
+      auto-cleanup:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: cleanup的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: cleanup参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-initialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: initialize的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: initialize参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-start_stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          purpose: ''
+          stir_speed: null
+          vessel: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: start_stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                purpose:
+                  default: ''
+                  type: string
+                stir_speed:
+                  type: number
+                vessel:
+                  type: string
+              required:
+              - vessel
+              - stir_speed
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: start_stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          settling_time: null
+          stir_speed: null
+          stir_time: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                settling_time:
+                  type: number
+                stir_speed:
+                  type: number
+                stir_time:
+                  type: number
+              required:
+              - stir_time
+              - stir_speed
+              - settling_time
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop_stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          vessel: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: stop_stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                vessel:
+                  type: string
+              required:
+              - vessel
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: stop_stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+    module: unilabos.devices.virtual.virtual_stirrer:VirtualStirrer
+    status_types: {}
+    type: python
+  config_info: []
+  cover: hq_metrohm_autolab_pgstat.png
+  description: Metrohm Autolab PGSTAT系列电化学工作站驱动，支持循环伏安、阻抗谱等电化学测试。
+  device_params:
+    型号: PGSTAT系列
+    来源仓库: autolab_55ef4818
+    测试方法: CV/EIS/CA/LSV
+    设备类: client_thread
+    设备类型: 电化学工作站
+    通信: Socket/NOVA SDK
+  handles: []
+  icon: hq_metrohm_autolab_pgstat.png
+  init_param_schema:
+    config:
+      properties:
+        config:
+          type: object
+        device_id:
+          type: string
+      required: []
+      type: object
+    data:
+      properties: {}
+      required: []
+      type: object
+  manufacturer: Metrohm Autolab
+  model:
+    name: Metrohm Autolab PGSTAT
+    type: device
+  name: Metrohm Autolab PGSTAT 电化学工作站
+  resource_type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  tags:
+  - 电化学工作站
+  version: 1.0.0

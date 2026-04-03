@@ -1,0 +1,158 @@
+weiss_sb22:
+  class:
+    module: unilabos.devices.climate_chamber.weiss_sb22:weissSB22
+    type: python
+    status_types:
+      temperature: String
+      temperature_target: String
+      humidity: String
+      humidity_target: String
+      digital_ch: String
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_digital_ch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_digital_ch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          value: 1
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_humidity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_humidity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                humidity:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_for_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_for_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                answer:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Weiss Sb22驱动，支持init/set digital ch/set temperature/set humidity/write等7个操作。
+  category:
+  - 微生物培养箱
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          type: string
+          default: null
+        conf:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''
+    温度范围: 4-60 ℃
+品牌: ''
+    温度范围: 4-60 ℃
+品牌: ''
+    设备类型: 培养箱
+    温度范围: 4-60 ℃
+  manufacturer: ''
+  model:
+    name: '' weiss_sb22
+    type: device
+  name: weiss_sb22 培养箱
+  tags:
+  - 微生物培养箱
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0

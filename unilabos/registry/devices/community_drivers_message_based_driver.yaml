@@ -1,0 +1,286 @@
+message_based_driver:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-finalize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: finalize
+          type: object
+        type: UniLabJsonCommand
+      auto-initialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: initialize
+          type: object
+        type: UniLabJsonCommand
+      auto-parse_query:
+        feedback: {}
+        goal: {}
+        goal_default:
+          recv_args:
+          - null
+          - null
+          send_args:
+          - null
+          - null
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                command:
+                  type: string
+                format:
+                  type: string
+                recv_args:
+                  type: string
+                send_args:
+                  type: string
+              type: object
+          title: parse_query
+          type: object
+        type: UniLabJsonCommand
+      auto-query:
+        feedback: {}
+        goal: {}
+        goal_default:
+          recv_args:
+          - null
+          - null
+          send_args:
+          - null
+          - null
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                command:
+                  type: string
+                recv_args:
+                  type: string
+                send_args:
+                  type: string
+              type: object
+          title: query
+          type: object
+        type: UniLabJsonCommand
+      auto-read:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                encoding:
+                  type: string
+                termination:
+                  type: string
+              type: object
+          title: read
+          type: object
+        type: UniLabJsonCommand
+      auto-write:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                command:
+                  type: string
+                encoding:
+                  type: string
+                termination:
+                  type: string
+              type: object
+          title: write
+          type: object
+        type: UniLabJsonCommand
+      auto-via_usb:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: via_usb
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                serial_number:
+                  type: string
+                manufacturer_id:
+                  type: string
+                model_code:
+                  type: string
+                name:
+                  type: string
+                board:
+                  type: string
+        goal_default:
+          board: 0
+        handles: {}
+      auto-via_usb_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: via_usb_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                serial_number:
+                  type: string
+                manufacturer_id:
+                  type: string
+                model_code:
+                  type: string
+                name:
+                  type: string
+                board:
+                  type: string
+        goal_default:
+          board: 0
+        handles: {}
+      auto-via_serial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: via_serial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-via_tcpip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: via_tcpip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hostname:
+                  type: string
+                port:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-via_tcpip_socket:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: via_tcpip_socket
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hostname:
+                  type: string
+                port:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-via_gpib:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: via_gpib
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.visa.visa_message_based_driver:MessageBasedDriver
+    status_types: {}
+    type: python
+  config_info: []
+  description: Message Based Driver驱动，支持finalize/initialize/parse query/query/read等12个操作。
+  handles: []
+  icon: message_based_driver.webp
+  init_param_schema:
+    config:
+      properties:
+        name:
+          default: null
+          type: string
+        resource_name:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: message_based_driver.webp
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: address、board、command、encoding、format、hostname、manufacturer_id、model_code
+    操作数: 12
+  manufacturer: Open Source
+  model:
+    name: Generic Message Based Driver
+    type: device
+  name: Message Based Driver 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

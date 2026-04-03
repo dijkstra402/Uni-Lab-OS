@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "test_port",
+      "name": "美国Newport烟密度试验机",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "port",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": "",
+        "sn": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "send message",
+      "description": "自动补充动作: send_message",
+      "device": "test_port",
+      "action": "auto-send_message",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "fileno",
+      "description": "自动补充动作: fileno",
+      "device": "test_port",
+      "action": "auto-fileno",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "recv message",
+      "description": "自动补充动作: recv_message",
+      "device": "test_port",
+      "action": "auto-recv_message",
+      "action_args": {
+        "block": true
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "Port 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Port",
+    "generated_by": "driver-finder"
+  }
+}

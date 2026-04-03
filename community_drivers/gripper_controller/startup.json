@@ -1,0 +1,84 @@
+{
+  "nodes": [
+    {
+      "id": "test_gripper_controller",
+      "name": "Robotiq Inc. Gripper Controller",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "gripper_controller",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "server_ip": "",
+        "port": 1502,
+        "unit_id": 9,
+        "update_interval": 0.1,
+        "host": "127.0.0.1"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_gripper_controller",
+      "action": "auto-status",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_gripper_controller",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "activate",
+      "description": "自动补充动作: activate",
+      "device": "test_gripper_controller",
+      "action": "auto-activate",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "command gripper",
+      "description": "自动补充动作: command_gripper",
+      "device": "test_gripper_controller",
+      "action": "auto-command_gripper",
+      "action_args": {
+        "rPRA": [
+          1,
+          1,
+          1
+        ],
+        "rSP": [
+          250,
+          250,
+          250
+        ],
+        "rFR": [
+          250,
+          250,
+          250
+        ],
+        "rMOD": "Basic",
+        "rICF": false
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "GripperController 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "GripperController",
+    "generated_by": "driver-finder"
+  }
+}

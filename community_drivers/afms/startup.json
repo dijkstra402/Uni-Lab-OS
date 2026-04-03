@@ -1,0 +1,88 @@
+{
+  "nodes": [
+    {
+      "id": "test_afms",
+      "name": "afms",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "afms",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "location": "/dev/ttyACM0",
+        "spm": 10,
+        "homer": "default"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_afms",
+      "action": "auto-connect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_afms",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "home",
+      "description": "自动补充动作: home",
+      "device": "test_afms",
+      "action": "auto-home",
+      "action_args": {
+        "timeout": 300.0,
+        "procedure": "default"
+      }
+    },
+    {
+      "step": 4,
+      "name": "move",
+      "description": "自动补充动作: move",
+      "device": "test_afms",
+      "action": "auto-move",
+      "action_args": {
+        "timeout": 300.0
+      }
+    },
+    {
+      "step": 5,
+      "name": "goto",
+      "description": "自动补充动作: goto",
+      "device": "test_afms",
+      "action": "auto-goto",
+      "action_args": {
+        "timeout": 300.0,
+        "debug_prints": false
+      }
+    },
+    {
+      "step": 6,
+      "name": "estop",
+      "description": "自动补充动作: estop",
+      "device": "test_afms",
+      "action": "auto-estop",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "AFMS 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "AFMS",
+    "generated_by": "driver-finder"
+  }
+}

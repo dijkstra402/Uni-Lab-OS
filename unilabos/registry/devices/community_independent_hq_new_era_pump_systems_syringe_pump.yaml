@@ -1,0 +1,184 @@
+community.device.independent.new_era_pump_systems_syringe_pump:
+  category:
+  - pump
+  - community_independent_hq_new_era_pump_systems_syringe_pump
+  class:
+    action_value_mappings:
+      auto-cleanup:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: cleanup的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: cleanup参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-initialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: initialize的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: initialize参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-start_stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          purpose: ''
+          stir_speed: null
+          vessel: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: start_stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                purpose:
+                  default: ''
+                  type: string
+                stir_speed:
+                  type: number
+                vessel:
+                  type: string
+              required:
+              - vessel
+              - stir_speed
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: start_stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          settling_time: null
+          stir_speed: null
+          stir_time: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                settling_time:
+                  type: number
+                stir_speed:
+                  type: number
+                stir_time:
+                  type: number
+              required:
+              - stir_time
+              - stir_speed
+              - settling_time
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop_stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          vessel: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: stop_stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                vessel:
+                  type: string
+              required:
+              - vessel
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: stop_stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+    module: unilabos.devices.virtual.virtual_stirrer:VirtualStirrer
+    status_types: {}
+    type: python
+  config_info: []
+  cover: new_era_ne1000.jpg
+  description: New Era注射泵驱动，支持流速控制、定量注射等操作。
+  device_params:
+    控制方式: 流速/体积
+    来源仓库: helao-pub_1390d200
+    设备类: pump
+    设备类型: 注射泵
+    通信: Serial RS-232
+  handles: []
+  icon: new_era_ne1000.jpg
+  init_param_schema:
+    config:
+      properties:
+        config:
+          type: object
+        device_id:
+          type: string
+      required: []
+      type: object
+    data:
+      properties: {}
+      required: []
+      type: object
+  manufacturer: New Era Pump Systems
+  model:
+    name: New Era Pump Systems Syringe Pump
+    type: device
+  name: New Era 注射泵系统
+  resource_type: device
+  scene:
+    domain: Chemistry
+    scene_name: Liquid Handling
+    step: Dispensing
+  tags:
+  - 注射泵
+  version: 1.0.0

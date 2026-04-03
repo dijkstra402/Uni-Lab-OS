@@ -1,0 +1,130 @@
+{
+  "nodes": [
+    {
+      "id": "test_stpdrv",
+      "name": "stpdrv",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "stpdrv",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "address": "",
+        "steps_per_mm": 0.0,
+        "motion_timeout": 120.0,
+        "speed": 16,
+        "acceleration": 16,
+        "limit_offset": 20,
+        "resource_kwargs": {}
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_stpdrv",
+      "action": "auto-connect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_stpdrv",
+      "action": "auto-estop",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "address",
+      "description": "自动补充动作: address",
+      "device": "test_stpdrv",
+      "action": "auto-address",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "motion timeout",
+      "description": "自动补充动作: motion_timeout",
+      "device": "test_stpdrv",
+      "action": "auto-motion_timeout",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "speed",
+      "description": "自动补充动作: speed",
+      "device": "test_stpdrv",
+      "action": "auto-speed",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "acceleration",
+      "description": "自动补充动作: acceleration",
+      "device": "test_stpdrv",
+      "action": "auto-acceleration",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "disconnect",
+      "description": "自动补充动作: disconnect",
+      "device": "test_stpdrv",
+      "action": "auto-disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "mm to steps",
+      "description": "自动补充动作: mm_to_steps",
+      "device": "test_stpdrv",
+      "action": "auto-mm_to_steps",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "steps to mm",
+      "description": "自动补充动作: steps_to_mm",
+      "device": "test_stpdrv",
+      "action": "auto-steps_to_mm",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "goto",
+      "description": "自动补充动作: goto",
+      "device": "test_stpdrv",
+      "action": "auto-goto",
+      "action_args": {
+        "timeout": 120,
+        "debug_prints": true
+      }
+    },
+    {
+      "step": 11,
+      "name": "home",
+      "description": "自动补充动作: home",
+      "device": "test_stpdrv",
+      "action": "auto-home",
+      "action_args": {
+        "procedure": "default",
+        "timeout": 120
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "Stpdrv 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Stpdrv",
+    "generated_by": "driver-finder"
+  }
+}

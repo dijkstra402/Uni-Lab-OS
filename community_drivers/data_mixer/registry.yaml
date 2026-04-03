@@ -1,0 +1,268 @@
+data_mixer:
+  class:
+    module: unilabos.devices.data_mixer.data_mixer:DataMixer
+    type: python
+    status_types:
+      set_model_params: String
+      config_path: String
+    action_value_mappings:
+      auto-setup_docks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_docks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-validate_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_actions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_actions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect_things:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_things
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_model_settings_from_action:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_model_settings_from_action
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                model:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-process_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dte:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-snap:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: snap
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-create_computed_detectors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_computed_detectors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_connect_detectors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_connect_detectors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect_detectors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_detectors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                connect:
+                  type: string
+        goal_default:
+          connect: true
+        handles: {}
+      auto-plot_computed_results:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: plot_computed_results
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dte:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ini_model:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ini_model
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_model:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_model
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_menu:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_menu
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                menubar:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-value_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: value_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-quit_fun:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: quit_fun
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Data Mixer是一款后处理设备，主要功能包括绘图、设备连接、设置。支持Signal, Slot, config path等操作。
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        parent:
+          type: string
+          default: null
+        dashboard:
+          type: string
+          default: null
+  name: Data Mixer
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 后处理设备
+  device_params:
+    支持操作数: '17'
+    读取操作: get_set_model_params
+    控制操作: get_set_model_params、setup_docks、setup_actions、update_model_settings_from_action、set_model
+    设备属性数: '1'

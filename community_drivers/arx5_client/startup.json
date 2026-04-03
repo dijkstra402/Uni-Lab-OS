@@ -1,0 +1,79 @@
+{
+  "nodes": [
+    {
+      "id": "test_arx5_client",
+      "name": "ARX5 Robotic Arm Controller",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "arx5_client",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "zmq_ip": "",
+        "zmq_port": 0
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_arx5_client",
+      "action": "auto-set_ee_pose",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "send recv",
+      "description": "自动补充动作: send_recv",
+      "device": "test_arx5_client",
+      "action": "auto-send_recv",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "set tcp pose",
+      "description": "自动补充动作: set_tcp_pose",
+      "device": "test_arx5_client",
+      "action": "auto-set_tcp_pose",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "reset to home",
+      "description": "自动补充动作: reset_to_home",
+      "device": "test_arx5_client",
+      "action": "auto-reset_to_home",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "set to damping",
+      "description": "自动补充动作: set_to_damping",
+      "device": "test_arx5_client",
+      "action": "auto-set_to_damping",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "set gain",
+      "description": "自动补充动作: set_gain",
+      "device": "test_arx5_client",
+      "action": "auto-set_gain",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Arx5Client 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Arx5Client",
+    "generated_by": "driver-finder"
+  }
+}

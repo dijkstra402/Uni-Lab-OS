@@ -1,0 +1,64 @@
+socket_can_daemon_bus:
+  class:
+    module: unilabos.devices.can_bus.socketcand_bus:SocketCanDaemonBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from can/interfaces/socketcand/socketcand.py
+  category:
+  - can_bus
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        channel:
+          type: string
+          default: null
+        host:
+          type: string
+          default: null
+        port:
+          type: string
+          default: null
+        tcp_tune:
+          type: string
+          default: false
+        can_filters:
+          type: string
+          default: null
+  name: Socket CAN Daemon BUS
+  manufacturer: Open Standard
+  cover: aio_serial.webp
+  icon: aio_serial.webp

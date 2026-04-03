@@ -1,0 +1,593 @@
+func_gen:
+  class:
+    module: unilabos.devices.function_generator.function_generator:FuncGen
+    type: python
+    status_types:
+      timeout: String
+      error: String
+      settings: String
+      frequency_lock: String
+      waveform_catalogue: String
+      custom_waveform: String
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                visa_address:
+                  type: string
+                timeout:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-timeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ms:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                custom_err_message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                custom_err_message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-print_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-syncronise_waveforms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: syncronise_waveforms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_frequency_lock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_frequency_lock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+                use_channel:
+                  type: integer
+        goal_default:
+          use_channel: 1
+        handles: {}
+      auto-software_trig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: software_trig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_custom_waveform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_custom_waveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                waveform:
+                  type: string
+                normalise:
+                  type: boolean
+                memory_num:
+                  type: integer
+                verify:
+                  type: boolean
+                print_progress:
+                  type: boolean
+        goal_default:
+          normalise: true
+          memory_num: 0
+          verify: true
+          print_progress: true
+        handles: {}
+      auto-get_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_frequency_lock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_frequency_lock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_waveform_catalogue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_waveform_catalogue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_custom_waveform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_custom_waveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                memory_num:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_stricter_limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_stricter_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limit_type:
+                  type: string
+                bound:
+                  type: string
+                new_value:
+                  type: number
+                verbose:
+                  type: string
+        goal_default:
+          verbose: false
+        handles: {}
+      auto-get_output_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_output_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_function:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_function
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_amplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_amplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_frequency_lims:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_frequency_lims
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_voltage_lims:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_voltage_lims
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_amplitude_lims:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_amplitude_lims
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_output_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_output_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_function:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_function
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shape:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_amplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_amplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                amplitude:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                offset:
+                  type: number
+                unit:
+                  type: string
+        goal_default:
+          unit: V
+        handles: {}
+      auto-set_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                freq:
+                  type: number
+                unit:
+                  type: string
+        goal_default:
+          unit: Hz
+        handles: {}
+  description: WIGGENS  WHT-150恒温恒湿箱驱动（维根技术（北京）有限公司（WIGGENS）），支持open/close/timeout/write/query等33个操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        visa_address:
+          type: string
+          default: null
+        impedance:
+          type: string
+          default:
+          - highZ
+          - highZ
+        timeout:
+          type: integer
+          default: 1000
+        verify_param_set:
+          type: boolean
+          default: false
+        override_compatibility:
+          type: string
+          default: ''
+        verbose:
+          type: boolean
+          default: true
+  cover: func_gen.webp
+  device_params:
+    仪器种类: 立式
+    温度范围: +4～+60 ℃
+    湿度范围: 10～85（@25-55℃）rh%
+    温度偏差: ≤±0.5 ℃
+    温度波动度: ±0.1℃
+    湿度偏差: <±3rh%
+    湿度波动度: 1rh%
+    工作室尺寸: 560 x 500 x 535
+    品牌: 维根技术
+    化妆品: 2023-03-27
+    食品: 2023-03-13
+    生物研究: 2023-02-28
+  manufacturer: 维根技术（北京）有限公司（WIGGENS）
+  model:
+    name: WIGGENS  WHT-150恒温恒湿箱
+    type: device
+  name: WIGGENS  WHT-150恒温恒湿箱
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: func_gen.webp
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

@@ -1,0 +1,256 @@
+watchdog_task:
+  class:
+    module: unilabos.devices.watchdog.watchdog_task:WatchdogTask
+    type: python
+    status_types:
+      expiration_states: String
+      expir_trig_dig_edge_edge: String
+      expir_trig_dig_edge_src: String
+      expir_trig_trig_on_network_conn_loss: String
+      expir_trig_trig_type: String
+      expired: String
+      timeout: String
+      name: String
+    action_value_mappings:
+      auto-expir_trig_dig_edge_edge:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: expir_trig_dig_edge_edge
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-expir_trig_dig_edge_src:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: expir_trig_dig_edge_src
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-expir_trig_trig_on_network_conn_loss:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: expir_trig_trig_on_network_conn_loss
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-expir_trig_trig_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: expir_trig_trig_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-timeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-cfg_watchdog_ao_expir_states:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cfg_watchdog_ao_expir_states
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                expiration_states:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-cfg_watchdog_co_expir_states:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cfg_watchdog_co_expir_states
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                expiration_states:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-cfg_watchdog_do_expir_states:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cfg_watchdog_do_expir_states
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                expiration_states:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clear_expiration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_expiration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-control:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                action:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset_timer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_timer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Watchdog Task是一款实验执行&合成设备，主要功能包括停止、关闭、启动、复位。支持Signal, Slot, cfg watchdog ao expir states等操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_name:
+          type: string
+          default: null
+        task_name:
+          type: string
+          default: ''
+        timeout:
+          type: string
+          default: 10
+        grpc_options:
+          type: string
+          default: null
+  name: Watchdog configurations for a DAQmx task
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '19'
+    控制操作: reset_timer、start、stop
+    设备属性数: '8'

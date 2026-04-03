@@ -1,0 +1,298 @@
+arx5_client:
+  class:
+    module: unilabos.devices.robot.generic.generic_robot_client:Arx5Client
+    type: python
+    status_types:
+      state: String
+      gain: String
+      timestamp: String
+      ee_pose: String
+      joint_pos: String
+      joint_vel: String
+      joint_torque: String
+      gripper_pos: String
+      gripper_vel: String
+      gripper_torque: String
+      tcp_pose: String
+    action_value_mappings:
+      auto-send_recv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_recv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-set_ee_pose:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ee_pose
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pose_6d:
+                  type: string
+                gripper_pos:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_tcp_pose:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_tcp_pose
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tcp_pose_6d:
+                  type: string
+                gripper_pos:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset_to_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_to_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_to_damping:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_to_damping
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_gain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gain:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-get_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_gain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-timestamp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timestamp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ee_pose:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ee_pose
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-joint_pos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: joint_pos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-joint_vel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: joint_vel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-joint_torque:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: joint_torque
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gripper_pos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gripper_pos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gripper_vel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gripper_vel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gripper_torque:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gripper_torque
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-tcp_pose:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tcp_pose
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: ARX5 Robotic Arm Controller驱动（ARX Robotics），支持send recv/set ee pose/set tcp pose/reset to home/set to damping等17个操作。
+  category:
+  - 机械臂
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        zmq_ip:
+          type: string
+          default: null
+        zmq_port:
+          type: integer
+          default: null
+  cover: arx5_client.webp
+  device_params:
+    品牌: ARX Robotics
+    自由度: 6轴
+  manufacturer: ARX Robotics
+  model:
+    name: ARX5 机械臂控制器 机械臂 机械臂
+    type: device
+  name: ARX5 机械臂控制器 机械臂 机械臂
+  tags:
+  - 机械臂
+  resource_type: device
+  icon: arx5_client.webp
+  scene:
+    domain: Automation
+    scene_name: Robotics
+    step: Material Handling
+  version: 1.0.0

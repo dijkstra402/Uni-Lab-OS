@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "test_excel_compatible_csv",
+      "name": "Excel-Compatible CSV Handler",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "excel_compatible_csv",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "filename": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_excel_compatible_csv",
+      "action": "auto-reopen",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_excel_compatible_csv",
+      "action": "auto-close_file",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "write data",
+      "description": "自动补充动作: write_data",
+      "device": "test_excel_compatible_csv",
+      "action": "auto-write_data",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "write file",
+      "description": "自动补充动作: write_file",
+      "device": "test_excel_compatible_csv",
+      "action": "auto-write_file",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "ExcelCompatibleCSV 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "ExcelCompatibleCSV",
+    "generated_by": "driver-finder"
+  }
+}

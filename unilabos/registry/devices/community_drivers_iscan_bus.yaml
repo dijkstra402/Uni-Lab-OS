@@ -1,0 +1,58 @@
+iscan_bus:
+  class:
+    module: unilabos.devices.bus.iscan_bus:IscanBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from can/interfaces/iscan.py
+  category:
+  - bus
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        channel:
+          type: string
+          default: null
+        bitrate:
+          type: integer
+          default: 500000
+        poll_interval:
+          type: number
+          default: 0.01
+  name: Iscan BUS
+  manufacturer: Ixxat (HMS Networks)
+  cover: mfr_ixxat_hms_networks.webp
+  icon: mfr_ixxat_hms_networks.webp

@@ -1,0 +1,91 @@
+{
+  "nodes": [
+    {
+      "id": "test_mu_xelve",
+      "name": "Elveflow MUX Flow Switch",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "mu_xelve",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "elveflowDLL": "",
+        "elveflowSDK": "",
+        "deviceName": "",
+        "deviceID": 0
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_mu_xelve",
+      "action": "auto-set_valve",
+      "action_args": {
+        "rotation_direction": 0,
+        "blocking": true
+      }
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_mu_xelve",
+      "action": "auto-open",
+      "action_args": {
+        "auto_home": true,
+        "verbose": false
+      }
+    },
+    {
+      "step": 3,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_mu_xelve",
+      "action": "auto-wait_for_valve_movement",
+      "action_args": {
+        "timeout": 5
+      }
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_mu_xelve",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "home",
+      "description": "自动补充动作: home",
+      "device": "test_mu_xelve",
+      "action": "auto-home",
+      "action_args": {
+        "start_channel": 1
+      }
+    },
+    {
+      "step": 6,
+      "name": "loadDLL",
+      "description": "自动补充动作: loadDLL",
+      "device": "test_mu_xelve",
+      "action": "auto-loadDLL",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "MUXelve 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "MUXelve",
+    "generated_by": "driver-finder"
+  }
+}

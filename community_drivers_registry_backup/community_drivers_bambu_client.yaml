@@ -1,0 +1,656 @@
+bambu_client:
+  class:
+    module: unilabos.devices.bambu_lab.bambu_client:BambuClient
+    type: python
+    status_types:
+      devices: String
+      device_version: String
+      device_versions: String
+      ams_filaments: String
+      print_status: String
+      user_profile: String
+      user_info: String
+      projects: String
+      cloud_files: String
+      tasks: String
+      task: String
+      project: String
+      camera_credentials: String
+      ttcode: String
+      cloud_video_url: String
+      camera_urls: String
+      notifications: String
+      messages: String
+      slicer_settings: String
+      slicer_resources: String
+      device_info: String
+      upload_url: String
+    action_value_mappings:
+      auto-get:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-post:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: post
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-put:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: put
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-delete:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_print_job:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_print_job
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+                file_id:
+                  type: string
+                file_name:
+                  type: string
+                file_url:
+                  type: string
+                settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_cloud_print:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_cloud_print
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+                filename:
+                  type: string
+                settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update_user_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_user_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-create_project:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_project
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                model_id:
+                  type: string
+                title:
+                  type: string
+                device_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-mark_notification_read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mark_notification_read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                notification_id:
+                  type: string
+                read:
+                  type: boolean
+        goal_default:
+          read: true
+        handles: {}
+      auto-bind_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bind_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+                device_name:
+                  type: string
+                bind_code:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unbind_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unbind_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-upload_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: upload_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file_path:
+                  type: string
+                filename:
+                  type: string
+                project_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_devices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_device_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_device_versions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_versions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_ams_filaments:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ams_filaments
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_print_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_print_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                force:
+                  type: string
+        goal_default:
+          force: false
+        handles: {}
+      auto-get_user_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_user_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_user_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_user_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_projects:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_projects
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_cloud_files:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cloud_files
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_tasks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_tasks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                task_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_project:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_project
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_camera_credentials:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_camera_credentials
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_ttcode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ttcode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_cloud_video_url:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cloud_video_url
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_camera_urls:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_camera_urls
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_notifications:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_notifications
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                action:
+                  type: string
+                unread_only:
+                  type: string
+        goal_default:
+          unread_only: false
+        handles: {}
+      auto-get_messages:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_messages
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message_type:
+                  type: string
+                after:
+                  type: string
+                limit:
+                  type: number
+        goal_default:
+          limit: 20
+        handles: {}
+      auto-get_slicer_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_slicer_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                version:
+                  type: string
+                setting_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_slicer_resources:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_slicer_resources
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                resource_type:
+                  type: string
+                version:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_device_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_upload_url:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_upload_url
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+                size:
+                  type: number
+        goal_default: {}
+        handles: {}
+  description: Physik Instrumente Bambu Client驱动（Physik Instrumente (PI)），支持get/post/put/delete/start
+    print job等35个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        token:
+          type: string
+          default: null
+        timeout:
+          type: integer
+          default: null
+  cover: bambu_client.webp
+  device_params:
+    品牌: Physik Instrumente
+    功能: 参数配置、数据采集
+    可控参数: action、after、bind_code、data、device_id、device_name、endpoint、file_id
+    操作数: 35
+  manufacturer: Physik Instrumente (PI)
+  model:
+    name: Physik Physik Instrumente Bambu Client
+    type: device
+  name: Physik Instrumente Bambu Client 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: bambu_client.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

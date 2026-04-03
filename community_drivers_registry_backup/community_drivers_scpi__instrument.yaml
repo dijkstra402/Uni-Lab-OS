@@ -1,0 +1,211 @@
+scpi__instrument:
+  class:
+    module: unilabos.devices.generic.scpi_instrument:SCPI_Instrument
+    type: python
+    status_types:
+      backend: String
+      instrument: String
+      port: String
+      port_match: String
+      rid: String
+      resource_params: String
+      id: String
+      value: String
+      connected: String
+      is_connected: String
+    action_value_mappings:
+      auto-port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-port_match:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: port_match
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port_match:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-rid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rid:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Scpi  Instrument驱动，支持port/port match/rid/connect/disconnect等10个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        port_match:
+          type: string
+          default: true
+        backend:
+          type: string
+          default: ''
+        handshake:
+          type: string
+          default: false
+        arg_separator:
+          type: string
+          default: ','
+        prefix_cmds:
+          type: string
+          default: false
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置、数据采集
+    可控参数: msg、port、port_match、rid
+    操作数: 10
+  manufacturer: ''
+  model:
+    name: '' scpi__instrument
+    type: device
+  name: scpi__instrument 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

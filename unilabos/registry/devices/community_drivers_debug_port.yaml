@@ -1,0 +1,150 @@
+debug_port:
+  class:
+    module: unilabos.devices.debug.debug_port:DebugPort
+    type: python
+    status_types:
+      isOpen: String
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-bytesAvailable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bytesAvailable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endPoint:
+                  type: string
+        goal_default:
+          endPoint: 0
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readData:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readData
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                length:
+                  type: string
+                endPoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-writeData:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writeData
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                endPoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-writeToOutputBuffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writeToOutputBuffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                endPointIndex:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-processInputBuffers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: processInputBuffers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endPointIndex:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from hardwarelibrary/communication/debugport.py
+  category:
+  - debug
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        delay:
+          type: string
+          default: 0
+  name: Debug Port
+  manufacturer: Open Source
+  cover: ascii_stl__writer.webp
+  icon: ascii_stl__writer.webp

@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "test_distance_sensor",
+      "name": "AWSensor石英晶体微天平QCM-D",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "distance_sensor",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "echo": "",
+        "trigger": "",
+        "queue_len": 9,
+        "max_distance": 1,
+        "threshold_distance": 0.3,
+        "partial": false,
+        "pin_factory": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_distance_sensor",
+      "action": "auto-wait_for_out_of_range",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_distance_sensor",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "max distance",
+      "description": "自动补充动作: max_distance",
+      "device": "test_distance_sensor",
+      "action": "auto-max_distance",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "threshold distance",
+      "description": "自动补充动作: threshold_distance",
+      "device": "test_distance_sensor",
+      "action": "auto-threshold_distance",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "wait for in range",
+      "description": "自动补充动作: wait_for_in_range",
+      "device": "test_distance_sensor",
+      "action": "auto-wait_for_in_range",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "DistanceSensor 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "DistanceSensor",
+    "generated_by": "driver-finder"
+  }
+}

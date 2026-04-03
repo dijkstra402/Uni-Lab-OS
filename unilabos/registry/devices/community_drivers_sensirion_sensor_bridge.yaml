@@ -1,0 +1,157 @@
+sensirion_sensor_bridge:
+  class:
+    module: unilabos.devices.sensors.sensirion.sensirion_sensor_bridge:SensirionSensorBridge
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_i2c_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_i2c_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bridge_port:
+                  type: string
+                voltage:
+                  type: string
+                frequency:
+                  type: string
+        goal_default:
+          bridge_port: 0
+          voltage: 3.3
+          frequency: 400000.0
+        handles: {}
+      auto-disable_i2c_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_i2c_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                bridge_port:
+                  type: string
+        goal_default:
+          bridge_port: 0
+        handles: {}
+      auto-print_i2c_device_information:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_i2c_device_information
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_i2c:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_i2c
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                port:
+                  type: string
+                address:
+                  type: string
+                command:
+                  type: string
+                read_n_bytes:
+                  type: string
+                timeout_us:
+                  type: string
+        goal_default:
+          read_n_bytes: 0
+          timeout_us: 100000.0
+        handles: {}
+      auto-write_i2c:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_i2c
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                port:
+                  type: string
+                address:
+                  type: string
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from basil/TL/SensirionSensorBridge.py
+  category:
+  - sensors
+  - sensirion
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        conf:
+          type: string
+          default: null
+  name: Sensirion Sensor Bridge
+  manufacturer: Sensirion AG
+  cover: sensirion_ekh4.webp
+  icon: sensirion_ekh4.webp

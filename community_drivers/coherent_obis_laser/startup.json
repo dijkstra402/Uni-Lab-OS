@@ -1,0 +1,92 @@
+{
+  "nodes": [
+    {
+      "id": "test_coherent_obis_laser",
+      "name": "Test CoherentOBISLaser",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "coherent_obis_laser",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "serial_port": "COM8",
+        "turn_on": false,
+        "name": "OBIS",
+        "init_power": 5,
+        "reply_ok": false
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_coherent_obis_laser",
+      "action": "auto-query",
+      "action_args": {
+        "lines_expected": 1
+      }
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_coherent_obis_laser",
+      "action": "auto-Close",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "IsOn",
+      "description": "自动补充动作: IsOn",
+      "device": "test_coherent_obis_laser",
+      "action": "auto-IsOn",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "TurnOn",
+      "description": "自动补充动作: TurnOn",
+      "device": "test_coherent_obis_laser",
+      "action": "auto-TurnOn",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "TurnOff",
+      "description": "自动补充动作: TurnOff",
+      "device": "test_coherent_obis_laser",
+      "action": "auto-TurnOff",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "SetPower",
+      "description": "自动补充动作: SetPower",
+      "device": "test_coherent_obis_laser",
+      "action": "auto-SetPower",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "GetPower",
+      "description": "自动补充动作: GetPower",
+      "device": "test_coherent_obis_laser",
+      "action": "auto-GetPower",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "CoherentOBISLaser 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "CoherentOBISLaser",
+    "generated_by": "driver-finder"
+  }
+}

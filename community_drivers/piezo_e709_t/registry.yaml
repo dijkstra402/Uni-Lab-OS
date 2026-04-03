@@ -1,0 +1,656 @@
+piezo_e709_t:
+  class:
+    module: unilabos.devices.piezo.pi_gcs_controller:CLRelController
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: 'Controller managed via closed-loop commands (ex: C-867 with encoder)'
+  category:
+  - piezo
+piezo_c867_t:
+  class:
+    module: unilabos.devices.piezo.piezo_c867_t:piezo_c867T
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-SetServo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetServo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: 1
+        handles: {}
+      auto-ReInit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ReInit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reference:
+                  type: string
+        goal_default:
+          reference: true
+        handles: {}
+      auto-SetVelocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetVelocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+                vel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetVelocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetVelocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-MoveTo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MoveTo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iChannel:
+                  type: string
+                fPos:
+                  type: string
+                bTimeOut:
+                  type: string
+                vel:
+                  type: string
+        goal_default:
+          bTimeOut: true
+        handles: {}
+      auto-MoveToXY:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MoveToXY
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xPos:
+                  type: string
+                yPos:
+                  type: string
+                bTimeOut:
+                  type: string
+                vel:
+                  type: string
+        goal_default:
+          bTimeOut: true
+        handles: {}
+      auto-GetPos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetPos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iChannel:
+                  type: string
+        goal_default:
+          iChannel: 0
+        handles: {}
+      auto-GetPosXY:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetPosXY
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-MoveInDir:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MoveInDir
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dx:
+                  type: string
+                dy:
+                  type: string
+                th:
+                  type: string
+        goal_default:
+          th: 0.0
+        handles: {}
+      auto-StopMove:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: StopMove
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetControlReady:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetControlReady
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetChannelObject:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetChannelObject
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetChannelPhase:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetChannelPhase
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetMin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetMin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iChan:
+                  type: string
+        goal_default:
+          iChan: 1
+        handles: {}
+      auto-GetMax:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetMax
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iChan:
+                  type: string
+        goal_default:
+          iChan: 1
+        handles: {}
+      auto-OnTarget:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: OnTarget
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetFirmwareVersion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetFirmwareVersion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: c867
+  category:
+  - piezo
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        portname:
+          type: string
+          default: COM1
+        maxtravel:
+          type: string
+          default: 25.0
+        hasTrigger:
+          type: string
+          default: false
+        reference:
+          type: string
+          default: true
+        maxvelocity:
+          type: string
+          default: 200.0
+        validRegion:
+          type: string
+          default:
+          - - 4.5
+            - 19
+          - - 0
+            - 25
+piezo_e709_t:
+  class:
+    module: unilabos.devices.piezo.piezo_e709_t:piezo_e709T
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-SetServo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetServo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: 1
+        handles: {}
+      auto-ReInit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ReInit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reference:
+                  type: string
+        goal_default:
+          reference: true
+        handles: {}
+      auto-MoveTo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MoveTo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iChannel:
+                  type: string
+                fPos:
+                  type: string
+                bTimeOut:
+                  type: string
+                vel:
+                  type: string
+        goal_default:
+          bTimeOut: true
+        handles: {}
+      auto-MoveRel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MoveRel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iChannel:
+                  type: string
+                incr:
+                  type: string
+                bTimeOut:
+                  type: string
+        goal_default:
+          bTimeOut: true
+        handles: {}
+      auto-OnTarget:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: OnTarget
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetPos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetPos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iChannel:
+                  type: string
+        goal_default:
+          iChannel: 0
+        handles: {}
+      auto-GetPosXY:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetPosXY
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetTargetPos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetTargetPos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iChannel:
+                  type: string
+        goal_default:
+          iChannel: 0
+        handles: {}
+      auto-MoveInDir:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MoveInDir
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dx:
+                  type: string
+                dy:
+                  type: string
+                th:
+                  type: string
+        goal_default:
+          th: 0.0
+        handles: {}
+      auto-StopMove:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: StopMove
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetControlReady:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetControlReady
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetChannelObject:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetChannelObject
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetChannelPhase:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetChannelPhase
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetMin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetMin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iChan:
+                  type: string
+        goal_default:
+          iChan: 1
+        handles: {}
+      auto-GetMax:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetMax
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iChan:
+                  type: string
+        goal_default:
+          iChan: 1
+        handles: {}
+      auto-GetFirmwareVersion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetFirmwareVersion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: e709
+  category:
+  - piezo
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        portname:
+          type: string
+          default: COM1
+        maxtravel:
+          type: string
+          default: 400.0
+        Osen:
+          type: string
+          default: null
+        hasTrigger:
+          type: string
+          default: false
+
+piezo_e816_t:
+  class:
+    module: unilabos.devices.piezo.piezo_e816t:piezo_e816T
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: "e816"
+  category:
+    - piezo

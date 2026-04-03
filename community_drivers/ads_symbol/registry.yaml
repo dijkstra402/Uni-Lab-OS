@@ -1,0 +1,203 @@
+ads_symbol:
+  class:
+    module: unilabos.devices.ads.ads_symbol:AdsSymbol
+    type: python
+    status_types:
+      auto_update: String
+      value: String
+      is_structure: String
+    action_value_mappings:
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_device_notification:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_device_notification
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                callback:
+                  type: string
+                attr:
+                  type: string
+                user_handle:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clear_device_notifications:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_device_notifications
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-del_device_notification:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: del_device_notification
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                handles:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-auto_update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_type_from_str:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_type_from_str
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                type_str:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_structure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_structure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Ads Symbol是由Beckhoff Automation生产的后处理设备，主要功能包括写入数据、读取数据。支持Signal, Slot, add device notification等操作。
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        plc:
+          type: string
+          default: null
+        name:
+          type: string
+          default: null
+        index_group:
+          type: string
+          default: null
+        index_offset:
+          type: string
+          default: null
+        symbol_type:
+          type: string
+          default: null
+        comment:
+          type: string
+          default: null
+        auto_update:
+          type: boolean
+          default: false
+        structure_def:
+          type: string
+          default: null
+        array_size:
+          type: string
+          default: 1
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: attr、callback、handles、new_value、type_str、user_handle、val、value
+    操作数: 9
+  manufacturer: Beckhoff Automation
+  model:
+    name: Generic Ads Symbol
+    type: device
+  name: Beckhoff Automation Ads Symbol
+  tags:
+  - 后处理设备
+  resource_type: device
+  icon: ads_symbol.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

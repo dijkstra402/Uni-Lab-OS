@@ -1,0 +1,188 @@
+point_type_graphic:
+  class:
+    module: unilabos.devices.point_type_graphic.point_type_graphic:PointTypeGraphic
+    type: python
+    status_types:
+      position: String
+      attributes: String
+      mask_item: String
+    action_value_mappings:
+      auto-position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-mime_data_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mime_data_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_from_mime_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_from_mime_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                graphic_dict:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mapping:
+                  type: string
+                ui_settings:
+                  type: string
+                p:
+                  type: string
+                move_only:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-begin_drag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: begin_drag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-end_drag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: end_drag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                part_data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-adjust_part:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: adjust_part
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mapping:
+                  type: string
+                original:
+                  type: string
+                current:
+                  type: string
+                part:
+                  type: string
+                modifiers:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-nudge:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: nudge
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mapping:
+                  type: string
+                delta:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Point Type Graphic是一款后处理设备，主要功能包括使能、关闭、写入数据、启动、复位、成像。支持CAN REPOSITION, CAN RESHAPE, CAN ROTATE等操作。
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        type:
+          type: string
+          default: null
+        title:
+          type: string
+          default: null
+  name: Drawing Context Like
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 后处理设备
+  device_params:
+    支持操作数: '227'
+    读取操作: map_point_channel_norm_to_widget、map_point_widget_to_channel_norm、map_point_image_norm_to_widget、map_point_widget_to_image、map_point_widget_to_image_norm
+    控制操作: write_to_dict、reset_position、reset_position、start_arrow_enabled、end_arrow_enabled
+    运动操作: move_to、is_position_locked、label_position、reset_position、reset_position
+    设备属性数: '78'
+    控制能力: 位置控制、电流控制

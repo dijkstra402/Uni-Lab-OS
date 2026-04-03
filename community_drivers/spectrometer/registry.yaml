@@ -1,0 +1,126 @@
+spectrometer:
+  class:
+    module: unilabos.devices.spectroscopy.spectrometer:Spectrometer
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-getSerialNumber:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSerialNumber
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getSpectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSpectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getIntegrationTime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getIntegrationTime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setIntegrationTime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setIntegrationTime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-saveSpectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: saveSpectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filepath:
+                  type: string
+                spectrum:
+                  type: string
+                whiteReference:
+                  type: string
+                darkReference:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Spectrometer是一款表征设备，主要功能包括数据保存、设备连接。支持Signal, Slot, any等操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serialNumber:
+          type: string
+          default: null
+        idProduct:
+          type: integer
+          default: null
+        idVendor:
+          type: integer
+          default: null
+  name: No Spectrometer Connected
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 表征设备
+  device_params:
+    支持操作数: '13'
+    读取操作: getSerialNumber、getSpectrum、getIntegrationTime
+    控制操作: setIntegrationTime
+    通信接口: USB、串口

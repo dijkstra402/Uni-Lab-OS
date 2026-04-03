@@ -1,7 +1,24 @@
 import threading
+import time
 
 from unilabos.resources.resource_tracker import ResourceTreeSet
 from unilabos.utils import logger
+
+
+def _simple_main(
+    devices_config: ResourceTreeSet,
+    resources_config: ResourceTreeSet,
+    resources_edge_config: list[dict] = [],
+    graph=None,
+    controllers_config: dict = {},
+    bridges=[],
+    visual: str = "None",
+    resources_mesh_config: dict = {},
+):
+    """Minimal backend that keeps the process alive for WebSocket / HTTP bridges."""
+    logger.info("[SimpleBackend] Running (no ROS). Bridges and WebSocket handle all communication.")
+    while True:
+        time.sleep(1)
 
 
 # 根据选择的 backend 启动相应的功能
@@ -19,15 +36,13 @@ def start_backend(
     **kwargs,
 ):
     if backend == "ros":
-        # 假设 ros_main, simple_main, automancer_main 是不同 backend 的启动函数
-        from unilabos.ros.main_slave_run import main, slave  # 如果选择 'ros' 作为 backend
+        from unilabos.ros.main_slave_run import main, slave
     elif backend == "simple":
-        # 这里假设 simple_backend 和 automancer_backend 是你定义的其他两个后端
-        # from simple_backend import main as simple_main
-        pass
+        main = _simple_main
+        slave = _simple_main
     elif backend == "automancer":
-        # from automancer_backend import main as automancer_main
-        pass
+        main = _simple_main
+        slave = _simple_main
     else:
         raise ValueError(f"Unsupported backend: {backend}")
 

@@ -1,0 +1,170 @@
+byonoy_absorbance96_automate_backend:
+  category:
+  - 酶标仪
+  class:
+    action_value_mappings:
+      auto-initialize_measurements:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: initialize_measurements
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-read_absorbance:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                plate:
+                  type: string
+                wavelength:
+                  type: integer
+                wells:
+                  type: string
+              type: object
+          title: read_absorbance
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-read_fluorescence:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                emission_wavelength:
+                  type: integer
+                excitation_wavelength:
+                  type: integer
+                focal_height:
+                  type: number
+                plate:
+                  type: string
+                wells:
+                  type: string
+              type: object
+          title: read_fluorescence
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-read_luminescence:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                focal_height:
+                  type: number
+                plate:
+                  type: string
+                wells:
+                  type: string
+              type: object
+          title: read_luminescence
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-setup:
+        feedback: {}
+        goal: {}
+        goal_default:
+          verbose: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                verbose:
+                  type: boolean
+              type: object
+          title: setup
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                report_id:
+                  type: number
+                payload:
+                  type: string
+                wait_for_response:
+                  type: string
+                routing_info:
+                  type: string
+        goal_default:
+          wait_for_response: true
+          routing_info: b'\x00\x00'
+        handles: {}
+      auto-get_available_absorbance_wavelengths:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_available_absorbance_wavelengths
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.absorbance_plate_reader.byonoy_absorbance96_automate_backend:ByonoyAbsorbance96AutomateBackend
+    status_types:
+      available_absorbance_wavelengths: String
+    type: python
+  config_info: []
+  description: Byonoy Absorbance 96 Automate Plate Reader驱动（Byonoy GmbH），支持initialize
+    measurements/read absorbance/read fluorescence/read luminescence/setup等7个操作。
+  handles: []
+  icon: byonoy_absorbance96_automate_backend.webp
+  init_param_schema: {}
+  version: 1.0.0
+  cover: byonoy_absorbance96_automate_backend.webp
+  device_params:
+    品牌: Byonoy GmbH
+    检测模式: 吸光度/荧光
+品牌: Byonoy GmbH
+    检测模式: 吸光度/荧光
+品牌: Byonoy GmbH
+    设备类型: 酶标仪/微孔板读数器
+    检测模式: 吸光度/荧光
+  manufacturer: Byonoy GmbH
+  model:
+    name: Byonoy Absorbance 96 微孔板吸光度读板仪 酶标仪 酶标仪
+    type: device
+  name: Byonoy Absorbance 96 微孔板吸光度读板仪 酶标仪 酶标仪
+  tags:
+  - 酶标仪
+  resource_type: device
+  scene:
+    domain: Biology
+    scene_name: Plate Reading
+    step: Absorbance Measurement

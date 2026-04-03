@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "test_narda601",
+      "name": "Narda Safety Test Solutions Narda601 场强计",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.narda601",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {},
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "自动生成动作: setup",
+      "device": "test_narda601",
+      "action": "auto-setup",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "readback",
+      "description": "自动生成动作: readback",
+      "device": "test_narda601",
+      "action": "auto-readback",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "binarytoVm",
+      "description": "自动生成动作: binarytoVm",
+      "device": "test_narda601",
+      "action": "auto-binarytoVm",
+      "action_args": {
+        "binary": "b'T\\x00\\x00\\x00\\x00'"
+      }
+    },
+    {
+      "step": 4,
+      "name": "returnstr",
+      "description": "自动生成动作: returnstr",
+      "device": "test_narda601",
+      "action": "auto-returnstr",
+      "action_args": {
+        "binary": "b'T\\x00\\x00\\x00\\x00'"
+      }
+    },
+    {
+      "step": 5,
+      "name": "decode example",
+      "description": "自动生成动作: decode_example",
+      "device": "test_narda601",
+      "action": "auto-decode_example",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "query",
+      "description": "自动生成动作: query",
+      "device": "test_narda601",
+      "action": "auto-query",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Narda601 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Narda601",
+    "generated_by": "driver-finder"
+  }
+}

@@ -1,0 +1,106 @@
+qick_instrument:
+  class:
+    module: unilabos.devices.quantum_control.qick_instrument:QickInstrument
+    type: python
+    status_types:
+      idn: String
+    action_value_mappings:
+      auto-cycles2sec_tproc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cycles2sec_tproc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-sec2cycles_tproc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sec2cycles_tproc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sec:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: QICK (Quantum Instrumentation Control Kit) 量子仪器控制平台驱动。
+    tproc/get idn。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ns_host:
+          type: string
+          default: null
+        ns_port:
+          type: string
+          default: 8888
+        name:
+          type: string
+          default: QickInstrument
+  cover:
+  device_params:
+    支持操作数: 3
+仪器原理: 电化学法
+    测量范围: 0.01-19.99 ppm
+    分辨率: 0.01ppm
+    重复性: ±0.5%
+    采样方式: 泵吸式
+    响应时间: 小于1秒钟
+    测量温度: -20~50℃
+    湿度范围: 15~95%
+    品牌: 路博建业环保科技有限公司
+仪器原理: 电化学法
+    测量范围: 0.01-19.99 ppm
+    分辨率: 0.01ppm
+    重复性: ±0.5%
+    采样方式: 泵吸式
+    响应时间: 小于1秒钟
+    测量温度: -20~50℃
+    湿度范围: 15~95%
+    品牌: 路博建业环保科技有限公司
+    设备类型: 实验执行设备
+  manufacturer:
+  model:
+    name: QICK Instrument 量子仪器控制平台
+    type: device
+  name: QICK Instrument 量子仪器控制平台
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon:
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

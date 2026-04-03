@@ -1,0 +1,130 @@
+temper_device:
+  class:
+    module: unilabos.devices.sensors.temperature.temper_device:TemperDevice
+    type: python
+    status_types:
+      sensor_count: String
+      product: String
+      ports: String
+      bus: String
+      data: String
+      temperature: String
+      temperatures: String
+      humidity: String
+    action_value_mappings:
+      auto-set_calibration_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_calibration_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                scale:
+                  type: string
+                offset:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-lookup_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lookup_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sensor:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-lookup_humidity_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lookup_humidity_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sensor:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-lookup_sensor_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lookup_sensor_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_sensor_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_sensor_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                count:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Temper Device是由TEMPer (PCsensor)生产的专业实验设备。A TEMPer USB thermometer
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device:
+          type: string
+          default: null
+        sensor_count:
+          type: string
+          default: 1
+  name: A TEMPer USB thermometer
+  manufacturer: TEMPer (PCsensor)
+  icon: cpu_temperature.webp
+  tags:
+  - 表征设备
+  device_params:
+    支持操作数: '15'
+    读取操作: get_sensor_count、get_product、get_ports、get_bus、get_data
+    控制操作: set_calibration_data、lookup_offset、lookup_humidity_offset、set_sensor_count

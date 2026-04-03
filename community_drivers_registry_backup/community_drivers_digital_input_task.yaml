@@ -1,0 +1,109 @@
+digital_input_task:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-max_convert_rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: max_convert_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_scalar:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_scalar
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default:
+          timeout: 10.0
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                samples_per_channel:
+                  type: string
+                timeout:
+                  type: string
+                group_by:
+                  type: string
+        goal_default:
+          timeout: 10.0
+          group_by: channel
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                auto_start:
+                  type: string
+                timeout:
+                  type: string
+                group_by:
+                  type: string
+        goal_default:
+          auto_start: true
+          timeout: 10.0
+          group_by: scan
+        handles: {}
+    module: unilabos.devices.ni_daq_digital_io.digital_input_task:DigitalInputTask
+    status_types: {}
+    type: python
+  config_info: []
+  description: Digital Input Task驱动，支持max convert rate/read scalar/read/write。
+  handles: []
+  icon: digital_input_task.webp
+  init_param_schema: {}
+  version: 1.0.0
+  cover: digital_input_task.webp
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: auto_start、data、group_by、samples_per_channel、timeout
+    操作数: 4
+  manufacturer: Generic
+  model:
+    name: Generic Digital Input Task
+    type: device
+  name: Digital Input Task 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

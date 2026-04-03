@@ -1,0 +1,264 @@
+epics_motor:
+  category:
+  - 物流/机械
+  class:
+    action_value_mappings:
+      auto-check_value:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                pos:
+                  type: string
+              type: object
+          title: check_value
+          type: object
+        type: UniLabJsonCommand
+      auto-home:
+        feedback: {}
+        goal: {}
+        goal_default:
+          wait: true
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                direction:
+                  type: string
+                wait:
+                  type: string
+              type: object
+          title: home
+          type: object
+        type: UniLabJsonCommand
+      auto-move:
+        feedback: {}
+        goal: {}
+        goal_default:
+          wait: true
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                position:
+                  type: string
+                wait:
+                  type: string
+              type: object
+          title: move
+          type: object
+        type: UniLabJsonCommand
+      auto-set_current_position:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                pos:
+                  type: string
+              type: object
+          title: set_current_position
+          type: object
+        type: UniLabJsonCommand
+      auto-set_lim:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                high:
+                  type: string
+                low:
+                  type: string
+              type: object
+          title: set_lim
+          type: object
+        type: UniLabJsonCommand
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default:
+          success: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                success:
+                  type: string
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommand
+      auto-precision:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: precision
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-egu:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: egu
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-moving:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: moving
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-report:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: report
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_lim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_lim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.motor.epics_motor:EpicsMotor
+    status_types:
+      egu: String
+      lim: String
+      limits: String
+      moving: String
+      position: String
+      precision: String
+      report: String
+    type: python
+  config_info: []
+  description: EPICS Motor Record Controller是由EPICS生产的专业实验设备。An EPICS motor record, wrapped in a Positioner
+  handles: []
+  icon: epics_motor.webp
+  init_param_schema:
+    config:
+      properties:
+        configuration_attrs:
+          default: null
+          type: string
+        kind:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        parent:
+          default: null
+          type: string
+        prefix:
+          default: ''
+          type: string
+        read_attrs:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: EPICS
+    功能: 参数配置、数据采集、电学测量、运动控制
+    可控参数: direction、flag、high、low、pos、位置、success、wait
+    操作数: 13
+  manufacturer: EPICS
+  model:
+    name: EPICS Motor Record Controller 电机 自动化设备 控制器
+    type: device
+  name: EPICS Motor Record
+  tags:
+  - 物流/机械
+  resource_type: device
+  scene:
+    domain: Automation
+    scene_name: Motion Control
+    step: Positioning

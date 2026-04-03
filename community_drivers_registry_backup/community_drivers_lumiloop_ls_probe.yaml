@@ -1,0 +1,64 @@
+lumiloop_ls_probe:
+  class:
+    module: unilabos.devices.field_probe.lumiloop_ls_probe:LumiloopLSProbe
+    type: python
+    status_types:
+      magnitude: String
+      magnitude_all: String
+      frequency: String
+      mode: String
+    action_value_mappings:
+      auto-frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frequency:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: LumiloopLSProbe
+  category:
+  - 表征设备
+  cover: ''
+  device_params:
+    品牌: ''''
+    可控参数: 频率、工作模式
+    操作数: 2
+  manufacturer: ''
+  model:
+    name: '' lumiloop_ls_probe
+    type: device
+  name: lumiloop_ls_probe 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

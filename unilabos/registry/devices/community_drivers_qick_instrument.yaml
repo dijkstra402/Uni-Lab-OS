@@ -1,0 +1,86 @@
+qick_instrument:
+  class:
+    module: unilabos.devices.quantum_control.qick_instrument:QickInstrument
+    type: python
+    status_types:
+      idn: String
+    action_value_mappings:
+      auto-cycles2sec_tproc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cycles2sec_tproc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-sec2cycles_tproc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sec2cycles_tproc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sec:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: QICK (Quantum Instrumentation Control Kit) 量子仪器控制平台驱动。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ns_host:
+          type: string
+          default: null
+        ns_port:
+          type: string
+          default: 8888
+        name:
+          type: string
+          default: QickInstrument
+  cover: mfr_fermilab_qick.webp
+  device_params:
+    支持操作数: 3
+  manufacturer: Fermilab (QICK)
+  model:
+    name: QICK Instrument 量子仪器控制平台
+    type: device
+  name: QICK Instrument 量子仪器控制平台
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: mfr_fermilab_qick.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

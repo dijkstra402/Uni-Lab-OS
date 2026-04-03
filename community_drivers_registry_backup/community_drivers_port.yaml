@@ -1,0 +1,167 @@
+port:
+  class:
+    module: unilabos.devices.serial.port:Port
+    type: python
+    status_types:
+      serial_number: String
+      channel_count: String
+      stages: String
+    action_value_mappings:
+      auto-send_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fileno:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileno
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-recv_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: recv_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                block:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          block: true
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-serial_number:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-channel_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: channel_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_stages:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_stages
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                only_chan_idents:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cls:
+                  type: string
+                port:
+                  type: string
+                sn:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: 通用设备通信端口接口，支持串口、TCP等多种底层传输协议。
+    number等8个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        sn:
+          type: string
+          default: null
+  cover:
+  device_params:
+    支持操作数: 8
+  manufacturer:
+  model:
+    name: Communication Port 通用通信端口
+    type: device
+  name: Communication Port 通用通信端口
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon:
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

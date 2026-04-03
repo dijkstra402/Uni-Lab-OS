@@ -1,0 +1,111 @@
+robo_hat_controller:
+  class:
+    module: unilabos.devices.generic.controllers.serial.serial_controller:RoboHATController
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_serial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_serial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                img_arr:
+                  type: string
+                mode:
+                  type: string
+                recording:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run_threaded:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_threaded
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                img_arr:
+                  type: string
+                mode:
+                  type: string
+                recording:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Robo HAT Controller是由Robotics Masters生产的专业实验设备。Auto-imported from donkeycar/parts/robohat.py
+  category:
+  - 机械臂
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        cfg:
+          type: string
+          default: null
+        debug:
+          type: string
+          default: false
+  name: Robotics Masters Robo Hat
+  manufacturer: Robotics Masters
+  icon: robo_hat_controller.webp
+  tags:
+  - 机械臂
+  device_params:
+    支持操作数: '11'
+    读取操作: read_serial、run_threaded
+    控制操作: set_pulse、write_pwm
+    通信接口: 串口

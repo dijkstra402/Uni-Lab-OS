@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "test_tc038_d",
+      "name": "TC038D Temperature Controller",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "tc038_d",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "host": "127.0.0.1",
+        "port": 1502
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "readRegister",
+      "description": "readRegister",
+      "device": "test_tc038_d",
+      "action": "auto-readRegister",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "setpoint",
+      "description": "setpoint",
+      "device": "test_tc038_d",
+      "action": "auto-setpoint",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "writeMultiple",
+      "description": "writeMultiple",
+      "device": "test_tc038_d",
+      "action": "auto-writeMultiple",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "CRC16",
+      "description": "CRC16",
+      "device": "test_tc038_d",
+      "action": "auto-CRC16",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "temperature",
+      "description": "temperature",
+      "device": "test_tc038_d",
+      "action": "auto-temperature",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "TC038D Temperature Controller 工作流",
+    "description": "TC038D Temperature Controller 自动生成工作流",
+    "instrument": "TC038D Temperature Controller",
+    "generated_by": "driver-finder"
+  }
+}

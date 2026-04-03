@@ -1,0 +1,74 @@
+gev_device:
+  class:
+    module: unilabos.devices.gev.gev_device:GEVDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      update_device_list:
+        action_name: update_device_list
+        args_info:
+          timeout:
+            type: str
+      update_all_device_list:
+        action_name: update_all_device_list
+        args_info:
+          timeout:
+            type: str
+      get_device_number:
+        action_name: get_device_number
+      get_device_info:
+        action_name: get_device_info
+      open_device_by_index:
+        action_name: open_device_by_index
+        args_info:
+          index:
+            type: str
+          access_mode:
+            type: str
+      open_device_by_sn:
+        action_name: open_device_by_sn
+        args_info:
+          sn:
+            type: str
+          access_mode:
+            type: str
+      open_device_by_user_id:
+        action_name: open_device_by_user_id
+        args_info:
+          user_id:
+            type: str
+          access_mode:
+            type: str
+      open_device_by_ip:
+        action_name: open_device_by_ip
+        args_info:
+          ip:
+            type: str
+          access_mode:
+            type: str
+      open_device_by_mac:
+        action_name: open_device_by_mac
+        args_info:
+          mac:
+            type: str
+          access_mode:
+            type: str
+  description: GEV Device是由Open Standard (GigE Vision)生产的表征设备，主要功能包括关闭、加载、导出、成像、打开、捕获。支持Signal, Slot, convert等操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        handle:
+          type: string
+          default: null
+  name: Open Standard Device
+  manufacturer: Open Standard (GigE Vision)
+  icon: gev_device.webp
+  tags:
+  - 表征设备
+  device_params:
+    支持操作数: '68'
+    读取操作: get_device_number、get_device_info、is_readable、get_range、get
+    控制操作: set、set、set、set、set

@@ -1,0 +1,54 @@
+{
+  "nodes": [
+    {
+      "id": "test_arbin_spoofer",
+      "name": "Test ArbinSpoofer",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "arbin_spoofer",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "config": {}
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_arbin_spoofer",
+      "action": "auto-start",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_arbin_spoofer",
+      "action": "auto-update_channel_status",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_arbin_spoofer",
+      "action": "auto-stop",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "ArbinSpoofer 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "ArbinSpoofer",
+    "generated_by": "driver-finder"
+  }
+}

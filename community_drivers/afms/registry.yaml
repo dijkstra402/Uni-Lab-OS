@@ -1,0 +1,132 @@
+afms:
+  class:
+    module: unilabos.devices.generic.afms:AFMS
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+                procedure:
+                  type: string
+                expected_lengths:
+                  type: string
+                allowed_deviation:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mm:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-goto:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: goto
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_position:
+                  type: string
+                timeout:
+                  type: string
+                debug_prints:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-estop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Afms是由Adafruit Industries生产的实验执行&合成设备，主要功能包括停止、关闭、归零、设备连接、运动控制。支持Signal, Slot, get position等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '7'
+    读取操作: get_position
+    控制操作: estop
+    运动操作: home、move、goto
+    控制能力: 位置、时间
+    通信接口: 串口(RS-232)
+  manufacturer: Adafruit Industries
+  model:
+    name: Afms
+    type: device
+  name: Adafruit Industries AFMS
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: afms.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

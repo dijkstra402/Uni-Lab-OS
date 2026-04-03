@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "test_usb_device",
+      "name": "USB Device Interface",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "usb_device",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "id_vendor": "",
+        "id_product": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_usb_device",
+      "action": "auto-read_raw",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "write",
+      "description": "自动补充动作: write",
+      "device": "test_usb_device",
+      "action": "auto-write",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "read",
+      "description": "自动补充动作: read",
+      "device": "test_usb_device",
+      "action": "auto-read",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "write read",
+      "description": "自动补充动作: write_read",
+      "device": "test_usb_device",
+      "action": "auto-write_read",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "write read raw",
+      "description": "自动补充动作: write_read_raw",
+      "device": "test_usb_device",
+      "action": "auto-write_read_raw",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "UsbDevice 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "UsbDevice",
+    "generated_by": "driver-finder"
+  }
+}

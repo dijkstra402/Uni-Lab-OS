@@ -1,0 +1,58 @@
+mfli:
+  class:
+    module: unilabos.devices.lock_in_amplifier.mfli:MFLI
+    type: python
+    status_types:
+      idn: String
+    action_value_mappings:
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Zurich Instruments MFLI Lock-in Amplifier 仪器 锁相放大器是由Zurich Instruments生产的表征设备。支持Signal, Slot, get idn等操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          type: string
+          default: null
+        device:
+          type: string
+          default: null
+        serverhost:
+          type: string
+          default: localhost
+        existing_session:
+          type: string
+          default: null
+  device_params:
+    品牌: Zurich Instruments
+    功能: 数据采集
+    操作数: 1
+  manufacturer: Zurich Instruments
+  model:
+    name: Zurich Instruments MFLI Lock-in Amplifier 仪器 分析仪器 锁相放大器
+    type: device
+  name: Zurich Instruments MFLI Lock-in Amplifier
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: mfli.webp
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

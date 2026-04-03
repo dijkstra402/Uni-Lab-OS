@@ -1,0 +1,76 @@
+acq2106__mgtdram8:
+  class:
+    module: unilabos.devices.generic.acq2106_mgtdram8:Acq2106_Mgtdram8
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-run_mgt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_mgt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filter:
+                  type: string
+                set_arm:
+                  type: string
+        goal_default:
+          filter: <unilabos.devices.generic.acq2106_mgtdram8.NullFilter object at
+            0x1031f6810>
+          set_arm: true
+        handles: {}
+      auto-create_mgtdram_pull_client:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_mgtdram_pull_client
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Acq2106  Mgtdram8驱动，支持run mgt/create mgtdram pull client。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        uut:
+          type: string
+          default: null
+        monitor:
+          type: string
+          default: true
+        s0_client:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    可控参数: filter、set_arm
+    操作数: 2
+  manufacturer: ''
+  model:
+    name: '' acq2106__mgtdram8
+    type: device
+  name: acq2106__mgtdram8 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

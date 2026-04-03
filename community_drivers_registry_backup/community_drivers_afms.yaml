@@ -1,0 +1,150 @@
+afms:
+  class:
+    module: unilabos.devices.generic.afms_driver:AFMS
+    type: python
+    status_types:
+      position: String
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+                procedure:
+                  type: string
+                expected_lengths:
+                  type: string
+                allowed_deviation:
+                  type: string
+        goal_default:
+          timeout: 300.0
+          procedure: default
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mm:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          timeout: 300.0
+        handles: {}
+      auto-goto:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: goto
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_position:
+                  type: string
+                timeout:
+                  type: string
+                debug_prints:
+                  type: string
+        goal_default:
+          timeout: 300.0
+          debug_prints: false
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-estop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Afms驱动，支持connect/home/move/goto/close等6个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        location:
+          type: string
+          default: /dev/ttyACM0
+        spm:
+          type: string
+          default: 10
+        homer:
+          type: string
+          default: default
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 运动控制
+    可控参数: allowed_deviation、debug_prints、expected_lengths、new_position、procedure、timeout
+    操作数: 6
+  manufacturer: ''
+  model:
+    name: '' afms 原子力显微镜
+    type: device
+  name: afms 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

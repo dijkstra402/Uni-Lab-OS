@@ -1,0 +1,804 @@
+thermo_microscope:
+  class:
+    module: unilabos.devices.generic.thermo_microscope:ThermoMicroscope
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-reconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect_to_microscope:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_to_microscope
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ip_address:
+                  type: string
+                port:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-acquire_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                image_settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-last_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: last_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                beam_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-acquire_chamber_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_chamber_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-autocontrast:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: autocontrast
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                beam_type:
+                  type: string
+                reduced_area:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-auto_focus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_focus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                beam_type:
+                  type: string
+                reduced_area:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-beam_shift:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: beam_shift
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dx:
+                  type: number
+                dy:
+                  type: number
+                beam_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_stage_absolute:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_stage_absolute
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_stage_relative:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_stage_relative
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stable_move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stable_move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dx:
+                  type: number
+                dy:
+                  type: number
+                beam_type:
+                  type: string
+                static_wd:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-vertical_move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: vertical_move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dy:
+                  type: number
+                dx:
+                  type: number
+                static_wd:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-get_stage_orientation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_stage_orientation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stage_position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-safe_absolute_stage_movement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: safe_absolute_stage_movement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stage_position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-project_stable_move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: project_stable_move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dx:
+                  type: number
+                dy:
+                  type: number
+                beam_type:
+                  type: string
+                base_position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-insert_manipulator:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: insert_manipulator
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-retract_manipulator:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: retract_manipulator
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_manipulator_relative:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_manipulator_relative
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_manipulator_absolute:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_manipulator_absolute
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_manipulator_corrected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_manipulator_corrected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dx:
+                  type: number
+                dy:
+                  type: number
+                beam_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_manipulator_to_position_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_manipulator_to_position_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                offset:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setup_milling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_milling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mill_settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run_milling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_milling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                milling_current:
+                  type: number
+                milling_voltage:
+                  type: number
+                asynch:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-finish_milling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: finish_milling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                imaging_current:
+                  type: number
+                imaging_voltage:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-start_milling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_milling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_milling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_milling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pause_milling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pause_milling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-resume_milling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resume_milling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_milling_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_milling_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_patterns:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_patterns
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-estimate_milling_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estimate_milling_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-draw_rectangle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: draw_rectangle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pattern_settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-draw_line:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: draw_line
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pattern_settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-draw_circle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: draw_circle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pattern_settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-draw_bitmap_pattern:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: draw_bitmap_pattern
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pattern_settings:
+                  type: string
+                path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_gis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_gis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-insert_gis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: insert_gis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                insert_position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-retract_gis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: retract_gis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gis_turn_heater_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gis_turn_heater_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gas:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-cryo_deposition_v2:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cryo_deposition_v2
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gis_settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setup_sputter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_sputter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                protocol:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-draw_sputter_pattern:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: draw_sputter_pattern
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hfw:
+                  type: number
+                line_pattern_length:
+                  type: number
+                sputter_time:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-run_sputter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_sputter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-finish_sputter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: finish_sputter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                application_file:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_available_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_available_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                beam_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_available_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_available_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                values:
+                  type: string
+                beam_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Thermo Microscope设备驱动。
+  category:
+  - 实验执行&合成设备
+  cover: thermo_microscope.webp
+  device_params:
+    支持操作数: '47'
+  manufacturer: Thermo Fisher Scientific
+  model:
+    name: Thermo Microscope
+    type: device
+  name: Thermo Microscope
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: thermo_microscope.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

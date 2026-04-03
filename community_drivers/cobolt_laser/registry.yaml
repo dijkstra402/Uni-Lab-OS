@@ -1,0 +1,58 @@
+cobolt_laser:
+  class:
+    module: unilabos.devices.generic.cobolt_laser:CoboltLaser
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setPower:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setPower
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                powerInWatts:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Cobolt Laser是由Cobolt AB (HÜBNER Photonics)生产的实验执行&合成设备，主要功能包括关闭、写入数据、打开、读取数据。支持Signal, Slot, power等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '7'
+    读取操作: read、readline
+    控制操作: write、setPower
+    控制能力: 功率
+  manufacturer: Cobolt AB (HÜBNER Photonics)
+  model:
+    name: Cobolt Laser
+    type: device
+  name: Cobolt AB Cobolt Debug Serial
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: cobolt0601.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

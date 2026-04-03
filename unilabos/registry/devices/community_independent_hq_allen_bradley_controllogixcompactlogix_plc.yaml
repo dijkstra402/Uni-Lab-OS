@@ -1,0 +1,184 @@
+community.device.independent.allen_bradley_controllogixcompactlogix_plc:
+  category:
+  - plc
+  - community_independent_hq_allen_bradley_controllogixcompactlogix_plc
+  class:
+    action_value_mappings:
+      auto-cleanup:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: cleanup的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: cleanup参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-initialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: initialize的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: initialize参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-start_stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          purpose: ''
+          stir_speed: null
+          vessel: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: start_stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                purpose:
+                  default: ''
+                  type: string
+                stir_speed:
+                  type: number
+                vessel:
+                  type: string
+              required:
+              - vessel
+              - stir_speed
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: start_stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          settling_time: null
+          stir_speed: null
+          stir_time: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                settling_time:
+                  type: number
+                stir_speed:
+                  type: number
+                stir_time:
+                  type: number
+              required:
+              - stir_time
+              - stir_speed
+              - settling_time
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop_stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          vessel: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: stop_stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                vessel:
+                  type: string
+              required:
+              - vessel
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: stop_stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+    module: unilabos.devices.virtual.virtual_stirrer:VirtualStirrer
+    status_types: {}
+    type: python
+  config_info: []
+  cover: hq_allen_bradley_controllogixcompactlogix_plc.png
+  description: Allen-Bradley Logix系列PLC EtherNet/IP驱动。
+  device_params:
+    品牌: Allen-Bradley
+    来源仓库: pylogix_e0914da8
+    设备类: connection
+    设备类型: PLC
+    通信: EtherNet/IP CIP
+  handles: []
+  icon: hq_allen_bradley_controllogixcompactlogix_plc.png
+  init_param_schema:
+    config:
+      properties:
+        config:
+          type: object
+        device_id:
+          type: string
+      required: []
+      type: object
+    data:
+      properties: {}
+      required: []
+      type: object
+  manufacturer: Rockwell Automation
+  model:
+    name: Allen-Bradley ControlLogix/CompactLogix PLC
+    type: device
+  name: Allen-Bradley ControlLogix/CompactLogix PLC控制器
+  resource_type: device
+  scene:
+    domain: Industrial
+    scene_name: Process Control
+    step: Control
+  tags:
+  - 表征设备
+  version: 1.0.0

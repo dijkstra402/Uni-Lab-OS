@@ -1,0 +1,51 @@
+tcp_client:
+  class:
+    module: unilabos.devices.custom.tcp_client:TcpClient
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: A generic reconnecting asyncio TCP client
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          type: string
+          default: null
+        timeout:
+          type: number
+          default: 1.0
+  cover: ''
+  device_params:
+    品牌: ''''
+    操作数: 1
+  manufacturer: ''
+  model:
+    name: '' tcp_client
+    type: device
+  name: tcp_client 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

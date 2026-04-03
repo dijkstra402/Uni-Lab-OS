@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "test_device_manager",
+      "name": "Test DeviceManager",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "device_manager",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "start_icl": true,
+        "icl_ip": "127.0.0.1",
+        "icl_port": "25010",
+        "enable_binary_messages": true,
+        "enable_logging": false
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_device_manager",
+      "action": "auto-start",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_device_manager",
+      "action": "auto-stop",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "start icl",
+      "description": "自动补充动作: start_icl",
+      "device": "test_device_manager",
+      "action": "auto-start_icl",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "stop icl",
+      "description": "自动补充动作: stop_icl",
+      "device": "test_device_manager",
+      "action": "auto-stop_icl",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "discover devices",
+      "description": "自动补充动作: discover_devices",
+      "device": "test_device_manager",
+      "action": "auto-discover_devices",
+      "action_args": {
+        "error_on_no_device": false
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "DeviceManager 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "DeviceManager",
+    "generated_by": "driver-finder"
+  }
+}

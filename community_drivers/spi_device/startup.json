@@ -1,0 +1,194 @@
+{
+  "nodes": [
+    {
+      "id": "test_spi_device",
+      "name": "nGauge 原子力显微镜（AFM）｜芯片式AFM｜纳米表面形貌分析仪｜ICSPI便携式原子力显微镜",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "spi_device",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "device_id": "",
+        "message_queue": "",
+        "alert_queue": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_spi_device",
+      "action": "auto-connect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_spi_device",
+      "action": "auto-set_integration_time_ms",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_spi_device",
+      "action": "auto-wait_for_data_ready",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_spi_device",
+      "action": "auto-decode_read_response",
+      "action_args": {
+        "missing_echo_len": 0
+      }
+    },
+    {
+      "step": 5,
+      "name": "init eeprom",
+      "description": "自动补充动作: init_eeprom",
+      "device": "test_spi_device",
+      "action": "auto-init_eeprom",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "disconnect",
+      "description": "自动补充动作: disconnect",
+      "device": "test_spi_device",
+      "action": "auto-disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "acquire data",
+      "description": "自动补充动作: acquire_data",
+      "device": "test_spi_device",
+      "action": "auto-acquire_data",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "set gain",
+      "description": "自动补充动作: set_gain",
+      "device": "test_spi_device",
+      "action": "auto-set_gain",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "change setting",
+      "description": "自动补充动作: change_setting",
+      "device": "test_spi_device",
+      "action": "auto-change_setting",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "to hex",
+      "description": "自动补充动作: to_hex",
+      "device": "test_spi_device",
+      "action": "auto-to_hex",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "check crc",
+      "description": "自动补充动作: check_crc",
+      "device": "test_spi_device",
+      "action": "auto-check_crc",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "compute crc",
+      "description": "自动补充动作: compute_crc",
+      "device": "test_spi_device",
+      "action": "auto-compute_crc",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "fix crc",
+      "description": "自动补充动作: fix_crc",
+      "device": "test_spi_device",
+      "action": "auto-fix_crc",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "errorcode to string",
+      "description": "自动补充动作: errorcode_to_string",
+      "device": "test_spi_device",
+      "action": "auto-errorcode_to_string",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "validate write response",
+      "description": "自动补充动作: validate_write_response",
+      "device": "test_spi_device",
+      "action": "auto-validate_write_response",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "buffer bytearray",
+      "description": "自动补充动作: buffer_bytearray",
+      "device": "test_spi_device",
+      "action": "auto-buffer_bytearray",
+      "action_args": {}
+    },
+    {
+      "step": 17,
+      "name": "send command",
+      "description": "自动补充动作: send_command",
+      "device": "test_spi_device",
+      "action": "auto-send_command",
+      "action_args": {}
+    },
+    {
+      "step": 18,
+      "name": "flush input buffer",
+      "description": "自动补充动作: flush_input_buffer",
+      "device": "test_spi_device",
+      "action": "auto-flush_input_buffer",
+      "action_args": {}
+    },
+    {
+      "step": 19,
+      "name": "gain to ff",
+      "description": "自动补充动作: gain_to_ff",
+      "device": "test_spi_device",
+      "action": "auto-gain_to_ff",
+      "action_args": {}
+    },
+    {
+      "step": 20,
+      "name": "read page",
+      "description": "自动补充动作: read_page",
+      "device": "test_spi_device",
+      "action": "auto-read_page",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "SPIDevice 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "SPIDevice",
+    "generated_by": "driver-finder"
+  }
+}

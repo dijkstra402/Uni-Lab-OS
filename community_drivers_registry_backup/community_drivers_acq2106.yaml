@@ -1,0 +1,153 @@
+acq2106:
+  class:
+    module: unilabos.devices.generic.acq2106:Acq2106
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_mb_clk:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mb_clk
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hz:
+                  type: string
+                src:
+                  type: string
+                fin:
+                  type: string
+        goal_default:
+          hz: 4000000
+          src: zclk
+          fin: 1000000
+        handles: {}
+      auto-set_sync_routing_slave:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_sync_routing_slave
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_master_trg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_master_trg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trg:
+                  type: string
+                edge:
+                  type: string
+                enabled:
+                  type: string
+        goal_default:
+          edge: rising
+          enabled: true
+        handles: {}
+      auto-set_MR:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_MR
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: string
+                evsel0:
+                  type: string
+                evsel1:
+                  type: string
+                MR10DEC:
+                  type: string
+        goal_default:
+          evsel0: 4
+          evsel1: 5
+          MR10DEC: 8
+        handles: {}
+      auto-wr_PPS_active:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wr_PPS_active
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Acq2106驱动，支持set mb clk/set sync routing slave/set master trg/set MR/wr
+    PPS active。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        _uut:
+          type: string
+          default: null
+        monitor:
+          type: string
+          default: true
+        s0_client:
+          type: string
+          default: null
+        has_dsp:
+          type: string
+          default: false
+        has_comms:
+          type: string
+          default: true
+        has_wr:
+          type: string
+          default: false
+        has_hudp:
+          type: string
+          default: false
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置
+    可控参数: MR10DEC、edge、enable、enabled、evsel0、evsel1、fin、src
+    操作数: 5
+  manufacturer: ''
+  model:
+    name: '' acq2106
+    type: device
+  name: acq2106 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

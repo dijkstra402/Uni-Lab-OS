@@ -1,0 +1,145 @@
+thorlabs_dc4100:
+  class:
+    module: unilabos.devices.led_controller.dc4100:ThorlabsDC4100
+    type: python
+    status_types:
+      brightness: String
+      serial_number: String
+      firmware: String
+      manufacturer: String
+    action_value_mappings:
+      auto-connect_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_led_channel_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_led_channel_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-led_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: led_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-led_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: led_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_brightness:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_brightness
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                brightness:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_if_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_if_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Thorlabs Dc4100驱动，支持connect device/set led channel state/led on/led
+    off/set brightness等6个操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        baudrate:
+          type: string
+          default: null
+        timeout:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置
+    可控参数: brightness、通道、state
+    操作数: 6
+  manufacturer: ''
+  model:
+    name: '' thorlabs_dc4100
+    type: device
+  name: thorlabs_dc4100 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

@@ -1,0 +1,733 @@
+entity:
+  class:
+    module: unilabos.devices.universal.entity:Entity
+    type: python
+    status_types:
+      is_fixed_base: String
+      is_articulated: String
+      is_actuated: String
+      has_tendon_actuators: String
+      has_site_actuators: String
+      is_mocap: String
+      spec: String
+      data: String
+      actuators: String
+      all_joint_names: String
+      joint_names: String
+      body_names: String
+      geom_names: String
+      tendon_names: String
+      site_names: String
+      actuator_names: String
+      num_joints: String
+      num_bodies: String
+      num_geoms: String
+      num_sites: String
+      num_actuators: String
+      num_tendons: String
+      camera_names: String
+      light_names: String
+      num_cameras: String
+      num_lights: String
+      material_names: String
+      num_materials: String
+      root_body: String
+    action_value_mappings:
+      auto-find_bodies:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_bodies
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name_keys:
+                  type: string
+                preserve_order:
+                  type: boolean
+        goal_default:
+          preserve_order: false
+        handles: {}
+      auto-find_joints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_joints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name_keys:
+                  type: string
+                joint_subset:
+                  type: string
+                preserve_order:
+                  type: boolean
+        goal_default:
+          preserve_order: false
+        handles: {}
+      auto-find_actuators:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_actuators
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name_keys:
+                  type: string
+                actuator_subset:
+                  type: string
+                preserve_order:
+                  type: boolean
+        goal_default:
+          preserve_order: false
+        handles: {}
+      auto-find_tendons:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_tendons
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name_keys:
+                  type: string
+                tendon_subset:
+                  type: string
+                preserve_order:
+                  type: boolean
+        goal_default:
+          preserve_order: false
+        handles: {}
+      auto-find_joints_by_actuator_names:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_joints_by_actuator_names
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                actuator_name_keys:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-find_geoms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_geoms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name_keys:
+                  type: string
+                geom_subset:
+                  type: string
+                preserve_order:
+                  type: boolean
+        goal_default:
+          preserve_order: false
+        handles: {}
+      auto-find_sites:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_sites
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name_keys:
+                  type: string
+                site_subset:
+                  type: string
+                preserve_order:
+                  type: boolean
+        goal_default:
+          preserve_order: false
+        handles: {}
+      auto-find_cameras:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_cameras
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name_keys:
+                  type: string
+                camera_subset:
+                  type: string
+                preserve_order:
+                  type: boolean
+        goal_default:
+          preserve_order: false
+        handles: {}
+      auto-find_lights:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_lights
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name_keys:
+                  type: string
+                light_subset:
+                  type: string
+                preserve_order:
+                  type: boolean
+        goal_default:
+          preserve_order: false
+        handles: {}
+      auto-find_materials:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_materials
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name_keys:
+                  type: string
+                material_subset:
+                  type: string
+                preserve_order:
+                  type: boolean
+        goal_default:
+          preserve_order: false
+        handles: {}
+      auto-compile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: compile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_xml:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_xml
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xml_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-to_zip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_zip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mj_model:
+                  type: string
+                model:
+                  type: string
+                data:
+                  type: string
+                device:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dt:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_data_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_data_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_ctrl_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_ctrl_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ctrl:
+                  type: string
+                ctrl_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_root_state_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_root_state_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                root_state:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_root_link_pose_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_root_link_pose_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                root_pose:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_root_link_velocity_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_root_link_velocity_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                root_velocity:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_root_com_velocity_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_root_com_velocity_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                root_velocity:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_joint_state_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_joint_state_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                velocity:
+                  type: string
+                joint_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_joint_position_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_joint_position_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                joint_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_joint_velocity_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_joint_velocity_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                velocity:
+                  type: string
+                joint_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_joint_position_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_joint_position_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                joint_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_joint_velocity_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_joint_velocity_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                velocity:
+                  type: string
+                joint_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_joint_effort_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_joint_effort_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                effort:
+                  type: string
+                joint_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_tendon_len_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_tendon_len_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                length:
+                  type: string
+                tendon_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_tendon_vel_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_tendon_vel_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                velocity:
+                  type: string
+                tendon_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_tendon_effort_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_tendon_effort_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                effort:
+                  type: string
+                tendon_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_site_effort_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_site_effort_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                effort:
+                  type: string
+                site_ids:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_external_wrench_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_external_wrench_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                forces:
+                  type: string
+                torques:
+                  type: string
+                env_ids:
+                  type: string
+                body_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_mocap_pose_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_mocap_pose_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mocap_pose:
+                  type: string
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Entity驱动，支持find bodies/find joints/find actuators/find tendons/find
+    joints by actuator names等35个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        cfg:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置、数据采集、运动控制
+    可控参数: actuator_name_keys、actuator_subset、body_ids、camera_subset、ctrl、ctrl_ids、data、device
+    操作数: 35
+  manufacturer: ''
+  model:
+    name: '' entity
+    type: device
+  name: entity 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

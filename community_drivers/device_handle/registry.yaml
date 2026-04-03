@@ -1,0 +1,301 @@
+device_handle:
+  class:
+    module: unilabos.devices.generic.device_handle:DeviceHandle
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-bulkWrite:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bulkWrite
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+                buffer:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-bulkRead:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bulkRead
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+                size:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-interruptWrite:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: interruptWrite
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+                buffer:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-interruptRead:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: interruptRead
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+                size:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-controlMsg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: controlMsg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                requestType:
+                  type: string
+                request:
+                  type: string
+                buffer:
+                  type: string
+                value:
+                  type: string
+                index:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clearHalt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clearHalt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-claimInterface:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: claimInterface
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                interface:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-releaseInterface:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: releaseInterface
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-resetEndpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resetEndpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setConfiguration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setConfiguration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                configuration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setAltInterface:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setAltInterface
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                alternate:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getString:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getString
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+                length:
+                  type: string
+                langid:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getDescriptor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDescriptor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                desc_type:
+                  type: string
+                desc_index:
+                  type: string
+                length:
+                  type: string
+                endpoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-detachKernelDriver:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: detachKernelDriver
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                interface:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Device Handle是一款实验执行&合成设备，主要功能包括写入数据、复位、打开、读取数据。支持Signal, Slot, busses等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '16'
+    读取操作: bulkRead、interruptRead、getString、getDescriptor
+    控制操作: bulkWrite、interruptWrite、reset、resetEndpoint、setConfiguration 等6个
+    控制能力: 时间
+    通信接口: USB
+  manufacturer: Open Source
+  model:
+    name: Device Handle
+    type: device
+  name: Endpoint descriptor object
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

@@ -1,0 +1,121 @@
+siteclient:
+  class:
+    module: unilabos.devices.generic.siteclient:Siteclient
+    type: python
+    status_types:
+      knob: String
+    action_value_mappings:
+      auto-synchronized:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: synchronized
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                f:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-build_knobs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: build_knobs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                knobstr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-help:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: help
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                regex:
+                  type: string
+        goal_default:
+          regex: .*
+        handles: {}
+      auto-set_knob:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_knob
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Siteclient驱动，支持synchronized/sr/build knobs/help/set knob。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        addr:
+          type: string
+          default: null
+        port:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置
+    可控参数: knobstr、name、regex、value
+    操作数: 5
+  manufacturer: ''
+  model:
+    name: '' siteclient
+    type: device
+  name: siteclient 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

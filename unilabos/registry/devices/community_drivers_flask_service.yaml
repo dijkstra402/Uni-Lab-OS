@@ -1,0 +1,71 @@
+flask_service:
+  class:
+    module: unilabos.devices.flask_service.flask_service:FlaskService
+    type: python
+    status_types:
+      app: String
+    action_value_mappings:
+      auto-register_routes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: register_routes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                route_handler:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Manages the Flask application and HTTP server
+  category:
+  - flask_service
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: 0.0.0.0
+        port:
+          type: integer
+          default: 5000
+        logger:
+          type: string
+          default: null
+  name: Flask Service
+  manufacturer: Open Source
+  cover: ascii_stl__writer.webp
+  icon: ascii_stl__writer.webp

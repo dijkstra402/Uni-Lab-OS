@@ -481,7 +481,7 @@ class MessageProcessor:
                     ping_interval=WSConfig.ping_interval,
                     ping_timeout=10,
                     close_timeout=5,
-                    additional_headers={
+                    extra_headers={
                         "Authorization": f"Lab {BasicConfig.auth_secret()}",
                         "EdgeSession": f"{self.session_id}",
                     },

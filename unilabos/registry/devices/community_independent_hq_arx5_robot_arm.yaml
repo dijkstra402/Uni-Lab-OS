@@ -1,0 +1,184 @@
+community.device.independent.arx5_robot_arm:
+  category:
+  - robot_arm
+  - community_independent_hq_arx5_robot_arm
+  class:
+    action_value_mappings:
+      auto-cleanup:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: cleanup的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: cleanup参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-initialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: initialize的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: initialize参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-start_stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          purpose: ''
+          stir_speed: null
+          vessel: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: start_stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                purpose:
+                  default: ''
+                  type: string
+                stir_speed:
+                  type: number
+                vessel:
+                  type: string
+              required:
+              - vessel
+              - stir_speed
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: start_stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          settling_time: null
+          stir_speed: null
+          stir_time: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                settling_time:
+                  type: number
+                stir_speed:
+                  type: number
+                stir_time:
+                  type: number
+              required:
+              - stir_time
+              - stir_speed
+              - settling_time
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop_stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          vessel: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: stop_stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                vessel:
+                  type: string
+              required:
+              - vessel
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: stop_stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+    module: unilabos.devices.virtual.virtual_stirrer:VirtualStirrer
+    status_types: {}
+    type: python
+  config_info: []
+  cover: ''
+  description: ARX5桌面级机械臂驱动，用于轻量化自动化操作。
+  device_params:
+    SDK: arx5-sdk
+    来源仓库: arx5-sdk_d6320eff
+    自由度: 5轴
+    设备类: arx5_client
+    设备类型: 桌面机械臂
+  handles: []
+  icon: hq_arx5_robot_arm.png
+  init_param_schema:
+    config:
+      properties:
+        config:
+          type: object
+        device_id:
+          type: string
+      required: []
+      type: object
+    data:
+      properties: {}
+      required: []
+      type: object
+  manufacturer: ARX Robotics
+  model:
+    name: ARX5 Robot Arm
+    type: device
+  name: ARX5 机械臂
+  resource_type: device
+  scene:
+    domain: Robotics
+    scene_name: Sample Manipulation
+    step: Transportation
+  tags:
+  - 机械臂
+  version: 1.0.0

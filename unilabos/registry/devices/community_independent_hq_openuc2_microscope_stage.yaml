@@ -1,0 +1,184 @@
+community.device.independent.openuc2_microscope_stage:
+  category:
+  - microscope_stage
+  - community_independent_hq_openuc2_microscope_stage
+  class:
+    action_value_mappings:
+      auto-cleanup:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: cleanup的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: cleanup参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-initialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: initialize的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: initialize参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-start_stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          purpose: ''
+          stir_speed: null
+          vessel: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: start_stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                purpose:
+                  default: ''
+                  type: string
+                stir_speed:
+                  type: number
+                vessel:
+                  type: string
+              required:
+              - vessel
+              - stir_speed
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: start_stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          settling_time: null
+          stir_speed: null
+          stir_time: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                settling_time:
+                  type: number
+                stir_speed:
+                  type: number
+                stir_time:
+                  type: number
+              required:
+              - stir_time
+              - stir_speed
+              - settling_time
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop_stir:
+        feedback: {}
+        goal: {}
+        goal_default:
+          vessel: null
+        handles: {}
+        placeholder_keys: {}
+        result: {}
+        schema:
+          description: stop_stir的参数schema
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                vessel:
+                  type: string
+              required:
+              - vessel
+              type: object
+            result:
+              type: boolean
+          required:
+          - goal
+          title: stop_stir参数
+          type: object
+        type: UniLabJsonCommandAsync
+    module: unilabos.devices.virtual.virtual_stirrer:VirtualStirrer
+    status_types: {}
+    type: python
+  config_info: []
+  cover: hq_openuc2_microscope_stage.png
+  description: openUC2开源模块化显微镜GRBL运动控制驱动。
+  device_params:
+    控制器: GRBL/ESP32
+    来源仓库: UC2-MicronStage_371db961
+    设备类: grbl_driver
+    设备类型: 开源模块化显微镜平台
+    通信: Serial/USB
+  handles: []
+  icon: hq_openuc2_microscope_stage.png
+  init_param_schema:
+    config:
+      properties:
+        config:
+          type: object
+        device_id:
+          type: string
+      required: []
+      type: object
+    data:
+      properties: {}
+      required: []
+      type: object
+  manufacturer: openUC2 (Open Source)
+  model:
+    name: openUC2 Microscope Stage
+    type: device
+  name: OpenUC2 模块化显微镜平台
+  resource_type: device
+  scene:
+    domain: Characterization
+    scene_name: Microscopy
+    step: Stage Control
+  tags:
+  - 普通光学显微镜
+  version: 1.0.0

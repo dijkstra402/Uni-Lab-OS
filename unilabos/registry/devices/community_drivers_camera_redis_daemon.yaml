@@ -1,0 +1,58 @@
+camera_redis_daemon:
+  class:
+    module: unilabos.devices.generic.camera_redis_daemon:CameraRedisDaemon
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dummy:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-notify:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: notify
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                prop:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Camera Redis Daemon设备驱动。
+  category:
+  - 实验执行&合成设备
+  cover: ascii_stl__writer.webp
+  device_params:
+    支持操作数: '2'
+  manufacturer: Open Source
+  model:
+    name: Camera Redis Daemon
+    type: device
+  name: Camera Redis Daemon
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

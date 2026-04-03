@@ -1,0 +1,429 @@
+readout:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-configure_result_logger:
+        feedback: {}
+        goal: {}
+        goal_default:
+          averaging_mode: 0
+          num_averages: 1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                averaging_mode:
+                  type: string
+                num_averages:
+                  type: integer
+                result_length:
+                  type: integer
+                result_source:
+                  type: string
+              type: object
+          title: configure_result_logger
+          type: object
+        type: UniLabJsonCommand
+      auto-read:
+        feedback: {}
+        goal: {}
+        goal_default:
+          timeout: 10
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                timeout:
+                  type: number
+              type: object
+          title: read
+          type: object
+        type: UniLabJsonCommand
+      auto-read_integration_weights:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                slots:
+                  type: string
+              type: object
+          title: read_integration_weights
+          type: object
+        type: UniLabJsonCommand
+      auto-run:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: run
+          type: object
+        type: UniLabJsonCommand
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default:
+          sleep_time: 0.05
+          timeout: 10
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                sleep_time:
+                  type: number
+                timeout:
+                  type: number
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommand
+      auto-wait_done:
+        feedback: {}
+        goal: {}
+        goal_default:
+          sleep_time: 0.05
+          timeout: 10
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                sleep_time:
+                  type: number
+                timeout:
+                  type: number
+              type: object
+          title: wait_done
+          type: object
+        type: UniLabJsonCommand
+      auto-write_integration_weights:
+        feedback: {}
+        goal: {}
+        goal_default:
+          clear_existing: true
+          integration_delay: 0.0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                clear_existing:
+                  type: boolean
+                integration_delay:
+                  type: number
+                weights:
+                  type: string
+              type: object
+          title: write_integration_weights
+          type: object
+        type: UniLabJsonCommand
+      auto-enable_sequencer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_sequencer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                single:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-compile_sequencer_program:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: compile_sequencer_program
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sequencer_program:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-load_sequencer_program:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_sequencer_program
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sequencer_program:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_to_waveform_memory:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_to_waveform_memory
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pulses:
+                  type: string
+                clear_existing:
+                  type: string
+        goal_default:
+          clear_existing: true
+        handles: {}
+      auto-read_from_waveform_memory:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_from_waveform_memory
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slots:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-configure_sequencer_triggering:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configure_sequencer_triggering
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                aux_trigger:
+                  type: string
+                play_pulse_delay:
+                  type: number
+        goal_default:
+          play_pulse_delay: 0.0
+        handles: {}
+      auto-available_aux_trigger_inputs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: available_aux_trigger_inputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-configure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                qudit_settings:
+                  type: string
+                enable:
+                  type: string
+        goal_default:
+          enable: true
+        handles: {}
+      auto-get_qudits_results:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_qudits_results
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-configure_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configure_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                input_range:
+                  type: number
+                output_range:
+                  type: number
+                center_frequency:
+                  type: number
+                mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-available_trigger_inputs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: available_trigger_inputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-available_inputs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: available_inputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-factory_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: factory_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                deep:
+                  type: string
+        goal_default:
+          deep: true
+        handles: {}
+      auto-start_continuous_sw_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_continuous_sw_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_triggers:
+                  type: number
+                wait_time:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-max_qubits_per_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: max_qubits_per_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.shfqa.zi_shfqa_readout:Readout
+    status_types: {}
+    type: python
+  config_info: []
+  description: Quantum Readout Module驱动（Zurich Instruments），支持configure result logger/read/read
+    integration weights/run/stop等22个操作。
+  handles: []
+  icon: readout.webp
+  init_param_schema:
+    config:
+      properties:
+        parent:
+          default: null
+          type: string
+        snapshot_cache:
+          default: null
+          type: string
+        tk_object:
+          default: null
+          type: string
+        zi_node:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: readout.webp
+  device_params:
+    品牌: Zurich Instruments
+    功能: 参数配置、数据采集
+    可控参数: aux_trigger、averaging_mode、center_frequency、clear_existing、deep、enable、input_range、integration_delay
+    操作数: 22
+  manufacturer: Zurich Instruments
+  model:
+    name: Zurich Quantum Readout Module
+    type: device
+  name: Quantum Readout Module 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

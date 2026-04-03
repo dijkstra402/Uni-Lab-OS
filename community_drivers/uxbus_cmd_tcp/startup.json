@@ -1,0 +1,174 @@
+{
+  "nodes": [
+    {
+      "id": "test_uxbus_cmd_tcp",
+      "name": "UFACTORY Uxbus Cmd Tcp",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "uxbus_cmd_tcp",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "arm_port": "",
+        "set_feedback_key_tranid": "",
+        "host": "127.0.0.1",
+        "port": 1502
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-set_protocol_identifier",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-read_coil_bits",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "has err warn",
+      "description": "自动补充动作: has_err_warn",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-has_err_warn",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "check protocol header",
+      "description": "自动补充动作: check_protocol_header",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-check_protocol_header",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "check private protocol",
+      "description": "自动补充动作: check_private_protocol",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-check_private_protocol",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "send modbus request",
+      "description": "自动补充动作: send_modbus_request",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-send_modbus_request",
+      "action_args": {
+        "prot_id": -1,
+        "debug": false
+      }
+    },
+    {
+      "step": 7,
+      "name": "recv modbus response",
+      "description": "自动补充动作: recv_modbus_response",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-recv_modbus_response",
+      "action_args": {
+        "t_prot_id": -1,
+        "ret_raw": false,
+        "debug": false
+      }
+    },
+    {
+      "step": 8,
+      "name": "read input bits",
+      "description": "自动补充动作: read_input_bits",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-read_input_bits",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "read holding registers",
+      "description": "自动补充动作: read_holding_registers",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-read_holding_registers",
+      "action_args": {
+        "is_signed": false
+      }
+    },
+    {
+      "step": 10,
+      "name": "read input registers",
+      "description": "自动补充动作: read_input_registers",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-read_input_registers",
+      "action_args": {
+        "is_signed": false
+      }
+    },
+    {
+      "step": 11,
+      "name": "write single coil bit",
+      "description": "自动补充动作: write_single_coil_bit",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-write_single_coil_bit",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "write single holding register",
+      "description": "自动补充动作: write_single_holding_register",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-write_single_holding_register",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "write multiple coil bits",
+      "description": "自动补充动作: write_multiple_coil_bits",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-write_multiple_coil_bits",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "write multiple holding registers",
+      "description": "自动补充动作: write_multiple_holding_registers",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-write_multiple_holding_registers",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "mask write holding register",
+      "description": "自动补充动作: mask_write_holding_register",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-mask_write_holding_register",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "write and read holding registers",
+      "description": "自动补充动作: write_and_read_holding_registers",
+      "device": "test_uxbus_cmd_tcp",
+      "action": "auto-write_and_read_holding_registers",
+      "action_args": {
+        "is_signed": false
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "UxbusCmdTcp 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "UxbusCmdTcp",
+    "generated_by": "driver-finder"
+  }
+}

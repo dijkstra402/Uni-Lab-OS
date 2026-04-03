@@ -1,0 +1,177 @@
+lakeshore350:
+  category:
+  - 冷热水机
+  class:
+    action_value_mappings:
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommand
+      auto-reset_and_clear:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: reset_and_clear
+          type: object
+        type: UniLabJsonCommand
+      auto-set_heater_range:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                heater_range:
+                  type: string
+                output:
+                  type: string
+              type: object
+          title: set_heater_range
+          type: object
+        type: UniLabJsonCommand
+      auto-set_setpoint:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                output:
+                  type: string
+                temperature_k:
+                  type: string
+              type: object
+          title: set_setpoint
+          type: object
+        type: UniLabJsonCommand
+      auto-setup_heater:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                max_current_code:
+                  type: string
+                output:
+                  type: string
+                resistance_code:
+                  type: string
+              type: object
+          title: setup_heater
+          type: object
+        type: UniLabJsonCommand
+      auto-setup_ramp:
+        feedback: {}
+        goal: {}
+        goal_default:
+          ramp_on: true
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                output:
+                  type: string
+                ramp_on:
+                  type: string
+                rate_k_per_min:
+                  type: string
+              type: object
+          title: setup_ramp
+          type: object
+        type: UniLabJsonCommand
+      auto-get_heater_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_heater_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sensor:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.generic.lakeshore350:Lakeshore350
+    status_types:
+      heater_output: String
+      temperature: String
+    type: python
+  config_info: []
+  cover: lakeshore350.webp
+  description: Lake Shore Model 350低温温度控制器驱动，用于实验温度闭环控制与温度日志采集。
+  device_params:
+    温度范围: 300mK - 400K
+    通道数: 4输入2输出
+    通信: GPIB/Serial/Ethernet
+    品牌: Lake Shore Cryotronics
+  handles: []
+  icon: lakeshore350.webp
+  init_param_schema:
+    config:
+      properties:
+        visa_address:
+          default: null
+          type: string
+      type: object
+  manufacturer: Lake Shore Cryotronics
+  model:
+    name: Lake Shore Model 350 低温温度控制器 温控设备 温度控制器
+    type: device
+  name: Lake Shore Model 350 低温温度控制器 温控设备 温度控制器
+  scene:
+    domain: Physics
+    scene_name: Cryogenic Measurement
+    step: Temperature Control
+  tags:
+  - 冷热水机
+  version: 1.0.0
+  resource_type: device

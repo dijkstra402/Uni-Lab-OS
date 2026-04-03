@@ -1,0 +1,90 @@
+parameter_control_module:
+  class:
+    module: unilabos.devices.parameter_control.parameter_control_module:ParameterControlModule
+    type: python
+    status_types:
+      leco_name: String
+      leco_host_port: String
+    action_value_mappings:
+      auto-value_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: value_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connect_tcp_ip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_tcp_ip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params_state:
+                  type: string
+                client_type:
+                  type: string
+        goal_default:
+          client_type: GRABBER
+        handles: {}
+      auto-connect_leco:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_leco
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                connect:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-process_tcpip_cmds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_tcpip_cmds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Parameter Control Module是一款实验执行&合成设备，主要功能包括停止、关闭、初始化、数据保存、日志记录、状态查询。支持Signal, Slot, append data等操作。
+  category:
+  - 实验执行&合成设备
+  name: Enum relating a given DAQType and a viewer type
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '28'
+    读取操作: get_dim、thread_status、get_leco_name、get_leco_host_port
+    控制操作: stop_grab
+    设备属性数: '5'
+    控制能力: 温度控制
+    通信接口: TCP/IP

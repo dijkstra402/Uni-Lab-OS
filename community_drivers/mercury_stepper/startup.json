@@ -1,0 +1,226 @@
+{
+  "nodes": [
+    {
+      "id": "test_mercury_stepper",
+      "name": "Test mercuryStepper",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "mercury_stepper",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "comPort": "COM4",
+        "baud": 115200,
+        "axes": [
+          "X",
+          "Y"
+        ],
+        "steppers": [
+          "M-229.25S",
+          "M-229.25S"
+        ]
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_mercury_stepper",
+      "action": "auto-ReInit",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_mercury_stepper",
+      "action": "auto-run_cmd",
+      "action_args": {
+        "query": false
+      }
+    },
+    {
+      "step": 3,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_mercury_stepper",
+      "action": "auto-GetControlReady",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_mercury_stepper",
+      "action": "auto-query",
+      "action_args": {
+        "extra_params": []
+      }
+    },
+    {
+      "step": 5,
+      "name": "teardown",
+      "description": "断开连接或执行收尾操作",
+      "device": "test_mercury_stepper",
+      "action": "auto-Cleanup",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "set",
+      "description": "自动补充动作: set",
+      "device": "test_mercury_stepper",
+      "action": "auto-set",
+      "action_args": {
+        "extra_params": [],
+        "omit_axis": false
+      }
+    },
+    {
+      "step": 7,
+      "name": "SetSoftLimits",
+      "description": "自动补充动作: SetSoftLimits",
+      "device": "test_mercury_stepper",
+      "action": "auto-SetSoftLimits",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "MoveTo",
+      "description": "自动补充动作: MoveTo",
+      "device": "test_mercury_stepper",
+      "action": "auto-MoveTo",
+      "action_args": {
+        "timeout": false
+      }
+    },
+    {
+      "step": 9,
+      "name": "GetPos",
+      "description": "自动补充动作: GetPos",
+      "device": "test_mercury_stepper",
+      "action": "auto-GetPos",
+      "action_args": {
+        "iChan": 0
+      }
+    },
+    {
+      "step": 10,
+      "name": "IsMoving",
+      "description": "自动补充动作: IsMoving",
+      "device": "test_mercury_stepper",
+      "action": "auto-IsMoving",
+      "action_args": {
+        "iChan": 0
+      }
+    },
+    {
+      "step": 11,
+      "name": "IsOnTarget",
+      "description": "自动补充动作: IsOnTarget",
+      "device": "test_mercury_stepper",
+      "action": "auto-IsOnTarget",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "RefreshPos",
+      "description": "自动补充动作: RefreshPos",
+      "device": "test_mercury_stepper",
+      "action": "auto-RefreshPos",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "GetLastPos",
+      "description": "自动补充动作: GetLastPos",
+      "device": "test_mercury_stepper",
+      "action": "auto-GetLastPos",
+      "action_args": {
+        "iChan": 0
+      }
+    },
+    {
+      "step": 14,
+      "name": "SetJoystick",
+      "description": "自动补充动作: SetJoystick",
+      "device": "test_mercury_stepper",
+      "action": "auto-SetJoystick",
+      "action_args": {
+        "on": true,
+        "chans": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "step": 15,
+      "name": "GetVelocity",
+      "description": "自动补充动作: GetVelocity",
+      "device": "test_mercury_stepper",
+      "action": "auto-GetVelocity",
+      "action_args": {
+        "iChan": 0
+      }
+    },
+    {
+      "step": 16,
+      "name": "SetVelocity",
+      "description": "自动补充动作: SetVelocity",
+      "device": "test_mercury_stepper",
+      "action": "auto-SetVelocity",
+      "action_args": {}
+    },
+    {
+      "step": 17,
+      "name": "GetChannelObject",
+      "description": "自动补充动作: GetChannelObject",
+      "device": "test_mercury_stepper",
+      "action": "auto-GetChannelObject",
+      "action_args": {}
+    },
+    {
+      "step": 18,
+      "name": "GetChannelPhase",
+      "description": "自动补充动作: GetChannelPhase",
+      "device": "test_mercury_stepper",
+      "action": "auto-GetChannelPhase",
+      "action_args": {}
+    },
+    {
+      "step": 19,
+      "name": "GetMin",
+      "description": "自动补充动作: GetMin",
+      "device": "test_mercury_stepper",
+      "action": "auto-GetMin",
+      "action_args": {
+        "iChan": 0
+      }
+    },
+    {
+      "step": 20,
+      "name": "GetMax",
+      "description": "自动补充动作: GetMax",
+      "device": "test_mercury_stepper",
+      "action": "auto-GetMax",
+      "action_args": {
+        "iChan": 0
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "mercuryStepper 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "mercuryStepper",
+    "generated_by": "driver-finder"
+  }
+}

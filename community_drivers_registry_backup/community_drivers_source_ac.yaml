@@ -1,0 +1,105 @@
+source_ac:
+  class:
+    module: unilabos.devices.source.source_ac:SourceAC
+    type: python
+    status_types:
+      volts: String
+      frequency: String
+      output: String
+      current: String
+    action_value_mappings:
+      auto-volts:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: volts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volts:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                boolean:
+                  type: string
+        goal_default:
+          boolean: false
+        handles: {}
+      auto-current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Source Ac驱动，支持volts/frequency/output/current。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        instrument:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 电学测量
+    可控参数: boolean、电流、volts
+    操作数: 4
+  manufacturer: ''
+  model:
+    name: '' source_ac
+    type: device
+  name: source_ac 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

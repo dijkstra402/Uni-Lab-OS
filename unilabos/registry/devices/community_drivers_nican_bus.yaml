@@ -1,0 +1,72 @@
+nican_bus:
+  class:
+    module: unilabos.devices.generic.nican_bus:NicanBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Nican BUS设备驱动。
+  category:
+  - 实验执行&合成设备
+  cover: digital_input_task.webp
+  device_params:
+    支持操作数: '3'
+  manufacturer: National Instruments
+  model:
+    name: Nican BUS
+    type: device
+  name: Nican BUS
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: digital_input_task.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

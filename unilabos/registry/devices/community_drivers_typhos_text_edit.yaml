@@ -1,0 +1,103 @@
+typhos_text_edit:
+  class:
+    module: unilabos.devices.common.typhos_text_edit:TyphosTextEdit
+    type: python
+    status_types:
+      variety_metadata: String
+    action_value_mappings:
+      auto-value_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: value_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_access_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_access_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_write_access:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Typhos/EPICS设备参数文本编辑界面组件，用于同步辐射光源控制系统。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        parent:
+          type: string
+          default: null
+        init_channel:
+          type: string
+          default: null
+        variety_metadata:
+          type: string
+          default: null
+        ophyd_signal:
+          type: string
+          default: null
+  cover: event_sequencer.webp
+  device_params:
+    支持操作数: 4
+  manufacturer: SLAC National Accelerator Lab
+  model:
+    name: Typhos Text Edit EPICS界面编辑器
+    type: device
+  name: Typhos Text Edit EPICS界面编辑器
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: event_sequencer.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

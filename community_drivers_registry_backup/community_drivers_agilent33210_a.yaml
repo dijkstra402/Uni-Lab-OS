@@ -1,0 +1,141 @@
+agilent33210_a:
+  class:
+    module: unilabos.devices.generic.agilent_33210a:Agilent33210A
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                str:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-beep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: beep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sleep:
+                  type: string
+        goal_default:
+          sleep: 0.5
+        handles: {}
+      auto-config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                freq:
+                  type: string
+                volts:
+                  type: string
+                shape:
+                  type: string
+        goal_default:
+          volts: 1
+          shape: SIN
+        handles: {}
+      auto-config_burst:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: config_burst
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ncyc:
+                  type: string
+        goal_default:
+          ncyc: 1
+        handles: {}
+      auto-config_free_running_burst:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: config_free_running_burst
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ncyc:
+                  type: string
+                rate:
+                  type: string
+        goal_default:
+          ncyc: 1
+          rate: 1
+        handles: {}
+  description: Agilent33210 A驱动，支持send/trigger/beep/config/config burst等6个操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ipaddr:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    可控参数: freq、ncyc、rate、shape、sleep、str、volts
+    操作数: 6
+  manufacturer: ''
+  model:
+    name: '' agilent33210_a
+    type: device
+  name: agilent33210_a 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

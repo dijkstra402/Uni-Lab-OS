@@ -1,0 +1,204 @@
+daq__move__hardware:
+  class:
+    module: unilabos.devices.daq_move.daq_move_hardware:DAQ_Move_Hardware
+    type: python
+    status_types:
+      title: String
+      actuator_value: String
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ini_stage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ini_stage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params_state:
+                  type: string
+                controller:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_abs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_abs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                polling:
+                  type: boolean
+        goal_default:
+          polling: true
+        handles: {}
+      auto-move_rel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_rel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rel_position:
+                  type: string
+                polling:
+                  type: boolean
+        goal_default:
+          polling: true
+        handles: {}
+      auto-Move_Stoped:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Move_Stoped
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_done:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_done
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-queue_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: queue_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop_motion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_motion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                settings_parameter_dict:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from packages/pymodaq/src/pymodaq/control_modules/daq_move.py
+  category:
+  - daq_move
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        actuator_type:
+          type: string
+          default: null
+        position:
+          type: string
+          default: null
+        title:
+          type: string
+          default: actuator
+  name: DAQ Move Hardware
+  manufacturer: National Instruments
+  cover: digital_input_task.webp
+  icon: digital_input_task.webp

@@ -1,0 +1,255 @@
+rt__backend__active:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-configure_instruments:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                compliance_v:
+                  type: string
+                current_ma:
+                  type: string
+              type: object
+          title: configure_instruments
+          type: object
+        type: UniLabJsonCommand
+      auto-connect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                k2400_visa:
+                  type: string
+                ls_visa:
+                  type: string
+              type: object
+          title: connect
+          type: object
+        type: UniLabJsonCommand
+      auto-set_heater_range:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                heater_range:
+                  type: string
+                output:
+                  type: string
+              type: object
+          title: set_heater_range
+          type: object
+        type: UniLabJsonCommand
+      auto-set_setpoint:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                output:
+                  type: string
+                temperature_k:
+                  type: string
+              type: object
+          title: set_setpoint
+          type: object
+        type: UniLabJsonCommand
+      auto-shutdown:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: shutdown
+          type: object
+        type: UniLabJsonCommand
+      auto-start_ramp:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                end_temp:
+                  type: string
+                rate_k_min:
+                  type: string
+              type: object
+          title: start_ramp
+          type: object
+        type: UniLabJsonCommand
+      auto-get_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_styles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_styles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-create_widgets:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_widgets
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-log:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: log
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reason:
+                  type: string
+        goal_default:
+          reason: ''
+        handles: {}
+      auto-set_ui_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ui_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                running:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.multi_instrument.keithley2400_lakeshore350.backend:RT_Backend_Active
+    status_types:
+      measurement: String
+      temperature: String
+    type: python
+  config_info: []
+  description: RT Measurement Backend (Active)是一款表征设备，主要功能包括停止、加热、参数配置、启动、扫描、日志记录。支持Signal, Slot, create widgets等操作。
+  handles: []
+  icon: rt__backend__active.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    功能: 参数配置、数据采集、温度控制
+    可控参数: compliance_v、current_ma、end_temp、heater_range、k2400_visa、ls_visa、message、输出
+    操作数: 14
+  manufacturer: Open Source
+  model:
+    name: Generic RT Measurement Backend (Active) 后端控制器
+    type: device
+  name: RT Measurement (Active)
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

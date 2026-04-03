@@ -1,0 +1,197 @@
+hamilton_tcp_backend:
+  category:
+  - 移液工作站
+  class:
+    action_value_mappings:
+      auto-read:
+        feedback: {}
+        goal: {}
+        goal_default:
+          num_bytes: 128
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                num_bytes:
+                  type: integer
+                timeout:
+                  type: string
+              type: object
+          title: read
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-read_exact:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                num_bytes:
+                  type: integer
+                timeout:
+                  type: string
+              type: object
+          title: read_exact
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-send_command:
+        feedback: {}
+        goal: {}
+        goal_default:
+          timeout: 10.0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                command:
+                  type: string
+                timeout:
+                  type: number
+              type: object
+          title: send_command
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-serialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: serialize
+          type: object
+        type: UniLabJsonCommand
+      auto-setup:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: setup
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-write:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                data:
+                  type: string
+                timeout:
+                  type: string
+              type: object
+          title: write
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-parse_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.liquid_handler.hamilton_tcp_backend:HamiltonTCPBackend
+    status_types:
+      is_connected: String
+    type: python
+  config_info: []
+  description: Hamilton Tcp Backend驱动（Hamilton Company），支持read/read exact/send command/serialize/setup等9个操作。
+  handles: []
+  icon: hamilton_tcp_backend.webp
+  init_param_schema:
+    config:
+      properties:
+        auto_reconnect:
+          default: true
+          type: boolean
+        host:
+          default: null
+          type: string
+        max_reconnect_attempts:
+          default: 3
+          type: integer
+        port:
+          default: null
+          type: integer
+        read_timeout:
+          default: 30.0
+          type: number
+        write_timeout:
+          default: 30.0
+          type: number
+      type: object
+  version: 1.0.0
+  cover: hamilton_tcp_backend.webp
+  device_params:
+    品牌: Hamilton Company
+    通道数: 多通道
+    接口类型: Ethernet
+  manufacturer: Hamilton Company
+  model:
+    name: Hamilton Tcp Backend 后端模块 移液工作站 后端控制器
+    type: device
+  name: Hamilton Tcp Backend 后端模块 移液工作站 后端控制器
+  tags:
+  - 移液工作站
+  resource_type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Liquid Handling

@@ -1,0 +1,75 @@
+signal:
+  class:
+    module: unilabos.devices.common.signals.psygnal_signal:Signal
+    type: python
+    status_types:
+      types: String
+      info: String
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                func:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                func:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-emit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: emit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Signal是一款实验执行&合成设备，主要功能包括停止、启动、设备连接、读取数据。支持Signal, Slot, emit等操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        info:
+          type: string
+          default: ImSwitch signal
+  name: The `threading.Lock` class
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '12'
+    读取操作: moveToThread、processPendingEventsCurrThread
+    控制操作: start、start、stop
+    运动操作: moveToThread
+    设备属性数: '5'

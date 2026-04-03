@@ -1,0 +1,69 @@
+mgt508:
+  class:
+    module: unilabos.devices.generic.mgt508:Mgt508
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-pull:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pull
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                verbose:
+                  type: string
+        goal_default:
+          verbose: false
+        handles: {}
+      auto-set_capture_length:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_capture_length
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mb:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Mgt508驱动，支持pull/set capture length。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        uut:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置、图像采集
+    可控参数: verbose
+    操作数: 2
+  manufacturer: ''
+  model:
+    name: '' mgt508
+    type: device
+  name: mgt508 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

@@ -1,0 +1,108 @@
+resources:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-read_layout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_layout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cls:
+                  type: string
+                layout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_liquid_classes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_liquid_classes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cls:
+                  type: string
+                include_1ml_channels:
+                  type: string
+                include_5ml_channels:
+                  type: string
+                include_96head:
+                  type: string
+                include_384head:
+                  type: string
+                include_washstations:
+                  type: string
+                include_default:
+                  type: string
+                include_custom:
+                  type: string
+                database:
+                  type: string
+        goal_default:
+          include_1ml_channels: true
+          include_5ml_channels: false
+          include_96head: true
+          include_384head: false
+          include_washstations: false
+          include_default: true
+          include_custom: true
+          database: C:\Program Files (x86)\HAMILTON\Config\ML_STARLiquids.mdb
+        handles: {}
+      auto-read_submethods:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_submethods
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cls:
+                  type: string
+                directory:
+                  type: string
+        goal_default:
+          directory: ''
+        handles: {}
+    module: unilabos.devices.generic.resources:Resources
+    status_types: {}
+    type: python
+  config_info: []
+  description: Static class with functions to generate python classes from Venus resources
+  handles: []
+  icon: resources.webp
+  init_param_schema: {}
+  version: 1.0.0
+  cover: resources.webp
+  device_params:
+    功能: 数据采集
+    可控参数: cls、database、directory、include_1ml_channels、include_384head、include_5ml_channels、include_96head、include_custom
+    操作数: 3
+  manufacturer: Generic
+  model:
+    name: Generic Resources
+    type: device
+  name: Resources 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

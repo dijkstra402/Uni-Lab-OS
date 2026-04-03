@@ -1,0 +1,129 @@
+tomato_jumo__device:
+  class:
+    module: unilabos.devices.universal.temperature_controller.jumo_quantrol:Device
+    type: python
+    status_types:
+      temperature: String
+      setpoint: String
+      duty_cycle: String
+      heater_on: String
+      attr: String
+    action_value_mappings:
+      auto-attrs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: attrs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_attr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_attr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                attr:
+                  type: string
+                val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-capabilities:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: capabilities
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-do_measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: do_measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prepare_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                task:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Device
+  category:
+  - universal
+  - temperature_controller
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        driver:
+          type: string
+          default: null
+        key:
+          type: string
+          default: null

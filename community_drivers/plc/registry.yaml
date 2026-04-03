@@ -1,0 +1,288 @@
+plc:
+  class:
+    module: unilabos.devices.plc.plc:PLC
+    type: python
+    status_types:
+      ConnectionSize: String
+    action_value_mappings:
+      auto-ConnectionSize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ConnectionSize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                connection_size:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tag:
+                  type: string
+                count:
+                  type: string
+                datatype:
+                  type: string
+        goal_default:
+          count: 1
+        handles: {}
+      auto-Write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tag:
+                  type: string
+                value:
+                  type: string
+                datatype:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetPLCTime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetPLCTime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                raw:
+                  type: string
+        goal_default:
+          raw: false
+        handles: {}
+      auto-SetPLCTime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetPLCTime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dst:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetTagList:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetTagList
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                allTags:
+                  type: string
+        goal_default:
+          allTags: true
+        handles: {}
+      auto-GetProgramTagList:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetProgramTagList
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                programName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetProgramsList:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetProgramsList
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-Discover:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Discover
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GetModuleProperties:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetModuleProperties
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slot:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetDeviceProperties:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetDeviceProperties
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-Message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cip_service:
+                  type: string
+                cip_class:
+                  type: string
+                cip_instance:
+                  type: string
+                cip_attribute:
+                  type: string
+                data:
+                  type: string
+        goal_default:
+          data: b''
+        handles: {}
+      auto-ReceiveMessage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ReceiveMessage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ip_address:
+                  type: string
+                callback:
+                  type: string
+                port:
+                  type: string
+        goal_default:
+          port: 44818
+        handles: {}
+      auto-Close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Programmable Logic Controller是一款实验执行&合成设备，主要功能包括关闭、写入数据、设备连接、读取数据。支持Discover, GetDeviceProperties, GetModuleProperties等操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ip_address:
+          type: string
+          default: ''
+        slot:
+          type: string
+          default: 0
+        timeout:
+          type: string
+          default: 5.0
+        Micro800:
+          type: string
+          default: false
+        port:
+          type: string
+          default: 44818
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: allTags、callback、cip_attribute、cip_class、cip_instance、cip_service、connection_size、count
+    操作数: 14
+  manufacturer: Open Source
+  model:
+    name: Generic Programmable Logic Controller 控制器
+    type: device
+  name: Programmable Logic
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: plc.webp
+  scene:
+    domain: Automation
+    scene_name: Industrial Control
+    step: Process Control
+  version: 1.0.0

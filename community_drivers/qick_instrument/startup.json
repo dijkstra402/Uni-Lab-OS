@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "id": "test_qick_instrument",
+      "name": "美国Instruments 4160甲醛检测仪",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "qick_instrument",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "ns_host": "",
+        "ns_port": 8888,
+        "name": "QickInstrument"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "cycles2sec tproc",
+      "description": "cycles2sec tproc",
+      "device": "test_qick_instrument",
+      "action": "auto-cycles2sec_tproc",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "sec2cycles tproc",
+      "description": "sec2cycles tproc",
+      "device": "test_qick_instrument",
+      "action": "auto-sec2cycles_tproc",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "get idn",
+      "description": "get idn",
+      "device": "test_qick_instrument",
+      "action": "auto-get_idn",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "美国Instruments 4160甲醛检测仪 工作流",
+    "description": "美国Instruments 4160甲醛检测仪 自动生成工作流",
+    "instrument": "美国Instruments 4160甲醛检测仪",
+    "generated_by": "driver-finder"
+  }
+}

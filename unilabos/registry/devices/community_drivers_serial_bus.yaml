@@ -1,0 +1,75 @@
+serial_bus:
+  class:
+    module: unilabos.devices.can.serial_bus:SerialBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fileno:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileno
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from can/interfaces/serial/serial_can.py
+  category:
+  - can
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        channel:
+          type: string
+          default: null
+        baudrate:
+          type: integer
+          default: 115200
+        timeout:
+          type: number
+          default: 0.1
+        rtscts:
+          type: boolean
+          default: false
+  name: Serial BUS
+  manufacturer: Open Standard
+  cover: aio_serial.webp
+  icon: aio_serial.webp

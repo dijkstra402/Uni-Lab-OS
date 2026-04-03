@@ -1,0 +1,61 @@
+epics_dxp_mapping:
+  category:
+  - X射线衍射仪
+  class:
+    action_value_mappings:
+      auto-get_low_level_parameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_low_level_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.epicsdxp_mapping.epicsdxp_mapping:EpicsDXPMapping
+    status_types: {}
+    type: python
+  config_info: []
+  description: Epics Dxp Mapping X射线衍射仪是由EPICS (Argonne National Lab)生产的X射线衍射仪，主要功能包括停止。支持Signal, Slot, add rois等操作。
+  handles: []
+  icon: epics_dxp_mapping.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    支持操作数: '3'
+    读取操作: get_low_level_parameter
+    控制操作: stop
+    驱动框架: Bluesky/Ophyd
+  manufacturer: EPICS (Argonne National Lab)
+  model:
+    name: Generic Epics Dxp Mapping
+    type: device
+  name: Epics Dxp Mapping X射线衍射仪
+  tags:
+  - X射线衍射仪
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: XRD
+    step: Diffraction

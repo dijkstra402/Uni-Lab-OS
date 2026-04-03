@@ -1,0 +1,188 @@
+vt__backend__passive:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-configure_instruments:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                compliance_v:
+                  type: string
+                current_ma:
+                  type: string
+              type: object
+          title: configure_instruments
+          type: object
+        type: UniLabJsonCommand
+      auto-connect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                k2182_visa:
+                  type: string
+                k2400_visa:
+                  type: string
+                ls_visa:
+                  type: string
+              type: object
+          title: connect
+          type: object
+        type: UniLabJsonCommand
+      auto-shutdown:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: shutdown
+          type: object
+        type: UniLabJsonCommand
+      auto-get_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_styles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_styles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-create_widgets:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_widgets
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-log:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: log
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reason:
+                  type: string
+        goal_default:
+          reason: ''
+        handles: {}
+      auto-set_ui_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ui_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                running:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.generic_device_passive.passive_backend:VT_Backend_Passive
+    status_types:
+      measurement: String
+    type: python
+  config_info: []
+  description: Variable Temperature Backend (Passive)是一款表征设备，主要功能包括停止、参数配置、启动、扫描、日志记录、测量。支持Signal, Slot, create widgets等操作。
+  handles: []
+  icon: cpu_temperature.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: compliance_v、current_ma、k2182_visa、k2400_visa、ls_visa、message、reason、running
+    操作数: 10
+  manufacturer: Open Source
+  model:
+    name: Generic Variable Temperature Backend (Passive) 后端控制器
+    type: device
+  name: Variable Temperature (Passive)
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

@@ -1,0 +1,252 @@
+clock_line:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-add_device:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                device:
+                  type: string
+              type: object
+          title: add_device
+          type: object
+        type: UniLabJsonCommand
+      auto-clock_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clock_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-minimum_clock_high_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: minimum_clock_high_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-collect_change_times:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: collect_change_times
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                all_outputs:
+                  type: string
+                outputs_by_clockline:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-expand_change_times:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: expand_change_times
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                all_change_times:
+                  type: string
+                change_times:
+                  type: string
+                outputs_by_clockline:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_outputs_by_clockline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_outputs_by_clockline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-generate_clock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: generate_clock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-generate_code:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: generate_code
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hdf5_file:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                t:
+                  type: string
+                duration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-do_checks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: do_checks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_master_pseudoclock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_master_pseudoclock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_initial_trigger_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_initial_trigger_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                t:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-offset_instructions_from_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: offset_instructions_from_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                outputs:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.generic.clock_line:ClockLine
+    status_types:
+      clock_limit: String
+      minimum_clock_high_time: String
+    type: python
+  config_info: []
+  description: Shoreline 腔衰减相移式氮氧化物分析仪 CAPS-NO/NO2是由北京崭晴环保科技有限公司生产的专业实验设备。Parent class of all pseudoclocks
+  handles: []
+  icon: clock_line.webp
+  init_param_schema:
+    config:
+      properties:
+        connection:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        pseudoclock:
+          default: null
+          type: string
+        ramping_allowed:
+          default: true
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: 北京崭晴环保科技有限公司
+    功能: 参数配置、数据采集
+    可控参数: all_change_times、all_outputs、change_times、device、持续时间、hdf5_file、outputs、outputs_by_clockline
+    操作数: 13
+  manufacturer: 北京崭晴环保科技有限公司
+  model:
+    name: Shoreline 腔衰减相移式氮氧化物分析仪 CAPS-NO/NO2
+    type: device
+  name: Shoreline
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

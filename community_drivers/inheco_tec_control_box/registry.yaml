@@ -1,0 +1,118 @@
+inheco_tec_control_box:
+  category:
+  - 冷热水机
+  class:
+    action_value_mappings:
+      auto-reset_action_display:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: reset_action_display
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-send_command:
+        feedback: {}
+        goal: {}
+        goal_default:
+          timeout: 3
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                command:
+                  type: string
+                timeout:
+                  type: integer
+              type: object
+          title: send_command
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-set_touchscreen:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                active:
+                  type: boolean
+              type: object
+          title: set_touchscreen
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-setup:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: setup
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommandAsync
+    module: unilabos.devices.temperature.inheco_tec_control_box:InhecoTECControlBox
+    status_types: {}
+    type: python
+  config_info: []
+  description: INHECO TEC Control Box热电温度控制模块，用于微孔板精确温度控制。
+  handles: []
+  icon: inheco_tec_control_box.webp
+  init_param_schema:
+    config:
+      properties:
+        pid:
+          default: 8227
+          type: string
+        serial_number:
+          default: null
+          type: string
+        vid:
+          default: 1003
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: INHECO
+    支持操作数: 5
+  manufacturer: INHECO
+  model:
+    name: INHECO TEC Control Box 热电控制器
+    type: device
+  name: INHECO TEC Control Box
+  tags:
+  - 冷热水机
+  resource_type: device
+  scene:
+    domain: Physics
+    scene_name: Temperature Control
+    step: Cooling/Heating

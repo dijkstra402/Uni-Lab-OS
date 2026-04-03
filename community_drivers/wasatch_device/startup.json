@@ -1,0 +1,167 @@
+{
+  "nodes": [
+    {
+      "id": "test_wasatch_device",
+      "name": "Wasatch Photonics Spectrometer",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "wasatch_device",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "device_id": "",
+        "message_queue": "",
+        "alert_queue": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_wasatch_device",
+      "action": "auto-connect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_wasatch_device",
+      "action": "auto-take_one_averaged_reading",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "disconnect",
+      "description": "自动补充动作: disconnect",
+      "device": "test_wasatch_device",
+      "action": "auto-disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "connect feature identification",
+      "description": "自动补充动作: connect_feature_identification",
+      "device": "test_wasatch_device",
+      "action": "auto-connect_feature_identification",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "initialize settings",
+      "description": "自动补充动作: initialize_settings",
+      "device": "test_wasatch_device",
+      "action": "auto-initialize_settings",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "acquire data",
+      "description": "自动补充动作: acquire_data",
+      "device": "test_wasatch_device",
+      "action": "auto-acquire_data",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "acquire spectrum",
+      "description": "自动补充动作: acquire_spectrum",
+      "device": "test_wasatch_device",
+      "action": "auto-acquire_spectrum",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "acquire spectrum auto raman",
+      "description": "自动补充动作: acquire_spectrum_auto_raman",
+      "device": "test_wasatch_device",
+      "action": "auto-acquire_spectrum_auto_raman",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "acquire spectrum standard",
+      "description": "自动补充动作: acquire_spectrum_standard",
+      "device": "test_wasatch_device",
+      "action": "auto-acquire_spectrum_standard",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "perform optional throwaways",
+      "description": "自动补充动作: perform_optional_throwaways",
+      "device": "test_wasatch_device",
+      "action": "auto-perform_optional_throwaways",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "monitor memory",
+      "description": "自动补充动作: monitor_memory",
+      "device": "test_wasatch_device",
+      "action": "auto-monitor_memory",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "process commands",
+      "description": "自动补充动作: process_commands",
+      "device": "test_wasatch_device",
+      "action": "auto-process_commands",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "acquire area scan",
+      "description": "自动补充动作: acquire_area_scan",
+      "device": "test_wasatch_device",
+      "action": "auto-acquire_area_scan",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "balance acquisition",
+      "description": "自动补充动作: balance_acquisition",
+      "device": "test_wasatch_device",
+      "action": "auto-balance_acquisition",
+      "action_args": {
+        "intensity": 45000,
+        "threshold": 2500,
+        "max_integration_time_ms": 5000,
+        "max_tries": 20
+      }
+    },
+    {
+      "step": 15,
+      "name": "change setting",
+      "description": "自动补充动作: change_setting",
+      "device": "test_wasatch_device",
+      "action": "auto-change_setting",
+      "action_args": {
+        "allow_immediate": true
+      }
+    },
+    {
+      "step": 16,
+      "name": "handle requests",
+      "description": "自动补充动作: handle_requests",
+      "device": "test_wasatch_device",
+      "action": "auto-handle_requests",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "WasatchDevice 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "WasatchDevice",
+    "generated_by": "driver-finder"
+  }
+}

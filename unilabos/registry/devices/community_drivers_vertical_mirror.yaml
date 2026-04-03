@@ -1,0 +1,87 @@
+vertical_mirror:
+  class:
+    module: unilabos.devices.vertical_mirror.vertical_mirror_v2:VerticalMirror
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                derived:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-raw_to_derived:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: raw_to_derived
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                jack1:
+                  type: number
+                jack2:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-derived_to_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: derived_to_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                height:
+                  type: number
+                angle:
+                  type: number
+        goal_default: {}
+        handles: {}
+  description: Synchrotron Vertical Mirror驱动，支持set/raw to derived/derived to raw。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          type: string
+          default: ''
+  cover: vertical_mirror.webp
+  device_params:
+    功能: 参数配置
+    可控参数: 角度、derived、height、jack1、jack2
+    操作数: 3
+  manufacturer: Open Source
+  model:
+    name: Generic Synchrotron Vertical Mirror
+    type: device
+  name: Synchrotron Vertical Mirror 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: vertical_mirror.webp
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

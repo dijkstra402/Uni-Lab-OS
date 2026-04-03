@@ -1,0 +1,168 @@
+daq__detector:
+  class:
+    module: unilabos.devices.daq_detector.daq_detector:DAQ_Detector
+    type: python
+    status_types:
+      title: String
+    action_value_mappings:
+      auto-update_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                settings_parameter_dict:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-queue_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: queue_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ini_detector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ini_detector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params_state:
+                  type: string
+                controller:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-emit_temp_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: emit_temp_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_ready:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_ready
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-single:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: single
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Naverage:
+                  type: string
+        goal_default:
+          Naverage: 1
+        handles: {}
+      auto-grab_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: grab_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Naverage:
+                  type: string
+                live:
+                  type: string
+        goal_default:
+          Naverage: 1
+          live: true
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: DAQ Detector是由National Instruments生产的表征设备，主要功能包括停止、关闭、初始化、加载、数据保存、设备连接。支持Naverage, Signal, Slot等操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        title:
+          type: string
+          default: null
+        settings_parameter:
+          type: string
+          default: null
+        detector_name:
+          type: string
+          default: null
+  name: National Instruments DAQ Detector
+  manufacturer: National Instruments
+  icon: digital_input_task.webp
+  tags:
+  - 表征设备
+  device_params:
+    支持操作数: '45'
+    读取操作: get_scaling_options、thread_status、data_ready
+    控制操作: setup_continuous_saving、stop_grab、stop、set_data_to_viewers、update_settings
+    设备属性数: '14'
+    控制能力: 温度控制
+    通信接口: TCP/IP

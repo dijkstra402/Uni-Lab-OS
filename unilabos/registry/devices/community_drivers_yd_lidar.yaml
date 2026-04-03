@@ -1,0 +1,88 @@
+yd_lidar:
+  class:
+    module: unilabos.devices.generic.yd_lidar:YDLidar
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lidar:
+                  type: string
+                debug:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run_threaded:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_threaded
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: YD Lidar设备驱动。
+  category:
+  - 实验执行&合成设备
+  cover: mfr_ydlidar.webp
+  device_params:
+    支持操作数: '4'
+  manufacturer: YDLIDAR
+  model:
+    name: YD Lidar
+    type: device
+  name: YD Lidar
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: mfr_ydlidar.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

@@ -1,0 +1,65 @@
+zmq_value_sub:
+  class:
+    module: unilabos.devices.generic.messaging.zmq_value_sub:ZMQValueSub
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: ZMQ Value SUB是由Open Standard (ZeroMQ)生产的专业实验设备。Auto-imported from donkeycar/parts/network.py
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          type: string
+          default: null
+        ip:
+          type: string
+          default: null
+        port:
+          type: string
+          default: 5556
+        hwm:
+          type: string
+          default: 10
+        return_last:
+          type: string
+          default: true
+  name: Open Standard Use Zero Message Queue
+  manufacturer: Open Standard (ZeroMQ)
+  icon: zmq_value_sub.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '25'
+    读取操作: run_threaded、read
+    控制操作: reset

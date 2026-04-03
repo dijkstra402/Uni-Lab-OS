@@ -1,0 +1,204 @@
+decadac:
+  class:
+    module: unilabos.devices.dac.deca_dac:Decadac
+    type: python
+    status_types:
+      idn: String
+    action_value_mappings:
+      auto-start_script:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_script
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-end_script:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: end_script
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_script:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_script
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trigger_setting:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volt:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-ramp_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volt:
+                  type: string
+                ramp_rate:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connect_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idn_param:
+                  type: string
+                begin_time:
+                  type: string
+        goal_default:
+          idn_param: IDN
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: DecaDAC 16-bit DAC Module驱动（Harvard/Delft），支持start script/end script/run
+    script/trigger/set all等10个操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          type: string
+          default: null
+        address:
+          type: string
+          default: null
+        min_val:
+          type: string
+          default: -10
+        max_val:
+          type: string
+          default: 10
+  cover: decadac.webp
+  device_params:
+    品牌: Harvard/Delft
+    功能: 参数配置、数据采集
+    可控参数: begin_time、cmd、idn_param、ramp_rate、trigger_setting、volt
+    操作数: 10
+  manufacturer: Harvard/Delft
+  model:
+    name: Harvard/Delft DecaDAC 16-bit DAC Module
+    type: device
+  name: DecaDAC 16-bit DAC Module 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: decadac.webp
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

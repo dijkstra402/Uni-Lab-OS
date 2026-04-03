@@ -1,0 +1,76 @@
+epics_mca_record:
+  category:
+  - X射线衍射仪
+  class:
+    action_value_mappings:
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default:
+          success: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                success:
+                  type: string
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommand
+      auto-get_low_level_parameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_low_level_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.mca.epics_mca_record:EpicsMCARecord
+    status_types: {}
+    type: python
+  config_info: []
+  description: EPICS MCA Record Module X射线衍射仪是由Argonne National Lab (EPICS)生产的X射线衍射仪，主要功能包括停止。支持Signal, Slot, add rois等操作。
+  handles: []
+  icon: epics_mca_record.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    品牌: Argonne National Lab (EPICS)
+    测量范围: '2θ: 5°-90°'
+  manufacturer: Argonne National Lab (EPICS)
+  model:
+    name: Argonne EPICS MCA Record Module
+    type: device
+  name: EPICS MCA Record Module X射线衍射仪
+  tags:
+  - X射线衍射仪
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: XRD
+    step: Diffraction

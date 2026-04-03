@@ -1,0 +1,182 @@
+{
+  "nodes": [
+    {
+      "id": "test_eurotherm__instrument",
+      "name": "Test Instrument",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "eurotherm__instrument",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": 1502,
+        "slaveaddress": "",
+        "mode": "rtu",
+        "close_port_after_each_call": false,
+        "debug": false,
+        "host": "127.0.0.1"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-read_bit",
+      "action_args": {
+        "functioncode": 2
+      }
+    },
+    {
+      "step": 2,
+      "name": "write bit",
+      "description": "自动补充动作: write_bit",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-write_bit",
+      "action_args": {
+        "functioncode": 5
+      }
+    },
+    {
+      "step": 3,
+      "name": "read bits",
+      "description": "自动补充动作: read_bits",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-read_bits",
+      "action_args": {
+        "functioncode": 2
+      }
+    },
+    {
+      "step": 4,
+      "name": "write bits",
+      "description": "自动补充动作: write_bits",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-write_bits",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "read register",
+      "description": "自动补充动作: read_register",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-read_register",
+      "action_args": {
+        "number_of_decimals": 0,
+        "functioncode": 3,
+        "signed": false
+      }
+    },
+    {
+      "step": 6,
+      "name": "write register",
+      "description": "自动补充动作: write_register",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-write_register",
+      "action_args": {
+        "number_of_decimals": 0,
+        "functioncode": 16,
+        "signed": false
+      }
+    },
+    {
+      "step": 7,
+      "name": "read long",
+      "description": "自动补充动作: read_long",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-read_long",
+      "action_args": {
+        "functioncode": 3,
+        "signed": false,
+        "byteorder": 0
+      }
+    },
+    {
+      "step": 8,
+      "name": "write long",
+      "description": "自动补充动作: write_long",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-write_long",
+      "action_args": {
+        "signed": false,
+        "byteorder": 0
+      }
+    },
+    {
+      "step": 9,
+      "name": "read float",
+      "description": "自动补充动作: read_float",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-read_float",
+      "action_args": {
+        "functioncode": 3,
+        "number_of_registers": 2,
+        "byteorder": 0
+      }
+    },
+    {
+      "step": 10,
+      "name": "write float",
+      "description": "自动补充动作: write_float",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-write_float",
+      "action_args": {
+        "number_of_registers": 2,
+        "byteorder": 0
+      }
+    },
+    {
+      "step": 11,
+      "name": "read string",
+      "description": "自动补充动作: read_string",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-read_string",
+      "action_args": {
+        "number_of_registers": 16,
+        "functioncode": 3
+      }
+    },
+    {
+      "step": 12,
+      "name": "write string",
+      "description": "自动补充动作: write_string",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-write_string",
+      "action_args": {
+        "number_of_registers": 16
+      }
+    },
+    {
+      "step": 13,
+      "name": "read registers",
+      "description": "自动补充动作: read_registers",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-read_registers",
+      "action_args": {
+        "functioncode": 3
+      }
+    },
+    {
+      "step": 14,
+      "name": "write registers",
+      "description": "自动补充动作: write_registers",
+      "device": "test_eurotherm__instrument",
+      "action": "auto-write_registers",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Instrument 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Instrument",
+    "generated_by": "driver-finder"
+  }
+}

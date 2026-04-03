@@ -1,0 +1,248 @@
+pseudoclock:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-add_device:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                device:
+                  type: string
+              type: object
+          title: add_device
+          type: object
+        type: UniLabJsonCommand
+      auto-collect_change_times:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                all_outputs:
+                  type: string
+                outputs_by_clockline:
+                  type: string
+              type: object
+          title: collect_change_times
+          type: object
+        type: UniLabJsonCommand
+      auto-expand_change_times:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                all_change_times:
+                  type: string
+                change_times:
+                  type: string
+                outputs_by_clockline:
+                  type: string
+              type: object
+          title: expand_change_times
+          type: object
+        type: UniLabJsonCommand
+      auto-generate_clock:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: generate_clock
+          type: object
+        type: UniLabJsonCommand
+      auto-generate_code:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                hdf5_file:
+                  type: string
+              type: object
+          title: generate_code
+          type: object
+        type: UniLabJsonCommand
+      auto-get_outputs_by_clockline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_outputs_by_clockline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-minimum_clock_high_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: minimum_clock_high_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clock_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clock_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                t:
+                  type: string
+                duration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-do_checks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: do_checks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_master_pseudoclock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_master_pseudoclock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_initial_trigger_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_initial_trigger_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                t:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-offset_instructions_from_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: offset_instructions_from_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                outputs:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.timing.pseudoclock:Pseudoclock
+    status_types:
+      outputs_by_clockline: String
+    type: python
+  config_info: []
+  description: Parent class of all pseudoclocks
+  handles: []
+  icon: pseudoclock.webp
+  init_param_schema:
+    config:
+      properties:
+        connection:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        pseudoclock_device:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: pseudoclock.webp
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: all_change_times、all_outputs、change_times、device、持续时间、hdf5_file、outputs、outputs_by_clockline
+    操作数: 13
+  manufacturer: Generic
+  model:
+    name: Generic Pseudo-Clock Timing Module
+    type: device
+  name: Pseudo-Clock Timing Module 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

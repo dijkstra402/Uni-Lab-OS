@@ -1,0 +1,194 @@
+slew__scan:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-check_beam_ok:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: check_beam_ok
+          type: object
+        type: UniLabJsonCommand
+      auto-post_slew_scan:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: post_slew_scan
+          type: object
+        type: UniLabJsonCommand
+      auto-prepare_scan:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: prepare_scan
+          type: object
+        type: UniLabJsonCommand
+      auto-run:
+        feedback: {}
+        goal: {}
+        goal_default:
+          debug: false
+          filename: map.001
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                comments:
+                  type: string
+                debug:
+                  type: string
+                filename:
+                  type: string
+                npts:
+                  type: string
+              type: object
+          title: run
+          type: object
+        type: UniLabJsonCommand
+      auto-save_envdata:
+        feedback: {}
+        goal: {}
+        goal_default:
+          filename: Environ.dat
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                filename:
+                  type: string
+              type: object
+          title: save_envdata
+          type: object
+        type: UniLabJsonCommand
+      auto-save_extra_data:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                xrddet:
+                  type: string
+                xrfdet:
+                  type: string
+              type: object
+          title: save_extra_data
+          type: object
+        type: UniLabJsonCommand
+      auto-save_mcs_data:
+        feedback: {}
+        goal: {}
+        goal_default:
+          filename: mcsdata.001
+          npts: 1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                filename:
+                  type: string
+                npts:
+                  type: string
+              type: object
+          title: save_mcs_data
+          type: object
+        type: UniLabJsonCommand
+      auto-write_master:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                text:
+                  type: string
+              type: object
+          title: write_master
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.devices.generic.slew_scan.slew_scan:Slew_Scan
+    status_types: {}
+    type: python
+  config_info: []
+  description: Slew Scan Controller驱动（EPICS / Synchrotron），支持check beam ok/post slew
+    scan/prepare scan/run/save envdata等8个操作。
+  handles: []
+  icon: slew__scan.webp
+  init_param_schema:
+    config:
+      properties:
+        auto_increment:
+          default: true
+          type: string
+        comments:
+          default: null
+          type: string
+        filename:
+          default: null
+          type: string
+        messenger:
+          default: null
+          type: string
+        mkernel:
+          default: null
+          type: string
+        prescan_func:
+          default: null
+          type: string
+        scandb:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: slew__scan.webp
+  device_params:
+    品牌: EPICS / Synchrotron
+    功能: 参数配置、扫描测量
+    可控参数: comments、debug、filename、npts、text、xrddet、xrfdet
+    操作数: 8
+  manufacturer: EPICS / Synchrotron
+  model:
+    name: EPICS Slew Scan Controller 控制器
+    type: device
+  name: Slew Scan Controller 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

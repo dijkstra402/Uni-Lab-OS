@@ -1,0 +1,57 @@
+modbus_serial_worker:
+  class:
+    module: unilabos.devices.generic.modbus_serial_worker:ModbusSerialWorker
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-loop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-srv_engine_entry:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: srv_engine_entry
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                session_data:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Modbus Serial Worker是由Modbus (Open Standard)生产的专业实验设备。Request container to deal with modbus serial worker
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '3'
+    设备属性: pdu、slave_address、function_code、is_valid
+    通信接口: Modbus、串口(RS-232)
+  manufacturer: Modbus (Open Standard)
+  model:
+    name: Modbus Serial Worker
+    type: device
+  name: Modbus RTU frame container class
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: isotcp_connection.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

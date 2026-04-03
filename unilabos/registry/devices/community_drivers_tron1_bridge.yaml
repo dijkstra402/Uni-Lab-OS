@@ -1,0 +1,78 @@
+tron1_bridge:
+  class:
+    module: unilabos.devices.mobile_base.generic.tron1_bridge:Tron1Bridge
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect_ws:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_ws
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                retry_on_fail:
+                  type: boolean
+                max_retries:
+                  type: integer
+        goal_default:
+          retry_on_fail: false
+          max_retries: 10
+        handles: {}
+      auto-cmd_vel_callback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cmd_vel_callback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_loop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_loop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-destroy_node:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: destroy_node
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Bridge ROS2 cmd_vel messages to Tron1 WebSocket API | 型号:1Bridge
+  category:
+  - mobile_base
+  - generic
+  name: Tron1 Bridge
+  manufacturer: Open Source
+  cover: ascii_stl__writer.webp
+  icon: ascii_stl__writer.webp

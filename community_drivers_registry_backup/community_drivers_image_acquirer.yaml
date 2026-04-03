@@ -1,0 +1,452 @@
+image_acquirer:
+  class:
+    module: unilabos.devices.universal.image_acquirer:ImageAcquirer
+    type: python
+    status_types:
+      supported_events: String
+      num_buffers: String
+      min_num_buffers: String
+      num_filled_buffers_to_hold: String
+      num_holding_filled_buffers: String
+      data_streams: String
+      remote_device: String
+      device: String
+      interface: String
+      system: String
+      timeout_on_client_fetch_call: String
+      timeout_period_on_client_fetch_call: String
+      timeout_period_on_update_event_data_call: String
+      timeout_for_image_acquisition: String
+      thread_image_acquisition: String
+      statistics: String
+    action_value_mappings:
+      auto-is_valid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_valid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_callback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_callback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+                callback:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_callback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_callback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_callbacks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_callbacks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-destroy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: destroy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-num_buffers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: num_buffers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default:
+          value: 1
+        handles: {}
+      auto-num_filled_buffers_to_hold:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: num_filled_buffers_to_hold
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default:
+          value: 1
+        handles: {}
+      auto-is_acquiring_images:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_acquiring_images
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_acquiring:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_acquiring
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_armed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_armed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-timeout_on_client_fetch_call:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout_on_client_fetch_call
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-timeout_period_on_client_fetch_call:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout_period_on_client_fetch_call
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-timeout_period_on_update_event_data_call:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout_period_on_update_event_data_call
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-timeout_for_image_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout_for_image_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ms:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-thread_image_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: thread_image_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                obj:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_image_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_image_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                run_in_background:
+                  type: string
+        goal_default:
+          run_in_background: false
+        handles: {}
+      auto-start_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                run_in_background:
+                  type: boolean
+        goal_default:
+          run_in_background: false
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                run_as_thread:
+                  type: boolean
+        goal_default:
+          run_as_thread: false
+        handles: {}
+      auto-try_fetch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: try_fetch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+                is_raw:
+                  type: boolean
+        goal_default:
+          is_raw: false
+        handles: {}
+      auto-fetch_buffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fetch_buffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+                is_raw:
+                  type: boolean
+                cycle_s:
+                  type: number
+        goal_default:
+          timeout: 0
+          is_raw: false
+        handles: {}
+      auto-fetch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fetch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+                is_raw:
+                  type: boolean
+                cycle_s:
+                  type: number
+        goal_default:
+          timeout: 0
+          is_raw: false
+        handles: {}
+      auto-stop_image_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_image_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Manages everything you need to acquire images from the connecting device
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        parent:
+          type: string
+          default: null
+        device_proxy:
+          type: string
+          default: null
+        config:
+          type: string
+          default: null
+        profiler:
+          type: string
+          default: null
+        file_dict:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 图像采集、数据采集、运动控制
+    可控参数: callback、cycle_s、event、is_raw、obj、run_as_thread、run_in_background、timeout
+    操作数: 24
+  manufacturer: ''
+  model:
+    name: '' image_acquirer
+    type: device
+  name: image_acquirer 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

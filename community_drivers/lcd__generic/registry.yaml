@@ -1,0 +1,133 @@
+lcd__generic:
+  class:
+    module: unilabos.devices.generic_lcd.lcd_generic:LCD_Generic
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-lcd_backlight:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lcd_backlight
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-lcd_byte:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lcd_byte
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bits:
+                  type: string
+                mode:
+                  type: string
+                backlight:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-lcd_init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lcd_init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-lcd_string_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lcd_string_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+                line:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-lcd_toggle_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lcd_toggle_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bits:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-lcd_write_lines:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lcd_write_lines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                line_1:
+                  type: string
+                line_2:
+                  type: string
+                line_3:
+                  type: string
+                line_4:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Generic LCD Display是一款实验执行&合成设备，主要功能包括使能、写入数据、初始化。支持Signal, Slot, lcd backlight等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    功能: 参数配置
+    可控参数: backlight、bits、line、line_1、line_2、line_3、line_4、message
+    操作数: 6
+  manufacturer: Open Source
+  model:
+    name: Generic Generic LCD Display
+    type: device
+  name: Lcd Generic
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: lcd__generic.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

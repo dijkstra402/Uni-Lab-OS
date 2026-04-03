@@ -1,0 +1,56 @@
+cobolt_laser:
+  class:
+    module: unilabos.devices.generic.cobolt_laser:CoboltLaser
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setPower:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setPower
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                powerInWatts:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Cobolt Laser设备驱动。
+  category:
+  - 实验执行&合成设备
+  cover: cobolt0601_f2.webp
+  device_params:
+    支持操作数: '2'
+  manufacturer: Cobolt AB (HÜBNER Photonics)
+  model:
+    name: Cobolt Laser
+    type: device
+  name: Cobolt Laser
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: cobolt0601_f2.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

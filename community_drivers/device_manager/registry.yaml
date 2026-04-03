@@ -1,0 +1,105 @@
+device_manager:
+  class:
+    module: unilabos.devices.spectracq3.device_manager:DeviceManager
+    type: python
+    status_types:
+      communicator: String
+      monochromators: String
+      charge_coupled_devices: String
+      spectracq3_devices: String
+    action_value_mappings:
+      auto-start:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_icl:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_icl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_icl:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_icl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-discover_devices:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: discover_devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                error_on_no_device:
+                  type: boolean
+        goal_default:
+          error_on_no_device: false
+        handles: {}
+  description: DeviceManager class manages the lifecycle and interactions with devices
+  category:
+  - spectracq3
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        start_icl:
+          type: boolean
+          default: true
+        icl_ip:
+          type: string
+          default: 127.0.0.1
+        icl_port:
+          type: string
+          default: '25010'
+        enable_binary_messages:
+          type: boolean
+          default: true
+        enable_logging:
+          type: boolean
+          default: false

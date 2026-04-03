@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "id": "test_maxon_epos2",
+      "name": "maxon EPOS2 Motor Controller",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "maxon_epos2",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "wavelength_nm": "",
+        "velocity_nm_s": "",
+        "acceleration_nm_s2": "",
+        "deceleration_nm_s2": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_maxon_epos2",
+      "action": "auto-set_position_profile",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_maxon_epos2",
+      "action": "auto-stop_move",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "calc motor acc",
+      "description": "自动补充动作: calc_motor_acc",
+      "device": "test_maxon_epos2",
+      "action": "auto-calc_motor_acc",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "set velocity nm s",
+      "description": "自动补充动作: set_velocity_nm_s",
+      "device": "test_maxon_epos2",
+      "action": "auto-set_velocity_nm_s",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "set wavelength m",
+      "description": "自动补充动作: set_wavelength_m",
+      "device": "test_maxon_epos2",
+      "action": "auto-set_wavelength_m",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "update motor position",
+      "description": "自动补充动作: update_motor_position",
+      "device": "test_maxon_epos2",
+      "action": "auto-update_motor_position",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "set default settings",
+      "description": "自动补充动作: set_default_settings",
+      "device": "test_maxon_epos2",
+      "action": "auto-set_default_settings",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "MaxonEpos2 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "MaxonEpos2",
+    "generated_by": "driver-finder"
+  }
+}

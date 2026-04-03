@@ -1,0 +1,361 @@
+h5_backend:
+  class:
+    module: unilabos.devices.generic.hdf5.h5_backend:H5Backend
+    type: python
+    status_types:
+      h5file: String
+      filename: String
+      attr: String
+      set_group: String
+      group_by_title: String
+      node: String
+      node_name: String
+      node_path: String
+      parent_node: String
+      children: String
+    action_value_mappings:
+      auto-h5file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: h5file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-isopen:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isopen
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fullpathname:
+                  type: string
+                mode:
+                  type: string
+                title:
+                  type: string
+        goal_default:
+          mode: r
+          title: PyMoDAQ file
+        handles: {}
+      auto-save_file_as:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_file_as
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filenamepath:
+                  type: string
+        goal_default:
+          filenamepath: h5copy.txt
+        handles: {}
+      auto-root:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: root
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_attr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_attr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                node:
+                  type: string
+                attr_name:
+                  type: string
+                attr_value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-has_attr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: has_attr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                node:
+                  type: string
+                attr_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-define_compression:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: define_compression
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                compression:
+                  type: string
+                compression_opts:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_node_in_group:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_node_in_group
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                where:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-walk_nodes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: walk_nodes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                where:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-walk_groups:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: walk_groups
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                where:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                array:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create_carray:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_carray
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                where:
+                  type: string
+                name:
+                  type: string
+                obj:
+                  type: string
+                title:
+                  type: string
+        goal_default:
+          title: ''
+        handles: {}
+      auto-create_earray:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_earray
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                where:
+                  type: string
+                name:
+                  type: string
+                dtype:
+                  type: string
+                data_shape:
+                  type: string
+                title:
+                  type: string
+        goal_default:
+          title: ''
+        handles: {}
+      auto-create_vlarray:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_vlarray
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                where:
+                  type: string
+                name:
+                  type: string
+                dtype:
+                  type: string
+                title:
+                  type: string
+        goal_default:
+          title: ''
+        handles: {}
+      auto-add_group:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_group
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                group_name:
+                  type: string
+                group_type:
+                  type: string
+                where:
+                  type: string
+                title:
+                  type: string
+                metadata:
+                  type: string
+        goal_default:
+          title: ''
+          metadata: {}
+        handles: {}
+  description: Auto-imported from packages/pymodaq_data/src/pymodaq_data/h5modules/backends.py
+  category:
+  - generic
+  - hdf5
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        backend:
+          type: string
+          default: tables
+  name: H5 Backend
+  manufacturer: HDF Group
+  cover: mfr_hdf_group.webp
+  icon: mfr_hdf_group.webp

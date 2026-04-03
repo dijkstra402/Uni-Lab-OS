@@ -1,0 +1,74 @@
+fridge__monitor:
+  category:
+  - 深低温冰箱
+  class:
+    action_value_mappings:
+      auto-snapshot:
+        feedback: {}
+        goal: {}
+        goal_default:
+          update: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                update:
+                  type: string
+              type: object
+          title: snapshot
+          type: object
+        type: UniLabJsonCommand
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.cryo_fridge_monitor.cryo_fridge_monitor:Fridge_Monitor
+    status_types:
+      idn: String
+    type: python
+  config_info: []
+  description: 稀释制冷机监控模块是由Oxford Instruments生产的深低温冰箱。支持Signal, Slot, get idn等操作。
+  handles: []
+  icon: fridge__monitor.webp
+  init_param_schema:
+    config:
+      properties:
+        fridge_name:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        update_interval:
+          default: 60
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    功能: 图像采集、数据采集
+    可控参数: update
+    操作数: 2
+  manufacturer: Oxford Instruments
+  model:
+    name: Generic Dilution Fridge Monitor 监视器
+    type: device
+  name: 稀释制冷机监控
+  tags:
+  - 深低温冰箱
+  resource_type: device
+  scene:
+    domain: Electronics
+    scene_name: Sensing
+    step: Data Acquisition

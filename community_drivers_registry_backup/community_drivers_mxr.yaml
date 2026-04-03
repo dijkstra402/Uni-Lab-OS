@@ -1,0 +1,72 @@
+mxr:
+  class:
+    module: unilabos.devices.oscilloscopes.keysight_mxr:MXR
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-measureStatistics:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measureStatistics
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setupAutoscale:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setupAutoscale
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: MXR Series Real-Time Oscilloscope驱动（Keysight Technologies），支持measureStatistics/setupAutoscale。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        resource:
+          type: string
+          default: null
+        maxChannel:
+          type: string
+          default: 4
+        wait:
+          type: string
+          default: 0
+  cover: mxr.webp
+  device_params:
+    品牌: Keysight Technologies
+    功能: 参数配置、数据采集
+    可控参数: 通道
+    操作数: 2
+  manufacturer: Keysight Technologies
+  model:
+    name: Keysight MXR Series Real-Time Oscilloscope 示波器
+    type: device
+  name: MXR Series Real-Time Oscilloscope 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: mxr.webp
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

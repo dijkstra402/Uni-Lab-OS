@@ -1,0 +1,139 @@
+{
+  "nodes": [
+    {
+      "id": "test_cpu_temperature",
+      "name": "Cpu Temperature",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "cpu_temperature",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "sensor_file": "/sys/class/thermal/thermal_zone0/temp",
+        "min_temp": 0.0,
+        "max_temp": 100.0,
+        "threshold": 80.0,
+        "event_delay": 5.0,
+        "pin_factory": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "temperature",
+      "description": "temperature",
+      "device": "test_cpu_temperature",
+      "action": "auto-temperature",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "value",
+      "description": "value",
+      "device": "test_cpu_temperature",
+      "action": "auto-value",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "is active",
+      "description": "is active",
+      "device": "test_cpu_temperature",
+      "action": "auto-is_active",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "closed",
+      "description": "closed",
+      "device": "test_cpu_temperature",
+      "action": "auto-closed",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "event delay",
+      "description": "event delay",
+      "device": "test_cpu_temperature",
+      "action": "auto-event_delay",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "wait for active",
+      "description": "wait for active",
+      "device": "test_cpu_temperature",
+      "action": "auto-wait_for_active",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "wait for inactive",
+      "description": "wait for inactive",
+      "device": "test_cpu_temperature",
+      "action": "auto-wait_for_inactive",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "host",
+      "description": "host",
+      "device": "test_cpu_temperature",
+      "action": "auto-host",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "load average",
+      "description": "load average",
+      "device": "test_cpu_temperature",
+      "action": "auto-load_average",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "start time",
+      "description": "start time",
+      "device": "test_cpu_temperature",
+      "action": "auto-start_time",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "end time",
+      "description": "end time",
+      "device": "test_cpu_temperature",
+      "action": "auto-end_time",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "utc",
+      "description": "utc",
+      "device": "test_cpu_temperature",
+      "action": "auto-utc",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "usage",
+      "description": "usage",
+      "device": "test_cpu_temperature",
+      "action": "auto-usage",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Cpu Temperature 工作流",
+    "description": "Cpu Temperature 自动生成工作流",
+    "instrument": "Cpu Temperature",
+    "generated_by": "driver-finder"
+  }
+}

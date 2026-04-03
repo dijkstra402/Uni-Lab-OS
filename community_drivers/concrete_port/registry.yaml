@@ -1,0 +1,147 @@
+concrete_port:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommand
+      auto-is_open:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: is_open
+          type: object
+        type: UniLabJsonCommand
+      auto-open:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                port_object:
+                  type: string
+              type: object
+          title: open
+          type: object
+        type: UniLabJsonCommand
+      auto-read:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                length:
+                  type: string
+              type: object
+          title: read
+          type: object
+        type: UniLabJsonCommand
+      auto-write:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                value:
+                  type: string
+              type: object
+          title: write
+          type: object
+        type: UniLabJsonCommand
+      auto-port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_access_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_access_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.universal.concrete_port:ConcretePort
+    status_types:
+      access_mode: String
+      port: String
+    type: python
+  config_info: []
+  description: 硬件设备通信端口抽象层，提供统一的设备连接与数据传输接口。
+  handles: []
+  icon: aio_serial.webp
+  init_param_schema:
+    config:
+      properties:
+        port_object:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    支持操作数: '6'
+    读取操作: read、get_access_mode
+    控制操作: write
+    设备属性: port
+  manufacturer: Open Standard
+  model:
+    name: Concrete Port 设备通信端口
+    type: device
+  name: Concrete Port
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

@@ -1,0 +1,77 @@
+recipe_pusher:
+  category:
+  - generic_device
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.generic_device.od_reader:ODReader
+    status_types: {}
+    type: python
+  config_info: []
+  description: Produce a stream of OD readings from the sensors
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+serial_bus_accesser:
+  class:
+    module: unilabos.devices.generic_device.serial_bus_accesser:SerialBusAccesser
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Manages serial bus connections
+  category:
+  - generic_device
+ol_controller:
+  class:
+    module: unilabos.devices.generic_device.gcs_pi_controller:OLController
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: 'Controller managed via standard open-loop commands (ex: E-861)'
+  category:
+  - generic_device
+ud_pconnection:
+  class:
+    module: unilabos.devices.generic_device.udp_connection:UDPconnection
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Singleton class to handle the UDP communication
+  category:
+  - generic_device
+recipe_pusher:
+  class:
+    module: unilabos.devices.generic_device.recipe_pusher:RecipePusher
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-fileTasksForInputs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileTasksForInputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: RecipePusher
+  category:
+  - generic_device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        recipe:
+          type: string
+          default: null
+        recipeURI:
+          type: string
+          default: null
+        output_dir:
+          type: string
+          default: null

@@ -1,0 +1,453 @@
+iseg_hv:
+  class:
+    module: unilabos.devices.hv_power_supply.iseg_hv:IsegHV
+    type: python
+    status_types:
+      high_voltage: String
+      current: String
+      voltage: String
+      source_voltage: String
+      hardware_voltage_limit: String
+      voltage_limit: String
+      current_limit: String
+      current_trip: String
+      current_channel: String
+      identifier: String
+      ramp_speed: String
+      answer_delay: String
+      autostart: String
+      polarity: String
+      status_word: String
+      status_description: String
+      module_status: String
+      module_description: String
+      'on': String
+      UNIT_NUMBER: String
+      SOFTWARE_REL: String
+      V_MAX: String
+      I_MAX: String
+      hv_on: String
+      hv_off: String
+      channel: String
+      voltage_target: String
+      v_lim: String
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_high_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_high_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_voltage_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_limit:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_current_trip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_trip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ct:
+                  type: string
+                resolution:
+                  type: string
+        goal_default:
+          resolution: mA
+        handles: {}
+      auto-start_voltage_ramp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_voltage_ramp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ch:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_ramp_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ramp_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rs:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_answer_delay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_answer_delay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bt:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_autostart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_autostart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: 'on'
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: 'off'
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_voltage_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-source_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: source_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-soruce_volt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: soruce_volt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-autostart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: autostart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-answer_delay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: answer_delay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bt:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ramp_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rs:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ch:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-current_trip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_trip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ct:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-v_lim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: v_lim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_limit:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Iseg Hv驱动，支持init/set high voltage/set voltage/set voltage limit/set
+    current trip等25个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          type: string
+          default: null
+        conf:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置、数据采集、电学测量
+    可控参数: msg、分辨率、state、电压、voltage_limit
+    操作数: 25
+  manufacturer: ''
+  model:
+    name: '' iseg_hv
+    type: device
+  name: iseg_hv 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

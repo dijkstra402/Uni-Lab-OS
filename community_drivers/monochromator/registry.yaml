@@ -1,0 +1,276 @@
+monochromator:
+  class:
+    module: unilabos.devices.monochromator.monochromator:Monochromator
+    type: python
+    status_types:
+      current_wavelength: String
+      turret_grating: String
+      filter_wheel_position: String
+      mirror_position: String
+      slit_position_in_mm: String
+      slit_step_position: String
+      shutter_position: String
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_busy:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_busy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_initialized:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_initialized
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-configuration:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configuration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-calibrate_wavelength:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_wavelength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wavelength:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-move_to_target_wavelength:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to_target_wavelength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wavelength:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_turret_grating:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_turret_grating
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                grating:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_filter_wheel_position:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_filter_wheel_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filter_wheel:
+                  type: string
+                position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_mirror_position:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mirror_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mirror:
+                  type: string
+                position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_slit_position:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_slit_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slit:
+                  type: string
+                position_in_mm:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_slit_step_position:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_slit_step_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slit:
+                  type: string
+                step_position:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-open_shutter:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_shutter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_shutter:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_shutter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Monochromator device This class should not be instanced by the end
+    user
+  category:
+  - monochromator
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_id:
+          type: integer
+          default: null
+        communicator:
+          type: string
+          default: null
+        error_db:
+          type: string
+          default: null

@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "test_file_device",
+      "name": "Test FileDevice",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "file_device",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "path": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_file_device",
+      "action": "auto-read",
+      "action_args": {
+        "max_characters": 64
+      }
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_file_device",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "write",
+      "description": "自动补充动作: write",
+      "device": "test_file_device",
+      "action": "auto-write",
+      "action_args": {
+        "timeout": 0.5
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "FileDevice 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "FileDevice",
+    "generated_by": "driver-finder"
+  }
+}

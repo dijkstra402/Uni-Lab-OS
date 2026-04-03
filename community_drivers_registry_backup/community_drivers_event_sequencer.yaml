@@ -1,0 +1,196 @@
+event_sequencer:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-complete:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: complete
+          type: object
+        type: UniLabJsonCommand
+      auto-kickoff:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: kickoff
+          type: object
+        type: UniLabJsonCommand
+      auto-pause:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: pause
+          type: object
+        type: UniLabJsonCommand
+      auto-resume:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: resume
+          type: object
+        type: UniLabJsonCommand
+      auto-start:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: start
+          type: object
+        type: UniLabJsonCommand
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default:
+          success: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                success:
+                  type: boolean
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommand
+      auto-trigger:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: trigger
+          type: object
+        type: UniLabJsonCommand
+      auto-get_seq:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_seq
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_length:
+                  type: string
+        goal_default:
+          current_length: true
+        handles: {}
+      auto-put_seq:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: put_seq
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sequence:
+                  type: string
+                update_length:
+                  type: string
+        goal_default:
+          update_length: true
+        handles: {}
+      auto-show:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: show
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_lines:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.custom.event_sequencer:EventSequencer
+    status_types: {}
+    type: python
+  config_info: []
+  description: Event Sequencer Module驱动，支持complete/kickoff/pause/resume/start等10个操作。
+  handles: []
+  icon: event_sequencer.webp
+  init_param_schema:
+    config:
+      properties:
+        monitor_attrs:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        prefix:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: event_sequencer.webp
+  device_params:
+    功能: 数据采集
+    可控参数: current_length、num_lines、sequence、success、update_length
+    操作数: 10
+  manufacturer: Generic
+  model:
+    name: Generic Event Sequencer Module 测序仪
+    type: device
+  name: Event Sequencer Module 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

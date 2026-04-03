@@ -1,0 +1,87 @@
+cc:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-calibrate_dio_protocol:
+        feedback: {}
+        goal: {}
+        goal_default:
+          port: 0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                dio_mask:
+                  type: integer
+                expected_sequence:
+                  type: string
+                port:
+                  type: integer
+              type: object
+          title: calibrate_dio_protocol
+          type: object
+        type: UniLabJsonCommand
+      auto-output_dio_calibration_data:
+        feedback: {}
+        goal: {}
+        goal_default:
+          port: 0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                dio_mode:
+                  type: string
+                port:
+                  type: integer
+              type: object
+          title: output_dio_calibration_data
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.quantum_control.central_controller:CC
+    status_types: {}
+    type: python
+  config_info: []
+  description: QuTech CC Central Controller驱动（QuTech），支持calibrate dio protocol/output
+    dio calibration data。
+  handles: []
+  icon: cc.webp
+  init_param_schema:
+    config:
+      properties:
+        ccio_slots_driving_vsm:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        num_ccio:
+          default: 11
+          type: integer
+        transport:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: cc.webp
+  device_params:
+    品牌: QuTech
+    可控参数: dio_mask、dio_mode、expected_sequence、port
+    操作数: 2
+  manufacturer: QuTech
+  model:
+    name: QuTech CC 中央控制器 分析仪器 控制器
+    type: device
+  name: QuTech CC 中央控制器 分析仪器 控制器
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

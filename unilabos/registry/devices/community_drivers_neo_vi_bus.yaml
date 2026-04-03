@@ -1,0 +1,57 @@
+neo_vi_bus:
+  class:
+    module: unilabos.devices.can_bus.generic.neovi_bus:NeoViBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          timeout: 0
+        handles: {}
+  description: Auto-imported from can/interfaces/ics_neovi/neovi_bus.py
+  category:
+  - can_bus
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        channel:
+          type: string
+          default: null
+        can_filters:
+          type: string
+          default: null
+  name: NEO VI BUS
+  manufacturer: Intrepid Control Systems
+  cover: mfr_intrepid_control_systems.webp
+  icon: mfr_intrepid_control_systems.webp

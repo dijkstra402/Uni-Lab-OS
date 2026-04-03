@@ -1,0 +1,313 @@
+basic_serial_instrument:
+  class:
+    module: unilabos.devices.generic.basic_serial_instrument:BasicSerialInstrument
+    type: python
+    status_types:
+      communications_lock: String
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+                quiet:
+                  type: string
+        goal_default:
+          quiet: true
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                query_string:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-flush_input_buffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush_input_buffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_multiline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_multiline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                termination_line:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                queryString:
+                  type: string
+                multiline:
+                  type: string
+                termination_line:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          multiline: false
+        handles: {}
+      auto-parsed_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parsed_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                query_string:
+                  type: string
+                response_string:
+                  type: string
+                re_flags:
+                  type: string
+                parse_function:
+                  type: string
+        goal_default:
+          response_string: '%d'
+          re_flags: 0
+        handles: {}
+      auto-int_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: int_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                query_string:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-float_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: float_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                query_string:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-test_communications:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: test_communications
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-find_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-communications_lock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: communications_lock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-available:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: available
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-confirm_available:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: confirm_available
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-describe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: describe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 通用RS-232串口仪器通信驱动，适配标准SCPI协议仪器。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+  cover:
+  device_params:
+    支持操作数: 16
+仪器原理: 电化学法
+    测量范围: 0.01-19.99 ppm
+    分辨率: 0.01ppm
+    重复性: ±0.5%
+    采样方式: 泵吸式
+    响应时间: 小于1秒钟
+    测量温度: -20~50℃
+    湿度范围: 15~95%
+    品牌: 路博建业环保科技有限公司
+仪器原理: 电化学法
+    测量范围: 0.01-19.99 ppm
+    分辨率: 0.01ppm
+    重复性: ±0.5%
+    采样方式: 泵吸式
+    响应时间: 小于1秒钟
+    测量温度: -20~50℃
+    湿度范围: 15~95%
+    品牌: 路博建业环保科技有限公司
+    设备类型: 实验执行设备
+  manufacturer:
+  model:
+    name: 通用串口仪器接口
+    type: device
+  name: 通用串口仪器接口
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon:
+  scene:
+    domain: Electronics
+    scene_name: Interfacing
+    step: Communication
+  version: 1.0.0

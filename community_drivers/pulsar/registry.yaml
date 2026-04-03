@@ -1,0 +1,189 @@
+pulsar:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-define_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: define_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                type:
+                  type: string
+                delay:
+                  type: string
+                offset:
+                  type: string
+                high:
+                  type: string
+                low:
+                  type: string
+                active:
+                  type: string
+                AWG:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-AWG_obj:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: AWG_obj
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-channel_opt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: channel_opt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                option:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-used_AWGs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: used_AWGs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-program_awgs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: program_awgs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sequence:
+                  type: string
+                AWGs:
+                  type: string
+                channels:
+                  type: string
+                loop:
+                  type: string
+                allow_first_nonzero:
+                  type: string
+                verbose:
+                  type: string
+        goal_default:
+          AWGs: all
+          channels: all
+          loop: true
+          allow_first_nonzero: true
+          verbose: false
+        handles: {}
+      auto-update_channel_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_channel_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_AWG5014_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_AWG5014_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                AWGs:
+                  type: string
+        goal_default:
+          AWGs: all
+        handles: {}
+    module: unilabos.devices.awg_controller.pulsar:Pulsar
+    status_types: {}
+    type: python
+  config_info: []
+  description: QuTech Pulsar Pulse Generation Module是由QuTech生产的表征设备，主要功能包括停止、启动。支持AWG obj, Signal, Slot等操作。
+  handles: []
+  icon: pulsar.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    品牌: QuTech
+    功能: 参数配置
+    可控参数: AWG、AWGs、active、allow_first_nonzero、通道、通道数、延迟、high
+    操作数: 8
+  manufacturer: QuTech
+  model:
+    name: QuTech QuTech Pulsar Pulse Generation Module
+    type: device
+  name: QuTech Pulsar Pulse Generation
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

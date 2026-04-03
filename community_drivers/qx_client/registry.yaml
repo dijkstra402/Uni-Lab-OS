@@ -1,0 +1,232 @@
+qx_client:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-connect:
+        feedback: {}
+        goal: {}
+        goal_default:
+          host: localhost
+          port: 5555
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                host:
+                  type: string
+                port:
+                  type: string
+              type: object
+          title: connect
+          type: object
+        type: UniLabJsonCommand
+      auto-create_circuit:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                gates:
+                  type: string
+                name:
+                  type: string
+              type: object
+          title: create_circuit
+          type: object
+        type: UniLabJsonCommand
+      auto-create_qubits:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                n:
+                  type: string
+              type: object
+          title: create_qubits
+          type: object
+        type: UniLabJsonCommand
+      auto-disconnect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: disconnect
+          type: object
+        type: UniLabJsonCommand
+      auto-list_circuits:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: list_circuits
+          type: object
+        type: UniLabJsonCommand
+      auto-remove_qubits:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: remove_qubits
+          type: object
+        type: UniLabJsonCommand
+      auto-run_circuit:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                name:
+                  type: string
+              type: object
+          title: run_circuit
+          type: object
+        type: UniLabJsonCommand
+      auto-run_noisy_circuit:
+        feedback: {}
+        goal: {}
+        goal_default:
+          error_model: depolarizing_channel
+          iterations: 1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                error_model:
+                  type: string
+                error_probability:
+                  type: string
+                iterations:
+                  type: string
+                name:
+                  type: string
+              type: object
+          title: run_noisy_circuit
+          type: object
+        type: UniLabJsonCommand
+      auto-send_cmd:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                cmd:
+                  type: string
+              type: object
+          title: send_cmd
+          type: object
+        type: UniLabJsonCommand
+      auto-get_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                qubit:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_measurement_average:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_measurement_average
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                qubit:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_nr_qubits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_nr_qubits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.quantum_computer.qx_client:qx_client
+    status_types:
+      measurement: String
+      measurement_average: String
+      nr_qubits: String
+    type: python
+  config_info: []
+  description: QuTech QX Quantum Computer Client是QuTech提供的设备驱动，提供connect, send_cmd, create_qubits, remove_qubits等12个控制接口。
+  handles: []
+  icon: qx_client.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    品牌: QuTech
+    功能: 数据采集、运动控制
+    可控参数: cmd、error_model、error_probability、gates、host、iterations、name、port
+    操作数: 12
+  manufacturer: QuTech
+  model:
+    name: QuTech QuTech QX Quantum Computer Client
+    type: device
+  name: QuTech QX Quantum Computer
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

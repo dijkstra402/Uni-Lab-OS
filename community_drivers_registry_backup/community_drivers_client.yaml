@@ -1,0 +1,201 @@
+client:
+  class:
+    module: unilabos.devices.generic.client:Client
+    type: python
+    status_types:
+      variants: String
+      single_variant: String
+      json: String
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-init_websocket:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init_websocket
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_line:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_line
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_reply:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_reply
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_json:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_json
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-login:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: login
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-build:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: build
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                major_ver:
+                  type: string
+                rev:
+                  type: string
+                variant:
+                  type: string
+                log:
+                  type: string
+                experimental_features:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-passwd:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: passwd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                password:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Client驱动，支持connect/init websocket/close/send command/read line等10个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        server:
+          type: string
+          default: null
+        port:
+          type: string
+          default: null
+        cafile:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 数据采集
+    可控参数: experimental_features、log、major_ver、password、rev、username、variant
+    操作数: 10
+  manufacturer: ''
+  model:
+    name: '' client
+    type: device
+  name: client 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

@@ -1,0 +1,111 @@
+serial_to_i2_c:
+  class:
+    module: unilabos.devices.bridge.serial_to_i2c:SerialToI2C
+    type: python
+    status_types:
+      i2c_address: String
+    action_value_mappings:
+      auto-i2c_address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: i2c_address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-query_i2c:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_i2c
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_i2c_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_i2c_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Serial TO I2 C是由Open Standard生产的专业实验设备。Auto-imported from basil/HL/arduino_serial_to_i2c.py
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          type: string
+          default: null
+        conf:
+          type: string
+          default: null
+  name: Open Standard Serial To I2 C
+  manufacturer: Open Standard
+  icon: aio_serial.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '5'
+    读取操作: query_i2c、read_register
+    控制操作: write_register
+    设备属性数: '1'
+    通信接口: I2C

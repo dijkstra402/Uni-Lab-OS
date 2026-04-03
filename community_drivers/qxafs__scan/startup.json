@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "id": "test_qxafs__scan",
+      "name": "Quick XAFS Scan Controller",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "qxafs__scan",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "label": null,
+        "energy_pv": null,
+        "read_pv": null,
+        "extra_pvs": null,
+        "e0": 0,
+        "elem": "",
+        "edge": "",
+        "scandb": null,
+        "kws": null
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "connect qxafs",
+      "description": "connect qxafs",
+      "device": "test_qxafs__scan",
+      "action": "auto-connect_qxafs",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "finish qscan",
+      "description": "finish qscan",
+      "device": "test_qxafs__scan",
+      "action": "auto-finish_qscan",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "gathering2energy",
+      "description": "gathering2energy",
+      "device": "test_qxafs__scan",
+      "action": "auto-gathering2energy",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "make trajectory",
+      "description": "make trajectory",
+      "device": "test_qxafs__scan",
+      "action": "auto-make_trajectory",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "post scan",
+      "description": "post scan",
+      "device": "test_qxafs__scan",
+      "action": "auto-post_scan",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "run",
+      "description": "run",
+      "device": "test_qxafs__scan",
+      "action": "auto-run",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "set energy pv",
+      "description": "set energy pv",
+      "device": "test_qxafs__scan",
+      "action": "auto-set_energy_pv",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "add region",
+      "description": "add region",
+      "device": "test_qxafs__scan",
+      "action": "auto-add_region",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Quick XAFS Scan Controller 工作流",
+    "description": "Quick XAFS Scan Controller 自动生成工作流",
+    "instrument": "Quick XAFS Scan Controller",
+    "generated_by": "driver-finder"
+  }
+}

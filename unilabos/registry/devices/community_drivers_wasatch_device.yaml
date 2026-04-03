@@ -1,0 +1,296 @@
+wasatch_device:
+  class:
+    module: unilabos.devices.custom.wasatch_device:WasatchDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect_feature_identification:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_feature_identification
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialize_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acquire_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acquire_spectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_spectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acquire_spectrum_auto_raman:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_spectrum_auto_raman
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acquire_spectrum_standard:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_spectrum_standard
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-perform_optional_throwaways:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: perform_optional_throwaways
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-take_one_averaged_reading:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: take_one_averaged_reading
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-monitor_memory:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: monitor_memory
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-process_commands:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_commands
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acquire_area_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_area_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-balance_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: balance_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                mode:
+                  type: string
+                intensity:
+                  type: string
+                threshold:
+                  type: string
+                pixel:
+                  type: string
+                max_integration_time_ms:
+                  type: string
+                max_tries:
+                  type: string
+        goal_default:
+          intensity: 45000
+          threshold: 2500
+          max_integration_time_ms: 5000
+          max_tries: 20
+        handles: {}
+      auto-change_setting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_setting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                setting:
+                  type: string
+                value:
+                  type: string
+                allow_immediate:
+                  type: boolean
+        goal_default:
+          allow_immediate: true
+        handles: {}
+      auto-handle_requests:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: handle_requests
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                requests:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Wasatch Photonics Spectrometer驱动（Wasatch Photonics），支持connect/disconnect/connect
+    feature identification/initialize settings/acquire data等16个操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_id:
+          type: string
+          default: null
+        message_queue:
+          type: string
+          default: null
+        alert_queue:
+          type: string
+          default: null
+  cover: wasatch_device.webp
+  device_params:
+    品牌: Wasatch Photonics
+    功能: 参数配置、扫描测量、数据采集
+    可控参数: allow_immediate、device、intensity、label、max_integration_time_ms、max_tries、工作模式、pixel
+    操作数: 16
+  manufacturer: Wasatch Photonics
+  model:
+    name: Wasatch Photonics 光谱仪 分析仪器 光谱仪
+    type: device
+  name: Wasatch Photonics 光谱仪 分析仪器 光谱仪
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: wasatch_device.webp
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

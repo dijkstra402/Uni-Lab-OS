@@ -1,0 +1,159 @@
+zi_hdawg_core:
+  category:
+  - 移液工作站
+  class:
+    action_value_mappings:
+      auto-assure_ext_clock:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: assure_ext_clock
+          type: object
+        type: UniLabJsonCommand
+      auto-load_default_settings:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: load_default_settings
+          type: object
+        type: UniLabJsonCommand
+      auto-plot_awg_codewords:
+        feedback: {}
+        goal: {}
+        goal_default:
+          awg_nr: 0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                awg_nr:
+                  type: string
+                range:
+                  type: string
+              type: object
+          title: plot_awg_codewords
+          type: object
+        type: UniLabJsonCommand
+      auto-plot_dio_snapshot:
+        feedback: {}
+        goal: {}
+        goal_default:
+          bits: range(0, 32)
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                bits:
+                  type: string
+              type: object
+          title: plot_dio_snapshot
+          type: object
+        type: UniLabJsonCommand
+      auto-upload_waveform_realtime:
+        feedback: {}
+        goal: {}
+        goal_default:
+          wf_nr: 1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                awg_nr:
+                  type: integer
+                w0:
+                  type: string
+                w1:
+                  type: string
+                wf_nr:
+                  type: integer
+              type: object
+          title: upload_waveform_realtime
+          type: object
+        type: UniLabJsonCommand
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.quantum.awg.zi.hdawg.zi_hdawg_core:ZI_HDAWG_core
+    status_types:
+      idn: String
+    type: python
+  config_info: []
+  description: ZI HDAWG Core 高性能任意波形发生器核心模块是由维根技术（北京）有限公司（WIGGENS）生产的专业实验设备。This is PycQED/QCoDeS driver driver for the Zurich Instruments HDAWG
+  handles: []
+  icon: zi_hdawg_core.webp
+  init_param_schema:
+    config:
+      properties:
+        device:
+          default: null
+          type: string
+        interface:
+          default: 1GbE
+          type: string
+        name:
+          default: null
+          type: string
+        num_codewords:
+          default: 32
+          type: integer
+        port:
+          default: 8004
+          type: integer
+        server:
+          default: localhost
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    仪器种类: 单道移液器
+    自动程度: 手动移液器
+    通道数: 单道
+    量程: 10~100μl
+    最大容量: 1000μl
+    误差: <1.5％
+    品牌: 维根技术
+    生物研究: 2023-03-13
+    食品: 2023-02-22
+  manufacturer: 维根技术（北京）有限公司（WIGGENS）
+  model:
+    name: SOCOREX 825可调微量移液器
+    type: device
+  name: ZI HDAWG
+  tags:
+  - 移液工作站
+  resource_type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Liquid Handling

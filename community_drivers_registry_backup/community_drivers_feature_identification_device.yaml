@@ -1,0 +1,2397 @@
+feature_identification_device:
+  class:
+    module: unilabos.devices.custom.feature_identification_device:FeatureIdentificationDevice
+    type: python
+    status_types:
+      upper_code: String
+      battery_register: String
+      battery_state_raw: String
+      battery_percentage: String
+      battery_charging: String
+      integration_time_ms: String
+      detector_gain: String
+      detector_gain_odd: String
+      sensor_line_length: String
+      microcontroller_firmware_version: String
+      fpga_firmware_version: String
+      microcontroller_serial_number: String
+      ble_firmware_version: String
+      line: String
+      spectrum: String
+      scans_to_average: String
+      poll_status: String
+      area_scan: String
+      area_scan_xs: String
+      area_scan_hamamatsu: String
+      dac: String
+      secondary_adc_calibrated: String
+      secondary_adc_raw: String
+      laser_tec_mode: String
+      laser_temperature_degC: String
+      detector_temperature_raw: String
+      detector_temperature_degC: String
+      detector_tec_setpoint_degC: String
+      detector_tec_setpoint_raw: String
+      high_gain_mode_enabled: String
+      opt_laser_control: String
+      opt_has_laser: String
+      laser_temperature_raw: String
+      selected_laser: String
+      laser_enabled: String
+      laser_temperature_setpoint_raw: String
+      laser_warning_delay_sec: String
+      laser_power_attenuator: String
+      laser_interlock: String
+      trigger_source: String
+      raman_mode_enabled_NOT_USED: String
+      raman_delay_ms: String
+      laser_watchdog_sec: String
+      fpga_configuration_register: String
+      discretes_enabled: String
+      fan_enabled: String
+      lamp_enabled: String
+      shutter_enabled: String
+      mod_enabled: String
+      mod_period_us: String
+      mod_width_us: String
+      mod_delay_us: String
+      mod_duration_us: String
+      strobe_enabled: String
+      ambient_temperature_degC: String
+      ambient_temperature_degC_arm: String
+      ambient_temperature_degC_gen15: String
+      tec_enabled: String
+      actual_frames: String
+      actual_integration_time_us: String
+      detector_offset: String
+      detector_offset_odd: String
+      ccd_sensing_threshold: String
+      ccd_threshold_sensing_mode: String
+      external_trigger_output: String
+      mod_linked_to_integration: String
+      selected_adc: String
+      trigger_delay: String
+      vr_continuous_ccd: String
+      vr_num_frames: String
+      opt_actual_integration_time: String
+      opt_area_scan: String
+      opt_cf_select: String
+      opt_data_header_tab: String
+      opt_horizontal_binning: String
+      opt_integration_time_resolution: String
+      analog_output_state: String
+      analog_input_value: String
+    action_value_mappings:
+      auto-handle_requests:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: handle_requests
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                requests:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                retries:
+                  type: string
+        goal_default:
+          retries: 0
+        handles: {}
+      auto-reset_area_scan_frame:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_area_scan_frame
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-has_linearity_coeffs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: has_linearity_coeffs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_dfu_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_dfu_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_detector_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_detector_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_detector_offset_odd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_detector_offset_odd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_detector_gain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_detector_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gain:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_detector_gain_odd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_detector_gain_odd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gain:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_area_scan_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_area_scan_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_area_scan_line_step:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_area_scan_line_step
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_area_scan_line_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_area_scan_line_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_area_scan_line_interval:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_area_scan_line_interval
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-apply_edc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_edc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                spectrum:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-generate_timeout_ms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: generate_timeout_ms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-require_throwaway:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: require_throwaway
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_onboard_scans_to_average:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_onboard_scans_to_average
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_integration_time_ms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_integration_time_ms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ms:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-is_sensor_stable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_sensor_stable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-i2c_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: i2c_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                buf:
+                  type: string
+                label:
+                  type: string
+        goal_default:
+          label: ''
+        handles: {}
+      auto-select_adc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: select_adc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_laser_tec_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_tec_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_detector_tec_setpoint_degC:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_detector_tec_setpoint_degC
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                degC:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_tec_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_tec_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_trigger_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_high_gain_mode_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_high_gain_mode_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_selected_laser:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_selected_laser
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_laser_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_laser_power_mW:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_power_mW
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mW_in:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_laser_power_high_resolution:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_power_high_resolution
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_laser_power_require_modulation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_power_require_modulation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_laser_power_perc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_power_perc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value_in:
+                  type: number
+                set_in_perc:
+                  type: boolean
+        goal_default:
+          set_in_perc: true
+        handles: {}
+      auto-set_laser_power_perc_immediate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_power_perc_immediate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_laser_temperature_setpoint_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_temperature_setpoint_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_laser_warning_delay_sec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_warning_delay_sec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_laser_power_attenuator:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_power_attenuator
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-can_laser_fire:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: can_laser_fire
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_laser_firing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_laser_firing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_fpga:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_fpga
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_raman_mode_enable_NOT_USED:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_raman_mode_enable_NOT_USED
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_raman_delay_ms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_raman_delay_ms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ms:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_laser_watchdog_sec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_watchdog_sec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update_laser_watchdog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_laser_watchdog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_vertical_roi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_vertical_roi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_vertical_roi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_vertical_roi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                roi:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_pixel_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pixel_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-clear_regions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_regions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_single_region:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_single_region
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_detector_roi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_detector_roi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                args:
+                  type: string
+                store:
+                  type: boolean
+        goal_default:
+          store: true
+        handles: {}
+      auto-set_accessory_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_accessory_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_fan_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_fan_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_lamp_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_lamp_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_shutter_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_shutter_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_mod_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mod_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_mod_period_us:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mod_period_us
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                us:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_mod_width_us:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mod_width_us
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                us:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_mod_delay_us:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mod_delay_us
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                us:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_mod_duration_us_NOT_USED:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mod_duration_us_NOT_USED
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                us:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_strobe_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_strobe_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_mod_linked_to_integration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mod_linked_to_integration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_trigger_delay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger_delay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                half_us:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-update_firmware_log:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_firmware_log
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_analog_output_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_analog_output_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_analog_output_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_analog_output_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-update_session_eeprom:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_session_eeprom
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pair:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-replace_session_eeprom:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: replace_session_eeprom
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pair:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_eeprom:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_eeprom
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_log_level:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_log_level
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                s:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-queue_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: queue_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                setting:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_alert:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_alert
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                s:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-refresh_alerts:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: refresh_alerts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_upper_code:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_upper_code
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wValue:
+                  type: string
+                wIndex:
+                  type: string
+                wLength:
+                  type: string
+                label:
+                  type: string
+                msb_len:
+                  type: string
+                lsb_len:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_battery_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_battery_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_battery_state_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_battery_state_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_battery_percentage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_battery_percentage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_battery_charging:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_battery_charging
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_integration_time_ms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_integration_time_ms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_detector_gain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update_session_eeprom:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_detector_gain_odd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_gain_odd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update_session_eeprom:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_sensor_line_length:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sensor_line_length
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_microcontroller_firmware_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_microcontroller_firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_fpga_firmware_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_fpga_firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_microcontroller_serial_number:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_microcontroller_serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_ble_firmware_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ble_firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_line:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_line
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trigger:
+                  type: string
+                auto_raman_params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_spectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_spectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trigger:
+                  type: string
+                auto_raman_params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_scans_to_average:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_scans_to_average
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_poll_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_poll_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_area_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_area_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_area_scan_xs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_area_scan_xs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_area_scan_hamamatsu:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_area_scan_hamamatsu
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_dac:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_dac
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dacIndex:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_secondary_adc_calibrated:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_secondary_adc_calibrated
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                raw:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_secondary_adc_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_secondary_adc_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_laser_tec_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_laser_tec_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_laser_temperature_degC:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_laser_temperature_degC
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                raw:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_detector_temperature_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_temperature_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_detector_temperature_degC:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_temperature_degC
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                raw:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_detector_tec_setpoint_degC:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_tec_setpoint_degC
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_detector_tec_setpoint_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_tec_setpoint_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_high_gain_mode_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_high_gain_mode_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_opt_laser_control:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_opt_laser_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_opt_has_laser:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_opt_has_laser
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_laser_temperature_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_laser_temperature_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_selected_laser:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_selected_laser
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_laser_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_laser_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_laser_temperature_setpoint_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_laser_temperature_setpoint_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_laser_warning_delay_sec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_laser_warning_delay_sec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_laser_power_attenuator:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_laser_power_attenuator
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_laser_interlock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_laser_interlock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_trigger_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_trigger_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_raman_mode_enabled_NOT_USED:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_raman_mode_enabled_NOT_USED
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_raman_delay_ms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_raman_delay_ms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_laser_watchdog_sec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_laser_watchdog_sec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_fpga_configuration_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_fpga_configuration_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_discretes_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_discretes_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_fan_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_fan_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_lamp_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_lamp_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_shutter_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_shutter_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mod_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mod_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mod_period_us:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mod_period_us
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mod_width_us:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mod_width_us
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mod_delay_us:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mod_delay_us
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mod_duration_us:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mod_duration_us
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_strobe_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_strobe_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_ambient_temperature_degC:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ambient_temperature_degC
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_ambient_temperature_degC_arm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ambient_temperature_degC_arm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_ambient_temperature_degC_gen15:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ambient_temperature_degC_gen15
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_tec_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_tec_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_actual_frames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_actual_frames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_actual_integration_time_us:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_actual_integration_time_us
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_detector_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_detector_offset_odd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_offset_odd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_ccd_sensing_threshold:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ccd_sensing_threshold
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_ccd_threshold_sensing_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ccd_threshold_sensing_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_external_trigger_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_external_trigger_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mod_linked_to_integration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mod_linked_to_integration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_selected_adc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_selected_adc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_trigger_delay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_trigger_delay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_vr_continuous_ccd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_vr_continuous_ccd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_vr_num_frames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_vr_num_frames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_opt_actual_integration_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_opt_actual_integration_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_opt_area_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_opt_area_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_opt_cf_select:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_opt_cf_select
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_opt_data_header_tab:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_opt_data_header_tab
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_opt_horizontal_binning:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_opt_horizontal_binning
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_opt_integration_time_resolution:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_opt_integration_time_resolution
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_analog_output_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analog_output_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_analog_input_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analog_input_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: FeatureIdentificationDevice
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_id:
+          type: string
+          default: null
+        message_queue:
+          type: string
+          default: null
+        alert_queue:
+          type: string
+          default: null
+  cover: feature_identification_device.webp
+  device_params:
+    功能: 参数配置、扫描测量、数据采集、温度控制、电学测量
+    可控参数: address、args、auto_raman_params、buf、dacIndex、degC、flag、增益
+    操作数: 151
+  manufacturer: Generic
+  model:
+    name: Generic Feature Identification Device
+    type: device
+  name: Feature Identification Device 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: feature_identification_device.webp
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

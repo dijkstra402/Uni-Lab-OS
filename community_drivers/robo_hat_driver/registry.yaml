@@ -1,0 +1,132 @@
+robo_hat_driver:
+  class:
+    module: unilabos.devices.controller.generic.robohat_driver:RoboHATDriver
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-trim_out_of_bound_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trim_out_of_bound_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_pulse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pulse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steering:
+                  type: string
+                throttle:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_valid_pwm_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_valid_pwm_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_pwm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_pwm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steering:
+                  type: string
+                throttle:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steering:
+                  type: string
+                throttle:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Robo HAT Driver是由Robotics Masters生产的专业实验设备。Auto-imported from donkeycar/parts/robohat.py
+  category:
+  - 机械臂
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        cfg:
+          type: string
+          default: null
+        serial_port:
+          type: string
+          default: null
+        debug:
+          type: string
+          default: false
+  name: Robotics Masters Robo Hat
+  manufacturer: Robotics Masters
+  icon: robo_hat_driver.webp
+  tags:
+  - 机械臂
+  device_params:
+    支持操作数: '11'
+    读取操作: read_serial、run_threaded
+    控制操作: set_pulse、write_pwm
+    通信接口: 串口

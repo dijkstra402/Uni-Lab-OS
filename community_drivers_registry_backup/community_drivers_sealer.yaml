@@ -1,0 +1,112 @@
+sealer:
+  class:
+    module: unilabos.devices.sealer.sealer:Sealer
+    type: python
+    status_types:
+      temperature: String
+    action_value_mappings:
+      auto-seal:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: seal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: integer
+                duration:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Plate Sealer驱动，支持seal/open/close/set temperature/get temperature。
+  category:
+  - 封膜仪
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        backend:
+          type: string
+          default: null
+  cover: sealer.webp
+  device_params:
+    功能: 参数配置、数据采集、温度控制
+    可控参数: 持续时间、温度
+    操作数: 5
+  manufacturer: Generic
+  model:
+    name: Generic Plate Sealer
+    type: device
+  name: 自动封膜仪
+  tags:
+  - 封膜仪
+  resource_type: device
+  icon: sealer.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

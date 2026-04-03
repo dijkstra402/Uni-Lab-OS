@@ -1,0 +1,131 @@
+seeed_bus:
+  class:
+    module: unilabos.devices.usb.seeed.seeed_bus:SeeedBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-init_frame:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init_frame
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-flush_buffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush_buffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-status_frame:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status_frame
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fileno:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileno
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from can/interfaces/seeedstudio/seeedstudio.py
+  category:
+  - usb
+  - seeed
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        channel:
+          type: string
+          default: null
+        baudrate:
+          type: string
+          default: 2000000
+        timeout:
+          type: string
+          default: 0.1
+        frame_type:
+          type: string
+          default: STD
+        operation_mode:
+          type: string
+          default: normal
+        bitrate:
+          type: string
+          default: 500000
+        can_filters:
+          type: string
+          default: null
+  name: Seeed BUS
+  manufacturer: Seeed Studio
+  cover: lcd__grove_lcd_rgb.webp
+  icon: lcd__grove_lcd_rgb.webp

@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "test_open_bci_board",
+      "name": "OpenBCI Brain-Computer Interface Board",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "open_bci_board",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": "",
+        "baud": 115200,
+        "filter_data": true,
+        "scaled_output": true,
+        "daisy": "",
+        "log": true,
+        "timeout": "",
+        "print_enable": true
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_open_bci_board",
+      "action": "auto-disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_open_bci_board",
+      "action": "auto-set_channel",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_open_bci_board",
+      "action": "auto-run",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_open_bci_board",
+      "action": "auto-stop",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "getSampleRate",
+      "description": "自动补充动作: getSampleRate",
+      "device": "test_open_bci_board",
+      "action": "auto-getSampleRate",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "getNbEEGChannels",
+      "description": "自动补充动作: getNbEEGChannels",
+      "device": "test_open_bci_board",
+      "action": "auto-getNbEEGChannels",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "getNbAUXChannels",
+      "description": "自动补充动作: getNbAUXChannels",
+      "device": "test_open_bci_board",
+      "action": "auto-getNbAUXChannels",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "start streaming",
+      "description": "自动补充动作: start_streaming",
+      "device": "test_open_bci_board",
+      "action": "auto-start_streaming",
+      "action_args": {
+        "lapse": -1
+      }
+    },
+    {
+      "step": 9,
+      "name": "warn",
+      "description": "自动补充动作: warn",
+      "device": "test_open_bci_board",
+      "action": "auto-warn",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "print incoming text",
+      "description": "自动补充动作: print_incoming_text",
+      "device": "test_open_bci_board",
+      "action": "auto-print_incoming_text",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "openbci id",
+      "description": "自动补充动作: openbci_id",
+      "device": "test_open_bci_board",
+      "action": "auto-openbci_id",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "print register settings",
+      "description": "自动补充动作: print_register_settings",
+      "device": "test_open_bci_board",
+      "action": "auto-print_register_settings",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "print bytes in",
+      "description": "自动补充动作: print_bytes_in",
+      "device": "test_open_bci_board",
+      "action": "auto-print_bytes_in",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "print packets in",
+      "description": "自动补充动作: print_packets_in",
+      "device": "test_open_bci_board",
+      "action": "auto-print_packets_in",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "check connection",
+      "description": "自动补充动作: check_connection",
+      "device": "test_open_bci_board",
+      "action": "auto-check_connection",
+      "action_args": {
+        "interval": 2,
+        "max_packets_to_skip": 10
+      }
+    },
+    {
+      "step": 16,
+      "name": "reconnect",
+      "description": "自动补充动作: reconnect",
+      "device": "test_open_bci_board",
+      "action": "auto-reconnect",
+      "action_args": {}
+    },
+    {
+      "step": 17,
+      "name": "enable filters",
+      "description": "自动补充动作: enable_filters",
+      "device": "test_open_bci_board",
+      "action": "auto-enable_filters",
+      "action_args": {}
+    },
+    {
+      "step": 18,
+      "name": "disable filters",
+      "description": "自动补充动作: disable_filters",
+      "device": "test_open_bci_board",
+      "action": "auto-disable_filters",
+      "action_args": {}
+    },
+    {
+      "step": 19,
+      "name": "test signal",
+      "description": "自动补充动作: test_signal",
+      "device": "test_open_bci_board",
+      "action": "auto-test_signal",
+      "action_args": {}
+    },
+    {
+      "step": 20,
+      "name": "find port",
+      "description": "自动补充动作: find_port",
+      "device": "test_open_bci_board",
+      "action": "auto-find_port",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "OpenBCIBoard 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "OpenBCIBoard",
+    "generated_by": "driver-finder"
+  }
+}

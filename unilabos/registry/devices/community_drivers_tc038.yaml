@@ -1,0 +1,141 @@
+tc038:
+  category:
+  - 冷热水机
+  class:
+    action_value_mappings:
+      auto-monitored_quantity:
+        feedback: {}
+        goal: {}
+        goal_default:
+          quantity: temperature
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                quantity:
+                  type: string
+              type: object
+          title: monitored_quantity
+          type: object
+        type: UniLabJsonCommand
+      auto-query:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                command:
+                  type: string
+              type: object
+          title: query
+          type: object
+        type: UniLabJsonCommand
+      auto-sendcmd:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                command:
+                  type: string
+              type: object
+          title: sendcmd
+          type: object
+        type: UniLabJsonCommand
+      auto-setpoint:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                value:
+                  type: string
+              type: object
+          title: setpoint
+          type: object
+        type: UniLabJsonCommand
+      auto-temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-monitored_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: monitored_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-information:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: information
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.temperature_controller.tc038:TC038
+    status_types:
+      information: String
+      monitored_quantity: String
+      monitored_value: String
+      setpoint: String
+      temperature: String
+    type: python
+  config_info: []
+  description: TC038 Temperature Controller驱动，支持monitored quantity/query/sendcmd/setpoint/temperature等7个操作。
+  handles: []
+  icon: tc038.webp
+  init_param_schema: {}
+  version: 1.0.0
+  cover: tc038.webp
+  device_params:
+    温度范围: -20~200 ℃
+  manufacturer: Novus Automation
+  model:
+    name: Generic TC038 Temperature Controller 温度控制器
+    type: device
+  name: TC038 Temperature Controller 温控设备
+  tags:
+  - 冷热水机
+  resource_type: device
+  scene:
+    domain: Physics
+    scene_name: Temperature Control
+    step: Cooling/Heating

@@ -1,0 +1,185 @@
+grbl_controller:
+  class:
+    module: unilabos.devices.generic.grbl_controller:GRBLController
+    type: python
+    status_types:
+      position: String
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_wake_up:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_wake_up
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_gcode_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_gcode_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                is_blocking:
+                  type: string
+        goal_default:
+          is_blocking: true
+        handles: {}
+      auto-send_gcode_command_inThread:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_gcode_command_inThread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wait_for_movement_completion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_movement_completion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cleaned_line:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          timeout: 5
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+                is_absolute:
+                  type: string
+                is_blocking:
+                  type: string
+        goal_default:
+          is_absolute: true
+          is_blocking: false
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Grbl Controller驱动，支持write/send wake up/send gcode command/send gcode
+    command inThread/wait for movement completion等8个操作。
+  category:
+  - 荧光显微镜
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        baud_rate:
+          type: string
+          default: 115200
+        debug:
+          type: string
+          default: false
+  cover: ''
+  device_params:
+    品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    设备类型: 荧光显微镜
+    光源类型: LED/汞灯
+  manufacturer: ''
+  model:
+    name: '' grbl_controller 控制器
+    type: device
+  name: grbl_controller 荧光显微镜
+  tags:
+  - 荧光显微镜
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

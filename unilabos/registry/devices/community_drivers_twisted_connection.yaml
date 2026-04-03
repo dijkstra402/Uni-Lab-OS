@@ -1,0 +1,213 @@
+twisted_connection:
+  class:
+    module: unilabos.devices.common.twisted_connection:TwistedConnection
+    type: python
+    status_types:
+      connected: String
+    action_value_mappings:
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-spawn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: spawn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default:
+          timeout: 30
+        handles: {}
+      auto-context:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: context
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sendRequest:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendRequest
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target:
+                  type: string
+                records:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sendMessage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendMessage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target:
+                  type: string
+                records:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getServersList:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getServersList
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getServerInfo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getServerInfo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                serverID:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getSettingsList:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSettingsList
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                serverID:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getSettingInfo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSettingInfo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                serverID:
+                  type: string
+                settingID:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getSettingInfoByName:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSettingInfoByName
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                serverID:
+                  type: string
+                settingName:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: TwistedConnection
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        cxn:
+          type: string
+          default: null
+  cover: twisted_connection.webp
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: records、serverID、settingID、settingName、target、timeout
+    操作数: 11
+  manufacturer: Open Source
+  model:
+    name: Generic Twisted Connection
+    type: device
+  name: Twisted Connection 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: twisted_connection.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

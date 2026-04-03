@@ -1,0 +1,177 @@
+x_keys_device:
+  class:
+    module: unilabos.devices.hid_devices.xkeys_device:XKeysDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-getState:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getState
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                refresh:
+                  type: string
+        goal_default:
+          refresh: false
+        handles: {}
+      auto-setCallback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setCallback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cb:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setLED:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setLED
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setIntensity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setIntensity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                b1:
+                  type: string
+                b2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setBacklights:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setBacklights
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+                axis:
+                  type: string
+                reverse:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setBacklight:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setBacklight
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                row:
+                  type: string
+                col:
+                  type: string
+                bl1:
+                  type: string
+                bl2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setBacklightRows:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setBacklightRows
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bl1:
+                  type: string
+                bl2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: X Keys Device驱动，支持getState/setCallback/setLED/setIntensity/setBacklights等8个操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        handle:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置、数据采集
+    可控参数: axis、bl1、bl2、col、refresh、reverse、row、state
+    操作数: 8
+  manufacturer: ''
+  model:
+    name: '' x_keys_device
+    type: device
+  name: x_keys_device 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

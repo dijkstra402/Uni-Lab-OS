@@ -1,0 +1,103 @@
+{
+  "nodes": [
+    {
+      "id": "test_ascii_device",
+      "name": "Ascii Device",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "ascii_device",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": "",
+        "address": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_ascii_device",
+      "action": "auto-stop",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "axis",
+      "description": "自动补充动作: axis",
+      "device": "test_ascii_device",
+      "action": "auto-axis",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "send",
+      "description": "自动补充动作: send",
+      "device": "test_ascii_device",
+      "action": "auto-send",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "poll until idle",
+      "description": "自动补充动作: poll_until_idle",
+      "device": "test_ascii_device",
+      "action": "auto-poll_until_idle",
+      "action_args": {
+        "axis_number": 0
+      }
+    },
+    {
+      "step": 5,
+      "name": "home",
+      "description": "自动补充动作: home",
+      "device": "test_ascii_device",
+      "action": "auto-home",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "move abs",
+      "description": "自动补充动作: move_abs",
+      "device": "test_ascii_device",
+      "action": "auto-move_abs",
+      "action_args": {
+        "blocking": true
+      }
+    },
+    {
+      "step": 7,
+      "name": "move rel",
+      "description": "自动补充动作: move_rel",
+      "device": "test_ascii_device",
+      "action": "auto-move_rel",
+      "action_args": {
+        "blocking": true
+      }
+    },
+    {
+      "step": 8,
+      "name": "move vel",
+      "description": "自动补充动作: move_vel",
+      "device": "test_ascii_device",
+      "action": "auto-move_vel",
+      "action_args": {
+        "blocking": false
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "AsciiDevice 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "AsciiDevice",
+    "generated_by": "driver-finder"
+  }
+}

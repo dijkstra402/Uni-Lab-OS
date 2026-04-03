@@ -1,0 +1,107 @@
+shared_serial:
+  class:
+    module: unilabos.devices.common.generic.shared_serial:SharedSerial
+    type: python
+    status_types:
+      lock: String
+    action_value_mappings:
+      auto-readline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readlines:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readlines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hint:
+                  type: integer
+        goal_default:
+          hint: -1
+        handles: {}
+      auto-read_until:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_until
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                terminator:
+                  type: string
+                size:
+                  type: string
+        goal_default:
+          terminator: b'\n'
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Shared Serial驱动，支持readline/readlines/read until/write。
+  category:
+  - 荧光显微镜
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serial:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    设备类型: 荧光显微镜
+    光源类型: LED/汞灯
+    接口类型: 串口
+  manufacturer: ''
+  model:
+    name: '' shared_serial 串口设备
+    type: device
+  name: shared_serial 荧光显微镜
+  tags:
+  - 荧光显微镜
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Electronics
+    scene_name: Interfacing
+    step: Communication
+  version: 1.0.0

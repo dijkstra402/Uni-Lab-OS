@@ -1,0 +1,141 @@
+digital_io:
+  class:
+    module: unilabos.devices.io.digital_io:DigitalIO
+    type: python
+    status_types:
+      num_lines: String
+      IO_state: String
+      all_IO_state: String
+    action_value_mappings:
+      auto-set_IO_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_IO_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                line:
+                  type: integer
+                state:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-set_all_IO_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_all_IO_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stateArray:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_line:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_line
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                line:
+                  type: string
+                ouput:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_all_lines:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_all_lines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ouput_array:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_line:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_line
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                line:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_all_lines:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_all_lines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Digital Io驱动，支持set IO state/set all IO state/write line/write all lines/read
+    line等6个操作。
+  category:
+  - 荧光显微镜
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        numLines:
+          type: integer
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    设备类型: 荧光显微镜
+    光源类型: LED/汞灯
+  manufacturer: ''
+  model:
+    name: '' digital_io
+    type: device
+  name: digital_io 荧光显微镜
+  tags:
+  - 荧光显微镜
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

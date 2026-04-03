@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "test_pipette_controller",
+      "name": "Test PipetteController",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "pipette_controller",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_pipette_controller",
+      "action": "auto-check_connection",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_pipette_controller",
+      "action": "auto-waitAck",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_pipette_controller",
+      "action": "auto-readFeedback",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "parseError",
+      "description": "自动补充动作: parseError",
+      "device": "test_pipette_controller",
+      "action": "auto-parseError",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "sendCmd",
+      "description": "自动补充动作: sendCmd",
+      "device": "test_pipette_controller",
+      "action": "auto-sendCmd",
+      "action_args": {
+        "pos": 1
+      }
+    },
+    {
+      "step": 6,
+      "name": "tellPosition",
+      "description": "自动补充动作: tellPosition",
+      "device": "test_pipette_controller",
+      "action": "auto-tellPosition",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "tellLevel",
+      "description": "自动补充动作: tellLevel",
+      "device": "test_pipette_controller",
+      "action": "auto-tellLevel",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "initiate rline",
+      "description": "自动补充动作: initiate_rline",
+      "device": "test_pipette_controller",
+      "action": "auto-initiate_rline",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "aspirate",
+      "description": "自动补充动作: aspirate",
+      "device": "test_pipette_controller",
+      "action": "auto-aspirate",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "dispense",
+      "description": "自动补充动作: dispense",
+      "device": "test_pipette_controller",
+      "action": "auto-dispense",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "clear and reset",
+      "description": "自动补充动作: clear_and_reset",
+      "device": "test_pipette_controller",
+      "action": "auto-clear_and_reset",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "reset",
+      "description": "自动补充动作: reset",
+      "device": "test_pipette_controller",
+      "action": "auto-reset",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "blowout",
+      "description": "自动补充动作: blowout",
+      "device": "test_pipette_controller",
+      "action": "auto-blowout",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "eject",
+      "description": "自动补充动作: eject",
+      "device": "test_pipette_controller",
+      "action": "auto-eject",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "eject and home",
+      "description": "自动补充动作: eject_and_home",
+      "device": "test_pipette_controller",
+      "action": "auto-eject_and_home",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "disconnect pipette",
+      "description": "自动补充动作: disconnect_pipette",
+      "device": "test_pipette_controller",
+      "action": "auto-disconnect_pipette",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "PipetteController 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "PipetteController",
+    "generated_by": "driver-finder"
+  }
+}

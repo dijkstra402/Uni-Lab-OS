@@ -1,0 +1,82 @@
+{
+  "nodes": [
+    {
+      "id": "test_bi_talino",
+      "name": "BITalino Biomedical Development Kit",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "bi_talino",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "address": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_bi_talino",
+      "action": "auto-connect",
+      "action_args": {
+        "timeout": 10.0
+      }
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_bi_talino",
+      "action": "auto-set_callback",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_bi_talino",
+      "action": "auto-start",
+      "action_args": {
+        "sampling_rate": 1000,
+        "channels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_bi_talino",
+      "action": "auto-stop",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "disconnect",
+      "description": "自动补充动作: disconnect",
+      "device": "test_bi_talino",
+      "action": "auto-disconnect",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "BITalino 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "BITalino",
+    "generated_by": "driver-finder"
+  }
+}

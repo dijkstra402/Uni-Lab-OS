@@ -1,0 +1,75 @@
+{
+  "nodes": [
+    {
+      "id": "test_g2_v_sunbrick",
+      "name": "Test G2VSunbrick",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "g2_v_sunbrick",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "serial_obj": "",
+        "slave_address": 1
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_g2_v_sunbrick",
+      "action": "auto-setup_network_arbitration",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_g2_v_sunbrick",
+      "action": "auto-set_channel_value",
+      "action_args": {
+        "node": 0
+      }
+    },
+    {
+      "step": 3,
+      "name": "set intensity factor",
+      "description": "自动补充动作: set_intensity_factor",
+      "device": "test_g2_v_sunbrick",
+      "action": "auto-set_intensity_factor",
+      "action_args": {
+        "node": 0
+      }
+    },
+    {
+      "step": 4,
+      "name": "turn off",
+      "description": "自动补充动作: turn_off",
+      "device": "test_g2_v_sunbrick",
+      "action": "auto-turn_off",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "set spectrum",
+      "description": "自动补充动作: set_spectrum",
+      "device": "test_g2_v_sunbrick",
+      "action": "auto-set_spectrum",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "G2VSunbrick 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "G2VSunbrick",
+    "generated_by": "driver-finder"
+  }
+}

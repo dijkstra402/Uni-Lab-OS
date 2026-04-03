@@ -1,0 +1,138 @@
+acq400e:
+  class:
+    module: unilabos.devices.data_acquisition.acq400e:acq400e
+    type: python
+    status_types:
+      sites: String
+    action_value_mappings:
+      auto-int_statemon:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: int_statemon
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-monitor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: monitor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pv:
+                  type: string
+                callback:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clearpv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clearpv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pv:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-readpv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readpv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pv:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stream_to_disk:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stream_to_disk
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ssb:
+                  type: string
+                maxbytes:
+                  type: string
+                maxtime:
+                  type: string
+                update:
+                  type: string
+        goal_default:
+          update: true
+        handles: {}
+      auto-stop_stream:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_stream
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Acq400E驱动，支持int statemon/monitor/clearpv/readpv/stream to disk等6个操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        uut:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 数据采集
+    可控参数: callback、maxbytes、maxtime、ssb、update
+    操作数: 6
+  manufacturer: ''
+  model:
+    name: '' acq400e
+    type: device
+  name: acq400e 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

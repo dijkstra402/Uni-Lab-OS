@@ -1,0 +1,142 @@
+pv_log_folder:
+  class:
+    module: unilabos.devices.generic.pv_log_folder:PVLogFolder
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-read_folder:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_folder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_all_logs_text:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_all_logs_text
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                verbose:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-parse_logfiles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_logfiles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nproc:
+                  type: string
+                nmax:
+                  type: string
+                verbose:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset_new_logfiles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_new_logfiles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parse_data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_logfile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_logfile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pvname:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_motor_events:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_motor_events
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                motorname:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_next_process:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_next_process
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pvlist:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: PV LOG Folder是由EPICS (Argonne National Lab)生产的专业实验设备。data and methods for a PVlogger Folder
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '15'
+    读取操作: get_datetimes、get_mpldates、read_log_text、read、get_datetimes 等10个
+    控制操作: set_end_time、reset_new_logfiles
+    控制能力: 时间、波长、电流
+  manufacturer: EPICS (Argonne National Lab)
+  model:
+    name: PV LOG Folder
+    type: device
+  name: EPICS Pv Log Folder
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: epics_dxp_mapping.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

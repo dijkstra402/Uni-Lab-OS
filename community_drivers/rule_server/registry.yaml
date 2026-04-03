@@ -1,0 +1,172 @@
+rule_server:
+  class:
+    module: unilabos.devices.rule_server.rule_server:RuleServer
+    type: python
+    status_types:
+      queues: String
+      queue_info: String
+    action_value_mappings:
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-task_advertisements:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: task_advertisements
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-bid_on_tasks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bid_on_tasks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                body:
+                  type: string
+        goal_default:
+          body: ''
+        handles: {}
+      auto-add_integer_id_rule:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_integer_id_rule
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_tasks:
+                  type: string
+                release_start:
+                  type: string
+                release_end:
+                  type: string
+                ruleID:
+                  type: string
+                timeout:
+                  type: string
+                body:
+                  type: string
+        goal_default:
+          max_tasks: 1000000.0
+          timeout: 3600
+          body: ''
+        handles: {}
+      auto-release_rule_tasks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: release_rule_tasks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ruleID:
+                  type: string
+                release_start:
+                  type: string
+                release_end:
+                  type: string
+                body:
+                  type: string
+        goal_default:
+          body: ''
+        handles: {}
+      auto-inactivate_rule:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: inactivate_rule
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ruleID:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-handin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: handin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                body:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-mark_release_complete:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mark_release_complete
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ruleID:
+                  type: string
+                n_tasks:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: RuleServer
+  category:
+  - rule_server

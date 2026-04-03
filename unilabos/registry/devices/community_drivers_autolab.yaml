@@ -1,0 +1,290 @@
+autolab:
+  class:
+    module: unilabos.devices.electrochemical.autolab:Autolab
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ismeasuring:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ismeasuring
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-potential:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: potential
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setCurrentRange:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setCurrentRange
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                range:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setStability:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setStability
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stability:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-appliedPotential:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: appliedPotential
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-abort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: abort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-loadProcedure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadProcedure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setSetpoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSetpoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                setpoints:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-whileMeasuring:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: whileMeasuring
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                type_:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-CellOnOff:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: CellOnOff
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                onoff:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-parseNox:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parseNox
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                conf:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-parseFRA:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parseFRA
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                conf:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-performMeasurement:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: performMeasurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                procedure:
+                  type: string
+                setpoints:
+                  type: string
+                plot:
+                  type: string
+                onoffafter:
+                  type: string
+                safepath:
+                  type: string
+                filename:
+                  type: string
+                parseinstruction:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Metrohm Autolab Autolab驱动（Metrohm Autolab），支持connect/disconnect/ismeasuring/potential/current等16个操作。
+  category:
+  - 电化学工作站
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        autolab_conf:
+          type: string
+          default: null
+  cover: autolab.webp
+  device_params:
+    品牌: Metrohm Autolab
+    功能: 参数配置、数据采集、电学测量
+    可控参数: conf、filename、name、onoff、onoffafter、parseinstruction、plot、procedure
+    操作数: 16
+  manufacturer: Metrohm Autolab
+  model:
+    name: Metrohm Metrohm Autolab Autolab
+    type: device
+  name: Metrohm Autolab Autolab 电化学工作站
+  tags:
+  - 电化学工作站
+  resource_type: device
+  icon: autolab.webp
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0

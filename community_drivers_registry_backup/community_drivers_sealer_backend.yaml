@@ -1,0 +1,76 @@
+sealer_backend:
+  class:
+    module: unilabos.devices.sealer.backend:SealerBackend
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-seal:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: seal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+                duration:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Plate Sealer (Backend)驱动，支持seal/set temperature/get temperature。
+  category:
+  - 封膜仪
+  cover: sealer_backend.webp
+  device_params:
+    功能: 参数配置、数据采集、温度控制
+    可控参数: 持续时间、温度
+    操作数: 3
+  manufacturer: Generic
+  model:
+    name: Generic Plate Sealer (Backend) 后端控制器
+    type: device
+  name: Plate Sealer (Backend) 后端模块
+  tags:
+  - 封膜仪
+  resource_type: device
+  icon: sealer_backend.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

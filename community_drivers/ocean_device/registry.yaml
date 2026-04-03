@@ -1,0 +1,85 @@
+ocean_device:
+  class:
+    module: unilabos.devices.custom.ocean_device:OceanDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acquire_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-scans_to_average:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scans_to_average
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+  description: Ocean Insight 光谱仪驱动模块是由Ocean Insight (Ocean Optics)生产的表征设备，主要功能包括扫描、设备连接、采集。支持Signal, Slot等操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_id:
+          type: string
+          default: null
+        message_queue:
+          type: string
+          default: null
+        alert_queue:
+          type: string
+          default: null
+  device_params:
+    品牌: Ocean Insight
+    功能: 扫描测量、数据采集
+    可控参数: value
+    操作数: 3
+  manufacturer: Ocean Insight (Ocean Optics)
+  model:
+    name: Ocean Insight 光纤光谱仪 分析仪器 光谱仪
+    type: device
+  name: Ocean Insight
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ocean.webp
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

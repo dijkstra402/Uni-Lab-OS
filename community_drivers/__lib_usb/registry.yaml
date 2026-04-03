@@ -1,0 +1,385 @@
+__lib_usb:
+  class:
+    module: unilabos.devices.generic.usb.usb_pyusb_driver:_LibUSB
+    type: python
+    status_types:
+      device_descriptor: String
+      configuration_descriptor: String
+      interface_descriptor: String
+      endpoint_descriptor: String
+      configuration: String
+    action_value_mappings:
+      auto-enumerate_devices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enumerate_devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_configuration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_configuration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                config_value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_interface_altsetting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_interface_altsetting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                intf:
+                  type: string
+                altsetting:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-claim_interface:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: claim_interface
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                intf:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-release_interface:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: release_interface
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                intf:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-bulk_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bulk_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                ep:
+                  type: string
+                intf:
+                  type: string
+                data:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-bulk_read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bulk_read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                ep:
+                  type: string
+                intf:
+                  type: string
+                buff:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-intr_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: intr_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                ep:
+                  type: string
+                intf:
+                  type: string
+                data:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-intr_read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: intr_read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                ep:
+                  type: string
+                intf:
+                  type: string
+                buff:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-iso_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: iso_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                ep:
+                  type: string
+                intf:
+                  type: string
+                data:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-iso_read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: iso_read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                ep:
+                  type: string
+                intf:
+                  type: string
+                buff:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ctrl_transfer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ctrl_transfer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                bmRequestType:
+                  type: string
+                bRequest:
+                  type: string
+                wValue:
+                  type: string
+                wIndex:
+                  type: string
+                data:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clear_halt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_halt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                ep:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_kernel_driver_active:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_kernel_driver_active
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                intf:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-detach_kernel_driver:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: detach_kernel_driver
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dev_handle:
+                  type: string
+                intf:
+                  type: integer
+        goal_default: {}
+        handles: {}
+  description: 'LibUSB 通用USB设备库设备驱动。Auto-generated by Build Agent Original: usb/backend/libusb0.py'
+  category:
+  - 实验执行&合成设备
+  name: LibUSB
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '23'
+    读取操作: get_device_descriptor、get_configuration_descriptor、get_interface_descriptor、get_endpoint_descriptor、get_configuration
+    控制操作: set_configuration、set_interface_altsetting、bulk_write、intr_write、iso_write

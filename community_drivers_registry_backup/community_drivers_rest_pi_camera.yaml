@@ -1,0 +1,145 @@
+rest_pi_camera:
+  class:
+    module: unilabos.devices.cameras.rest_pi_camera:RestPiCamera
+    type: python
+    status_types:
+      json: String
+      iso: String
+      exposuretime: String
+      snap: String
+      resolution_preview: String
+      preview: String
+    action_value_mappings:
+      auto-isConnected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isConnected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-post_json:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: post_json
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+                payload:
+                  type: string
+        goal_default:
+          payload: {}
+        handles: {}
+      auto-set_iso:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_iso
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                iso:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_exposuretime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_exposuretime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                exposuretime:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_live:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_live
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_live:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_live
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Rest Pi Camera驱动，支持isConnected/post json/set iso/set exposuretime/start
+    live等6个操作。
+  category:
+  - 荧光显微镜
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: null
+        port:
+          type: string
+          default: 80
+        is_debug:
+          type: string
+          default: false
+  cover: ''
+  device_params:
+    品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    设备类型: 荧光显微镜
+    光源类型: LED/汞灯
+  manufacturer: ''
+  model:
+    name: '' rest_pi_camera 相机
+    type: device
+  name: rest_pi_camera 荧光显微镜
+  tags:
+  - 荧光显微镜
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Imaging
+    scene_name: Microscopy
+    step: Image Acquisition
+  version: 1.0.0

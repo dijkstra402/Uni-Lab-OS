@@ -1,0 +1,89 @@
+sensirion_ekh4:
+  class:
+    module: unilabos.devices.generic.sensirion_ekh4:sensirionEKH4
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_humidity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_humidity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_dew_point:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_dew_point
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Sensirion Ekh4是由Sensirion AG生产的实验执行&合成设备，主要功能包括初始化、温度读取。支持Signal, Slot, get dew point等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '4'
+    读取操作: get_temperature、get_humidity、get_dew_point
+    控制能力: 多通道
+  manufacturer: Sensirion AG
+  model:
+    name: Sensirion Ekh4
+    type: device
+  name: Sensirion AG sensirion EKH4
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: sensirion_ekh4.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

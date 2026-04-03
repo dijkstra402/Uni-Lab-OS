@@ -1,0 +1,96 @@
+{
+  "nodes": [
+    {
+      "id": "test_rtde_urx",
+      "name": "UR Robot RTDE Interface",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "rtde_urx",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "ROBOT_HOST": "192.168.68.23",
+        "ROBOT_PORT": 30004,
+        "config_filename": "control_loop_configuration.xml"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_rtde_urx",
+      "action": "auto-initialize",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_rtde_urx",
+      "action": "auto-open_gripper",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_rtde_urx",
+      "action": "auto-wait",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_rtde_urx",
+      "action": "auto-close_gripper",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "setp to list",
+      "description": "自动补充动作: setp_to_list",
+      "device": "test_rtde_urx",
+      "action": "auto-setp_to_list",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "list to setp",
+      "description": "自动补充动作: list_to_setp",
+      "device": "test_rtde_urx",
+      "action": "auto-list_to_setp",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "movel",
+      "description": "自动补充动作: movel",
+      "device": "test_rtde_urx",
+      "action": "auto-movel",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "angle antipodal grasp",
+      "description": "自动补充动作: angle_antipodal_grasp",
+      "device": "test_rtde_urx",
+      "action": "auto-angle_antipodal_grasp",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "RTDE_urx 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "RTDE_urx",
+    "generated_by": "driver-finder"
+  }
+}

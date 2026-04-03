@@ -1,0 +1,148 @@
+{
+  "nodes": [
+    {
+      "id": "test_rail",
+      "name": "Test Rail",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "rail",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {},
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_rail",
+      "action": "auto-connect_rail",
+      "action_args": {
+        "host": "192.168.31.233",
+        "port": 10001,
+        "timeout": 2
+      }
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_rail",
+      "action": "auto-set_ml",
+      "action_args": {
+        "ml": 4700
+      }
+    },
+    {
+      "step": 3,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_rail",
+      "action": "auto-getStatus",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_rail",
+      "action": "auto-read_intelligent",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_rail",
+      "action": "auto-stopMotion",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "set vel",
+      "description": "自动补充动作: set_vel",
+      "device": "test_rail",
+      "action": "auto-set_vel",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "check move",
+      "description": "自动补充动作: check_move",
+      "device": "test_rail",
+      "action": "auto-check_move",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "getProcessTime",
+      "description": "自动补充动作: getProcessTime",
+      "device": "test_rail",
+      "action": "auto-getProcessTime",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "getPosition",
+      "description": "自动补充动作: getPosition",
+      "device": "test_rail",
+      "action": "auto-getPosition",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "move",
+      "description": "自动补充动作: move",
+      "device": "test_rail",
+      "action": "auto-move",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "rel move",
+      "description": "自动补充动作: rel_move",
+      "device": "test_rail",
+      "action": "auto-rel_move",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "resumeMotion",
+      "description": "自动补充动作: resumeMotion",
+      "device": "test_rail",
+      "action": "auto-resumeMotion",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "disconnect rail",
+      "description": "自动补充动作: disconnect_rail",
+      "device": "test_rail",
+      "action": "auto-disconnect_rail",
+      "action_args": {
+        "homerail": true
+      }
+    },
+    {
+      "step": 14,
+      "name": "removeerror",
+      "description": "自动补充动作: removeerror",
+      "device": "test_rail",
+      "action": "auto-removeerror",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Rail 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Rail",
+    "generated_by": "driver-finder"
+  }
+}

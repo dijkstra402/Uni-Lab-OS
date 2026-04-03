@@ -1,0 +1,62 @@
+raw_client:
+  class:
+    module: unilabos.devices.generic.raw_client:RawClient
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nelems:
+                  type: string
+                data_size:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_blocks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_blocks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nelems:
+                  type: string
+                data_size:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: RAW Client设备驱动。
+  category:
+  - 实验执行&合成设备
+  cover: raw_client.webp
+  device_params:
+    支持操作数: '2'
+  manufacturer: Open Source
+  model:
+    name: RAW Client
+    type: device
+  name: RAW Client
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: raw_client.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

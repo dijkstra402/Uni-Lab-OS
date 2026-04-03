@@ -1,0 +1,486 @@
+daq__move:
+  class:
+    module: unilabos.devices.actuator.daq_move.daq_move:DAQ_Move
+    type: python
+    status_types:
+      master: String
+      initialized_state: String
+      move_done_bool: String
+      actuator_value: String
+      continuous_actuator_value: String
+      actuator: String
+      actuators: String
+      units: String
+      axis_names: String
+      axis_name: String
+    action_value_mappings:
+      auto-process_ui_cmds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_ui_cmds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-master:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: master
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                is_master:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-append_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: append_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dte:
+                  type: string
+                where:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop_motion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_motion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                move_command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_abs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_abs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                send_to_tcpip:
+                  type: string
+        goal_default:
+          send_to_tcpip: false
+        handles: {}
+      auto-move_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                send_to_tcpip:
+                  type: string
+        goal_default:
+          send_to_tcpip: false
+        handles: {}
+      auto-move_rel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_rel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rel_value:
+                  type: string
+                send_to_tcpip:
+                  type: string
+        goal_default:
+          send_to_tcpip: false
+        handles: {}
+      auto-move_rel_p:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_rel_p
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_rel_m:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_rel_m
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-quit_fun:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: quit_fun
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-init_hardware:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init_hardware
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                do_init:
+                  type: string
+        goal_default:
+          do_init: true
+        handles: {}
+      auto-value_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: value_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setup_continuous_saving:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_continuous_saving
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                init:
+                  type: boolean
+        goal_default:
+          init: true
+        handles: {}
+      auto-param_deleted:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: param_deleted
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-child_added:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: child_added
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-raise_timeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: raise_timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-thread_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: thread_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-grab:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: grab
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_grab:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_grab
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-actuator:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: actuator
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                act_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update_plugin_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_plugin_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-units:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unit:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-axis_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: axis_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect_tcp_ip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_tcp_ip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect_leco:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_leco
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                connect:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-process_tcpip_cmds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_tcpip_cmds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: DAQ Move是由National Instruments生产的物流/机械，主要功能包括停止、关闭、初始化、设备连接、设置、读取数据。支持Signal, Slot, actuator等操作。
+  category:
+  - 物流/机械
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        parent:
+          type: string
+          default: null
+        title:
+          type: string
+          default: DAQ Move
+        ui_identifier:
+          type: string
+          default: null
+  name: National Instruments DAQ Move
+  manufacturer: National Instruments
+  icon: digital_input_task.webp
+  tags:
+  - 物流/机械
+  device_params:
+    支持操作数: '44'
+    读取操作: thread_status、get_actuator_value、get_continuous_actuator_value、get_unit_to_display、get_actuator_value
+    控制操作: stop_motion、setup_continuous_saving、stop_grab、update_settings、Move_Stoped
+    运动操作: move、move_abs、move_home、move_rel、move_rel_p
+    设备属性数: '11'
+    控制能力: 位置控制
+    通信接口: TCP/IP

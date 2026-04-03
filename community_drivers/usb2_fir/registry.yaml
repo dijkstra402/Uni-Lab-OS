@@ -1,0 +1,199 @@
+usb2_fir:
+  class:
+    module: unilabos.devices.generic.usb2_fir:USB2FIR
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-echo_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: echo_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                echovalue:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_capability:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_capability
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_bootloader:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_bootloader
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_memory:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_memory
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                startaddress:
+                  type: string
+                length:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_memory:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_memory
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                startaddress:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-bulkread:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bulkread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_bfmode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_bfmode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                refreshRate:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop_bfmode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_bfmode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initializeFrame:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initializeFrame
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                defaulttemp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-updateFrame:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: updateFrame
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frame:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Usb2 FIR是一款实验执行&合成设备，主要功能包括停止、写入数据、初始化、启动、状态查询、读取数据。支持Signal, Slot, echo test等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '11'
+    读取操作: get_capability、get_status、read_memory、bulkread
+    控制操作: start_bootloader、write_memory、start_bfmode、stop_bfmode
+    控制能力: 多通道、温度、速度
+    通信接口: USB
+  manufacturer: Open Source
+  model:
+    name: Usb2 FIR
+    type: device
+  name: MLX Common Parameters
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

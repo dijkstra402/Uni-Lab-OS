@@ -1,0 +1,281 @@
+modbus_server:
+  class:
+    module: unilabos.devices.generic.modbus_server:ModbusServer
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-srv_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: srv_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-new_request:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: new_request
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_response_mbap:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_response_mbap
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-func_code:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: func_code
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-except_code:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: except_code
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_except:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_except
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_valid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_valid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-build_except:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: build_except
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                func_code:
+                  type: string
+                exp_status:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_pack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_pack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fmt:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unpack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unpack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fmt:
+                  type: string
+                from_byte:
+                  type: string
+                to_byte:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-server_running:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: server_running
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-handle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: handle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Modbus Server是由Modbus (Open Standard)生产的实验执行&合成设备，主要功能包括停止、写入数据、启动、设置、读取数据、运行。支持Signal, Slot, add pack等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '30'
+    读取操作: get_bits、get_words、get_coils、get_discrete_inputs、get_holding_registers 等10个
+    控制操作: set_bits、set_words、set_coils、set_discrete_inputs、set_holding_registers 等10个
+    设备属性: vendor_name、product_code、major_minor_revision、vendor_url、product_name、model_name 等8个
+    通信接口: Modbus、TCP/IP
+  manufacturer: Modbus (Open Standard)
+  model:
+    name: Modbus Server
+    type: device
+  name: Modbus Server
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: isotcp_connection.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

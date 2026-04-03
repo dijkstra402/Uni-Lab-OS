@@ -1,0 +1,191 @@
+open_plc_role_ruleset:
+  category:
+  - 后处理设备
+  class:
+    action_value_mappings:
+      auto-check_validity:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                action_type_id:
+                  type: string
+                body:
+                  type: string
+                user:
+                  type: string
+              type: object
+          title: check_validity
+          type: object
+        type: UniLabJsonCommand
+      auto-initialize_security:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_security
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-validate_client_certificate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_client_certificate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                client_cert_pem:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_security_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_security_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-generate_server_certificate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: generate_server_certificate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cert_path:
+                  type: string
+                key_path:
+                  type: string
+                common_name:
+                  type: string
+                key_size:
+                  type: number
+                valid_days:
+                  type: number
+                app_uri:
+                  type: string
+        goal_default:
+          common_name: OpenPLC OPC-UA Server
+          key_size: 2048
+          valid_days: 3650
+        handles: {}
+      auto-setup_server_security:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_server_security
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                server:
+                  type: string
+                security_profiles:
+                  type: string
+                app_uri:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create_trust_store:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_trust_store
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trusted_certificates:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-cleanup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cleanup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_certificate_validation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_certificate_validation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                server:
+                  type: string
+                trusted_certificates:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.openplc.openplc_role_ruleset:OpenPLCRoleRuleset
+    status_types: {}
+    type: python
+  config_info: []
+  description: Open Plc Role Ruleset是由OpenPLC Project生产的专业实验设备。Custom permission ruleset for OpenPLC OPC-UA server
+  handles: []
+  icon: open_plc_role_ruleset.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: action_type_id、app_uri、body、cert_path、client_cert_pem、common_name、key_path、key_size
+    操作数: 9
+  manufacturer: OpenPLC Project
+  model:
+    name: Generic Open Plc Role Ruleset PLC控制器
+    type: device
+  name: OpenPLC Project Open PLC Role Ruleset
+  tags:
+  - 后处理设备
+  resource_type: device
+  scene:
+    domain: Automation
+    scene_name: Industrial Control
+    step: Process Control

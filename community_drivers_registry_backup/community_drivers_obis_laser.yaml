@@ -1,0 +1,81 @@
+obis_laser:
+  class:
+    module: unilabos.devices.generic.obis_laser:ObisLaser
+    type: python
+    status_types:
+      status: String
+      is_on: String
+      trigger_type: String
+      trigger_mode: String
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ttype:
+                  type: string
+                tmode:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Obis Laser驱动，支持initialize/set trigger。
+  category:
+  - 荧光显微镜
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        com:
+          type: string
+          default: null
+        baud:
+          type: string
+          default: 115200
+        timeout:
+          type: string
+          default: 0.5
+  cover: ''
+  device_params:
+    品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    设备类型: 荧光显微镜
+    光源类型: LED/汞灯
+  manufacturer: ''
+  model:
+    name: '' obis_laser 激光器
+    type: device
+  name: obis_laser 荧光显微镜
+  tags:
+  - 荧光显微镜
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Physics
+    scene_name: Optics
+    step: Laser Operation
+  version: 1.0.0

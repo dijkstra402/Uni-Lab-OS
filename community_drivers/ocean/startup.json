@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "test_ocean",
+      "name": "Ocean Insight Spectrometer",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "ocean",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "config": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_ocean",
+      "action": "auto-open",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_ocean",
+      "action": "auto-readSpectrum",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_ocean",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "loadFile",
+      "description": "自动补充动作: loadFile",
+      "device": "test_ocean",
+      "action": "auto-loadFile",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "ocean 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "ocean",
+    "generated_by": "driver-finder"
+  }
+}

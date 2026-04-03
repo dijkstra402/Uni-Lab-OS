@@ -1,0 +1,84 @@
+acq2106_tiga:
+  class:
+    module: unilabos.devices.generic.acq2106_tiga:Acq2106_TIGA
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-load_dio482pg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_dio482pg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                site:
+                  type: string
+                stl:
+                  type: string
+                trace:
+                  type: string
+        goal_default:
+          trace: false
+        handles: {}
+      auto-set_DO:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_DO
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                site:
+                  type: string
+                dox:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          value: P
+        handles: {}
+  description: Acq2106 Tiga驱动，支持load dio482pg/set DO。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        uut:
+          type: string
+          default: null
+        monitor:
+          type: string
+          default: true
+        s0_client:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置
+    可控参数: dox、site、stl、trace、value
+    操作数: 2
+  manufacturer: ''
+  model:
+    name: '' acq2106_tiga
+    type: device
+  name: acq2106_tiga 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

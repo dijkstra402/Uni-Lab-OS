@@ -1,0 +1,150 @@
+julabo_fp50:
+  class:
+    module: unilabos.devices.generic.julabo_fp50:julaboFP50
+    type: python
+    status_types:
+      version: String
+      status: String
+      set_temp: String
+      temp: String
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_chiller:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_chiller
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_chiller:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_chiller
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                variable:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Julabo Fp50驱动，支持init/read/write/start chiller/stop chiller等7个操作。
+  category:
+  - 冷热水机
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          type: string
+          default: null
+        conf:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''
+    温度范围: -20~200 ℃
+品牌: ''
+    温度范围: -20~200 ℃
+品牌: ''
+    设备类型: 冷热水机/循环浴
+    温度范围: -20~200 ℃
+  manufacturer: ''
+  model:
+    name: '' julabo_fp50
+    type: device
+  name: julabo_fp50 温控设备
+  tags:
+  - 冷热水机
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Physics
+    scene_name: Temperature Control
+    step: Cooling/Heating
+  version: 1.0.0

@@ -1,0 +1,99 @@
+tango_device:
+  class:
+    module: unilabos.devices.tango_device.tango_device:TangoDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_trl:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trl:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create_children_from_annotations:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_children_from_annotations
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connect_mock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_mock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                mock:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connect_real:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_real
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                timeout:
+                  type: number
+                force_reconnect:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Tango Device驱动，支持set trl/create children from annotations/connect mock/connect
+    real。
+  category:
+  - 后处理设备
+  cover: tango_device.webp
+  device_params:
+    功能: 参数配置
+    可控参数: device、force_reconnect、mock、timeout、trl
+    操作数: 4
+  manufacturer: Generic
+  model:
+    name: Generic Tango Device
+    type: device
+  name: Tango Device 后处理设备
+  tags:
+  - 后处理设备
+  resource_type: device
+  icon: tango_device.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

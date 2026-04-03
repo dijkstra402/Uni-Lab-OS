@@ -1,0 +1,137 @@
+{
+  "nodes": [
+    {
+      "id": "test_esp300",
+      "name": "Test esp300",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "esp300",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "portname": "COM4",
+        "maxtravel": [
+          0.2,
+          0.2,
+          0.2
+        ]
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_esp300",
+      "action": "auto-GetControlReady",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_esp300",
+      "action": "auto-stop_all",
+      "action_args": {
+        "event": 0
+      }
+    },
+    {
+      "step": 3,
+      "name": "MoveTo",
+      "description": "自动补充动作: MoveTo",
+      "device": "test_esp300",
+      "action": "auto-MoveTo",
+      "action_args": {
+        "bTimeOut": true
+      }
+    },
+    {
+      "step": 4,
+      "name": "GetPos",
+      "description": "自动补充动作: GetPos",
+      "device": "test_esp300",
+      "action": "auto-GetPos",
+      "action_args": {
+        "iChannel": 1
+      }
+    },
+    {
+      "step": 5,
+      "name": "GetChannelObject",
+      "description": "自动补充动作: GetChannelObject",
+      "device": "test_esp300",
+      "action": "auto-GetChannelObject",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "GetChannelPhase",
+      "description": "自动补充动作: GetChannelPhase",
+      "device": "test_esp300",
+      "action": "auto-GetChannelPhase",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "GetMin",
+      "description": "自动补充动作: GetMin",
+      "device": "test_esp300",
+      "action": "auto-GetMin",
+      "action_args": {
+        "iChan": 1
+      }
+    },
+    {
+      "step": 8,
+      "name": "GetMax",
+      "description": "自动补充动作: GetMax",
+      "device": "test_esp300",
+      "action": "auto-GetMax",
+      "action_args": {
+        "iChan": 1
+      }
+    },
+    {
+      "step": 9,
+      "name": "ledOn",
+      "description": "自动补充动作: ledOn",
+      "device": "test_esp300",
+      "action": "auto-ledOn",
+      "action_args": {
+        "event": 0
+      }
+    },
+    {
+      "step": 10,
+      "name": "ledOff",
+      "description": "自动补充动作: ledOff",
+      "device": "test_esp300",
+      "action": "auto-ledOff",
+      "action_args": {
+        "event": 1
+      }
+    },
+    {
+      "step": 11,
+      "name": "addMenuItems",
+      "description": "自动补充动作: addMenuItems",
+      "device": "test_esp300",
+      "action": "auto-addMenuItems",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "esp300 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "esp300",
+    "generated_by": "driver-finder"
+  }
+}

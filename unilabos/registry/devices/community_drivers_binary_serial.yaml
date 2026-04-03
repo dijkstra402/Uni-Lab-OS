@@ -1,0 +1,255 @@
+binary_serial:
+  class:
+    module: unilabos.devices.zaber_binary.binary_serial:BinarySerial
+    type: python
+    status_types:
+      timeout: String
+      baudrate: String
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message_id:
+                  type: string
+        goal_default:
+          message_id: false
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-timeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                t:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-baudrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: baudrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                b:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-encode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: encode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_abs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_abs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_rel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_rel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                distance:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_vel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_vel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: A class for interacting with Zaber devices using the Binary protocol
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        baud:
+          type: string
+          default: 9600
+        timeout:
+          type: string
+          default: 5
+        inter_char_timeout:
+          type: string
+          default: 0.01
+  cover: binary_serial.webp
+  device_params:
+    功能: 参数配置、数据采集、运动控制
+    可控参数: 距离、message_id、位置、速度
+    操作数: 14
+  manufacturer: Open Standard
+  model:
+    name: Generic Binary Serial 串口设备
+    type: device
+  name: Binary Serial 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: binary_serial.webp
+  scene:
+    domain: Electronics
+    scene_name: Interfacing
+    step: Communication
+  version: 1.0.0

@@ -1,0 +1,314 @@
+mstp_director:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-actor_error:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                actor:
+                  type: string
+                error:
+                  type: string
+              type: object
+          title: actor_error
+          type: object
+        type: UniLabJsonCommand
+      auto-add_actor:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                actor:
+                  type: string
+              type: object
+          title: add_actor
+          type: object
+        type: UniLabJsonCommand
+      auto-close_socket:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close_socket
+          type: object
+        type: UniLabJsonCommand
+      auto-del_actor:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                actor:
+                  type: string
+              type: object
+          title: del_actor
+          type: object
+        type: UniLabJsonCommand
+      auto-handle_close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: handle_close
+          type: object
+        type: UniLabJsonCommand
+      auto-handle_connect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: handle_connect
+          type: object
+        type: UniLabJsonCommand
+      auto-handle_error:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                error:
+                  type: string
+              type: object
+          title: handle_error
+          type: object
+        type: UniLabJsonCommand
+      auto-handle_read:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: handle_read
+          type: object
+        type: UniLabJsonCommand
+      auto-handle_write:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: handle_write
+          type: object
+        type: UniLabJsonCommand
+      auto-indication:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                pdu:
+                  type: string
+              type: object
+          title: indication
+          type: object
+        type: UniLabJsonCommand
+      auto-readable:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: readable
+          type: object
+        type: UniLabJsonCommand
+      auto-writable:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: writable
+          type: object
+        type: UniLabJsonCommand
+      auto-atexit_handler:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: atexit_handler
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_actor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_actor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sap_indication:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sap_indication
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pdu:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sap_confirmation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sap_confirmation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pdu:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-confirmation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: confirmation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pdu:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.generic.mstp_director:MSTPDirector
+    status_types:
+      actor: String
+    type: python
+  config_info: []
+  description: Mstp Director驱动，支持actor error/add actor/close socket/del actor/handle close等17个操作。
+  handles: []
+  icon: mstp_director.webp
+  init_param_schema:
+    config:
+      properties:
+        actorClass:
+          default: <class 'bacpypes.udp.UDPActor'>
+          type: string
+        address:
+          default: null
+          type: string
+        localDevice:
+          default: null
+          type: string
+        reuse:
+          default: false
+          type: string
+        sapID:
+          default: null
+          type: string
+        sid:
+          default: null
+          type: string
+        timeout:
+          default: 0
+          type: string
+      type: object
+  version: 1.0.0
+  cover: mstp_director.webp
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: actor、address、error、pdu
+    操作数: 17
+  manufacturer: Open Standard (BACnet)
+  model:
+    name: Generic Mstp Director
+    type: device
+  name: Mstp Director 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

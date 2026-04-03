@@ -1,0 +1,376 @@
+{
+  "nodes": [
+    {
+      "id": "test_x_calibur_d",
+      "name": "Test XCaliburD",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "x_calibur_d",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "com_link": "",
+        "num_ports": 9,
+        "syringe_ul": 1000,
+        "direction": "CW",
+        "microstep": false,
+        "waste_port": 9,
+        "slope": 14,
+        "init_force": 0,
+        "debug": false,
+        "debug_log_path": "."
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_x_calibur_d",
+      "action": "auto-initDebugLogging",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_x_calibur_d",
+      "action": "auto-setStartSpeed",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_x_calibur_d",
+      "action": "auto-waitReady",
+      "action_args": {
+        "timeout": 10,
+        "polling_interval": 0.3
+      }
+    },
+    {
+      "step": 4,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_x_calibur_d",
+      "action": "auto-getBufferStatus",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "logCall",
+      "description": "自动补充动作: logCall",
+      "device": "test_x_calibur_d",
+      "action": "auto-logCall",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "logDebug",
+      "description": "自动补充动作: logDebug",
+      "device": "test_x_calibur_d",
+      "action": "auto-logDebug",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "init",
+      "description": "自动补充动作: init",
+      "device": "test_x_calibur_d",
+      "action": "auto-init",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "extractToWaste",
+      "description": "自动补充动作: extractToWaste",
+      "device": "test_x_calibur_d",
+      "action": "auto-extractToWaste",
+      "action_args": {
+        "minimal_reset": false,
+        "flush": false
+      }
+    },
+    {
+      "step": 9,
+      "name": "primePort",
+      "description": "自动补充动作: primePort",
+      "device": "test_x_calibur_d",
+      "action": "auto-primePort",
+      "action_args": {
+        "split_command": false
+      }
+    },
+    {
+      "step": 10,
+      "name": "executeChain",
+      "description": "自动补充动作: executeChain",
+      "device": "test_x_calibur_d",
+      "action": "auto-executeChain",
+      "action_args": {
+        "minimal_reset": false
+      }
+    },
+    {
+      "step": 11,
+      "name": "resetChain",
+      "description": "自动补充动作: resetChain",
+      "device": "test_x_calibur_d",
+      "action": "auto-resetChain",
+      "action_args": {
+        "on_execute": false,
+        "minimal_reset": false
+      }
+    },
+    {
+      "step": 12,
+      "name": "updateSimState",
+      "description": "自动补充动作: updateSimState",
+      "device": "test_x_calibur_d",
+      "action": "auto-updateSimState",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "cacheSimSpeeds",
+      "description": "自动补充动作: cacheSimSpeeds",
+      "device": "test_x_calibur_d",
+      "action": "auto-cacheSimSpeeds",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "restoreSimSpeeds",
+      "description": "自动补充动作: restoreSimSpeeds",
+      "device": "test_x_calibur_d",
+      "action": "auto-restoreSimSpeeds",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "execWrap",
+      "description": "自动补充动作: execWrap",
+      "device": "test_x_calibur_d",
+      "action": "auto-execWrap",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "dispenseToWaste",
+      "description": "自动补充动作: dispenseToWaste",
+      "device": "test_x_calibur_d",
+      "action": "auto-dispenseToWaste",
+      "action_args": {
+        "retain_port": true
+      }
+    },
+    {
+      "step": 17,
+      "name": "extract",
+      "description": "自动补充动作: extract",
+      "device": "test_x_calibur_d",
+      "action": "auto-extract",
+      "action_args": {}
+    },
+    {
+      "step": 18,
+      "name": "dispense",
+      "description": "自动补充动作: dispense",
+      "device": "test_x_calibur_d",
+      "action": "auto-dispense",
+      "action_args": {}
+    },
+    {
+      "step": 19,
+      "name": "changePort",
+      "description": "自动补充动作: changePort",
+      "device": "test_x_calibur_d",
+      "action": "auto-changePort",
+      "action_args": {
+        "direction": "CW"
+      }
+    },
+    {
+      "step": 20,
+      "name": "movePlungerAbs",
+      "description": "自动补充动作: movePlungerAbs",
+      "device": "test_x_calibur_d",
+      "action": "auto-movePlungerAbs",
+      "action_args": {}
+    },
+    {
+      "step": 21,
+      "name": "movePlungerRel",
+      "description": "自动补充动作: movePlungerRel",
+      "device": "test_x_calibur_d",
+      "action": "auto-movePlungerRel",
+      "action_args": {}
+    },
+    {
+      "step": 22,
+      "name": "setSpeed",
+      "description": "自动补充动作: setSpeed",
+      "device": "test_x_calibur_d",
+      "action": "auto-setSpeed",
+      "action_args": {}
+    },
+    {
+      "step": 23,
+      "name": "setTopSpeed",
+      "description": "自动补充动作: setTopSpeed",
+      "device": "test_x_calibur_d",
+      "action": "auto-setTopSpeed",
+      "action_args": {}
+    },
+    {
+      "step": 24,
+      "name": "setCutoffSpeed",
+      "description": "自动补充动作: setCutoffSpeed",
+      "device": "test_x_calibur_d",
+      "action": "auto-setCutoffSpeed",
+      "action_args": {}
+    },
+    {
+      "step": 25,
+      "name": "setSlope",
+      "description": "自动补充动作: setSlope",
+      "device": "test_x_calibur_d",
+      "action": "auto-setSlope",
+      "action_args": {
+        "chain": false
+      }
+    },
+    {
+      "step": 26,
+      "name": "repeatCmdSeq",
+      "description": "自动补充动作: repeatCmdSeq",
+      "device": "test_x_calibur_d",
+      "action": "auto-repeatCmdSeq",
+      "action_args": {}
+    },
+    {
+      "step": 27,
+      "name": "markRepeatStart",
+      "description": "自动补充动作: markRepeatStart",
+      "device": "test_x_calibur_d",
+      "action": "auto-markRepeatStart",
+      "action_args": {}
+    },
+    {
+      "step": 28,
+      "name": "delayExec",
+      "description": "自动补充动作: delayExec",
+      "device": "test_x_calibur_d",
+      "action": "auto-delayExec",
+      "action_args": {}
+    },
+    {
+      "step": 29,
+      "name": "haltExec",
+      "description": "自动补充动作: haltExec",
+      "device": "test_x_calibur_d",
+      "action": "auto-haltExec",
+      "action_args": {
+        "input_pin": 0
+      }
+    },
+    {
+      "step": 30,
+      "name": "updateSpeeds",
+      "description": "自动补充动作: updateSpeeds",
+      "device": "test_x_calibur_d",
+      "action": "auto-updateSpeeds",
+      "action_args": {}
+    },
+    {
+      "step": 31,
+      "name": "getPlungerPos",
+      "description": "自动补充动作: getPlungerPos",
+      "device": "test_x_calibur_d",
+      "action": "auto-getPlungerPos",
+      "action_args": {}
+    },
+    {
+      "step": 32,
+      "name": "getStartSpeed",
+      "description": "自动补充动作: getStartSpeed",
+      "device": "test_x_calibur_d",
+      "action": "auto-getStartSpeed",
+      "action_args": {}
+    },
+    {
+      "step": 33,
+      "name": "getTopSpeed",
+      "description": "自动补充动作: getTopSpeed",
+      "device": "test_x_calibur_d",
+      "action": "auto-getTopSpeed",
+      "action_args": {}
+    },
+    {
+      "step": 34,
+      "name": "getCutoffSpeed",
+      "description": "自动补充动作: getCutoffSpeed",
+      "device": "test_x_calibur_d",
+      "action": "auto-getCutoffSpeed",
+      "action_args": {}
+    },
+    {
+      "step": 35,
+      "name": "getEncoderPos",
+      "description": "自动补充动作: getEncoderPos",
+      "device": "test_x_calibur_d",
+      "action": "auto-getEncoderPos",
+      "action_args": {}
+    },
+    {
+      "step": 36,
+      "name": "getCurPort",
+      "description": "自动补充动作: getCurPort",
+      "device": "test_x_calibur_d",
+      "action": "auto-getCurPort",
+      "action_args": {}
+    },
+    {
+      "step": 37,
+      "name": "setMicrostep",
+      "description": "自动补充动作: setMicrostep",
+      "device": "test_x_calibur_d",
+      "action": "auto-setMicrostep",
+      "action_args": {
+        "on": false
+      }
+    },
+    {
+      "step": 38,
+      "name": "terminateCmd",
+      "description": "自动补充动作: terminateCmd",
+      "device": "test_x_calibur_d",
+      "action": "auto-terminateCmd",
+      "action_args": {}
+    },
+    {
+      "step": 39,
+      "name": "sendRcv",
+      "description": "自动补充动作: sendRcv",
+      "device": "test_x_calibur_d",
+      "action": "auto-sendRcv",
+      "action_args": {
+        "execute": false
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "XCaliburD 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "XCaliburD",
+    "generated_by": "driver-finder"
+  }
+}

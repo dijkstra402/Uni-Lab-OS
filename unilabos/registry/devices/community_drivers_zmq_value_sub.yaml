@@ -1,0 +1,61 @@
+zmq_value_sub:
+  class:
+    module: unilabos.devices.generic.messaging.zmq_value_sub:ZMQValueSub
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from donkeycar/parts/network.py
+  category:
+  - generic
+  - messaging
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          type: string
+          default: null
+        ip:
+          type: string
+          default: null
+        port:
+          type: string
+          default: 5556
+        hwm:
+          type: string
+          default: 10
+        return_last:
+          type: string
+          default: true
+  name: ZMQ Value SUB
+  manufacturer: Open Standard (ZeroMQ)
+  cover: mfr_open_standard_zeromq.webp
+  icon: mfr_open_standard_zeromq.webp

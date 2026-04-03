@@ -1,0 +1,1099 @@
+c_box_v3_driven_transmon:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-add_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-upload_qasm_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: upload_qasm_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                qasm_file:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-prepare_for_continuous_wave:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_for_continuous_wave
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prepare_readout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_readout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prepare_for_timedomain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_for_timedomain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prepare_for_fluxing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_for_fluxing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reset:
+                  type: string
+        goal_default:
+          reset: true
+        handles: {}
+      auto-calibrate_pulse_restless:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_pulse_restless
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nr_cliff:
+                  type: string
+                parameters:
+                  type: string
+                amp_guess:
+                  type: string
+                motzoi_guess:
+                  type: string
+                frequency_guess:
+                  type: string
+                nr_seeds:
+                  type: string
+                nr_shots:
+                  type: string
+                a_step:
+                  type: string
+                m_step:
+                  type: string
+                f_step:
+                  type: string
+                MC:
+                  type: string
+                update:
+                  type: string
+                close_fig:
+                  type: string
+                verbose:
+                  type: string
+                upload_qasm_file:
+                  type: string
+        goal_default:
+          nr_cliff: 30
+          parameters: '[''amp'', ''motzoi'', ''frequency'']'
+          nr_seeds: max
+          nr_shots: 16000
+          a_step: 0.3
+          m_step: 0.1
+          f_step: 20000.0
+          update: false
+          close_fig: true
+          verbose: true
+          upload_qasm_file: true
+        handles: {}
+      auto-calibrate_mixer_offsets_drive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_mixer_offsets_drive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: string
+        goal_default:
+          update: true
+        handles: {}
+      auto-calibrate_mixer_offsets_RO:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_mixer_offsets_RO
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: string
+        goal_default:
+          update: true
+        handles: {}
+      auto-calibrate_mixer_skewness:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_mixer_skewness
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: string
+        goal_default:
+          update: true
+        handles: {}
+      auto-calibrate_MW_RO_latency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_MW_RO_latency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                MC:
+                  type: string
+                update:
+                  type: string
+                soft_avg:
+                  type: number
+        goal_default:
+          update: true
+          soft_avg: 100
+        handles: {}
+      auto-measure_heterodyne_spectroscopy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_heterodyne_spectroscopy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                freqs:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+        goal_default:
+          analyze: true
+          close_fig: true
+        handles: {}
+      auto-measure_spectroscopy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_spectroscopy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                freqs:
+                  type: string
+                pulsed:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+        goal_default:
+          pulsed: false
+          analyze: true
+          close_fig: true
+        handles: {}
+      auto-measure_pulsed_spectroscopy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_pulsed_spectroscopy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                freqs:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+        goal_default:
+          analyze: true
+          close_fig: true
+        handles: {}
+      auto-measure_resonator_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_resonator_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                freqs:
+                  type: string
+                powers:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+        goal_default:
+          analyze: true
+          close_fig: true
+        handles: {}
+      auto-measure_resonator_dac:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_resonator_dac
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                freqs:
+                  type: string
+                dac_voltages:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+        goal_default:
+          analyze: true
+          close_fig: true
+        handles: {}
+      auto-measure_rabi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_rabi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                amps:
+                  type: string
+                n:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+                verbose:
+                  type: string
+                real_imag:
+                  type: string
+        goal_default:
+          n: 1
+          analyze: true
+          close_fig: true
+          verbose: false
+          real_imag: true
+        handles: {}
+      auto-measure_motzoi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_motzoi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                motzois:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+        goal_default:
+          analyze: true
+          close_fig: true
+        handles: {}
+      auto-measure_randomized_benchmarking:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_randomized_benchmarking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nr_cliffords:
+                  type: string
+                nr_seeds:
+                  type: string
+                T1:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+                verbose:
+                  type: string
+                upload:
+                  type: string
+                update:
+                  type: string
+        goal_default:
+          nr_seeds: 100
+          analyze: true
+          close_fig: true
+          verbose: false
+          upload: true
+          update: true
+        handles: {}
+      auto-measure_randomized_benchmarking_vs_pars:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_randomized_benchmarking_vs_pars
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                amps:
+                  type: string
+                motzois:
+                  type: string
+                freqs:
+                  type: string
+                nr_cliffords:
+                  type: string
+                nr_seeds:
+                  type: string
+                restless:
+                  type: string
+                log_length:
+                  type: string
+        goal_default:
+          nr_cliffords: 80
+          nr_seeds: 50
+          restless: false
+          log_length: 8000
+        handles: {}
+      auto-measure_T1:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_T1
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                times:
+                  type: string
+                MC:
+                  type: string
+                close_fig:
+                  type: string
+                update:
+                  type: string
+        goal_default:
+          close_fig: true
+          update: true
+        handles: {}
+      auto-measure_ramsey:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_ramsey
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                times:
+                  type: string
+                artificial_detuning:
+                  type: string
+                f_qubit:
+                  type: string
+                label:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+                verbose:
+                  type: string
+                update:
+                  type: string
+        goal_default:
+          label: ''
+          analyze: true
+          close_fig: true
+          verbose: true
+          update: true
+        handles: {}
+      auto-measure_echo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_echo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                times:
+                  type: string
+                artificial_detuning:
+                  type: string
+                label:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+                update:
+                  type: string
+                verbose:
+                  type: string
+        goal_default:
+          artificial_detuning: 0
+          label: ''
+          analyze: true
+          close_fig: true
+          update: true
+          verbose: true
+        handles: {}
+      auto-measure_allxy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_allxy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                MC:
+                  type: string
+                label:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+                verbose:
+                  type: string
+        goal_default:
+          label: ''
+          analyze: true
+          close_fig: true
+          verbose: true
+        handles: {}
+      auto-measure_flipping:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_flipping
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                number_of_flips:
+                  type: string
+                MC:
+                  type: string
+                label:
+                  type: string
+                equator:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+                verbose:
+                  type: string
+        goal_default:
+          label: ''
+          equator: true
+          analyze: true
+          close_fig: true
+          verbose: true
+        handles: {}
+      auto-measure_ssro:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_ssro
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                no_fits:
+                  type: string
+                return_detector:
+                  type: string
+                MC:
+                  type: string
+                nr_shots:
+                  type: string
+                analyze:
+                  type: string
+                verbose:
+                  type: string
+                update_threshold:
+                  type: string
+                update:
+                  type: string
+        goal_default:
+          no_fits: false
+          return_detector: false
+          analyze: true
+          verbose: true
+          update_threshold: true
+          update: true
+        handles: {}
+      auto-measure_transients:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_transients
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                cases:
+                  type: string
+                prepare:
+                  type: string
+        goal_default:
+          analyze: true
+          cases: ('off', 'on')
+          prepare: true
+        handles: {}
+      auto-calibrate_optimal_weights:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_optimal_weights
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                MC:
+                  type: string
+                verify:
+                  type: string
+                analyze:
+                  type: string
+                update:
+                  type: string
+        goal_default:
+          verify: true
+          analyze: false
+          update: true
+        handles: {}
+      auto-measure_butterfly:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_butterfly
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                return_detector:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+                verbose:
+                  type: string
+                initialize:
+                  type: string
+                nr_shots:
+                  type: string
+                update_threshold:
+                  type: string
+        goal_default:
+          return_detector: false
+          analyze: true
+          close_fig: true
+          verbose: true
+          initialize: true
+          update_threshold: false
+        handles: {}
+      auto-measure_rb_vs_amp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_rb_vs_amp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                amps:
+                  type: string
+                nr_cliff:
+                  type: string
+                resetless:
+                  type: string
+                MC:
+                  type: string
+                analyze:
+                  type: string
+                close_fig:
+                  type: string
+                verbose:
+                  type: string
+        goal_default:
+          nr_cliff: 1
+          resetless: true
+          analyze: true
+          close_fig: true
+          verbose: false
+        handles: {}
+      auto-calibrate_Flux_pulse_latency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_Flux_pulse_latency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                times:
+                  type: string
+                MC:
+                  type: string
+                update:
+                  type: string
+                wait_after_flux:
+                  type: number
+        goal_default:
+          update: true
+          wait_after_flux: 1.0e-07
+        handles: {}
+      auto-measure_flux_timing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_flux_timing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                taus:
+                  type: string
+                MC:
+                  type: string
+                wait_between:
+                  type: string
+        goal_default:
+          wait_between: 2.2e-07
+        handles: {}
+      auto-measure_ram_z:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_ram_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lengths:
+                  type: string
+                amps:
+                  type: string
+                chunk_size:
+                  type: number
+                MC:
+                  type: string
+                wait_during_flux:
+                  type: string
+                cal_points:
+                  type: string
+                cases:
+                  type: string
+                analyze:
+                  type: string
+                filter_raw:
+                  type: string
+                filter_deriv_phase:
+                  type: string
+                demodulate:
+                  type: string
+                f_demod:
+                  type: string
+                flux_amp_analysis:
+                  type: string
+        goal_default:
+          chunk_size: 32
+          wait_during_flux: auto
+          cal_points: false
+          cases: ('interleaved',)
+          analyze: true
+          filter_raw: false
+          filter_deriv_phase: false
+          demodulate: false
+          f_demod: 0
+          flux_amp_analysis: 1
+        handles: {}
+      auto-measure_cryo_scope:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_cryo_scope
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                waveform:
+                  type: string
+                lengths:
+                  type: string
+                chunk_size:
+                  type: number
+                MC:
+                  type: string
+                wait_during_flux:
+                  type: string
+                cal_points:
+                  type: string
+                filter_raw:
+                  type: string
+                filter_deriv_phase:
+                  type: string
+                demodulate:
+                  type: string
+                f_demod:
+                  type: number
+        goal_default:
+          lengths: full
+          chunk_size: 32
+          wait_during_flux: auto
+          cal_points: false
+          filter_raw: false
+          filter_deriv_phase: false
+          demodulate: false
+          f_demod: 0
+        handles: {}
+      auto-measure_ram_z_echo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_ram_z_echo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lengths:
+                  type: string
+                amps:
+                  type: string
+                chunk_size:
+                  type: number
+                MC:
+                  type: string
+                wait_during_flux:
+                  type: string
+                cal_points:
+                  type: string
+                analyze:
+                  type: string
+        goal_default:
+          chunk_size: 32
+          wait_during_flux: auto
+          cal_points: false
+          analyze: true
+        handles: {}
+      auto-measure_CZ_phase_ripple:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_CZ_phase_ripple
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                taus:
+                  type: string
+                param_name:
+                  type: string
+                param_unit:
+                  type: string
+                chunk_size:
+                  type: number
+                MC:
+                  type: string
+                wait_during_flux:
+                  type: string
+                cases:
+                  type: string
+                pulse_1_type:
+                  type: string
+                pulse_2_type:
+                  type: string
+                second_pulse_inverted:
+                  type: string
+                pulse_1_params:
+                  type: object
+                pulse_2_params:
+                  type: object
+                analyze:
+                  type: string
+                msmt_suffix:
+                  type: string
+                disable_QWG_reload:
+                  type: string
+        goal_default:
+          param_name: delay
+          param_unit: s
+          chunk_size: 16
+          wait_during_flux: auto
+          cases: ('cos', 'sin')
+          pulse_1_type: adiabatic_Z
+          pulse_2_type: square
+          second_pulse_inverted: false
+          analyze: true
+          disable_QWG_reload: false
+        handles: {}
+      auto-get_operation_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_operation_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                operation_dict:
+                  type: string
+        goal_default:
+          operation_dict: '{}'
+        handles: {}
+      auto-measure_single_qubit_GST:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_single_qubit_GST
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_germ_pow:
+                  type: number
+                repetitions_per_point:
+                  type: number
+                min_soft_repetitions:
+                  type: number
+                MC:
+                  type: string
+                analyze:
+                  type: string
+        goal_default:
+          max_germ_pow: 10
+          repetitions_per_point: 128
+          min_soft_repetitions: 5
+          analyze: false
+        handles: {}
+      auto-load_QWG_pulses:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_QWG_pulses
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.custom.c_box_v3_driven_transmon:CBox_v3_driven_transmon
+    status_types: {}
+    type: python
+  config_info: []
+  description: 便携式植物表型平台KeyBox驱动（上海泽泉科技股份有限公司），支持add parameters/upload qasm file/prepare
+    for continuous wave/prepare readout/prepare for timedomain等39个操作。
+  handles: []
+  icon: c_box_v3_driven_transmon.webp
+  init_param_schema: {}
+  version: 1.0.0
+  cover: c_box_v3_driven_transmon.webp
+  device_params:
+    品牌: 上海泽泉科技股份有限公司
+    功能: 参数配置、搅拌/混合、数据采集、电学测量
+    可控参数: a_step、amp_guess、amps、analyze、artificial_detuning、cal_points、cases、chunk_size
+    操作数: 39
+  manufacturer: 上海泽泉科技股份有限公司
+  model:
+    name: 便携式植物表型平台KeyBox
+    type: device
+  name: 便携式植物表型平台KeyBox
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

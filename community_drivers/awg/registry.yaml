@@ -1,0 +1,229 @@
+awg:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-compile_sequencer_program:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                sequencer_program:
+                  type: string
+              type: object
+          title: compile_sequencer_program
+          type: object
+        type: UniLabJsonCommand
+      auto-enable_sequencer:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                single:
+                  type: boolean
+              type: object
+          title: enable_sequencer
+          type: object
+        type: UniLabJsonCommand
+      auto-load_sequencer_program:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                sequencer_program:
+                  type: string
+              type: object
+          title: load_sequencer_program
+          type: object
+        type: UniLabJsonCommand
+      auto-read_from_waveform_memory:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                indexes:
+                  type: string
+              type: object
+          title: read_from_waveform_memory
+          type: object
+        type: UniLabJsonCommand
+      auto-wait_done:
+        feedback: {}
+        goal: {}
+        goal_default:
+          sleep_time: 0.005
+          timeout: 10
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                sleep_time:
+                  type: number
+                timeout:
+                  type: number
+              type: object
+          title: wait_done
+          type: object
+        type: UniLabJsonCommand
+      auto-write_to_waveform_memory:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                indexes:
+                  type: array
+                waveforms:
+                  type: string
+              type: object
+          title: write_to_waveform_memory
+          type: object
+        type: UniLabJsonCommand
+      auto-check_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-load_validation_schema:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_validation_schema
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-upload_to_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: upload_to_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ct:
+                  type: string
+                validate:
+                  type: string
+                check_upload:
+                  type: string
+        goal_default:
+          validate: false
+          check_upload: true
+        handles: {}
+      auto-load_from_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_from_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enable_qccs_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_qccs_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.awg.awg:AWG
+    status_types: {}
+    type: python
+  config_info: []
+  description: Arbitrary Waveform Generator是由Zurich Instruments生产的专业实验设备。CommandTable node
+  handles: []
+  icon: awg.webp
+  init_param_schema:
+    config:
+      properties:
+        index:
+          default: null
+          type: string
+        parent:
+          default: null
+          type: string
+        snapshot_cache:
+          default: null
+          type: string
+        tk_object:
+          default: null
+          type: string
+        zi_node:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: Zurich Instruments
+    功能: 参数配置、数据采集
+    可控参数: check_upload、indexes、sequencer_program、single、sleep_time、timeout、validate、waveforms
+    操作数: 11
+  manufacturer: Zurich Instruments
+  model:
+    name: Zurich Arbitrary Waveform Generator
+    type: device
+  name: Arbitrary Waveform Generator
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

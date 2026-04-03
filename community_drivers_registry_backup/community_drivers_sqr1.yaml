@@ -1,0 +1,177 @@
+sqr1:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-multi_axis_move:
+        feedback: {}
+        goal: {}
+        goal_default:
+          timeout: 30.0
+          wait: true
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                preset_pos:
+                  type: string
+                rx_sp:
+                  type: string
+                ry_sp:
+                  type: string
+                rz_sp:
+                  type: string
+                timeout:
+                  type: number
+                wait:
+                  type: boolean
+                x_sp:
+                  type: string
+                y_sp:
+                  type: string
+                z_sp:
+                  type: string
+              type: object
+          title: multi_axis_move
+          type: object
+        type: UniLabJsonCommand
+      auto-preset_list:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: preset_list
+          type: object
+        type: UniLabJsonCommand
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommand
+      auto-sync_setpoints:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: sync_setpoints
+          type: object
+        type: UniLabJsonCommand
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: number
+                wait:
+                  type: string
+                timeout:
+                  type: number
+                moved_cb:
+                  type: string
+                sync_enable:
+                  type: string
+        goal_default:
+          wait: true
+          sync_enable: true
+        handles: {}
+      auto-set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_position:
+                  type: string
+                timeout:
+                  type: number
+                moved_cb:
+                  type: string
+                wait:
+                  type: string
+        goal_default:
+          wait: false
+        handles: {}
+    module: unilabos.devices.motion.sqr1:SQR1
+    status_types: {}
+    type: python
+  config_info: []
+  description: SQR1 Quantum Register驱动，支持multi axis move/preset list/stop/sync setpoints/move等6个操作。
+  handles: []
+  icon: sqr1.webp
+  init_param_schema:
+    config:
+      properties:
+        configuration_attrs:
+          default: null
+          type: string
+        kind:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        parent:
+          default: null
+          type: string
+        prefix:
+          default: ''
+          type: string
+        read_attrs:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: sqr1.webp
+  device_params:
+    功能: 参数配置、运动控制
+    可控参数: moved_cb、new_position、位置、preset_pos、rx_sp、ry_sp、rz_sp、sync_enable
+    操作数: 6
+  manufacturer: Generic
+  model:
+    name: Generic SQR1 Quantum Register
+    type: device
+  name: SQR1 Quantum Register 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

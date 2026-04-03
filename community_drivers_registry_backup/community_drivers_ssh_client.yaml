@@ -1,0 +1,141 @@
+ssh_client:
+  class:
+    module: unilabos.devices.network.ssh.ssh_client:SSHClient
+    type: python
+    status_types:
+      ssh: String
+      transport: String
+      sftp: String
+    action_value_mappings:
+      auto-upload:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: upload
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+                rewriter:
+                  type: string
+        goal_default:
+          rewriter: <function SSHClient.<lambda> at 0x111c94e00>
+        handles: {}
+      auto-prepare_download:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_download
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-download:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: download
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-spawn_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: spawn_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                get_pty:
+                  type: string
+        goal_default:
+          get_pty: false
+        handles: {}
+      auto-drain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: drain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Ssh Client驱动，支持upload/prepare download/download/spawn command/drain等6个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: null
+        jump_host:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    可控参数: chan、cmd、filename、get_pty、rewriter
+    操作数: 6
+  manufacturer: ''
+  model:
+    name: '' ssh_client
+    type: device
+  name: ssh_client 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

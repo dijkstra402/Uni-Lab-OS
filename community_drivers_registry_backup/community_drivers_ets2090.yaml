@@ -1,0 +1,177 @@
+ets2090:
+  class:
+    module: unilabos.devices.emco.ets2090:ETS2090
+    type: python
+    status_types:
+      device_type: String
+      limit_upper: String
+      limit_lower: String
+      polarization: String
+      target: String
+      position: String
+      local: String
+    action_value_mappings:
+      auto-moving:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: moving
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-limit_upper:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: limit_upper
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                upper_limit:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-limit_lower:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: limit_lower
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lower_limit:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-polarization:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: polarization
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                polarization:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sweep_up:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sweep_up
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sweep_down:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sweep_down
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-target_seek:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: target_seek
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sequence:
+                  type: string
+        goal_default:
+          sequence:
+          - 400
+          - 100
+          - 400
+          - 100
+        handles: {}
+  description: Ets2090驱动，支持moving/limit upper/limit lower/polarization/sweep up等9个操作。
+  category:
+  - 表征设备
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 扫描测量、数据采集
+    可控参数: lower_limit、polarization、sequence、target、upper_limit
+    操作数: 9
+  manufacturer: ''
+  model:
+    name: '' ets2090
+    type: device
+  name: ets2090 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

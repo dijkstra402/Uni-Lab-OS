@@ -1,0 +1,203 @@
+sensirion_sht85:
+  class:
+    module: unilabos.devices.generic.sensirion_sht85:sensirionSHT85
+    type: python
+    status_types:
+      temperature: String
+      humidity: String
+      temperature_and_humidity: String
+      dew_point: String
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_asynchronous_read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_asynchronous_read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                measurments_per_second:
+                  type: string
+                ART:
+                  type: string
+        goal_default:
+          measurments_per_second: 1
+          ART: false
+        handles: {}
+      auto-read_asynchronous:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_asynchronous
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout_us:
+                  type: string
+        goal_default:
+          timeout_us: 0
+        handles: {}
+      auto-stop_asynchronous_read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_asynchronous_read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-asynchronous:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: asynchronous
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                measurments_per_second:
+                  type: string
+                ART:
+                  type: string
+        goal_default:
+          measurments_per_second: 1
+          ART: false
+        handles: {}
+      auto-enable_heater:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_heater
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable_heater:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_heater
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_heater_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_heater_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_sensor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_sensor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-to_dew_point:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_dew_point
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                T:
+                  type: string
+                RH:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Sensirion Sht85驱动，支持init/start asynchronous read/read asynchronous/stop
+    asynchronous read/asynchronous等10个操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          type: string
+          default: null
+        conf:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置、数据采集、温度控制
+    可控参数: ART、measurments_per_second、timeout_us
+    操作数: 10
+  manufacturer: ''
+  model:
+    name: '' sensirion_sht85
+    type: device
+  name: sensirion_sht85 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

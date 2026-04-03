@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "test_pi_controler",
+      "name": "Physik Instrumente Pi Controler",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "pi_controler",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "name": "",
+        "settings": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_pi_controler",
+      "action": "auto-read_probes",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "update",
+      "description": "自动补充动作: update",
+      "device": "test_pi_controler",
+      "action": "auto-update",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "reset",
+      "description": "自动补充动作: reset",
+      "device": "test_pi_controler",
+      "action": "auto-reset",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "controler output",
+      "description": "自动补充动作: controler_output",
+      "device": "test_pi_controler",
+      "action": "auto-controler_output",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "PIControler 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "PIControler",
+    "generated_by": "driver-finder"
+  }
+}

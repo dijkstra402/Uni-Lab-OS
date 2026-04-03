@@ -1,0 +1,104 @@
+{
+  "nodes": [
+    {
+      "id": "test_wasatch_device_wrapper",
+      "name": "Wasatch Photonics Device Wrapper",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "wasatch_device_wrapper",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "device_id": "",
+        "log_level": "",
+        "callback": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_wasatch_device_wrapper",
+      "action": "auto-connect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_wasatch_device_wrapper",
+      "action": "auto-wait_for_settings",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_wasatch_device_wrapper",
+      "action": "auto-acquire_status_message",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "poll settings",
+      "description": "自动补充动作: poll_settings",
+      "device": "test_wasatch_device_wrapper",
+      "action": "auto-poll_settings",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "reset",
+      "description": "自动补充动作: reset",
+      "device": "test_wasatch_device_wrapper",
+      "action": "auto-reset",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "disconnect",
+      "description": "自动补充动作: disconnect",
+      "device": "test_wasatch_device_wrapper",
+      "action": "auto-disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "send alert",
+      "description": "自动补充动作: send_alert",
+      "device": "test_wasatch_device_wrapper",
+      "action": "auto-send_alert",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "acquire data",
+      "description": "自动补充动作: acquire_data",
+      "device": "test_wasatch_device_wrapper",
+      "action": "auto-acquire_data",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "change setting",
+      "description": "自动补充动作: change_setting",
+      "device": "test_wasatch_device_wrapper",
+      "action": "auto-change_setting",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "WasatchDeviceWrapper 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "WasatchDeviceWrapper",
+    "generated_by": "driver-finder"
+  }
+}

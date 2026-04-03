@@ -1,0 +1,235 @@
+a4_s_backend:
+  category:
+  - 移液工作站
+  class:
+    action_value_mappings:
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-open:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: open
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-seal:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                duration:
+                  type: number
+                temperature:
+                  type: integer
+              type: object
+          title: seal
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-send_command:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                command:
+                  type: string
+              type: object
+          title: send_command
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-set_heater:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                'on':
+                  type: boolean
+              type: object
+          title: set_heater
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-set_temperature:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                temperature:
+                  type: number
+              type: object
+          title: set_temperature
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-set_time:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                seconds:
+                  type: number
+              type: object
+          title: set_time
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-setup:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: setup
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-system_reset:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: system_reset
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_remaining_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_remaining_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.arm.a4_s_backend:A4SBackend
+    status_types:
+      remaining_time: String
+      status: String
+      temperature: String
+    type: python
+  config_info: []
+  description: A4 S Backend驱动，支持close/open/seal/send command/set heater等13个操作。
+  handles: []
+  icon: a4_s_backend.webp
+  init_param_schema:
+    config:
+      properties:
+        port:
+          default: null
+          type: string
+        timeout:
+          default: 20
+          type: string
+      type: object
+  version: 1.0.0
+  cover: a4_s_backend.webp
+  device_params:
+    通道数: 多通道
+  manufacturer: Opentrons
+  model:
+    name: Generic A4 S Backend 后端控制器
+    type: device
+  name: A4 S Backend 移液工作站
+  tags:
+  - 移液工作站
+  resource_type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Liquid Handling

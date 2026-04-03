@@ -1,0 +1,187 @@
+i7540d:
+  class:
+    module: unilabos.devices.generic.i7540d_gateway:I7540d
+    type: python
+    status_types:
+      host: String
+      timeout: String
+      connected: String
+      status: String
+      can_config: String
+    action_value_mappings:
+      auto-host:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: host
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                host:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-timeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reinitialize:
+                  type: boolean
+        goal_default:
+          reinitialize: false
+        handles: {}
+      auto-reboot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reboot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_can_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_can_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                can_config:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-standard_dataframe_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: standard_dataframe_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: integer
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-standard_dataframe_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: standard_dataframe_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: integer
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: ICPCON I-7540D CANBUS-ethernet gateway | 型号:7540d
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: 192.168.255.1
+        timeout:
+          type: number
+          default: 5
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置
+    可控参数: can_config、data、host、identifier、reinitialize、timeout
+    操作数: 9
+  manufacturer: ''
+  model:
+    name: '' i7540d
+    type: device
+  name: i7540d 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

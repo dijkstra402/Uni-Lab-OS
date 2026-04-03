@@ -1,0 +1,2602 @@
+{
+  "nodes": [
+    {
+      "id": "test_robot",
+      "name": "Test Robot",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "robot",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {},
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_robot",
+      "action": "auto-Connect",
+      "action_args": {
+        "address": "192.168.0.100",
+        "enable_synchronous_mode": false,
+        "disconnect_on_exception": true,
+        "monitor_mode": false,
+        "timeout": 1.0,
+        "set_rtc": 2
+      }
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_robot",
+      "action": "auto-IsSynchronousMode",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_robot",
+      "action": "auto-RunCallbacks",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_robot",
+      "action": "auto-WaitGripperMoveCompletion",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_robot",
+      "action": "auto-GetRtExtToolStatus",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 6,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_robot",
+      "action": "auto-GripperClose",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "RegisterCallbacks",
+      "description": "自动补充动作: RegisterCallbacks",
+      "device": "test_robot",
+      "action": "auto-RegisterCallbacks",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "RegisterCallback",
+      "description": "自动补充动作: RegisterCallback",
+      "device": "test_robot",
+      "action": "auto-RegisterCallback",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "UnregisterCallbacks",
+      "description": "自动补充动作: UnregisterCallbacks",
+      "device": "test_robot",
+      "action": "auto-UnregisterCallbacks",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "UnregisterCallback",
+      "description": "自动补充动作: UnregisterCallback",
+      "device": "test_robot",
+      "action": "auto-UnregisterCallback",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "Disconnect",
+      "description": "自动补充动作: Disconnect",
+      "device": "test_robot",
+      "action": "auto-Disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "IsConnected",
+      "description": "自动补充动作: IsConnected",
+      "device": "test_robot",
+      "action": "auto-IsConnected",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "IsControlling",
+      "description": "自动补充动作: IsControlling",
+      "device": "test_robot",
+      "action": "auto-IsControlling",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "IsAllowedToMove",
+      "description": "自动补充动作: IsAllowedToMove",
+      "device": "test_robot",
+      "action": "auto-IsAllowedToMove",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "SetSynchronousMode",
+      "description": "自动补充动作: SetSynchronousMode",
+      "device": "test_robot",
+      "action": "auto-SetSynchronousMode",
+      "action_args": {
+        "sync_mode": true
+      }
+    },
+    {
+      "step": 16,
+      "name": "Sync",
+      "description": "自动补充动作: Sync",
+      "device": "test_robot",
+      "action": "auto-Sync",
+      "action_args": {}
+    },
+    {
+      "step": 17,
+      "name": "SyncCmdQueue",
+      "description": "自动补充动作: SyncCmdQueue",
+      "device": "test_robot",
+      "action": "auto-SyncCmdQueue",
+      "action_args": {}
+    },
+    {
+      "step": 18,
+      "name": "ConnectionWatchdog",
+      "description": "自动补充动作: ConnectionWatchdog",
+      "device": "test_robot",
+      "action": "auto-ConnectionWatchdog",
+      "action_args": {}
+    },
+    {
+      "step": 19,
+      "name": "AutoConnectionWatchdog",
+      "description": "自动补充动作: AutoConnectionWatchdog",
+      "device": "test_robot",
+      "action": "auto-AutoConnectionWatchdog",
+      "action_args": {
+        "timeout": 0
+      }
+    },
+    {
+      "step": 20,
+      "name": "ActivateRobot",
+      "description": "自动补充动作: ActivateRobot",
+      "device": "test_robot",
+      "action": "auto-ActivateRobot",
+      "action_args": {}
+    },
+    {
+      "step": 21,
+      "name": "DeactivateRobot",
+      "description": "自动补充动作: DeactivateRobot",
+      "device": "test_robot",
+      "action": "auto-DeactivateRobot",
+      "action_args": {}
+    },
+    {
+      "step": 22,
+      "name": "RebootRobot",
+      "description": "自动补充动作: RebootRobot",
+      "device": "test_robot",
+      "action": "auto-RebootRobot",
+      "action_args": {}
+    },
+    {
+      "step": 23,
+      "name": "Home",
+      "description": "自动补充动作: Home",
+      "device": "test_robot",
+      "action": "auto-Home",
+      "action_args": {}
+    },
+    {
+      "step": 24,
+      "name": "ActivateAndHome",
+      "description": "自动补充动作: ActivateAndHome",
+      "device": "test_robot",
+      "action": "auto-ActivateAndHome",
+      "action_args": {}
+    },
+    {
+      "step": 25,
+      "name": "PauseMotion",
+      "description": "自动补充动作: PauseMotion",
+      "device": "test_robot",
+      "action": "auto-PauseMotion",
+      "action_args": {}
+    },
+    {
+      "step": 26,
+      "name": "ResumeMotion",
+      "description": "自动补充动作: ResumeMotion",
+      "device": "test_robot",
+      "action": "auto-ResumeMotion",
+      "action_args": {}
+    },
+    {
+      "step": 27,
+      "name": "ClearMotion",
+      "description": "自动补充动作: ClearMotion",
+      "device": "test_robot",
+      "action": "auto-ClearMotion",
+      "action_args": {}
+    },
+    {
+      "step": 28,
+      "name": "MoveJoints",
+      "description": "自动补充动作: MoveJoints",
+      "device": "test_robot",
+      "action": "auto-MoveJoints",
+      "action_args": {}
+    },
+    {
+      "step": 29,
+      "name": "MoveJointsRel",
+      "description": "自动补充动作: MoveJointsRel",
+      "device": "test_robot",
+      "action": "auto-MoveJointsRel",
+      "action_args": {}
+    },
+    {
+      "step": 30,
+      "name": "MoveJointsVel",
+      "description": "自动补充动作: MoveJointsVel",
+      "device": "test_robot",
+      "action": "auto-MoveJointsVel",
+      "action_args": {}
+    },
+    {
+      "step": 31,
+      "name": "MovePose",
+      "description": "自动补充动作: MovePose",
+      "device": "test_robot",
+      "action": "auto-MovePose",
+      "action_args": {}
+    },
+    {
+      "step": 32,
+      "name": "MoveJump",
+      "description": "自动补充动作: MoveJump",
+      "device": "test_robot",
+      "action": "auto-MoveJump",
+      "action_args": {}
+    },
+    {
+      "step": 33,
+      "name": "MoveLin",
+      "description": "自动补充动作: MoveLin",
+      "device": "test_robot",
+      "action": "auto-MoveLin",
+      "action_args": {}
+    },
+    {
+      "step": 34,
+      "name": "MoveLinRelTrf",
+      "description": "自动补充动作: MoveLinRelTrf",
+      "device": "test_robot",
+      "action": "auto-MoveLinRelTrf",
+      "action_args": {}
+    },
+    {
+      "step": 35,
+      "name": "MoveLinRelTRF",
+      "description": "自动补充动作: MoveLinRelTRF",
+      "device": "test_robot",
+      "action": "auto-MoveLinRelTRF",
+      "action_args": {}
+    },
+    {
+      "step": 36,
+      "name": "MoveLinRelWrf",
+      "description": "自动补充动作: MoveLinRelWrf",
+      "device": "test_robot",
+      "action": "auto-MoveLinRelWrf",
+      "action_args": {}
+    },
+    {
+      "step": 37,
+      "name": "MoveLinRelWRF",
+      "description": "自动补充动作: MoveLinRelWRF",
+      "device": "test_robot",
+      "action": "auto-MoveLinRelWRF",
+      "action_args": {}
+    },
+    {
+      "step": 38,
+      "name": "MoveLinVelTrf",
+      "description": "自动补充动作: MoveLinVelTrf",
+      "device": "test_robot",
+      "action": "auto-MoveLinVelTrf",
+      "action_args": {}
+    },
+    {
+      "step": 39,
+      "name": "MoveLinVelTRF",
+      "description": "自动补充动作: MoveLinVelTRF",
+      "device": "test_robot",
+      "action": "auto-MoveLinVelTRF",
+      "action_args": {}
+    },
+    {
+      "step": 40,
+      "name": "MoveLinVelWrf",
+      "description": "自动补充动作: MoveLinVelWrf",
+      "device": "test_robot",
+      "action": "auto-MoveLinVelWrf",
+      "action_args": {}
+    },
+    {
+      "step": 41,
+      "name": "MoveLinVelWRF",
+      "description": "自动补充动作: MoveLinVelWRF",
+      "device": "test_robot",
+      "action": "auto-MoveLinVelWRF",
+      "action_args": {}
+    },
+    {
+      "step": 42,
+      "name": "SetVelTimeout",
+      "description": "自动补充动作: SetVelTimeout",
+      "device": "test_robot",
+      "action": "auto-SetVelTimeout",
+      "action_args": {}
+    },
+    {
+      "step": 43,
+      "name": "SetConf",
+      "description": "自动补充动作: SetConf",
+      "device": "test_robot",
+      "action": "auto-SetConf",
+      "action_args": {}
+    },
+    {
+      "step": 44,
+      "name": "SetAutoConf",
+      "description": "自动补充动作: SetAutoConf",
+      "device": "test_robot",
+      "action": "auto-SetAutoConf",
+      "action_args": {}
+    },
+    {
+      "step": 45,
+      "name": "SetConfTurn",
+      "description": "自动补充动作: SetConfTurn",
+      "device": "test_robot",
+      "action": "auto-SetConfTurn",
+      "action_args": {}
+    },
+    {
+      "step": 46,
+      "name": "SetAutoConfTurn",
+      "description": "自动补充动作: SetAutoConfTurn",
+      "device": "test_robot",
+      "action": "auto-SetAutoConfTurn",
+      "action_args": {}
+    },
+    {
+      "step": 47,
+      "name": "SetBlending",
+      "description": "自动补充动作: SetBlending",
+      "device": "test_robot",
+      "action": "auto-SetBlending",
+      "action_args": {}
+    },
+    {
+      "step": 48,
+      "name": "SetCartAcc",
+      "description": "自动补充动作: SetCartAcc",
+      "device": "test_robot",
+      "action": "auto-SetCartAcc",
+      "action_args": {}
+    },
+    {
+      "step": 49,
+      "name": "SetCartAngVel",
+      "description": "自动补充动作: SetCartAngVel",
+      "device": "test_robot",
+      "action": "auto-SetCartAngVel",
+      "action_args": {}
+    },
+    {
+      "step": 50,
+      "name": "SetCartLinVel",
+      "description": "自动补充动作: SetCartLinVel",
+      "device": "test_robot",
+      "action": "auto-SetCartLinVel",
+      "action_args": {}
+    },
+    {
+      "step": 51,
+      "name": "SetJointAcc",
+      "description": "自动补充动作: SetJointAcc",
+      "device": "test_robot",
+      "action": "auto-SetJointAcc",
+      "action_args": {}
+    },
+    {
+      "step": 52,
+      "name": "SetJointVel",
+      "description": "自动补充动作: SetJointVel",
+      "device": "test_robot",
+      "action": "auto-SetJointVel",
+      "action_args": {}
+    },
+    {
+      "step": 53,
+      "name": "SetJointVelLimit",
+      "description": "自动补充动作: SetJointVelLimit",
+      "device": "test_robot",
+      "action": "auto-SetJointVelLimit",
+      "action_args": {}
+    },
+    {
+      "step": 54,
+      "name": "SetMoveMode",
+      "description": "自动补充动作: SetMoveMode",
+      "device": "test_robot",
+      "action": "auto-SetMoveMode",
+      "action_args": {}
+    },
+    {
+      "step": 55,
+      "name": "SetMoveDurationCfg",
+      "description": "自动补充动作: SetMoveDurationCfg",
+      "device": "test_robot",
+      "action": "auto-SetMoveDurationCfg",
+      "action_args": {}
+    },
+    {
+      "step": 56,
+      "name": "SetMoveDuration",
+      "description": "自动补充动作: SetMoveDuration",
+      "device": "test_robot",
+      "action": "auto-SetMoveDuration",
+      "action_args": {}
+    },
+    {
+      "step": 57,
+      "name": "SetMoveJumpHeight",
+      "description": "自动补充动作: SetMoveJumpHeight",
+      "device": "test_robot",
+      "action": "auto-SetMoveJumpHeight",
+      "action_args": {
+        "startHeight": 10,
+        "endHeight": 10,
+        "minHeight": 0,
+        "maxHeight": 102
+      }
+    },
+    {
+      "step": 58,
+      "name": "SetMoveJumpApproachVel",
+      "description": "自动补充动作: SetMoveJumpApproachVel",
+      "device": "test_robot",
+      "action": "auto-SetMoveJumpApproachVel",
+      "action_args": {
+        "startVel": 10,
+        "startDist": 2,
+        "endVel": 10,
+        "endDist": 2
+      }
+    },
+    {
+      "step": 59,
+      "name": "SetTrf",
+      "description": "自动补充动作: SetTrf",
+      "device": "test_robot",
+      "action": "auto-SetTrf",
+      "action_args": {}
+    },
+    {
+      "step": 60,
+      "name": "SetTRF",
+      "description": "自动补充动作: SetTRF",
+      "device": "test_robot",
+      "action": "auto-SetTRF",
+      "action_args": {}
+    },
+    {
+      "step": 61,
+      "name": "SetWrf",
+      "description": "自动补充动作: SetWrf",
+      "device": "test_robot",
+      "action": "auto-SetWrf",
+      "action_args": {}
+    },
+    {
+      "step": 62,
+      "name": "SetWRF",
+      "description": "自动补充动作: SetWRF",
+      "device": "test_robot",
+      "action": "auto-SetWRF",
+      "action_args": {}
+    },
+    {
+      "step": 63,
+      "name": "SetCheckpoint",
+      "description": "自动补充动作: SetCheckpoint",
+      "device": "test_robot",
+      "action": "auto-SetCheckpoint",
+      "action_args": {}
+    },
+    {
+      "step": 64,
+      "name": "ExpectExternalCheckpoint",
+      "description": "自动补充动作: ExpectExternalCheckpoint",
+      "device": "test_robot",
+      "action": "auto-ExpectExternalCheckpoint",
+      "action_args": {}
+    },
+    {
+      "step": 65,
+      "name": "GripperOpen",
+      "description": "自动补充动作: GripperOpen",
+      "device": "test_robot",
+      "action": "auto-GripperOpen",
+      "action_args": {}
+    },
+    {
+      "step": 66,
+      "name": "MoveGripper",
+      "description": "自动补充动作: MoveGripper",
+      "device": "test_robot",
+      "action": "auto-MoveGripper",
+      "action_args": {}
+    },
+    {
+      "step": 67,
+      "name": "SetGripperForce",
+      "description": "自动补充动作: SetGripperForce",
+      "device": "test_robot",
+      "action": "auto-SetGripperForce",
+      "action_args": {}
+    },
+    {
+      "step": 68,
+      "name": "SetGripperVel",
+      "description": "自动补充动作: SetGripperVel",
+      "device": "test_robot",
+      "action": "auto-SetGripperVel",
+      "action_args": {}
+    },
+    {
+      "step": 69,
+      "name": "SetGripperRange",
+      "description": "自动补充动作: SetGripperRange",
+      "device": "test_robot",
+      "action": "auto-SetGripperRange",
+      "action_args": {}
+    },
+    {
+      "step": 70,
+      "name": "SetValveState",
+      "description": "自动补充动作: SetValveState",
+      "device": "test_robot",
+      "action": "auto-SetValveState",
+      "action_args": {}
+    },
+    {
+      "step": 71,
+      "name": "VacuumGrip",
+      "description": "自动补充动作: VacuumGrip",
+      "device": "test_robot",
+      "action": "auto-VacuumGrip",
+      "action_args": {}
+    },
+    {
+      "step": 72,
+      "name": "VacuumGrip Immediate",
+      "description": "自动补充动作: VacuumGrip_Immediate",
+      "device": "test_robot",
+      "action": "auto-VacuumGrip_Immediate",
+      "action_args": {}
+    },
+    {
+      "step": 73,
+      "name": "VacuumRelease",
+      "description": "自动补充动作: VacuumRelease",
+      "device": "test_robot",
+      "action": "auto-VacuumRelease",
+      "action_args": {}
+    },
+    {
+      "step": 74,
+      "name": "VacuumRelease Immediate",
+      "description": "自动补充动作: VacuumRelease_Immediate",
+      "device": "test_robot",
+      "action": "auto-VacuumRelease_Immediate",
+      "action_args": {}
+    },
+    {
+      "step": 75,
+      "name": "VacuumPurge",
+      "description": "自动补充动作: VacuumPurge",
+      "device": "test_robot",
+      "action": "auto-VacuumPurge",
+      "action_args": {}
+    },
+    {
+      "step": 76,
+      "name": "VacuumPurge Immediate",
+      "description": "自动补充动作: VacuumPurge_Immediate",
+      "device": "test_robot",
+      "action": "auto-VacuumPurge_Immediate",
+      "action_args": {}
+    },
+    {
+      "step": 77,
+      "name": "WaitHoldingPart",
+      "description": "自动补充动作: WaitHoldingPart",
+      "device": "test_robot",
+      "action": "auto-WaitHoldingPart",
+      "action_args": {}
+    },
+    {
+      "step": 78,
+      "name": "WaitReleasedPart",
+      "description": "自动补充动作: WaitReleasedPart",
+      "device": "test_robot",
+      "action": "auto-WaitReleasedPart",
+      "action_args": {}
+    },
+    {
+      "step": 79,
+      "name": "WaitPurgeDone",
+      "description": "自动补充动作: WaitPurgeDone",
+      "device": "test_robot",
+      "action": "auto-WaitPurgeDone",
+      "action_args": {
+        "wait_purge_started": true
+      }
+    },
+    {
+      "step": 80,
+      "name": "SetVacuumThreshold",
+      "description": "自动补充动作: SetVacuumThreshold",
+      "device": "test_robot",
+      "action": "auto-SetVacuumThreshold",
+      "action_args": {}
+    },
+    {
+      "step": 81,
+      "name": "SetVacuumThreshold Immediate",
+      "description": "自动补充动作: SetVacuumThreshold_Immediate",
+      "device": "test_robot",
+      "action": "auto-SetVacuumThreshold_Immediate",
+      "action_args": {}
+    },
+    {
+      "step": 82,
+      "name": "SetVacuumPurgeDuration",
+      "description": "自动补充动作: SetVacuumPurgeDuration",
+      "device": "test_robot",
+      "action": "auto-SetVacuumPurgeDuration",
+      "action_args": {}
+    },
+    {
+      "step": 83,
+      "name": "SetVacuumPurgeDuration Immediate",
+      "description": "自动补充动作: SetVacuumPurgeDuration_Immediate",
+      "device": "test_robot",
+      "action": "auto-SetVacuumPurgeDuration_Immediate",
+      "action_args": {
+        "duration": 0.1
+      }
+    },
+    {
+      "step": 84,
+      "name": "SetOutputState",
+      "description": "自动补充动作: SetOutputState",
+      "device": "test_robot",
+      "action": "auto-SetOutputState",
+      "action_args": {}
+    },
+    {
+      "step": 85,
+      "name": "SetOutputState Immediate",
+      "description": "自动补充动作: SetOutputState_Immediate",
+      "device": "test_robot",
+      "action": "auto-SetOutputState_Immediate",
+      "action_args": {}
+    },
+    {
+      "step": 86,
+      "name": "WaitForAnyCheckpoint",
+      "description": "自动补充动作: WaitForAnyCheckpoint",
+      "device": "test_robot",
+      "action": "auto-WaitForAnyCheckpoint",
+      "action_args": {}
+    },
+    {
+      "step": 87,
+      "name": "WaitConnected",
+      "description": "自动补充动作: WaitConnected",
+      "device": "test_robot",
+      "action": "auto-WaitConnected",
+      "action_args": {}
+    },
+    {
+      "step": 88,
+      "name": "WaitDisconnected",
+      "description": "自动补充动作: WaitDisconnected",
+      "device": "test_robot",
+      "action": "auto-WaitDisconnected",
+      "action_args": {}
+    },
+    {
+      "step": 89,
+      "name": "WaitActivated",
+      "description": "自动补充动作: WaitActivated",
+      "device": "test_robot",
+      "action": "auto-WaitActivated",
+      "action_args": {}
+    },
+    {
+      "step": 90,
+      "name": "WaitDeactivated",
+      "description": "自动补充动作: WaitDeactivated",
+      "device": "test_robot",
+      "action": "auto-WaitDeactivated",
+      "action_args": {}
+    },
+    {
+      "step": 91,
+      "name": "WaitHomed",
+      "description": "自动补充动作: WaitHomed",
+      "device": "test_robot",
+      "action": "auto-WaitHomed",
+      "action_args": {}
+    },
+    {
+      "step": 92,
+      "name": "WaitSimActivated",
+      "description": "自动补充动作: WaitSimActivated",
+      "device": "test_robot",
+      "action": "auto-WaitSimActivated",
+      "action_args": {}
+    },
+    {
+      "step": 93,
+      "name": "WaitSimDeactivated",
+      "description": "自动补充动作: WaitSimDeactivated",
+      "device": "test_robot",
+      "action": "auto-WaitSimDeactivated",
+      "action_args": {}
+    },
+    {
+      "step": 94,
+      "name": "WaitExtToolSimActivated",
+      "description": "自动补充动作: WaitExtToolSimActivated",
+      "device": "test_robot",
+      "action": "auto-WaitExtToolSimActivated",
+      "action_args": {}
+    },
+    {
+      "step": 95,
+      "name": "WaitExtToolSimDeactivated",
+      "description": "自动补充动作: WaitExtToolSimDeactivated",
+      "device": "test_robot",
+      "action": "auto-WaitExtToolSimDeactivated",
+      "action_args": {}
+    },
+    {
+      "step": 96,
+      "name": "WaitIoSimEnabled",
+      "description": "自动补充动作: WaitIoSimEnabled",
+      "device": "test_robot",
+      "action": "auto-WaitIoSimEnabled",
+      "action_args": {
+        "bank_id": 1
+      }
+    },
+    {
+      "step": 97,
+      "name": "WaitIoSimDisabled",
+      "description": "自动补充动作: WaitIoSimDisabled",
+      "device": "test_robot",
+      "action": "auto-WaitIoSimDisabled",
+      "action_args": {
+        "bank_id": 1
+      }
+    },
+    {
+      "step": 98,
+      "name": "IsDesiredOutputState",
+      "description": "自动补充动作: IsDesiredOutputState",
+      "device": "test_robot",
+      "action": "auto-IsDesiredOutputState",
+      "action_args": {}
+    },
+    {
+      "step": 99,
+      "name": "WaitOutputState",
+      "description": "自动补充动作: WaitOutputState",
+      "device": "test_robot",
+      "action": "auto-WaitOutputState",
+      "action_args": {}
+    },
+    {
+      "step": 100,
+      "name": "IsDesiredInputState",
+      "description": "自动补充动作: IsDesiredInputState",
+      "device": "test_robot",
+      "action": "auto-IsDesiredInputState",
+      "action_args": {}
+    },
+    {
+      "step": 101,
+      "name": "WaitInputState",
+      "description": "自动补充动作: WaitInputState",
+      "device": "test_robot",
+      "action": "auto-WaitInputState",
+      "action_args": {}
+    },
+    {
+      "step": 102,
+      "name": "WaitRecoveryMode",
+      "description": "自动补充动作: WaitRecoveryMode",
+      "device": "test_robot",
+      "action": "auto-WaitRecoveryMode",
+      "action_args": {}
+    },
+    {
+      "step": 103,
+      "name": "WaitForError",
+      "description": "自动补充动作: WaitForError",
+      "device": "test_robot",
+      "action": "auto-WaitForError",
+      "action_args": {}
+    },
+    {
+      "step": 104,
+      "name": "WaitErrorReset",
+      "description": "自动补充动作: WaitErrorReset",
+      "device": "test_robot",
+      "action": "auto-WaitErrorReset",
+      "action_args": {}
+    },
+    {
+      "step": 105,
+      "name": "WaitPStop2Reset",
+      "description": "自动补充动作: WaitPStop2Reset",
+      "device": "test_robot",
+      "action": "auto-WaitPStop2Reset",
+      "action_args": {}
+    },
+    {
+      "step": 106,
+      "name": "WaitPStop2Resettable",
+      "description": "自动补充动作: WaitPStop2Resettable",
+      "device": "test_robot",
+      "action": "auto-WaitPStop2Resettable",
+      "action_args": {}
+    },
+    {
+      "step": 107,
+      "name": "WaitEStopReset",
+      "description": "自动补充动作: WaitEStopReset",
+      "device": "test_robot",
+      "action": "auto-WaitEStopReset",
+      "action_args": {}
+    },
+    {
+      "step": 108,
+      "name": "WaitEStopResettable",
+      "description": "自动补充动作: WaitEStopResettable",
+      "device": "test_robot",
+      "action": "auto-WaitEStopResettable",
+      "action_args": {}
+    },
+    {
+      "step": 109,
+      "name": "WaitEstopResettable",
+      "description": "自动补充动作: WaitEstopResettable",
+      "device": "test_robot",
+      "action": "auto-WaitEstopResettable",
+      "action_args": {}
+    },
+    {
+      "step": 110,
+      "name": "WaitSafetyStopReset",
+      "description": "自动补充动作: WaitSafetyStopReset",
+      "device": "test_robot",
+      "action": "auto-WaitSafetyStopReset",
+      "action_args": {}
+    },
+    {
+      "step": 111,
+      "name": "WaitSafetyStopResettable",
+      "description": "自动补充动作: WaitSafetyStopResettable",
+      "device": "test_robot",
+      "action": "auto-WaitSafetyStopResettable",
+      "action_args": {}
+    },
+    {
+      "step": 112,
+      "name": "WaitSafetyStopStateChange",
+      "description": "自动补充动作: WaitSafetyStopStateChange",
+      "device": "test_robot",
+      "action": "auto-WaitSafetyStopStateChange",
+      "action_args": {}
+    },
+    {
+      "step": 113,
+      "name": "WaitMotionResumed",
+      "description": "自动补充动作: WaitMotionResumed",
+      "device": "test_robot",
+      "action": "auto-WaitMotionResumed",
+      "action_args": {}
+    },
+    {
+      "step": 114,
+      "name": "WaitMotionPaused",
+      "description": "自动补充动作: WaitMotionPaused",
+      "device": "test_robot",
+      "action": "auto-WaitMotionPaused",
+      "action_args": {}
+    },
+    {
+      "step": 115,
+      "name": "WaitMotionCleared",
+      "description": "自动补充动作: WaitMotionCleared",
+      "device": "test_robot",
+      "action": "auto-WaitMotionCleared",
+      "action_args": {}
+    },
+    {
+      "step": 116,
+      "name": "WaitEndOfCycle",
+      "description": "自动补充动作: WaitEndOfCycle",
+      "device": "test_robot",
+      "action": "auto-WaitEndOfCycle",
+      "action_args": {
+        "force_cycle": false
+      }
+    },
+    {
+      "step": 117,
+      "name": "WaitIdle",
+      "description": "自动补充动作: WaitIdle",
+      "device": "test_robot",
+      "action": "auto-WaitIdle",
+      "action_args": {
+        "wait_rt_data": false
+      }
+    },
+    {
+      "step": 118,
+      "name": "ResetError",
+      "description": "自动补充动作: ResetError",
+      "device": "test_robot",
+      "action": "auto-ResetError",
+      "action_args": {}
+    },
+    {
+      "step": 119,
+      "name": "ResetPStop",
+      "description": "自动补充动作: ResetPStop",
+      "device": "test_robot",
+      "action": "auto-ResetPStop",
+      "action_args": {}
+    },
+    {
+      "step": 120,
+      "name": "ResetPStop2",
+      "description": "自动补充动作: ResetPStop2",
+      "device": "test_robot",
+      "action": "auto-ResetPStop2",
+      "action_args": {}
+    },
+    {
+      "step": 121,
+      "name": "Delay",
+      "description": "自动补充动作: Delay",
+      "device": "test_robot",
+      "action": "auto-Delay",
+      "action_args": {}
+    },
+    {
+      "step": 122,
+      "name": "sleep",
+      "description": "自动补充动作: sleep",
+      "device": "test_robot",
+      "action": "auto-sleep",
+      "action_args": {}
+    },
+    {
+      "step": 123,
+      "name": "SendCustomCommand",
+      "description": "自动补充动作: SendCustomCommand",
+      "device": "test_robot",
+      "action": "auto-SendCustomCommand",
+      "action_args": {}
+    },
+    {
+      "step": 124,
+      "name": "GetInterruptableEvent",
+      "description": "自动补充动作: GetInterruptableEvent",
+      "device": "test_robot",
+      "action": "auto-GetInterruptableEvent",
+      "action_args": {
+        "abort_on_error": false,
+        "abort_on_clear_motion": false
+      }
+    },
+    {
+      "step": 125,
+      "name": "StartProgram",
+      "description": "自动补充动作: StartProgram",
+      "device": "test_robot",
+      "action": "auto-StartProgram",
+      "action_args": {}
+    },
+    {
+      "step": 126,
+      "name": "StartOfflineProgram",
+      "description": "自动补充动作: StartOfflineProgram",
+      "device": "test_robot",
+      "action": "auto-StartOfflineProgram",
+      "action_args": {}
+    },
+    {
+      "step": 127,
+      "name": "StopProgram",
+      "description": "自动补充动作: StopProgram",
+      "device": "test_robot",
+      "action": "auto-StopProgram",
+      "action_args": {}
+    },
+    {
+      "step": 128,
+      "name": "ListFiles",
+      "description": "自动补充动作: ListFiles",
+      "device": "test_robot",
+      "action": "auto-ListFiles",
+      "action_args": {
+        "as_dict": false
+      }
+    },
+    {
+      "step": 129,
+      "name": "ListPrograms",
+      "description": "自动补充动作: ListPrograms",
+      "device": "test_robot",
+      "action": "auto-ListPrograms",
+      "action_args": {}
+    },
+    {
+      "step": 130,
+      "name": "LoadFile",
+      "description": "自动补充动作: LoadFile",
+      "device": "test_robot",
+      "action": "auto-LoadFile",
+      "action_args": {
+        "as_dict": false
+      }
+    },
+    {
+      "step": 131,
+      "name": "LoadProgram",
+      "description": "自动补充动作: LoadProgram",
+      "device": "test_robot",
+      "action": "auto-LoadProgram",
+      "action_args": {}
+    },
+    {
+      "step": 132,
+      "name": "SaveFile",
+      "description": "自动补充动作: SaveFile",
+      "device": "test_robot",
+      "action": "auto-SaveFile",
+      "action_args": {
+        "allow_invalid": false,
+        "overwrite": false
+      }
+    },
+    {
+      "step": 133,
+      "name": "SaveProgram",
+      "description": "自动补充动作: SaveProgram",
+      "device": "test_robot",
+      "action": "auto-SaveProgram",
+      "action_args": {
+        "allow_invalid": false,
+        "overwrite": false
+      }
+    },
+    {
+      "step": 134,
+      "name": "DeleteFile",
+      "description": "自动补充动作: DeleteFile",
+      "device": "test_robot",
+      "action": "auto-DeleteFile",
+      "action_args": {}
+    },
+    {
+      "step": 135,
+      "name": "DeleteProgram",
+      "description": "自动补充动作: DeleteProgram",
+      "device": "test_robot",
+      "action": "auto-DeleteProgram",
+      "action_args": {}
+    },
+    {
+      "step": 136,
+      "name": "SetLoadedPrograms",
+      "description": "自动补充动作: SetLoadedPrograms",
+      "device": "test_robot",
+      "action": "auto-SetLoadedPrograms",
+      "action_args": {
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 137,
+      "name": "WaitProgramsLoaded",
+      "description": "自动补充动作: WaitProgramsLoaded",
+      "device": "test_robot",
+      "action": "auto-WaitProgramsLoaded",
+      "action_args": {}
+    },
+    {
+      "step": 138,
+      "name": "WaitMecaScriptEngineReady",
+      "description": "自动补充动作: WaitMecaScriptEngineReady",
+      "device": "test_robot",
+      "action": "auto-WaitMecaScriptEngineReady",
+      "action_args": {
+        "expected_ready": true
+      }
+    },
+    {
+      "step": 139,
+      "name": "GetNetworkCfg",
+      "description": "自动补充动作: GetNetworkCfg",
+      "device": "test_robot",
+      "action": "auto-GetNetworkCfg",
+      "action_args": {
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 140,
+      "name": "GetNetworkConfig",
+      "description": "自动补充动作: GetNetworkConfig",
+      "device": "test_robot",
+      "action": "auto-GetNetworkConfig",
+      "action_args": {
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 141,
+      "name": "SetNetworkOptions",
+      "description": "自动补充动作: SetNetworkOptions",
+      "device": "test_robot",
+      "action": "auto-SetNetworkOptions",
+      "action_args": {}
+    },
+    {
+      "step": 142,
+      "name": "GetNetworkOptions",
+      "description": "自动补充动作: GetNetworkOptions",
+      "device": "test_robot",
+      "action": "auto-GetNetworkOptions",
+      "action_args": {}
+    },
+    {
+      "step": 143,
+      "name": "GetRobotRtData",
+      "description": "自动补充动作: GetRobotRtData",
+      "device": "test_robot",
+      "action": "auto-GetRobotRtData",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 144,
+      "name": "GetRtAccelerometer",
+      "description": "自动补充动作: GetRtAccelerometer",
+      "device": "test_robot",
+      "action": "auto-GetRtAccelerometer",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 145,
+      "name": "GetRtIoStatus",
+      "description": "自动补充动作: GetRtIoStatus",
+      "device": "test_robot",
+      "action": "auto-GetRtIoStatus",
+      "action_args": {
+        "bank_id": 1,
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 146,
+      "name": "GetRtGripperForce",
+      "description": "自动补充动作: GetRtGripperForce",
+      "device": "test_robot",
+      "action": "auto-GetRtGripperForce",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 147,
+      "name": "GetRtGripperPos",
+      "description": "自动补充动作: GetRtGripperPos",
+      "device": "test_robot",
+      "action": "auto-GetRtGripperPos",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 148,
+      "name": "GetRtGripperState",
+      "description": "自动补充动作: GetRtGripperState",
+      "device": "test_robot",
+      "action": "auto-GetRtGripperState",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 149,
+      "name": "GetRtValveState",
+      "description": "自动补充动作: GetRtValveState",
+      "device": "test_robot",
+      "action": "auto-GetRtValveState",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 150,
+      "name": "GetRtOutputState",
+      "description": "自动补充动作: GetRtOutputState",
+      "device": "test_robot",
+      "action": "auto-GetRtOutputState",
+      "action_args": {
+        "bank_id": 1,
+        "synchronous_update": false,
+        "include_timestamp": false
+      }
+    },
+    {
+      "step": 151,
+      "name": "GetRtInputState",
+      "description": "自动补充动作: GetRtInputState",
+      "device": "test_robot",
+      "action": "auto-GetRtInputState",
+      "action_args": {
+        "bank_id": 1,
+        "synchronous_update": false,
+        "include_timestamp": false
+      }
+    },
+    {
+      "step": 152,
+      "name": "GetRtVacuumState",
+      "description": "自动补充动作: GetRtVacuumState",
+      "device": "test_robot",
+      "action": "auto-GetRtVacuumState",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 153,
+      "name": "GetRtVacuumPressure",
+      "description": "自动补充动作: GetRtVacuumPressure",
+      "device": "test_robot",
+      "action": "auto-GetRtVacuumPressure",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 154,
+      "name": "GetRtTargetJointPos",
+      "description": "自动补充动作: GetRtTargetJointPos",
+      "device": "test_robot",
+      "action": "auto-GetRtTargetJointPos",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 155,
+      "name": "GetJoints",
+      "description": "自动补充动作: GetJoints",
+      "device": "test_robot",
+      "action": "auto-GetJoints",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 156,
+      "name": "GetRtJointPos",
+      "description": "自动补充动作: GetRtJointPos",
+      "device": "test_robot",
+      "action": "auto-GetRtJointPos",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 157,
+      "name": "GetRtTargetJointTorq",
+      "description": "自动补充动作: GetRtTargetJointTorq",
+      "device": "test_robot",
+      "action": "auto-GetRtTargetJointTorq",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 158,
+      "name": "GetRtJointTorq",
+      "description": "自动补充动作: GetRtJointTorq",
+      "device": "test_robot",
+      "action": "auto-GetRtJointTorq",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 159,
+      "name": "GetRtTargetJointVel",
+      "description": "自动补充动作: GetRtTargetJointVel",
+      "device": "test_robot",
+      "action": "auto-GetRtTargetJointVel",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 160,
+      "name": "GetRtJointVel",
+      "description": "自动补充动作: GetRtJointVel",
+      "device": "test_robot",
+      "action": "auto-GetRtJointVel",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 161,
+      "name": "GetRtTargetCartPos",
+      "description": "自动补充动作: GetRtTargetCartPos",
+      "device": "test_robot",
+      "action": "auto-GetRtTargetCartPos",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 162,
+      "name": "GetPose",
+      "description": "自动补充动作: GetPose",
+      "device": "test_robot",
+      "action": "auto-GetPose",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 163,
+      "name": "GetRtCartPos",
+      "description": "自动补充动作: GetRtCartPos",
+      "device": "test_robot",
+      "action": "auto-GetRtCartPos",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 164,
+      "name": "GetRtTargetCartVel",
+      "description": "自动补充动作: GetRtTargetCartVel",
+      "device": "test_robot",
+      "action": "auto-GetRtTargetCartVel",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 165,
+      "name": "GetRtCartVel",
+      "description": "自动补充动作: GetRtCartVel",
+      "device": "test_robot",
+      "action": "auto-GetRtCartVel",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": true
+      }
+    },
+    {
+      "step": 166,
+      "name": "GetRtTargetConf",
+      "description": "自动补充动作: GetRtTargetConf",
+      "device": "test_robot",
+      "action": "auto-GetRtTargetConf",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 167,
+      "name": "GetRtConf",
+      "description": "自动补充动作: GetRtConf",
+      "device": "test_robot",
+      "action": "auto-GetRtConf",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 168,
+      "name": "GetRtTargetConfTurn",
+      "description": "自动补充动作: GetRtTargetConfTurn",
+      "device": "test_robot",
+      "action": "auto-GetRtTargetConfTurn",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 169,
+      "name": "GetRtConfTurn",
+      "description": "自动补充动作: GetRtConfTurn",
+      "device": "test_robot",
+      "action": "auto-GetRtConfTurn",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 170,
+      "name": "GetRtTrf",
+      "description": "自动补充动作: GetRtTrf",
+      "device": "test_robot",
+      "action": "auto-GetRtTrf",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 171,
+      "name": "GetTrf",
+      "description": "自动补充动作: GetTrf",
+      "device": "test_robot",
+      "action": "auto-GetTrf",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 172,
+      "name": "GetRtWrf",
+      "description": "自动补充动作: GetRtWrf",
+      "device": "test_robot",
+      "action": "auto-GetRtWrf",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 173,
+      "name": "GetWrf",
+      "description": "自动补充动作: GetWrf",
+      "device": "test_robot",
+      "action": "auto-GetWrf",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 174,
+      "name": "GetRtTemperature",
+      "description": "自动补充动作: GetRtTemperature",
+      "device": "test_robot",
+      "action": "auto-GetRtTemperature",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 175,
+      "name": "GetRtI2t",
+      "description": "自动补充动作: GetRtI2t",
+      "device": "test_robot",
+      "action": "auto-GetRtI2t",
+      "action_args": {
+        "include_timestamp": false,
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 176,
+      "name": "SetEob",
+      "description": "自动补充动作: SetEob",
+      "device": "test_robot",
+      "action": "auto-SetEob",
+      "action_args": {}
+    },
+    {
+      "step": 177,
+      "name": "SetEom",
+      "description": "自动补充动作: SetEom",
+      "device": "test_robot",
+      "action": "auto-SetEom",
+      "action_args": {}
+    },
+    {
+      "step": 178,
+      "name": "SetMonitoringInterval",
+      "description": "自动补充动作: SetMonitoringInterval",
+      "device": "test_robot",
+      "action": "auto-SetMonitoringInterval",
+      "action_args": {}
+    },
+    {
+      "step": 179,
+      "name": "SetRealTimeMonitoring",
+      "description": "自动补充动作: SetRealTimeMonitoring",
+      "device": "test_robot",
+      "action": "auto-SetRealTimeMonitoring",
+      "action_args": {}
+    },
+    {
+      "step": 180,
+      "name": "ForceRealTimeMonitoring",
+      "description": "自动补充动作: ForceRealTimeMonitoring",
+      "device": "test_robot",
+      "action": "auto-ForceRealTimeMonitoring",
+      "action_args": {}
+    },
+    {
+      "step": 181,
+      "name": "SetRtc",
+      "description": "自动补充动作: SetRtc",
+      "device": "test_robot",
+      "action": "auto-SetRtc",
+      "action_args": {}
+    },
+    {
+      "step": 182,
+      "name": "SetRTC",
+      "description": "自动补充动作: SetRTC",
+      "device": "test_robot",
+      "action": "auto-SetRTC",
+      "action_args": {}
+    },
+    {
+      "step": 183,
+      "name": "ActivateSim",
+      "description": "自动补充动作: ActivateSim",
+      "device": "test_robot",
+      "action": "auto-ActivateSim",
+      "action_args": {}
+    },
+    {
+      "step": 184,
+      "name": "DeactivateSim",
+      "description": "自动补充动作: DeactivateSim",
+      "device": "test_robot",
+      "action": "auto-DeactivateSim",
+      "action_args": {}
+    },
+    {
+      "step": 185,
+      "name": "SetExtToolSim",
+      "description": "自动补充动作: SetExtToolSim",
+      "device": "test_robot",
+      "action": "auto-SetExtToolSim",
+      "action_args": {}
+    },
+    {
+      "step": 186,
+      "name": "SetIoSim",
+      "description": "自动补充动作: SetIoSim",
+      "device": "test_robot",
+      "action": "auto-SetIoSim",
+      "action_args": {
+        "bank_id": 1,
+        "enable": true
+      }
+    },
+    {
+      "step": 187,
+      "name": "SetRecoveryMode",
+      "description": "自动补充动作: SetRecoveryMode",
+      "device": "test_robot",
+      "action": "auto-SetRecoveryMode",
+      "action_args": {
+        "activated": true
+      }
+    },
+    {
+      "step": 188,
+      "name": "SetTimeScaling",
+      "description": "自动补充动作: SetTimeScaling",
+      "device": "test_robot",
+      "action": "auto-SetTimeScaling",
+      "action_args": {}
+    },
+    {
+      "step": 189,
+      "name": "SetJointLimitsCfg",
+      "description": "自动补充动作: SetJointLimitsCfg",
+      "device": "test_robot",
+      "action": "auto-SetJointLimitsCfg",
+      "action_args": {
+        "e": true
+      }
+    },
+    {
+      "step": 190,
+      "name": "SetJointLimits",
+      "description": "自动补充动作: SetJointLimits",
+      "device": "test_robot",
+      "action": "auto-SetJointLimits",
+      "action_args": {}
+    },
+    {
+      "step": 191,
+      "name": "SetWorkZoneCfg",
+      "description": "自动补充动作: SetWorkZoneCfg",
+      "device": "test_robot",
+      "action": "auto-SetWorkZoneCfg",
+      "action_args": {
+        "severity": 4,
+        "mode": 1
+      }
+    },
+    {
+      "step": 192,
+      "name": "SetWorkZoneLimits",
+      "description": "自动补充动作: SetWorkZoneLimits",
+      "device": "test_robot",
+      "action": "auto-SetWorkZoneLimits",
+      "action_args": {}
+    },
+    {
+      "step": 193,
+      "name": "SetCollisionCfg",
+      "description": "自动补充动作: SetCollisionCfg",
+      "device": "test_robot",
+      "action": "auto-SetCollisionCfg",
+      "action_args": {
+        "severity": 4
+      }
+    },
+    {
+      "step": 194,
+      "name": "SetToolSphere",
+      "description": "自动补充动作: SetToolSphere",
+      "device": "test_robot",
+      "action": "auto-SetToolSphere",
+      "action_args": {}
+    },
+    {
+      "step": 195,
+      "name": "SetTorqueLimitsCfg",
+      "description": "自动补充动作: SetTorqueLimitsCfg",
+      "device": "test_robot",
+      "action": "auto-SetTorqueLimitsCfg",
+      "action_args": {
+        "severity": 4,
+        "mode": 2
+      }
+    },
+    {
+      "step": 196,
+      "name": "SetTorqueLimits",
+      "description": "自动补充动作: SetTorqueLimits",
+      "device": "test_robot",
+      "action": "auto-SetTorqueLimits",
+      "action_args": {}
+    },
+    {
+      "step": 197,
+      "name": "SetPayload",
+      "description": "自动补充动作: SetPayload",
+      "device": "test_robot",
+      "action": "auto-SetPayload",
+      "action_args": {}
+    },
+    {
+      "step": 198,
+      "name": "SetCalibrationCfg",
+      "description": "自动补充动作: SetCalibrationCfg",
+      "device": "test_robot",
+      "action": "auto-SetCalibrationCfg",
+      "action_args": {}
+    },
+    {
+      "step": 199,
+      "name": "SetPStop2Cfg",
+      "description": "自动补充动作: SetPStop2Cfg",
+      "device": "test_robot",
+      "action": "auto-SetPStop2Cfg",
+      "action_args": {
+        "severity": 3
+      }
+    },
+    {
+      "step": 200,
+      "name": "SetSimModeCfg",
+      "description": "自动补充动作: SetSimModeCfg",
+      "device": "test_robot",
+      "action": "auto-SetSimModeCfg",
+      "action_args": {
+        "default_sim_mode": 1
+      }
+    },
+    {
+      "step": 201,
+      "name": "SetMecaScriptCfg",
+      "description": "自动补充动作: SetMecaScriptCfg",
+      "device": "test_robot",
+      "action": "auto-SetMecaScriptCfg",
+      "action_args": {}
+    },
+    {
+      "step": 202,
+      "name": "SetRobotName",
+      "description": "自动补充动作: SetRobotName",
+      "device": "test_robot",
+      "action": "auto-SetRobotName",
+      "action_args": {}
+    },
+    {
+      "step": 203,
+      "name": "ActivateBrakes",
+      "description": "自动补充动作: ActivateBrakes",
+      "device": "test_robot",
+      "action": "auto-ActivateBrakes",
+      "action_args": {
+        "activated": true
+      }
+    },
+    {
+      "step": 204,
+      "name": "BrakesOn",
+      "description": "自动补充动作: BrakesOn",
+      "device": "test_robot",
+      "action": "auto-BrakesOn",
+      "action_args": {}
+    },
+    {
+      "step": 205,
+      "name": "BrakesOff",
+      "description": "自动补充动作: BrakesOff",
+      "device": "test_robot",
+      "action": "auto-BrakesOff",
+      "action_args": {}
+    },
+    {
+      "step": 206,
+      "name": "WaitProgramDone",
+      "description": "自动补充动作: WaitProgramDone",
+      "device": "test_robot",
+      "action": "auto-WaitProgramDone",
+      "action_args": {}
+    },
+    {
+      "step": 207,
+      "name": "GetPowerSupplyInputs",
+      "description": "自动补充动作: GetPowerSupplyInputs",
+      "device": "test_robot",
+      "action": "auto-GetPowerSupplyInputs",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 208,
+      "name": "GetAutoConf",
+      "description": "自动补充动作: GetAutoConf",
+      "device": "test_robot",
+      "action": "auto-GetAutoConf",
+      "action_args": {}
+    },
+    {
+      "step": 209,
+      "name": "GetAutoConfTurn",
+      "description": "自动补充动作: GetAutoConfTurn",
+      "device": "test_robot",
+      "action": "auto-GetAutoConfTurn",
+      "action_args": {}
+    },
+    {
+      "step": 210,
+      "name": "GetBlending",
+      "description": "自动补充动作: GetBlending",
+      "device": "test_robot",
+      "action": "auto-GetBlending",
+      "action_args": {}
+    },
+    {
+      "step": 211,
+      "name": "GetBrakesState",
+      "description": "自动补充动作: GetBrakesState",
+      "device": "test_robot",
+      "action": "auto-GetBrakesState",
+      "action_args": {}
+    },
+    {
+      "step": 212,
+      "name": "GetCalibrationCfg",
+      "description": "自动补充动作: GetCalibrationCfg",
+      "device": "test_robot",
+      "action": "auto-GetCalibrationCfg",
+      "action_args": {}
+    },
+    {
+      "step": 213,
+      "name": "GetCartAcc",
+      "description": "自动补充动作: GetCartAcc",
+      "device": "test_robot",
+      "action": "auto-GetCartAcc",
+      "action_args": {}
+    },
+    {
+      "step": 214,
+      "name": "GetCartAngVel",
+      "description": "自动补充动作: GetCartAngVel",
+      "device": "test_robot",
+      "action": "auto-GetCartAngVel",
+      "action_args": {}
+    },
+    {
+      "step": 215,
+      "name": "GetCartLinVel",
+      "description": "自动补充动作: GetCartLinVel",
+      "device": "test_robot",
+      "action": "auto-GetCartLinVel",
+      "action_args": {}
+    },
+    {
+      "step": 216,
+      "name": "GetCheckpoint",
+      "description": "自动补充动作: GetCheckpoint",
+      "device": "test_robot",
+      "action": "auto-GetCheckpoint",
+      "action_args": {}
+    },
+    {
+      "step": 217,
+      "name": "GetCheckpointDiscarded",
+      "description": "自动补充动作: GetCheckpointDiscarded",
+      "device": "test_robot",
+      "action": "auto-GetCheckpointDiscarded",
+      "action_args": {}
+    },
+    {
+      "step": 218,
+      "name": "GetCmdPendingCount",
+      "description": "自动补充动作: GetCmdPendingCount",
+      "device": "test_robot",
+      "action": "auto-GetCmdPendingCount",
+      "action_args": {}
+    },
+    {
+      "step": 219,
+      "name": "GetCollisionCfg",
+      "description": "自动补充动作: GetCollisionCfg",
+      "device": "test_robot",
+      "action": "auto-GetCollisionCfg",
+      "action_args": {}
+    },
+    {
+      "step": 220,
+      "name": "GetCollisionStatus",
+      "description": "自动补充动作: GetCollisionStatus",
+      "device": "test_robot",
+      "action": "auto-GetCollisionStatus",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 221,
+      "name": "GetConf",
+      "description": "自动补充动作: GetConf",
+      "device": "test_robot",
+      "action": "auto-GetConf",
+      "action_args": {}
+    },
+    {
+      "step": 222,
+      "name": "GetConfTurn",
+      "description": "自动补充动作: GetConfTurn",
+      "device": "test_robot",
+      "action": "auto-GetConfTurn",
+      "action_args": {}
+    },
+    {
+      "step": 223,
+      "name": "GetEtherNetIpEnabled",
+      "description": "自动补充动作: GetEtherNetIpEnabled",
+      "device": "test_robot",
+      "action": "auto-GetEtherNetIpEnabled",
+      "action_args": {}
+    },
+    {
+      "step": 224,
+      "name": "GetExtToolFwVersion",
+      "description": "自动补充动作: GetExtToolFwVersion",
+      "device": "test_robot",
+      "action": "auto-GetExtToolFwVersion",
+      "action_args": {}
+    },
+    {
+      "step": 225,
+      "name": "GetExtToolSim",
+      "description": "自动补充动作: GetExtToolSim",
+      "device": "test_robot",
+      "action": "auto-GetExtToolSim",
+      "action_args": {}
+    },
+    {
+      "step": 226,
+      "name": "GetFwVersion",
+      "description": "自动补充动作: GetFwVersion",
+      "device": "test_robot",
+      "action": "auto-GetFwVersion",
+      "action_args": {}
+    },
+    {
+      "step": 227,
+      "name": "GetGripperForce",
+      "description": "自动补充动作: GetGripperForce",
+      "device": "test_robot",
+      "action": "auto-GetGripperForce",
+      "action_args": {}
+    },
+    {
+      "step": 228,
+      "name": "GetGripperRange",
+      "description": "自动补充动作: GetGripperRange",
+      "device": "test_robot",
+      "action": "auto-GetGripperRange",
+      "action_args": {}
+    },
+    {
+      "step": 229,
+      "name": "GetGripperVel",
+      "description": "自动补充动作: GetGripperVel",
+      "device": "test_robot",
+      "action": "auto-GetGripperVel",
+      "action_args": {}
+    },
+    {
+      "step": 230,
+      "name": "GetIoSim",
+      "description": "自动补充动作: GetIoSim",
+      "device": "test_robot",
+      "action": "auto-GetIoSim",
+      "action_args": {
+        "bank_id": 1
+      }
+    },
+    {
+      "step": 231,
+      "name": "GetJointAcc",
+      "description": "自动补充动作: GetJointAcc",
+      "device": "test_robot",
+      "action": "auto-GetJointAcc",
+      "action_args": {}
+    },
+    {
+      "step": 232,
+      "name": "GetJointLimits",
+      "description": "自动补充动作: GetJointLimits",
+      "device": "test_robot",
+      "action": "auto-GetJointLimits",
+      "action_args": {
+        "effective": true
+      }
+    },
+    {
+      "step": 233,
+      "name": "GetJointLimitsCfg",
+      "description": "自动补充动作: GetJointLimitsCfg",
+      "device": "test_robot",
+      "action": "auto-GetJointLimitsCfg",
+      "action_args": {}
+    },
+    {
+      "step": 234,
+      "name": "GetJointVel",
+      "description": "自动补充动作: GetJointVel",
+      "device": "test_robot",
+      "action": "auto-GetJointVel",
+      "action_args": {}
+    },
+    {
+      "step": 235,
+      "name": "GetJointVelLimit",
+      "description": "自动补充动作: GetJointVelLimit",
+      "device": "test_robot",
+      "action": "auto-GetJointVelLimit",
+      "action_args": {}
+    },
+    {
+      "step": 236,
+      "name": "GetModelJointLimits",
+      "description": "自动补充动作: GetModelJointLimits",
+      "device": "test_robot",
+      "action": "auto-GetModelJointLimits",
+      "action_args": {}
+    },
+    {
+      "step": 237,
+      "name": "GetMonitoringInterval",
+      "description": "自动补充动作: GetMonitoringInterval",
+      "device": "test_robot",
+      "action": "auto-GetMonitoringInterval",
+      "action_args": {}
+    },
+    {
+      "step": 238,
+      "name": "GetMoveDuration",
+      "description": "自动补充动作: GetMoveDuration",
+      "device": "test_robot",
+      "action": "auto-GetMoveDuration",
+      "action_args": {}
+    },
+    {
+      "step": 239,
+      "name": "GetMoveDurationCfg",
+      "description": "自动补充动作: GetMoveDurationCfg",
+      "device": "test_robot",
+      "action": "auto-GetMoveDurationCfg",
+      "action_args": {}
+    },
+    {
+      "step": 240,
+      "name": "GetMoveJumpApproachVel",
+      "description": "自动补充动作: GetMoveJumpApproachVel",
+      "device": "test_robot",
+      "action": "auto-GetMoveJumpApproachVel",
+      "action_args": {}
+    },
+    {
+      "step": 241,
+      "name": "GetMoveJumpHeight",
+      "description": "自动补充动作: GetMoveJumpHeight",
+      "device": "test_robot",
+      "action": "auto-GetMoveJumpHeight",
+      "action_args": {}
+    },
+    {
+      "step": 242,
+      "name": "GetMoveMode",
+      "description": "自动补充动作: GetMoveMode",
+      "device": "test_robot",
+      "action": "auto-GetMoveMode",
+      "action_args": {}
+    },
+    {
+      "step": 243,
+      "name": "GetOperationMode",
+      "description": "自动补充动作: GetOperationMode",
+      "device": "test_robot",
+      "action": "auto-GetOperationMode",
+      "action_args": {}
+    },
+    {
+      "step": 244,
+      "name": "GetPStop2Cfg",
+      "description": "自动补充动作: GetPStop2Cfg",
+      "device": "test_robot",
+      "action": "auto-GetPStop2Cfg",
+      "action_args": {}
+    },
+    {
+      "step": 245,
+      "name": "GetPayload",
+      "description": "自动补充动作: GetPayload",
+      "device": "test_robot",
+      "action": "auto-GetPayload",
+      "action_args": {}
+    },
+    {
+      "step": 246,
+      "name": "GetProductType",
+      "description": "自动补充动作: GetProductType",
+      "device": "test_robot",
+      "action": "auto-GetProductType",
+      "action_args": {}
+    },
+    {
+      "step": 247,
+      "name": "GetProfinetEnabled",
+      "description": "自动补充动作: GetProfinetEnabled",
+      "device": "test_robot",
+      "action": "auto-GetProfinetEnabled",
+      "action_args": {}
+    },
+    {
+      "step": 248,
+      "name": "GetRealTimeMonitoring",
+      "description": "自动补充动作: GetRealTimeMonitoring",
+      "device": "test_robot",
+      "action": "auto-GetRealTimeMonitoring",
+      "action_args": {}
+    },
+    {
+      "step": 249,
+      "name": "GetRecoveryMode",
+      "description": "自动补充动作: GetRecoveryMode",
+      "device": "test_robot",
+      "action": "auto-GetRecoveryMode",
+      "action_args": {}
+    },
+    {
+      "step": 250,
+      "name": "GetRobotCalibrated",
+      "description": "自动补充动作: GetRobotCalibrated",
+      "device": "test_robot",
+      "action": "auto-GetRobotCalibrated",
+      "action_args": {}
+    },
+    {
+      "step": 251,
+      "name": "GetRobotInfo",
+      "description": "自动补充动作: GetRobotInfo",
+      "device": "test_robot",
+      "action": "auto-GetRobotInfo",
+      "action_args": {}
+    },
+    {
+      "step": 252,
+      "name": "GetRobotName",
+      "description": "自动补充动作: GetRobotName",
+      "device": "test_robot",
+      "action": "auto-GetRobotName",
+      "action_args": {}
+    },
+    {
+      "step": 253,
+      "name": "GetRobotSerial",
+      "description": "自动补充动作: GetRobotSerial",
+      "device": "test_robot",
+      "action": "auto-GetRobotSerial",
+      "action_args": {}
+    },
+    {
+      "step": 254,
+      "name": "GetRtc",
+      "description": "自动补充动作: GetRtc",
+      "device": "test_robot",
+      "action": "auto-GetRtc",
+      "action_args": {}
+    },
+    {
+      "step": 255,
+      "name": "GetStatusRobot",
+      "description": "自动补充动作: GetStatusRobot",
+      "device": "test_robot",
+      "action": "auto-GetStatusRobot",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 256,
+      "name": "GetSafetyStatus",
+      "description": "自动补充动作: GetSafetyStatus",
+      "device": "test_robot",
+      "action": "auto-GetSafetyStatus",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 257,
+      "name": "GetSafetyStopStatus",
+      "description": "自动补充动作: GetSafetyStopStatus",
+      "device": "test_robot",
+      "action": "auto-GetSafetyStopStatus",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 258,
+      "name": "GetLoadedPrograms",
+      "description": "自动补充动作: GetLoadedPrograms",
+      "device": "test_robot",
+      "action": "auto-GetLoadedPrograms",
+      "action_args": {}
+    },
+    {
+      "step": 259,
+      "name": "GetProgramExecutionStatus",
+      "description": "自动补充动作: GetProgramExecutionStatus",
+      "device": "test_robot",
+      "action": "auto-GetProgramExecutionStatus",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 260,
+      "name": "GetMecaScriptEngineStatus",
+      "description": "自动补充动作: GetMecaScriptEngineStatus",
+      "device": "test_robot",
+      "action": "auto-GetMecaScriptEngineStatus",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 261,
+      "name": "GetSimModeCfg",
+      "description": "自动补充动作: GetSimModeCfg",
+      "device": "test_robot",
+      "action": "auto-GetSimModeCfg",
+      "action_args": {}
+    },
+    {
+      "step": 262,
+      "name": "GetMecaScriptCfg",
+      "description": "自动补充动作: GetMecaScriptCfg",
+      "device": "test_robot",
+      "action": "auto-GetMecaScriptCfg",
+      "action_args": {}
+    },
+    {
+      "step": 263,
+      "name": "GetTimeScaling",
+      "description": "自动补充动作: GetTimeScaling",
+      "device": "test_robot",
+      "action": "auto-GetTimeScaling",
+      "action_args": {}
+    },
+    {
+      "step": 264,
+      "name": "GetToolSphere",
+      "description": "自动补充动作: GetToolSphere",
+      "device": "test_robot",
+      "action": "auto-GetToolSphere",
+      "action_args": {}
+    },
+    {
+      "step": 265,
+      "name": "GetTorqueLimits",
+      "description": "自动补充动作: GetTorqueLimits",
+      "device": "test_robot",
+      "action": "auto-GetTorqueLimits",
+      "action_args": {}
+    },
+    {
+      "step": 266,
+      "name": "GetTorqueLimitsCfg",
+      "description": "自动补充动作: GetTorqueLimitsCfg",
+      "device": "test_robot",
+      "action": "auto-GetTorqueLimitsCfg",
+      "action_args": {}
+    },
+    {
+      "step": 267,
+      "name": "GetTorqueLimitsStatus",
+      "description": "自动补充动作: GetTorqueLimitsStatus",
+      "device": "test_robot",
+      "action": "auto-GetTorqueLimitsStatus",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 268,
+      "name": "GetVacuumPurgeDuration",
+      "description": "自动补充动作: GetVacuumPurgeDuration",
+      "device": "test_robot",
+      "action": "auto-GetVacuumPurgeDuration",
+      "action_args": {}
+    },
+    {
+      "step": 269,
+      "name": "GetVacuumThreshold",
+      "description": "自动补充动作: GetVacuumThreshold",
+      "device": "test_robot",
+      "action": "auto-GetVacuumThreshold",
+      "action_args": {}
+    },
+    {
+      "step": 270,
+      "name": "GetVelTimeout",
+      "description": "自动补充动作: GetVelTimeout",
+      "device": "test_robot",
+      "action": "auto-GetVelTimeout",
+      "action_args": {}
+    },
+    {
+      "step": 271,
+      "name": "GetWorkZoneCfg",
+      "description": "自动补充动作: GetWorkZoneCfg",
+      "device": "test_robot",
+      "action": "auto-GetWorkZoneCfg",
+      "action_args": {}
+    },
+    {
+      "step": 272,
+      "name": "GetWorkZoneLimits",
+      "description": "自动补充动作: GetWorkZoneLimits",
+      "device": "test_robot",
+      "action": "auto-GetWorkZoneLimits",
+      "action_args": {}
+    },
+    {
+      "step": 273,
+      "name": "GetWorkZoneStatus",
+      "description": "自动补充动作: GetWorkZoneStatus",
+      "device": "test_robot",
+      "action": "auto-GetWorkZoneStatus",
+      "action_args": {
+        "synchronous_update": false
+      }
+    },
+    {
+      "step": 274,
+      "name": "LogTrace",
+      "description": "自动补充动作: LogTrace",
+      "device": "test_robot",
+      "action": "auto-LogTrace",
+      "action_args": {}
+    },
+    {
+      "step": 275,
+      "name": "LogUserCommands",
+      "description": "自动补充动作: LogUserCommands",
+      "device": "test_robot",
+      "action": "auto-LogUserCommands",
+      "action_args": {
+        "show_motion_queue_progress": false
+      }
+    },
+    {
+      "step": 276,
+      "name": "SetSilentApiMode",
+      "description": "自动补充动作: SetSilentApiMode",
+      "device": "test_robot",
+      "action": "auto-SetSilentApiMode",
+      "action_args": {}
+    },
+    {
+      "step": 277,
+      "name": "StartLogging",
+      "description": "自动补充动作: StartLogging",
+      "device": "test_robot",
+      "action": "auto-StartLogging",
+      "action_args": {
+        "record_time": true
+      }
+    },
+    {
+      "step": 278,
+      "name": "EndLogging",
+      "description": "自动补充动作: EndLogging",
+      "device": "test_robot",
+      "action": "auto-EndLogging",
+      "action_args": {
+        "keep_captured_trajectory": false
+      }
+    },
+    {
+      "step": 279,
+      "name": "GetCapturedTrajectory",
+      "description": "自动补充动作: GetCapturedTrajectory",
+      "device": "test_robot",
+      "action": "auto-GetCapturedTrajectory",
+      "action_args": {}
+    },
+    {
+      "step": 280,
+      "name": "GetCapturedTrajectoryPath",
+      "description": "自动补充动作: GetCapturedTrajectoryPath",
+      "device": "test_robot",
+      "action": "auto-GetCapturedTrajectoryPath",
+      "action_args": {}
+    },
+    {
+      "step": 281,
+      "name": "FileLogger",
+      "description": "自动补充动作: FileLogger",
+      "device": "test_robot",
+      "action": "auto-FileLogger",
+      "action_args": {
+        "record_time": true,
+        "keep_captured_trajectory": false
+      }
+    },
+    {
+      "step": 282,
+      "name": "TcpDump",
+      "description": "自动补充动作: TcpDump",
+      "device": "test_robot",
+      "action": "auto-TcpDump",
+      "action_args": {}
+    },
+    {
+      "step": 283,
+      "name": "TcpDumpStop",
+      "description": "自动补充动作: TcpDumpStop",
+      "device": "test_robot",
+      "action": "auto-TcpDumpStop",
+      "action_args": {}
+    },
+    {
+      "step": 284,
+      "name": "UpdateRobot",
+      "description": "自动补充动作: UpdateRobot",
+      "device": "test_robot",
+      "action": "auto-UpdateRobot",
+      "action_args": {
+        "timeout": 900
+      }
+    },
+    {
+      "step": 285,
+      "name": "CreateVariable",
+      "description": "自动补充动作: CreateVariable",
+      "device": "test_robot",
+      "action": "auto-CreateVariable",
+      "action_args": {
+        "volatile": false,
+        "override": false,
+        "timeout": 10
+      }
+    },
+    {
+      "step": 286,
+      "name": "CreateRegisteredVariable",
+      "description": "自动补充动作: CreateRegisteredVariable",
+      "device": "test_robot",
+      "action": "auto-CreateRegisteredVariable",
+      "action_args": {
+        "override": false
+      }
+    },
+    {
+      "step": 287,
+      "name": "DeleteVariable",
+      "description": "自动补充动作: DeleteVariable",
+      "device": "test_robot",
+      "action": "auto-DeleteVariable",
+      "action_args": {}
+    },
+    {
+      "step": 288,
+      "name": "SetVariable",
+      "description": "自动补充动作: SetVariable",
+      "device": "test_robot",
+      "action": "auto-SetVariable",
+      "action_args": {
+        "timeout": 10
+      }
+    },
+    {
+      "step": 289,
+      "name": "GetVariable",
+      "description": "自动补充动作: GetVariable",
+      "device": "test_robot",
+      "action": "auto-GetVariable",
+      "action_args": {}
+    },
+    {
+      "step": 290,
+      "name": "GetVariableByCyclicId",
+      "description": "自动补充动作: GetVariableByCyclicId",
+      "device": "test_robot",
+      "action": "auto-GetVariableByCyclicId",
+      "action_args": {}
+    },
+    {
+      "step": 291,
+      "name": "ListVariables",
+      "description": "自动补充动作: ListVariables",
+      "device": "test_robot",
+      "action": "auto-ListVariables",
+      "action_args": {}
+    },
+    {
+      "step": 292,
+      "name": "EnableEtherNetIp",
+      "description": "自动补充动作: EnableEtherNetIp",
+      "device": "test_robot",
+      "action": "auto-EnableEtherNetIp",
+      "action_args": {
+        "enable": true
+      }
+    },
+    {
+      "step": 293,
+      "name": "EnableProfinet",
+      "description": "自动补充动作: EnableProfinet",
+      "device": "test_robot",
+      "action": "auto-EnableProfinet",
+      "action_args": {
+        "enable": true
+      }
+    },
+    {
+      "step": 294,
+      "name": "SwitchToEtherCAT",
+      "description": "自动补充动作: SwitchToEtherCAT",
+      "device": "test_robot",
+      "action": "auto-SwitchToEtherCAT",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Robot 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Robot",
+    "generated_by": "driver-finder"
+  }
+}

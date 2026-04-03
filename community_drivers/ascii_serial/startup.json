@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "id": "test_ascii_serial",
+      "name": "Ascii Serial",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "ascii_serial",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": "",
+        "baud": 115200,
+        "timeout": 5,
+        "inter_char_timeout": 0.01
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_ascii_serial",
+      "action": "auto-open",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_ascii_serial",
+      "action": "auto-read",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_ascii_serial",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "write",
+      "description": "自动补充动作: write",
+      "device": "test_ascii_serial",
+      "action": "auto-write",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "flush",
+      "description": "自动补充动作: flush",
+      "device": "test_ascii_serial",
+      "action": "auto-flush",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "timeout",
+      "description": "自动补充动作: timeout",
+      "device": "test_ascii_serial",
+      "action": "auto-timeout",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "baudrate",
+      "description": "自动补充动作: baudrate",
+      "device": "test_ascii_serial",
+      "action": "auto-baudrate",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "AsciiSerial 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "AsciiSerial",
+    "generated_by": "driver-finder"
+  }
+}

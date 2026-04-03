@@ -1,0 +1,109 @@
+serial_visa_driver:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-raw_recv:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                size:
+                  type: string
+              type: object
+          title: raw_recv
+          type: object
+        type: UniLabJsonCommand
+      auto-raw_send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: raw_send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-finalize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: finalize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.serial_instrument.serial_visa_driver:SerialVisaDriver
+    status_types: {}
+    type: python
+  config_info: []
+  description: Serial Visa Driver是由National Instruments (VISA)生产的实验执行&合成设备，主要功能包括初始化、打开。支持Signal, Slot, finalize等操作。
+  handles: []
+  icon: serial_visa_driver.webp
+  init_param_schema:
+    config:
+      properties:
+        resource_name:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    可控参数: data、size
+    操作数: 5
+  manufacturer: National Instruments (VISA)
+  model:
+    name: Generic Serial Visa Driver 串口设备
+    type: device
+  name: National Instruments Serial Visa
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Electronics
+    scene_name: Interfacing
+    step: Communication

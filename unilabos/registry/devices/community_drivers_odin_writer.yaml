@@ -1,0 +1,123 @@
+odin_writer:
+  class:
+    module: unilabos.devices.writer____detector.writer_.odin_writer:OdinWriter
+    type: python
+    status_types:
+      indices_written: String
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                exposures_per_event:
+                  type: integer
+        goal_default:
+          exposures_per_event: 1
+        handles: {}
+      auto-observe_indices_written:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: observe_indices_written
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-collect_stream_docs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: collect_stream_docs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                indices_written:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_indices_written:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_indices_written
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Odin Writer驱动，支持open/observe indices written/collect stream docs/close/get indices written。
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        path_provider:
+          type: string
+          default: null
+        odin_driver:
+          type: string
+          default: null
+        detector_bit_depth:
+          type: string
+          default: null
+  cover: odin_writer.webp
+  device_params:
+    功能: 数据采集
+    可控参数: exposures_per_event、indices_written、name、timeout
+    操作数: 5
+  manufacturer: Diamond Light Source
+  model:
+    name: Generic Odin Writer
+    type: device
+  name: Odin Writer 后处理设备
+  tags:
+  - 后处理设备
+  resource_type: device
+  icon: odin_writer.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

@@ -1,0 +1,89 @@
+{
+  "nodes": [
+    {
+      "id": "test_luminos_stage",
+      "name": "Luminos Motorized Stage",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "luminos_stage",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "com_port_number": "",
+        "C1": "",
+        "C2": "",
+        "C1_z_chip": 0.0,
+        "C2_z_chip": 0.0,
+        "update_position_absolute": 100,
+        "c1_c2_distance_mask_um": "",
+        "calibrate_c_axis": false,
+        "filename": "",
+        "reverse_axis_x": false,
+        "x_axis_motor": "x",
+        "y_axis_motor": "y",
+        "z_axis_motor": "z",
+        "reverse_axis_y": false,
+        "reverse_axis_z": false,
+        "restore_default_settings": false,
+        "home": false
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_luminos_stage",
+      "action": "auto-set_default_settings",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "set manual mode",
+      "description": "自动补充动作: set_manual_mode",
+      "device": "test_luminos_stage",
+      "action": "auto-set_manual_mode",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "set computer mode",
+      "description": "自动补充动作: set_computer_mode",
+      "device": "test_luminos_stage",
+      "action": "auto-set_computer_mode",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "home",
+      "description": "自动补充动作: home",
+      "device": "test_luminos_stage",
+      "action": "auto-home",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "flash leds",
+      "description": "自动补充动作: flash_leds",
+      "device": "test_luminos_stage",
+      "action": "auto-flash_leds",
+      "action_args": {
+        "num_flashes": 5,
+        "delay_flashes_sec": 1.0
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "LuminosStage 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "LuminosStage",
+    "generated_by": "driver-finder"
+  }
+}

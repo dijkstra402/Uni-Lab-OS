@@ -1,0 +1,152 @@
+{
+  "nodes": [
+    {
+      "id": "test_spectr_acq3",
+      "name": "Test SpectrAcq3",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "spectr_acq3",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "device_id": 0,
+        "communicator": "",
+        "error_db": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_spectr_acq3",
+      "action": "auto-set_hv_bias_voltage",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_spectr_acq3",
+      "action": "auto-open",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_spectr_acq3",
+      "action": "auto-is_busy",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_spectr_acq3",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "is open",
+      "description": "自动补充动作: is_open",
+      "device": "test_spectr_acq3",
+      "action": "auto-is_open",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "set acq set",
+      "description": "自动补充动作: set_acq_set",
+      "device": "test_spectr_acq3",
+      "action": "auto-set_acq_set",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "acq start",
+      "description": "自动补充动作: acq_start",
+      "device": "test_spectr_acq3",
+      "action": "auto-acq_start",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "acq stop",
+      "description": "自动补充动作: acq_stop",
+      "device": "test_spectr_acq3",
+      "action": "auto-acq_stop",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "acq pause",
+      "description": "自动补充动作: acq_pause",
+      "device": "test_spectr_acq3",
+      "action": "auto-acq_pause",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "acq continue",
+      "description": "自动补充动作: acq_continue",
+      "device": "test_spectr_acq3",
+      "action": "auto-acq_continue",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "is data available",
+      "description": "自动补充动作: is_data_available",
+      "device": "test_spectr_acq3",
+      "action": "auto-is_data_available",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "force trigger",
+      "description": "自动补充动作: force_trigger",
+      "device": "test_spectr_acq3",
+      "action": "auto-force_trigger",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "set trigger in polarity",
+      "description": "自动补充动作: set_trigger_in_polarity",
+      "device": "test_spectr_acq3",
+      "action": "auto-set_trigger_in_polarity",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "set in trigger mode",
+      "description": "自动补充动作: set_in_trigger_mode",
+      "device": "test_spectr_acq3",
+      "action": "auto-set_in_trigger_mode",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "clear error log",
+      "description": "自动补充动作: clear_error_log",
+      "device": "test_spectr_acq3",
+      "action": "auto-clear_error_log",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "SpectrAcq3 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "SpectrAcq3",
+    "generated_by": "driver-finder"
+  }
+}

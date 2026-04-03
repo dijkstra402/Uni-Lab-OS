@@ -1,0 +1,419 @@
+{
+  "nodes": [
+    {
+      "id": "test_tiger_controller",
+      "name": "ASI Tiger Controller",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "tiger_controller",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "com_port": "",
+        "baud_rate": 0,
+        "verbose": false
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_tiger_controller",
+      "action": "auto-connect_to_serial",
+      "action_args": {
+        "rx_size": 12800,
+        "tx_size": 12800,
+        "read_timeout": 1,
+        "write_timeout": 1
+      }
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_tiger_controller",
+      "action": "auto-set_feedback_alignment",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_tiger_controller",
+      "action": "auto-is_open",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_tiger_controller",
+      "action": "auto-wait_for_device",
+      "action_args": {
+        "timeout": 1.75
+      }
+    },
+    {
+      "step": 5,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_tiger_controller",
+      "action": "auto-is_axis_busy",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_tiger_controller",
+      "action": "auto-read_response",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_tiger_controller",
+      "action": "auto-stop",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "set backlash",
+      "description": "自动补充动作: set_backlash",
+      "device": "test_tiger_controller",
+      "action": "auto-set_backlash",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "set finishing accuracy",
+      "description": "自动补充动作: set_finishing_accuracy",
+      "device": "test_tiger_controller",
+      "action": "auto-set_finishing_accuracy",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "set error",
+      "description": "自动补充动作: set_error",
+      "device": "test_tiger_controller",
+      "action": "auto-set_error",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "disconnect from serial",
+      "description": "自动补充动作: disconnect_from_serial",
+      "device": "test_tiger_controller",
+      "action": "auto-disconnect_from_serial",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "report to console",
+      "description": "自动补充动作: report_to_console",
+      "device": "test_tiger_controller",
+      "action": "auto-report_to_console",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "send command",
+      "description": "自动补充动作: send_command",
+      "device": "test_tiger_controller",
+      "action": "auto-send_command",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "moverel",
+      "description": "自动补充动作: moverel",
+      "device": "test_tiger_controller",
+      "action": "auto-moverel",
+      "action_args": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "step": 15,
+      "name": "moverel axis",
+      "description": "自动补充动作: moverel_axis",
+      "device": "test_tiger_controller",
+      "action": "auto-moverel_axis",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "move",
+      "description": "自动补充动作: move",
+      "device": "test_tiger_controller",
+      "action": "auto-move",
+      "action_args": {}
+    },
+    {
+      "step": 17,
+      "name": "move axis",
+      "description": "自动补充动作: move_axis",
+      "device": "test_tiger_controller",
+      "action": "auto-move_axis",
+      "action_args": {}
+    },
+    {
+      "step": 18,
+      "name": "set max speed",
+      "description": "自动补充动作: set_max_speed",
+      "device": "test_tiger_controller",
+      "action": "auto-set_max_speed",
+      "action_args": {}
+    },
+    {
+      "step": 19,
+      "name": "is device busy",
+      "description": "自动补充动作: is_device_busy",
+      "device": "test_tiger_controller",
+      "action": "auto-is_device_busy",
+      "action_args": {}
+    },
+    {
+      "step": 20,
+      "name": "set speed",
+      "description": "自动补充动作: set_speed",
+      "device": "test_tiger_controller",
+      "action": "auto-set_speed",
+      "action_args": {}
+    },
+    {
+      "step": 21,
+      "name": "set speed as percent max",
+      "description": "自动补充动作: set_speed_as_percent_max",
+      "device": "test_tiger_controller",
+      "action": "auto-set_speed_as_percent_max",
+      "action_args": {}
+    },
+    {
+      "step": 22,
+      "name": "scanr",
+      "description": "自动补充动作: scanr",
+      "device": "test_tiger_controller",
+      "action": "auto-scanr",
+      "action_args": {
+        "enc_divide": 0,
+        "axis": "X"
+      }
+    },
+    {
+      "step": 23,
+      "name": "scanv",
+      "description": "自动补充动作: scanv",
+      "device": "test_tiger_controller",
+      "action": "auto-scanv",
+      "action_args": {
+        "overshoot": 1.0,
+        "axis": "X"
+      }
+    },
+    {
+      "step": 24,
+      "name": "start scan",
+      "description": "自动补充动作: start_scan",
+      "device": "test_tiger_controller",
+      "action": "auto-start_scan",
+      "action_args": {
+        "is_single_axis_scan": true
+      }
+    },
+    {
+      "step": 25,
+      "name": "stop scan",
+      "description": "自动补充动作: stop_scan",
+      "device": "test_tiger_controller",
+      "action": "auto-stop_scan",
+      "action_args": {}
+    },
+    {
+      "step": 26,
+      "name": "is moving",
+      "description": "自动补充动作: is_moving",
+      "device": "test_tiger_controller",
+      "action": "auto-is_moving",
+      "action_args": {}
+    },
+    {
+      "step": 27,
+      "name": "send filter wheel command",
+      "description": "自动补充动作: send_filter_wheel_command",
+      "device": "test_tiger_controller",
+      "action": "auto-send_filter_wheel_command",
+      "action_args": {}
+    },
+    {
+      "step": 28,
+      "name": "select filter wheel",
+      "description": "自动补充动作: select_filter_wheel",
+      "device": "test_tiger_controller",
+      "action": "auto-select_filter_wheel",
+      "action_args": {
+        "filter_wheel_number": 0
+      }
+    },
+    {
+      "step": 29,
+      "name": "move filter wheel",
+      "description": "自动补充动作: move_filter_wheel",
+      "device": "test_tiger_controller",
+      "action": "auto-move_filter_wheel",
+      "action_args": {
+        "filter_wheel_position": 0
+      }
+    },
+    {
+      "step": 30,
+      "name": "move filter wheel to home",
+      "description": "自动补充动作: move_filter_wheel_to_home",
+      "device": "test_tiger_controller",
+      "action": "auto-move_filter_wheel_to_home",
+      "action_args": {}
+    },
+    {
+      "step": 31,
+      "name": "change filter wheel speed",
+      "description": "自动补充动作: change_filter_wheel_speed",
+      "device": "test_tiger_controller",
+      "action": "auto-change_filter_wheel_speed",
+      "action_args": {
+        "speed": 0
+      }
+    },
+    {
+      "step": 32,
+      "name": "halt filter wheel",
+      "description": "自动补充动作: halt_filter_wheel",
+      "device": "test_tiger_controller",
+      "action": "auto-halt_filter_wheel",
+      "action_args": {}
+    },
+    {
+      "step": 33,
+      "name": "move dichroic",
+      "description": "自动补充动作: move_dichroic",
+      "device": "test_tiger_controller",
+      "action": "auto-move_dichroic",
+      "action_args": {
+        "dichroic_position": 0
+      }
+    },
+    {
+      "step": 34,
+      "name": "square wave",
+      "description": "自动补充动作: square_wave",
+      "device": "test_tiger_controller",
+      "action": "auto-square_wave",
+      "action_args": {}
+    },
+    {
+      "step": 35,
+      "name": "logic card on",
+      "description": "自动补充动作: logic_card_on",
+      "device": "test_tiger_controller",
+      "action": "auto-logic_card_on",
+      "action_args": {}
+    },
+    {
+      "step": 36,
+      "name": "logic card off",
+      "description": "自动补充动作: logic_card_off",
+      "device": "test_tiger_controller",
+      "action": "auto-logic_card_off",
+      "action_args": {}
+    },
+    {
+      "step": 37,
+      "name": "logic cell on",
+      "description": "自动补充动作: logic_cell_on",
+      "device": "test_tiger_controller",
+      "action": "auto-logic_cell_on",
+      "action_args": {}
+    },
+    {
+      "step": 38,
+      "name": "logic cell off",
+      "description": "自动补充动作: logic_cell_off",
+      "device": "test_tiger_controller",
+      "action": "auto-logic_cell_off",
+      "action_args": {}
+    },
+    {
+      "step": 39,
+      "name": "single axis waveform",
+      "description": "自动补充动作: single_axis_waveform",
+      "device": "test_tiger_controller",
+      "action": "auto-single_axis_waveform",
+      "action_args": {
+        "waveform": 0,
+        "amplitude": 1000,
+        "offset": 500,
+        "period": 10,
+        "rise_time": 0
+      }
+    },
+    {
+      "step": 40,
+      "name": "single axis mode",
+      "description": "自动补充动作: single_axis_mode",
+      "device": "test_tiger_controller",
+      "action": "auto-single_axis_mode",
+      "action_args": {}
+    },
+    {
+      "step": 41,
+      "name": "setup control loop",
+      "description": "自动补充动作: setup_control_loop",
+      "device": "test_tiger_controller",
+      "action": "auto-setup_control_loop",
+      "action_args": {
+        "num_cycles": 0
+      }
+    },
+    {
+      "step": 42,
+      "name": "setup laser",
+      "description": "自动补充动作: setup_laser",
+      "device": "test_tiger_controller",
+      "action": "auto-setup_laser",
+      "action_args": {}
+    },
+    {
+      "step": 43,
+      "name": "wait for loop",
+      "description": "自动补充动作: wait_for_loop",
+      "device": "test_tiger_controller",
+      "action": "auto-wait_for_loop",
+      "action_args": {}
+    },
+    {
+      "step": 44,
+      "name": "setup z stage",
+      "description": "自动补充动作: setup_z_stage",
+      "device": "test_tiger_controller",
+      "action": "auto-setup_z_stage",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "TigerController 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "TigerController",
+    "generated_by": "driver-finder"
+  }
+}

@@ -1,0 +1,265 @@
+maxon_epos2:
+  class:
+    module: unilabos.devices.generic.maxon_epos2:MaxonEpos2
+    type: python
+    status_types:
+      position_profile: String
+      velocity_nm_s: String
+      state: String
+      error_code: String
+      wavelength_from_motor_pos: String
+      motor_pos_from_wavelength: String
+      wavelength_m: String
+    action_value_mappings:
+      auto-calc_motor_acc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calc_motor_acc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nm_per_sec_sec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_position_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_position_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                velocity:
+                  type: string
+                acceleration:
+                  type: string
+                deceleration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_velocity_nm_s:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_velocity_nm_s
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                velocity_nm_s:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_wavelength_m:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_wavelength_m
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wavelength_m:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop_move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_motor_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_motor_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                measured_wavelength_nm:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_default_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_default_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_position_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_velocity_nm_s:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_velocity_nm_s
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_error_code:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_error_code
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_wavelength_from_motor_pos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_wavelength_from_motor_pos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_motor_pos_from_wavelength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_motor_pos_from_wavelength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wavelength:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_wavelength_m:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_wavelength_m
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: maxon EPOS2 Motor Controller是由maxon motor生产的物流/机械，主要功能包括位置设置、波长设置、运动控制。支持Signal, Slot, calc motor acc等操作。
+  category:
+  - 物流/机械
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        wavelength_nm:
+          type: string
+          default: null
+        velocity_nm_s:
+          type: string
+          default: null
+        acceleration_nm_s2:
+          type: string
+          default: null
+        deceleration_nm_s2:
+          type: string
+          default: null
+  device_params:
+    品牌: maxon motor
+    功能: 参数配置、数据采集、运动控制
+    可控参数: 加速度、deceleration、measured_wavelength_nm、nm_per_sec_sec、位置、速度、velocity_nm_s、波长
+    操作数: 14
+  manufacturer: maxon motor
+  model:
+    name: maxon EPOS2 Motor Controller 电机 自动化设备 控制器
+    type: device
+  name: maxon EPOS2 Motor
+  tags:
+  - 物流/机械
+  resource_type: device
+  icon: maxon_epos2.webp
+  scene:
+    domain: Automation
+    scene_name: Motion Control
+    step: Positioning
+  version: 1.0.0

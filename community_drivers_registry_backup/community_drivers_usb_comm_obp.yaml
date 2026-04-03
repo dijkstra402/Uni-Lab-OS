@@ -1,0 +1,237 @@
+usb_comm_obp:
+  class:
+    module: unilabos.devices.spectrometers.usb_comm_obp:USBCommOBP
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msgtype:
+                  type: string
+                payload:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-innitiate_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: innitiate_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msgtype:
+                  type: string
+                payload:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-receive_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msgtype:
+                  type: string
+                payload:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-open_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-usb_send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: usb_send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-usb_read_lowspeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: usb_read_lowspeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          size: 64
+        handles: {}
+      auto-usb_read_highspeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: usb_read_highspeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          size: 512
+        handles: {}
+      auto-usb_read_highspeed_alt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: usb_read_highspeed_alt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          size: 512
+        handles: {}
+      auto-set_default_read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_default_read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: ABB Ltd Usb Comm Obp驱动（ABB Ltd），支持send command/innitiate query/receive
+    query/query/open device等12个操作。
+  category:
+  - 实验执行&合成设备
+  cover: usb_comm_obp.webp
+  device_params:
+    品牌: ABB Ltd
+    功能: 参数配置、数据采集
+    可控参数: data、device、工作模式、msgtype、payload、size、timeout
+    操作数: 12
+  manufacturer: ABB Ltd
+  model:
+    name: ABB ABB Ltd Usb Comm Obp
+    type: device
+  name: ABB Ltd Usb Comm Obp 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: usb_comm_obp.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

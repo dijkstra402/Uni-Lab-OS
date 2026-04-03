@@ -1,0 +1,248 @@
+mercury:
+  class:
+    module: unilabos.devices.generic.mercury:Mercury
+    type: python
+    status_types:
+      board_number: String
+      position: String
+      channel: String
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-motor_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-motor_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-LL:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: LL
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-go_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: go_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                precision:
+                  type: string
+                board_number:
+                  type: string
+                wait:
+                  type: string
+        goal_default:
+          precision: 100
+          wait: false
+        handles: {}
+      auto-move_relative:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_relative
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                precision:
+                  type: string
+                board_number:
+                  type: string
+                wait:
+                  type: string
+        goal_default:
+          precision: 100
+          wait: false
+        handles: {}
+      auto-abort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: abort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-find_edge:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_edge
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+                board_number:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Mercury驱动，支持init/write/read/motor on/motor off等12个操作。
+  category:
+  - 物流/机械
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          type: string
+          default: null
+        conf:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置、数据采集、运动控制
+    可控参数: board_number、precision、value、wait
+    操作数: 12
+  manufacturer: ''
+  model:
+    name: '' mercury
+    type: device
+  name: mercury 自动化设备
+  tags:
+  - 物流/机械
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

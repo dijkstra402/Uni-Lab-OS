@@ -1,0 +1,84 @@
+{
+  "nodes": [
+    {
+      "id": "test_wasatch_demo",
+      "name": "Wasatch Demo",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "wasatch_demo",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {},
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_wasatch_demo",
+      "action": "auto-connect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_wasatch_demo",
+      "action": "auto-run",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_wasatch_demo",
+      "action": "auto-attempt_reading",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "parse args",
+      "description": "自动补充动作: parse_args",
+      "device": "test_wasatch_demo",
+      "action": "auto-parse_args",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "acquire reading",
+      "description": "自动补充动作: acquire_reading",
+      "device": "test_wasatch_demo",
+      "action": "auto-acquire_reading",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "WrapperWorker callback",
+      "description": "自动补充动作: WrapperWorker_callback",
+      "device": "test_wasatch_demo",
+      "action": "auto-WrapperWorker_callback",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "process reading",
+      "description": "自动补充动作: process_reading",
+      "device": "test_wasatch_demo",
+      "action": "auto-process_reading",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "WasatchDemo 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "WasatchDemo",
+    "generated_by": "driver-finder"
+  }
+}

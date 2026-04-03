@@ -1,0 +1,195 @@
+acquisition_stage:
+  class:
+    module: unilabos.devices.generic.acquisition_stage:AcquisitionStage
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-stage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-numProcess:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: numProcess
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-configureStage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configureStage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_klass:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setArgs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setArgs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-processes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: processes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-build:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: build
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                input_queue:
+                  type: string
+                output_queue:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-outputQueue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: outputQueue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                force:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-startTrainID:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startTrainID
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stopTrainID:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopTrainID
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Acquisition Stage是一款实验执行&合成设备，主要功能包括停止、参数配置、启动、运行。支持Signal, Slot, addStage等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '13'
+    读取操作: getStage
+    控制操作: configureStage、setArgs、start、stop、startTrainID 等8个
+    设备属性: stage、numProcess、processes、outputQueue、stages、isRunning
+    通信接口: USB
+  manufacturer: Open Source
+  model:
+    name: Acquisition Stage
+    type: device
+  name: Defines a single acquisition stage
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

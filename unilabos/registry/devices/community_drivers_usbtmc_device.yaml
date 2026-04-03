@@ -1,0 +1,81 @@
+usbtmc_device:
+  class:
+    module: unilabos.devices.generic.usbtmc_device:UsbtmcDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Simple usbmtc device abstraction with a minimal VISA-like API
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device:
+          type: string
+          default: /dev/usbtmc0
+  cover: usbtmc_device.webp
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: cmd
+    操作数: 3
+  manufacturer: Open Standard (USBTMC)
+  model:
+    name: Generic USB TMC Instrument Interface 接口模块
+    type: device
+  name: USB TMC Instrument Interface 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: usbtmc_device.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

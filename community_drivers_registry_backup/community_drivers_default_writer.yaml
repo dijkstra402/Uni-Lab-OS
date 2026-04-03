@@ -1,0 +1,85 @@
+default_writer:
+  category:
+  - 后处理设备
+  class:
+    action_value_mappings:
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommand
+      auto-writeData:
+        feedback: {}
+        goal: {}
+        goal_default:
+          idx: -1
+          partial: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                idx:
+                  type: string
+                partial:
+                  type: string
+              type: object
+          title: writeData
+          type: object
+        type: UniLabJsonCommand
+      auto-writeHeader:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: writeHeader
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.universal.default_writer:DefaultWriter
+    status_types: {}
+    type: python
+  config_info: []
+  description: Default Writer驱动，支持close/writeData/writeHeader。
+  handles: []
+  icon: default_writer.webp
+  init_param_schema:
+    config:
+      properties:
+        fileName:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: default_writer.webp
+  device_params:
+    功能: 参数配置
+    可控参数: idx、partial
+    操作数: 3
+  manufacturer: Generic
+  model:
+    name: Generic Default Writer
+    type: device
+  name: Default Writer 后处理设备
+  tags:
+  - 后处理设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

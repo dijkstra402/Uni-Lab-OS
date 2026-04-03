@@ -1,0 +1,192 @@
+robotell_bus:
+  class:
+    module: unilabos.devices.generic.robotell_bus:robotellBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_bitrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_bitrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bitrate:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_auto_retransmit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_auto_retransmit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                retrans_flag:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_auto_bus_management:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_auto_bus_management
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                auto_man:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_serial_rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_serial_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                serial_bps:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_hw_filter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_hw_filter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filterid:
+                  type: string
+                enabled:
+                  type: string
+                msgid_value:
+                  type: string
+                msgid_mask:
+                  type: string
+                extended_msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-fileno:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileno
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_serial_number:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Robotell BUS是由Robotell生产的专业实验设备。robotell interface
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '10'
+    读取操作: get_serial_number
+    控制操作: set_bitrate、set_auto_retransmit、set_auto_bus_management、set_serial_rate、set_hw_filter
+    控制能力: 时间、速度
+  manufacturer: Robotell
+  model:
+    name: Robotell BUS
+    type: device
+  name: Robotell Bus
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: robotell_bus.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

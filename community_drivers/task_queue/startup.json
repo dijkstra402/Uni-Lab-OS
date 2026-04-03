@@ -1,0 +1,169 @@
+{
+  "nodes": [
+    {
+      "id": "test_task_queue",
+      "name": "Test TaskQueue",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "task_queue",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "name": "",
+        "initialTasks": [],
+        "onEmpty": "<function doNix at 0x106cbc4a0>",
+        "fTaskToPop": "<function popZero at 0x106cbc540>"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_task_queue",
+      "action": "auto-getNumberOpenTasks",
+      "action_args": {
+        "exact": true
+      }
+    },
+    {
+      "step": 2,
+      "name": "teardown",
+      "description": "断开连接或执行收尾操作",
+      "device": "test_task_queue",
+      "action": "auto-cleanup",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "postTask",
+      "description": "自动补充动作: postTask",
+      "device": "test_task_queue",
+      "action": "auto-postTask",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "postTasks",
+      "description": "自动补充动作: postTasks",
+      "device": "test_task_queue",
+      "action": "auto-postTasks",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "getTask",
+      "description": "自动补充动作: getTask",
+      "device": "test_task_queue",
+      "action": "auto-getTask",
+      "action_args": {
+        "workerN": 0,
+        "NWorkers": 1
+      }
+    },
+    {
+      "step": 6,
+      "name": "getTasks",
+      "description": "自动补充动作: getTasks",
+      "device": "test_task_queue",
+      "action": "auto-getTasks",
+      "action_args": {
+        "workerN": 0,
+        "NWorkers": 1
+      }
+    },
+    {
+      "step": 7,
+      "name": "returnCompletedTask",
+      "description": "自动补充动作: returnCompletedTask",
+      "device": "test_task_queue",
+      "action": "auto-returnCompletedTask",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "returnCompletedTasks",
+      "description": "自动补充动作: returnCompletedTasks",
+      "device": "test_task_queue",
+      "action": "auto-returnCompletedTasks",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "fileResults",
+      "description": "自动补充动作: fileResults",
+      "device": "test_task_queue",
+      "action": "auto-fileResults",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "fileResult",
+      "description": "自动补充动作: fileResult",
+      "device": "test_task_queue",
+      "action": "auto-fileResult",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "getCompletedTask",
+      "description": "自动补充动作: getCompletedTask",
+      "device": "test_task_queue",
+      "action": "auto-getCompletedTask",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "checkTimeouts",
+      "description": "自动补充动作: checkTimeouts",
+      "device": "test_task_queue",
+      "action": "auto-checkTimeouts",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "getNumberTasksInProgress",
+      "description": "自动补充动作: getNumberTasksInProgress",
+      "device": "test_task_queue",
+      "action": "auto-getNumberTasksInProgress",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "getNumberTasksCompleted",
+      "description": "自动补充动作: getNumberTasksCompleted",
+      "device": "test_task_queue",
+      "action": "auto-getNumberTasksCompleted",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "purge",
+      "description": "自动补充动作: purge",
+      "device": "test_task_queue",
+      "action": "auto-purge",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "setPopFcn",
+      "description": "自动补充动作: setPopFcn",
+      "device": "test_task_queue",
+      "action": "auto-setPopFcn",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "TaskQueue 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "TaskQueue",
+    "generated_by": "driver-finder"
+  }
+}

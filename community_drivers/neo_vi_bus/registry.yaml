@@ -1,0 +1,63 @@
+neo_vi_bus:
+  class:
+    module: unilabos.devices.can_bus.generic.neovi_bus:NeoViBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          timeout: 0
+        handles: {}
+  description: Intrepid neoVI CAN总线是由Intrepid Control Systems生产的专业实验设备。Auto-imported from can/interfaces/ics_neovi/neovi_bus.py
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        channel:
+          type: string
+          default: null
+        can_filters:
+          type: string
+          default: null
+  name: Intrepid neoVI CAN总线
+  manufacturer: Intrepid Control Systems
+  icon: neo_vi_bus.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '4'
+    读取操作: get_serial_number
+    设备属性数: '2'
+    控制能力: 多通道
+    通信接口: 串口

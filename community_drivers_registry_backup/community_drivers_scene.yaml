@@ -1,0 +1,163 @@
+scene:
+  class:
+    module: unilabos.devices.generic.scene:Scene
+    type: python
+    status_types:
+      spec: String
+      env_origins: String
+      env_spacing: String
+      entities: String
+      sensors: String
+      terrain: String
+      num_envs: String
+      device: String
+      sensor_context: String
+    action_value_mappings:
+      auto-compile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: compile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output_dir:
+                  type: string
+                zip:
+                  type: boolean
+        goal_default:
+          zip: false
+        handles: {}
+      auto-to_zip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_zip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mj_model:
+                  type: string
+                model:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                env_ids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dt:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-write_data_to_sim:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_data_to_sim
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Scene驱动，支持compile/write/to zip/initialize/reset等7个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        scene_cfg:
+          type: string
+          default: null
+        device:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置
+    可控参数: data、env_ids、mj_model、model、output_dir、path、zip
+    操作数: 7
+  manufacturer: ''
+  model:
+    name: '' scene
+    type: device
+  name: scene 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

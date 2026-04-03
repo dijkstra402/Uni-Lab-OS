@@ -1,0 +1,96 @@
+ni_do_device:
+  class:
+    module: unilabos.devices.ni_digital_output.ni_do_device:NI_DO_device
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-Task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: National Instruments Ni Do Device是由National Instruments (NI)生产的实验执行&合成设备，主要功能包括停止、关闭、写入数据。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        channel:
+          type: string
+          default: null
+        debug:
+          type: string
+          default: false
+  device_params:
+    品牌: National Instruments
+    功能: 参数配置
+    可控参数: value
+    操作数: 4
+  manufacturer: National Instruments (NI)
+  model:
+    name: National National Instruments Ni Do Device
+    type: device
+  name: National Instruments Ni Do
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ni_do_device.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

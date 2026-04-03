@@ -1,0 +1,121 @@
+isotcp_connection:
+  class:
+    module: unilabos.devices.universal.network.iso_tcp_connection:ISOTCPConnection
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+        goal_default:
+          timeout: 5.0
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-receive_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: ISO on TCP connection implementation
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: null
+        port:
+          type: integer
+          default: 102
+        local_tsap:
+          type: integer
+          default: 256
+        remote_tsap:
+          type: integer
+          default: 258
+        tpdu_size:
+          type: string
+          default: 10
+  cover: isotcp_connection.webp
+  device_params:
+    可控参数: data、timeout
+    操作数: 5
+  manufacturer: Generic
+  model:
+    name: Generic Isotcp Connection
+    type: device
+  name: Isotcp Connection 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: isotcp_connection.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

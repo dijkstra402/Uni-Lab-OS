@@ -1,0 +1,197 @@
+{
+  "nodes": [
+    {
+      "id": "test_gripper",
+      "name": "Robotic Gripper",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "gripper",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": 1502,
+        "host": "127.0.0.1"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_gripper",
+      "action": "auto-init_state",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_gripper",
+      "action": "auto-set_force",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_gripper",
+      "action": "auto-read_uart",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "cal crc",
+      "description": "自动补充动作: cal_crc",
+      "device": "test_gripper",
+      "action": "auto-cal_crc",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "write uart",
+      "description": "自动补充动作: write_uart",
+      "device": "test_gripper",
+      "action": "auto-write_uart",
+      "action_args": {
+        "val": 1,
+        "is_set": true,
+        "is_read": true
+      }
+    },
+    {
+      "step": 6,
+      "name": "set pos",
+      "description": "自动补充动作: set_pos",
+      "device": "test_gripper",
+      "action": "auto-set_pos",
+      "action_args": {
+        "blocking": true
+      }
+    },
+    {
+      "step": 7,
+      "name": "set vel",
+      "description": "自动补充动作: set_vel",
+      "device": "test_gripper",
+      "action": "auto-set_vel",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "set abs rot",
+      "description": "自动补充动作: set_abs_rot",
+      "device": "test_gripper",
+      "action": "auto-set_abs_rot",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "set rot vel",
+      "description": "自动补充动作: set_rot_vel",
+      "device": "test_gripper",
+      "action": "auto-set_rot_vel",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "set rot force",
+      "description": "自动补充动作: set_rot_force",
+      "device": "test_gripper",
+      "action": "auto-set_rot_force",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "set rel rot",
+      "description": "自动补充动作: set_rel_rot",
+      "device": "test_gripper",
+      "action": "auto-set_rel_rot",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "init feedback",
+      "description": "自动补充动作: init_feedback",
+      "device": "test_gripper",
+      "action": "auto-init_feedback",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "read state",
+      "description": "自动补充动作: read_state",
+      "device": "test_gripper",
+      "action": "auto-read_state",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "read pos",
+      "description": "自动补充动作: read_pos",
+      "device": "test_gripper",
+      "action": "auto-read_pos",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "read cur",
+      "description": "自动补充动作: read_cur",
+      "device": "test_gripper",
+      "action": "auto-read_cur",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "read err",
+      "description": "自动补充动作: read_err",
+      "device": "test_gripper",
+      "action": "auto-read_err",
+      "action_args": {}
+    },
+    {
+      "step": 17,
+      "name": "read rot",
+      "description": "自动补充动作: read_rot",
+      "device": "test_gripper",
+      "action": "auto-read_rot",
+      "action_args": {}
+    },
+    {
+      "step": 18,
+      "name": "init rot feedback",
+      "description": "自动补充动作: init_rot_feedback",
+      "device": "test_gripper",
+      "action": "auto-init_rot_feedback",
+      "action_args": {}
+    },
+    {
+      "step": 19,
+      "name": "read rot state",
+      "description": "自动补充动作: read_rot_state",
+      "device": "test_gripper",
+      "action": "auto-read_rot_state",
+      "action_args": {}
+    },
+    {
+      "step": 20,
+      "name": "init dir",
+      "description": "自动补充动作: init_dir",
+      "device": "test_gripper",
+      "action": "auto-init_dir",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Gripper 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Gripper",
+    "generated_by": "driver-finder"
+  }
+}

@@ -1,0 +1,289 @@
+adn_xpt:
+  class:
+    module: unilabos.devices.xpt.adn_xpt:ADN_XPT
+    type: python
+    status_types:
+      addr: String
+      output_status: String
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                register_map:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cat:
+                  type: string
+                regname:
+                  type: string
+                val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cat:
+                  type: string
+                regname:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-xpt_update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: xpt_update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-output_table:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: output_table
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                write:
+                  type: string
+                table:
+                  type: string
+        goal_default:
+          write: false
+          table: 0
+        handles: {}
+      auto-assign_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: assign_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                val:
+                  type: string
+        goal_default:
+          channel: OUT0
+          val: 0
+        handles: {}
+      auto-tx_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tx_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                register:
+                  type: string
+                channel:
+                  type: string
+                val:
+                  type: string
+                write:
+                  type: string
+        goal_default:
+          channel: OUT0
+          val: 0
+          write: true
+        handles: {}
+      auto-rx_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rx_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                register:
+                  type: string
+                channel:
+                  type: string
+                val:
+                  type: string
+                write:
+                  type: string
+        goal_default:
+          channel: IN0
+          val: 0
+          write: true
+        handles: {}
+      auto-set_termination:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_termination
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-tx_termination:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tx_termination
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: string
+                write:
+                  type: string
+                val:
+                  type: string
+        goal_default:
+          output: TXA_TERM0
+          write: false
+          val: 0
+        handles: {}
+      auto-rx_termination:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rx_termination
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                base_addr:
+                  type: string
+                output:
+                  type: string
+                write:
+                  type: string
+                val:
+                  type: string
+        goal_default:
+          output: RXA_TERM0
+          write: false
+          val: 0
+        handles: {}
+      auto-io_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: io_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                conf:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-input_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: input_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from basil/HL/XPT.py
+  category:
+  - xpt
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          type: string
+          default: null
+        conf:
+          type: string
+          default: null
+  name: ADN XPT
+  manufacturer: Analog Devices
+  cover: mfr_analog_devices.webp
+  icon: mfr_analog_devices.webp

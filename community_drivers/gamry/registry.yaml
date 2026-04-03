@@ -1,0 +1,195 @@
+gamry:
+  class:
+    module: unilabos.devices.generic.gamry:gamry
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                force_err:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                force_err:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-measurement_setup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measurement_setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gsetup:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-measure:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sigramp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-dump_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dump_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-potential_ramp:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: potential_ramp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Vinit:
+                  type: string
+                Vfinal:
+                  type: string
+                ScanRate:
+                  type: string
+                SampleRate:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-potential_cycle:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: potential_cycle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Vinit:
+                  type: string
+                Vfinal:
+                  type: string
+                Vapex1:
+                  type: string
+                Vapex2:
+                  type: string
+                ScanRate:
+                  type: string
+                Cycles:
+                  type: string
+                SampleRate:
+                  type: string
+                control_mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-simulate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: simulate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sigramp:
+                  type: string
+                q:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Gamry Reference 600+ 是由 Gamry Instruments 生产的高性能单通道电化学工作站，广泛应用于腐蚀测试、电池研发、传感器开发及电化学基础研究等领域。
+  category:
+  - 电化学工作站
+  device_params:
+    仪器种类: 电化学工作站
+    通道数量: 单通道工作站
+    电流范围: 600fA-600mA
+    电流精度: ±10pA之±0.2%
+    电位精度: ±1mV之±0.2%
+    恒电位范围: ±22V
+    交流阻抗频率范围: 10μHz - 5MHz
+    品牌: 刚瑞
+    接口类型: USB/Ethernet
+  manufacturer: 刚瑞（上海）商务信息咨询有限公司
+  model:
+    name: Gamry电化学工作站 Reference 600+
+    type: device
+  name: Gamry电化学工作站 Reference 600+
+  tags:
+  - 电化学工作站
+  resource_type: device
+  icon: gamry.webp
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0

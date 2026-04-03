@@ -1,0 +1,815 @@
+shfqa:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-load_default_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_default_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                upload_sequence:
+                  type: string
+        goal_default:
+          upload_sequence: true
+        handles: {}
+      auto-configure_awg_from_string:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configure_awg_from_string
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                awg_nr:
+                  type: number
+                program_string:
+                  type: string
+                timeout:
+                  type: number
+        goal_default:
+          timeout: 15
+        handles: {}
+      auto-assure_ext_clock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: assure_ext_clock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clock_freq:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clock_freq
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-plot_dio_snapshot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: plot_dio_snapshot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bits:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                samples:
+                  type: number
+                averages:
+                  type: number
+                acquisition_time:
+                  type: number
+                timeout:
+                  type: number
+                mode:
+                  type: string
+                poll:
+                  type: string
+        goal_default:
+          acquisition_time: 0.01
+          timeout: 10
+          poll: true
+        handles: {}
+      auto-acquisition_initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquisition_initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                samples:
+                  type: number
+                averages:
+                  type: number
+                loop_cnt:
+                  type: number
+                channels:
+                  type: array
+                mode:
+                  type: string
+                poll:
+                  type: string
+        goal_default:
+          channels: (0, 1)
+          poll: true
+        handles: {}
+      auto-acquisition_arm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquisition_arm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                single:
+                  type: string
+        goal_default:
+          single: true
+        handles: {}
+      auto-acquisition_poll:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquisition_poll
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                samples:
+                  type: string
+                arm:
+                  type: string
+                acquisition_time:
+                  type: string
+        goal_default:
+          arm: true
+          acquisition_time: 0.01
+        handles: {}
+      auto-acquisition_get:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquisition_get
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                samples:
+                  type: string
+                arm:
+                  type: string
+                acquisition_time:
+                  type: string
+        goal_default:
+          arm: true
+          acquisition_time: 0.01
+        handles: {}
+      auto-acquisition_finalize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquisition_finalize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-snapshot_base:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: snapshot_base
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: string
+                params_to_skip_update:
+                  type: string
+                params_to_exclude:
+                  type: string
+        goal_default:
+          update: false
+        handles: {}
+      auto-awg_sequence_acquisition_and_DIO_triggered_pulse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: awg_sequence_acquisition_and_DIO_triggered_pulse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Iwaves:
+                  type: string
+                Qwaves:
+                  type: string
+                cases:
+                  type: string
+                acquisition_delay:
+                  type: number
+        goal_default:
+          acquisition_delay: 0
+        handles: {}
+      auto-awg_sequence_acquisition_and_pulse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: awg_sequence_acquisition_and_pulse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Iwave:
+                  type: string
+                Qwave:
+                  type: string
+                acquisition_delay:
+                  type: string
+                dig_trigger:
+                  type: string
+                ch:
+                  type: number
+                slot:
+                  type: number
+        goal_default:
+          acquisition_delay: 0
+          dig_trigger: true
+        handles: {}
+      auto-awg_sequence_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: awg_sequence_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dly:
+                  type: string
+                ch:
+                  type: number
+                slot:
+                  type: number
+        goal_default:
+          dly: 0
+        handles: {}
+      auto-awg_sequence_acquisition_and_pulse_SSB:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: awg_sequence_acquisition_and_pulse_SSB
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                f_RO_mod:
+                  type: string
+                RO_amp:
+                  type: string
+                RO_pulse_length:
+                  type: string
+                acquisition_delay:
+                  type: string
+                dig_trigger:
+                  type: string
+                ch:
+                  type: number
+                slot:
+                  type: number
+        goal_default:
+          dig_trigger: true
+        handles: {}
+      auto-configure_spectroscopy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configure_spectroscopy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start_frequency:
+                  type: number
+                frequency_step:
+                  type: number
+                settling_time:
+                  type: number
+                dio_trigger:
+                  type: string
+                envelope:
+                  type: string
+                ch:
+                  type: number
+        goal_default:
+          dio_trigger: true
+        handles: {}
+      auto-awg_sequence_acquisition_and_DIO_RED_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: awg_sequence_acquisition_and_DIO_RED_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                acquisition_delay:
+                  type: string
+                dio_out_vect:
+                  type: string
+        goal_default:
+          acquisition_delay: 0
+        handles: {}
+      auto-awg_sequence_test_pattern:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: awg_sequence_test_pattern
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dio_out_vect:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-spec_mode_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: spec_mode_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                acq_length:
+                  type: string
+                IF:
+                  type: string
+                ro_amp:
+                  type: string
+                wint_length:
+                  type: string
+        goal_default:
+          IF: 20000000.0
+          ro_amp: 0.1
+        handles: {}
+      auto-prepare_SSB_weight_and_rotation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_SSB_weight_and_rotation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                IF:
+                  type: number
+                rotation_angle:
+                  type: number
+                length:
+                  type: number
+                scaling_factor:
+                  type: number
+                ch:
+                  type: number
+                slot:
+                  type: number
+        goal_default:
+          rotation_angle: 0
+          scaling_factor: 1
+        handles: {}
+      auto-prepare_DSB_weight_and_rotation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_DSB_weight_and_rotation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                IF:
+                  type: number
+                ch:
+                  type: number
+                slot:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-output_dio_calibration_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: output_dio_calibration_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dio_mode:
+                  type: string
+                port:
+                  type: number
+        goal_default:
+          port: 0
+        handles: {}
+      auto-calibrate_dio_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_dio_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dio_mask:
+                  type: number
+                expected_sequence:
+                  type: string
+                port:
+                  type: number
+        goal_default:
+          port: 0
+        handles: {}
+      auto-active_slots:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: active_slots
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-active_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: active_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-validate_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-push_to_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: push_to_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_acquisition_params:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_acquisition_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_user_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_user_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_crosstalk_matrix:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_crosstalk_matrix
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_correlation_params:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_correlation_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_rotation_params:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_rotation_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-upload_crosstalk_matrix:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: upload_crosstalk_matrix
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                matrix:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-download_crosstalk_matrix:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: download_crosstalk_matrix
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nr_rows:
+                  type: string
+                nr_cols:
+                  type: string
+        goal_default:
+          nr_rows: 10
+          nr_cols: 10
+        handles: {}
+      auto-print_correlation_overview:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_correlation_overview
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_deskew_overview:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_deskew_overview
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_crosstalk_overview:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_crosstalk_overview
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_integration_overview:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_integration_overview
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_rotations_overview:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_rotations_overview
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_thresholds_overview:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_thresholds_overview
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_user_regs_overview:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_user_regs_overview
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_overview:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_overview
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.quantum_measurement.shfqa:SHFQA
+    status_types: {}
+    type: python
+  config_info: []
+  description: Zurich Instruments SHFQA Quantum Analyzer是由Zurich Instruments生产的表征设备，主要功能包括停止、初始化、加载、参数配置、启动、复位。
+  handles: []
+  icon: shfqa.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    品牌: Zurich Instruments
+    功能: 参数配置、图像采集、数据采集
+    可控参数: Iwave、Iwaves、Qwave、Qwaves、RO_amp、RO_pulse_length、acq_length、acquisition_delay
+    操作数: 43
+  manufacturer: Zurich Instruments
+  model:
+    name: Zurich Zurich Instruments SHFQA Quantum Analyzer
+    type: device
+  name: Zurich Instruments SHFQA Quantum Analyzer
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

@@ -1,0 +1,750 @@
+{
+  "nodes": [
+    {
+      "id": "test_scpi_device",
+      "name": "Test SCPIDevice",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "scpi_device",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "commandInterface": "",
+        "dataInterface": "",
+        "enablePackageUpdateWarning": true
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_scpi_device",
+      "action": "auto-checkConnectionPolarity",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_scpi_device",
+      "action": "auto-setVoltageRange",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_scpi_device",
+      "action": "auto-setRaiseOnErrorEnabled",
+      "action_args": {
+        "enabled": true
+      }
+    },
+    {
+      "step": 4,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_scpi_device",
+      "action": "auto-checkResetStatus",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_scpi_device",
+      "action": "auto-readDeviceInformations",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_scpi_device",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "getDataReceiver",
+      "description": "自动补充动作: getDataReceiver",
+      "device": "test_scpi_device",
+      "action": "auto-getDataReceiver",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "getRaiseOnErrorEnabled",
+      "description": "自动补充动作: getRaiseOnErrorEnabled",
+      "device": "test_scpi_device",
+      "action": "auto-getRaiseOnErrorEnabled",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "IDN",
+      "description": "自动补充动作: IDN",
+      "device": "test_scpi_device",
+      "action": "auto-IDN",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "clearState",
+      "description": "自动补充动作: clearState",
+      "device": "test_scpi_device",
+      "action": "auto-clearState",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "readState",
+      "description": "自动补充动作: readState",
+      "device": "test_scpi_device",
+      "action": "auto-readState",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "resetCommand",
+      "description": "自动补充动作: resetCommand",
+      "device": "test_scpi_device",
+      "action": "auto-resetCommand",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "abortCommand",
+      "description": "自动补充动作: abortCommand",
+      "device": "test_scpi_device",
+      "action": "auto-abortCommand",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "calibrateOffsets",
+      "description": "自动补充动作: calibrateOffsets",
+      "device": "test_scpi_device",
+      "action": "auto-calibrateOffsets",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "switchToEPCControl",
+      "description": "自动补充动作: switchToEPCControl",
+      "device": "test_scpi_device",
+      "action": "auto-switchToEPCControl",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "switchToEPCControlWithoutPotentiostatStateChange",
+      "description": "自动补充动作: switchToEPCControlWithoutPotentiostatStateChange",
+      "device": "test_scpi_device",
+      "action": "auto-switchToEPCControlWithoutPotentiostatStateChange",
+      "action_args": {}
+    },
+    {
+      "step": 17,
+      "name": "setLineFrequency",
+      "description": "自动补充动作: setLineFrequency",
+      "device": "test_scpi_device",
+      "action": "auto-setLineFrequency",
+      "action_args": {}
+    },
+    {
+      "step": 18,
+      "name": "getLineFrequency",
+      "description": "自动补充动作: getLineFrequency",
+      "device": "test_scpi_device",
+      "action": "auto-getLineFrequency",
+      "action_args": {}
+    },
+    {
+      "step": 19,
+      "name": "setDateTime",
+      "description": "自动补充动作: setDateTime",
+      "device": "test_scpi_device",
+      "action": "auto-setDateTime",
+      "action_args": {}
+    },
+    {
+      "step": 20,
+      "name": "getDateTime",
+      "description": "自动补充动作: getDateTime",
+      "device": "test_scpi_device",
+      "action": "auto-getDateTime",
+      "action_args": {}
+    },
+    {
+      "step": 21,
+      "name": "getDateTimeStruct",
+      "description": "自动补充动作: getDateTimeStruct",
+      "device": "test_scpi_device",
+      "action": "auto-getDateTimeStruct",
+      "action_args": {}
+    },
+    {
+      "step": 22,
+      "name": "getSoftwareInfo",
+      "description": "自动补充动作: getSoftwareInfo",
+      "device": "test_scpi_device",
+      "action": "auto-getSoftwareInfo",
+      "action_args": {}
+    },
+    {
+      "step": 23,
+      "name": "getPotential",
+      "description": "自动补充动作: getPotential",
+      "device": "test_scpi_device",
+      "action": "auto-getPotential",
+      "action_args": {}
+    },
+    {
+      "step": 24,
+      "name": "getVoltage",
+      "description": "自动补充动作: getVoltage",
+      "device": "test_scpi_device",
+      "action": "auto-getVoltage",
+      "action_args": {}
+    },
+    {
+      "step": 25,
+      "name": "getPotentialMedian",
+      "description": "自动补充动作: getPotentialMedian",
+      "device": "test_scpi_device",
+      "action": "auto-getPotentialMedian",
+      "action_args": {
+        "measurements": 7
+      }
+    },
+    {
+      "step": 26,
+      "name": "getVoltageMedian",
+      "description": "自动补充动作: getVoltageMedian",
+      "device": "test_scpi_device",
+      "action": "auto-getVoltageMedian",
+      "action_args": {
+        "measurements": 7
+      }
+    },
+    {
+      "step": 27,
+      "name": "getCurrent",
+      "description": "自动补充动作: getCurrent",
+      "device": "test_scpi_device",
+      "action": "auto-getCurrent",
+      "action_args": {}
+    },
+    {
+      "step": 28,
+      "name": "getCurrentMedian",
+      "description": "自动补充动作: getCurrentMedian",
+      "device": "test_scpi_device",
+      "action": "auto-getCurrentMedian",
+      "action_args": {
+        "measurements": 7
+      }
+    },
+    {
+      "step": 29,
+      "name": "setPotentiostatEnabled",
+      "description": "自动补充动作: setPotentiostatEnabled",
+      "device": "test_scpi_device",
+      "action": "auto-setPotentiostatEnabled",
+      "action_args": {
+        "enable": false
+      }
+    },
+    {
+      "step": 30,
+      "name": "setVoltageRelation",
+      "description": "自动补充动作: setVoltageRelation",
+      "device": "test_scpi_device",
+      "action": "auto-setVoltageRelation",
+      "action_args": {}
+    },
+    {
+      "step": 31,
+      "name": "setVoltageValue",
+      "description": "自动补充动作: setVoltageValue",
+      "device": "test_scpi_device",
+      "action": "auto-setVoltageValue",
+      "action_args": {}
+    },
+    {
+      "step": 32,
+      "name": "setCurrentValue",
+      "description": "自动补充动作: setCurrentValue",
+      "device": "test_scpi_device",
+      "action": "auto-setCurrentValue",
+      "action_args": {}
+    },
+    {
+      "step": 33,
+      "name": "getMACAddress",
+      "description": "自动补充动作: getMACAddress",
+      "device": "test_scpi_device",
+      "action": "auto-getMACAddress",
+      "action_args": {}
+    },
+    {
+      "step": 34,
+      "name": "setVoltageRangeIndex",
+      "description": "自动补充动作: setVoltageRangeIndex",
+      "device": "test_scpi_device",
+      "action": "auto-setVoltageRangeIndex",
+      "action_args": {}
+    },
+    {
+      "step": 35,
+      "name": "setAutorangingEnabled",
+      "description": "自动补充动作: setAutorangingEnabled",
+      "device": "test_scpi_device",
+      "action": "auto-setAutorangingEnabled",
+      "action_args": {
+        "state": true
+      }
+    },
+    {
+      "step": 36,
+      "name": "setInterpolationEnabled",
+      "description": "自动补充动作: setInterpolationEnabled",
+      "device": "test_scpi_device",
+      "action": "auto-setInterpolationEnabled",
+      "action_args": {
+        "state": true
+      }
+    },
+    {
+      "step": 37,
+      "name": "setMinimumShuntIndex",
+      "description": "自动补充动作: setMinimumShuntIndex",
+      "device": "test_scpi_device",
+      "action": "auto-setMinimumShuntIndex",
+      "action_args": {}
+    },
+    {
+      "step": 38,
+      "name": "setMaximumShuntIndex",
+      "description": "自动补充动作: setMaximumShuntIndex",
+      "device": "test_scpi_device",
+      "action": "auto-setMaximumShuntIndex",
+      "action_args": {}
+    },
+    {
+      "step": 39,
+      "name": "setShuntIndex",
+      "description": "自动补充动作: setShuntIndex",
+      "device": "test_scpi_device",
+      "action": "auto-setShuntIndex",
+      "action_args": {}
+    },
+    {
+      "step": 40,
+      "name": "setCurrentRange",
+      "description": "自动补充动作: setCurrentRange",
+      "device": "test_scpi_device",
+      "action": "auto-setCurrentRange",
+      "action_args": {}
+    },
+    {
+      "step": 41,
+      "name": "setTimeParameter",
+      "description": "自动补充动作: setTimeParameter",
+      "device": "test_scpi_device",
+      "action": "auto-setTimeParameter",
+      "action_args": {}
+    },
+    {
+      "step": 42,
+      "name": "setMaximumTimeParameter",
+      "description": "自动补充动作: setMaximumTimeParameter",
+      "device": "test_scpi_device",
+      "action": "auto-setMaximumTimeParameter",
+      "action_args": {}
+    },
+    {
+      "step": 43,
+      "name": "setMinimumTimeParameter",
+      "description": "自动补充动作: setMinimumTimeParameter",
+      "device": "test_scpi_device",
+      "action": "auto-setMinimumTimeParameter",
+      "action_args": {}
+    },
+    {
+      "step": 44,
+      "name": "setVoltageParameterRelation",
+      "description": "自动补充动作: setVoltageParameterRelation",
+      "device": "test_scpi_device",
+      "action": "auto-setVoltageParameterRelation",
+      "action_args": {}
+    },
+    {
+      "step": 45,
+      "name": "setVoltageParameter",
+      "description": "自动补充动作: setVoltageParameter",
+      "device": "test_scpi_device",
+      "action": "auto-setVoltageParameter",
+      "action_args": {}
+    },
+    {
+      "step": 46,
+      "name": "setCurrentParameter",
+      "description": "自动补充动作: setCurrentParameter",
+      "device": "test_scpi_device",
+      "action": "auto-setCurrentParameter",
+      "action_args": {}
+    },
+    {
+      "step": 47,
+      "name": "setScanRateParameter",
+      "description": "自动补充动作: setScanRateParameter",
+      "device": "test_scpi_device",
+      "action": "auto-setScanRateParameter",
+      "action_args": {}
+    },
+    {
+      "step": 48,
+      "name": "setCoupling",
+      "description": "自动补充动作: setCoupling",
+      "device": "test_scpi_device",
+      "action": "auto-setCoupling",
+      "action_args": {}
+    },
+    {
+      "step": 49,
+      "name": "setBandwith",
+      "description": "自动补充动作: setBandwith",
+      "device": "test_scpi_device",
+      "action": "auto-setBandwith",
+      "action_args": {}
+    },
+    {
+      "step": 50,
+      "name": "setFilterFrequency",
+      "description": "自动补充动作: setFilterFrequency",
+      "device": "test_scpi_device",
+      "action": "auto-setFilterFrequency",
+      "action_args": {}
+    },
+    {
+      "step": 51,
+      "name": "setParameterLimitCheckToleranceTime",
+      "description": "自动补充动作: setParameterLimitCheckToleranceTime",
+      "device": "test_scpi_device",
+      "action": "auto-setParameterLimitCheckToleranceTime",
+      "action_args": {}
+    },
+    {
+      "step": 52,
+      "name": "setMinMaxVoltageParameterCheckEnabled",
+      "description": "自动补充动作: setMinMaxVoltageParameterCheckEnabled",
+      "device": "test_scpi_device",
+      "action": "auto-setMinMaxVoltageParameterCheckEnabled",
+      "action_args": {
+        "state": true
+      }
+    },
+    {
+      "step": 53,
+      "name": "setMinMaxCurrentParameterCheckEnabled",
+      "description": "自动补充动作: setMinMaxCurrentParameterCheckEnabled",
+      "device": "test_scpi_device",
+      "action": "auto-setMinMaxCurrentParameterCheckEnabled",
+      "action_args": {
+        "state": true
+      }
+    },
+    {
+      "step": 54,
+      "name": "setMaximumVoltageParameter",
+      "description": "自动补充动作: setMaximumVoltageParameter",
+      "device": "test_scpi_device",
+      "action": "auto-setMaximumVoltageParameter",
+      "action_args": {}
+    },
+    {
+      "step": 55,
+      "name": "setMinimumVoltageParameter",
+      "description": "自动补充动作: setMinimumVoltageParameter",
+      "device": "test_scpi_device",
+      "action": "auto-setMinimumVoltageParameter",
+      "action_args": {}
+    },
+    {
+      "step": 56,
+      "name": "setMaximumCurrentParameter",
+      "description": "自动补充动作: setMaximumCurrentParameter",
+      "device": "test_scpi_device",
+      "action": "auto-setMaximumCurrentParameter",
+      "action_args": {}
+    },
+    {
+      "step": 57,
+      "name": "setMinimumCurrentParameter",
+      "description": "自动补充动作: setMinimumCurrentParameter",
+      "device": "test_scpi_device",
+      "action": "auto-setMinimumCurrentParameter",
+      "action_args": {}
+    },
+    {
+      "step": 58,
+      "name": "setGlobalLimitCheckToleranceTime",
+      "description": "自动补充动作: setGlobalLimitCheckToleranceTime",
+      "device": "test_scpi_device",
+      "action": "auto-setGlobalLimitCheckToleranceTime",
+      "action_args": {}
+    },
+    {
+      "step": 59,
+      "name": "setGlobalVoltageCheckEnabled",
+      "description": "自动补充动作: setGlobalVoltageCheckEnabled",
+      "device": "test_scpi_device",
+      "action": "auto-setGlobalVoltageCheckEnabled",
+      "action_args": {
+        "state": true
+      }
+    },
+    {
+      "step": 60,
+      "name": "setGlobalCurrentCheckEnabled",
+      "description": "自动补充动作: setGlobalCurrentCheckEnabled",
+      "device": "test_scpi_device",
+      "action": "auto-setGlobalCurrentCheckEnabled",
+      "action_args": {
+        "state": true
+      }
+    },
+    {
+      "step": 61,
+      "name": "setMaximumVoltageGlobal",
+      "description": "自动补充动作: setMaximumVoltageGlobal",
+      "device": "test_scpi_device",
+      "action": "auto-setMaximumVoltageGlobal",
+      "action_args": {}
+    },
+    {
+      "step": 62,
+      "name": "setMinimumVoltageGlobal",
+      "description": "自动补充动作: setMinimumVoltageGlobal",
+      "device": "test_scpi_device",
+      "action": "auto-setMinimumVoltageGlobal",
+      "action_args": {}
+    },
+    {
+      "step": 63,
+      "name": "setMaximumCurrentGlobal",
+      "description": "自动补充动作: setMaximumCurrentGlobal",
+      "device": "test_scpi_device",
+      "action": "auto-setMaximumCurrentGlobal",
+      "action_args": {}
+    },
+    {
+      "step": 64,
+      "name": "setMinimumCurrentGlobal",
+      "description": "自动补充动作: setMinimumCurrentGlobal",
+      "device": "test_scpi_device",
+      "action": "auto-setMinimumCurrentGlobal",
+      "action_args": {}
+    },
+    {
+      "step": 65,
+      "name": "setSamplingFrequency",
+      "description": "自动补充动作: setSamplingFrequency",
+      "device": "test_scpi_device",
+      "action": "auto-setSamplingFrequency",
+      "action_args": {}
+    },
+    {
+      "step": 66,
+      "name": "setToleranceBreakEnabled",
+      "description": "自动补充动作: setToleranceBreakEnabled",
+      "device": "test_scpi_device",
+      "action": "auto-setToleranceBreakEnabled",
+      "action_args": {
+        "value": true
+      }
+    },
+    {
+      "step": 67,
+      "name": "setAbsoluteTolerance",
+      "description": "自动补充动作: setAbsoluteTolerance",
+      "device": "test_scpi_device",
+      "action": "auto-setAbsoluteTolerance",
+      "action_args": {}
+    },
+    {
+      "step": 68,
+      "name": "setRelativeTolerance",
+      "description": "自动补充动作: setRelativeTolerance",
+      "device": "test_scpi_device",
+      "action": "auto-setRelativeTolerance",
+      "action_args": {}
+    },
+    {
+      "step": 69,
+      "name": "setChargeBreakEnabled",
+      "description": "自动补充动作: setChargeBreakEnabled",
+      "device": "test_scpi_device",
+      "action": "auto-setChargeBreakEnabled",
+      "action_args": {
+        "value": true
+      }
+    },
+    {
+      "step": 70,
+      "name": "setMaximumCharge",
+      "description": "自动补充动作: setMaximumCharge",
+      "device": "test_scpi_device",
+      "action": "auto-setMaximumCharge",
+      "action_args": {}
+    },
+    {
+      "step": 71,
+      "name": "setMinimumCharge",
+      "description": "自动补充动作: setMinimumCharge",
+      "device": "test_scpi_device",
+      "action": "auto-setMinimumCharge",
+      "action_args": {}
+    },
+    {
+      "step": 72,
+      "name": "getTemperature",
+      "description": "自动补充动作: getTemperature",
+      "device": "test_scpi_device",
+      "action": "auto-getTemperature",
+      "action_args": {}
+    },
+    {
+      "step": 73,
+      "name": "setStepSize",
+      "description": "自动补充动作: setStepSize",
+      "device": "test_scpi_device",
+      "action": "auto-setStepSize",
+      "action_args": {}
+    },
+    {
+      "step": 74,
+      "name": "measureRampValueInTime",
+      "description": "自动补充动作: measureRampValueInTime",
+      "device": "test_scpi_device",
+      "action": "auto-measureRampValueInTime",
+      "action_args": {}
+    },
+    {
+      "step": 75,
+      "name": "measureRampValueInScanRate",
+      "description": "自动补充动作: measureRampValueInScanRate",
+      "device": "test_scpi_device",
+      "action": "auto-measureRampValueInScanRate",
+      "action_args": {}
+    },
+    {
+      "step": 76,
+      "name": "measureRampScanRateForTime",
+      "description": "自动补充动作: measureRampScanRateForTime",
+      "device": "test_scpi_device",
+      "action": "auto-measureRampScanRateForTime",
+      "action_args": {}
+    },
+    {
+      "step": 77,
+      "name": "measurePolarization",
+      "description": "自动补充动作: measurePolarization",
+      "device": "test_scpi_device",
+      "action": "auto-measurePolarization",
+      "action_args": {}
+    },
+    {
+      "step": 78,
+      "name": "measureOCVScan",
+      "description": "自动补充动作: measureOCVScan",
+      "device": "test_scpi_device",
+      "action": "auto-measureOCVScan",
+      "action_args": {}
+    },
+    {
+      "step": 79,
+      "name": "measureOCV",
+      "description": "自动补充动作: measureOCV",
+      "device": "test_scpi_device",
+      "action": "auto-measureOCV",
+      "action_args": {}
+    },
+    {
+      "step": 80,
+      "name": "measureIEStairs",
+      "description": "自动补充动作: measureIEStairs",
+      "device": "test_scpi_device",
+      "action": "auto-measureIEStairs",
+      "action_args": {}
+    },
+    {
+      "step": 81,
+      "name": "measureCharge",
+      "description": "自动补充动作: measureCharge",
+      "device": "test_scpi_device",
+      "action": "auto-measureCharge",
+      "action_args": {
+        "minimumVoltage": 0
+      }
+    },
+    {
+      "step": 82,
+      "name": "measureDischarge",
+      "description": "自动补充动作: measureDischarge",
+      "device": "test_scpi_device",
+      "action": "auto-measureDischarge",
+      "action_args": {
+        "maximumVoltage": 1000
+      }
+    },
+    {
+      "step": 83,
+      "name": "measureProfile",
+      "description": "自动补充动作: measureProfile",
+      "device": "test_scpi_device",
+      "action": "auto-measureProfile",
+      "action_args": {
+        "scalingFactor": 1,
+        "outputPrimitive": "pol"
+      }
+    },
+    {
+      "step": 84,
+      "name": "measurePITT",
+      "description": "自动补充动作: measurePITT",
+      "device": "test_scpi_device",
+      "action": "auto-measurePITT",
+      "action_args": {
+        "startWithOCVScan": true,
+        "measureOnTargetVoltage": false
+      }
+    },
+    {
+      "step": 85,
+      "name": "measureGITT",
+      "description": "自动补充动作: measureGITT",
+      "device": "test_scpi_device",
+      "action": "auto-measureGITT",
+      "action_args": {
+        "startWithOCVScan": false
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "SCPIDevice 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "SCPIDevice",
+    "generated_by": "driver-finder"
+  }
+}

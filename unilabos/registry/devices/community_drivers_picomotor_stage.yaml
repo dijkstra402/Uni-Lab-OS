@@ -1,0 +1,189 @@
+picomotor_stage:
+  class:
+    module: unilabos.devices.motor.picomotor_stage:PicomotorStage
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-get_product_id:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_product_id
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_scan_done:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_scan_done
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                poll_time_ms:
+                  type: string
+                timeout_ms:
+                  type: string
+        goal_default:
+          poll_time_ms: 50.0
+          timeout_ms: 5000.0
+        handles: {}
+      auto-resolve_address_conflicts:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resolve_address_conflicts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_controllers_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_controllers_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_motor_moved:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_motor_moved
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                poll_time_ms:
+                  type: string
+                timeout_ms:
+                  type: string
+        goal_default:
+          poll_time_ms: 50.0
+          timeout_ms: 60000.0
+        handles: {}
+      auto-get_home_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_home_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_home_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_home_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Newport Picomotor Piezo Stage驱动（Newport (MKS)），支持get product id/wait
+    scan done/resolve address conflicts/get controllers scan/wait motor moved等7个操作。
+  category:
+  - 物流/机械
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        axis_controller_dict:
+          type: string
+          default: null
+        C1:
+          type: string
+          default: null
+        C2:
+          type: string
+          default: null
+        c1_c2_distance_mask_um:
+          type: string
+          default: null
+        update_position_absolute:
+          type: string
+          default: 100.0
+        filename:
+          type: string
+          default: null
+        reverse_axis_x:
+          type: string
+          default: false
+        reverse_axis_y:
+          type: string
+          default: false
+        reverse_axis_z:
+          type: string
+          default: false
+        x_axis_motor:
+          type: string
+          default: x
+        y_axis_motor:
+          type: string
+          default: y
+        z_axis_motor:
+          type: string
+          default: z
+        resolve_address_conflicts:
+          type: string
+          default: false
+        picomotor_system:
+          type: string
+          default: null
+        PicomotorStage_usb:
+          type: string
+          default: null
+  cover: picomotor_stage.webp
+  device_params:
+    品牌: Newport
+    功能: 参数配置、扫描测量、数据采集、运动控制
+    可控参数: poll_time_ms、timeout_ms
+    操作数: 7
+  manufacturer: Newport (MKS)
+  model:
+    name: Newport Picomotor Piezo Stage 电机 自动化设备 位移台
+    type: device
+  name: Newport Picomotor Piezo Stage 电机 自动化设备 位移台
+  tags:
+  - 物流/机械
+  resource_type: device
+  icon: picomotor_stage.webp
+  scene:
+    domain: Automation
+    scene_name: Motion Control
+    step: Positioning
+  version: 1.0.0

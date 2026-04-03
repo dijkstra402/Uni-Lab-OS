@@ -1,0 +1,112 @@
+{
+  "nodes": [
+    {
+      "id": "test_tek_scope",
+      "name": "AMPTEK FASTSDD DP5-X",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "tek_scope",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "addr": "USB?*::INSTR",
+        "timeout": 1,
+        "termination": "\n"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_tek_scope",
+      "action": "auto-set_date_time",
+      "action_args": {
+        "verbose": false
+      }
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_tek_scope",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "channels",
+      "description": "自动补充动作: channels",
+      "device": "test_tek_scope",
+      "action": "auto-channels",
+      "action_args": {
+        "all": true
+      }
+    },
+    {
+      "step": 4,
+      "name": "waveform",
+      "description": "自动补充动作: waveform",
+      "device": "test_tek_scope",
+      "action": "auto-waveform",
+      "action_args": {
+        "channel": "CH1",
+        "preamble_string": "WFMO",
+        "int16": false
+      }
+    },
+    {
+      "step": 5,
+      "name": "save screenshot",
+      "description": "自动补充动作: save_screenshot",
+      "device": "test_tek_scope",
+      "action": "auto-save_screenshot",
+      "action_args": {
+        "verbose": false
+      }
+    },
+    {
+      "step": 6,
+      "name": "lock",
+      "description": "自动补充动作: lock",
+      "device": "test_tek_scope",
+      "action": "auto-lock",
+      "action_args": {
+        "verbose": false
+      }
+    },
+    {
+      "step": 7,
+      "name": "unlock",
+      "description": "自动补充动作: unlock",
+      "device": "test_tek_scope",
+      "action": "auto-unlock",
+      "action_args": {
+        "verbose": false
+      }
+    },
+    {
+      "step": 8,
+      "name": "set acquire state",
+      "description": "自动补充动作: set_acquire_state",
+      "device": "test_tek_scope",
+      "action": "auto-set_acquire_state",
+      "action_args": {
+        "running": true
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "TekScope 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "TekScope",
+    "generated_by": "driver-finder"
+  }
+}

@@ -1,0 +1,98 @@
+ocean:
+  class:
+    module: unilabos.devices.generic.ocean_spectrometer:ocean
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readSpectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readSpectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                t:
+                  type: integer
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-loadFile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadFile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Ocean Insight Spectrometer驱动（Ocean Insight (Ocean Optics)），支持open/close/readSpectrum/loadFile。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        config:
+          type: string
+          default: null
+  cover: ocean.webp
+  device_params:
+    品牌: Ocean Insight
+    功能: 数据采集
+    可控参数: filename
+    操作数: 4
+  manufacturer: Ocean Insight (Ocean Optics)
+  model:
+    name: Ocean Insight 光纤光谱仪 分析仪器 光谱仪
+    type: device
+  name: Ocean Insight 光纤光谱仪 分析仪器 光谱仪
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ocean.webp
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

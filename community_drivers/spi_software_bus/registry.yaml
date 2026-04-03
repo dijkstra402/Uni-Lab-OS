@@ -1,0 +1,99 @@
+spi_software_bus:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommand
+      auto-transfer:
+        feedback: {}
+        goal: {}
+        goal_default:
+          bits_per_word: 8
+          clock_phase: false
+          lsb_first: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                bits_per_word:
+                  type: string
+                clock_phase:
+                  type: string
+                data:
+                  type: string
+                lsb_first:
+                  type: string
+              type: object
+          title: transfer
+          type: object
+        type: UniLabJsonCommand
+      auto-closed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: closed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.generic.spi_software_bus:SPISoftwareBus
+    status_types:
+      closed: String
+    type: python
+  config_info: []
+  description: SPI Software Bus SPI软件总线驱动是由复纳科学仪器（上海）有限公司生产的专业实验设备。A software bit-banged implementation of the gpiozero.pins.SPI interface
+  handles: []
+  icon: spi_software_bus.webp
+  init_param_schema:
+    config:
+      properties:
+        clock_pin:
+          default: null
+          type: string
+        miso_pin:
+          default: null
+          type: string
+        mosi_pin:
+          default: null
+          type: string
+        pin_factory:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: 复纳科学仪器
+    可控参数: bits_per_word、clock_phase、data、lsb_first
+    操作数: 3
+  manufacturer: 复纳科学仪器（上海）有限公司
+  model:
+    name: nGauge 原子力显微镜（AFM）｜芯片式AFM｜纳米表面形貌分析仪｜ICSPI便携式原子力显微镜
+    type: device
+  name: SPI Software Bus SPI软件总线驱动
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

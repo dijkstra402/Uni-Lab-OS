@@ -1,0 +1,122 @@
+property_connection:
+  class:
+    module: unilabos.devices.property_connection.property_connection:PropertyConnection
+    type: python
+    status_types:
+      source_specifier: String
+      target_specifier: String
+      source_property: String
+      target_property: String
+      connected_items: String
+      source: String
+      target: String
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-source_specifier:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: source_specifier
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-target_specifier:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: target_specifier
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-source_property:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: source_property
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-target_property:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: target_property
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Property Connection是一款实验执行&合成设备，主要功能包括关闭、设备连接。支持Signal, Slot, clone等操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        source:
+          type: string
+          default: null
+        source_property:
+          type: string
+          default: null
+        target:
+          type: string
+          default: null
+        target_property:
+          type: string
+          default: null
+        parent:
+          type: string
+          default: null
+  name: Connection between two objects
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '11'
+    读取操作: target_specifier、target_property、target_specifier
+    设备属性数: '14'

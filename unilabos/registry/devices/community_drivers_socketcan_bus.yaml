@@ -1,0 +1,72 @@
+socketcan_bus:
+  class:
+    module: unilabos.devices.generic.socketcan_bus:SocketcanBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fileno:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileno
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Socketcan BUS设备驱动。
+  category:
+  - 实验执行&合成设备
+  cover: mfr_open_standard_socketcan.webp
+  device_params:
+    支持操作数: '3'
+  manufacturer: Open Standard (SocketCAN)
+  model:
+    name: Socketcan BUS
+    type: device
+  name: Socketcan BUS
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: mfr_open_standard_socketcan.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

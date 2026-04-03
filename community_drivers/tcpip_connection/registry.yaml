@@ -1,0 +1,152 @@
+tcpip_connection:
+  category:
+  - network
+  class:
+    action_value_mappings:
+      auto-read:
+        feedback: {}
+        goal: {}
+        goal_default:
+          length: 4096
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                length:
+                  type: string
+              type: object
+          title: read
+          type: object
+        type: UniLabJsonCommand
+      auto-write:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                object:
+                  type: string
+              type: object
+          title: write
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.network.driver_socket:Driver_SOCKET
+    status_types: {}
+    type: python
+  config_info: []
+  description: Driver_SOCKET
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+tcpip_connection:
+  class:
+    module: unilabos.devices.network.tcpip_connection:TCPIPConnection
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connection_listener:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connection_listener
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_connection_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connection_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-transmit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transmit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                retries:
+                  type: integer
+        goal_default:
+          retries: 3
+        handles: {}
+  description: Socket-based TCP/IP connection adapter
+  category:
+  - network
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        connection_parameters:
+          type: object
+          default: null

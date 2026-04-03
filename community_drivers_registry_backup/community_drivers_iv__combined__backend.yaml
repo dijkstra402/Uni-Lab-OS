@@ -1,0 +1,130 @@
+iv__combined__backend:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-configure_source:
+        feedback: {}
+        goal: {}
+        goal_default:
+          compliance_voltage: 210
+          current_range: 0.001
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                compliance_voltage:
+                  type: string
+                current_range:
+                  type: string
+              type: object
+          title: configure_source
+          type: object
+        type: UniLabJsonCommand
+      auto-connect_instruments:
+        feedback: {}
+        goal: {}
+        goal_default:
+          k2182_addr: GPIB::7
+          k2400_addr: GPIB::4
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                k2182_addr:
+                  type: string
+                k2400_addr:
+                  type: string
+              type: object
+          title: connect_instruments
+          type: object
+        type: UniLabJsonCommand
+      auto-measure_point:
+        feedback: {}
+        goal: {}
+        goal_default:
+          interval: 1
+          num_readings: 2
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                current_val:
+                  type: string
+                interval:
+                  type: string
+                num_readings:
+                  type: string
+              type: object
+          title: measure_point
+          type: object
+        type: UniLabJsonCommand
+      auto-run_sweep:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                filename:
+                  type: string
+                start_i:
+                  type: string
+                step_i:
+                  type: string
+                stop_i:
+                  type: string
+              type: object
+          title: run_sweep
+          type: object
+        type: UniLabJsonCommand
+      auto-shutdown:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: shutdown
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.instrument.iv_combined.iv_combined_backend:IV_Combined_Backend
+    status_types: {}
+    type: python
+  config_info: []
+  description: I-V Combined Measurement Backend驱动，支持configure source/connect instruments/measure
+    point/run sweep/shutdown。
+  handles: []
+  icon: iv__combined__backend.webp
+  init_param_schema: {}
+  version: 1.0.0
+  cover: iv__combined__backend.webp
+  device_params:
+    功能: 参数配置、扫描测量、数据采集
+    可控参数: compliance_voltage、current_range、current_val、filename、interval、k2182_addr、k2400_addr、num_readings
+    操作数: 5
+  manufacturer: Generic
+  model:
+    name: Generic I-V Combined Measurement Backend 后端控制器
+    type: device
+  name: I-V Combined Measurement Backend 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

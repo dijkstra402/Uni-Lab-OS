@@ -1,0 +1,260 @@
+spectr_acq3:
+  class:
+    module: unilabos.devices.spectrometer.spectr_acq3:SpectrAcq3
+    type: python
+    status_types:
+      serial_number: String
+      firmware_version: String
+      fpga_version: String
+      board_revision: String
+      hv_bias_voltage: String
+      max_hv_voltage_allowed: String
+      acq_set: String
+      available_data: String
+      trigger_in_polarity: String
+      trigger_mode: String
+      last_error: String
+      error_log: String
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_busy:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_busy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_hv_bias_voltage:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_hv_bias_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bias_voltage:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_acq_set:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_acq_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                scan_count:
+                  type: integer
+                time_step:
+                  type: number
+                integration_time:
+                  type: number
+                external_param:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-acq_start:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acq_start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trigger:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-acq_stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acq_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acq_pause:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acq_pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acq_continue:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acq_continue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_data_available:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_data_available
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-force_trigger:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: force_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_trigger_in_polarity:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger_in_polarity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                polarity:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_in_trigger_mode:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_in_trigger_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-clear_error_log:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_error_log
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: SpectrAcq3 device class
+  category:
+  - spectrometer
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_id:
+          type: integer
+          default: null
+        communicator:
+          type: string
+          default: null
+        error_db:
+          type: string
+          default: null

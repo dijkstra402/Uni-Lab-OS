@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "id": "test_gamry",
+      "name": "Gamry电化学工作站 Reference 600+",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "gamry",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "config_dict": null
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "open connection",
+      "description": "建立与Gamry电化学工作站的连接",
+      "device": "test_gamry",
+      "action": "auto-open_connection",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "measurement setup",
+      "description": "配置测量参数",
+      "device": "test_gamry",
+      "action": "auto-measurement_setup",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "measure",
+      "description": "执行电化学测量",
+      "device": "test_gamry",
+      "action": "auto-measure",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "potential ramp",
+      "description": "执行电位扫描",
+      "device": "test_gamry",
+      "action": "auto-potential_ramp",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "potential cycle",
+      "description": "执行循环伏安扫描",
+      "device": "test_gamry",
+      "action": "auto-potential_cycle",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "status",
+      "description": "查询设备状态",
+      "device": "test_gamry",
+      "action": "auto-status",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "dump data",
+      "description": "导出测量数据",
+      "device": "test_gamry",
+      "action": "auto-dump_data",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "simulate",
+      "description": "模拟电化学实验",
+      "device": "test_gamry",
+      "action": "auto-simulate",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "close connection",
+      "description": "断开与工作站的连接",
+      "device": "test_gamry",
+      "action": "auto-close_connection",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Gamry电化学工作站工作流",
+    "description": "Gamry Reference 600+ 电化学工作站完整工作流，包含连接、测量、扫描、数据导出",
+    "instrument": "Gamry Reference 600+",
+    "generated_by": "driver-finder"
+  }
+}

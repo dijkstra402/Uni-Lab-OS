@@ -1,0 +1,63 @@
+d435_rgb_stream:
+  class:
+    module: unilabos.devices.camera.realsense.d435_rgb_stream:D435RGBStream
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setup_ffmpeg_stream:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_ffmpeg_stream
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-camera_response_callback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: camera_response_callback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-process_and_queue_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_and_queue_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                image_data:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: D435 RGB Stream是由Intel RealSense生产的表征设备，主要功能包括成像、设置。支持Signal, Slot, camera response callback等操作。
+  category:
+  - 表征设备
+  name: Intel RealSense D435 Rgb Stream
+  manufacturer: Intel RealSense
+  icon: d435_rgb_stream.webp
+  tags:
+  - 表征设备
+  device_params:
+    支持操作数: '3'
+    控制操作: setup_ffmpeg_stream

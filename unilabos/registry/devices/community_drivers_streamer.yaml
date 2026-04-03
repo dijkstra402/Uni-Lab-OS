@@ -1,0 +1,187 @@
+streamer:
+  class:
+    module: unilabos.devices.universal.streamer:Streamer
+    type: python
+    status_types:
+      backend: String
+      address: String
+    action_value_mappings:
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_attempts:
+                  type: string
+        goal_default:
+          max_attempts: 20
+        handles: {}
+      auto-backend:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: backend
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-subscriptions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: subscriptions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-make_chunk:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: make_chunk
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chunk_ind:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Streams data to an LSL outlet from a BLE device | 型号:ble2lsl
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device:
+          type: string
+          default: null
+        address:
+          type: string
+          default: null
+        backend:
+          type: string
+          default: bgapi
+        interface:
+          type: string
+          default: null
+        autostart:
+          type: string
+          default: true
+        scan_timeout:
+          type: string
+          default: 10.5
+        internal_timestamps:
+          type: string
+          default: false
+  cover: streamer.webp
+  device_params:
+    可控参数: chunk_ind、max_attempts、value
+    操作数: 9
+  manufacturer: Open Source
+  model:
+    name: Generic Streamer
+    type: device
+  name: Streamer 后处理设备
+  tags:
+  - 后处理设备
+  resource_type: device
+  icon: streamer.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

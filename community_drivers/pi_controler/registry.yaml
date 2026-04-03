@@ -1,0 +1,130 @@
+pi_controler:
+  category:
+  - 物流/机械
+  class:
+    action_value_mappings:
+      auto-controler_output:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                current_value:
+                  type: string
+              type: object
+          title: controler_output
+          type: object
+        type: UniLabJsonCommand
+      auto-read_probes:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                key:
+                  type: string
+              type: object
+          title: read_probes
+          type: object
+        type: UniLabJsonCommand
+      auto-reset:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: reset
+          type: object
+        type: UniLabJsonCommand
+      auto-update:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                settings:
+                  type: string
+              type: object
+          title: update
+          type: object
+        type: UniLabJsonCommand
+      auto-is_connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-quit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: quit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.pi_controller.pi_controller:PIControler
+    status_types: {}
+    type: python
+  config_info: []
+  description: Physik Instrumente Pi Controler 自动化设备是由Physik Instrumente (PI)生产的专业实验设备。Dummy instrument a implementation of a dummy instrument
+  handles: []
+  icon: pi_controler.webp
+  init_param_schema:
+    config:
+      properties:
+        name:
+          default: null
+          type: string
+        settings:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: Physik Instrumente
+    功能: 参数配置、数据采集
+    可控参数: current_value、key、settings
+    操作数: 6
+  manufacturer: Physik Instrumente (PI)
+  model:
+    name: Physik Physik Instrumente Pi Controler
+    type: device
+  name: Physik Instrumente Pi Controler
+  tags:
+  - 物流/机械
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

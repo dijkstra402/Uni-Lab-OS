@@ -1,0 +1,143 @@
+laser_power_control:
+  class:
+    module: unilabos.devices.generic.laser_power_control:LaserPowerControl
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-execute_home_search:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execute_home_search
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_upper_bound:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_upper_bound
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_lower_bound:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_lower_bound
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_abs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_abs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_power_percent:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-terminate_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: terminate_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unit_transformer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unit_transformer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_power_percent:
+                  type: string
+                max_est_power:
+                  type: string
+                min_est_power:
+                  type: string
+                amplitude:
+                  type: string
+                vertical_shift:
+                  type: string
+                frequency:
+                  type: string
+                phase_shift:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Laser Power Control是一款实验执行&合成设备，主要功能包括归零、设备连接、运动控制。支持Signal, Slot, get lower bound等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '7'
+    读取操作: get_position、get_upper_bound、get_lower_bound
+    运动操作: get_position、execute_home_search、move_abs
+    控制能力: 功率、增益、电流、频率
+    通信接口: VISA
+  manufacturer: Open Source
+  model:
+    name: Laser Power Control
+    type: device
+  name: Laser Power Control
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

@@ -1,0 +1,315 @@
+handle:
+  class:
+    module: unilabos.devices.custom.handle:Handle
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write_messages:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_messages
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messages:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-bulkWrite:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bulkWrite
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ep:
+                  type: string
+                data:
+                  type: string
+                size:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          timeout: 0
+        handles: {}
+      auto-bulkRead:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bulkRead
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ep:
+                  type: string
+                size:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          timeout: 0
+        handles: {}
+      auto-controlMsg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: controlMsg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ep:
+                  type: string
+                ctrl:
+                  type: string
+                size:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-releaseInterface:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: releaseInterface
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-components_connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: components_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                layout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-layout_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: layout_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                layout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_version_core:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_version_core
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                version:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-initialize_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                component:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-input_pressed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: input_pressed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-input_released:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: input_released
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-input_slide_up:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: input_slide_up
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+                amount:
+                  type: string
+        goal_default:
+          amount: 8
+        handles: {}
+      auto-input_slide_down:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: input_slide_down
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+                amount:
+                  type: string
+        goal_default:
+          amount: 8
+        handles: {}
+      auto-input_rotation_left:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: input_rotation_left
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+                amount:
+                  type: string
+        goal_default:
+          amount: 8
+        handles: {}
+      auto-input_rotation_right:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: input_rotation_right
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+                amount:
+                  type: string
+        goal_default:
+          amount: 8
+        handles: {}
+  description: Handle驱动，支持write messages/bulkWrite/bulkRead/controlMsg/reset等16个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        layout:
+          type: string
+          default: null
+  cover: handle.webp
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: amount、component、ctrl、data、index、layout、messages、size
+    操作数: 16
+  manufacturer: Generic
+  model:
+    name: Generic Handle
+    type: device
+  name: Handle 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: handle.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

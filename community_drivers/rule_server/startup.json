@@ -1,0 +1,108 @@
+{
+  "nodes": [
+    {
+      "id": "test_rule_server",
+      "name": "Test RuleServer",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "rule_server",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {},
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_rule_server",
+      "action": "auto-status",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_rule_server",
+      "action": "auto-stop",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "task advertisements",
+      "description": "自动补充动作: task_advertisements",
+      "device": "test_rule_server",
+      "action": "auto-task_advertisements",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "bid on tasks",
+      "description": "自动补充动作: bid_on_tasks",
+      "device": "test_rule_server",
+      "action": "auto-bid_on_tasks",
+      "action_args": {
+        "body": ""
+      }
+    },
+    {
+      "step": 5,
+      "name": "add integer id rule",
+      "description": "自动补充动作: add_integer_id_rule",
+      "device": "test_rule_server",
+      "action": "auto-add_integer_id_rule",
+      "action_args": {
+        "max_tasks": 1000000.0,
+        "timeout": 3600,
+        "body": ""
+      }
+    },
+    {
+      "step": 6,
+      "name": "release rule tasks",
+      "description": "自动补充动作: release_rule_tasks",
+      "device": "test_rule_server",
+      "action": "auto-release_rule_tasks",
+      "action_args": {
+        "body": ""
+      }
+    },
+    {
+      "step": 7,
+      "name": "inactivate rule",
+      "description": "自动补充动作: inactivate_rule",
+      "device": "test_rule_server",
+      "action": "auto-inactivate_rule",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "handin",
+      "description": "自动补充动作: handin",
+      "device": "test_rule_server",
+      "action": "auto-handin",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "mark release complete",
+      "description": "自动补充动作: mark_release_complete",
+      "device": "test_rule_server",
+      "action": "auto-mark_release_complete",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "RuleServer 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "RuleServer",
+    "generated_by": "driver-finder"
+  }
+}

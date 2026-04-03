@@ -1,0 +1,320 @@
+tcpip_instr_vicp:
+  class:
+    module: unilabos.devices.tcpip_instr.tcpip_instr:TCPIPInstrVicp
+    type: python
+    status_types:
+      keepalive: String
+    action_value_mappings:
+      auto-after_parsing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: after_parsing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_keepalive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_keepalive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                attribute:
+                  type: string
+                keepalive:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                count:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-list_resources:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: list_resources
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_low_level_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_low_level_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_max_message_kb:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_max_message_kb
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                attribute:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_max_message_kb:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_max_message_kb
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                attribute:
+                  type: string
+                size_kb:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_keepalive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_keepalive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                attribute:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_stb:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_stb
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-assert_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: assert_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                protocol:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-lock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lock_type:
+                  type: string
+                timeout:
+                  type: number
+                requested_key:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unlock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unlock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mask:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_service:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_service
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                zc:
+                  type: string
+                type_:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_service:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_service
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                zc:
+                  type: string
+                type_:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: 基于TCP/IP VICP协议的仪器通信驱动，兼容LeCroy等示波器厂商标准。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '38'
+    读取操作: get_low_level_info、get_max_message_kb、get_keepalive、read、read_stb 等10个
+    控制操作: set_max_message_kb、set_keepalive、write、write、assert_trigger 等8个
+    控制能力: 时间
+    通信接口: TCP/IP、VISA
+  manufacturer: Open Standard (VICP)
+  model:
+    name: TCP/IP VICP Instrument VICP协议仪器接口
+    type: device
+  name: TCP/IP VICP Instrument VICP协议仪器接口
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: tcpip_instr_vicp.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

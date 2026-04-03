@@ -1,0 +1,82 @@
+parameter_control_module:
+  class:
+    module: unilabos.devices.parameter_control.parameter_control_module:ParameterControlModule
+    type: python
+    status_types:
+      leco_name: String
+      leco_host_port: String
+    action_value_mappings:
+      auto-value_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: value_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connect_tcp_ip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_tcp_ip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params_state:
+                  type: string
+                client_type:
+                  type: string
+        goal_default:
+          client_type: GRABBER
+        handles: {}
+      auto-connect_leco:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_leco
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                connect:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-process_tcpip_cmds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_tcpip_cmds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from packages/pymodaq/src/pymodaq/control_modules/utils.py
+  category:
+  - parameter_control
+  name: Parameter Control Module
+  manufacturer: Open Source
+  cover: ascii_stl__writer.webp
+  icon: ascii_stl__writer.webp

@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "test_polled_internal_device",
+      "name": "Polled Internal Device",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "polled_internal_device",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "event_delay": 1.0,
+        "pin_factory": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_polled_internal_device",
+      "action": "auto-wait_for_active",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_polled_internal_device",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "event delay",
+      "description": "自动补充动作: event_delay",
+      "device": "test_polled_internal_device",
+      "action": "auto-event_delay",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "wait for inactive",
+      "description": "自动补充动作: wait_for_inactive",
+      "device": "test_polled_internal_device",
+      "action": "auto-wait_for_inactive",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "PolledInternalDevice 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "PolledInternalDevice",
+    "generated_by": "driver-finder"
+  }
+}

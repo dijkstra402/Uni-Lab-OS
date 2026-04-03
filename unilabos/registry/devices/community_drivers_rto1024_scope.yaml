@@ -1,0 +1,83 @@
+rto1024_scope:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-measure_trace:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: measure_trace
+          type: object
+        type: UniLabJsonCommand
+      auto-prepare_measurement:
+        feedback: {}
+        goal: {}
+        goal_default:
+          acq_rate: 10000000000
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                acq_rate:
+                  type: string
+                t_start:
+                  type: string
+                t_stop:
+                  type: string
+              type: object
+          title: prepare_measurement
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.oscilloscope.rto1024_scope:RTO1024_scope
+    status_types: {}
+    type: python
+  config_info: []
+  description: R&S RTO1024 4-Channel Oscilloscope驱动（Rohde & Schwarz），支持measure trace/prepare
+    measurement。
+  handles: []
+  icon: rto1024_scope.webp
+  init_param_schema:
+    config:
+      properties:
+        address:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        terminator:
+          default: ''
+          type: string
+        timeout:
+          default: 5
+          type: string
+      type: object
+  version: 1.0.0
+  cover: rto1024_scope.webp
+  device_params:
+    品牌: Rohde & Schwarz
+    功能: 数据采集
+    可控参数: acq_rate、t_start、t_stop
+    操作数: 2
+  manufacturer: Rohde & Schwarz
+  model:
+    name: Rohde R&S RTO1024 4-Channel Oscilloscope 示波器
+    type: device
+  name: R&S RTO1024 4-Channel Oscilloscope 分析仪器
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

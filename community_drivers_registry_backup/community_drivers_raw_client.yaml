@@ -1,0 +1,59 @@
+raw_client:
+  class:
+    module: unilabos.devices.generic_device.raw_client:RawClient
+    type: python
+    status_types:
+      blocks: String
+    action_value_mappings:
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nelems:
+                  type: string
+                data_size:
+                  type: string
+        goal_default:
+          data_size: 2
+        handles: {}
+  description: Raw Client驱动，支持read。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        addr:
+          type: string
+          default: null
+        port:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 数据采集
+    可控参数: data_size、nelems
+    操作数: 1
+  manufacturer: ''
+  model:
+    name: '' raw_client
+    type: device
+  name: raw_client 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

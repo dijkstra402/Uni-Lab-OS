@@ -1,0 +1,239 @@
+modbus_adu:
+  class:
+    module: unilabos.devices.generic_device.modbus.modbus_driver:Modbus_ADU
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-add_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                end:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-puti:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: puti
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                byte_to_put:
+                  type: string
+                annotation:
+                  type: string
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-putl:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: putl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                annotation:
+                  type: string
+                message:
+                  type: string
+                maximum:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message_overflow:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_crc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_crc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                byte_to_put:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-half_word:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: half_word
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-calc_crc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calc_crc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                last_byte:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-parse_write_single_coil:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_write_single_coil
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-parse_write_single_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_write_single_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-parse_diagnostics:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_diagnostics
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-parse_mask_write_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_mask_write_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-parse_not_implemented:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_not_implemented
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Modbus Adu驱动，支持add data/puti/putl/close/check crc等12个操作。
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        parent:
+          type: string
+          default: null
+        start:
+          type: string
+          default: null
+        write_channel:
+          type: string
+          default: null
+        annotation_prefix:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 参数配置
+    可控参数: annotation、byte_to_put、data、end、last_byte、maximum、message、message_overflow
+    操作数: 12
+  manufacturer: ''
+  model:
+    name: '' modbus_adu
+    type: device
+  name: modbus_adu 后处理设备
+  tags:
+  - 后处理设备
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Automation
+    scene_name: Industrial Control
+    step: Process Control
+  version: 1.0.0

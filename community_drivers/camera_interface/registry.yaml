@@ -1,0 +1,88 @@
+camera_interface:
+  class:
+    module: unilabos.devices.generic.camera_interface:CameraInterface
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-message_read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: message_read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-message_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: message_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fileno:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileno
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Camera Interface是一款实验执行&合成设备，主要功能包括停止、写入数据、打开、触发、读取数据。支持Signal, Slot, add arguments等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '13'
+    读取操作: message_read
+    控制操作: message_write、external_trigger、stop
+    设备属性: shutter_latency、nuc、bad_pixel_replacement、frame_rate、frame_rate_min、frame_rate_max 等11个
+    控制能力: 时间、速度
+    通信接口: 串口(RS-232)
+  manufacturer: Open Source
+  model:
+    name: Camera Interface
+    type: device
+  name: Camera
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

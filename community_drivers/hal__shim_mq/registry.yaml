@@ -1,0 +1,199 @@
+hal__shim_mq:
+  class:
+    module: unilabos.devices.generic.hal__shim_mq:HAL_ShimMQ
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-prepare_timing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_timing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prepare_fluxing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_fluxing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                qubits:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-prepare_readout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_readout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                qubits:
+                  type: string
+                reduced:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-prepare_for_timedomain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_for_timedomain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                qubits:
+                  type: string
+                reduced:
+                  type: boolean
+                bypass_flux:
+                  type: boolean
+                prepare_for_readout:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-prepare_for_inspire:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_for_inspire
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-hal_get_flux_amp_parameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: hal_get_flux_amp_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                q:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_correlation_detector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_correlation_detector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                qubits:
+                  type: string
+                single_int_avg:
+                  type: boolean
+                seg_per_point:
+                  type: integer
+                always_prepare:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-get_int_logging_detector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_int_logging_detector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                qubits:
+                  type: string
+                integration_length:
+                  type: string
+                result_logging_mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_input_avg_det:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_input_avg_det
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_int_avg_det:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_int_avg_det
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                integration_length:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: HAL Shim MQ是由QuTech生产的实验执行&合成设备，主要功能包括日志记录、读取数据。支持Signal, Slot, get correlation detector等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '10'
+    读取操作: prepare_readout、hal_get_flux_amp_parameter、get_correlation_detector、get_int_logging_detector、get_input_avg_det 等6个
+    驱动框架: QCoDeS
+  manufacturer: QuTech
+  model:
+    name: HAL Shim MQ
+    type: device
+  name: QuTech HAL_Shim MQ
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: hal__shim_mq.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

@@ -1,0 +1,91 @@
+odin:
+  category:
+  - 后处理设备
+  class:
+    action_value_mappings:
+      auto-observe_indices_written:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: observe_indices_written
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_indices_written:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_indices_written
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-collect_stream_docs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: collect_stream_docs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                indices_written:
+                  type: number
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.odin_detector.odin_detector:Odin
+    status_types: {}
+    type: python
+  config_info: []
+  description: Odin驱动，支持observe indices written/get indices written/collect stream docs。
+  handles: []
+  icon: odin.webp
+  init_param_schema:
+    config:
+      properties:
+        name:
+          default: ''
+          type: string
+        nodes:
+          default: 4
+          type: integer
+        prefix:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: odin.webp
+  device_params:
+    功能: 数据采集
+    可控参数: indices_written、name、timeout
+    操作数: 3
+  manufacturer: Diamond Light Source
+  model:
+    name: Generic Odin
+    type: device
+  name: Odin 后处理设备
+  tags:
+  - 后处理设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

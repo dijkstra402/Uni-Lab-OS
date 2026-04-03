@@ -1,0 +1,106 @@
+filter_wheel:
+  class:
+    module: unilabos.devices.optical.filter_wheel.filter_wheel:filter_wheel
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-RW:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: RW
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                length:
+                  type: string
+        goal_default:
+          length: 2
+        handles: {}
+      auto-getPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setPositionq:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setPositionq
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setPositionf:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setPositionf
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-zero:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: zero
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Filter Wheel是一款表征设备，主要功能包括归零校准。支持Signal, Slot, getPosition等操作。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        portS:
+          type: string
+          default: COM5
+  name: Filter Wheel
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 表征设备
+  device_params:
+    支持操作数: '5'
+    读取操作: getPosition
+    控制操作: setPositionq、setPositionf
+    运动操作: getPosition、setPositionq、setPositionf
+    控制能力: 位置控制

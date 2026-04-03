@@ -1,0 +1,289 @@
+us_btin:
+  class:
+    module: unilabos.devices.usb_can_adapter.usbtin:USBtin
+    type: python
+    status_types:
+      firmware_version: String
+      hardware_version: String
+      serial_number: String
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-transmit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transmit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_can_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_can_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                baudrate:
+                  type: string
+                mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_rx_thread:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_rx_thread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_rx_thread:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_rx_thread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-rx_thread:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rx_thread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_can_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_can_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_message_listener:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_message_listener
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                func:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_message_listener:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_message_listener
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                func:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_first_tx_fifo_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_first_tx_fifo_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                canmsg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_mcp_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_mcp_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                register:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_mcp_filter_mask_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_mcp_filter_mask_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                maskid:
+                  type: string
+                registers:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_mcp_filter_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_mcp_filter_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filterid:
+                  type: string
+                registers:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_filter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_filter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fc:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: USBtin CAN总线适配器是一款实验执行&合成设备，主要功能包括关闭、写入数据、打开、设备连接、读取数据、过滤。支持Signal, Slot, add message listener等操作。
+  category:
+  - 实验执行&合成设备
+  name: USBtin CAN总线适配器
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '20'
+    读取操作: get_firmware_version、get_hardware_version、get_serial_number、read_response、start_rx_thread
+    控制操作: start_rx_thread、stop_rx_thread、write_mcp_register、write_mcp_filter_mask_registers、write_mcp_filter_registers
+    运动操作: remove_message_listener
+    通信接口: 串口

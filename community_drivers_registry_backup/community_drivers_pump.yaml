@@ -1,0 +1,182 @@
+pump:
+  class:
+    module: unilabos.devices.pump_and_valve.pump:Pump
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bytes:
+                  type: string
+        goal_default:
+          bytes: 5
+        handles: {}
+      auto-setdiameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setdiameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                diameter:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setflowrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setflowrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flowrate:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-infuse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: infuse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-withdraw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: withdraw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-settargetvolume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: settargetvolume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                targetvolume:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-waituntiltarget:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waituntiltarget
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Create Pump object for Harvard Pump 11
+  category:
+  - 注射泵
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        chain:
+          type: string
+          default: null
+        address:
+          type: string
+          default: 0
+        name:
+          type: string
+          default: Pump 11
+  cover: ''
+  device_params:
+    品牌: ''
+    流量范围: μL/min-mL/min
+品牌: ''
+    流量范围: μL/min-mL/min
+品牌: ''
+    设备类型: 注射泵
+    流量范围: μL/min-mL/min
+  manufacturer: ''
+  model:
+    name: '' pump 泵
+    type: device
+  name: pump 注射泵
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Dispensing
+  version: 1.0.0

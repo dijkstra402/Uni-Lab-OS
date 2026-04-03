@@ -1,0 +1,160 @@
+daq__detector:
+  class:
+    module: unilabos.devices.daq_detector.daq_detector:DAQ_Detector
+    type: python
+    status_types:
+      title: String
+    action_value_mappings:
+      auto-update_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                settings_parameter_dict:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-queue_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: queue_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ini_detector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ini_detector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params_state:
+                  type: string
+                controller:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-emit_temp_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: emit_temp_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_ready:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_ready
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-single:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: single
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Naverage:
+                  type: string
+        goal_default:
+          Naverage: 1
+        handles: {}
+      auto-grab_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: grab_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Naverage:
+                  type: string
+                live:
+                  type: string
+        goal_default:
+          Naverage: 1
+          live: true
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from packages/pymodaq/src/pymodaq/control_modules/daq_viewer.py
+  category:
+  - daq_detector
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        title:
+          type: string
+          default: null
+        settings_parameter:
+          type: string
+          default: null
+        detector_name:
+          type: string
+          default: null
+  name: DAQ Detector
+  manufacturer: National Instruments
+  cover: digital_input_task.webp
+  icon: digital_input_task.webp

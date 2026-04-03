@@ -1,0 +1,286 @@
+esp32_camera:
+  class:
+    module: unilabos.devices.camera.esp32_camera:ESP32Camera
+    type: python
+    status_types:
+      base_uri: String
+      json: String
+      id: String
+    action_value_mappings:
+      auto-post_json:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: post_json
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+                payload:
+                  type: string
+                headers:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          payload: {}
+          timeout: 10
+        handles: {}
+      auto-post:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: post
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+                payload:
+                  type: string
+                headers:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          payload: {}
+          timeout: 1
+        handles: {}
+      auto-setLed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setLed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ledIntensity:
+                  type: string
+        goal_default:
+          ledIntensity: 0
+        handles: {}
+      auto-set_id:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_id
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                m_id:
+                  type: string
+        goal_default:
+          m_id: 0
+        handles: {}
+      auto-setGain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setGain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gain:
+                  type: string
+        goal_default:
+          gain: 0
+        handles: {}
+      auto-setExposureTime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setExposureTime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                exposureTime:
+                  type: string
+        goal_default:
+          exposureTime: 0
+        handles: {}
+      auto-setFrameSize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setFrameSize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                framesize:
+                  type: string
+        goal_default:
+          framesize: 0
+        handles: {}
+      auto-is_omniscope:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_omniscope
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-restart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_stream:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_stream
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                callback_fct:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop_stream:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_stream
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getframe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getframe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                is_triggered:
+                  type: string
+        goal_default:
+          is_triggered: false
+        handles: {}
+      auto-getframes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getframes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                url:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-soft_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: soft_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Esp32 Camera驱动，支持post json/post/setLed/set id/setGain等14个操作。
+  category:
+  - 荧光显微镜
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: null
+        port:
+          type: string
+          default: 80
+        is_debug:
+          type: string
+          default: false
+  cover: ''
+  device_params:
+    品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    光源类型: LED/汞灯
+品牌: ''
+    设备类型: 荧光显微镜
+    光源类型: LED/汞灯
+  manufacturer: ''
+  model:
+    name: '' esp32_camera 相机
+    type: device
+  name: esp32_camera 荧光显微镜
+  tags:
+  - 荧光显微镜
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Imaging
+    scene_name: Microscopy
+    step: Image Acquisition
+  version: 1.0.0

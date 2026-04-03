@@ -1,0 +1,50 @@
+memory_persistent_storage_system:
+  class:
+    module: unilabos.devices.memory_persistent_storage.persistent_storage_system:MemoryPersistentStorageSystem
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_library_properties:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_library_properties
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                library_properties:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from nion/swift/model/FileStorageSystem.py
+  category:
+  - memory_persistent_storage
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        library_properties:
+          type: string
+          default: null
+  name: Memory Persistent Storage System
+  manufacturer: Open Source
+  cover: ascii_stl__writer.webp
+  icon: ascii_stl__writer.webp

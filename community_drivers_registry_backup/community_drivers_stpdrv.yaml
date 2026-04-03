@@ -1,0 +1,246 @@
+stpdrv:
+  class:
+    module: unilabos.devices.motor.stpdrv:Stpdrv
+    type: python
+    status_types:
+      address: String
+      resource_kwargs: String
+      motion_timeout: String
+      speed: String
+      acceleration: String
+      idn: String
+      len_axes_mm: String
+      position: String
+    action_value_mappings:
+      auto-address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-motion_timeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motion_timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                motion_timeout:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-acceleration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acceleration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                acceleration:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-mm_to_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mm_to_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                distance:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-steps_to_mm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: steps_to_mm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-goto:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: goto
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target:
+                  type: object
+                timeout:
+                  type: number
+                debug_prints:
+                  type: boolean
+        goal_default:
+          timeout: 120
+          debug_prints: true
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                procedure:
+                  type: string
+                timeout:
+                  type: number
+                expected_lengths:
+                  type: string
+                allowed_deviation:
+                  type: string
+        goal_default:
+          procedure: default
+          timeout: 120
+        handles: {}
+      auto-estop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Ark Metrica Stepper Motor Controller
+  category:
+  - 物流/机械
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          type: string
+          default: null
+        steps_per_mm:
+          type: number
+          default: null
+        motion_timeout:
+          type: number
+          default: 120.0
+        speed:
+          type: number
+          default: 16
+        acceleration:
+          type: number
+          default: 16
+        limit_offset:
+          type: number
+          default: 20
+        resource_kwargs:
+          type: object
+          default: {}
+  cover: ''
+  device_params:
+    品牌: ''''
+    功能: 运动控制
+    可控参数: 加速度、address、allowed_deviation、debug_prints、距离、expected_lengths、motion_timeout、procedure
+    操作数: 11
+  manufacturer: ''
+  model:
+    name: '' stpdrv
+    type: device
+  name: stpdrv 自动化设备
+  tags:
+  - 物流/机械
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

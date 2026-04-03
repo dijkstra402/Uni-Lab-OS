@@ -1,0 +1,156 @@
+{
+  "nodes": [
+    {
+      "id": "test_plc",
+      "name": "Programmable Logic Controller",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "plc",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "ip_address": "",
+        "slot": 0,
+        "timeout": 5.0,
+        "Micro800": false,
+        "port": null
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_plc",
+      "action": "auto-ConnectionSize",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_plc",
+      "action": "auto-Read",
+      "action_args": {
+        "count": 1
+      }
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_plc",
+      "action": "auto-Close",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "Write",
+      "description": "自动补充动作: Write",
+      "device": "test_plc",
+      "action": "auto-Write",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "GetPLCTime",
+      "description": "自动补充动作: GetPLCTime",
+      "device": "test_plc",
+      "action": "auto-GetPLCTime",
+      "action_args": {
+        "raw": false
+      }
+    },
+    {
+      "step": 6,
+      "name": "SetPLCTime",
+      "description": "自动补充动作: SetPLCTime",
+      "device": "test_plc",
+      "action": "auto-SetPLCTime",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "GetTagList",
+      "description": "自动补充动作: GetTagList",
+      "device": "test_plc",
+      "action": "auto-GetTagList",
+      "action_args": {
+        "allTags": true
+      }
+    },
+    {
+      "step": 8,
+      "name": "GetProgramTagList",
+      "description": "自动补充动作: GetProgramTagList",
+      "device": "test_plc",
+      "action": "auto-GetProgramTagList",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "GetProgramsList",
+      "description": "自动补充动作: GetProgramsList",
+      "device": "test_plc",
+      "action": "auto-GetProgramsList",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "Discover",
+      "description": "自动补充动作: Discover",
+      "device": "test_plc",
+      "action": "auto-Discover",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "GetModuleProperties",
+      "description": "自动补充动作: GetModuleProperties",
+      "device": "test_plc",
+      "action": "auto-GetModuleProperties",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "GetDeviceProperties",
+      "description": "自动补充动作: GetDeviceProperties",
+      "device": "test_plc",
+      "action": "auto-GetDeviceProperties",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "Message",
+      "description": "自动补充动作: Message",
+      "device": "test_plc",
+      "action": "auto-Message",
+      "action_args": {
+        "data": "b''"
+      }
+    },
+    {
+      "step": 14,
+      "name": "ReceiveMessage",
+      "description": "自动补充动作: ReceiveMessage",
+      "device": "test_plc",
+      "action": "auto-ReceiveMessage",
+      "action_args": {
+        "port": 44818
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "PLC 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "PLC",
+    "generated_by": "driver-finder"
+  }
+}

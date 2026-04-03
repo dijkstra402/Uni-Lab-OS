@@ -1,0 +1,246 @@
+data_source:
+  class:
+    module: unilabos.devices.universal.data_source:DataSource
+    type: python
+    status_types:
+      nbytes: String
+      mode: String
+      data: String
+      voxel_size: String
+      shape: String
+      shape_from_metadata: String
+    action_value_mappings:
+      auto-mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode_str:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_metadata_from_configuration_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_metadata_from_configuration_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                configuration:
+                  type: object
+                microscope_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                metadata_config:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-nbytes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: nbytes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-voxel_size:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: voxel_size
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shape:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shape
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_shape_from_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_shape_from_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timepoint:
+                  type: string
+                position:
+                  type: string
+                channel:
+                  type: string
+                z:
+                  type: string
+                resolution:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: 'DataRay 中红外光束质量分析仪是由杭州谱镭光电技术有限公司生产的专业实验设备。Auto-generated by Build Agent Original: src/navigate/model/data_sources/data_source.py'
+  category:
+  - 红外光谱仪
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        file_name:
+          type: string
+          default: null
+        mode:
+          type: string
+          default: w
+  device_params:
+    品牌: 杭州谱镭光电技术有限公司
+    功能: 参数配置、数据采集
+    可控参数: 通道、configuration、data、metadata_config、microscope_name、mode_str、位置、分辨率
+    操作数: 13
+  manufacturer: 杭州谱镭光电技术有限公司
+  model:
+    name: DataRay 中红外光束质量分析仪
+    type: device
+  name: DataRay
+  tags:
+  - 红外光谱仪
+  resource_type: device
+  icon: data_source.webp
+  scene:
+    domain: Chemistry
+    scene_name: IR Spectroscopy
+    step: Measurement
+  version: 1.0.0

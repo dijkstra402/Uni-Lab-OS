@@ -1,0 +1,96 @@
+{
+  "nodes": [
+    {
+      "id": "test_doppler",
+      "name": "Doppler Ultrasound Device",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "doppler",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {},
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_doppler",
+      "action": "auto-initProbe",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_doppler",
+      "action": "auto-startAcq",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_doppler",
+      "action": "auto-stopAcq",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "startDoppler",
+      "description": "自动补充动作: startDoppler",
+      "device": "test_doppler",
+      "action": "auto-startDoppler",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "getImagesDoppler",
+      "description": "自动补充动作: getImagesDoppler",
+      "device": "test_doppler",
+      "action": "auto-getImagesDoppler",
+      "action_args": {
+        "n": 1
+      }
+    },
+    {
+      "step": 6,
+      "name": "getImages",
+      "description": "自动补充动作: getImages",
+      "device": "test_doppler",
+      "action": "auto-getImages",
+      "action_args": {
+        "n": 1
+      }
+    },
+    {
+      "step": 7,
+      "name": "createLoopDoppler",
+      "description": "自动补充动作: createLoopDoppler",
+      "device": "test_doppler",
+      "action": "auto-createLoopDoppler",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "createLoop",
+      "description": "自动补充动作: createLoop",
+      "device": "test_doppler",
+      "action": "auto-createLoop",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Doppler 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Doppler",
+    "generated_by": "driver-finder"
+  }
+}

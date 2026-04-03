@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "test_hardpotato__serial",
+      "name": "Test Serial",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "hardpotato__serial",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": "",
+        "timeout": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_hardpotato__serial",
+      "action": "auto-open",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_hardpotato__serial",
+      "action": "auto-readline",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_hardpotato__serial",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "write",
+      "description": "自动补充动作: write",
+      "device": "test_hardpotato__serial",
+      "action": "auto-write",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Serial 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Serial",
+    "generated_by": "driver-finder"
+  }
+}

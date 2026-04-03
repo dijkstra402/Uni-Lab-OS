@@ -1,0 +1,112 @@
+binder_mk53:
+  class:
+    module: unilabos.devices.generic.binder_mk53:binderMK53
+    type: python
+    status_types:
+      temperature: String
+      temperature_target: String
+      door_open: String
+      mode: String
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+                n_words:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Binder Mk53驱动，支持init/set temperature/read/write。
+  category:
+  - 微生物培养箱
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          type: string
+          default: null
+        conf:
+          type: string
+          default: null
+  cover: ''
+  device_params:
+    品牌: ''
+    温度范围: 4-60 ℃
+品牌: ''
+    温度范围: 4-60 ℃
+品牌: ''
+    设备类型: 培养箱
+    温度范围: 4-60 ℃
+  manufacturer: ''
+  model:
+    name: '' binder_mk53
+    type: device
+  name: binder_mk53 培养箱
+  tags:
+  - 微生物培养箱
+  resource_type: device
+  icon: ''
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

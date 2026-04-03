@@ -1,0 +1,41 @@
+udp_handler:
+  class:
+    module: unilabos.devices.common.network.udp_handler:UDPHandler
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-receive_new_scan_segment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive_new_scan_segment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: This class receives UDP packets which arrive from a specified port
+  category:
+  - common
+  - network
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        local_address:
+          type: string
+          default: null
+        local_port:
+          type: integer
+          default: null
+        buffer_size:
+          type: integer
+          default: null
+  name: UDP Handler
+  manufacturer: Open Standard
+  cover: aio_serial.webp
+  icon: aio_serial.webp

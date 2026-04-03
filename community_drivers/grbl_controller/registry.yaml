@@ -1,0 +1,210 @@
+grbl_controller:
+  class:
+    module: unilabos.devices.generic.grbl_controller:GRBLController
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_wake_up:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_wake_up
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_gcode_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_gcode_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                is_blocking:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_gcode_command_inThread:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_gcode_command_inThread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wait_for_movement_completion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_movement_completion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cleaned_line:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_comment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_comment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                string:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_eol_chars:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_eol_chars
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                string:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+                is_absolute:
+                  type: string
+                is_blocking:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Grbl Controller是由GRBL (Open Source)生产的实验执行&合成设备，主要功能包括位置设置、停止、关闭、写入数据、归零、读取数据。支持Signal, Slot, find grbl port等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '19'
+    读取操作: send_gcode_command_inThread、get_position、getPosition
+    控制操作: write、setSpeed、set_position、force_stop
+    运动操作: wait_for_movement_completion、remove_comment、remove_eol_chars
+    控制能力: 时间、速度
+    通信接口: 串口(RS-232)
+  manufacturer: GRBL (Open Source)
+  model:
+    name: Grbl Controller
+    type: device
+  name: GRBL Controller
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: grbl_controller.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

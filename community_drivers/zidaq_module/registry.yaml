@@ -1,0 +1,105 @@
+zidaq_module:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-finish:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: finish
+          type: object
+        type: UniLabJsonCommand
+      auto-finished:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: finished
+          type: object
+        type: UniLabJsonCommand
+      auto-read:
+        feedback: {}
+        goal: {}
+        goal_default:
+          clk_rate: 60000000.0
+          raw: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                clk_rate:
+                  type: number
+                raw:
+                  type: boolean
+              type: object
+          title: read
+          type: object
+        type: UniLabJsonCommand
+      auto-trigger:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: trigger
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.data_acquisition_module.data_acquisition_module_driver:ZIDAQModule
+    status_types: {}
+    type: python
+  config_info: []
+  description: Zurich Instruments ziDAQ Module 仪器 数据采集模块是由Zurich Instruments生产的表征设备，主要功能包括触发、读取数据。
+  handles: []
+  icon: zidaq_module.webp
+  init_param_schema:
+    config:
+      properties:
+        name:
+          default: daq_module
+          type: string
+        session:
+          default: null
+          type: string
+        tk_object:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: Zurich Instruments
+    功能: 数据采集
+    可控参数: clk_rate、raw
+    操作数: 4
+  manufacturer: Zurich Instruments
+  model:
+    name: Zurich Instruments ziDAQ Module 仪器 分析仪器 数据采集模块
+    type: device
+  name: Zurich Instruments ziDAQ
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

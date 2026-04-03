@@ -1,0 +1,84 @@
+logo:
+  class:
+    module: unilabos.devices.generic.siemens_logo.siemens_logo:Logo
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ip_address:
+                  type: string
+                tsap_snap7:
+                  type: integer
+                tsap_logo:
+                  type: integer
+                tcp_port:
+                  type: integer
+        goal_default:
+          tcp_port: 102
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vm_address:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vm_address:
+                  type: string
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+  description: Siemens LOGO!系列小型可编程逻辑控制器，用于实验室自动化逻辑控制。
+  category:
+  - 实验执行&合成设备
+  cover:
+  device_params:
+    品牌: Siemens
+    支持操作数: 3
+  manufacturer: Siemens
+  model:
+    name: Siemens LOGO! PLC控制器
+    type: device
+  name: Siemens LOGO! PLC控制器
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon:
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

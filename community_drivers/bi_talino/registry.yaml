@@ -1,0 +1,124 @@
+bi_talino:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-connect:
+        feedback: {}
+        goal: {}
+        goal_default:
+          timeout: 10.0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                timeout:
+                  type: number
+              type: object
+          title: connect
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-disconnect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: disconnect
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-set_callback:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                callback:
+                  type: string
+              type: object
+          title: set_callback
+          type: object
+        type: UniLabJsonCommand
+      auto-start:
+        feedback: {}
+        goal: {}
+        goal_default:
+          channels:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          sampling_rate: 1000
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                channels:
+                  type: string
+                sampling_rate:
+                  type: integer
+              type: object
+          title: start
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommandAsync
+    module: unilabos.devices.generic.bitalino:BITalino
+    status_types: {}
+    type: python
+  config_info: []
+  description: BITalino Biomedical Development Kit是由PLUX Biosignals生产的专业实验设备。Async driver for BITalino (BLE)
+  handles: []
+  icon: bi_talino.webp
+  init_param_schema:
+    config:
+      properties:
+        address:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: PLUX Biosignals
+    功能: 参数配置
+    可控参数: callback、通道数、sampling_rate、timeout
+    操作数: 5
+  manufacturer: PLUX Biosignals
+  model:
+    name: PLUX BITalino Biomedical Development Kit
+    type: device
+  name: BITalino Biomedical Development Kit
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

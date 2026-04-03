@@ -1,0 +1,266 @@
+folder_capture:
+  class:
+    module: unilabos.devices.file_source.folder_capture:FolderCapture
+    type: python
+    status_types:
+      latest_frame: String
+      exposure: String
+      gain: String
+      frame_size: String
+      fps: String
+      current_file_path: String
+      current_file_info: String
+      file_list: String
+      current_index: String
+      missing_files: String
+      folder_watching_status: String
+    action_value_mappings:
+      auto-start_async:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_async
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_exposure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_exposure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_gain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-enable_auto_exposure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_auto_exposure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: boolean
+        goal_default:
+          enable: true
+        handles: {}
+      auto-set_frame_size:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_frame_size
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                width:
+                  type: integer
+                height:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_fps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_fps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fps:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_current_index:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_index
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-validate_file_list:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_file_list
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enable_folder_watching:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_folder_watching
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: boolean
+        goal_default:
+          enable: true
+        handles: {}
+      auto-is_folder_watching_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_folder_watching_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-force_refresh:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: force_refresh
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Capture class for reading images from a folder as a video stream
+  category:
+  - file_source
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        source:
+          type: string
+          default: null
+        sort_by:
+          type: string
+          default: name
+        width:
+          type: string
+          default: null
+        height:
+          type: string
+          default: null
+        fps:
+          type: number
+          default: 30.0
+        real_time:
+          type: boolean
+          default: true
+        loop:
+          type: boolean
+          default: false
+        watch_folder:
+          type: boolean
+          default: true
+  name: Folder Capture
+  manufacturer: Open Source
+  cover: ascii_stl__writer.webp
+  icon: ascii_stl__writer.webp

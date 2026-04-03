@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {
+      "id": "test_triton200",
+      "name": "Triton 200 Dilution Refrigerator",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "triton200",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "ip_address": "",
+        "port_number": 33576,
+        "timeout": 10000,
+        "bytes_to_read": 2048
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_triton200",
+      "action": "auto-query_and_receive",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "temperature channel",
+      "description": "自动补充动作: temperature_channel",
+      "device": "test_triton200",
+      "action": "auto-temperature_channel",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "temperature setpoint",
+      "description": "自动补充动作: temperature_setpoint",
+      "device": "test_triton200",
+      "action": "auto-temperature_setpoint",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "update heater",
+      "description": "自动补充动作: update_heater",
+      "device": "test_triton200",
+      "action": "auto-update_heater",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "controlled ramp on",
+      "description": "自动补充动作: controlled_ramp_on",
+      "device": "test_triton200",
+      "action": "auto-controlled_ramp_on",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "controlled ramp off",
+      "description": "自动补充动作: controlled_ramp_off",
+      "device": "test_triton200",
+      "action": "auto-controlled_ramp_off",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "turbo on",
+      "description": "自动补充动作: turbo_on",
+      "device": "test_triton200",
+      "action": "auto-turbo_on",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "turbo off",
+      "description": "自动补充动作: turbo_off",
+      "device": "test_triton200",
+      "action": "auto-turbo_off",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Triton200 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Triton200",
+    "generated_by": "driver-finder"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "nodes": [
+    {
+      "id": "test_robotiq_gripper",
+      "name": "Robotiq Gripper",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "robotiq_gripper",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {},
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_robotiq_gripper",
+      "action": "auto-connect",
+      "action_args": {
+        "socket_timeout": 2.0
+      }
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_robotiq_gripper",
+      "action": "auto-is_open",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_robotiq_gripper",
+      "action": "auto-move_and_wait_for_pos",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_robotiq_gripper",
+      "action": "auto-is_active",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "disconnect",
+      "description": "自动补充动作: disconnect",
+      "device": "test_robotiq_gripper",
+      "action": "auto-disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "activate",
+      "description": "自动补充动作: activate",
+      "device": "test_robotiq_gripper",
+      "action": "auto-activate",
+      "action_args": {
+        "auto_calibrate": true
+      }
+    },
+    {
+      "step": 7,
+      "name": "is closed",
+      "description": "自动补充动作: is_closed",
+      "device": "test_robotiq_gripper",
+      "action": "auto-is_closed",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "auto calibrate",
+      "description": "自动补充动作: auto_calibrate",
+      "device": "test_robotiq_gripper",
+      "action": "auto-auto_calibrate",
+      "action_args": {
+        "log": true
+      }
+    },
+    {
+      "step": 9,
+      "name": "move",
+      "description": "自动补充动作: move",
+      "device": "test_robotiq_gripper",
+      "action": "auto-move",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "RobotiqGripper 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "RobotiqGripper",
+    "generated_by": "driver-finder"
+  }
+}

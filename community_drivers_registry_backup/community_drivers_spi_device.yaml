@@ -1,0 +1,378 @@
+spi_device:
+  class:
+    module: unilabos.devices.custom.spi_device:SPIDevice
+    type: python
+    status_types:
+      spectrum: String
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-init_eeprom:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init_eeprom
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acquire_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_integration_time_ms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_integration_time_ms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_gain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-change_setting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_setting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                setting:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-to_hex:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_hex
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                values:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_crc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_crc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                crc_received:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-compute_crc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: compute_crc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fix_crc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fix_crc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-errorcode_to_string:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: errorcode_to_string
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                code:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-validate_write_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_write_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                response:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-buffer_bytearray:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: buffer_bytearray
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                orig:
+                  type: string
+                size:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-decode_read_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: decode_read_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unbuffered_cmd:
+                  type: string
+                buffered_response:
+                  type: string
+                name:
+                  type: string
+                missing_echo_len:
+                  type: string
+        goal_default:
+          missing_echo_len: 0
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-flush_input_buffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush_input_buffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_data_ready:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_data_ready
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gain_to_ff:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gain_to_ff
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gain:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_page:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_page
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                page:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-get_spectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_spectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: This implements SPI communication via the FT232H usb converter
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_id:
+          type: string
+          default: null
+        message_queue:
+          type: string
+          default: null
+        alert_queue:
+          type: string
+          default: null
+  cover: spi_device.webp
+  device_params:
+    品牌: 复纳科学仪器
+    功能: 参数配置、数据采集
+    可控参数: buffered_response、cmd、code、crc_received、data、增益、missing_echo_len、name
+    操作数: 21
+  manufacturer: 复纳科学仪器（上海）有限公司
+  model:
+    name: nGauge 原子力显微镜（AFM）｜芯片式AFM｜纳米表面形貌分析仪｜ICSPI便携式原子力显微镜
+    type: device
+  name: nGauge 原子力显微镜（AFM）｜芯片式AFM｜纳米表面形貌分析仪｜ICSPI便携式原子力显微镜
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: spi_device.webp
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis
+  version: 1.0.0

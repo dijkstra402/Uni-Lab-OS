@@ -1,0 +1,132 @@
+base_instrument:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommand
+      auto-query:
+        feedback: {}
+        goal: {}
+        goal_default:
+          check_complete: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                check_complete:
+                  type: boolean
+                command:
+                  type: string
+              type: object
+          title: query
+          type: object
+        type: UniLabJsonCommand
+      auto-set_opc_timeout:
+        feedback: {}
+        goal: {}
+        goal_default:
+          timeout: 0.1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                poll_interval:
+                  type: number
+                timeout:
+                  type: number
+              type: object
+          title: set_opc_timeout
+          type: object
+        type: UniLabJsonCommand
+      auto-wait_opc:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                opc_poll_interval:
+                  type: string
+                timeout:
+                  type: string
+              type: object
+          title: wait_opc
+          type: object
+        type: UniLabJsonCommand
+      auto-write:
+        feedback: {}
+        goal: {}
+        goal_default:
+          check_complete: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                check_complete:
+                  type: boolean
+                command:
+                  type: string
+              type: object
+          title: write
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.unilabos.device.instruments.base_instrument:BaseInstrument
+    status_types: {}
+    type: python
+  config_info: []
+  description: Base Instrument 基础仪器驱动是Jeio Tech Co., Ltd - 上海代表处提供的设备驱动，提供query, set_opc_timeout, wait_opc等5个控制接口。
+  handles: []
+  icon: base_instrument.webp
+  init_param_schema:
+    config:
+      properties:
+        address:
+          default: null
+          type: string
+        config_path:
+          default: config.yaml
+          type: string
+        model:
+          default: E5052B
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: Jeio Tech Co., Ltd - 上海代表处
+    功能: 参数配置
+    可控参数: check_complete、command、opc_poll_interval、poll_interval、timeout
+    操作数: 5
+  manufacturer: Jeio Tech Co., Ltd - 上海代表处
+  model:
+    name: 韩国ilSHinBioBase 进口深冷冻箱 GUDERO CHEST系列
+    type: device
+  name: Base Instrument
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

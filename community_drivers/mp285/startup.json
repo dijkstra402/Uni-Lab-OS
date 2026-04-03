@@ -1,0 +1,122 @@
+{
+  "nodes": [
+    {
+      "id": "test_mp285",
+      "name": "Sutter MP-285 Micromanipulator",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "mp285",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "com_port": "",
+        "baud_rate": 0,
+        "timeout": 0.25
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_mp285",
+      "action": "auto-connect_to_serial",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_mp285",
+      "action": "auto-set_resolution_and_velocity",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_mp285",
+      "action": "auto-read_response",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_mp285",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "send command",
+      "description": "自动补充动作: send_command",
+      "device": "test_mp285",
+      "action": "auto-send_command",
+      "action_args": {
+        "response_num": 1
+      }
+    },
+    {
+      "step": 6,
+      "name": "disconnect from serial",
+      "description": "自动补充动作: disconnect_from_serial",
+      "device": "test_mp285",
+      "action": "auto-disconnect_from_serial",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "move to specified position",
+      "description": "自动补充动作: move_to_specified_position",
+      "device": "test_mp285",
+      "action": "auto-move_to_specified_position",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "interrupt move",
+      "description": "自动补充动作: interrupt_move",
+      "device": "test_mp285",
+      "action": "auto-interrupt_move",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "set absolute mode",
+      "description": "自动补充动作: set_absolute_mode",
+      "device": "test_mp285",
+      "action": "auto-set_absolute_mode",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "refresh display",
+      "description": "自动补充动作: refresh_display",
+      "device": "test_mp285",
+      "action": "auto-refresh_display",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "reset controller",
+      "description": "自动补充动作: reset_controller",
+      "device": "test_mp285",
+      "action": "auto-reset_controller",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "MP285 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "MP285",
+    "generated_by": "driver-finder"
+  }
+}

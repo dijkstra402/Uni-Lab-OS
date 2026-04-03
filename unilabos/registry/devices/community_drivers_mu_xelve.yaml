@@ -1,0 +1,162 @@
+mu_xelve:
+  class:
+    module: unilabos.devices.fluidics.mux_elve:MUXelve
+    type: python
+    status_types:
+      valve: String
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                auto_home:
+                  type: boolean
+                verbose:
+                  type: boolean
+        goal_default:
+          auto_home: true
+          verbose: false
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start_channel:
+                  type: integer
+        goal_default:
+          start_channel: 1
+        handles: {}
+      auto-set_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve_index:
+                  type: integer
+                rotation_direction:
+                  type: integer
+                blocking:
+                  type: boolean
+        goal_default:
+          rotation_direction: 0
+          blocking: true
+        handles: {}
+      auto-wait_for_valve_movement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_valve_movement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+        goal_default:
+          timeout: 5
+        handles: {}
+      auto-loadDLL:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadDLL
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Overarching class controlling Elveflow MUX distributor 1/12
+  category:
+  - 注射泵
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        elveflowDLL:
+          type: string
+          default: null
+        elveflowSDK:
+          type: string
+          default: null
+        deviceName:
+          type: string
+          default: null
+        deviceID:
+          type: integer
+          default: null
+  cover: mu_xelve.webp
+  device_params:
+    品牌: Elveflow
+    流量范围: μL/min-mL/min
+  manufacturer: Elveflow
+  model:
+    name: Elveflow Elveflow MUX Flow Switch
+    type: device
+  name: Elveflow MUX Flow Switch 注射泵
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: mu_xelve.webp
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Dispensing
+  version: 1.0.0

@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "test_pi_gpio_factory",
+      "name": "Physik Instrumente Pi Gpio Factory",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "pi_gpio_factory",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "host": "",
+        "port": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_pi_gpio_factory",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "spi",
+      "description": "自动补充动作: spi",
+      "device": "test_pi_gpio_factory",
+      "action": "auto-spi",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "ticks",
+      "description": "自动补充动作: ticks",
+      "device": "test_pi_gpio_factory",
+      "action": "auto-ticks",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "PiGPIOFactory 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "PiGPIOFactory",
+    "generated_by": "driver-finder"
+  }
+}

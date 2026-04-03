@@ -1,0 +1,100 @@
+stopper:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommand
+      auto-open:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: open
+          type: object
+        type: UniLabJsonCommand
+      auto-check_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-calc_lightpath_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calc_lightpath_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                in_signal:
+                  type: number
+                out_signal:
+                  type: number
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.stopper.stopper:Stopper
+    status_types: {}
+    type: python
+  config_info: []
+  description: Beam Stopper/Shutter是一款表征设备，主要功能包括关闭、打开。支持Signal, Slot, calc lightpath state等操作。
+  handles: []
+  icon: stopper.webp
+  init_param_schema:
+    config:
+      properties:
+        name:
+          default: null
+          type: string
+        prefix:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    可控参数: in_signal、out_signal、state
+    操作数: 4
+  manufacturer: Open Source
+  model:
+    name: Generic Beam Stopper/Shutter
+    type: device
+  name: Beam Stopper/Shutter
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

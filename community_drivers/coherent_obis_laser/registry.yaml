@@ -1,0 +1,134 @@
+coherent_obis_laser:
+  class:
+    module: unilabos.devices.lasers.coherent_obis.coherent_obis_laser:CoherentOBISLaser
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                lines_expected:
+                  type: string
+        goal_default:
+          lines_expected: 1
+        handles: {}
+      auto-IsOn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IsOn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-TurnOn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TurnOn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-TurnOff:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TurnOff
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-SetPower:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetPower
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                power:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetPower:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetPower
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-Close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: CoherentOBISLaser
+  category:
+  - lasers
+  - coherent_obis
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serial_port:
+          type: string
+          default: COM8
+        turn_on:
+          type: string
+          default: false
+        name:
+          type: string
+          default: OBIS
+        init_power:
+          type: string
+          default: 5
+        reply_ok:
+          type: string
+          default: false

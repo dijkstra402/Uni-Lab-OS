@@ -1,0 +1,121 @@
+{
+  "nodes": [
+    {
+      "id": "test_coherent_sapphire_laser",
+      "name": "Test CoherentSapphireLaser",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "coherent_sapphire_laser",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "serial_port": "COM7",
+        "turn_on": false,
+        "name": "Sapphire",
+        "init_power": 5
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-check_set_power",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-query",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-Close",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "IsOn",
+      "description": "自动补充动作: IsOn",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-IsOn",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "TurnOn",
+      "description": "自动补充动作: TurnOn",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-TurnOn",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "TurnOff",
+      "description": "自动补充动作: TurnOff",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-TurnOff",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "check power output",
+      "description": "自动补充动作: check_power_output",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-check_power_output",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "SetPower",
+      "description": "自动补充动作: SetPower",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-SetPower",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "GetMAX",
+      "description": "自动补充动作: GetMAX",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-GetMAX",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "GetMIN",
+      "description": "自动补充动作: GetMIN",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-GetMIN",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "GetPower",
+      "description": "自动补充动作: GetPower",
+      "device": "test_coherent_sapphire_laser",
+      "action": "auto-GetPower",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "CoherentSapphireLaser 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "CoherentSapphireLaser",
+    "generated_by": "driver-finder"
+  }
+}

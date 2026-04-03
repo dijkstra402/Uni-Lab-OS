@@ -1,0 +1,148 @@
+ndram_dataset_java:
+  class:
+    module: unilabos.devices.ram_dataset.ram_dataset_java:NDRAMDatasetJava
+    type: python
+    status_types:
+      image_coordinates_list: String
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_available_axes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_available_axes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                image_coordinates:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_finished:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_finished
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-has_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: has_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                z:
+                  type: string
+                time:
+                  type: string
+                position:
+                  type: string
+                row:
+                  type: string
+                column:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                z:
+                  type: string
+                time:
+                  type: string
+                position:
+                  type: string
+                row:
+                  type: string
+                column:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                z:
+                  type: string
+                time:
+                  type: string
+                position:
+                  type: string
+                row:
+                  type: string
+                column:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Ndram Dataset Java是由Diamond Light Source生产的专业实验设备。A python class that wraps a Java-backend RAM data storage
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        java_RAM_data_storage:
+          type: string
+          default: null
+  name: Diamond Light Source Ndram Dataset Java
+  manufacturer: Diamond Light Source
+  icon: odin.webp
+  tags:
+  - 后处理设备
+  device_params:
+    支持操作数: '7'
+    读取操作: get_image_coordinates_list、read_image、read_metadata
+    控制能力: 位置控制、多通道

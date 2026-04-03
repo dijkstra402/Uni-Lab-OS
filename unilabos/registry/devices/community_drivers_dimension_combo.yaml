@@ -1,0 +1,251 @@
+dimension_combo:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-connectNode:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                node:
+                  type: string
+              type: object
+          title: connectNode
+          type: object
+        type: UniLabJsonCommand
+      auto-setDimensions:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                dims:
+                  type: string
+              type: object
+          title: setDimensions
+          type: object
+        type: UniLabJsonCommand
+      auto-signalDimensionSelection:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                val:
+                  type: string
+              type: object
+          title: signalDimensionSelection
+          type: object
+        type: UniLabJsonCommand
+      auto-spinValueChanged:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: spinValueChanged
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-setDefaultStyle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setDefaultStyle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-addNodeWidget:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: addNodeWidget
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                node:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-addNodeWidgetsFromFlowchart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: addNodeWidgetsFromFlowchart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fc:
+                  type: string
+                exclude:
+                  type: array
+                plotNode:
+                  type: string
+                makePlotWidget:
+                  type: string
+        goal_default:
+          exclude: ()
+          plotNode: plot
+          makePlotWidget: true
+        handles: {}
+      auto-closeEvent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: closeEvent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-loadSnapshot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadSnapshot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                snapshotDict:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-restart_widget:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restart_widget
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                widget:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getSelected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSelected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setSelected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSelected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                selected:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-emitSelection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: emitSelection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.custom.dimension_combo:DimensionCombo
+    status_types: {}
+    type: python
+  config_info: []
+  description: A Combo Box that allows selection of a single data dimension
+  handles: []
+  icon: dimension_combo.webp
+  init_param_schema:
+    config:
+      properties:
+        dimensionType:
+          default: axes
+          type: string
+        parent:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: dimension_combo.webp
+  device_params:
+    功能: 参数配置、图像采集、数据采集、流体控制
+    可控参数: dims、event、exclude、makePlotWidget、node、plotNode、selected、snapshotDict
+    操作数: 13
+  manufacturer: Open Source
+  model:
+    name: Generic Dimension Combo
+    type: device
+  name: Dimension Combo 实验设备
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

@@ -1,0 +1,146 @@
+timepix4_controller:
+  class:
+    module: unilabos.devices.detector.timepix4.timepix4_controller:Timepix4Controller
+    type: python
+    status_types:
+      deviceCount: String
+      localTemperature: String
+      remoteTemperature: String
+      fpgaTemperature: String
+      humidity: String
+      pressure: String
+      chipboardFanSpeed: String
+      boardFanSpeed: String
+    action_value_mappings:
+      auto-setBiasSupplyEnable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setBiasSupplyEnable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-prepare:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-resetTimers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resetTimers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-restartTimers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restartTimers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-openShutter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: openShutter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-closeShutter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: closeShutter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setShutterTriggerConfig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setShutterTriggerConfig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                length_us:
+                  type: string
+                freq_hz:
+                  type: string
+                count:
+                  type: string
+                delay_ns:
+                  type: string
+        goal_default:
+          delay_ns: 0
+        handles: {}
+  description: Auto-imported from pymepix/TPX4/tpx4controller.py
+  category:
+  - detector
+  - timepix4
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        dst_ip_port:
+          type: string
+          default: null
+        pc_ip:
+          type: string
+          default: null
+        udp_ip_port:
+          type: string
+          default: null
+  name: Timepix4 Controller
+  manufacturer: Medipix/Timepix (CERN)
+  cover: mfr_medipix_timepix_cern.webp
+  icon: mfr_medipix_timepix_cern.webp

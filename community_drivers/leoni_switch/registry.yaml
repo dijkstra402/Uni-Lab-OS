@@ -1,0 +1,127 @@
+leoni_switch:
+  class:
+    module: unilabos.devices.generic.leoni_switch:LeoniSwitch
+    type: python
+    status_types:
+      num_channels: String
+      active_channel: String
+      firmware_rev: String
+    action_value_mappings:
+      auto-set_active_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_active_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ping:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ping
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_num_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_num_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_active_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_active_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_firmware_rev:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_firmware_rev
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: National Instruments Leoni Switch 仪器是由National Instruments (NI)生产的多通阀，主要功能包括关闭。支持Signal, Slot, get active channel等操作。
+  category:
+  - 多通阀
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ip_addr:
+          type: string
+          default: null
+        simulation:
+          type: string
+          default: false
+  device_params:
+    品牌: National Instruments
+    功能: 参数配置、数据采集
+    可控参数: 通道
+    操作数: 6
+  manufacturer: National Instruments (NI)
+  model:
+    name: National National Instruments Leoni Switch
+    type: device
+  name: National Instruments Leoni Switch
+  tags:
+  - 多通阀
+  resource_type: device
+  icon: leoni_switch.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

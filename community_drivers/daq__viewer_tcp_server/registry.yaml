@@ -1,0 +1,236 @@
+daq__viewer_tcp_server:
+  class:
+    module: unilabos.devices.generic_tcp.daq_viewer_tcp_server:DAQ_Viewer_TCP_server
+    type: python
+    status_types:
+      xaxis: String
+      yaxis: String
+    action_value_mappings:
+      auto-command_to_from_client:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: command_to_from_client
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sock:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sock:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_ready:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_ready
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-command_done:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: command_done
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command_sock:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-commit_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: commit_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ini_detector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ini_detector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                controller:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-grab_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: grab_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Naverage:
+                  type: string
+        goal_default:
+          Naverage: 1
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_0D_Mock_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_0D_Mock_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_1D_Mock_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_1D_Mock_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_2D_Mock_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_2D_Mock_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: DAQ Viewer TCP Server是由National Instruments生产的表征设备，主要功能包括停止、关闭、初始化、扫描、状态查询、读取数据。
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        parent:
+          type: string
+          default: null
+        params_state:
+          type: string
+          default: null
+        grabber_type:
+          type: string
+          default: 2D
+  name: National Instruments DAQ Viewer Tcp
+  manufacturer: National Instruments
+  icon: digital_input_task.webp
+  tags:
+  - 表征设备
+  device_params:
+    支持操作数: '28'
+    读取操作: read_data、data_ready、get_xaxis、get_yaxis
+    控制操作: stop、commit_settings、update_settings、commit_settings、stop
+    设备属性数: '1'
+    控制能力: 多通道

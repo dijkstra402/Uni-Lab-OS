@@ -1,0 +1,71 @@
+raw2_disk:
+  class:
+    module: unilabos.devices.generic.raw2disk.raw2disk:Raw2Disk
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socket:
+                  type: string
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socket:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from pymepix/processing/rawtodisk.py
+  category:
+  - generic
+  - raw2disk
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        context:
+          type: string
+          default: null
+  name: Raw2 Disk
+  manufacturer: Open Source
+  cover: ascii_stl__writer.webp
+  icon: ascii_stl__writer.webp

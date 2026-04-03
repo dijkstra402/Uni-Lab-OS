@@ -1,0 +1,178 @@
+{
+  "nodes": [
+    {
+      "id": "test_piezo_e816_t",
+      "name": "Test piezo_e816T",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "piezo_e816_t",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "portname": "COM1",
+        "maxtravel": 12.0,
+        "Osen": "",
+        "hasTrigger": false,
+        "targetTolerance": 0.002
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_piezo_e816_t",
+      "action": "auto-ReInit",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_piezo_e816_t",
+      "action": "auto-GetControlReady",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_piezo_e816_t",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "OnTarget",
+      "description": "自动补充动作: OnTarget",
+      "device": "test_piezo_e816_t",
+      "action": "auto-OnTarget",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "GetPos",
+      "description": "自动补充动作: GetPos",
+      "device": "test_piezo_e816_t",
+      "action": "auto-GetPos",
+      "action_args": {
+        "iChannel": 0
+      }
+    },
+    {
+      "step": 6,
+      "name": "GetPosXY",
+      "description": "自动补充动作: GetPosXY",
+      "device": "test_piezo_e816_t",
+      "action": "auto-GetPosXY",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "GetTargetPos",
+      "description": "自动补充动作: GetTargetPos",
+      "device": "test_piezo_e816_t",
+      "action": "auto-GetTargetPos",
+      "action_args": {
+        "iChannel": 0
+      }
+    },
+    {
+      "step": 8,
+      "name": "MoveTo",
+      "description": "自动补充动作: MoveTo",
+      "device": "test_piezo_e816_t",
+      "action": "auto-MoveTo",
+      "action_args": {
+        "bTimeOut": true
+      }
+    },
+    {
+      "step": 9,
+      "name": "MoveRel",
+      "description": "自动补充动作: MoveRel",
+      "device": "test_piezo_e816_t",
+      "action": "auto-MoveRel",
+      "action_args": {
+        "bTimeOut": true
+      }
+    },
+    {
+      "step": 10,
+      "name": "MoveInDir",
+      "description": "自动补充动作: MoveInDir",
+      "device": "test_piezo_e816_t",
+      "action": "auto-MoveInDir",
+      "action_args": {
+        "th": 0.0
+      }
+    },
+    {
+      "step": 11,
+      "name": "SetDriftCompensation",
+      "description": "自动补充动作: SetDriftCompensation",
+      "device": "test_piezo_e816_t",
+      "action": "auto-SetDriftCompensation",
+      "action_args": {
+        "dc": true
+      }
+    },
+    {
+      "step": 12,
+      "name": "GetChannelObject",
+      "description": "自动补充动作: GetChannelObject",
+      "device": "test_piezo_e816_t",
+      "action": "auto-GetChannelObject",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "GetChannelPhase",
+      "description": "自动补充动作: GetChannelPhase",
+      "device": "test_piezo_e816_t",
+      "action": "auto-GetChannelPhase",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "GetMin",
+      "description": "自动补充动作: GetMin",
+      "device": "test_piezo_e816_t",
+      "action": "auto-GetMin",
+      "action_args": {
+        "iChan": 1
+      }
+    },
+    {
+      "step": 15,
+      "name": "GetMax",
+      "description": "自动补充动作: GetMax",
+      "device": "test_piezo_e816_t",
+      "action": "auto-GetMax",
+      "action_args": {
+        "iChan": 1
+      }
+    },
+    {
+      "step": 16,
+      "name": "GetFirmwareVersion",
+      "description": "自动补充动作: GetFirmwareVersion",
+      "device": "test_piezo_e816_t",
+      "action": "auto-GetFirmwareVersion",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "piezo_e816T 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "piezo_e816T",
+    "generated_by": "driver-finder"
+  }
+}

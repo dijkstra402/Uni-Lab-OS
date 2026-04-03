@@ -1,0 +1,76 @@
+flask_service:
+  class:
+    module: unilabos.devices.flask_service.flask_service:FlaskService
+    type: python
+    status_types:
+      app: String
+    action_value_mappings:
+      auto-register_routes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: register_routes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                route_handler:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Flask Service是一款实验执行&合成设备，主要功能包括停止、启动。支持Signal, Slot, get app等操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: 0.0.0.0
+        port:
+          type: integer
+          default: 5000
+        logger:
+          type: string
+          default: null
+  name: Manages the Flask application and HTTP server
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '4'
+    读取操作: get_app
+    控制操作: start、stop

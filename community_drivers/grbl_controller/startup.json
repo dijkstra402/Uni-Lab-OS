@@ -1,0 +1,96 @@
+{
+  "nodes": [
+    {
+      "id": "test_grbl_controller",
+      "name": "GRBL (Open Source) GRBLController 定位器",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.grbl_controller",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": null,
+        "baud_rate": 115200,
+        "debug": false
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "write",
+      "description": "write",
+      "device": "test_grbl_controller",
+      "action": "auto-write",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "send wake up",
+      "description": "send wake up",
+      "device": "test_grbl_controller",
+      "action": "auto-send_wake_up",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "send gcode command",
+      "description": "send gcode command",
+      "device": "test_grbl_controller",
+      "action": "auto-send_gcode_command",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "send gcode command inThread",
+      "description": "send gcode command inThread",
+      "device": "test_grbl_controller",
+      "action": "auto-send_gcode_command_inThread",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "wait for movement completion",
+      "description": "wait for movement completion",
+      "device": "test_grbl_controller",
+      "action": "auto-wait_for_movement_completion",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "move",
+      "description": "move",
+      "device": "test_grbl_controller",
+      "action": "auto-move",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "home",
+      "description": "home",
+      "device": "test_grbl_controller",
+      "action": "auto-home",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "close",
+      "description": "close",
+      "device": "test_grbl_controller",
+      "action": "auto-close",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "grbl_controller 工作流",
+    "description": "grbl_controller 自动生成工作流",
+    "instrument": "grbl_controller",
+    "generated_by": "driver-finder"
+  }
+}

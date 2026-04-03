@@ -1,0 +1,114 @@
+tc038_d:
+  category:
+  - 冷热水机
+  class:
+    action_value_mappings:
+      auto-readRegister:
+        feedback: {}
+        goal: {}
+        goal_default:
+          count: 1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+              type: object
+          title: readRegister
+          type: object
+        type: UniLabJsonCommand
+      auto-setpoint:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                value:
+                  type: string
+              type: object
+          title: setpoint
+          type: object
+        type: UniLabJsonCommand
+      auto-writeMultiple:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                values:
+                  type: string
+              type: object
+          title: writeMultiple
+          type: object
+        type: UniLabJsonCommand
+      auto-CRC16:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: CRC16
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.temperature_controller.tc038d:TC038D
+    status_types:
+      setpoint: String
+      temperature: String
+    type: python
+  config_info: []
+  description: TC038D Temperature Controller驱动，支持readRegister/setpoint/writeMultiple/CRC16/temperature。
+  handles: []
+  icon: tc038_d.webp
+  init_param_schema: {}
+  version: 1.0.0
+  cover: tc038_d.webp
+  device_params:
+    温度范围: -20~200 ℃
+设备类型: 冷热水机/循环浴
+    温度范围: -20~200 ℃
+  manufacturer: Generic
+  model:
+    name: Generic TC038D Temperature Controller 温度控制器
+    type: device
+  name: TC038D Temperature Controller 温控设备
+  tags:
+  - 冷热水机
+  resource_type: device
+  scene:
+    domain: Physics
+    scene_name: Temperature Control
+    step: Cooling/Heating

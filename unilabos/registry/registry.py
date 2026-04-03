@@ -1518,8 +1518,6 @@ class Registry:
                 resource_info["version"] = "1.0.0"
             if "category" not in resource_info:
                 resource_info["category"] = [file.stem]
-            elif file.stem not in resource_info["category"]:
-                resource_info["category"].append(file.stem)
             elif not isinstance(resource_info.get("category"), list):
                 resource_info["category"] = [resource_info["category"]]
             if "config_info" not in resource_info:
@@ -1698,8 +1696,6 @@ class Registry:
                 device_config["version"] = "1.0.0"
             if "category" not in device_config:
                 device_config["category"] = [file.stem]
-            elif file.stem not in device_config["category"]:
-                device_config["category"].append(file.stem)
             if "config_info" not in device_config:
                 device_config["config_info"] = []
             if "description" not in device_config:

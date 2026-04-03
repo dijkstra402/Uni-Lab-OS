@@ -1,0 +1,96 @@
+{
+  "nodes": [
+    {
+      "id": "test_websocket_communicator",
+      "name": "Test WebsocketCommunicator",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "websocket_communicator",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "uri": "ws://127.0.0.1:25010"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_websocket_communicator",
+      "action": "auto-open",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_websocket_communicator",
+      "action": "auto-request_with_response",
+      "action_args": {
+        "timeout": 5
+      }
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_websocket_communicator",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "send",
+      "description": "自动补充动作: send",
+      "device": "test_websocket_communicator",
+      "action": "auto-send",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "opened",
+      "description": "自动补充动作: opened",
+      "device": "test_websocket_communicator",
+      "action": "auto-opened",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "response",
+      "description": "自动补充动作: response",
+      "device": "test_websocket_communicator",
+      "action": "auto-response",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "binary response",
+      "description": "自动补充动作: binary_response",
+      "device": "test_websocket_communicator",
+      "action": "auto-binary_response",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "register binary message callback",
+      "description": "自动补充动作: register_binary_message_callback",
+      "device": "test_websocket_communicator",
+      "action": "auto-register_binary_message_callback",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "WebsocketCommunicator 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "WebsocketCommunicator",
+    "generated_by": "driver-finder"
+  }
+}

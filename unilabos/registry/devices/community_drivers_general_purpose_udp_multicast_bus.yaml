@@ -1,0 +1,92 @@
+general_purpose_udp_multicast_bus:
+  class:
+    module: unilabos.devices.misc.general_purpose.general_purpose_udp_multicast_bus:GeneralPurposeUdpMulticastBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-recv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: recv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fileno:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileno
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Auto-imported from can/interfaces/udp_multicast/bus.py
+  category:
+  - misc
+  - general_purpose
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        group:
+          type: string
+          default: null
+        port:
+          type: integer
+          default: null
+        hop_limit:
+          type: integer
+          default: null
+        max_buffer:
+          type: integer
+          default: 4096
+  name: General Purpose UDP Multicast BUS
+  manufacturer: Open Standard
+  cover: aio_serial.webp
+  icon: aio_serial.webp

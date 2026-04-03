@@ -1,0 +1,323 @@
+grblboard:
+  class:
+    module: unilabos.devices.generic.grbl_board:grblboard
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initserial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initserial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-zero_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: zero_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-auto_detect_serial_unix:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_detect_serial_unix
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                preferred_list:
+                  type: string
+        goal_default:
+          preferred_list:
+          - '*'
+        handles: {}
+      auto-setideltime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setideltime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setspeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setspeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setaccellaration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setaccellaration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setphysicalcoords:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setphysicalcoords
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-resethome:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resethome
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getcurrentpos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getcurrentpos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sendgrbl:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendgrbl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: '?'
+        handles: {}
+      auto-move_rel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_rel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position:
+          - 0
+          - 0
+          - 0
+        handles: {}
+      auto-move_abs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_abs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position:
+          - 0
+          - 0
+          - 0
+        handles: {}
+      auto-set_units:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                is_metric:
+                  type: string
+        goal_default:
+          is_metric: true
+        handles: {}
+      auto-go_to:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: go_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos_x:
+                  type: string
+                pos_y:
+                  type: string
+                pos_z:
+                  type: string
+                mode:
+                  type: string
+        goal_default:
+          pos_x: 0
+          pos_y: 0
+          pos_z: 0
+          mode: abs
+        handles: {}
+      auto-set_laser_intensity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_intensity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                intensity:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_led:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_led
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: 1
+        handles: {}
+  description: GRBL Controller Board驱动（Open Source (GRBL)），支持close/initserial/zero
+    position/auto detect serial unix/setideltime等17个操作。
+  category:
+  - 物流/机械
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serialport:
+          type: string
+          default: /dev/ttyUSB0
+        currentposition:
+          type: string
+          default:
+          - 0
+          - 0
+          - 0
+        backlash:
+          type: string
+          default: 0
+  cover: grblboard.webp
+  device_params:
+    品牌: Open Source
+    功能: 参数配置、数据采集、电学测量、运动控制
+    可控参数: cmd、intensity、is_metric、工作模式、pos_x、pos_y、pos_z、位置
+    操作数: 17
+  manufacturer: Open Source (GRBL)
+  model:
+    name: Open GRBL Controller Board 控制器
+    type: device
+  name: GRBL Controller Board 自动化设备
+  tags:
+  - 物流/机械
+  resource_type: device
+  icon: grblboard.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

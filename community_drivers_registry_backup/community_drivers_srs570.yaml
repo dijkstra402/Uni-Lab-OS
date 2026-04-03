@@ -1,0 +1,126 @@
+srs570:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bias:
+                  type: string
+                gain_mode:
+                  type: string
+                filter_type:
+                  type: string
+                invert:
+                  type: string
+        goal_default:
+          bias: 0
+          gain_mode: 0
+          filter_type: 0
+          invert: false
+        handles: {}
+      auto-set_sensitivity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_sensitivity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                units:
+                  type: string
+                offset:
+                  type: string
+                scale_offset:
+                  type: string
+        goal_default:
+          scale_offset: true
+        handles: {}
+      auto-set_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-increase_sensitivity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: increase_sensitivity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-decrease_sensitivity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: decrease_sensitivity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.current_amplifier.srs570:SRS570
+    status_types: {}
+    type: python
+  config_info: []
+  description: Stanford Research Systems Srs570驱动（Stanford Research Systems），支持initialize/set
+    sensitivity/set offset/increase sensitivity/decrease sensitivity。
+  handles: []
+  icon: srs570.webp
+  init_param_schema: {}
+  version: 1.0.0
+  cover: srs570.webp
+  device_params:
+    品牌: Stanford Research Systems
+    功能: 参数配置
+    可控参数: bias、filter_type、gain_mode、invert、偏移、scale_offset、units、value
+    操作数: 5
+  manufacturer: Stanford Research Systems
+  model:
+    name: Stanford Research Systems Srs570 系统 分析仪器 透射电子显微镜
+    type: device
+  name: Stanford Research Systems Srs570 系统 分析仪器 透射电子显微镜
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

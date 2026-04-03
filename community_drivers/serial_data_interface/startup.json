@@ -1,0 +1,46 @@
+{
+  "nodes": [
+    {
+      "id": "test_serial_data_interface",
+      "name": "Test SerialDataInterface",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "serial_data_interface",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "serialName": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_serial_data_interface",
+      "action": "auto-readBytes",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "availableBytes",
+      "description": "自动补充动作: availableBytes",
+      "device": "test_serial_data_interface",
+      "action": "auto-availableBytes",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "SerialDataInterface 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "SerialDataInterface",
+    "generated_by": "driver-finder"
+  }
+}

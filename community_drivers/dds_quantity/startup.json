@@ -1,0 +1,93 @@
+{
+  "nodes": [
+    {
+      "id": "test_dds_quantity",
+      "name": "DDS Frequency/Phase/Amplitude",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "dds_quantity",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "name": "",
+        "parent_device": "",
+        "connection": "",
+        "digital_gate": "",
+        "freq_limits": "",
+        "freq_conv_class": "",
+        "freq_conv_params": "",
+        "amp_limits": "",
+        "amp_conv_class": "",
+        "amp_conv_params": "",
+        "phase_limits": "",
+        "phase_conv_class": "",
+        "phase_conv_params": "",
+        "call_parents_add_device": true
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_dds_quantity",
+      "action": "auto-enable",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_dds_quantity",
+      "action": "auto-disable",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "setamp",
+      "description": "自动补充动作: setamp",
+      "device": "test_dds_quantity",
+      "action": "auto-setamp",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "setfreq",
+      "description": "自动补充动作: setfreq",
+      "device": "test_dds_quantity",
+      "action": "auto-setfreq",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "setphase",
+      "description": "自动补充动作: setphase",
+      "device": "test_dds_quantity",
+      "action": "auto-setphase",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "pulse",
+      "description": "自动补充动作: pulse",
+      "device": "test_dds_quantity",
+      "action": "auto-pulse",
+      "action_args": {
+        "print_summary": false
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "DDSQuantity 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "DDSQuantity",
+    "generated_by": "driver-finder"
+  }
+}

@@ -1,0 +1,204 @@
+pv_positioner:
+  category:
+  - 物流/机械
+  class:
+    action_value_mappings:
+      auto-check_value:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                pos:
+                  type: string
+              type: object
+          title: check_value
+          type: object
+        type: UniLabJsonCommand
+      auto-move:
+        feedback: {}
+        goal: {}
+        goal_default:
+          wait: true
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                moved_cb:
+                  type: string
+                position:
+                  type: string
+                timeout:
+                  type: string
+                wait:
+                  type: string
+              type: object
+          title: move
+          type: object
+        type: UniLabJsonCommand
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default:
+          success: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                success:
+                  type: string
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommand
+      auto-egu:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: egu
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-put_complete:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: put_complete
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-moving:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: moving
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-report:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: report
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-done_comparator:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: done_comparator
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                readback:
+                  type: string
+                setpoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.positioner.pv_positioner:PVPositioner
+    status_types:
+      egu: String
+      limits: String
+      moving: String
+      put_complete: String
+      report: String
+    type: python
+  config_info: []
+  description: Pv Positioner驱动，支持check value/move/stop/egu/put complete等9个操作。
+  handles: []
+  icon: pv_positioner.webp
+  init_param_schema:
+    config:
+      properties:
+        configuration_attrs:
+          default: null
+          type: string
+        egu:
+          default: ''
+          type: string
+        limits:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        parent:
+          default: null
+          type: string
+        prefix:
+          default: ''
+          type: string
+        read_attrs:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  cover: pv_positioner.webp
+  device_params:
+    功能: 运动控制
+    可控参数: moved_cb、pos、位置、readback、设定值、success、timeout、wait
+    操作数: 9
+  manufacturer: EPICS (Argonne National Lab)
+  model:
+    name: Generic Pv Positioner
+    type: device
+  name: Pv Positioner 自动化设备
+  tags:
+  - 物流/机械
+  resource_type: device
+  scene:
+    domain: Automation
+    scene_name: Motion Control
+    step: Positioning

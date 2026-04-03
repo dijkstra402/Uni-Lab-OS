@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "test_stream",
+      "name": "Test Stream",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "stream",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "server_address": "",
+        "server_port": "",
+        "dir_manager": "",
+        "filter": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_stream",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "finalize",
+      "description": "自动补充动作: finalize",
+      "device": "test_stream",
+      "action": "auto-finalize",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "put",
+      "description": "自动补充动作: put",
+      "device": "test_stream",
+      "action": "auto-put",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Stream 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Stream",
+    "generated_by": "driver-finder"
+  }
+}

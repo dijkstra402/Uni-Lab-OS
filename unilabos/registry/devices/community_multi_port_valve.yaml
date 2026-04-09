@@ -1,0 +1,1667 @@
+community_hp3488_a:
+  class:
+    module: community_drivers.hp3488_a.driver:Switch
+    type: python
+    status_types:
+      switchpath: str
+    action_value_mappings:
+      auto-load_switchpath:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_switchpath
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                switchpaths:
+                  type: string
+        goal_default:
+          switchpaths: null
+        handles: {}
+  name: 3488A Switch/Control Unit Operating, Programming, and Configuration Manual
+  description: 零件号：03488-90003（95 年 9 月）。 3488A 已停产；本手册仅供参考。
+  manufacturer: Hewlett-Packard (Keysight)
+  icon: hp3488_a.webp
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  device_params:
+    Slots: 5 plug-in modules
+    Interface: HP-IB(GPIB)
+    Config Storage: 40 groups
+    Scan Rate: '>43ch/s'
+    Modules: 44470A(10ch MUX), 44471A(10ch relay), 44472A(dual 4ch VHF), 44473A(4x4
+      matrix), 44474A(16-bit DIO), 44476A(microwave DC-18GHz)
+    品牌: Hewlett-Packard (Keysight)
+  model:
+    name: 3488A Switch/Control Unit Operating, Programming, and Configuration Manual
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+community_i7540d:
+  class:
+    module: community_drivers.i7540d.driver:I7540d
+    type: python
+    status_types:
+      host: str
+      timeout: str
+      connected: str
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reinitialize:
+                  type: boolean
+                  default: false
+        goal_default:
+          reinitialize: false
+        handles: {}
+      auto-reboot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reboot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_can_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_can_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_can_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_can_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                can_config:
+                  type: string
+        goal_default:
+          can_config: null
+        handles: {}
+      auto-standard_dataframe_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: standard_dataframe_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: integer
+                data:
+                  type: string
+        goal_default:
+          identifier: null
+          data: null
+        handles: {}
+      auto-standard_dataframe_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: standard_dataframe_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: integer
+                data:
+                  type: string
+        goal_default:
+          identifier: null
+          data: null
+        handles: {}
+  name: I-7540D
+  description: I-7540D | CAN以太网网关使CAN网络能够与互联网/以太网集成。支持 -25 至 75°C 的工作温度。
+  manufacturer: ICP DAS
+  icon: i7540d.webp
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  device_params:
+    Ethernet port: 10/100 Base-T
+    CAN Signal Support: CAN_H, CAN_L
+    Power Consumption: 3W
+    Reauired Supply Voltage: +10 ~ +30VDC
+    品牌: ICP DAS
+  model:
+    name: I-7540D
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: number
+community_keithley79996:
+  class:
+    module: community_drivers.keithley79996.driver:Keithley79996
+    type: python
+    status_types: {}
+    action_value_mappings:
+      query:
+        action_name: query
+  name: Keithley Instruments & Products
+  description: 使用 Keithley 4200A-SCS 半导体参数分析仪加速研究和故障分析。集成 I-V、C-V 和脉冲 I-V，设置速度加快 50%。
+  manufacturer: Keithley (Tektronix)
+  icon: keithley79996.webp
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  device_params:
+    Freq: DC~4GHz
+    Matrix: 4x4 or 6x6 blocking
+    Insertion Loss: 0.3dB+0.115×f(GHz)
+    Isolation: '>100dB (typ 130dB)'
+    SWR: ≤1.2
+    Actuation: 15ms
+    Life: ≥5M cycles
+    Connectors: SMA/N-type
+    Interface: GPIB(SCPI)
+    品牌: Keithley (Tektronix)
+  model:
+    name: Keithley Instruments & Products
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+community_lcc25:
+  class:
+    module: community_drivers.lcc25.driver:LCC25
+    type: python
+    status_types:
+      name: str
+    action_value_mappings:
+      auto-default:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: default
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slot:
+                  type: string
+        goal_default:
+          slot: null
+        handles: {}
+      auto-get_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slot:
+                  type: string
+        goal_default:
+          slot: null
+        handles: {}
+      auto-test_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: test_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: LCC25DiscontinuedSingle Channel Liquid Crystal Voltage Controller, 0 - 25
+    V RMS, Square Wave, 50% Duty Cycle
+  description: Thorlabs LCC25液晶控制器，提供0-25V可调交流方波输出驱动液晶延迟器，支持USB计算机控制和外部调制，用于偏振控制和光学相位调制。
+  manufacturer: Thorlabs
+  icon: lcc25.webp
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  device_params:
+    输出电压: 0-25V(交流方波)
+    输出频率: 500Hz-2kHz可调
+    电压分辨率: ~1mV
+    输出波形: 方波(防直流损伤液晶)
+    调制: BNC外部调制输入
+    模式: 电压/调制模式
+    显示: LCD
+    输出接口: BNC
+    通信: USB
+    兼容: Thorlabs LCR系列液晶可变延迟器
+    品牌: Thorlabs
+  model:
+    name: LCC25DiscontinuedSingle Channel Liquid Crystal Voltage Controller, 0 - 25
+      V RMS, Square Wave, 50% Duty Cycle
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+community_sc10:
+  class:
+    module: community_drivers.sc10.driver:SC10
+    type: python
+    status_types:
+      name: str
+      enable: str
+      baud_rate: str
+    action_value_mappings:
+      auto-default:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: default
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-restore:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restore
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Thorlabs SC10 Optical Beam Shutter Controller
+  description: 台式光学快门控制器，支持RS-232远程控制和BNC外部触发，兼容SH05/SH1快门。在售。
+  manufacturer: Thorlabs
+  icon: sc10.webp
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  device_params:
+    Compatible Shutters: SH05/SH1
+    Timing Resolution: 0.001s
+    Timing Accuracy: 0.0002s
+    Min Exposure: 10ms
+    Max Rate: 25Hz
+    Output: 24V pulse(10V hold)
+    Max Power: 5W
+    Interface: RS-232
+    Trigger: BNC 5V TTL
+    Modes: continuous/single/repeat(1-99)
+    品牌: Thorlabs
+  model:
+    name: Thorlabs SC10 Optical Beam Shutter Controller
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+community_thorlabs_dc4100:
+  class:
+    module: community_drivers.thorlabs_dc4100.driver:ThorlabsDC4100
+    type: python
+    status_types:
+      serial_number: str
+      firmware: str
+      manufacturer: str
+    action_value_mappings:
+      auto-connect_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_led_channel_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_led_channel_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                state:
+                  type: string
+        goal_default:
+          channel: null
+          state: null
+        handles: {}
+      auto-led_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: led_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-led_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: led_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-set_brightness:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_brightness
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                brightness:
+                  type: string
+        goal_default:
+          channel: null
+          brightness: null
+        handles: {}
+      auto-get_brightness:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_brightness
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-check_if_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_if_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+  name: DC41004-Channel LED Driver, 1 Modulation Input, 1 A, 5 V
+  description: 4通道LED控制器，可独立调节各通道电流(0-1000mA)，支持外部信号调制，适用于显微镜等多色LED光源
+  manufacturer: Thorlabs
+  icon: thorlabs_dc4100.webp
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  device_params:
+    通道: 4通道
+    最大电流: 1A/通道
+    顺从电压: 5V
+    工作模式: 恒流/亮度/外部控制
+    外部调制: BNC端口(0-10V)
+    接口: USB2.0
+    品牌: Thorlabs
+  model:
+    name: DC41004-Channel LED Driver, 1 Modulation Input, 1 A, 5 V
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+        baudrate:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string
+community_thorlabs_fw102_c:
+  class:
+    module: community_drivers.thorlabs_fw102_c.driver:ThorlabsFilterWheel
+    type: python
+    status_types: {}
+    action_value_mappings:
+      initialize:
+        action_name: initialize
+  name: FW102CSix-Position Motorized Filter Wheel for Ø1" (Ø25 mm) Optics
+  description: 6位电动滤光片轮，适用于Ø1英寸光学滤光片，支持USB/串口/TTL远程控制和可编程滤光片序列
+  manufacturer: Thorlabs
+  icon: thorlabs_fw102_c.webp
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  device_params:
+    滤光片位数: 6位
+    滤光片尺寸: Ø1英寸(25mm)
+    最大厚度: 6.35mm
+    切换时间: 900ms(典型)
+    精度: '>±1°'
+    安装: SM1螺纹
+    控制: USB2.0/RS232/TTL(BNC)
+    品牌: Thorlabs
+  model:
+    name: FW102CSix-Position Motorized Filter Wheel for Ø1" (Ø25 mm) Optics
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        com:
+          default: null
+          type: string
+        baud:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string
+community_thorlabs_fw212_c:
+  class:
+    module: community_drivers.thorlabs_fw212_c.driver:ThorlabsFilterWheel
+    type: python
+    status_types: {}
+    action_value_mappings:
+      initialize:
+        action_name: initialize
+  name: FW212CTwelve-Position Motorized Filter Wheel for Ø1/2" (Ø12.5 mm) Optics
+  description: 12位电动滤光片轮，适用于Ø1/2英寸光学滤光片，兼容30mm笼式系统，支持可编程滤光片序列
+  manufacturer: Thorlabs
+  icon: thorlabs_fw212_c.webp
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  device_params:
+    滤光片位数: 12位
+    滤光片尺寸: Ø1/2英寸(12.5mm)
+    精度: '>±1°'
+    安装: SM1/SM05螺纹(含4个SM1A6FW转接器)
+    控制: USB2.0/RS232/TTL(BNC)
+    品牌: Thorlabs
+  model:
+    name: FW212CTwelve-Position Motorized Filter Wheel for Ø1/2" (Ø12.5 mm) Optics
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        com:
+          default: null
+          type: string
+        baud:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string
+community_gh_idex_rheodyne_mx_series_ii:
+  class:
+    module: community_drivers.gh_idex_rheodyne_mx_series_ii.driver:MX_valve
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-stripped_hex:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stripped_hex
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target:
+                  type: string
+        goal_default:
+          target: null
+        handles: {}
+      auto-wait_ready:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_ready
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-message_builder:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: message_builder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                objective:
+                  type: string
+                port:
+                  type: integer
+                  default: 1
+        goal_default:
+          objective: null
+          port: 1
+        handles: {}
+      auto-read_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default:
+          message: null
+        handles: {}
+      auto-response_interpret:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: response_interpret
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                response:
+                  type: string
+        goal_default:
+          response: null
+        handles: {}
+      auto-get_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-change_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+        goal_default:
+          port: null
+        handles: {}
+    source: https://github.com/linnarsson-lab/MXII-valve
+  name: Rheodyne MX II Stand-Alone Valves
+  description: 自动切换和进样阀 ✓ 采用 Rapid Replacement Pods™ 时压力高达 15,000 psi ✓ 串行、USB 和触点闭合控制
+    ☞ 查看阀门
+  manufacturer: IDEX (Rheodyne)
+  icon: banner-background-blue.png
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  device_params:
+    参数: Multi-layer Manifolds
+    品牌: IDEX (Rheodyne)
+  model:
+    name: Rheodyne MX II Stand-Alone Valves
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          default: null
+          type: string
+        ports:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        verbose:
+          default: null
+          type: string
+        baudrate:
+          default: null
+          type: string
+community_gh_hamilton_mvp:
+  class:
+    module: community_drivers.gh_hamilton_mvp.driver:MVPvalve
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-run_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve:
+                  type: string
+        goal_default:
+          valve: null
+        handles: {}
+      auto-valve_input:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: valve_input
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: null
+        handles: {}
+      auto-valve_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: valve_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: null
+        handles: {}
+      auto-valve_bypass:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: valve_bypass
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-valve_extra:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: valve_extra
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-insert_loop_start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: insert_loop_start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-insert_loop_end:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: insert_loop_end
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                repetitions:
+                  type: string
+        goal_default:
+          repetitions: null
+        handles: {}
+      auto-delay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                delay:
+                  type: string
+        goal_default:
+          delay: null
+        handles: {}
+      auto-halt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: halt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                halt_command:
+                  type: string
+        goal_default:
+          halt_command: null
+        handles: {}
+      auto-terminate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: terminate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_command_buffer_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_command_buffer_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_firmware_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_aux1_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_aux1_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_aux2_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_aux2_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/fuzikt/psd_mvp_control
+  name: MVP Valve Positioner
+  description: Hamilton MVP/4是电动多位置阀门定位器，支持3-8端口配置，RS-232控制，干燥部件采用PTFE和PEEK材料。
+  manufacturer: Hamilton
+  icon: glucosense-sensor-instaled.jpg
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  device_params:
+    Type: Modular Valve Positioner
+    Positions: 3-8 port
+    Communication: RS-232
+    Daisy-Chain: Multiple units
+    Materials: PTFE, PEEK
+    Actuation: Motorized
+    品牌: Hamilton
+  model:
+    name: MVP Valve Positioner
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        hw_type:
+          default: null
+          type: string
+        hw_address:
+          default: null
+          type: string
+        com_port:
+          default: null
+          type: string
+community_494:
+  class:
+    module: community_drivers.494.driver:DeviceDriver
+    type: python
+  name: S46 RF/微波开关系统
+  description: Keithley S46是一款紧凑型RF/微波开关系统，可在仅2U高的全机架外壳中控制32路继电器触点。频率范围最高可达40GHz，提供DC至26.5GHz和DC至40GHz两种频率选项。内置触点闭合计数器监控开关寿命，支持S参数或校准常数的通道特性数据存储。通过GPIB接口以最少指令集快速控制，可随测试需求变化灵活添加继电器。该产品已停产，无直接替代型号。
+  manufacturer: Keithley
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: S46 RF/微波开关系统
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_302:
+  class:
+    module: community_drivers.302.driver:DeviceDriver
+    type: python
+  name: MBRAUN SCU101 手套箱系统控制器
+  description: MBRAUN SCU101是MBRAUN手套箱系统的控制单元，负责管理和监控手套箱内的惰性气体环境。控制单元可实时显示和控制O₂和H₂O浓度（维持<1ppm水平）、箱内压力调节以及气体净化系统状态。配备触摸屏界面，支持净化器自动再生循环控制、数据记录和报警功能，适用于MBRAUN
+    LABstar、UNIlab等系列手套箱工作站。
+  manufacturer: MBRAUN
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: MBRAUN SCU101 手套箱系统控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_305:
+  class:
+    module: community_drivers.305.driver:DeviceDriver
+    type: python
+  name: Keithley 707A 半导体开关矩阵主机
+  description: Keithley 707A是一款六卡槽半导体开关矩阵主机，专为需要复杂信号路由的自动化测试系统设计。支持高达7680个交叉点，兼容多种Keithley
+    7000系列开关卡，提供低漏电信号通路和高隔离度，适合低电流和高阻抗测量。通过GPIB接口实现远程控制和自动化，广泛应用于半导体测试、器件特性表征和自动化测试系统。
+  manufacturer: Keithley
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Keithley 707A 半导体开关矩阵主机
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_306:
+  class:
+    module: community_drivers.306.driver:DeviceDriver
+    type: python
+  name: Keithley 707B 半导体开关矩阵主机
+  description: Keithley 707B是六卡槽半导体开关矩阵主机，为707A的升级型号。内置计算机处理能力，可执行存储的TSP脚本指令、进行计算并生成数字触发信号，响应时间达微秒级。配备10/100M以太网连接和内置Web控制页面，可通过标准Web浏览器访问。与Keithley
+    Series 2600B SMU无缝配合，支持Keithley自动化表征套件(ACS)和Python脚本。
+  manufacturer: Keithley
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Keithley 707B 半导体开关矩阵主机
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_307:
+  class:
+    module: community_drivers.307.driver:DeviceDriver
+    type: python
+  name: Keysight 34980A 多功能开关/测量单元
+  description: Keysight 34980A是一款8卡槽模块化多功能开关/测量主机，内置可选6.5位数字万用表，支持21种插件模块实现开关(至50GHz)、数字I/O、D/A转换和计数器/累加器功能。提供最多560路2线复用通道或2048个矩阵交叉点，扫描速率可达每秒1000通道。内置Web界面便于远程访问，支持LAN(LXI)、USB和GPIB连接，价格远低于同类VXI或PXI模块化方案。
+  manufacturer: Keysight
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Keysight 34980A 多功能开关/测量单元
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_308:
+  class:
+    module: community_drivers.308.driver:DeviceDriver
+    type: python
+  name: Keysight B2200A 飞安级低漏电开关主机
+  description: Keysight B2200A是一款飞安(fA)级低漏电开关主机，专为半导体参数特性测试设计。具备100TΩ超高隔离电阻和1fA最小电流测量分辨率，确保自动化表征测试不影响半导体参数分析仪的测量性能。配备明亮的继电器状态显示、前面板键盘和可选光笔控制，集成电容补偿功能优化C-V测量，支持Keysight
+    EasyEXPERT软件进行GUI自动化。
+  manufacturer: Keysight
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Keysight B2200A 飞安级低漏电开关主机
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_309:
+  class:
+    module: community_drivers.309.driver:DeviceDriver
+    type: python
+  name: Keysight E5250A 低漏电开关主机
+  description: Keysight E5250A是低漏电开关主机，可将B1500A、4155C或4156C等单一测量站扩展为自动化测量系统。插件模块可配置为交叉点矩阵（用于通用参数测量）或多路复用器（用于长期可靠性测量）。支持E5252A矩阵卡（10输入×48输出，含Kelvin开关）和E5255A多路复用卡（最多96输出），多主机级联可达384通道。
+  manufacturer: Keysight
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Keysight E5250A 低漏电开关主机
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_105:
+  class:
+    module: community_drivers.105.driver:DeviceDriver
+    type: python
+  name: VICI Valco Cheminert E90电动执行器(配2位阀)
+  description: VICI Valco E90是用于驱动90°两位阀的标准电动执行器(E30/E36/E45/E60/E90对应30°/36°/45°/60°/90°阀),可改装到现有气动或手动阀,与所有Valco和Cheminert两位近装和支架组装硬件兼容,独立供电无需色谱仪电源。注:如需多位选择阀,应使用E4/E6/E8/E10/E12/E16多位执行器(4秒完成360°)
+  manufacturer: VICI Valco
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: VICI Valco Cheminert E90电动执行器(配2位阀)
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 90°两位标准电动执行器
+    阀兼容: 3或4端口90°阀
+    切换速度: 0.56秒(A位到B位)
+    电源: 110VAC/220VAC/24VDC可选
+    系统组件: 电机组件+控制盒(LED显示)+接口电缆
+    品牌: VICI Valco
+community_527:
+  class:
+    module: community_drivers.527.driver:DeviceDriver
+    type: python
+  name: Mini-Circuits RC-SP4T 射频开关矩阵
+  description: Mini-Circuits RC-SP4T系列是USB和以太网控制的SP4T射频开关矩阵，采用吸收式电磁机械开关设计，频率覆盖DC至18
+    GHz。开关采用先断后通(break-before-make)配置，切换时间25 ms典型值，插入损耗0.2 dB典型，隔离度85 dB典型。紧凑金属外壳设计，配备SMA连接器、USB
+    Type-B端口和RJ45网络接口，支持Windows/Mac/Linux系统控制，适用于自动化测试系统中的射频信号路由。
+  manufacturer: Mini-Circuits
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Mini-Circuits RC-SP4T 射频开关矩阵
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    开关类型: SP4T吸收式机械开关
+    频率范围: DC - 18 GHz
+    阻抗: 50Ω
+    隔离度: 85 dB典型
+    功率容量: 20W(冷切换)
+    可靠性: 1000万次切换
+    连接器: SMA
+    控制方式: USB/以太网
+    品牌: Mini-Circuits
+community_528:
+  class:
+    module: community_drivers.528.driver:DeviceDriver
+    type: python
+  name: Mini-Circuits RC-SPDT 射频开关
+  description: Mini-Circuits RC-SPDT是USB和以太网控制的单刀双掷(SPDT)射频机械开关，采用吸收式设计，频率覆盖DC至18
+    GHz。该开关具有高功率处理能力达40W（冷切换），隔离度85 dB典型值，可靠性达500万次切换循环。紧凑金属外壳，配备SMA连接器，支持通过USB或以太网从PC或远程网络进行控制，适用于测试测量系统、信号路由和射频通信等应用。
+  manufacturer: Mini-Circuits
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Mini-Circuits RC-SPDT 射频开关
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    开关类型: SPDT吸收式机械开关
+    频率范围: DC - 18 GHz
+    阻抗: 50Ω
+    隔离度: 85 dB典型
+    功率容量: 40W(冷切换)
+    可靠性: 500万次切换
+    连接器: SMA
+    控制方式: USB/以太网
+    品牌: Mini-Circuits
+community_530:
+  class:
+    module: community_drivers.530.driver:DeviceDriver
+    type: python
+  name: Mini-Circuits USB-SPDT 射频开关
+  description: Mini-Circuits USB-SPDT是一款USB控制的单刀双掷(SPDT)射频开关，频率覆盖DC至18 GHz，阻抗50Ω。该开关通过USB接口即插即用，无需外部电源供电，操作简便。配备SMA连接器，隔离度50-80
+    dB，切换速度约25 ms。附带Mini-Circuits GUI控制软件，支持通过DLL/API进行编程控制，兼容LabVIEW、MATLAB、Python等开发环境，适用于实验室和生产线自动化测试系统中的射频信号切换。
+  manufacturer: Mini-Circuits
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Mini-Circuits USB-SPDT 射频开关
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    开关类型: SPDT吸收式
+    频率范围: DC - 18 GHz
+    阻抗: 50Ω
+    隔离度: 50-80 dB
+    切换速度: ~25 ms
+    连接器: SMA
+    控制方式: USB
+    供电: USB供电（无需外部电源）
+    品牌: Mini-Circuits
+community_506:
+  class:
+    module: community_drivers.506.driver:DeviceDriver
+    type: python
+  name: Keysight 34934A四路4x32簧片矩阵开关模块
+  description: Keysight 34934A是一款高密度矩阵开关模块，专为34980A多功能开关/测量单元设计。该模块提供512个交叉点，支持灵活的1线或2线配置，可在被测设备与测试仪器之间建立多路径连接。采用高速簧片继电器，支持100V电压和0.5A电流。通过行扩展套件，可在单个主机中扩展至4096个交叉点。独特的行断开功能有效降低多模块连接时的附加电容影响，配备继电器循环计数器便于维护管理。
+  manufacturer: Keysight
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Keysight 34934A四路4x32簧片矩阵开关模块
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    交叉点数: '512'
+    最大电压: 100 V
+    最大电流: 0.5 A
+    切换速度: 500 ch/s
+    配置: 1线(4x128/8x64/16x32)或2线(4x64/8x32)
+    继电器类型: 簧片继电器
+    兼容主机: 34980A
+    品牌: Keysight
+community_507:
+  class:
+    module: community_drivers.507.driver:DeviceDriver
+    type: python
+  name: Keysight B2201A低漏电开关矩阵主机
+  description: Keysight B2201A低漏电开关矩阵主机是一款专为半导体器件特性测试自动化设计的高性能开关系统。支持四通道SMU全开尔文配置和电容测量功能，具有50太欧姆的超高隔离度，可实现10飞安级别的超低电流测量分辨率。前面板提供继电器状态发光显示，便于快速验证和调试测量配置。模块化设计支持灵活扩展，配合EasyEXPERT软件可实现直观的GUI控制和自动化测试。
+  manufacturer: Keysight
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Keysight B2201A低漏电开关矩阵主机
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    最大输出端口: '48'
+    隔离度: 50 TΩ
+    最小电流测量分辨率: 10 fA
+    内部路径测量输入: 14通道
+    瞬态电流稳定时间: <2 s(10V输入阶跃时<300 fA)
+    带宽: 30 MHz(-3dB)
+    输出配置: 12/24/36/48三同轴输出
+    品牌: Keysight
+community_723:
+  class:
+    module: community_drivers.723.driver:DeviceDriver
+    type: python
+  name: Conrad USB/Serial Relay Board
+  description: Conrad继电器板主要有4通道(USB)和8通道(串行)两种变体，关键规格包括DPDT继电器、最高2000W负载容量和USB/串行接口。存在多个开源Python库用于编程控制这些板。
+  manufacturer: Conrad
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Conrad USB/Serial Relay Board
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    型号: 'USB 4通道(型号393905)和8通道串行(型号197720), 继电器数量: 4或8, 继电器类型: DPDT继电器, 负载容量: 2000W,
+      接口: USB或串行通信, 控制: 通过串行命令, Python库支持(Siemens开源库)'
+    品牌: Conrad
+community_235:
+  class:
+    module: community_drivers.235.driver:DeviceDriver
+    type: python
+  name: Keithley 3706A 系统开关/万用表
+  description: Keithley 3706A是一款高密度系统开关/万用表，在2U紧凑机箱内提供6个插件卡槽。满载时可支持576个两线复用通道或2688个单极矩阵交叉点。可选7.5位高性能数字万用表提供26位分辨率和13种内置测量功能，速度超过14000读数/秒。支持LXI
+    Class B标准，内置Web浏览器界面，TSP-Link可无缝连接2600系列源表进行系统扩展。
+  manufacturer: Keithley
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Keithley 3706A 系统开关/万用表
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_72:
+  class:
+    module: community_drivers.72.driver:DeviceDriver
+    type: python
+  name: VICI Valco 多位置选择阀
+  description: VICI Valco多位置选择阀是色谱和流体控制领域的业界标准产品，可在连续旋转中逐步递进切换位置，支持双向步进。提供SD(死端)、SC(公共出口)、SF(流通)、ST(捕获)和STF(捕获/流通)五种低压流路配置，以及两种高压流路(HPLC/UHPLC)。低压型适用于气相色谱，高压型压力可达20000psi满足超高效液相色谱需求。预载设计允许在不拆卸阀体的情况下检查或更换转子。
+  manufacturer: VICI Valco
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: VICI Valco 多位置选择阀
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    位数: 4~16位(最多34端口)
+    低压型耐压: 100~400psi(取决于位数)
+    高压型耐压: 最高20000psi
+    最高温度: 200°C
+    材质: Nitronic 60/Valco E复合材料
+    接头: 1/16"/1/8"/1/4"
+    孔径: 0.40~4.0mm
+    驱动: 手动/电动/气动
+    品牌: VICI Valco
+community_73:
+  class:
+    module: community_drivers.73.driver:DeviceDriver
+    type: python
+  name: IDEX MX Series II 多位置选择阀
+  description: IDEX MX Series II是一款紧凑的独立式多位置选择阀，10位/11端口配置满足多通道切换和进样需求。电动驱动支持手动按键操作和远程控制，LED指示当前位置。可通过接触闭合、BCD、串口或USB连接仪器或PC，支持色谱软件直接控制和定时事件编程。紧凑设计既可集成到现有仪器中，也可作为独立实验台设备使用。还提供6位/7端口、UltraLife超高压等多种配置选项。
+  manufacturer: IDEX Health & Science
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: IDEX MX Series II 多位置选择阀
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    位数/端口: 10位/11端口(MXX778-605)
+    最大压力: 125psi(9bar)
+    材质: RPC-7
+    驱动: 电动马达
+    控制: 前面板按键/接触闭合/BCD/串口/USB
+    品牌: IDEX Health & Science
+community_456:
+  class:
+    module: community_drivers.456.driver:DeviceDriver
+    type: python
+  name: VICI Valco两位多通阀
+  description: VICI Valco两位阀是业界标准的色谱进样和切换阀，提供3至14端口多种配置。工作在两个位置之间(加载/进样)，适用于样品注入、反吹和柱切换。支持手动、气动和电动执行，电动型支持RS-232远程控制，是气相和液相色谱系统的核心组件。
+  manufacturer: VICI
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: VICI Valco两位多通阀
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    端口数: 3/4/6/8/10/12/14口可选
+    接头规格: 1/32"至1/4"
+    孔径: 0.25mm至4mm
+    驱动方式: 手动/气动/电动
+    电动控制: RS-232/接触闭合/TTL
+    转子材料: 多种合金和聚合物
+    品牌: VICI
+community_589:
+  class:
+    module: community_drivers.589.driver:DeviceDriver
+    type: python
+  name: NI PXIe-2597 射频多路复用开关
+  description: NI PXIe-2597是26.5GHz射频多路复用开关模块，SP6T配置提供6个复用通道，特性阻抗50Ω，SMA连接器，适用于射频信号路由、多DUT自动化测试和天线测试系统，通过NI-SWITCH驱动程序控制。
+  manufacturer: National Instruments
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: NI PXIe-2597 射频多路复用开关
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    拓扑: SP6T(单刀六掷)
+    频率范围: DC-26.5GHz
+    通道数: '6'
+    特性阻抗: 50Ω
+    连接器: SMA(母)
+    隔离度: '>60dB'
+    开关时间: ~15ms
+    规格: 单槽PXIe
+    品牌: National Instruments
+community_649:
+  class:
+    module: community_drivers.649.driver:DeviceDriver
+    type: python
+  name: Thorlabs KSC101 K-Cube电磁铁控制器
+  description: Thorlabs KSC101是紧凑型K-Cube电磁铁控制器，用于驱动电磁驱动设备如光束快门和电动滤光片翻转器，支持手动按钮、SMA外部TTL触发和USB计算机控制三种操作模式，可堆叠安装于K-Cube控制器集线器。
+  manufacturer: Thorlabs
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: Thorlabs KSC101 K-Cube电磁铁控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出电压: 12V/24V可选
+    最大输出电流: 1A
+    接口: USB 2.0
+    触发: SMA外部TTL触发
+    尺寸: 60×60×49.4mm
+    操作模式: 手动/外部触发/USB控制
+    品牌: Thorlabs
+community_1034:
+  class:
+    module: community_drivers.1034.driver:DeviceDriver
+    type: python
+  name: VICI Valco E90 Cheminert电动多通阀
+  description: VICI Valco E90是配备电动执行器的Cheminert多通选择阀，采用平面转子设计实现低扭矩和紧凑尺寸。支持双向步进和最短路径寻址，切换时间仅0.56秒。提供多种材质转子和接头选择，耐压范围从250psi到20000psi。通过RS-232或BCD信号远程控制，断电保持位置记忆。
+  manufacturer: VICI Valco
+  tags:
+  - 多通阀
+  category:
+  - 多通阀
+  model:
+    name: VICI Valco E90 Cheminert电动多通阀
+    type: device
+  version: 1.0.0
+  resource_type: device

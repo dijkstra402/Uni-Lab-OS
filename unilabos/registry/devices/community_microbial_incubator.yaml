@@ -1,0 +1,798 @@
+community_gh_liconic_storex_stx88:
+  class:
+    module: community_drivers.gh_liconic_storex_stx88.driver:LiconicStorexStx88
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/AD-SDL/BIO_workcell
+  name: The Storex STX Line
+  description: 主要特点 STX44 培养箱可与放置在桌面上的仪器集成（台式 - BT）或与立在地板上的仪器集成（独立 - SA）。独立配置与台式配置的组合允许这些单元堆叠。
+    STX44子系列的IT型号适用于结晶应用。特殊版本可将整个电子设备放置在远离设备主体的单独盒子中，以适应空间受限的情况。侧门配置中的 STX44 专为在用户门面向前方时无缝集成在其他设备侧面而设计。
+  manufacturer: LiCONiC
+  icon: gh_liconic_storex_stx88.webp
+  tags:
+  - 微生物培养箱
+  category:
+  - 微生物培养箱
+  device_params:
+    Type: Automated -20°C storage
+    Capacity: up to 88 microplates
+    Temperature: -20°C
+    Interface: SiLA/REST API
+    Barcode: integrated reader
+    Compatible: robotic integration
+    品牌: LiCONiC
+  model:
+    name: The Storex STX Line
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Culture
+    step: Incubation
+  version: 1.0.0
+  resource_type: device
+community_gh_thermotron_3800:
+  class:
+    module: community_drivers.gh_thermotron_3800.driver:Thermotron3800
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initalize_oven:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initalize_oven
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: 8800 Controller
+  description: Thermotron 的 8800 控制器专为运行我们的 SE、Altitude、AGREE 和步入式试验箱以及定制设计的系统而设计和制造。
+    8800 控制器配备 12 英寸彩色触摸屏显示器和熟悉的 Windows® 外观和感觉，使操作和数据收集变得简单可靠。
+  manufacturer: Thermotron
+  icon: gh_thermotron_3800.webp
+  tags:
+  - 微生物培养箱
+  category:
+  - 微生物培养箱
+  device_params:
+    Type: Environmental test chamber
+    Temperature: -73°C to +200°C
+    Humidity: 10-98% RH
+    Controller: 8800 series
+    Communication: GPIB, Ethernet
+    Features: programmable profiles
+    品牌: Thermotron
+  model:
+    name: 8800 Controller
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Culture
+    step: Incubation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+community_gh_cincinnati_sub_zero_ezt_570i:
+  class:
+    module: community_drivers.gh_cincinnati_sub_zero_ezt_570i.driver:Chamber
+    type: python
+    status_types:
+      light: str
+      temperature: str
+      profile_control_status: str
+      profile_current_step: str
+      alarms: str
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg_name:
+                  type: string
+        goal_default:
+          reg_name: null
+        handles: {}
+      auto-set_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg_name:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          reg_name: null
+          value: null
+        handles: {}
+      auto-print_read_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_read_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start_reg:
+                  type: string
+                values:
+                  type: string
+        goal_default:
+          start_reg: null
+          values: null
+        handles: {}
+      auto-print_all_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_all_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project_file:
+                  type: string
+        goal_default:
+          project_file: null
+        handles: {}
+      auto-start_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project_file:
+                  type: string
+        goal_default:
+          project_file: null
+        handles: {}
+      auto-stop_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_chamber:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_chamber
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-toggle_light:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_light
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                toggles:
+                  type: string
+        goal_default:
+          toggles: null
+        handles: {}
+      auto-log_a_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: log_a_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                header:
+                  type: string
+                my_dict:
+                  type: string
+        goal_default:
+          header: null
+          my_dict: null
+        handles: {}
+    source: https://github.com/johnstile/chamber_EZT570i
+  name: EZT-570 Touch Screen Controller
+  description: 我们的 EZT-570 触摸屏采用智能手机技术提供最新的测试室控制，易于使用。 ...阅读更多 我们的 EZT-570 触摸屏采用智能手机技术提供最新的测试室控制，易于使用。节省时间的功能内置于...阅读更多
+    缺少：规格‎|显示结果：规格
+  manufacturer: Cincinnati Sub-Zero
+  icon: gh_cincinnati_sub_zero_ezt_570i.webp
+  tags:
+  - 微生物培养箱
+  category:
+  - 微生物培养箱
+  device_params:
+    Type: Environmental test chamber
+    Controller: EZT-570i touchscreen
+    Temperature: -73°C to +190°C
+    Humidity: 20-95% RH
+    Communication: Ethernet, USB
+    Features: web-based monitoring
+    品牌: Cincinnati Sub-Zero
+  model:
+    name: EZT-570 Touch Screen Controller
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Culture
+    step: Incubation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        log:
+          default: null
+          type: string
+        comm_params:
+          default: null
+          type: string
+community_gh_liconic_stx88:
+  class:
+    module: community_drivers.gh_liconic_stx88.driver:LICONIC
+    type: python
+    status_types:
+      is_busy: bool
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-activate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: activate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-deactivate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-soft_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: soft_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_actual_climate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_actual_climate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_set_climate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_set_climate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+                  default: 37.0
+                humidity:
+                  type: number
+                  default: 95.0
+                co2:
+                  type: number
+                  default: 10.0
+                n2:
+                  type: number
+                  default: 0.0
+        goal_default:
+          temperature: 37.0
+          humidity: 95.0
+          co2: 10.0
+          n2: 0.0
+        handles: {}
+      auto-read_set_climate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_set_climate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-activate_shaker:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: activate_shaker
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shaker_id:
+                  type: string
+                speed:
+                  type: integer
+                  default: 20
+        goal_default:
+          shaker_id: null
+          speed: 20
+        handles: {}
+      auto-deactivate_shaker:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate_shaker
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shaker_id:
+                  type: integer
+                  default: 1
+        goal_default:
+          shaker_id: 1
+        handles: {}
+      auto-read_set_shaker_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_set_shaker_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shaker_id:
+                  type: integer
+                  default: 1
+        goal_default:
+          shaker_id: 1
+        handles: {}
+      auto-set_shaker_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_shaker_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shaker_id:
+                  type: integer
+                  default: 1
+                speed:
+                  type: integer
+                  default: 20
+        goal_default:
+          shaker_id: 1
+          speed: 20
+        handles: {}
+      auto-load_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack:
+                  type: integer
+                slot:
+                  type: integer
+        goal_default:
+          stack: null
+          slot: null
+        handles: {}
+      auto-unload_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unload_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack:
+                  type: integer
+                slot:
+                  type: integer
+        goal_default:
+          stack: null
+          slot: null
+        handles: {}
+      auto-read_transfer_station_detector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_transfer_station_detector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-beeper_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: beeper_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_system_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_system_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_error_code:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_error_code
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/AD-SDL/liconic_module
+  name: The Storex STX Line (gh_liconic_stx88)
+  description: 主要特点 STX44 培养箱可与放置在桌面上的仪器集成（台式 - BT）或与立在地板上的仪器集成（独立 - SA）。独立配置与台式配置的组合允许这些单元堆叠。
+    STX44子系列的IT型号适用于结晶应用。特殊版本可将整个电子设备放置在远离设备主体的单独盒子中，以适应空间受限的情况。侧门配置中的 STX44 专为在用户门面向前方时无缝集成在其他设备侧面而设计。
+  manufacturer: LiCONiC
+  icon: gh_liconic_stx88.webp
+  tags:
+  - 微生物培养箱
+  category:
+  - 微生物培养箱
+  device_params:
+    Type: Automated -20°C storage
+    Capacity: 88 microplates
+    Temperature: -20°C
+    Interface: SiLA/REST API
+    Barcode reader: integrated
+    Compatible: lab automation
+    品牌: LiCONiC
+  model:
+    name: The Storex STX Line (gh_liconic_stx88)
+    type: device
+  scene:
+    domain: Automation
+    scene_name: Lab Automation
+    step: Material Handling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          default: null
+          type: string
+        port:
+          default: null
+          type: integer
+community_142:
+  class:
+    module: community_drivers.142.driver:DeviceDriver
+    type: python
+  name: Liconic STX44-ICBT 自动化培养箱
+  description: Liconic STX44-ICBT是一款高通量自动化微孔板培养箱，由瑞士Liconic AG制造。可容纳44块标准微孔板，具备精密温度、CO2和湿度控制功能。专为机器人自动化系统集成设计，支持与液体处理平台和自动化工作站的无缝对接。盒式存储系统实现有序的板片管理，广泛应用于药物发现、细胞检测和高通量筛选。
+  manufacturer: Liconic
+  tags:
+  - 微生物培养箱
+  category:
+  - 微生物培养箱
+  model:
+    name: Liconic STX44-ICBT 自动化培养箱
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    微孔板容量: 44块
+    温度: 环境+5°C至50°C
+    CO2控制: 0-20%
+    湿度控制: 最高95%RH
+    品牌: Liconic
+community_1073:
+  class:
+    module: community_drivers.1073.driver:DeviceDriver
+    type: python
+  name: Tecan Spark 20M 多功能微孔板读板器
+  description: Tecan Spark 20M是多模式微孔板检测器，集成荧光、化学发光、吸光度等多种检测模式。采用Fusion Optics技术兼具单色器灵活性和滤光片灵敏度。支持6至1536孔板格式，可选配细胞成像、气体控制和Te-Cool冷却模块，适用于药物发现、基因组学和细胞生物学研究。
+  manufacturer: Tecan
+  tags:
+  - 微生物培养箱
+  category:
+  - 微生物培养箱
+  model:
+    name: Tecan Spark 20M 多功能微孔板读板器
+    type: device
+  version: 1.0.0
+  resource_type: device

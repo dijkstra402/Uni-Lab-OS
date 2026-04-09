@@ -1,0 +1,80 @@
+community_gh_chemspeed_crystal_powderdose:
+  class:
+    module: community_drivers.gh_chemspeed_crystal_powderdose.driver:CrystalPowderdose
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-serialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: serialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/PyLabRobot/pylabrobot
+  name: Chemspeed Crystal Powderdose
+  description: Chemspeed CRYSTAL Powderdose固体粉末自动分配系统，精确称量和分配粉末样品，精度±0.5 mg。集成天平反馈控制，适用于配方开发、高通量筛选和药物预制剂研究。
+  manufacturer: Chemspeed
+  icon: gh_chemspeed_crystal_powderdose.webp
+  tags:
+  - 固体称量工作站
+  category:
+  - 固体称量工作站
+  device_params:
+    Type: Automated powder dosing
+    Features: gravimetric dosing, solid dispensing
+    Compatible: parallel synthesis workstations
+    Software: AutoSuite
+    Accuracy: sub-mg level
+    品牌: Chemspeed
+  model:
+    name: Chemspeed Crystal Powderdose
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Sample Preparation
+    step: Powder Dispensing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        arksuite_address:
+          default: null
+          type: string

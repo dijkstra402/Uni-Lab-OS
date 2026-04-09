@@ -1,0 +1,377 @@
+community_gh_oxford_instruments_triton:
+  class:
+    module: community_drivers.gh_oxford_instruments_triton.driver:OxfordTriton
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_B:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_B
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: number
+                y:
+                  type: number
+                z:
+                  type: number
+                s:
+                  type: number
+        goal_default:
+          x: null
+          y: null
+          z: null
+          s: null
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/microsoft/Qcodes
+  name: Oxford Instruments Triton
+  description: Oxford Instruments Triton是无液氦气干式制冷机，基础<10 mK，采用脉冲管预冷，用于量子计算和聚集态物理研究。
+  manufacturer: Oxford Instruments
+  icon: 2026_03_17_QD-Oxford_partnership_with_FSU_300x200.jpg
+  tags:
+  - 低温冰箱
+  category:
+  - 低温冰箱
+  device_params:
+    Type: Cryogen-free dilution refrigerator
+    Base temp: <10 mK
+    Cooling power: 400-600 µW at 100 mK
+    Cool-down: 24-36 hours
+    Cryocooler: pulse tube
+    品牌: Oxford Instruments
+  model:
+    name: Oxford Instruments Triton
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Storage
+    step: Cold Storage
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string
+        port:
+          default: null
+          type: string
+        terminator:
+          default: null
+          type: string
+        tmpfile:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: number
+community_gh_montana_instruments_cryostation:
+  class:
+    module: community_drivers.gh_montana_instruments_cryostation.driver:DataSetInMem
+    type: python
+    status_types:
+      pristine: bool
+      running: bool
+      completed: bool
+      run_id: int
+      captured_run_id: int
+      counter: int
+      captured_counter: int
+      guid: str
+      number_of_results: int
+      name: str
+      exp_name: str
+      exp_id: int
+      sample_name: str
+      path_to_db: string
+      run_timestamp_raw: string
+      completed_timestamp_raw: string
+      snapshot: string
+      metadata: string
+      paramspecs: string
+      description: RunDescriber
+      parent_dataset_links: string
+      cache: DataSetCacheInMem
+      export_info: ExportInfo
+    action_value_mappings:
+      auto-write_metadata_to_db:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_metadata_to_db
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path_to_db:
+                  type: string
+        goal_default:
+          path_to_db: null
+        handles: {}
+      auto-set_netcdf_location:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_netcdf_location
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default:
+          path: null
+        handles: {}
+      auto-prepare:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-mark_completed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mark_completed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_snapshot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_snapshot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                snapshot:
+                  type: string
+                overwrite:
+                  type: boolean
+                  default: false
+        goal_default:
+          snapshot: null
+          overwrite: false
+        handles: {}
+      auto-add_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tag:
+                  type: string
+                metadata:
+                  type: string
+        goal_default:
+          tag: null
+          metadata: null
+        handles: {}
+      auto-to_xarray_dataset_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_xarray_dataset_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-to_xarray_dataset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_xarray_dataset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-to_pandas_dataframe_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_pandas_dataframe_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-to_pandas_dataframe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_pandas_dataframe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_parameter_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_parameter_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/microsoft/Qcodes
+  name: Cryostation® s200 | Closed-Cycle Cryostat
+  description: Montana Instruments Cryostation是闭循环低温恒温器，基础温度<3K，温度稳定性<10 mK，低振动<5
+    nm。
+  manufacturer: Montana Instruments
+  icon: gh_montana_instruments_cryostation.webp
+  tags:
+  - 低温冰箱
+  category:
+  - 低温冰箱
+  device_params:
+    Type: Closed-cycle optical cryostat
+    Base temp: <3 K
+    Stability: <10 mK
+    Vibration: <5 nm
+    Cooldown: 2-3 hours
+    Models: s50, s100, s200
+    品牌: Montana Instruments
+  model:
+    name: Cryostation® s200 | Closed-Cycle Cryostat
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Storage
+    step: Cold Storage
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        run_id:
+          default: null
+          type: integer
+        captured_run_id:
+          default: null
+          type: integer
+        counter:
+          default: null
+          type: integer
+        captured_counter:
+          default: null
+          type: integer
+        name:
+          default: null
+          type: string
+        exp_id:
+          default: null
+          type: integer
+        exp_name:
+          default: null
+          type: string
+        sample_name:
+          default: null
+          type: string
+        guid:
+          default: null
+          type: string
+        path_to_db:
+          default: null
+          type: string
+        run_timestamp_raw:
+          default: null
+          type: string
+        completed_timestamp_raw:
+          default: null
+          type: string
+        snapshot:
+          default: null
+          type: string
+        metadata:
+          default: null
+          type: string
+        rundescriber:
+          default: null
+          type: string
+        parent_dataset_links:
+          default: null
+          type: string
+        export_info:
+          default: null
+          type: string

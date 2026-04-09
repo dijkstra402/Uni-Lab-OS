@@ -1,0 +1,757 @@
+community_cesar1312:
+  class:
+    module: community_drivers.cesar1312.driver:Cesar1312
+    type: python
+    status_types:
+      address: None
+      retries: string
+      control_mode: None
+      name: str
+      output_power: None
+      reflected_power: Quantity
+      regulation_mode: None
+      rf: None
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                package:
+                  type: string
+                len_data:
+                  type: integer
+                  default: 1
+        goal_default:
+          package: null
+          len_data: 1
+        handles: {}
+      auto-sendcmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendcmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pkg:
+                  type: string
+        goal_default:
+          pkg: null
+        handles: {}
+  name: Advanced Energy Cesar 1312 RF Power Generator (1200W/13.56MHz)
+  description: 1200W/13.56MHz RF功率发生器，E类开关设计，用于等离子体处理/溅射/PECVD。
+  manufacturer: Advanced Energy
+  icon: cesar1312.webp
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  device_params:
+    Power: 1200W
+    Freq: 13.56MHz
+    Accuracy: ±0.005%
+    Min Power: 12W(1%)
+    Impedance: 50Ω
+    Efficiency: 66%
+    Input: 230VAC
+    Cooling: air
+    Rack: 19"
+    Interface: analog/RS-232/Ethernet/Profibus
+    品牌: Advanced Energy
+  model:
+    name: Advanced Energy Cesar 1312 RF Power Generator (1200W/13.56MHz)
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thin Film Deposition
+    step: Evaporation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+community_gh_aja_international_dcxs_750:
+  class:
+    module: community_drivers.gh_aja_international_dcxs_750.driver:DCXS
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                query_delay:
+                  type: string
+        goal_default:
+          command: null
+          query_delay: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reply_length:
+                  type: string
+        goal_default:
+          reply_length: null
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: AJA International, Inc. Sputtering Tools and Systems
+  description: AJA DCXS系列是直流磁控溅射沉积系统，支持DC/RF/脉冲DC电源，基板加热可达850°C，用于研究薄膜沉积。
+  manufacturer: AJA International
+  icon: AJA+Logo+White+Text.png
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  device_params:
+    Type: DC magnetron sputtering
+    Power: DC, RF, pulsed DC
+    Substrate heating: up to 850°C
+    Features: computer-controlled, load-lock, co-sputtering
+    品牌: AJA International
+  model:
+    name: AJA International, Inc. Sputtering Tools and Systems
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thin Film Deposition
+    step: Evaporation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+community_gh_moorfield_minilab:
+  class:
+    module: community_drivers.gh_moorfield_minilab.driver:MoorfieldMinilab
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-read_mfc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_mfc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mfc_number:
+                  type: string
+        goal_default:
+          mfc_number: null
+        handles: {}
+      auto-read_full_range_gauge:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_full_range_gauge
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_baratron_gauge:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_baratron_gauge
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_turbo_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_turbo_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_rf_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_rf_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_dc_psu_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_dc_psu_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/CINF/PyExpLabSys
+  name: Moorfield Minilab
+  description: Moorfield Minilab紧凑型模块化薄膜沉积系统，支持磁控溅射（DC/RF）、热蒸发、电子束蒸发及原子层沉积。真空腔室可达10⁻⁷mbar高真空度，容纳最大约100mm基片。配备石英晶体微天平实时监测膜厚，支持基片旋转和计算机程控，适用于纳米材料、半导体和光学薄膜研究。
+  manufacturer: Moorfield
+  icon: Moorfield-Nanotechnology-Logo-800px-303x47.png
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  device_params:
+    参数: Quantum Sensing of Copper-Phthalocyanine Electron Spins; High-sensitivity
+      ethanol vapor detection; HMR-Based Optical Gas Detection.
+    品牌: Moorfield
+  model:
+    name: Moorfield Minilab
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thin Film Deposition
+    step: CVD
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        mapping:
+          default: null
+          type: string
+community_gh_intellemetrics_il800:
+  class:
+    module: community_drivers.gh_intellemetrics_il800.driver:IL800
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-comm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-thickness:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: thickness
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/CINF/PyExpLabSys
+  name: IL570 Overview
+  description: LEP500 系列具有多种不同的配置，可满足各种不同材料和应用的蚀刻需求
+  manufacturer: Intellemetrics
+  icon: gh_intellemetrics_il800.webp
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  device_params:
+    Type: Thin film deposition controller
+    Channels: up to 6
+    Sensors: crystal monitors
+    Interface: RS-232
+    Features: rate control, thickness monitoring
+    Compatible: PVD/CVD systems
+    品牌: Intellemetrics
+  model:
+    name: IL570 Overview
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thin Film Deposition
+    step: Evaporation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+community_gh_aja_dcxs:
+  class:
+    module: community_drivers.gh_aja_dcxs.driver:DCXS
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                query_delay:
+                  type: string
+        goal_default:
+          command: null
+          query_delay: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reply_length:
+                  type: string
+        goal_default:
+          reply_length: null
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: AJA International, Inc. Sputtering Tools and Systems (gh_aja_dcxs)
+  description: 凭借超过 35 年的卓越制造经验，AJA International, Inc. 正在推动薄膜涂层和沉积领域的全球创新黄金时代。
+  manufacturer: AJA
+  icon: AJA+Logo+White+Text.png
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  device_params:
+    Type: DC sputtering source
+    Power: 750-1500 W
+    Target diameter: 2-3 inch
+    Magnetron type: planar circular
+    Water cooling: required
+    Compatible: research vacuum systems
+    品牌: AJA
+  model:
+    name: AJA International, Inc. Sputtering Tools and Systems (gh_aja_dcxs)
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thin Film Deposition
+    step: Evaporation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+community_54:
+  class:
+    module: community_drivers.54.driver:DeviceDriver
+    type: python
+  name: Inficon IC/5 薄膜沉积控制器
+  description: Inficon IC/5是基于石英晶体微天平的薄膜沉积控制器,用于真空镀膜工艺的速率和厚度精密测控。支持多源共蒸镀和多层膜堆叠工艺,内置PID控制器实现闭环速率控制。预载常用材料的声学阻抗比(Z-ratio)和密度值,配备仿真模式用于工艺开发。已被后继型号IC6替代,IC6支持ModeLock频率测量技术和最多6源同步控制。
+  manufacturer: Inficon
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: Inficon IC/5 薄膜沉积控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_55:
+  class:
+    module: community_drivers.55.driver:DeviceDriver
+    type: python
+  name: Inficon STM-2 薄膜速率/厚度监控仪
+  description: Inficon STM-2是USB连接的薄膜速率与厚度监控仪,将USB连接的简便性与精密测量引擎的准确性相结合。采用石英晶体微天平技术实时监测蒸镀速率和膜厚,配备数字显示、工装因子调节和晶片寿命监测功能。支持多种材料密度和Z-ratio预设,适用于热蒸发、电子束蒸发和溅射等PVD工艺的基础膜厚监控。
+  manufacturer: Inficon
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: Inficon STM-2 薄膜速率/厚度监控仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_56:
+  class:
+    module: community_drivers.56.driver:DeviceDriver
+    type: python
+  name: Inficon SQM-160/SQC-310 薄膜监控仪/控制器
+  description: Inficon SQM-160是入门级单通道薄膜速率/厚度监控仪,可存储50个膜程序,通过RS-232通信和数据记录,适用于单源简单蒸镀监测。SQC-310是进阶双通道沉积控制器,具备PID闭环控制、模拟输出(0-10V/4-20mA)驱动蒸发源功率调节,支持共蒸镀监测、自动晶片失效切换和多层工艺序列编程,适用于更复杂的真空镀膜应用。
+  manufacturer: Inficon
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: Inficon SQM-160/SQC-310 薄膜监控仪/控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    SQM-160: 单通道监控仪/速率0.01-999.9Å/s/厚度至999999Å/50个膜程序/RS-232接口
+    SQC-310: 双通道控制器/PID闭环控速/0-10V或4-20mA模拟输出/自动晶片切换/多层序列/快门控制/RS-232和可选Ethernet
+    品牌: Inficon
+community_337:
+  class:
+    module: community_drivers.337.driver:DeviceDriver
+    type: python
+  name: Cellkraft E1500 精密蒸汽发生器
+  description: Cellkraft E1500是E系列精密蒸汽发生器的一个型号，采用精密液体控制技术将液体送入蒸发器瞬时蒸发，能够精确生成小流量的洁净蒸汽。流量范围0至100g/min，温度100至400°C，支持真空至20bar压力。设计紧凑，全自动运行，精确温度控制实现精准过热。操作安静，接口简单(液体输入、蒸汽输出)。适用于实验室精密工艺和小型工业过程。
+  manufacturer: Cellkraft
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: Cellkraft E1500 精密蒸汽发生器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    流量范围: 0~100g/min
+    温度范围: 100~400°C
+    压力范围: 真空~20bar(a)
+    技术: 精密液体控制瞬时蒸发
+    操作: 全自动
+    接口: 液体输入/蒸汽输出
+    品牌: Cellkraft
+community_285:
+  class:
+    module: community_drivers.285.driver:DeviceDriver
+    type: python
+  name: Inficon SQC-310C 薄膜沉积控制器
+  description: Inficon SQC-310C是一款单通道石英晶振薄膜沉积控制器，基于QCM技术实时监测沉积速率和膜厚。提供亚埃级厚度分辨率，具备PID闭环控制功能用于蒸发源功率调节。支持多膜参数程序存储、RS-232远程控制和数据记录。适用于热蒸发、电子束蒸发和溅射等PVD工艺，是实验室和工业真空镀膜的常用设备。
+  manufacturer: Inficon
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: Inficon SQC-310C 薄膜沉积控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    传感器通道: 单通道
+    传感器技术: 石英晶振微天平(QCM)
+    晶振频率: 6MHz
+    厚度分辨率: 亚埃级
+    输出控制: 模拟输出(0-10V)
+    通信: RS-232
+    品牌: Inficon
+community_286:
+  class:
+    module: community_drivers.286.driver:DeviceDriver
+    type: python
+  name: Inficon SQM-160 薄膜沉积监控仪
+  description: Inficon SQM-160采用成熟的石英晶振传感器技术测量薄膜沉积过程中的速率和厚度。标配2路传感器输入，可选扩展至6路，传感器可分配给不同材料、取平均值或配置为双传感器模式。提供标准和高分辨率两种模式，高分辨率下厚度分辨率达±0.037Å。支持速率采样模式以延长高速沉积中的传感器寿命，4路继电器输出可控制挡板和设定点信号。
+  manufacturer: Inficon
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: Inficon SQM-160 薄膜沉积监控仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    传感器通道: 2路标准/最多6路
+    频率范围: 1.0-6.5MHz
+    厚度分辨率: ±0.37Å(标准)/±0.037Å(高分辨率)
+    存储膜数: '99'
+    速率显示: 0.1或0.01Å/s可选
+    通信: RS-232标准/USB/以太网可选
+    数字I/O: 4输入/4继电器输出
+    尺寸: 3.5英寸半机架
+    品牌: Inficon
+community_287:
+  class:
+    module: community_drivers.287.driver:DeviceDriver
+    type: python
+  name: Inficon STM-2XM 双通道速率/厚度监控仪
+  description: Inficon STM-2XM是一款双通道速率/厚度监控仪，具备8个可编程数字输入/输出和4路模拟输出，提供通常仅在高端设备上才有的集成能力。支持简单模式、备份模式、合金模式和独立模式等多种工作模式。时间平均功能可实现更精确的速率测量，晶振失效时自动使用最近稳定速率继续完成镀膜。频率分辨率±0.03Hz，厚度分辨率±0.037Å。
+  manufacturer: Inficon
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: Inficon STM-2XM 双通道速率/厚度监控仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    传感器通道: 2路
+    频率范围: 6.0-5.0MHz
+    频率分辨率: ±0.03Hz@6MHz
+    厚度分辨率: ±0.037Å
+    测量间隔: 0.10s
+    存储膜数: '15'
+    数字I/O: 8输入/8输出
+    模拟输出: 4路(0-±10V)
+    通信: RS-232/RS-485
+    电源: 120/240V
+    品牌: Inficon
+community_288:
+  class:
+    module: community_drivers.288.driver:DeviceDriver
+    type: python
+  name: Inficon XTM/2 薄膜沉积监控仪
+  description: Inficon XTM/2将ModeLock技术的超高测量速度和精度扩展到仅监控应用中。紧凑的半机架设计，所有操作和编程功能可从单一屏幕访问。频率分辨率仅需250ms即可达到0.1Hz，16秒平均模式下速率分辨率可达0.01Å。采用新型被动智能振荡器，支持15至100英尺（4.5-30米）线缆长度，真空内线缆最长2米。提供多种配置包括蚀刻/沉积模式和图表记录功能。
+  manufacturer: Inficon
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: Inficon XTM/2 薄膜沉积监控仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    晶振范围: 6.0-5.0MHz±0.1Hz
+    厚度分辨率: 0.123Å/250ms
+    厚度精度: 0.5%
+    频率分辨率: 0.1Hz/250ms
+    速率分辨率: 0.01Å(16秒平均)
+    存储膜数: '9'
+    通信: RS-232
+    品牌: Inficon
+community_289:
+  class:
+    module: community_drivers.289.driver:DeviceDriver
+    type: python
+  name: Sycon STM-100 薄膜厚度/速率监控仪
+  description: Sycon STM-100是由Sycon Instruments（后被Inficon收购）生产的石英晶振微天平薄膜厚度/速率监控仪。使用6MHz标准石英晶振传感器，实时显示沉积速率（Å/s）和累积厚度，内置多种沉积材料的声学阻抗（Z-ratio）和密度数据库。作为入门级单通道监控仪，广泛用于科研实验室的热蒸发和溅射系统中。该产品已停产，后继产品为Inficon
+    SQC/SQM/STM系列。
+  manufacturer: Sycon
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: Sycon STM-100 薄膜厚度/速率监控仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    测量原理: 石英晶振微天平(QCM)
+    晶振频率: 6MHz
+    分辨率: 埃级
+    显示: 数字显示速率和厚度
+    品牌: Sycon
+community_291:
+  class:
+    module: community_drivers.291.driver:DeviceDriver
+    type: python
+  name: PREVAC TM1x 薄膜厚度监控仪
+  description: PREVAC TM1x（包括TM13和TM14型号）是石英晶振薄膜厚度监控传感器，由石英振荡器、频率测量系统和通信接口组成。通过RS232将测量结果传输至TMC13控制器或PC。专为超高真空(UHV)环境设计，适配标准真空法兰，广泛应用于分子束外延(MBE)、物理气相沉积(PVD)等薄膜沉积研究。PREVAC是波兰精密真空仪器制造商。
+  manufacturer: PREVAC
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: PREVAC TM1x 薄膜厚度监控仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    测量原理: 石英晶振微天平(QCM)
+    组成: 石英振荡器+频率测量系统+通信接口
+    通信: RS232
+    控制器: TMC13
+    适用环境: 超高真空(UHV)
+    应用: MBE/PVD/溅射/蒸发
+    品牌: PREVAC
+community_292:
+  class:
+    module: community_drivers.292.driver:DeviceDriver
+    type: python
+  name: PREVAC TMC13 薄膜厚度监控控制器
+  description: PREVAC TMC13是最新技术的膜厚监控控制器，专为各类镀膜和沉积工艺的监控与控制而设计。支持最多6路传感器输入和2路真空计通道，配备7英寸TFT显示屏。DSP处理器实现高速高精度测量，改善薄膜质量和重复性。具备参数自动保存、实时速率图表显示和专用测量软件。适用于MBE等精密薄膜沉积应用，兼容PREVAC
+    TM13/TM14传感器。
+  manufacturer: PREVAC
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: PREVAC TMC13 薄膜厚度监控控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: 最多6路传感器+2路真空计
+    显示: 7英寸TFT
+    处理器: DSP高速处理
+    通信: RS232
+    品牌: PREVAC
+community_706:
+  class:
+    module: community_drivers.706.driver:DeviceDriver
+    type: python
+  name: KJL300 Series Vacuum Gauge
+  description: Kurt J. Lesker公司的KJL300系列真空计用于粗真空和中真空范围的压力测量，兼容标准真空计管连接。
+  manufacturer: Kurt J. Lesker
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: KJL300 Series Vacuum Gauge
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: '热电偶或对流增强皮拉尼真空计, 测量范围: 粗真空到中真空, 显示: 数字或模拟显示可选, 应用: 实验室和工业真空系统'
+    品牌: Kurt J. Lesker
+community_838:
+  class:
+    module: community_drivers.838.driver:DeviceDriver
+    type: python
+  name: INFICON SQM-160 薄膜沉积速率/厚度监控仪
+  description: INFICON SQM-160采用石英晶体传感器技术测量薄膜沉积过程中的速率和厚度，标准2路传感器输入可扩展至6路，厚度分辨率高达0.037埃（高分辨率版本），可存储99种薄膜参数，支持4路继电器输出控制快门，配备Windows软件进行远程设置和数据保存。
+  manufacturer: Inficon
+  tags:
+  - 蒸镀仪
+  category:
+  - 蒸镀仪
+  model:
+    name: INFICON SQM-160 薄膜沉积速率/厚度监控仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    标准传感器输入: 2个(可扩展至6个)
+    频率范围: 1.0~6.5 MHz
+    厚度分辨率: ±0.37 Å(标准)/±0.037 Å(高分辨率)
+    存储薄膜: 99种
+    继电器输出: 4个
+    模拟输出: 2个
+    通信: RS-232/USB/以太网可选
+    品牌: Inficon

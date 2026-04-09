@@ -1,0 +1,253 @@
+community_gh_opentrons_magnetic_module_magdeck:
+  class:
+    module: community_drivers.gh_opentrons_magnetic_module_magdeck.driver:MagDeck
+    type: python
+    status_types:
+      current_height: float
+      device_info: string
+      serial_number: string
+      status: MagneticStatus
+      engaged: bool
+      live_data: LiveData
+      is_simulated: bool
+    action_value_mappings:
+      auto-build:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: build
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+                usb_port:
+                  type: string
+                hw_control_loop:
+                  type: string
+                execution_manager:
+                  type: string
+                disconnected_callback:
+                  type: string
+                error_callback:
+                  type: string
+                poll_interval_seconds:
+                  type: string
+                simulating:
+                  type: boolean
+                  default: false
+                sim_model:
+                  type: string
+                sim_serial_number:
+                  type: string
+        goal_default:
+          port: null
+          usb_port: null
+          hw_control_loop: null
+          execution_manager: null
+          disconnected_callback: null
+          error_callback: null
+          poll_interval_seconds: null
+          simulating: false
+          sim_model: null
+          sim_serial_number: null
+        handles: {}
+      auto-cleanup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cleanup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-firmware_prefix:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: firmware_prefix
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-model:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: model
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-bootloader:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bootloader
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-calibrate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-engage:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: engage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                height:
+                  type: string
+                height_from_base:
+                  type: string
+                must_be_running:
+                  type: boolean
+                  default: true
+        goal_default:
+          height: null
+          height_from_base: null
+          must_be_running: true
+        handles: {}
+      auto-deactivate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                must_be_running:
+                  type: boolean
+                  default: true
+        goal_default:
+          must_be_running: true
+        handles: {}
+      auto-prep_for_update:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prep_for_update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/Opentrons/opentrons
+  name: Opentrons Magnetic Module (MagDeck)
+  description: Opentrons磁性模块是磁性分离模块，采用永磁稀土硼磁铁，0-25mm可调高度，适用于交互式提取和NGS文库制作。
+  manufacturer: Opentrons
+  icon: image-13.png.webp
+  tags:
+  - 磁珠纯化模块
+  category:
+  - 磁珠纯化模块
+  device_params:
+    Type: Magnetic Module GEN2
+    Magnet: permanent neodymium
+    Height: 0-25mm adjustable
+    Labware: 96-well plates
+    Connectivity: USB
+    Compatible: OT-2 and Flex
+    API: Python 2.3+
+    品牌: Opentrons
+  model:
+    name: Opentrons Magnetic Module (MagDeck)
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Magnetic Bead Purification
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+        usb_port:
+          default: null
+          type: string
+        hw_control_loop:
+          default: null
+          type: string
+        driver:
+          default: null
+          type: string
+        device_info:
+          default: null
+          type: string
+        execution_manager:
+          default: null
+          type: string
+        disconnected_callback:
+          default: null
+          type: string
+        error_callback:
+          default: null
+          type: string

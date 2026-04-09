@@ -1,0 +1,329 @@
+community_gh_horiba_labram_hr_evolution:
+  class:
+    module: community_drivers.gh_horiba_labram_hr_evolution.driver:RamanSpectrum
+    type: python
+    status_types:
+      snr: float
+    action_value_mappings:
+      auto-from_openraman_csvfiles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_openraman_csvfiles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                csv_filepath:
+                  type: string
+                csv_filepath_excitation_calibration:
+                  type: string
+                csv_filepath_emission_calibration:
+                  type: string
+                excitation_wavelength_nm:
+                  type: number
+                kernel_size:
+                  type: integer
+                rough_calibration_residuals_threshold:
+                  type: number
+                fine_calibration_residuals_threshold:
+                  type: number
+        goal_default:
+          csv_filepath: null
+          csv_filepath_excitation_calibration: null
+          csv_filepath_emission_calibration: null
+          excitation_wavelength_nm: null
+          kernel_size: null
+          rough_calibration_residuals_threshold: null
+          fine_calibration_residuals_threshold: null
+        handles: {}
+      auto-from_horiba_txtfile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_horiba_txtfile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                txt_filepath:
+                  type: string
+                num_skip_rows:
+                  type: integer
+                  default: 32
+        goal_default:
+          txt_filepath: null
+          num_skip_rows: 32
+        handles: {}
+      auto-from_renishaw_txtfile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_renishaw_txtfile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                csv_filepath:
+                  type: string
+        goal_default:
+          csv_filepath: null
+        handles: {}
+      auto-from_wasatch_csvfile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_wasatch_csvfile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                csv_filepath:
+                  type: string
+        goal_default:
+          csv_filepath: null
+        handles: {}
+      auto-from_generic_csvfile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_generic_csvfile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                csv_filepath:
+                  type: string
+                wavenumber_cm1_index:
+                  type: integer
+                  default: 0
+                intensity_index:
+                  type: integer
+                  default: 1
+        goal_default:
+          csv_filepath: null
+          wavenumber_cm1_index: 0
+          intensity_index: 1
+        handles: {}
+      auto-between:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: between
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                min_wavenumber_cm1:
+                  type: number
+                max_wavenumber_cm1:
+                  type: number
+        goal_default:
+          min_wavenumber_cm1: null
+          max_wavenumber_cm1: null
+        handles: {}
+      auto-interpolate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: interpolate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                float_indices:
+                  type: string
+        goal_default:
+          float_indices: null
+        handles: {}
+      auto-normalize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: normalize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-standardize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: standardize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-smooth:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: smooth
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                kernel_size:
+                  type: integer
+                  default: 5
+        goal_default:
+          kernel_size: 5
+        handles: {}
+      auto-find_n_most_prominent_wavenumbers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_n_most_prominent_wavenumbers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_peaks:
+                  type: integer
+                prominence_increment:
+                  type: number
+                  default: 0.005
+                max_iterations:
+                  type: integer
+                  default: 500
+        goal_default:
+          num_peaks: null
+          prominence_increment: 0.005
+          max_iterations: 500
+        handles: {}
+      auto-find_prominent_wavenumbers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_prominent_wavenumbers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                prominence:
+                  type: number
+                  default: 0.01
+        goal_default:
+          prominence: 0.01
+        handles: {}
+    source: https://github.com/Arcadia-Science/ramanalysis
+  name: LabRAM HR Evolution
+  description: 我们的 LabRAM HR Evolution 是世界知名的用于研究和分析的拉曼解决方案，现已更名为 LabRAM Odyssey。
+    LabRAM Odyssey 提供 LabRAM HR Evolution 的所有熟悉功能以及附加功能和改进。请在新的 LabRAM Odyssey 产品页面上阅读所有相关信息。此过滤器组合没有结果！您有任何疑问或要求吗？使用此表格联系我们的专家。
+  manufacturer: Horiba
+  icon: csm_LabRAM_HR_Evolution-HORIBA_702b723f9c.png
+  tags:
+  - 拉曼光谱仪
+  category:
+  - 拉曼光谱仪
+  device_params:
+    Segment: ': Scientific'
+    Division: ': Raman Spectroscopy'
+    Manufacturing Company: ': HORIBA France SAS'
+    品牌: Horiba
+  model:
+    name: LabRAM HR Evolution
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Analysis
+    step: Raman Spectroscopy
+  version: 1.0.0
+  resource_type: device
+community_21:
+  class:
+    module: community_drivers.21.driver:DeviceDriver
+    type: python
+  name: Wasatch Photonics WP-785X 拉曼光谱仪
+  description: Wasatch Photonics WP-785X是最全面的785nm拉曼光谱仪系列，采用高通量VPH体全息光栅技术。提供f/1.3(最大灵敏度)和f/1.8(更高分辨率)两种光学设计，科学级探测器支持TEC调节(10°C)或TEC制冷(-15°C)。可配置为仅光谱仪(IC)、集成激光(ILC,450mW)或集成激光+采样光学(ILP)三种构型。附赠ENLIGHTEN开源光谱软件和多语言SDK，集成Wiley
+    KnowItAll拉曼谱库匹配。
+  manufacturer: Wasatch Photonics
+  tags:
+  - 拉曼光谱仪
+  category:
+  - 拉曼光谱仪
+  model:
+    name: Wasatch Photonics WP-785X 拉曼光谱仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    激发波长: 785nm
+    光谱范围: 270-3500cm⁻¹(TEC调节型)/270-3100cm⁻¹(TEC制冷型)
+    分辨率: 7-9cm⁻¹(25µm狭缝)
+    光学设计: f/1.3(高灵敏度)/f/1.8(高分辨率)
+    激光功率: 450mW(集成型)
+    探测器: 科学级CCD(10°C/-15°C)
+    最小积分时间: 3ms/8ms
+    通信: USB2.0
+    尺寸: 24.3×17.2×6.0cm
+    重量: <2.3kg
+    品牌: Wasatch Photonics
+community_22:
+  class:
+    module: community_drivers.22.driver:DeviceDriver
+    type: python
+  name: Wasatch Photonics WP-532X 拉曼光谱仪
+  description: Wasatch Photonics WP-532X是高性能532nm拉曼光谱仪系列，532nm激发波长提供更强的拉曼散射信号，适合无机材料和碳纳米材料分析。光谱范围最宽可达270-4700cm⁻¹。采用f/1.3高通量或f/1.8高分辨率光学设计，配合可更换狭缝(15/25/50µm)优化灵敏度与分辨率。科学级探测器支持两种TEC温控模式。提供实验室整机和OEM模块两种形态，附赠ENLIGHTEN软件和多平台SDK。
+  manufacturer: Wasatch Photonics
+  tags:
+  - 拉曼光谱仪
+  category:
+  - 拉曼光谱仪
+  model:
+    name: Wasatch Photonics WP-532X 拉曼光谱仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    激发波长: 532nm
+    光谱范围: 270-4700cm⁻¹(TEC调节型)/270-4250cm⁻¹(TEC制冷型)
+    分辨率: 8-11cm⁻¹(25µm狭缝)
+    光学设计: f/1.3/f/1.8
+    探测器: 科学级CCD(10°C/-15°C)
+    最小积分时间: 3ms/8ms
+    通信: USB2.0 TypeB
+    尺寸: 24.3×17.2×6.0cm
+    重量: <2.3kg
+    狭缝选项: 15/25/50µm
+    品牌: Wasatch Photonics

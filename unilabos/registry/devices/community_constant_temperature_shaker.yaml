@@ -1,0 +1,1168 @@
+community_bio_shake:
+  class:
+    module: community_drivers.bio_shake.driver:BioShake
+    type: python
+    status_types:
+      supports_locking: bool
+      supports_active_cooling: bool
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                skip_home:
+                  type: boolean
+                  default: false
+        goal_default:
+          skip_home: false
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shake:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shake
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: number
+                acceleration:
+                  type: integer
+                  default: 0
+        goal_default:
+          speed: null
+          acceleration: 0
+        handles: {}
+      auto-stop_shaking:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_shaking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                deceleration:
+                  type: integer
+                  default: 0
+        goal_default:
+          deceleration: 0
+        handles: {}
+      auto-lock_plate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unlock_plate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unlock_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+        goal_default:
+          temperature: null
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-deactivate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: BioShake iQ
+  description: 适用于微孔板和试管的高端恒温摇床 BioShake iQ 高端恒温摇床设计紧凑、时尚，让您只需最少的调整即可执行所有标准混合运行。 BioShake
+    iQ 具有出色的性能，可处理生物技术、制药和学术研究领域的广泛应用。通过将混合操作与孵育阶段相结合，可以减少反应过程时间和操作员工作量，并提高许多程序的效率，从而提高产量。
+  manufacturer: Q.Instruments (Analytik Jena)
+  icon: bio_shake.webp
+  tags:
+  - 恒温摇床
+  category:
+  - 恒温摇床
+  device_params:
+    类型: 微孔板加热振荡器
+    厂商: Q.Instruments(现Analytik Jena)
+    温度: 室温至+100°C
+    振荡: 200-3000rpm
+    兼容: 96/384孔板
+    接口: USB
+    品牌: Q.Instruments (Analytik Jena)
+  model:
+    name: BioShake iQ
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Shaking
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: integer
+community_inheco_tec_control_box:
+  class:
+    module: community_drivers.inheco_tec_control_box.driver:InhecoTECControlBox
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                timeout:
+                  type: integer
+                  default: 3
+        goal_default:
+          command: null
+          timeout: 3
+        handles: {}
+      auto-set_touchscreen:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_touchscreen
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                active:
+                  type: boolean
+        goal_default:
+          active: null
+        handles: {}
+      auto-reset_action_display:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_action_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: CPAC – Cold Plate Air Cooled Heater/Cooler
+  description: INHECO TEC Control是实验室自动化温度控制单元，控制温度和振荡，测量环境温度和湿度。支持手动触摸屏操作和USB自动化接口，可编程复杂温度/振荡序列。放置在工作台外以节省空间。
+  manufacturer: INHECO GmbH
+  icon: inheco_tec_control_box.webp
+  tags:
+  - 恒温摇床
+  category:
+  - 恒温摇床
+  device_params:
+    型号: Multi TEC Control(MTC) 185×249×264mm / Single TEC Control(STC) 147×224×177mm
+      / MTC Compact 300×260×100mm
+    默认目标温度: 70°C
+    STC电气: 100VAC, 50/60Hz, 150W
+    环境温度: +15至+32°C
+    STC重量: 3.3kg
+    接口: USB, 触摸屏
+    兼容设备: Thermoshake/CPAC/HeatPAC/Teleshake/IMP
+    模块: Blue/Black/Yellow Slot Modules
+    品牌: INHECO GmbH
+  model:
+    name: CPAC – Cold Plate Air Cooled Heater/Cooler
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Thermal Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        vid:
+          default: null
+          type: string
+        pid:
+          default: null
+          type: string
+        serial_number:
+          default: null
+          type: string
+community_gh_ika_matrix_orbital:
+  class:
+    module: community_drivers.gh_ika_matrix_orbital.driver:IKADevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                query:
+                  type: string
+        goal_default:
+          query: null
+        handles: {}
+      auto-command:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/numat/ika
+  name: MATRIX Orbital
+  description: 探索我们世界领先的机器人，为不同行业提供机器人解决方案并站在研究的前沿。与我们一起塑造未来！
+  manufacturer: IKA
+  icon: V1%20Desktop.jpg
+  tags:
+  - 恒温摇床
+  category:
+  - 恒温摇床
+  device_params:
+    '1234': Abbildung entspricht nicht dem Lieferumfang
+    IKA G-L: 'Listenpreis
+
+      USD 1,273.00'
+    Listenpreis: USD 327.00
+    Preis: USD 1,273.00
+    品牌: IKA
+  model:
+    name: MATRIX Orbital
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Shaking
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          default: null
+          type: string
+community_gh_opentrons_heater_shaker_module:
+  class:
+    module: community_drivers.gh_opentrons_heater_shaker_module.driver:ThermocyclerDriver
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_connected:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_lid:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_lid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_lid:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_lid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_lid_status:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_lid_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_lid_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_lid_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: string
+        goal_default:
+          temp: null
+        handles: {}
+      auto-get_lid_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_lid_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_plate_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_plate_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: string
+                hold_time:
+                  type: string
+                volume:
+                  type: string
+        goal_default:
+          temp: null
+          hold_time: null
+          volume: null
+        handles: {}
+      auto-get_plate_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_plate_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_ramp_rate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ramp_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ramp_rate:
+                  type: string
+        goal_default:
+          ramp_rate: null
+        handles: {}
+      auto-deactivate_all:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-deactivate_lid:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate_lid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-deactivate_block:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate_block
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_device_info:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enter_programming_mode:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enter_programming_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-lift_plate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lift_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-jog_lid:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: jog_lid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                angle:
+                  type: string
+        goal_default:
+          angle: null
+        handles: {}
+    source: https://github.com/anuwrag/Opentrons-Tools
+  name: Heater-Shaker Module
+  description: Opentrons 加热摇床模块可在平台上加热和摇动微孔板。该模块可加热至 95°C，并能以 200 至 3000 rpm 的速度摇动样品。
+  manufacturer: Opentrons
+  icon: HeaterSHaker__08324.1729268547.386.513.png
+  tags:
+  - 恒温摇床
+  category:
+  - 恒温摇床
+  device_params:
+    Dimensions: 152 mm L x 90 mm W x 82 mm H
+    Orbital shaking range: 200 to 3000 rpm
+    Shaking amplitude/pattern: 2 mm/orbital
+    Programmable temperature range: Room temp +1.5º C to 95º C in steps of 1°C
+    Temperature accuracy: ± 0.5°C at 55°C
+    Weight: 1.3 kg
+    Module power input: 36V DC 6.1A DC
+    Power adapter input: 100-240V, 50/60Hz
+    品牌: Opentrons
+  model:
+    name: Heater-Shaker Module
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Thermal Mixing
+  version: 1.0.0
+  resource_type: device
+community_gh_opentrons_temperature_module:
+  class:
+    module: community_drivers.gh_opentrons_temperature_module.driver:TempdeckControl
+    type: python
+    status_types:
+      model_name: str
+      serial_no: str
+      fw_version: str
+    action_value_mappings:
+      auto-open_first_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_first_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                usb_vidpid:
+                  type: string
+        goal_default:
+          usb_vidpid: null
+        handles: {}
+      auto-from_usb_location:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_usb_location
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location:
+                  type: string
+                usb_vidpid:
+                  type: string
+        goal_default:
+          location: null
+          usb_vidpid: null
+        handles: {}
+      auto-from_serial_portname:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_serial_portname
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                portname:
+                  type: string
+        goal_default:
+          portname: null
+        handles: {}
+      auto-list_connected_devices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: list_connected_devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                usb_vidpid:
+                  type: string
+        goal_default:
+          usb_vidpid: null
+        handles: {}
+      auto-set_target_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_target_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: number
+        goal_default:
+          temp: null
+        handles: {}
+      auto-get_temps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_target_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_target_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-deactivate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/czbiohub-sf/ot-tempdeck-control
+  name: Opentrons Temperature Module
+  description: Opentrons温度模块是帕尔贴温度控制模块，温度范围4-95°C，兼容OT-2和Flex机器人。
+  manufacturer: Opentrons
+  icon: image-13.png.webp
+  tags:
+  - 恒温摇床
+  category:
+  - 恒温摇床
+  device_params:
+    Type: Peltier temperature module
+    Compatible: OT-2 and Flex
+    Temperature: 4-95°C
+    Deck slots: '1'
+    品牌: Opentrons
+  model:
+    name: Opentrons Temperature Module
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Temperature Control
+    step: Heating/Cooling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ser_port:
+          default: null
+          type: string
+community_gh_inheco_incubator_shaker:
+  class:
+    module: community_drivers.gh_inheco_incubator_shaker.driver:IncubatorShakerStack
+    type: python
+    status_types:
+      num_units: int
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-request_loading_tray_states:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: request_loading_tray_states
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-request_temperature_control_states:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: request_temperature_control_states
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-request_shaking_states:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: request_shaking_states
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_all:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_all:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_all_temperature_control:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_all_temperature_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_temperature:
+                  type: number
+        goal_default:
+          target_temperature: null
+        handles: {}
+      auto-get_all_temperatures:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_all_temperatures
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_all_temperature_control:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_all_temperature_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shake:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shake
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_all_shaking:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_all_shaking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/PyLabRobot/pylabrobot
+  name: INHECO Incubator Shaker
+  description: Inheco 产品节省样品处理的时间、金钱和空间。
+  manufacturer: Inheco
+  icon: odtc.png
+  tags:
+  - 恒温摇床
+  category:
+  - 恒温摇床
+  device_params:
+    参数: Thermal Cycling On Deck Thermal Cycler - ODTC®; On Deck Thermal Cycler - ODTC®;
+      Cell Incubation SCILA CO2 4-Position cell incubator; SCILA CO2 4-Position cell
+      incubator; Heating & Cooling CPLC – Cold Plate Liquid Cooled Heater/Cooler CPAC
+      – Cold Plate Air Cooled Heater/Cooler; CPLC – Cold Plate Liquid Cooled Heater/Cooler
+      CPAC – Cold Plate Air Cooled Heater/Cooler; Heating HeatPAC on-deck heater;
+      HeatPAC on-deck heater
+    品牌: Inheco
+  model:
+    name: INHECO Incubator Shaker
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Culture
+    step: Tissue Culture
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        backend:
+          default: null
+          type: string
+community_96:
+  class:
+    module: community_drivers.96.driver:DeviceDriver
+    type: python
+  name: Inheco ODTC在线热循环仪
+  description: Inheco ODTC(On Deck Thermocycler)是紧凑型自动化热循环仪,设计用于集成到液体处理平台,具备快速升降温速率和高温度均匀性,部分型号集成振荡功能用于混合应用,可通过软件与实验室自动化系统集成控制
+  manufacturer: Inheco
+  tags:
+  - 恒温摇床
+  category:
+  - 恒温摇床
+  model:
+    name: Inheco ODTC在线热循环仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    温度范围: 4-99°C
+    板型: 96孔和384孔SBS标准板
+    盖板: 自动加热盖防冷凝
+    振荡: 部分型号集成轨道振荡功能
+    设计: 紧凑型在线集成设计
+    品牌: Inheco
+community_1025:
+  class:
+    module: community_drivers.1025.driver:DeviceDriver
+    type: python
+  name: Inheco ODTC甲板式热循环仪
+  description: Inheco ODTC是专为自动化平台设计的甲板式热循环仪，具有紧凑外形可直接集成在移液工作站甲板上。支持96和384孔板格式，具有精确温度控制和梯度功能。自动化盖开合机构便于机器人抓手操作，适用于自动化PCR、NGS文库制备和分子生物学孵育工作流程。
+  manufacturer: Inheco
+  tags:
+  - 恒温摇床
+  category:
+  - 恒温摇床
+  model:
+    name: Inheco ODTC甲板式热循环仪
+    type: device
+  version: 1.0.0
+  resource_type: device

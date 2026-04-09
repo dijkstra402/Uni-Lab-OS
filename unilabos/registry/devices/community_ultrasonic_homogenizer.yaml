@@ -1,0 +1,614 @@
+community_up20:
+  class:
+    module: community_drivers.up20.driver:Interson
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-StartRun:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: StartRun
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-startMotor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startMotor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-startAcq:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startAcq
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stopMotor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopMotor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stopAcq:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopAcq
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-fastMotor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fastMotor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getRawImages:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getRawImages
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: integer
+                  default: 1
+        goal_default:
+          n: 1
+        handles: {}
+      auto-getImages:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getImages
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: integer
+                  default: 1
+        goal_default:
+          n: 1
+        handles: {}
+      auto-getUSBImages:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getUSBImages
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: integer
+                  default: 1
+        goal_default:
+          n: 1
+        handles: {}
+      auto-progIt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: progIt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: UP200H / UP200S - Ultrasonic Power for the Lab
+  description: 200W实验室超声波处理器，UP200H可手持或安装在支架上，UP200S仅支架使用，适用于实验室小中规模超声处理
+  manufacturer: Hielscher
+  icon: up20.webp
+  tags:
+  - 超声破碎仪
+  category:
+  - 超声破碎仪
+  device_params:
+    功率: 200W
+    频率: 24kHz
+    适用体积: 0.1-2000mL
+    探头直径: 1-40mm可选
+    应用: 均质/分散/乳化/细胞破碎/脱气/声化学
+    品牌: Hielscher
+  model:
+    name: UP200H / UP200S - Ultrasonic Power for the Lab
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Sonication
+  version: 1.0.0
+  resource_type: device
+community_gh_qsonica_sonicator:
+  class:
+    module: community_drivers.gh_qsonica_sonicator.driver:Pipette
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-from_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+                name:
+                  type: string
+                config_file:
+                  type: string
+                path:
+                  type: string
+        goal_default:
+          index: null
+          name: null
+          config_file: null
+          path: null
+        handles: {}
+      auto-post_load:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: post_load
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-vol2move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: vol2move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vol:
+                  type: string
+        goal_default:
+          vol: null
+        handles: {}
+      auto-prime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                s:
+                  type: integer
+                  default: 2500
+        goal_default:
+          s: 2500
+        handles: {}
+      auto-aspirate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aspirate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vol:
+                  type: number
+                location:
+                  type: string
+                s:
+                  type: integer
+                  default: 2000
+        goal_default:
+          vol: null
+          location: null
+          s: 2000
+        handles: {}
+      auto-dispense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vol:
+                  type: number
+                location:
+                  type: string
+                s:
+                  type: integer
+                  default: 2000
+        goal_default:
+          vol: null
+          location: null
+          s: 2000
+        handles: {}
+      auto-transfer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transfer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vol:
+                  type: string
+                source_well:
+                  type: string
+                destination_well:
+                  type: string
+                s:
+                  type: integer
+                  default: 3000
+                blowout:
+                  type: string
+                mix_before:
+                  type: string
+                mix_after:
+                  type: string
+                air_gap:
+                  type: integer
+                  default: 0
+                new_tip:
+                  type: string
+                  default: always
+        goal_default:
+          vol: null
+          source_well: null
+          destination_well: null
+          s: 3000
+          blowout: null
+          mix_before: null
+          mix_after: null
+          air_gap: 0
+          new_tip: always
+        handles: {}
+      auto-blowout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: blowout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                s:
+                  type: integer
+                  default: 6000
+        goal_default:
+          s: 6000
+        handles: {}
+      auto-air_gap:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: air_gap
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vol:
+                  type: string
+        goal_default:
+          vol: null
+        handles: {}
+      auto-mix:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mix
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vol:
+                  type: number
+                n:
+                  type: integer
+                s:
+                  type: integer
+                  default: 5500
+        goal_default:
+          vol: null
+          n: null
+          s: 5500
+        handles: {}
+      auto-stir:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stir
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_times:
+                  type: integer
+                  default: 1
+                height:
+                  type: number
+        goal_default:
+          n_times: 1
+          height: null
+        handles: {}
+      auto-update_z_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_z_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tip:
+                  type: boolean
+        goal_default:
+          tip: null
+        handles: {}
+      auto-add_tiprack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_tiprack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tiprack:
+                  type: string
+        goal_default:
+          tiprack: null
+        handles: {}
+      auto-pickup_tip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pickup_tip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tip_:
+                  type: string
+        goal_default:
+          tip_: null
+        handles: {}
+      auto-return_tip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: return_tip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location:
+                  type: string
+        goal_default:
+          location: null
+        handles: {}
+      auto-drop_tip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: drop_tip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location:
+                  type: string
+        goal_default:
+          location: null
+        handles: {}
+    source: https://github.com/machineagency/science-jubilee
+  name: Q500 Sonicator
+  description: Sonicators®：原创超声波液体处理器。自 1973 年起在美国制造。越来越多的科学家信任这款独一无二的超声波发生器。
+  manufacturer: Qsonica
+  icon: q700-with-stand_medium.png
+  tags:
+  - 超声破碎仪
+  category:
+  - 超声破碎仪
+  device_params:
+    参数: Nanoparticle Dispersion Create maximally stable nanoparticle suspensions by
+      achieving the lowest possible particle sizes. Dispersing Deagglomerating Particle
+      Size Reduction Particle Synthesis & Precipitation Surface Functionalization;
+      Chromatin / DNA Shearing Achieve a narrow distribution of fragment sizes for
+      next-generation sequencing, ChIP assay and other genomics applications. Chromatin
+      Shearing for ChIP DNA Shearing for NGS ChIP-Seq Cell Lysis RNA and Protein Extraction;
+      Cell Disruption / Cell Lysis Efficiently lyse everything from mammalian cell
+      culture to gram-positive bacteria. See why
+    品牌: Qsonica
+  model:
+    name: Q500 Sonicator
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Sonication
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        index:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        brand:
+          default: null
+          type: string
+        model:
+          default: null
+          type: string
+        max_volume:
+          default: null
+          type: string
+        min_volume:
+          default: null
+          type: string
+        zero_position:
+          default: null
+          type: string
+        blowout_position:
+          default: null
+          type: string
+        drop_tip_position:
+          default: null
+          type: string
+        mm_to_ul:
+          default: null
+          type: string
+community_1036:
+  class:
+    module: community_drivers.1036.driver:DeviceDriver
+    type: python
+  name: Hielscher UP200St超声波处理器
+  description: Hielscher UP200St是200W实验室级超声波处理器，频率26kHz，振幅连续可调。具有自动振幅补偿功能在负载下保持恒定振幅，内置SD卡自动记录超声参数确保实验可重复性。支持浏览器远程控制和脉冲模式，适用于均质乳化、细胞破碎、纳米分散和声化学应用。
+  manufacturer: Hielscher
+  tags:
+  - 超声破碎仪
+  category:
+  - 超声破碎仪
+  model:
+    name: Hielscher UP200St超声波处理器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_1061:
+  class:
+    module: community_drivers.1061.driver:DeviceDriver
+    type: python
+  name: Branson SFX250/SFX550 数字超声波处理器
+  description: Branson SFX250/SFX550是Emerson旗下数字超声波细胞破碎/匀浆仪，工作频率20kHz。SFX250输出250W，SFX550输出550W，振幅10-100%数字可调。支持脉冲和连续运行模式，配备能量和温度监控功能，广泛用于细胞裂解、纳米颗粒分散、乳化和DNA剪切等应用。
+  manufacturer: Branson
+  tags:
+  - 超声破碎仪
+  category:
+  - 超声破碎仪
+  model:
+    name: Branson SFX250/SFX550 数字超声波处理器
+    type: device
+  version: 1.0.0
+  resource_type: device

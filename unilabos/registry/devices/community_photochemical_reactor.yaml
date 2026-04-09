@@ -1,0 +1,1624 @@
+community_argon_innova300_c:
+  class:
+    module: community_drivers.argon_innova300_c.driver:Innova300C
+    type: python
+    status_types:
+      baudrate: str
+      etalon_temperature_setpoint: str
+      magnetic_field_setpoint_high: str
+      powertrack_position: str
+      current_setpoint: str
+      power_setpoint: str
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-faults:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: faults
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_in_start_delay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_in_start_delay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-etalon_temperature_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: etalon_temperature_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-magnetic_field_setpoint_high:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: magnetic_field_setpoint_high
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-powertrack_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: powertrack_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+        goal_default:
+          key: null
+        handles: {}
+      auto-recalibrate_powertrack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: recalibrate_powertrack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-center_powertrack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: center_powertrack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-power_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Coherent Innova 300C 氩离子激光器 (氩气管驱动)
+  description: Coherent Innova 300C氩离子激光器的氩气等离子管控制驱动接口，负责管电流和气压监控。多线输出10-25W，TEM00模式。已停产。
+  manufacturer: Coherent Corp.
+  icon: argon_innova300_c.webp
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  device_params:
+    波长: 355-1154nm
+    功率: 100mW-10W
+    多线可见光: 457.9-514.5nm
+    多线紫外: 333.4-363.8nm
+    光束质量: M²<1.1(514.5nm)
+    电源: 三相208VAC ±10%, 最大60A/相
+    冷却水: 8.5L/min
+    特性: MotoFreD自动频率双倍
+    品牌: Coherent Corp.
+  model:
+    name: Coherent Innova 300C 氩离子激光器 (氩气管驱动)
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+        baudrate:
+          default: null
+          type: string
+community_cc1:
+  class:
+    module: community_drivers.cc1.driver:CC1
+    type: python
+    status_types:
+      acknowledge: str
+      gate: str
+      subtract: str
+      trigger_mode: str
+      window: str
+      delay: str
+      dwell_time: str
+      firmware: str
+      channel: str
+    action_value_mappings:
+      auto-clear_counts:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_counts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Qubitekk CC1 Coincidence Counter
+  description: 双通道符合计数器，纳秒级分辨率，用于量子光学实验。注意：原标记为Thorlabs是错误的，实际为Qubitekk。在售。
+  manufacturer: Qubitekk
+  icon: cc1.webp
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  device_params:
+    Inputs: 2 signal + 1 gate (SMA)
+    Coincidence Window: 1-8ns (integer steps)
+    CH1 Delay: 0-14ns
+    FPGA: Cyclone IV
+    Interface: USB-B (virtual COM)
+    Baud: '19200'
+    Power: USB
+    品牌: Qubitekk
+  model:
+    name: Qubitekk CC1 Coincidence Counter
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+community_cobolt0601:
+  class:
+    module: community_drivers.cobolt0601.driver:Cobolt0601
+    type: python
+    status_types:
+      ksw_enabled: str
+      enabled: str
+      autostart: str
+      ctl_mode: str
+      current_sp: str
+      power_sp: str
+      digital_mod: str
+      analog_mod: str
+      analogli_mod: str
+    action_value_mappings:
+      auto-idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ksw_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ksw_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-autostart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: autostart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-restart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-operating_hours:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: operating_hours
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-interlock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: interlock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ctl_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ctl_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current_sp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_sp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-power_sp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power_sp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_fault:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_fault
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enter_mod_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enter_mod_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-digital_mod:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: digital_mod
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-analog_mod:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: analog_mod
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-analogli_mod:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: analogli_mod
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-mod_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mod_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Cobolt 06-01 Series Diode Laser
+  description: Cobolt 06-01是HÜBNER Photonics(原Cobolt AB)的紧凑型CW二极管激光模块，覆盖405-830nm多种波长，用于荧光显微/流式细胞/拉曼光谱。
+  manufacturer: HÜBNER Photonics (Cobolt)
+  icon: cobolt0601.webp
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  device_params:
+    波长: 405-830nm(多种可选)
+    功率: 50mW-300+mW
+    模式: CW连续
+    光束: TEM00, 单纵模窄线宽
+    噪声: <0.5% RMS
+    寿命: '>10,000小时'
+    尺寸: 30.5×70mm
+    调制: 模拟/数字
+    厂商: HÜBNER Photonics(原Cobolt)
+    品牌: HÜBNER Photonics (Cobolt)
+  model:
+    name: Cobolt 06-01 Series Diode Laser
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+community_415:
+  class:
+    module: community_drivers.415.driver:DeviceDriver
+    type: python
+  name: Ondax SureLock LM系列波长稳定激光模块
+  description: Ondax SureLock LM系列（现归属Coherent）是一款紧凑型波长稳定激光模块，采用PowerLocker体积全息光栅（VHG）滤波器技术。VHG滤波器创建外腔锁定激光二极管波长，将光谱带宽缩窄一个数量级。极短的外腔配置比Littrow或Littman腔设计具有更好的模式选择和更小的封装尺寸。集成精密温控和电流控制，实现优于1%的功率稳定性和不到1分钟的预热时间。适用于拉曼光谱和计量应用。
+  manufacturer: Ondax (Coherent)
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Ondax SureLock LM系列波长稳定激光模块
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 405-830nm
+    功率范围: 12-150mW
+    线宽: <25-300MHz
+    空间模式: 单模
+    RMS噪声: 0.25-0.5%(0-20MHz)
+    功率稳定性: <1%
+    预热时间: <1分钟
+    技术: PowerLocker VHG滤波器
+    品牌: Ondax (Coherent)
+community_424:
+  class:
+    module: community_drivers.424.driver:DeviceDriver
+    type: python
+  name: TOPTICA TopMode 单频窄线宽二极管激光器
+  description: TOPTICA TopMode是一款单频窄线宽二极管激光器，具有类似HeNe的简便操作但在405nm波长下提供更高功率（最高100mW）。采用专有CHARM（CoHerence-Advanced
+    Regulation Method）技术主动监控激光并持续维持单频运行，确保24/7可靠运行无跳模。紧凑型被动风冷激光头设计便于OEM集成，支持ASCII命令编程控制。SmartDock光纤耦合效率超过50%。广泛应用于拉曼光谱、全息术、干涉测量和直写光刻等领域。
+  manufacturer: TOPTICA Photonics
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: TOPTICA TopMode 单频窄线宽二极管激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长: 405nm(标准)可定制375-515nm
+    功率: 最高100mW@405nm
+    线宽: 窄线宽单频
+    稳频技术: CHARM主动相干控制
+    冷却: 被动空气冷却
+    功耗: <70W(典型)/150W(最大)
+    接口: USB/以太网
+    光纤耦合: SmartDock(>50%效率)
+    品牌: TOPTICA Photonics
+community_750:
+  class:
+    module: community_drivers.750.driver:DeviceDriver
+    type: python
+  name: Omicron PhoxX Diode Laser
+  description: PhoxX是Omicron-Laserage (现Coherent旗下) 生产的紧凑型半导体激光模块，专为荧光显微镜、共聚焦显微镜、流式细胞术、光谱学等生物光子学应用设计。以小巧外形、优异光束质量和精确波长选项著称。
+  manufacturer: Omicron
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Omicron PhoxX Diode Laser
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 紧凑型半导体激光模块
+    波长范围: '375-785nm (多种波长可选: 375nm, 405nm, 445nm, 488nm, 510nm, 638nm, 660nm, 785nm)'
+    输出功率: 数十至数百毫瓦 (取决于波长)
+    调制: 直接模拟和数字(TTL)调制，调制速度高达150MHz
+    光束质量: 圆形TEM00光束
+    指向稳定性: 优异
+    功率稳定性: 优异
+    品牌: Omicron
+community_751:
+  class:
+    module: community_drivers.751.driver:DeviceDriver
+    type: python
+  name: Omicron BrixX Diode Laser
+  description: BrixX是Omicron-Laserage (现Coherent旗下) 的高性能半导体激光器系列，广泛应用于荧光显微镜、流式细胞术、拉曼光谱、光遗传学、共聚焦显微镜和超分辨率成像。
+  manufacturer: Omicron
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Omicron BrixX Diode Laser
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    激光类型: 单模半导体激光器
+    波长范围: 375-785nm (405nm, 445nm, 488nm, 520nm, 638nm, 660nm, 785nm)
+    输出功率: 50mW至500mW+ (取决于波长)
+    光束质量: 高光束质量TEM00模式
+    调制: 直接模拟和数字调制，快速切换
+    功率稳定性: <0.5%噪声
+    调制带宽: MHz范围
+    接口: USB/RS-232
+    品牌: Omicron
+community_332:
+  class:
+    module: community_drivers.332.driver:DeviceDriver
+    type: python
+  name: Amplitude Satsuma 工业飞秒激光器
+  description: Amplitude Satsuma是一款紧凑型工业超快激光器，全球畅销产品，已安装超过1500台。提供Satsuma、Satsuma
+    HP和Satsuma HP²三个功率等级，平均功率从5W到20W，脉冲能量从10μJ到40μJ。采用风冷设计，支持FemtoTrig脉冲按需功能和FemtoBurst多脉冲模式。适用于微加工、眼科手术、显示器修复和科学研究等领域。
+  manufacturer: Amplitude Systems
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Amplitude Satsuma 工业飞秒激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    平均功率: '>5W/10W/20W'
+    脉冲能量: '>10/20/40μJ'
+    脉冲宽度: <350fs
+    重复频率: 单脉冲~40MHz
+    中心波长: 1030±5nm
+    冷却: 风冷(至20W IR)
+    可选输出: 绿光/UV/深紫外
+    品牌: Amplitude Systems
+community_273:
+  class:
+    module: community_drivers.273.driver:DeviceDriver
+    type: python
+  name: Keysight N7778C 可调谐激光源
+  description: Keysight N7778C是N777-C系列XP4级可调谐激光源的价值线型号，波长覆盖1240nm至1650nm，峰值输出功率超过+12dBm，信号与SSE比≥75dB/nm。支持双向扫描速度达200nm/s，波长重复性±1.5pm，0.1pm调谐分辨率。电机与压电执行器自动协调实现平滑无超调波长调谐。Option
+    013针对硅光子/集成光子技术优化，在1290-1340nm提供超过+16dBm输出功率。可搭配N774xC功率计和N7786C偏振合成器进行插损、PDL和色散的扫描波长测量。
+  manufacturer: Keysight
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Keysight N7778C 可调谐激光源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 1240-1650nm(无间隙,型号相关)
+    最大功率: '>12dBm(标准)/>18dBm(Option 013)'
+    SSE比: ≥75dB/nm
+    波长精度: ±4pm(静态)/±10pm(扫描)
+    重复性: ±1.5pm
+    扫描速度: 最高200nm/s双向
+    调谐分辨率: 0.1pm
+    品牌: Keysight
+community_274:
+  class:
+    module: community_drivers.274.driver:DeviceDriver
+    type: python
+  name: Keysight N7770系列 可调谐激光源
+  description: Keysight N7770系列是新一代可调谐激光源产品家族，覆盖1240nm至1650nm全波长范围无间隙。包含三款型号：N7776C顶级线(亚皮米重复性和最低SSE)、N7778C价值线(高性价比制造测试)和N7779C基础线(快速步进调谐)。所有型号基于共同腔体和激光模块设计，具备窄线宽、优异长期稳定性和低自发辐射。软件兼容前代8160xA和81600B激光器，支持Web浏览器远程界面(LAN/USB)。可选5英寸电容触摸屏，适用于CWDM、DWDM和PON器件测试。
+  manufacturer: Keysight
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Keysight N7770系列 可调谐激光源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 1240-1650nm(全系列无间隙)
+    型号: N7776C(顶级)/N7778C(价值)/N7779C(基础)
+    最大功率: '>12dBm'
+    扫描速度: 最高200nm/s
+    线宽: 窄线宽
+    分辨率: 0.1pm
+    接口: LAN/USB/Web界面
+    品牌: Keysight
+community_879:
+  class:
+    module: community_drivers.879.driver:DeviceDriver
+    type: python
+  name: LDC500激光二极管控制器
+  description: 精密激光二极管控制器，提供恒流驱动和集成TEC温度控制，具有低噪声、高稳定性特性，适用于光谱学、电信测试和激光二极管表征
+  manufacturer: Stanford Research Systems
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: LDC500激光二极管控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_889:
+  class:
+    module: community_drivers.889.driver:DeviceDriver
+    type: python
+  name: PRO8000模块化激光驱动器
+  description: 模块化激光驱动器系统，支持多种电流和温度控制模块，提供灵活的配置选项，适用于各种激光二极管应用
+  manufacturer: Thorlabs
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: PRO8000模块化激光驱动器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_304:
+  class:
+    module: community_drivers.304.driver:DeviceDriver
+    type: python
+  name: Coherent Chameleon 可调谐飞秒激光器
+  description: Coherent Chameleon系列是宽调谐、高功率、免维护飞秒Ti:Sapphire激光器，全球已安装数千台，是多光子成像领域的标杆产品。Chameleon
+    Ultra II型号覆盖680-1080nm波长范围，在800nm处输出功率超过3.5W。该系列包括Ultra、Vision和Discovery子系列，广泛应用于多光子显微成像、超快光谱学和非线性材料研究等前沿科学领域。
+  manufacturer: Coherent
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Coherent Chameleon 可调谐飞秒激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    Ti: Sapphire振荡器
+    品牌: Coherent
+community_431:
+  class:
+    module: community_drivers.431.driver:DeviceDriver
+    type: python
+  name: Ekspla NT340系列高能量宽调谐纳秒激光器
+  description: NT340系列是Ekspla生产的高能量宽调谐纳秒激光器，将纳秒光学参量振荡器(OPO)与调Q Nd:YAG激光器集成于紧凑的单一外壳中。实现从紫外到红外192-4400nm的无间隙自动调谐，密封腔体保护晶体免受灰尘和湿气影响。适用于激光诱导荧光、闪光光解、时间分辨光谱、腔衰荡光谱和气体光谱等应用。
+  manufacturer: Ekspla
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Ekspla NT340系列高能量宽调谐纳秒激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_434:
+  class:
+    module: community_drivers.434.driver:DeviceDriver
+    type: python
+  name: Light Conversion TOPAS光学参量放大器
+  description: TOPAS是Light Conversion生产的飞秒光学参量放大器(OPA)系列，专为钛宝石激光器设计，提供189nm至20μm的连续波长调谐能力。TOPAS4是其控制软件平台（WinTopas4/Topas4
+    Server），通过REST API实现自动化操作。具有高转换效率和高输出稳定性，全球安装超过2000台。适用于超快光谱、泵浦-探测实验和非线性光学研究。
+  manufacturer: Light Conversion
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Light Conversion TOPAS光学参量放大器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_446:
+  class:
+    module: community_drivers.446.driver:DeviceDriver
+    type: python
+  name: Spectra-Physics Millennia eV连续波DPSS绿色激光器
+  description: Millennia eV是Spectra-Physics生产的高功率连续波二极管泵浦固体(DPSS)绿色激光器，采用专利It's in
+    the Box集成设计，将激光腔体、泵浦二极管和控制电子元件整合于单一紧凑机箱中。提供5W至25W输出功率可选，具备超低光学噪声和同级最佳功率稳定性。广泛用于泵浦钛宝石激光器、超快光谱和光伏制造等领域。
+  manufacturer: Spectra-Physics (MKS)
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Spectra-Physics Millennia eV连续波DPSS绿色激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_572:
+  class:
+    module: community_drivers.572.driver:DeviceDriver
+    type: python
+  name: Daylight Solutions MIRcat 可调谐中红外激光系统
+  description: Daylight Solutions MIRcat是基于外腔量子级联激光器(EC-QCL)技术的宽调谐中红外激光系统,现归属Leonardo
+    DRS。单系统可集成最多4个可调谐激光模块,实现约4 μm到13 μm以上的超宽光谱覆盖。支持脉冲和连续波(CW)两种工作模式,调谐速度超过30,000 cm⁻¹/s。提供扫描模式、步进测量模式和多光谱模式三种波长调谐方式。输出单一TEM00模式光束,适用于分子光谱、遥测爆炸物检测和高光谱成像。
+  manufacturer: Daylight Solutions
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Daylight Solutions MIRcat 可调谐中红外激光系统
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长覆盖: 约4 μm至>13 μm
+    调谐范围: 最大1400 cm⁻¹(4模块)
+    调谐速度: '>30,000 cm⁻¹/s'
+    峰值功率: 最高1W
+    平均功率: 最高0.5W
+    波长重复性: <0.1 cm⁻¹
+    CW RIN: <-140 dBc/Hz
+    模块数: 最多4个QCL模块
+    品牌: Daylight Solutions
+community_276:
+  class:
+    module: community_drivers.276.driver:DeviceDriver
+    type: python
+  name: Keysight 81600B 可调谐激光源模块
+  description: Keysight 81600B系列是高性能可调谐激光源模块，专为WDM开发者和制造商设计。覆盖1260-1640nm全部传输波段，内置高性能波长计、相干控制单元和60dB衰减器，信号与自发辐射比大于70dB/nm。支持高速波长扫描（最高80nm/s），可用于光学组件精密表征和光放大器测试。该产品已停产，替代型号为N777xC系列。
+  manufacturer: Keysight
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Keysight 81600B 可调谐激光源模块
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 1260-1640nm
+    信号与SSE比: '>70dB/nm'
+    波长精度: ±3.6pm
+    光输出功率: 最高+9dBm
+    扫描速度: 最高80nm/s
+    内置衰减器: 60dB
+    品牌: Keysight
+community_700:
+  class:
+    module: community_drivers.700.driver:DeviceDriver
+    type: python
+  name: SuperK EXTREME Supercontinuum Laser with SELECT Filter
+  description: SuperK EXTREME是NKT Photonics的旗舰超连续谱白光激光源，提供从可见光到近红外的超宽光谱覆盖。SuperK SELECT是可调谐多线滤波器配件，可从超连续谱输出中选择特定波段。两者结合形成可调谐激光系统，广泛应用于显微镜、光谱学、成像、OCT等领域。
+  manufacturer: NKT Photonics
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: SuperK EXTREME Supercontinuum Laser with SELECT Filter
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: '390-2400+ nm, 输出功率: 最高6W, 重复频率: 78 MHz (可变2-78 MHz), 脉冲宽度: ~5 ps, 光束质量:
+      M²~1.1, 功率稳定性: <0.5% RMS, 光谱功率密度: 最高4.5 mW/nm, 单模光纤输出'
+    品牌: NKT Photonics
+community_701:
+  class:
+    module: community_drivers.701.driver:DeviceDriver
+    type: python
+  name: Mightex USB Camera Series
+  description: Mightex SLC系列USB相机，包括SLC-MA和SLC-SA型号，适用于科学研究和工业成像应用。
+  manufacturer: Mightex
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Mightex USB Camera Series
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    接口: 'USB 2.0, 传感器类型: CMOS/CCD, 应用: 科学成像和机器视觉'
+    品牌: Mightex
+community_704:
+  class:
+    module: community_drivers.704.driver:DeviceDriver
+    type: python
+  name: LM-510 Liquid Level Monitor
+  description: Cryomagnetics LM-510液位监控仪用于监测低温存储容器和杜瓦瓶中的液体低温剂液位，采用高精度测量技术，适用于实验室和工业应用。
+  manufacturer: Cryomagnetics
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: LM-510 Liquid Level Monitor
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    用途: '监测液氦和液氮液位, 传感技术: 超导传感器(液氦)/电容传感器(液氮), 显示: 数字读数(百分比或长度单位), 通道: 单通道或多通道可选,
+      通信接口: RS-232/IEEE-488'
+    品牌: Cryomagnetics
+community_390:
+  class:
+    module: community_drivers.390.driver:DeviceDriver
+    type: python
+  name: Coherent Chameleon Compact OPO光参量振荡器
+  description: Coherent Chameleon Compact OPO是紧凑型光参量振荡器，由Chameleon钛宝石激光器泵浦，输出波长范围扩展至1000-1600nm近红外波段。飞秒脉冲输出，重复频率80MHz，自动化免调谐设计，专为深层组织多光子显微成像和非线性光学应用设计。
+  manufacturer: Coherent
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Coherent Chameleon Compact OPO光参量振荡器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出波长: 1000-1600nm
+    泵浦源: Chameleon钛宝石激光器
+    脉冲宽度: ~200fs
+    重复频率: 80MHz
+    应用: 多光子显微成像
+    特点: 紧凑自动化设计/免调谐
+    品牌: Coherent
+community_391:
+  class:
+    module: community_drivers.391.driver:DeviceDriver
+    type: python
+  name: Coherent Chameleon Ultra II可调谐钛宝石飞秒激光器
+  description: Coherent Chameleon Ultra II是宽调谐高功率飞秒钛宝石激光器，波长范围690-1080nm，最大平均功率超过3.5W，脉冲宽度140fs。密封免维护设计，是多光子显微成像领域的标准工具，广泛应用于超快光谱学、非线性光学和光遗传学研究。
+  manufacturer: Coherent
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Coherent Chameleon Ultra II可调谐钛宝石飞秒激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 690-1080nm
+    输出功率: '>3.5W'
+    重复频率: 80MHz
+    脉冲宽度: 140fs
+    峰值功率: '>300kW(@800nm)'
+    设计: 密封免维护
+    品牌: Coherent
+community_586:
+  class:
+    module: community_drivers.586.driver:DeviceDriver
+    type: python
+  name: Lighthouse Photonics Sprout-G 连续波DPSS绿光激光器
+  description: Lighthouse Photonics Sprout-G是紧凑型DPSS连续波激光器，输出532nm绿光最高18W功率，TEM00模式，采用Seal密封、LockT锁定和NET噪声消除专利技术，适用于泵浦钛宝石激光器、流式细胞术和光谱学应用。
+  manufacturer: Lighthouse Photonics
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Lighthouse Photonics Sprout-G 连续波DPSS绿光激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长: 532nm
+    最大输出功率: 18W(多功率版本5W-18W)
+    光束模式: TEM00
+    噪声: <0.02% rms(NET技术)
+    长期稳定性: <±0.25%/24h
+    光束发散: <1.4mrad
+    接口: USB/RS-232/以太网
+    品牌: Lighthouse Photonics
+community_587:
+  class:
+    module: community_drivers.587.driver:DeviceDriver
+    type: python
+  name: M Squared SolsTiS 连续波可调谐钛宝石激光器
+  description: M Squared SolsTiS是新一代全自动连续波钛宝石激光器，密封无需校准腔体，线宽低于50kHz可达Hz级，输出功率超过5W，调谐范围超300nm，适用于量子物理、原子光谱和精密测量等前沿科学研究。
+  manufacturer: M2
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: M Squared SolsTiS 连续波可调谐钛宝石激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    线宽: <50kHz(可达Hz级)
+    输出功率: '>5W'
+    调谐范围: '>300nm(TeraScan选项)'
+    振幅噪声: <0.075% rms
+    扫描范围: '>25GHz连续单模'
+    波长: 700-1000nm(钛宝石)
+    接口: 以太网/串口
+    品牌: M2
+community_608:
+  class:
+    module: community_drivers.608.driver:DeviceDriver
+    type: python
+  name: Santec TSL-570 高性能可调谐激光器
+  description: Santec TSL-570是高性能可调谐激光器，波长覆盖1240至1680nm多种型号，分辨率0.1pm，扫描速度最高200nm/s，信噪比达90dB/0.1nm，密封腔体设计确保无跳模稳定输出，适用于光通信器件测试和光子集成电路表征。
+  manufacturer: Santec
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Santec TSL-570 高性能可调谐激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 1240-1680nm(多型号)
+    波长分辨率: 0.1pm
+    波长精度: ±2pm(Type P)
+    扫描速度: 最高200nm/s
+    信噪比: 90dB/0.1nm
+    输出功率: +13dBm
+    接口: 以太网/GPIB/USB
+    品牌: Santec
+community_609:
+  class:
+    module: community_drivers.609.driver:DeviceDriver
+    type: python
+  name: Santec TSL-580 高性能可调谐激光器
+  description: Santec TSL-580是第8代高性能高速波长可调谐激光光源，采用全新设计的激光谐振腔和控制电路，实现了超过+15dBm的峰值CW光输出功率，具有窄线宽和高线性度，适用于下一代光子学研究和高插入损耗光学器件评估。
+  manufacturer: Santec
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Santec TSL-580 高性能可调谐激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: C/L波段(约1500-1630nm)
+    最大输出功率: '>+15dBm(30mW)'
+    线宽: <100kHz
+    调谐分辨率: 0.1pm
+    接口: GPIB/USB/Ethernet
+    品牌: Santec
+community_617:
+  class:
+    module: community_drivers.617.driver:DeviceDriver
+    type: python
+  name: Thorlabs KLS1550 K-Cube光纤耦合激光光源
+  description: Thorlabs KLS1550是一款紧凑型K-Cube光纤耦合激光光源，中心波长1550nm，最大输出功率7.0mW。内置Fabry-Perot激光二极管和驱动电路，集成反馈回路维持恒定光功率输出，通过光纤到光纤连接实现高效率光功率传输，可通过顶部面板或Kinesis软件控制。
+  manufacturer: Thorlabs
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Thorlabs KLS1550 K-Cube光纤耦合激光光源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长: 1550nm
+    最大输出功率: 7.0mW
+    稳定性: ±0.1dB
+    设定分辨率: 0.01mW
+    调制带宽: 600Hz(-3dB)/1kHz(-6dB)
+    调制输入: 0-10V
+    接口: USB 3.0(USB 1.1速度)
+    光纤接口: FC/PC
+    尺寸: 121×60×47mm
+    重量: 300g
+    品牌: Thorlabs
+community_678:
+  class:
+    module: community_drivers.678.driver:DeviceDriver
+    type: python
+  name: Toptica iBeam smart紧凑型单模二极管激光器
+  description: Toptica iBeam smart是一款紧凑型单模二极管激光器系列，波长覆盖375nm至1064nm，最大输出功率达450mW，支持高达250MHz的直接数字和模拟调制，内置FINE和SKILL技术降低噪声和散斑，广泛应用于荧光显微镜和流式细胞术。
+  manufacturer: Toptica
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Toptica iBeam smart紧凑型单模二极管激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 375-1064nm
+    最大功率: 450mW
+    光束质量: TEM00
+    调制带宽: 250MHz
+    接口: 数字/模拟I/O
+    冷却: 被动冷却
+    品牌: Toptica
+community_679:
+  class:
+    module: community_drivers.679.driver:DeviceDriver
+    type: python
+  name: Cobolt MLD系列高性能激光二极管模块
+  description: Cobolt MLD系列（现为Cobolt 06-01系列）是高性能调制连续波激光二极管模块，波长覆盖375nm至1064nm，输出功率达400mW，采用HTCure专有技术制造确保极高可靠性，可承受60G机械冲击，适用于荧光显微镜和流式细胞术。
+  manufacturer: Hubner/Cobolt
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Cobolt MLD系列高性能激光二极管模块
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 375-1064nm
+    最大功率: 400mW
+    光束质量: M²<1.2
+    调制频率: 150MHz
+    偏振消光比: '>100:1'
+    光谱纯度: '>60dB'
+    激光头长度: 80mm
+    品牌: Hubner/Cobolt
+community_680:
+  class:
+    module: community_drivers.680.driver:DeviceDriver
+    type: python
+  name: Cobolt DPL系列二极管泵浦固体激光器
+  description: Cobolt DPL系列是二极管泵浦固体激光器，提供多种可见光和近红外波长选择，输出TEM00单横模高质量光束，具有极高的功率和指向稳定性，采用紧凑设计集成电子控制，寿命超过10000小时，适用于荧光显微镜和拉曼光谱等应用。
+  manufacturer: Hubner/Cobolt
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Cobolt DPL系列二极管泵浦固体激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: DPSS二极管泵浦固体激光器
+    波长: 457/473/491/515/532/553/561/594nm等
+    光束质量: TEM00 (M²≈1)
+    功率: mW至数W级
+    稳定性: 极高功率和指向稳定性
+    品牌: Hubner/Cobolt
+community_683:
+  class:
+    module: community_drivers.683.driver:DeviceDriver
+    type: python
+  name: Laser Quantum Finesse DPSS泵浦激光器
+  description: Laser Quantum Finesse是532nm DPSS连续波泵浦激光器，功率可达16W，是Ti:Sapphire激光器的理想泵浦源，RMS噪声低至0.02%，泵浦二极管MTBF超40000小时，采用CEPLoQ技术实现相位稳定，极端坚固可在直升机飞行中使用。
+  manufacturer: Laser Quantum
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Laser Quantum Finesse DPSS泵浦激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长: 532nm
+    功率: 4W/5W/6W至16W
+    噪声: <0.1% RMS (标准)/<0.02% RMS (pure版)
+    泵浦二极管MTBF: '>40000小时'
+    抗振: 1200g跌落测试
+    质保: 5年/15000小时
+    品牌: Laser Quantum
+community_684:
+  class:
+    module: community_drivers.684.driver:DeviceDriver
+    type: python
+  name: Lighthouse Photonics Sprout-G绿光泵浦激光器
+  description: Lighthouse Photonics Sprout-G是532nm连续波绿光固体激光器，输出功率可达18W，具有业界领先的超低噪声性能（<0.02%
+    RMS），近衍射极限TEM00光束质量，紧凑一体化设计集成电子控制，是Ti:Sapphire激光器的理想泵浦源。
+  manufacturer: Lighthouse Photonics
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Lighthouse Photonics Sprout-G绿光泵浦激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长: 532nm
+    功率: 5W/10W/15W/18W
+    光束质量: M²<1.1 TEM00
+    噪声: <0.02% RMS (20Hz-20MHz)
+    运行模式: CW连续波
+    输出: 自由空间/光纤耦合
+    品牌: Lighthouse Photonics
+community_685:
+  class:
+    module: community_drivers.685.driver:DeviceDriver
+    type: python
+  name: M Squared SolsTiS超窄线宽可调谐Ti:Sapphire激光器
+  description: M Squared SolsTiS是一款全自动紧凑型超窄线宽连续波Ti:Sapphire可调谐激光器，线宽低于50kHz，输出功率达5W，全密封免对准腔体设计实现免维护操作，扫描范围超25GHz，支持以太网控制，可扩展至UV到中红外波段。
+  manufacturer: M2
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: M Squared SolsTiS超窄线宽可调谐Ti:Sapphire激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    线宽: <50kHz
+    功率: 最高5W
+    振幅噪声: <0.05%
+    扫描范围: '>25GHz'
+    调谐范围: 700-1000nm
+    接口: 以太网/串口/网页
+    泵浦源: 532nm DPSS
+    品牌: M2
+community_687:
+  class:
+    module: community_drivers.687.driver:DeviceDriver
+    type: python
+  name: Sirah Matisse连续波单频可调谐环形激光器
+  description: Sirah Matisse是一款连续波单频可调谐环形激光器系列，提供Ti:Sapphire和染料激光器两种配置，线宽可低至1kHz以下，通过腔内标准具和双折射滤波器实现单模运行，支持外部参考腔锁定实现超窄线宽输出，适用于高分辨率光谱学研究。
+  manufacturer: Sirah
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Sirah Matisse连续波单频可调谐环形激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: CW单频环形激光器
+    Ti: 'Sapphire版调谐范围: 670-1050nm'
+    染料版调谐范围: 380-900nm
+    线宽: <20kHz (主动稳定后<1kHz)
+    无跳模调谐: '>30-50GHz'
+    功率: 数百mW至>1W
+    品牌: Sirah
+community_729:
+  class:
+    module: community_drivers.729.driver:DeviceDriver
+    type: python
+  name: Cobolt 06-01系列MLD/DPL激光器
+  description: Cobolt 06-01系列涵盖MLD激光二极管和DPL二极管泵浦固体激光器两种技术路线，波长覆盖375nm至1064nm，采用HTCure专有技术确保极端环境可靠性，MLD版本支持150MHz快速调制，DPL版本提供超低噪声单频输出，广泛应用于生命科学仪器。
+  manufacturer: Cobolt
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Cobolt 06-01系列MLD/DPL激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 375-1064nm
+    最大功率: 400mW (MLD)
+    光束质量: M²<1.2
+    调制: 150MHz (MLD)
+    偏振消光比: '>100:1'
+    制造工艺: HTCure
+    交付: 自由空间/光纤耦合
+    品牌: Cobolt
+community_730:
+  class:
+    module: community_drivers.730.driver:DeviceDriver
+    type: python
+  name: Omicron DeepStar系列高速调制半导体激光器
+  description: Omicron DeepStar系列（现归属Coherent）是专为荧光显微镜和生物光子学设计的高速调制二极管激光器，调制频率超150MHz，提供UV至红光多种波长选择，纳秒级开关时间，单模光纤耦合输出，是STED超分辨和荧光寿命成像的理想光源。
+  manufacturer: Omicron
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Omicron DeepStar系列高速调制半导体激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长: 375/405/488/515/561/640nm等
+    功率: 30-200mW
+    调制: 150MHz以上
+    光束质量: TEM00
+    输出: 单模光纤耦合
+    应用: 荧光显微镜/STED/FCS
+    品牌: Omicron
+community_731:
+  class:
+    module: community_drivers.731.driver:DeviceDriver
+    type: python
+  name: Coherent OBIS智能激光模块系列
+  description: Coherent OBIS是一系列即插即用智能激光模块，波长覆盖375nm至785nm紫外到近红外，集成控制电子器件实现免调试操作，内置模拟和数字调制功能，USB和RS-232双接口控制，各波长统一紧凑外形和光束指向，广泛用于流式细胞术和共聚焦显微镜。
+  manufacturer: Coherent
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Coherent OBIS智能激光模块系列
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长: 375-785nm多种
+    功率: 20-200mW
+    光束质量: TEM00
+    调制: 内置模拟/数字调制
+    接口: USB/RS-232
+    启动时间: <1分钟
+    设计: 即插即用智能模块
+    品牌: Coherent
+community_732:
+  class:
+    module: community_drivers.732.driver:DeviceDriver
+    type: python
+  name: Coherent Sapphire光泵半导体激光器
+  description: Coherent Sapphire是单频连续波光泵半导体激光器系列，提供460nm至561nm多种可见光波长，TEM00近衍射极限光束质量（M²<1.1），超低噪声和优异指向稳定性，紧凑设计集成控制器，预热仅5分钟，适用于流式细胞术、拉曼光谱和共聚焦显微镜。
+  manufacturer: Coherent
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Coherent Sapphire光泵半导体激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长: 460/473/488/514/532/561nm等
+    功率: 20mW-1W+
+    光束质量: TEM00 M²<1.1
+    噪声: <0.25% RMS
+    偏振: '>100:1线偏振'
+    预热: ~5分钟
+    寿命: '>10000小时'
+    品牌: Coherent
+community_748:
+  class:
+    module: community_drivers.748.driver:DeviceDriver
+    type: python
+  name: Omicron LuxX 高性能半导体激光器
+  description: Omicron LuxX是超紧凑高性能连续波半导体激光器系列，覆盖375-830nm共20种波长，集成智能电子器件支持RS-232和USB控制，具备>150kHz快速开关能力和自动老化补偿功能，尺寸仅40×40×100mm。
+  manufacturer: Omicron
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Omicron LuxX 高性能半导体激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 375-830nm(20种波长)
+    输出功率: 20-300mW
+    调制: '>150kHz全开关'
+    光束直径: ~1mm(像散校正)
+    尺寸: 40×40×100mm
+    接口: RS-232/USB 2.0
+    模式: ACC/APC
+    品牌: Omicron
+community_749:
+  class:
+    module: community_drivers.749.driver:DeviceDriver
+    type: python
+  name: Omicron LuxX+ 增强型半导体激光器
+  description: Omicron LuxX+是LuxX系列的增强版半导体激光器，单模输出功率最高达500mW，保持同样紧凑尺寸，具备高稳定CW运行、快速模拟调制和电子快门功能，集成RS-232和USB接口，适用于生物技术和显微镜应用。
+  manufacturer: Omicron
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Omicron LuxX+ 增强型半导体激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 375-830nm
+    输出功率: 最高500mW单模
+    调制: '>150kHz全开关'
+    光束直径: ~1mm
+    尺寸: 40×40×100mm
+    接口: RS-232/USB 2.0
+    老化补偿: AAC自动
+    品牌: Omicron
+community_789:
+  class:
+    module: community_drivers.789.driver:DeviceDriver
+    type: python
+  name: Aculight Argos 2400 可调谐中红外激光器
+  description: Aculight Argos 2400(现Lockheed Martin)是光纤激光泵浦连续波光参量振荡器，提供1.4-4.6µm中红外波段连续可调输出，功率超过1W，线宽低于1MHz，无跳模运行可达30小时，适用于光声和腔衰荡光谱分析。
+  manufacturer: Aculight
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Aculight Argos 2400 可调谐中红外激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 光纤激光泵浦OPO
+    波长: 1.4-4.6µm连续可调
+    功率: '>1W(全波段)/最高3W'
+    线宽: <1MHz(60kHz短时)
+    光束质量: M²<1.1
+    无跳模: 最长30小时
+    冷却: 风冷
+    OPO头尺寸: 4.9×7.5×13.9英寸
+    品牌: Aculight
+community_837:
+  class:
+    module: community_drivers.837.driver:DeviceDriver
+    type: python
+  name: ILX Lightwave LDP-3811 脉冲激光二极管驱动器
+  description: ILX Lightwave LDP-3811是微处理器控制的精密脉冲激光二极管驱动器，提供双量程200/500 mA输出，支持CW和脉冲两种工作模式，脉冲上升时间小于25
+    ns，占空比可调0.01%至100%，内置完善的激光二极管保护电路，包括电流限制和输出短路保护，适用于低功率激光二极管测试。
+  manufacturer: ILX Lightwave
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: ILX Lightwave LDP-3811 脉冲激光二极管驱动器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出电流: 双量程200/500 mA
+    顺从电压: '>25 V'
+    脉冲宽度: 100 ns~1 ms
+    上升/下降时间: <25 ns
+    占空比: 0.01%~100%
+    模式: CW/脉冲
+    显示: 5位LED
+    接口: GPIB
+    品牌: ILX Lightwave
+community_839:
+  class:
+    module: community_drivers.839.driver:DeviceDriver
+    type: python
+  name: IPG Photonics YAR 掺镱连续光纤放大器
+  description: IPG Photonics YAR系列是掺镱连续光纤放大器，波长覆盖1030至1070 nm，LP-SF型提供线偏振单频输出功率最高100W，SM型可达4
+    kW，光束质量M²<1.1，风冷设计免维护，19英寸机架安装，配备GPIB和RS-232接口，适用于光谱合束、传感探测和光学计量等应用。
+  manufacturer: IPG Photonics
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: IPG Photonics YAR 掺镱连续光纤放大器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 1030~1070 nm
+    输出功率: 1~100 W(LP-SF型)/最高4 kW(SM型)
+    光束质量: M²<1.1
+    输入光隔离: 25 dB
+    输入功率: 1~5 mW(SF型)
+    偏振: 线偏振/随机可选
+    冷却: 风冷
+    接口: GPIB/RS-232
+    品牌: IPG Photonics
+community_1042:
+  class:
+    module: community_drivers.1042.driver:DeviceDriver
+    type: python
+  name: Kessil PR160L LED光化学反应灯
+  description: Kessil PR160L是专业LED光化学反应灯，提供7种精确波长选择，Gen2版新增275nm和300nm紫外波长。比前代PR160亮度提升30%，4级强度调节用于研究光强与产率关系。标准化安装支架支持多灯串联扩展，配备安全遮光罩和风扇散热系统，可替代高压汞灯用于光催化和光环加成反应。
+  manufacturer: Kessil
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Kessil PR160L LED光化学反应灯
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_1043:
+  class:
+    module: community_drivers.1043.driver:DeviceDriver
+    type: python
+  name: HepatoChem EvoluChem PhotoRedOx 光化学反应器
+  description: HepatoChem EvoluChem PhotoRedOx是一款紧凑型LED光化学反应器，专为光催化/光氧化还原反应设计。支持多种波长LED模块互换，兼容标准样品瓶，配备风冷系统确保温度一致性，广泛用于药物化学高通量筛选和工艺优化。
+  manufacturer: HepatoChem
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: HepatoChem EvoluChem PhotoRedOx 光化学反应器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_852:
+  class:
+    module: community_drivers.852.driver:DeviceDriver
+    type: python
+  name: Keysight N7776C高功率低SSE可调谐激光源
+  description: Keysight N7776C是高功率低自发辐射可调谐激光源，波长覆盖O/E/S/C/L波段，扫描速度达200nm/s，亚皮米重复性，内置气体池波长参考单元，适用于光纤通信器件和光学元件高精度表征。
+  manufacturer: Keysight
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Keysight N7776C高功率低SSE可调谐激光源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长范围: 1240-1650nm(多选项)
+    峰值功率: '>+12dBm(标准)/>+19.4dBm(高功率)'
+    信噪比: ≥80dB/nm
+    波长精度: ±1.5pm
+    扫描速度: 200nm/s
+    分辨率: 0.1pm
+    接口: LAN,USB
+    品牌: Keysight
+community_853:
+  class:
+    module: community_drivers.853.driver:DeviceDriver
+    type: python
+  name: Kuhne Electronic KUSG 245-250A微波信号发生器
+  description: Kuhne Electronic KUSG 245-250A是工业级微波信号发生器，工作频率范围245-250MHz，适用于ISM频段工业加热和等离子体激发等应用场景，由德国Kuhne
+    Electronic公司生产。
+  manufacturer: Kuhne Electronic
+  tags:
+  - 光化学反应器
+  category:
+  - 光化学反应器
+  model:
+    name: Kuhne Electronic KUSG 245-250A微波信号发生器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    频率范围: 245-250MHz
+    类型: 微波信号源
+    品牌: Kuhne Electronic

@@ -1,0 +1,1351 @@
+community_ob1elve:
+  class:
+    module: community_drivers.ob1elve.driver:OB1elve
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-loadDLL:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadDLL
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-loadCallibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadCallibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default:
+          path: null
+        handles: {}
+      auto-performCallibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: performCallibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default:
+          path: null
+        handles: {}
+      auto-setPressure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setPressure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                pressure:
+                  type: integer
+                  default: 0
+        goal_default:
+          channel: null
+          pressure: 0
+        handles: {}
+      auto-getPressure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPressure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default:
+          channel: null
+        handles: {}
+      auto-addSensor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: addSensor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                sensorType:
+                  type: integer
+                resolution:
+                  type: integer
+                  default: 7
+                sensorDig:
+                  type: integer
+                  default: 1
+                sensorIPACalib:
+                  type: integer
+                  default: 0
+                sensorCustVolt:
+                  type: number
+                  default: 5.01
+        goal_default:
+          channel: null
+          sensorType: null
+          resolution: 7
+          sensorDig: 1
+          sensorIPACalib: 0
+          sensorCustVolt: 5.01
+        handles: {}
+      auto-getSensorData:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSensorData
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default:
+          channel: null
+        handles: {}
+      auto-startRemote:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startRemote
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stopRemote:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopRemote
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remoteGetData:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remoteGetData
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default:
+          channel: null
+        handles: {}
+      auto-remoteSetTarget:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remoteSetTarget
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                target:
+                  type: number
+        goal_default:
+          channel: null
+          target: null
+        handles: {}
+      auto-remoteAddPID:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remoteAddPID
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channelP:
+                  type: integer
+                channelS:
+                  type: integer
+                P:
+                  type: number
+                I:
+                  type: number
+                run:
+                  type: boolean
+                  default: true
+        goal_default:
+          channelP: null
+          channelS: null
+          P: null
+          I: null
+          run: true
+        handles: {}
+      auto-remotePausePID:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remotePausePID
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default:
+          channel: null
+        handles: {}
+      auto-remoteStartPID:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remoteStartPID
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default:
+          channel: null
+        handles: {}
+      auto-remoteResetPID:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remoteResetPID
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default:
+          channel: null
+        handles: {}
+      auto-remoteChangePID:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remoteChangePID
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                P:
+                  type: number
+                I:
+                  type: number
+                reset:
+                  type: boolean
+                  default: true
+        goal_default:
+          channel: null
+          P: null
+          I: null
+          reset: true
+        handles: {}
+      auto-getPressureUniversal:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPressureUniversal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default:
+          channel: null
+        handles: {}
+      auto-getFlowUniversal:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getFlowUniversal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default:
+          channel: null
+        handles: {}
+  name: Accessories
+  description: 采用压电技术的4通道微流控流量控制器，精度比传统控制器高20倍，速度快10倍，支持UART/ESI/SDK控制
+  manufacturer: Elveflow
+  icon: ob1elve.webp
+  tags:
+  - 微通道反应器
+  category:
+  - 微通道反应器
+  device_params:
+    通道: 最多4通道(可扩展至64通道)
+    压力范围: -900mbar至8bar
+    压力稳定性: 0.005%
+    传感器分辨率: 0.006%
+    响应时间: 9ms
+    稳定时间: 40ms
+    品牌: Elveflow
+  model:
+    name: Accessories
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Microfluidic Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        elveflowDLL:
+          default: null
+          type: string
+        elveflowSDK:
+          default: null
+          type: string
+        deviceName:
+          default: null
+          type: string
+        deviceRegulators:
+          default: null
+          type: string
+        deviceID:
+          default: null
+          type: integer
+community_gh_vapourtec_r2:
+  class:
+    module: community_drivers.gh_vapourtec_r2.driver:R2
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_and_read_reply:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_and_read_reply
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-version:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-system_type:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: system_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_state:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_setting_Pressure_Limit:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_setting_Pressure_Limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_target_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_target_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_valve_position:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_valve_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve_code:
+                  type: integer
+        goal_default:
+          valve_code: null
+        handles: {}
+      auto-set_flowrate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_flowrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump:
+                  type: string
+                flowrate:
+                  type: string
+        goal_default:
+          pump: null
+          flowrate: null
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                temp:
+                  type: string
+                heating:
+                  type: string
+                ramp_rate:
+                  type: string
+                  default: '80'
+        goal_default:
+          channel: null
+          temp: null
+          heating: null
+          ramp_rate: '80'
+        handles: {}
+      auto-set_pressure_limit:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pressure_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pressure:
+                  type: string
+        goal_default:
+          pressure: null
+        handles: {}
+      auto-set_UV150:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_UV150
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                power:
+                  type: integer
+        goal_default:
+          power: null
+        handles: {}
+      auto-trigger_key_press:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger_key_press
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                keycode:
+                  type: string
+        goal_default:
+          keycode: null
+        handles: {}
+      auto-power_on:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-power_off:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_pressure_history:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pressure_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_pressure:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_pressure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump_code:
+                  type: integer
+                  default: 2
+        goal_default:
+          pump_code: 2
+        handles: {}
+      auto-get_current_flow:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_flow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump_code:
+                  type: string
+        goal_default:
+          pump_code: null
+        handles: {}
+      auto-pooling:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pooling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/cambiegroup/flowchem
+  name: Vapourtec R2+/R4
+  description: Vapourtec R2+/R4连续流化学反应系统，模块化设计，包含泵模块、反应器模块和收集模块。温度范围-40°C至300°C，压力最高100
+    bar，流速0.01-10 mL/min，适用于有机合成、光化学和多步连续反应。
+  manufacturer: Vapourtec
+  icon: vapourtec-premises-desktop-2000x550.jpg
+  tags:
+  - 微通道反应器
+  category:
+  - 微通道反应器
+  device_params:
+    参数: Knowledge Base - Login/Register; R-SeriesExpand System overview Standard configurations
+      Pump modules (R-Series); Pump modules (R-Series); E-SeriesExpand System overview
+      (E-Series) Standard configurations (E-Series) Reagent pumping (E-Series); System
+      overview (E-Series); Standard configurations (E-Series); Reagent pumping (E-Series);
+      Peptide SynthesizersExpand Overview (Peptide Synthesizers) Peptide-Builder™
+      Peptide-Explorer Peptide-Scaleup PS-30 pilot scale peptides; Peptide-Builder™;
+      Peptide-Explorer; Peptide-Scaleup; PS-30 pilot scale peptides; Tools for chemistryExpand
+      Overview (Tools for C
+    品牌: Vapourtec
+  model:
+    name: Vapourtec R2+/R4
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Microfluidic Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        rt_temp:
+          default: null
+          type: number
+        min_temp:
+          default: null
+          type: string
+        max_temp:
+          default: null
+          type: string
+        min_pressure:
+          default: null
+          type: number
+        max_pressure:
+          default: null
+          type: number
+community_gh_vapourtec_r2_uv150:
+  class:
+    module: community_drivers.gh_vapourtec_r2_uv150.driver:R2
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_and_read_reply:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_and_read_reply
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-version:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-system_type:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: system_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_state:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_setting_Pressure_Limit:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_setting_Pressure_Limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_target_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_target_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_valve_position:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_valve_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve_code:
+                  type: integer
+        goal_default:
+          valve_code: null
+        handles: {}
+      auto-set_flowrate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_flowrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump:
+                  type: string
+                flowrate:
+                  type: string
+        goal_default:
+          pump: null
+          flowrate: null
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                temp:
+                  type: string
+                heating:
+                  type: string
+                ramp_rate:
+                  type: string
+                  default: '80'
+        goal_default:
+          channel: null
+          temp: null
+          heating: null
+          ramp_rate: '80'
+        handles: {}
+      auto-set_pressure_limit:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pressure_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pressure:
+                  type: string
+        goal_default:
+          pressure: null
+        handles: {}
+      auto-set_UV150:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_UV150
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                power:
+                  type: integer
+        goal_default:
+          power: null
+        handles: {}
+      auto-trigger_key_press:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger_key_press
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                keycode:
+                  type: string
+        goal_default:
+          keycode: null
+        handles: {}
+      auto-power_on:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-power_off:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_pressure_history:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pressure_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_pressure:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_pressure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump_code:
+                  type: integer
+                  default: 2
+        goal_default:
+          pump_code: 2
+        handles: {}
+      auto-get_current_flow:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_flow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump_code:
+                  type: string
+        goal_default:
+          pump_code: null
+        handles: {}
+      auto-pooling:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pooling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/automatedchemistry/flowchem
+  name: Vapourtec R2 UV150模块
+  description: Vapourtec UV-150光化学反应器模块，专为连续流光化学设计，配备高功率LED或汞灯光源。反应体积2-10 mL，波长可选254-520
+    nm，适用于光催化、光氧化和光环化反应。
+  manufacturer: Vapourtec
+  icon: vapourtec-premises-desktop-2000x550.jpg
+  tags:
+  - 微通道反应器
+  category:
+  - 微通道反应器
+  device_params:
+    参数: Knowledge Base - Login/Register; R-SeriesExpand System overview Standard configurations
+      Pump modules (R-Series); Pump modules (R-Series); E-SeriesExpand System overview
+      (E-Series) Standard configurations (E-Series) Reagent pumping (E-Series); System
+      overview (E-Series); Standard configurations (E-Series); Reagent pumping (E-Series);
+      Peptide SynthesizersExpand Overview (Peptide Synthesizers) Peptide-Builder™
+      Peptide-Explorer Peptide-Scaleup PS-30 pilot scale peptides; Peptide-Builder™;
+      Peptide-Explorer; Peptide-Scaleup; PS-30 pilot scale peptides; Tools for chemistryExpand
+      Overview (Tools for C
+    品牌: Vapourtec
+  model:
+    name: Vapourtec R2 UV150模块
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        rt_temp:
+          default: null
+          type: number
+        min_temp:
+          default: null
+          type: string
+        max_temp:
+          default: null
+          type: string
+        min_pressure:
+          default: null
+          type: number
+        max_pressure:
+          default: null
+          type: number
+community_161:
+  class:
+    module: community_drivers.161.driver:DeviceDriver
+    type: python
+  name: Vapourtec R2/R4 流动化学系统
+  description: Vapourtec R-Series是模块化流动化学系统，以R2泵模块和R4反应器加热模块为核心。R4提供4个独立温度控制的反应器位置，支持柱式、微混合芯片、光化学和管式反应器的加热(-70°C)和冷却(+250°C)。内置泵监控系统可检测全流速范围内的异常，FlowCommander软件实现完全自动化控制。已在23个国家安装超1000套，引用超1000篇论文。
+  manufacturer: Vapourtec
+  tags:
+  - 微通道反应器
+  category:
+  - 微通道反应器
+  model:
+    name: Vapourtec R2/R4 流动化学系统
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    R2泵模块: 多种化学兼容性/压力配置
+    R4反应器: 4通道独立温控
+    温度范围: -70°C至+250°C
+    分辨率: 1°C
+    品牌: Vapourtec
+community_314:
+  class:
+    module: community_drivers.314.driver:DeviceDriver
+    type: python
+  name: Biophysical Tools P2CS 精密压力控制系统
+  description: Biophysical Tools P2CS是精密压力控制系统，专为微流控实验和微系统中的流体精确控制而设计。每个通道同时具备正压和负压能力，可实现与启动同样快速的停止流体操作。标准版100mbar阶跃响应时间17ms，Plus版仅需5ms，且无过冲或振荡。系统不与流体接触，无污染无需清洗。通过纯文本命令控制，兼容LabVIEW、MatLab等多种软件，适用于液滴生成、细胞输运、止流和双向流等微流控应用。
+  manufacturer: Biophysical Tools
+  tags:
+  - 微通道反应器
+  category:
+  - 微通道反应器
+  model:
+    name: Biophysical Tools P2CS 精密压力控制系统
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_69:
+  class:
+    module: community_drivers.69.driver:DeviceDriver
+    type: python
+  name: Vapourtec R2/R4 流动化学反应系统
+  description: Vapourtec R-Series是模块化连续流动化学平台，由R2泵送/控制模块和R4反应器模块组成。R2配备两路独立HPLC级泵通道，R4提供最多4个独立温控反应位，温度范围宽达-70°C至+250°C。支持PFA盘管、玻璃芯片和填充柱等多种反应器，可扩展光化学、电化学和气液反应模块。触屏界面配合Flow
+    Commander软件可实现反应条件自动优化，广泛应用于制药研发和学术研究。
+  manufacturer: Vapourtec
+  tags:
+  - 微通道反应器
+  category:
+  - 微通道反应器
+  model:
+    name: Vapourtec R2/R4 流动化学反应系统
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    R2泵流量: 0.01~10mL/min(双通道)
+    R4温度范围: -70~+250°C
+    系统耐压: 最高34bar
+    反应器体积: 2/5/10/20mL
+    反应器类型: PFA盘管/玻璃芯片/填充柱
+    品牌: Vapourtec
+community_70:
+  class:
+    module: community_drivers.70.driver:DeviceDriver
+    type: python
+  name: ThalesNano H-Cube 连续流动加氢反应器
+  description: ThalesNano H-Cube系列是革命性的连续流动加氢反应器，通过电解水现场产氢，无需储存高压氢气瓶，安全性极高。CatCart一次性催化剂卡盒技术避免接触危险的催化剂粉末。H-Cube
+    Mini Plus适合常规加氢，H-Cube Pro双电解槽可产氢60NmL/min并支持冷却至10°C。可扩展Gas Module(14种气体)和Phoenix高温反应器(450°C)。2005年获R&D
+    Top 100大奖，已成为实验室加氢行业标准。
+  manufacturer: ThalesNano
+  tags:
+  - 微通道反应器
+  category:
+  - 微通道反应器
+  model:
+    name: ThalesNano H-Cube 连续流动加氢反应器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    温度范围: 室温~100°C(Mini Plus)/10~150°C(Pro)
+    压力范围: 常压~100bar
+    氢气产生: 电解水现场制氢
+    液体流量: 0.3~3mL/min
+    催化剂: CatCart一次性催化柱
+    Pro尺寸: 370×510×400mm
+    Pro重量: 23kg
+    电源: 115-230VAC
+    品牌: ThalesNano
+community_71:
+  class:
+    module: community_drivers.71.driver:DeviceDriver
+    type: python
+  name: Uniqsis FlowSyn 流动化学反应系统
+  description: Uniqsis FlowSyn是一款集成式台式流动化学反应系统，配备高精度HPLC级双泵，温度控制范围宽达-90°C至+260°C，工作压力可达100bar。模块化设计支持盘管、芯片和填充柱等多种反应器类型，可选配自动进样器和馏分收集器。触屏界面支持编程自动化反应序列，适用于反应优化、放大和危险化学品处理。FlowSyn
+    Multi-X支持并行实验，FlowSyn Maxi适用于更大流量的规模放大应用。
+  manufacturer: Uniqsis
+  tags:
+  - 微通道反应器
+  category:
+  - 微通道反应器
+  model:
+    name: Uniqsis FlowSyn 流动化学反应系统
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    温度范围: -90~+260°C
+    耐压: 最高100bar
+    泵流量: 0.01~10mL/min
+    反应器体积: 2~60mL
+    反应器类型: 盘管/芯片/填充柱
+    品牌: Uniqsis
+community_1006:
+  class:
+    module: community_drivers.1006.driver:DeviceDriver
+    type: python
+  name: Vapourtec R2连续流动化学反应系统
+  description: Vapourtec R2是模块化连续流动化学泵送模块，通常与R4反应器模块配合使用。具有2个独立泵通道，流速可精确控制，支持多种反应器类型。配备Flow
+    Commander软件实现自动化控制，适用于药物研发、反应优化和光化学等应用。
+  manufacturer: Vapourtec
+  tags:
+  - 微通道反应器
+  category:
+  - 微通道反应器
+  model:
+    name: Vapourtec R2连续流动化学反应系统
+    type: device
+  version: 1.0.0
+  resource_type: device

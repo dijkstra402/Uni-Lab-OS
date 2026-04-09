@@ -1,0 +1,123 @@
+community_bi_talino:
+  class:
+    module: community_drivers.bi_talino.driver:BITalino
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_callback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_callback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                callback:
+                  type: string
+        goal_default:
+          callback: null
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+                  default: 10.0
+        goal_default:
+          timeout: 10.0
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sampling_rate:
+                  type: integer
+                  default: 1000
+                channels:
+                  type: string
+        goal_default:
+          sampling_rate: 1000
+          channels: null
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: BITalino
+  description: 一体化生物信号采集平台，集成6种传感器(肌电/心电/皮肤电/脑电/加速度/光照)，支持蓝牙通信，适用于生物医学工程教学和研究
+  manufacturer: PLUX Biosignals
+  icon: bi_talino.webp
+  tags:
+  - 细胞分析仪
+  category:
+  - 细胞分析仪
+  device_params:
+    采样率: 1/10/100/1000Hz可选
+    模拟端口: 4路10bit+2路6bit
+    数字端口: 2入2出
+    PWM: 1路8bit
+    通信: BT/BLE
+    传感器: EMG/ECG/EDA/EEG/ACC/LUX
+    连接器: UC-E6
+    品牌: PLUX Biosignals
+  model:
+    name: BITalino
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Analysis
+    step: Flow Cytometry
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          default: null
+          type: string

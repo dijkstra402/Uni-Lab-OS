@@ -1,0 +1,256 @@
+community_gh_azenta_a4s:
+  class:
+    module: community_drivers.gh_azenta_a4s.driver:A4S_SEALER_DRIVER
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect_sealer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_sealer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                time_wait:
+                  type: integer
+                  default: 500
+        goal_default:
+          time_wait: 500
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                success_msg:
+                  type: string
+                  default: ''
+                err_msg:
+                  type: string
+                  default: ''
+                timeout:
+                  type: integer
+                  default: 10
+        goal_default:
+          command: null
+          success_msg: ''
+          err_msg: ''
+          timeout: 10
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_gate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_gate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_gate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_gate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: integer
+                  default: 175
+        goal_default:
+          temp: 175
+        handles: {}
+      auto-set_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                time:
+                  type: number
+                  default: 3.0
+        goal_default:
+          time: 3.0
+        handles: {}
+      auto-seal:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: seal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-config_robot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: config_robot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: string
+                time:
+                  type: string
+        goal_default:
+          temp: null
+          time: null
+        handles: {}
+    source: https://github.com/AD-SDL/a4s_sealer_module
+  name: Azenta a4S
+  description: 我们的网站已经搬迁，并且焕然一新。请按照导航菜单进入新页面
+  manufacturer: Azenta
+  icon: nav-feature_bioarc-calculator.jpg
+  tags:
+  - 封膜仪
+  category:
+  - 封膜仪
+  device_params:
+    参数: Cold Storage ambient to -20°CUltra Cold Storage to -80°CCryogenic Storage
+      to -190°C; Cold Storage ambient to -20°C; Ultra Cold Storage to -80°C; Cryogenic
+      Storage to -190°C; 50% Off Selected FluidX 1ml Tri-Coded TubesZiath Reader Trade-Up
+      ProgramYour Oldest Sample in a FluidX Tube; 50% Off Selected FluidX 1ml Tri-Coded
+      Tubes; Ziath Reader Trade-Up Program; Reader Trade-Up Ziath Reader Trade-Up
+      Program Trade in Your Old Reader for the New Mirage Connect or Cube Connect.
+      Connect with the next generation today! Trade-Up Now; Sample & Biological Material
+      StorageCustomer-Site Sample ManagementClini
+    品牌: Azenta
+  model:
+    name: Azenta a4S
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Lab Automation
+    step: Plate Sealing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host_path:
+          default: null
+          type: string
+        baud_rate:
+          default: null
+          type: integer
+community_90:
+  class:
+    module: community_drivers.90.driver:DeviceDriver
+    type: python
+  name: Agilent PlateLoc热封膜仪
+  description: Agilent PlateLoc是热封微孔板封膜仪,通过可控热量和压力将热封箔或膜应用于微孔板,可集成到Agilent BenchCel等自动化平台,适用于化合物存储、PCR/qPCR板封膜、样品归档、高通量筛选等应用
+  manufacturer: Agilent
+  tags:
+  - 封膜仪
+  category:
+  - 封膜仪
+  model:
+    name: Agilent PlateLoc热封膜仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    功能: 热封微孔板
+    板型兼容: 96孔/384孔/1536孔SBS标准板
+    封膜温度: 室温至约200°C可调
+    封膜时间: 1-4秒/板
+    封膜类型: 可剥离铝封膜/永久箔封膜/PCR兼容封膜/DMSO耐受封膜
+    品牌: Agilent
+community_1019:
+  class:
+    module: community_drivers.1019.driver:DeviceDriver
+    type: python
+  name: Agilent PlateLoc热封微孔板封膜仪
+  description: Agilent PlateLoc是自动化热封微孔板封膜仪，可快速一致地对微孔板进行热封处理。支持96至1536孔板格式，兼容可剥离、可穿刺和永久型封膜。适用于PCR、化合物管理和基因组学工作流程，可独立使用或集成到自动化系统中。
+  manufacturer: Agilent
+  tags:
+  - 封膜仪
+  category:
+  - 封膜仪
+  model:
+    name: Agilent PlateLoc热封微孔板封膜仪
+    type: device
+  version: 1.0.0
+  resource_type: device

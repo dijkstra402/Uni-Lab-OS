@@ -1,0 +1,283 @@
+community_gh_molecular_devices_imagexpress_pico:
+  class:
+    module: community_drivers.gh_molecular_devices_imagexpress_pico.driver:ExperimentalPicoBackend
+    type: python
+    status_types:
+      channel: grpc.Channel
+      door_open: bool
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_configuration:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_configuration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_door:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_door
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_door:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_door
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enter_objective_maintenance:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enter_objective_maintenance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: integer
+        goal_default:
+          position: null
+        handles: {}
+      auto-exit_objective_maintenance:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: exit_objective_maintenance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_available_objectives:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_available_objectives
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: integer
+        goal_default:
+          position: null
+        handles: {}
+      auto-get_available_filter_cubes:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_available_filter_cubes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-change_objective:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_objective
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: integer
+                objective_id:
+                  type: string
+        goal_default:
+          position: null
+          objective_id: null
+        handles: {}
+      auto-change_filter_cube:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_filter_cube
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: integer
+                filter_cube_id:
+                  type: string
+        goal_default:
+          position: null
+          filter_cube_id: null
+        handles: {}
+      auto-capture:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: capture
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                row:
+                  type: integer
+                column:
+                  type: integer
+                mode:
+                  type: string
+                objective:
+                  type: string
+                exposure_time:
+                  type: string
+                focal_height:
+                  type: string
+                gain:
+                  type: string
+                plate:
+                  type: string
+        goal_default:
+          row: null
+          column: null
+          mode: null
+          objective: null
+          exposure_time: null
+          focal_height: null
+          gain: null
+          plate: null
+        handles: {}
+    source: https://github.com/PyLabRobot/pylabrobot
+  name: ImageXpress Pico Automated Cell Imaging System
+  description: Molecular Devices ImageXpress Pico自动化细胞成像系统，集成明场和荧光成像，4x-63x物镜，支持96/384孔板。内置CellReporterXpress分析软件，用于细胞增殖、毒性评估和转染效率分析。
+  manufacturer: Molecular Devices
+  icon: media_14e6313e30b7ef5bec1539a0dca8fb342d95427ca.png
+  tags:
+  - 高内涵细胞成像分析系统
+  category:
+  - 高内涵细胞成像分析系统
+  device_params:
+    '404': Page Not Found !
+    Phone: +1 800-635-5577
+    Mon-Fri 8: 00 am - 5:00 pm (PST)
+    Telefon: +44-118-944-8000
+    Téléphone: +44-118-944-8000
+    전화: +82-2-3471-9531
+    Telefono: +44-118-944-8000
+    品牌: Molecular Devices
+  model:
+    name: ImageXpress Pico Automated Cell Imaging System
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Analysis
+    step: High-Content Imaging
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          default: null
+          type: string
+        port:
+          default: null
+          type: integer
+        lock_timeout:
+          default: null
+          type: integer
+        objectives:
+          default: null
+          type: string
+        filter_cubes:
+          default: null
+          type: string
+community_143:
+  class:
+    module: community_drivers.143.driver:DeviceDriver
+    type: python
+  name: PerkinElmer Opera Phenix Plus 高内涵成像系统
+  description: Opera Phenix Plus是Revvity(原PerkinElmer生命科学部门)的旗舰高内涵共聚焦成像系统，基于20余年经验打造。采用专利Synchrony光学系统，结合微透镜增强旋转盘与双视场共聚焦光学，实现同步采集时最小光谱串扰。水浸物镜提升3D成像质量，适用于活细胞、原代细胞和微组织等复杂疾病模型的表型筛选和高通量成像。
+  manufacturer: Revvity (原PerkinElmer)
+  tags:
+  - 高内涵细胞成像分析系统
+  category:
+  - 高内涵细胞成像分析系统
+  model:
+    name: PerkinElmer Opera Phenix Plus 高内涵成像系统
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    成像速率: 100fps
+    品牌: Revvity (原PerkinElmer)

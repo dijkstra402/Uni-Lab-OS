@@ -1,0 +1,2761 @@
+community_binder_mk53:
+  class:
+    module: community_drivers.binder_mk53.driver:binderMK53
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reps:
+                  type: integer
+                  default: 10
+        goal_default:
+          reps: 10
+        handles: {}
+      auto-get_temperature_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_door_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_door_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: string
+        goal_default:
+          temperature: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+                n_words:
+                  type: string
+        goal_default:
+          addr: null
+          n_words: null
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          addr: null
+          value: null
+        handles: {}
+  name: BINDER MK 53 Dynamic Climate Chamber
+  description: 用于研究和工业的精确环境模拟。可靠的质量、可持续的产品和专家支持——您成功的最佳条件。
+  manufacturer: BINDER GmbH
+  icon: binder_mk53.webp
+  tags:
+  - 高低温金属浴
+  category:
+  - 高低温金属浴
+  device_params:
+    Temp: -40~+180°C
+    Volume: 53L
+    Fluctuation: ±0.1~0.5K
+    Heating Rate: ~4.6K/min
+    Cooling Rate: ~4.1K/min
+    Power: 2.6kW
+    Interface: RS-422
+    Controller: MB1 (25 programs/100 segments)
+    品牌: BINDER GmbH
+  model:
+    name: BINDER MK 53 Dynamic Climate Chamber
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Temperature Control
+    step: Heating/Cooling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string
+community_binder_mk56:
+  class:
+    module: community_drivers.binder_mk56.driver:binderMK56
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-get_door_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_door_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: string
+                reps:
+                  type: integer
+                  default: 10
+        goal_default:
+          temperature: null
+          reps: 10
+        handles: {}
+  name: Model MK 56
+  description: BINDER MK 系列试验箱适用于 -40 °C 至 +180 °C 之间的所有冷热测试。 MK 是循环温度测试复杂的单独解决方案的巧妙替代方案。
+  manufacturer: BINDER GmbH
+  icon: binder_mk56.webp
+  tags:
+  - 高低温金属浴
+  category:
+  - 高低温金属浴
+  device_params:
+    Temp: -40~+180°C
+    Volume: 60L
+    Humidity: 'yes'
+    Power: 2.8kW
+    Refrigerant: R-744(climate-neutral)
+    Display: touchscreen
+    Data Logger: built-in USB
+    Interface: Ethernet
+    Weight: ~168kg
+    品牌: BINDER GmbH
+  model:
+    name: Model MK 56
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Temperature Control
+    step: Heating/Cooling
+  version: 1.0.0
+  resource_type: device
+community_weiss_sb22:
+  class:
+    module: community_drivers.weiss_sb22.driver:weissSB22
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_humidity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_humidity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_humidity_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_humidity_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_digital_ch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_digital_ch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_digital_ch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_digital_ch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                value:
+                  type: integer
+                  default: 1
+        goal_default:
+          channel: null
+          value: 1
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: string
+        goal_default:
+          temperature: null
+        handles: {}
+      auto-set_humidity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_humidity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                humidity:
+                  type: string
+        goal_default:
+          humidity: null
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_for_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_for_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                answer:
+                  type: string
+        goal_default:
+          answer: null
+        handles: {}
+  name: Weiss Technik SB22 环境模拟试验箱
+  description: Weiss Technik SB22是22升台式紧凑型环境模拟试验箱，温度范围-42至+180°C，可选湿度控制。
+  manufacturer: Weiss Technik
+  icon: weiss_sb22.webp
+  tags:
+  - 高低温金属浴
+  category:
+  - 高低温金属浴
+  device_params:
+    容积: ~22升
+    温度: -42至+180°C(无湿度), +10至+95°C(有湿度)
+    湿度: 10-98%RH(选配)
+    温度波动: ±0.3至±0.5°C
+    升温: ~3-5K/min
+    降温: ~2-3K/min
+    设计: 台式紧凑型
+    品牌: Weiss Technik
+  model:
+    name: Weiss Technik SB22 环境模拟试验箱
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Temperature Control
+    step: Heating/Cooling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string
+community_gh_espec_p300:
+  class:
+    module: community_drivers.gh_espec_p300.driver:WatlowF4
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-get_datetime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_datetime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_datetime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_datetime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_refrig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_refrig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_refrig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_refrig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_loop_sp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_sp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                range_restrict:
+                  type: boolean
+                  default: true
+        goal_default:
+          N: null
+          range_restrict: true
+        handles: {}
+      auto-set_loop_sp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_loop_sp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_loop_pv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_pv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_loop_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_loop_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_loop_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_loop_en:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_en
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_loop_en:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_loop_en
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_loop_units:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_loop_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_loop_modes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_modes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_loop_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_loop_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_loop_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_loop_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_loop_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_sp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_sp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_sp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_sp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_pv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_pv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_cascade_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_en:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_en
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_en:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_en
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_units:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_cascade_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_cascade_modes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_modes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_ctl:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_ctl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_ctl:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_ctl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_deviation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_deviation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_deviation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_deviation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_event:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_event:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_alarm_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_alarm_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-const_start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: const_start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prgm_start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prgm_start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                step:
+                  type: string
+        goal_default:
+          N: null
+          step: null
+        handles: {}
+      auto-prgm_pause:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prgm_pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prgm_resume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prgm_resume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm_counter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_counter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prgm_next_step:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prgm_next_step
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm_cur:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_cur
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm_cstep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_cstep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm_cstime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_cstime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pgm:
+                  type: string
+        goal_default:
+          pgm: null
+        handles: {}
+      auto-get_prgm_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_prgm_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_prgm_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_prgm_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_prgms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_prgm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_prgm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-prgm_delete:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prgm_delete
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-process_controller:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_controller
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: boolean
+                  default: true
+        goal_default:
+          update: true
+        handles: {}
+      auto-get_network_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_network_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_network_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_network_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_operation_modes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_operation_modes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/EspecNorthAmerica/ChamberConnectLibrary
+  name: Bench-Top Type Temperature (& Humidity) Chamber | Environmental Test Chambers
+    | Products | Products & Services
+  description: ESPEC North America 拥有最广泛的环境室和 HALT/HASS 测试用品选择。 Qualmark 现在是 ESPEC
+    North America 的一个产品线。
+  manufacturer: Espec
+  icon: especna70.png
+  tags:
+  - 高低温金属浴
+  category:
+  - 高低温金属浴
+  device_params:
+    参数: ESPEC Solutions Group Applications, Skills, and Knowledge (ASK) Test lab and
+      consulting services for new or existing HALT programs. More about testing services;
+      Product Service & Support Chamber Care plans offer extended protection and include
+      annual PM. Upgrade your existing chambers with our Web Controller. See support
+      services; Test & Reliability Training ESPEC’s separate training group offers
+      seminars, webinars, and consulting on basic and advanced reliability testing.
+      Go to our training website
+    品牌: Espec
+  model:
+    name: Bench-Top Type Temperature (& Humidity) Chamber | Environmental Test Chambers
+      | Products | Products & Services
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Culture
+    step: Incubation
+  version: 1.0.0
+  resource_type: device
+community_gh_espec_:
+  class:
+    module: community_drivers.gh_espec_.driver:WatlowF4
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-get_datetime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_datetime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_datetime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_datetime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_refrig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_refrig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_refrig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_refrig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_loop_sp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_sp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                range_restrict:
+                  type: boolean
+                  default: true
+        goal_default:
+          N: null
+          range_restrict: true
+        handles: {}
+      auto-set_loop_sp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_loop_sp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_loop_pv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_pv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_loop_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_loop_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_loop_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_loop_en:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_en
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_loop_en:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_loop_en
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_loop_units:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_loop_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_loop_modes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_modes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_loop_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_loop_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_loop_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loop_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_loop_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_loop_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_sp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_sp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_sp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_sp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_pv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_pv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_cascade_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_en:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_en
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_en:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_en
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_units:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_cascade_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_cascade_modes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_modes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_ctl:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_ctl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_ctl:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_ctl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_deviation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_deviation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_deviation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_deviation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_cascade_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cascade_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_cascade_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cascade_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_event:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_event:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_alarm_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_alarm_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-const_start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: const_start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prgm_start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prgm_start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                step:
+                  type: string
+        goal_default:
+          N: null
+          step: null
+        handles: {}
+      auto-prgm_pause:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prgm_pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prgm_resume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prgm_resume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm_counter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_counter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prgm_next_step:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prgm_next_step
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm_cur:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_cur
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm_cstep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_cstep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm_cstime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_cstime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pgm:
+                  type: string
+        goal_default:
+          pgm: null
+        handles: {}
+      auto-get_prgm_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_prgm_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_prgm_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-get_prgm_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-get_prgms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_prgm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prgm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-set_prgm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_prgm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          N: null
+          value: null
+        handles: {}
+      auto-prgm_delete:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prgm_delete
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: string
+        goal_default:
+          N: null
+        handles: {}
+      auto-process_controller:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_controller
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: boolean
+                  default: true
+        goal_default:
+          update: true
+        handles: {}
+      auto-get_network_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_network_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_network_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_network_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_operation_modes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_operation_modes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/EspecNorthAmerica/ChamberConnectLibrary
+  name: Environmental Test Chambers | Products | Products & Services
+  description: ESPEC North America 拥有最广泛的环境室和 HALT/HASS 测试用品选择。 Qualmark 现在是 ESPEC
+    North America 的一个产品线。
+  manufacturer: Espec
+  icon: especna70.png
+  tags:
+  - 高低温金属浴
+  category:
+  - 高低温金属浴
+  device_params:
+    参数: ESPEC Solutions Group Applications, Skills, and Knowledge (ASK) Test lab and
+      consulting services for new or existing HALT programs. More about testing services;
+      Product Service & Support Chamber Care plans offer extended protection and include
+      annual PM. Upgrade your existing chambers with our Web Controller. See support
+      services; Test & Reliability Training ESPEC’s separate training group offers
+      seminars, webinars, and consulting on basic and advanced reliability testing.
+      Go to our training website
+    品牌: Espec
+  model:
+    name: Environmental Test Chambers | Products | Products & Services
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Culture
+    step: Incubation
+  version: 1.0.0
+  resource_type: device
+community_gh_binder_mk_53:
+  class:
+    module: community_drivers.gh_binder_mk_53.driver:BinderMk53
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/ecree-solarflare/ovenctl
+  name: BINDER MK 53 Dynamic Climate Chamber (gh_binder_mk_53)
+  description: 用于研究和工业的精确环境模拟。可靠的质量、可持续的产品和专家支持——您成功的最佳条件。
+  manufacturer: BINDER
+  icon: MOBILE_version_16x9.jpg
+  tags:
+  - 高低温金属浴
+  category:
+  - 高低温金属浴
+  device_params:
+    NEW: Dynamic climate cha
+    品牌: BINDER
+  model:
+    name: BINDER MK 53 Dynamic Climate Chamber (gh_binder_mk_53)
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Sample Preparation
+    step: Drying
+  version: 1.0.0
+  resource_type: device
+community_12:
+  class:
+    module: community_drivers.12.driver:DeviceDriver
+    type: python
+  name: Binder MK 53 动态气候箱
+  description: Binder MK 53是一款动态气候箱(环境模拟箱)，适用于-40°C至180°C范围内的循环温度测试。采用Binder专利APT.line预热腔技术，确保均匀的温度分布和精确的测量值。标准温变速率约5K/min，满足标准化测试要求。配备加热观察窗和LED内部照明。MK
+    53为早期型号，现已被MK 56等新型号取代。适用于材料测试、可靠性试验和环境模拟等应用。
+  manufacturer: Binder
+  tags:
+  - 高低温金属浴
+  category:
+  - 高低温金属浴
+  model:
+    name: Binder MK 53 动态气候箱
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    温度范围: -40°C至180°C
+    容积: 约53L(1.9立方英尺)
+    温变速率: 约5K/min
+    技术: APT.line预热腔技术
+    控制: 程序控制
+    品牌: Binder

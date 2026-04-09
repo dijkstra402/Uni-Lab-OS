@@ -1,0 +1,215 @@
+community_gh_opentrons_thermocycler_module:
+  class:
+    module: community_drivers.gh_opentrons_thermocycler_module.driver:ThermocyclerModuleSubState
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-validate_target_block_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_target_block_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                celsius:
+                  type: number
+        goal_default:
+          celsius: null
+        handles: {}
+      auto-validate_max_block_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_max_block_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume:
+                  type: number
+        goal_default:
+          volume: null
+        handles: {}
+      auto-validate_hold_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_hold_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hold_time:
+                  type: number
+        goal_default:
+          hold_time: null
+        handles: {}
+      auto-validate_target_lid_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_target_lid_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                celsius:
+                  type: number
+        goal_default:
+          celsius: null
+        handles: {}
+      auto-get_target_block_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_target_block_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_target_lid_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_target_lid_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-validate_ramp_rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_ramp_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ramp_rate:
+                  type: string
+                target_temp:
+                  type: number
+        goal_default:
+          ramp_rate: null
+          target_temp: null
+        handles: {}
+      auto-from_live_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_live_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                module_id:
+                  type: string
+                data:
+                  type: string
+        goal_default:
+          module_id: null
+          data: null
+        handles: {}
+    source: https://github.com/Opentrons/opentrons
+  name: Opentrons Thermocycler Module
+  description: Opentrons Thermocycler 模块是一款全自动的甲板式热循环仪，以 96 孔板形式提供免提 PCR。
+  manufacturer: Opentrons
+  icon: Thermocycler-1__21867.1729268547.386.513.png
+  tags:
+  - 普通PCR仪
+  category:
+  - 普通PCR仪
+  device_params:
+    Dimensions (open): 244.95 mm L x 172 mm W x 310.1 mm H
+    Dimensions (closed): 244.95 mm L x 172 mm W x 170.35 mm H
+    Dimensions (closed with External Fan Duct): 315.32 L x 172 mm W x 170.35 H
+    Accommodates: Full-skirted 96-well, 0.2 mL PCR plates
+    Thermal block temperature range: 4–99 °C
+    Thermal block maximum heating ramp rate: 4.25 °C/s between ambient and 95 °C
+    Thermal block maximum cooling ramp rate: 2.0 °C/s between 95 °C and ambient
+    Lid temperature range: 37–110 °C
+    Weight: 8.4 kg
+    品牌: Opentrons
+  model:
+    name: Opentrons Thermocycler Module
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Molecular Biology
+    step: PCR
+  version: 1.0.0
+  resource_type: device
+community_100:
+  class:
+    module: community_drivers.100.driver:DeviceDriver
+    type: python
+  name: Analytik Jena Biometra TRobot II自动化PCR仪
+  description: Biometra TRobot II是自动化热循环仪,支持24/7无人值守高通量PCR工作流,采用模块化紧凑设计,PCR模块直接放置在自动化平台上而控制器可存储在平台下方,配备专利弧形开盖机制和触敏安全框架,具备梯度功能用于方案优化,可通过Biometra
+    TSuite软件或机器人软件控制
+  manufacturer: Analytik Jena
+  tags:
+  - 普通PCR仪
+  category:
+  - 普通PCR仪
+  model:
+    name: Analytik Jena Biometra TRobot II自动化PCR仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    孔数: 96孔(0.2mL)或384孔
+    温度范围: 3-99°C
+    加热速率: 最大4.0-5.0°C/s
+    冷却速率: 最大3.1-4.8°C/s
+    温度均匀性: ±0.15-0.20°C
+    梯度范围: 10-99°C
+    最大梯度跨度: 24-30°C
+    盖板温度: 30-110°C
+    PCR模块尺寸: 208x260x206-209mm
+    品牌: Analytik Jena
+community_1029:
+  class:
+    module: community_drivers.1029.driver:DeviceDriver
+    type: python
+  name: Analytik Jena Biometra TRobot II自动化PCR热循环仪
+  description: Analytik Jena Biometra TRobot II是专为自动化平台设计的PCR热循环仪，具有优异的加热冷却速率和温度均匀性。弧形开盖设计降低仪器高度，三面可被机械抓手存取。专利电动升板器和触敏安全框架确保24/7无人值守运行，支持TSuite软件或DLL集成到机器人软件中。
+  manufacturer: Analytik Jena
+  tags:
+  - 普通PCR仪
+  category:
+  - 普通PCR仪
+  model:
+    name: Analytik Jena Biometra TRobot II自动化PCR热循环仪
+    type: device
+  version: 1.0.0
+  resource_type: device

@@ -1,0 +1,695 @@
+community_tpg261:
+  class:
+    module: community_drivers.tpg261.driver:TPG261
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-rcv_vals:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rcv_vals
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Pfeiffer Vacuum TPG 261 Compact Pressure Gauge
+  description: Pfeiffer Vacuum TPG 261紧凑型真空计控制器，单通道显示和控制单元，兼容Pfeiffer全系列真空传感器（皮拉尼、冷阴极、电容薄膜等）。测量范围从大气压至5×10⁻¹¹
+    mbar，带2个开关继电器输出和RS-232C接口，适用于真空系统监测和过程控制。
+  manufacturer: Pfeiffer Vacuum
+  icon: tpg261.webp
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  device_params:
+    Channels: '1'
+    Gauges: TPR/PCR/IKR/PKR/IMR/PBR/CMR/APR
+    Range: atm~5×10⁻¹¹mbar (gauge dependent)
+    Switches: '2'
+    Interface: RS-232C
+    Power: 90~250VAC
+    品牌: Pfeiffer Vacuum
+  model:
+    name: Pfeiffer Vacuum TPG 261 Compact Pressure Gauge
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Sample Preparation
+    step: Drying
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        descr:
+          default: null
+          type: string
+        port:
+          default: null
+          type: string
+community_tpg300:
+  class:
+    module: community_drivers.tpg300.driver:TPG300
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-rcv_vals:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rcv_vals
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Pfeiffer TPG 300 Pressure Gauge Controller, Complete Measurement Unit, PTG
+    25263
+  description: Pfeiffer Vacuum TPG 300 MaxiGauge多通道真空测量与控制单元，最多6通道，兼容多种真空规管，提供数字显示和继电器切换输出。
+  manufacturer: Pfeiffer Vacuum
+  icon: tpg300.webp
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  device_params:
+    通道数: 最多6通道
+    兼容规管: Pirani/冷阴极/电容规等
+    测量范围: 1000mbar~10⁻⁹mbar(取决于规管)
+    接口: RS-232/可选RS-485
+    继电器输出: 设定点继电器
+    电源: 100-240VAC
+    安装: 机架或台式
+    品牌: Pfeiffer Vacuum
+  model:
+    name: Pfeiffer TPG 300 Pressure Gauge Controller, Complete Measurement Unit, PTG
+      25263
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Sample Preparation
+    step: Drying
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        descr:
+          default: null
+          type: string
+        adc_analog_in:
+          default: null
+          type: integer
+community_tpg36x:
+  class:
+    module: community_drivers.tpg36x.driver:TPG36x
+    type: python
+    status_types:
+      channel: str
+      ethernet_configuration: str
+      language: str
+      mac_address: str
+      name: str
+      number_channels: str
+      pressure: str
+      unit: str
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+  name: Pfeiffer Vacuum TPG 36x ActiveLine Pressure Gauge
+  description: Pfeiffer Vacuum TPG 361/362单/双通道真空测量与控制单元，支持多种规管类型组合使用，实现从大气压到超高真空的宽范围测量。
+  manufacturer: Pfeiffer Vacuum
+  icon: tpg36x.webp
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  device_params:
+    型号: TPG361(单通道)/TPG362(双通道)
+    兼容规管: Pirani/冷阴极/电容规
+    测量范围: 大气压~10⁻⁹mbar
+    显示单位: mbar/Torr/Pa可选
+    接口: RS-232/可选RS-485
+    电源: 100-240VAC
+    品牌: Pfeiffer Vacuum
+  model:
+    name: Pfeiffer Vacuum TPG 36x ActiveLine Pressure Gauge
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Sample Preparation
+    step: Drying
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+community_gh_memmert_un30:
+  class:
+    module: community_drivers.gh_memmert_un30.driver:MemmertUn30
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/bec4/ovenControl
+  name: Universal oven UN30 - natural air circulation - 32 l.
+  description: 信赖最好的：研究、医药和工业领域的烤箱、培养箱和气候室的创新领导者和全球制造商。
+  manufacturer: Memmert
+  icon: memmert_product_selector.png
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  device_params:
+    Languages: English 用中文沟通 Русский Phone +49 9122 925 223 Mobile +49 160 5527806
+      E-Mail irumynskiy@memmert.com
+    品牌: Memmert
+  model:
+    name: Universal oven UN30 - natural air circulation - 32 l.
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Sample Preparation
+    step: Drying
+  version: 1.0.0
+  resource_type: device
+community_416:
+  class:
+    module: community_drivers.416.driver:DeviceDriver
+    type: python
+  name: Pfeiffer TPG 361 单通道真空规控制器
+  description: Pfeiffer TPG 361是一款单通道真空规测量与控制单元，属于ActiveLine系列产品。兼容Pfeiffer的Pirani规、冷阴极规和热阴极规等多种真空传感器，压力测量范围取决于所连接的传感器类型。具备数字显示、可配置设定点继电器用于过程控制、模拟输出用于记录和监控。支持RS-232串行通讯接口进行远程控制。ActiveLine系列提供经典模拟输出，覆盖从超高真空到过压的宽泛真空范围。
+  manufacturer: Pfeiffer Vacuum
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: Pfeiffer TPG 361 单通道真空规控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: '1'
+    系列: ActiveLine
+    兼容规管: Pirani/冷阴极/热阴极
+    接口: 模拟输出/继电器设定点/RS-232
+    电源: 100-240VAC
+    安装: 机架式/台式
+    显示: 数字压力显示
+    品牌: Pfeiffer Vacuum
+community_417:
+  class:
+    module: community_drivers.417.driver:DeviceDriver
+    type: python
+  name: Pfeiffer TPG 362 双通道真空规控制器
+  description: Pfeiffer TPG 362是一款双通道真空规测量与控制单元，是TPG 361的双通道版本，同属ActiveLine系列。支持两路真空传感器同时测量，兼容Pirani规和冷阴极规。Pirani规覆盖1000至5.4×10⁻⁴
+    mbar范围，冷阴极规覆盖10⁻²至5.4×10⁻⁹ mbar范围。具备2至4个可配置设定点继电器、数字显示和可选择的压力单位（mbar/Torr/Pa）。紧凑的半19英寸机架宽度设计，支持面板安装或台式使用。
+  manufacturer: Pfeiffer Vacuum
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: Pfeiffer TPG 362 双通道真空规控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: '2'
+    系列: ActiveLine
+    兼容规管: Pirani(1000-5.4×10⁻⁴mbar)/冷阴极(10⁻²-5.4×10⁻⁹mbar)
+    设定点继电器: 2-4个可配
+    接口: RS-232/RS-485/模拟输出
+    电源: 100-240VAC
+    品牌: Pfeiffer Vacuum
+community_890:
+  class:
+    module: community_drivers.890.driver:DeviceDriver
+    type: python
+  name: Smartline V1真空计
+  description: Thyracont Smartline系列紧凑型数字真空计，适用于工业和科研应用，提供直观界面和多种接口选项
+  manufacturer: Thyracont
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: Smartline V1真空计
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_104:
+  class:
+    module: community_drivers.104.driver:DeviceDriver
+    type: python
+  name: Binder VD 115真空干燥箱
+  description: Binder VD 115是用于非易燃溶剂的真空干燥箱,采用专利膨胀架技术优化热传递,配备防碎弹簧安装安全玻璃面板和大观察窗,数字显示压力和温度,程序控制干燥监测和过程结束自动通风,内置数据记录器通过USB读取,以太网接口和24V
+    DC继电器输出便于集成到现有控制系统
+  manufacturer: Binder
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: Binder VD 115真空干燥箱
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    容积: 115L(4.1立方英尺)
+    温度范围: 环境温度+9°C至220°C
+    升温时间至100°C: 130分钟
+    温度波动: ±0.1K
+    温度变化@100°C: ±2.9K
+    泄漏率: 0.01bar/h
+    额定功率: 1.6kW
+    电源: 100-120V 1相 50/60Hz
+    品牌: Binder
+community_570:
+  class:
+    module: community_drivers.570.driver:DeviceDriver
+    type: python
+  name: Cryomagnetics LM-500 液态低温液位计
+  description: Cryomagnetics LM-500是液态低温介质液位监测仪,用于测量低温储罐和恒温器中的液氦(LHe)和液氮(LN2)液位。支持多通道同时监测,精度达±0.1%满量程。具备数字显示、模拟输出和RS-232/GPIB远程控制接口。内置高低液位报警功能,可配置自动补液控制。兼容Cryomagnetics各种长度的超导液位传感器,广泛用于MRI磁体、超导磁体系统和低温物理研究实验中的低温介质管理。
+  manufacturer: Cryomagnetics
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: Cryomagnetics LM-500 液态低温液位计
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    测量类型: 超导线液位传感(液氦)/电容或电阻传感(液氮)
+    通道数: 多通道
+    精度: ±0.1% F.S.
+    显示: 数字读数
+    输出: 模拟0-5V/0-10V
+    接口: RS-232/GPIB
+    报警: 高/低液位报警
+    品牌: Cryomagnetics
+community_290:
+  class:
+    module: community_drivers.290.driver:DeviceDriver
+    type: python
+  name: JEVATEC JEVAmet VCU 通用真空控制器
+  description: 注意：JEVATEC JEVAmet VCU实际上是通用真空控制器而非膜厚仪。该设备是JEVATEC自主制造的多通道真空传感器控制显示单元，支持1-3通道配置，兼容JEVATEC、Leybold、Pfeiffer
+    Vacuum和Inficon等品牌的主动和被动真空传感器。提供6位绿色LED显示、前面板按键操作、RS232/RS485通信接口和可编程开关点功能。已集成到SweepMe!测量软件中。
+  manufacturer: JEVATEC
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: JEVATEC JEVAmet VCU 通用真空控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: 1-3通道
+    显示: 6位LED(绿色)
+    单位: mbar/Pa/Torr
+    电源: 100-240VAC 50/60Hz
+    接口: RS232/RS485
+    模拟输出: 每通道1路
+    开关点: 最多6个可编程
+    外壳: 铝管壳体 1/4 19英寸机架3U高
+    品牌: JEVATEC
+community_293:
+  class:
+    module: community_drivers.293.driver:DeviceDriver
+    type: python
+  name: Leybold Combivac CM31 真空计控制器
+  description: Leybold Combivac CM31是一款被动真空规管控制器，采用紧凑的挤压金属外壳（1/4 19英寸机架，3U高度），可安装于台式或机架中。支持2路Pirani规管和1路冷阴极Penning规管的被动测量，覆盖大气压至10⁻⁹mbar范围。提供明亮的7段LED显示、RS232C通信接口、可编程触发继电器（每通道2个）和独立图表记录仪输出。适用于工业和科研真空系统的压力监测。
+  manufacturer: Leybold
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: Leybold Combivac CM31 真空计控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: 2通道被动规管+1通道Penning
+    测量范围: 大气压至10⁻⁹mbar
+    电源: 100-120/200-230V 35VA 50/60Hz
+    接口: RS232C(2400,N,8,1)
+    触发继电器: 每通道2个
+    反应时间: ~30ms
+    记录仪输出: 每通道独立
+    外壳: 挤压金属壳体
+    品牌: Leybold
+community_702:
+  class:
+    module: community_drivers.702.driver:DeviceDriver
+    type: python
+  name: XGS-600 Multi-Gauge Vacuum Controller
+  description: Agilent XGS-600是一款多通道真空计控制器，可同时管理多个真空计，支持离子计、对流计等多种压力测量传感器，广泛应用于半导体制造和科研真空系统。
+  manufacturer: Agilent
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: XGS-600 Multi-Gauge Vacuum Controller
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: '多通道真空计控制器, 通道数: 多通道, 通信接口: RS-232/RS-485, 继电器设定点: 支持过程控制'
+    品牌: Agilent
+community_707:
+  class:
+    module: community_drivers.707.driver:DeviceDriver
+    type: python
+  name: ITR90 Vacuum Transmitter
+  description: Leybold ITR90是一款真空变送器，用于真空系统的压力测量和监控。
+  manufacturer: Leybold
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: ITR90 Vacuum Transmitter
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: '真空变送器, 测量原理: 皮拉尼/冷阴极, 应用: 工业真空系统监测'
+    品牌: Leybold
+community_714:
+  class:
+    module: community_drivers.714.driver:DeviceDriver
+    type: python
+  name: TPG261 Single-Channel Vacuum Gauge Controller
+  description: Pfeiffer TPG261是紧凑型单通道真空计测量和控制单元，适用于工业真空系统、研究实验室、涂层系统和泄漏检测装置。
+  manufacturer: Pfeiffer
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: TPG261 Single-Channel Vacuum Gauge Controller
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: '单通道真空计控制器/显示单元, 兼容性: Pfeiffer皮拉尼和压电真空计传感器(TPR/APR系列), 测量范围: 大气压到约5×10⁻⁴ mbar(取决于传感器),
+      显示: 数字显示, 输出: 模拟输出(0-10V), 继电器设定点(通常2个可配置), 接口: RS-232串行通信, 电源: 100-240VAC或24VDC,
+      安装: 面板安装或台式'
+    品牌: Pfeiffer
+community_715:
+  class:
+    module: community_drivers.715.driver:DeviceDriver
+    type: python
+  name: TPG262 Dual-Channel Vacuum Gauge Controller
+  description: Pfeiffer TPG262是双通道真空计控制器，用于真空系统监测、工业真空过程、研发实验室、半导体和涂层应用。
+  manufacturer: Pfeiffer
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: TPG262 Dual-Channel Vacuum Gauge Controller
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_716:
+  class:
+    module: community_drivers.716.driver:DeviceDriver
+    type: python
+  name: DPG202 Digital Pressure Gauge
+  description: Pfeiffer DPG202数字压力计用于真空系统监测、工业真空过程控制、研究和实验室环境。
+  manufacturer: Pfeiffer
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: DPG202 Digital Pressure Gauge
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: '数字真空计/控制器, 显示: 数字压力读数, 测量范围: 大气压(1013 mbar)到约1×10⁻⁴ mbar(取决于传感器), 兼容传感器:
+      Pfeiffer皮拉尼和组合计传感器, 测量原理: 皮拉尼(热导)/冷阴极, 接口: 模拟输出/继电器设定点/可能RS-232或RS-485串行通信,
+      电源: 标准AC或DC电源输入, 安装: 机架或面板安装'
+    品牌: Pfeiffer
+community_107:
+  class:
+    module: community_drivers.107.driver:DeviceDriver
+    type: python
+  name: Binder VDL 115 安全真空干燥箱
+  description: Binder VDL 115是一款符合ATEX防爆指令的安全真空干燥箱，专为易燃溶剂干燥设计，防爆等级EX II 2/3/- G IIB
+    T3。115L内容积配合直观触屏控制器，可图形化显示压力和温度曲线。程序控制干燥监测功能在过程结束时自动通风，100mbar以下压力控制装置自动激活加热。内置数据记录器支持USB导出开放格式数据，2块铝制膨胀搁架可自由定位。真空接口DN
+    16和测量接入口满足外部设备接入需求。
+  manufacturer: Binder
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: Binder VDL 115 安全真空干燥箱
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    内容积: 115L(4.0cu.ft)
+    温度范围: 环境温度+9°C~110°C
+    温度均匀性(100°C): ±2.9K
+    温度波动(100°C): ±0.1K
+    泄漏率: 0.01bar/h
+    内尺寸: 506×506×460mm
+    外尺寸: 743×942×581mm
+    净重: 158kg
+    功率: 1.6kW
+    品牌: Binder
+community_377:
+  class:
+    module: community_drivers.377.driver:DeviceDriver
+    type: python
+  name: Alcatel ACM 1000 真空计控制器
+  description: Alcatel ACM 1000是一款多规真空计控制器（现属Pfeiffer Vacuum），支持皮拉尼规、潘宁冷阴极规和电容膜片规等多种真空传感器，测量范围可覆盖约10⁻⁸mbar至大气压，具备可编程设定点继电器用于过程控制，RS-232串口通信。
+  manufacturer: Alcatel
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: Alcatel ACM 1000 真空计控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 多规真空测量控制器
+    兼容规管: 皮拉尼/潘宁/电容膜片规
+    测量范围: ~10⁻⁸mbar至大气压
+    显示: 数字读数
+    设定点继电器: 可编程
+    接口: RS-232
+    供电: 100-240VAC
+    品牌: Alcatel
+community_591:
+  class:
+    module: community_drivers.591.driver:DeviceDriver
+    type: python
+  name: Oxford Instruments ILM200 智能低温液位计
+  description: Oxford Instruments ILM200是智能低温液位计，用于测量液氦和液氮的液位，支持脉冲和连续测量模式，具备自动填充功能和ISOBUS通信接口，可与其他Oxford仪器并联管理，广泛用于低温物理实验系统。
+  manufacturer: Oxford Instruments
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: Oxford Instruments ILM200 智能低温液位计
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    测量介质: 液氦/液氮
+    通道模式: 氮液位/氦液位(脉冲/连续)
+    氦采样率: 快速/慢速
+    通信: ISOBUS
+    版本: ILM200 Version 1.08
+    品牌: Oxford Instruments
+community_822:
+  class:
+    module: community_drivers.822.driver:DeviceDriver
+    type: python
+  name: Edwards nXDS 干式涡旋真空泵
+  description: Edwards nXDS系列是同级别中性能最佳的干式涡旋真空泵，抽速6-20 m³/h，具备更低极限压力、更低功耗和仅52 dB(A)的低噪声水平，所有轴承与真空空间完全隔离实现真正无油，内置智能控制器支持远程监控，最长5年免维护，广泛用于SEM和涡轮泵前级。
+  manufacturer: Edwards
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: Edwards nXDS 干式涡旋真空泵
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    抽速: 6~20 m³/h
+    极限压力: 低至0.007 mbar
+    噪音: 52 dB(A)
+    服务间隔: 最长5年
+    电压: 100-240V自动选择
+    通信: RS-232/RS-485
+    防护等级: IP44
+    品牌: Edwards
+community_859:
+  class:
+    module: community_drivers.859.driver:DeviceDriver
+    type: python
+  name: MKS 937B数字组合真空计控制器
+  description: MKS 937B是多通道数字真空计控制器，支持最多6个传感器同时测量，兼容冷阴极、热阴极、皮拉尼和电容薄膜真空计，12个可编程继电器，彩色TFT显示，广泛应用于真空系统监控和过程控制。
+  manufacturer: MKS Instruments
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: MKS 937B数字组合真空计控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    显示范围: 1×10⁻¹¹-20000Torr
+    传感器通道: 最多6个
+    兼容: 冷阴极/热阴极/皮拉尼/电容薄膜
+    继电器: 12个
+    显示: 彩色QVGA TFT
+    功率: 150W
+    接口: RS232,RS485
+    品牌: MKS Instruments
+community_860:
+  class:
+    module: community_drivers.860.driver:DeviceDriver
+    type: python
+  name: MKS 974B QuadMag三合一真空传感器
+  description: MKS 974B QuadMag是三合一真空传感器，集成冷阴极、MicroPirani和压电差分三种传感技术，覆盖1×10⁻⁸至1500Torr全量程，专为真空负载锁设计，可替代多个独立传感器简化系统。
+  manufacturer: MKS Instruments
+  tags:
+  - 真空干燥箱
+  category:
+  - 真空干燥箱
+  model:
+    name: MKS 974B QuadMag三合一真空传感器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    绝对测量范围: 1×10⁻⁸-1500Torr
+    差分范围: -760-+760Torr
+    传感器: 冷阴极+MicroPirani+压电
+    精度: ±1%-±30%(分段)
+    继电器: 3个
+    接口: RS485,RS232,模拟输出
+    法兰: 2.75in CF
+    功耗: 2W
+    品牌: MKS Instruments

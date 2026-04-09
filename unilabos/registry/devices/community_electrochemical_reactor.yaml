@@ -1,0 +1,4360 @@
+community_aim_t_ti_el302_p:
+  class:
+    module: community_drivers.aim_t_ti_el302_p.driver:AimTTiEL302P
+    type: python
+    status_types:
+      output: str
+      name: str
+      channel: str
+    action_value_mappings:
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: EL301R
+  description: EL-R系列可编程线性直流电源，带RS-232接口，60W输出功率，无风扇静音设计，支持恒压/恒流自动切换
+  manufacturer: Aim-TTi
+  icon: aim_t_ti_el302_p.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    输出: 0-30V/0-2A(60W)
+    调节方式: 线性
+    纹波噪声: <1mV RMS
+    负载调节: <0.01%
+    线路调节: <0.01%
+    瞬态响应: <50μs
+    温度系数: <100ppm/°C
+    接口: RS-232(光隔离,最高9600baud)
+    RS232电压精度: 0.3%±20mV
+    RS232电流精度: 0.6%±20mA
+    显示: 双4位LED
+    冷却: 无风扇自然对流
+    尺寸: 140×160×295mm
+    重量: 4.4kg
+    安全: EN61010-1
+    EMC: EN61326
+    品牌: Aim-TTi
+  model:
+    name: EL301R
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+community_ami430:
+  class:
+    module: community_drivers.ami430.driver:AMI430
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_field:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_field
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+  name: AMI Model 430 Power Supply Programmer
+  description: 高精度超导磁体电源编程器，支持多段斜率控制、失超检测和持续开关管理，用于低温物理和磁场实验。在售。
+  manufacturer: American Magnetics Inc.
+  icon: ami430.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Current Ratings: ±5A~±300A (customizable)
+    Stability: ±0.05% FS
+    Resolution: 16-bit DAC
+    Ramp Rate: 0.001~33.333 A/s
+    Ramp Segments: 5 programmable
+    Voltage Limit: 0.1~10V
+    Quench Detection: programmable voltage threshold
+    Display: 4.3" TFT LCD touchscreen
+    Interface: GPIB, RS-232, Ethernet (2017+)
+    Size: 3.5"H x 19"W x 14"D
+    Power: 100-240VAC
+    品牌: American Magnetics Inc.
+  model:
+    name: AMI Model 430 Power Supply Programmer
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string
+        port:
+          default: null
+          type: string
+        persistent_switch:
+          default: null
+          type: string
+        reset:
+          default: null
+          type: string
+        current_ramp_limit:
+          default: null
+          type: string
+        terminator:
+          default: null
+          type: string
+community_bk8600:
+  class:
+    module: community_drivers.bk8600.driver:BK8600
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_setpoint_A:
+                  type: string
+        goal_default:
+          current_setpoint_A: null
+        handles: {}
+      auto-set_mode_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_mode_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_cv_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cv_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_setpoint_V:
+                  type: string
+        goal_default:
+          voltage_setpoint_V: null
+        handles: {}
+      auto-toggle_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-lock_front_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_front_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: B&K Precision 8601 DC Electronic Load
+  description: B&K Precision 设计和制造可靠且经济高效的测试和测量设备，被工程师和技术人员广泛应用。
+  manufacturer: B&K Precision
+  icon: bk8600.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Voltage: 0~120V
+    Current: 0~30A
+    Power: 150W
+    Resolution: 16-bit
+    Transient: 25kHz
+    Modes: CC/CV/CR/CW
+    Interface: USB/RS-232/GPIB
+    品牌: B&K Precision
+  model:
+    name: B&K Precision 8601 DC Electronic Load
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Battery Testing
+    step: Cycling
+  version: 1.0.0
+  resource_type: device
+community_bk9100:
+  class:
+    module: community_drivers.bk9100.driver:BK9100
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-select_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: select_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-float_to_4_dig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: float_to_4_dig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: string
+        goal_default:
+          val: null
+        handles: {}
+      auto-set_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_setpoint_A:
+                  type: string
+        goal_default:
+          current_setpoint_A: null
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_setpoint_V:
+                  type: string
+        goal_default:
+          voltage_setpoint_V: null
+        handles: {}
+      auto-toggle_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-lock_front_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_front_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: B&K Precision 9103 Multi-Range DC Power Supply
+  description: B&K Precision 设计和制造可靠且经济高效的测试和测量设备，被工程师和技术人员广泛应用。
+  manufacturer: B&K Precision
+  icon: bk9100.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Models: 100W~1200W
+    Voltage: 0~60/42/84/80V
+    Current: 0~5/20/10/60A
+    Ripple: ≤2mVrms
+    Accuracy: ≤0.05%+10mV
+    Memory: 100×4 V/A
+    Interface: USB/RS-232/GPIB
+    品牌: B&K Precision
+  model:
+    name: B&K Precision 9103 Multi-Range DC Power Supply
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+community_dp800:
+  class:
+    module: community_drivers.dp800.driver:DP800
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-select_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: select_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-set_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_setpoint_A:
+                  type: string
+        goal_default:
+          current_setpoint_A: null
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_setpoint_V:
+                  type: string
+        goal_default:
+          voltage_setpoint_V: null
+        handles: {}
+      auto-toggle_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-lock_front_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_front_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: DP800
+  description: RIGOL DP800系列低纹波线性可编程直流电源，提供单/双/三通道配置，纹波低至350μVrms，内建丰富的测量分析和定时输出功能。
+  manufacturer: RIGOL Technologies
+  icon: dp800.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    通道: 单通道(DP811/DP813)/双通道(DP821/DP822)/三通道(DP831/DP832)
+    典型输出(DP832): 30V/3A+30V/3A+5V/3A
+    纹波噪声: <350μVrms/2mVpp
+    瞬态响应: <50μs
+    定时器: 最高2048组预设
+    显示: 3.5英寸TFT
+    接口: USB/LAN(LXI)/RS-232/可选GPIB
+    品牌: RIGOL Technologies
+  model:
+    name: DP800
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+community_e3631_a:
+  class:
+    module: community_drivers.e3631_a.driver:E3631A
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-select_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: select_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-set_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_setpoint_A:
+                  type: string
+        goal_default:
+          current_setpoint_A: null
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_setpoint_V:
+                  type: string
+        goal_default:
+          voltage_setpoint_V: null
+        handles: {}
+      auto-toggle_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-lock_front_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_front_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: E3631A 80W Triple Output Power Supply, 6V, 5A & ±25V, 1A [Obsolete]
+  description: Keysight E3631A 80W三路输出可编程直流电源，提供6V/5A和±25V/1A输出，适用于混合信号电路测试和实验室通用供电。此为Keysight
+    VISA驱动接口。
+  manufacturer: Keysight Technologies
+  icon: e3631_a.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Output 1: 0-6V/0-5A
+    Output 2: 0-+25V/0-1A
+    Output 3: 0--25V/0-1A
+    Total Power: 80W
+    Load Regulation (voltage): < 0.01% + 0.5mV (6V) / < 0.01% + 1mV (25V)
+    Line Regulation (voltage): < 0.01% + 0.2mV (6V) / < 0.01% + 0.5mV (25V)
+    Ripple & Noise: < 0.35 mVrms (6V) / < 0.5 mVrms (25V)
+    Programming Accuracy: 0.05% + 10mV (6V) / 0.05% + 50mV (25V)
+    OVP Response: < 1.5ms
+    Transient Response: < 50µs to 15mV
+    Interfaces: GPIB, RS-232 (SCPI)
+    Remote Sensing: All outputs
+    品牌: Keysight Technologies
+  model:
+    name: E3631A 80W Triple Output Power Supply, 6V, 5A & ±25V, 1A [Obsolete]
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+community_hp6624a:
+  class:
+    module: community_drivers.hp6624a.driver:HP6624a
+    type: python
+    status_types:
+      channel: str
+      voltage: str
+      current: str
+      voltage_sense: str
+      current_sense: str
+      channel_count: str
+    action_value_mappings:
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: 6624A DC Power Supply, Quad-Output, 2 Outputs at 7V/5A, 2 Outputs at 20V/2A,
+    GPIB [Obsolete]
+  description: 四路输出系统直流电源，双量程，快速低噪声，GPIB可编程。2016停产，替代N6700B+N6751A。
+  manufacturer: Hewlett-Packard (Keysight)
+  icon: hp6624a.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Outputs: 4 independent, 40W each
+    CH1&2: 0~7V/5A or 0~20V/2A
+    CH3&4: 0~20V/2A or 0~50V/0.8A
+    Transient: <75µs
+    Interface: GPIB
+    品牌: Hewlett-Packard (Keysight)
+  model:
+    name: 6624A DC Power Supply, Quad-Output, 2 Outputs at 7V/5A, 2 Outputs at 20V/2A,
+      GPIB [Obsolete]
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+community_hp6632b:
+  class:
+    module: community_drivers.hp6632b.driver:HP6632b
+    type: python
+    status_types:
+      line_frequency: str
+      display_brightness: str
+      display_contrast: str
+    action_value_mappings:
+      auto-init_output_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init_output_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-abort_output_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: abort_output_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_error_queue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_error_queue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: 6632B 100 Watt System Power Supply, 20V, 5A [Obsolete]
+  description: 100W线性调节单路系统电源，µA级精密电流测量，4ms编程响应。2017停产，替代N6743B/N6752A。
+  manufacturer: Hewlett-Packard (Keysight)
+  icon: hp6632b.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Output: 0~20V, 0~5A, 100W
+    Programming Response: <4ms
+    Current Measurement: µA-level
+    Interface: GPIB, RS-232, SCPI
+    品牌: Hewlett-Packard (Keysight)
+  model:
+    name: 6632B 100 Watt System Power Supply, 20V, 5A [Obsolete]
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+community_hp6652a:
+  class:
+    module: community_drivers.hp6652a.driver:HP6652a
+    type: python
+    status_types:
+      name: str
+      mode: str
+      channel: str
+    action_value_mappings:
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-display_text:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: display_text
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                text_to_display:
+                  type: string
+        goal_default:
+          text_to_display: null
+        handles: {}
+  name: 6652A 500 Watt System Power Supply, 20V, 25A [Obsolete]
+  description: 500W单路系统电源，25A大电流输出，风扇转速可控。已停产，替代N6765A/N6755A。
+  manufacturer: Hewlett-Packard (Keysight)
+  icon: hp6652a.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Output: 0~20V, 0~25A, 500W
+    Input: 100~240VAC
+    Interface: GPIB, SCPI
+    品牌: Hewlett-Packard (Keysight)
+  model:
+    name: 6652A 500 Watt System Power Supply, 20V, 25A [Obsolete]
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+community_kepco_bop_20_20_m:
+  class:
+    module: community_drivers.kepco_bop_20_20_m.driver:Kepco_BOP_20_20_M
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-seti:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: seti
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-measurei:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measurei
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measureR:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measureR
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measurev:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measurev
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: 找不到 www.kepcopower.com 的网页
+  description: Kepco BOP 20-20M是400W线性双极性电源，四象限工作，可作为高速功率运算放大器使用。支持模拟和数字编程。
+  manufacturer: Kepco Inc.
+  icon: kepco_bop_20_20_m.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    输出: ±20V, ±20A(400W)
+    类型: 线性高速双极性功率运算放大器
+    工作: 四象限
+    编程: 模拟(电压/电阻)/数字(GPIB/SCPI/RS232)
+    安装: 台式或机架
+    品牌: Kepco Inc.
+  model:
+    name: 找不到 www.kepcopower.com 的网页
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        IVVI_dac:
+          default: null
+          type: string
+        Keithley_I_mon:
+          default: null
+          type: string
+        Keithley_V_mon:
+          default: null
+          type: string
+community_n8700:
+  class:
+    module: community_drivers.n8700.driver:N8700
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-select_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: select_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-set_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_setpoint_A:
+                  type: string
+        goal_default:
+          current_setpoint_A: null
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_setpoint_V:
+                  type: string
+        goal_default:
+          voltage_setpoint_V: null
+        handles: {}
+      auto-toggle_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-lock_front_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_front_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Advanced ATE System Power Supplies
+  description: N8700系列经济型系统级DC电源，21款3.3kW/5kW单输出，8~600V/5.5~400A，2U机架，标配GPIB/LAN/USB。在售。
+  manufacturer: Keysight Technologies
+  icon: n8700.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Models: '21'
+    Power: 3300W/5000W
+    Voltage: 8V~600V
+    Current: 5.5A~400A
+    Efficiency: 82-88%
+    Interface: GPIB/LAN/USB(std)
+    品牌: Keysight Technologies
+  model:
+    name: Advanced ATE System Power Supplies
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+community_rs_hmp4040:
+  class:
+    module: community_drivers.rs_hmp4040.driver:rs_HMP4040
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reinit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reinit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                'on':
+                  type: string
+                channel:
+                  type: integer
+                  default: 1
+        goal_default:
+          'on': null
+          channel: 1
+        handles: {}
+      auto-get_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_current_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                channel:
+                  type: integer
+                  default: 1
+        goal_default:
+          value: null
+          channel: 1
+        handles: {}
+      auto-set_current_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                channel:
+                  type: integer
+                  default: 1
+        goal_default:
+          value: null
+          channel: 1
+        handles: {}
+      auto-reset_trip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_trip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: R&S®HMP4000 Power supply series
+  description: R&S®HMP 电源主要设计用于工业用途。这些坚固耐用的仪器具有两个、三个或四个输出通道，每个通道的输出电流高达 10 A，非常适合各种应用。
+  manufacturer: Rohde & Schwarz
+  icon: rs_hmp4040.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Channels: '4'
+    Voltage: 0~32V/ch
+    Current: 0~10A/ch
+    Power: 160W/ch, 384W total
+    Resolution: 1mV/0.2mA
+    Isolation: floating
+    Series: 128V
+    Parallel: 40A
+    Interface: USB/LAN/RS-232/GPIB(opt)
+    品牌: Rohde & Schwarz
+  model:
+    name: R&S®HMP4000 Power supply series
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string
+community_spd1000:
+  class:
+    module: community_drivers.spd1000.driver:SetpointException
+    type: python
+    status_types:
+      current: String
+      output: String
+      remote_sense: String
+      voltage: String
+    action_value_mappings:
+      auto-initialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: initialize
+          type: object
+        type: UniLabJsonCommand
+      auto-lock_commands:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                state:
+                  type: string
+              type: object
+          title: lock_commands
+          type: object
+        type: UniLabJsonCommand
+      auto-measure_current:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: measure_current
+          type: object
+        type: UniLabJsonCommand
+      auto-measure_power:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: measure_power
+          type: object
+        type: UniLabJsonCommand
+      auto-measure_voltage:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: measure_voltage
+          type: object
+        type: UniLabJsonCommand
+      auto-remote_sense:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                state:
+                  type: string
+              type: object
+          title: remote_sense
+          type: object
+        type: UniLabJsonCommand
+      auto-set_current:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                current_setpoint_A:
+                  type: string
+              type: object
+          title: set_current
+          type: object
+        type: UniLabJsonCommand
+      auto-set_voltage:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                voltage_setpoint_V:
+                  type: string
+              type: object
+          title: set_voltage
+          type: object
+        type: UniLabJsonCommand
+      auto-toggle_output:
+        feedback: {}
+        goal: {}
+        goal_default:
+          ch: 1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                ch:
+                  type: string
+                state:
+                  type: string
+              type: object
+          title: toggle_output
+          type: object
+        type: UniLabJsonCommand
+      auto-get_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: SPD1168X
+  description: 输出：0 – 16 V / 0-8 Amps (128 Watts) 分辨率：1 mV / 1 mA 低纹波和噪声：<= 350 uVrms
+    / 3 mVpp / <2 mArms 远程电压传感能力 支持前面板定时输出功能 清晰的图形界面，具有波形显示功能 内部 5 组系统参数保存/调用 包括 PC
+    软件：Easypower，支持 SCPI、LabView
+  manufacturer: Siglent Technologies
+  icon: spd1000.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Output: 0~16V/0~8A/128W
+    Resolution: 1mV/1mA
+    Ripple: ≤350µVrms
+    Response: <50µs
+    Display: 2.8" TFT
+    Interface: USB, LAN
+    品牌: Siglent Technologies
+  model:
+    name: SPD1168X
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+community_tti_ql355tp:
+  class:
+    module: community_drivers.tti_ql355tp.driver:ttiQl355tp
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reinit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reinit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                'on':
+                  type: string
+                channel:
+                  type: integer
+                  default: 1
+        goal_default:
+          'on': null
+          channel: 1
+        handles: {}
+      auto-get_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_current_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                channel:
+                  type: integer
+                  default: 1
+        goal_default:
+          value: null
+          channel: 1
+        handles: {}
+      auto-set_current_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                channel:
+                  type: integer
+                  default: 1
+        goal_default:
+          value: null
+          channel: 1
+        handles: {}
+      auto-reset_trip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_trip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: QL355
+  description: Aim-TTi QL355TP是三路输出可编程直流电源，两路主输出各35V/5A可串联/并联跟踪，数字控制。
+  manufacturer: Aim-TTi
+  icon: tti_ql355tp.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    输出: 主输出1和2各0-35V/0-5A, 辅助0-3V/0-3A
+    控制: 数字旋转编码器
+    特性: 低噪声低纹波, CV/CC模式
+    跟踪: 两路主输出可串联/并联
+    显示: LCD
+    接口: RS-232/USB(GPIB可选)
+    品牌: Aim-TTi
+  model:
+    name: QL355
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string
+community_ttipl330_p:
+  class:
+    module: community_drivers.ttipl330_p.driver:TTIPL330P
+    type: python
+    status_types:
+      volts: str
+      current: str
+      output: str
+    action_value_mappings:
+      auto-volts:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: volts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volts:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                boolean:
+                  type: string
+        goal_default: {}
+        handles: {}
+  name: PL068
+  description: Aim-TTi PL330P是单路线性稳压电源，PowerFlex技术实现灵活功率分配，低噪声低纹波。
+  manufacturer: Aim-TTi
+  icon: ttipl330_p.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    输出: 0-32V/0-3A, 最大105W
+    技术: PowerFlex(低电压时可提供更大电流)
+    模式: CV/CC
+    显示: 数字表头
+    接口: USB/RS-232(GPIB/LAN可选)
+    品牌: Aim-TTi
+  model:
+    name: PL068
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+community_delta__electronics_s6_40:
+  class:
+    module: community_drivers.delta__electronics_s6_40.driver:Delta_Electronics_S6_40
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-seti:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: seti
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-measurei:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measurei
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measureR:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measureR
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Delta Elektronika S6-40 开关电源
+  description: Delta Elektronika S6-40是荷兰Delta Elektronika生产的0-6V/0-40A开关模式直流电源，支持恒压/恒流模式。已于2017年停产，无替代型号。
+  manufacturer: Delta Elektronika B.V.
+  icon: delta__electronics_s6_40.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    输出电压: 0-6V
+    输出电流: 0-40A
+    模式: CV/CC(恒压/恒流)
+    类型: 开关模式电源
+    状态: 已停产(2017)
+    厂商: Delta Elektronika B.V.(荷兰)
+    品牌: Delta Elektronika B.V.
+  model:
+    name: Delta Elektronika S6-40 开关电源
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        IVVI_dac:
+          default: null
+          type: string
+        Keithley_instr:
+          default: null
+          type: string
+community_gh_openids_openids_v1:
+  class:
+    module: community_drivers.gh_openids_openids_v1.driver:CameraTab
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initWindow:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initWindow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_humidity_thread:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_humidity_thread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-position_save:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: position_save
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getPos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+        goal_default:
+          event: null
+        handles: {}
+      auto-show_zoom:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: show_zoom
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+        goal_default:
+          event: null
+        handles: {}
+      auto-stop_zoom:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_zoom
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+        goal_default:
+          event: null
+        handles: {}
+      auto-MakeIMG:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MakeIMG
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-TestPrinting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TestPrinting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ClickCalibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ClickCalibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ClickStop_CalibrationVideo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ClickStop_CalibrationVideo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/regiregire/OpenIDS
+  name: INDUCTION LAUNCHER
+  description: 我已连接并准备好所有部件，只需添加新的 SCR/开关等。
+  manufacturer: OpenIDS
+  icon: gh_openids_openids_v1.webp
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  device_params:
+    Type: Open-source DNA/oligo synthesizer
+    Chemistry: phosphoramidite
+    Synthesis scale: 200 nmol-1 µmol
+    Coupling efficiency: '>99%'
+    Features: open-source hardware and software
+    品牌: OpenIDS
+  model:
+    name: INDUCTION LAUNCHER
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Molecular Biology
+    step: Oligonucleotide Synthesis
+  version: 1.0.0
+  resource_type: device
+community_409:
+  class:
+    module: community_drivers.409.driver:DeviceDriver
+    type: python
+  name: HP E3631A 80W三路输出直流电源
+  description: HP E3631A（现归属Keysight Technologies）是一款80W三路输出直流电源，提供6V/5A和±25V/1A三路独立输出。采用线性电源设计，具有极低噪声性能。双真空荧光显示器可同时显示电压和电流。标配GPIB和RS-232接口，支持SCPI协议远程编程。±25V输出可相互跟踪用于对称双极性供电。所有输出均配备过压保护。该产品已停产，推荐替代型号为E36312A/E36311A。
+  manufacturer: Hewlett-Packard (Keysight)
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: HP E3631A 80W三路输出直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出1: 0-6V/0-5A
+    输出2: 0-+25V/0-1A
+    输出3: 0--25V/0-1A
+    总功率: 80W
+    纹波噪声: <350μVrms
+    接口: GPIB/RS-232
+    编程精度: 0.05%+20mV
+    品牌: Hewlett-Packard (Keysight)
+community_475:
+  class:
+    module: community_drivers.475.driver:DeviceDriver
+    type: python
+  name: AMI Model 430 超导磁铁电源程控器
+  description: AMI Model 430是American Magnetics公司生产的超导磁铁电源程控器，专为控制和管理超导磁铁电源设计。该仪器具备数字化精密电流/磁场斫率控制能力，支持持续模式开关加热器管理、失超检测保护，以及多段电流扫描编程功能。广泛应用于NMR/MRI系统、高磁场物理实验和低温超导研究等领域。支持GPIB、RS-232和以太网远程通信。
+  manufacturer: American Magnetics
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: AMI Model 430 超导磁铁电源程控器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_481:
+  class:
+    module: community_drivers.481.driver:DeviceDriver
+    type: python
+  name: Model 4G 双极性超导磁铁电源
+  description: Cryomagnetics Model 4G是一款真双极性超导磁铁电源，支持平滑通过零点的电流扫描。提供100A、150A和200A多种型号选择，电流可设定精度达0.1mA，稳定性优于±0.005%。配备全彩TFT
+    LCD显示屏，支持USB、以太网和IEEE-488.2通信接口。内置持续开关加热器电源和失超检测保护功能，提供五个可定制的扫描速率范围，广泛应用于超导磁铁系统的精密电流控制。
+  manufacturer: Cryomagnetics
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Model 4G 双极性超导磁铁电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_878:
+  class:
+    module: community_drivers.878.driver:DeviceDriver
+    type: python
+  name: XRV系列工业X射线发生器
+  description: 紧凑型高性能X射线发生器，功率范围1.8kW至6.0kW，电压范围160kV至450kV，可选负极、正极或双极配置。采用有源功率因数校正、专有逆变器拓扑实现高效率、固态封装高压部分、基于DSP的控制。包含双直流灯丝电源和发射电流调节、电弧检测/熄灭及全面诊断功能
+  manufacturer: Spellman
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: XRV系列工业X射线发生器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_883:
+  class:
+    module: community_drivers.883.driver:DeviceDriver
+    type: python
+  name: Genesys Gen40-38可编程直流电源
+  description: TDK Lambda Genesys系列1U机架式可编程直流电源，具有自动量程输入、有源功率因数校正、主从并联操作（最多8台）、串联操作能力、内置隔离和SCPI命令兼容性
+  manufacturer: TDK Lambda
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Genesys Gen40-38可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_884:
+  class:
+    module: community_drivers.884.driver:DeviceDriver
+    type: python
+  name: Genesys Gen80-65可编程直流电源
+  description: TDK Lambda Genesys系列高功率1U机架式可编程直流电源，提供5.2kW输出功率，支持主从并联和串联操作，适用于测试测量、工业自动化和半导体测试应用
+  manufacturer: TDK Lambda
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Genesys Gen80-65可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_887:
+  class:
+    module: community_drivers.887.driver:DeviceDriver
+    type: python
+  name: ECO-560热流控温系统
+  description: 热流控温系统，用于半导体器件和电子元件的温度测试，提供精确的温度控制和快速的温度转换
+  manufacturer: Temptronic
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: ECO-560热流控温系统
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_888:
+  class:
+    module: community_drivers.888.driver:DeviceDriver
+    type: python
+  name: PSW-360L30可编程直流电源
+  description: Texio PSW系列可编程开关直流电源，提供宽电压和电流范围，具有多量程输出能力，紧凑型开关电源设计，适用于实验室、生产测试和工业应用
+  manufacturer: Texio
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: PSW-360L30可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_891:
+  class:
+    module: community_drivers.891.driver:DeviceDriver
+    type: python
+  name: VSH系列真空变送器
+  description: Thyracont VSH系列真空变送器/传感器，提供紧凑设计、模拟输出和多种测量原理（Pirani、压阻、组合），测量范围从大气压到高真空
+  manufacturer: Thyracont
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: VSH系列真空变送器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_892:
+  class:
+    module: community_drivers.892.driver:DeviceDriver
+    type: python
+  name: VSM真空测量仪
+  description: Thyracont VSM系列真空测量仪器，紧凑型真空计/传感器，适用于真空系统集成和过程控制
+  manufacturer: Thyracont
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: VSM真空测量仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_893:
+  class:
+    module: community_drivers.893.driver:DeviceDriver
+    type: python
+  name: VSP真空传感器
+  description: Thyracont VSP系列真空传感器，用于真空测量应用
+  manufacturer: Thyracont
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: VSP真空传感器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_894:
+  class:
+    module: community_drivers.894.driver:DeviceDriver
+    type: python
+  name: VSR系列真空变送器
+  description: Thyracont VSR系列真空变送器/传感器，提供紧凑设计、宽测量范围和多种传感器技术选项，适用于工业和研究应用
+  manufacturer: Thyracont
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: VSR系列真空变送器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_311:
+  class:
+    module: community_drivers.311.driver:DeviceDriver
+    type: python
+  name: Rohde & Schwarz NGP800 直流电源
+  description: Rohde & Schwarz NGP800系列是高性能可编程直流电源，提供5个型号覆盖400W和800W功率等级。2或4路200W输出可各提供最高64V或20A，电气等效且隔离的输出可串联(至250V)或并联(至80A)。配备5英寸TFT触摸屏，支持恒压/恒流模式自动切换、数据记录、QuickArb任意波形生成、OVP/OCP/OPP/OTP保护和自动调速静音风扇。
+  manufacturer: Rohde & Schwarz
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rohde & Schwarz NGP800 直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_317:
+  class:
+    module: community_drivers.317.driver:DeviceDriver
+    type: python
+  name: Bentham 610 恒流稳定灯电源
+  description: Bentham 610是恒流稳定直流灯电源，为Bentham系列白炽灯和氙灯光源及校准标准灯提供卓越的稳定性和可靠的长期性能。最大功率250W，支持恒流模式和软件控制的恒压模式。用户友好的界面允许通过前面板或USB
+    2.0接口完全控制，LCD显示设定电流、实际电流、灯电压、运行时间和灯功率等参数，内置灯泡运行时间跟踪功能。
+  manufacturer: Bentham
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Bentham 610 恒流稳定灯电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_318:
+  class:
+    module: community_drivers.318.driver:DeviceDriver
+    type: python
+  name: DPS 3005 可编程降压直流电源模块
+  description: DPS 3005是一款紧凑型数字可编程降压直流电源模块，集模拟集成和数字控制功能于一体。输入电压6-40V DC，输出0-32V/0-5A可调，最大功率160W。配备彩色LCD显示屏实时显示输入/输出电压电流和功率，支持10组预设值掉电存储、OVP/OCP/OPP保护和旋转编码器调节。需配合外部直流电源使用，适用于DIY电子、实验室台式电源和教育实验等场景。
+  manufacturer: RD/Ruideng
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: DPS 3005 可编程降压直流电源模块
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_319:
+  class:
+    module: community_drivers.319.driver:DeviceDriver
+    type: python
+  name: Lambda ZUP 可编程直流电源
+  description: TDK-Lambda ZUP系列是紧凑型可编程直流电源，提供从ZUP6-132(6V/132A)到ZUP120-3.5(120V/3.5A)的多种型号，功率覆盖200W至800W。支持恒压和恒流模式自动切换、远程感测、过压保护和串并联运行。通过前面板、RS-232/RS-485或可选GPIB接口进行控制，1U高度适合机架安装，通用交流输入(85-265VAC)设计，广泛应用于实验室和工业测试系统。
+  manufacturer: TDK-Lambda
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Lambda ZUP 可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_425:
+  class:
+    module: community_drivers.425.driver:DeviceDriver
+    type: python
+  name: Delta Elektronika PSC-ETH 以太网通信模块
+  description: PSC-ETH是Delta Elektronika为其可编程直流电源系列设计的以太网通信模块，提供LAN连接能力，支持SCPI命令协议进行远程编程控制。该模块内置Web界面，用户可通过网络浏览器实时监控和控制电源参数，适用于需要远程操控的工业和科研应用场景。
+  manufacturer: Delta Elektronika
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Delta Elektronika PSC-ETH 以太网通信模块
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_426:
+  class:
+    module: community_drivers.426.driver:DeviceDriver
+    type: python
+  name: Glassman FR系列高压直流电源
+  description: Glassman FR系列（现由XP Power生产）是一款300W高压直流电源，输出电压范围从1kV到60kV，提供正极、负极和可逆极性配置。采用1U
+    19英寸机架安装设计，具备电压和电流调节功能，内置短路、电弧和过载保护。支持RS232/USB数字控制接口，适用于电子束系统、离子注入、X射线发生和静电应用等领域。
+  manufacturer: Glassman (XP Power)
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Glassman FR系列高压直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_190:
+  class:
+    module: community_drivers.190.driver:DeviceDriver
+    type: python
+  name: Keysight N6705A模块化直流电源分析仪
+  description: Keysight N6705A(原Agilent)是一款模块化直流电源分析仪，将最多4个高级电源模块与数字万用表、示波器、任意波形发生器和数据记录器功能集成于一体。主机总功率600W，可从23种N6700系列电源模块中选配，覆盖50W至300W、最高100V/20A的多种规格。每个模块内置电压表、电流表、示波器和数据记录功能。支持GPIB、USB和LAN远程控制，符合LXI标准。该型号已停产，后续为N6705C。
+  manufacturer: Keysight (原Agilent)
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keysight N6705A模块化直流电源分析仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_191:
+  class:
+    module: community_drivers.191.driver:DeviceDriver
+    type: python
+  name: Aim-TTi CPX系列PowerFlex可编程直流电源
+  description: Aim-TTi CPX系列采用PowerFlex混合调整技术的可编程直流电源，在恒定功率包络内自动分配电压和电流输出能力。提供单路(CPX400S/SP,420W)和双路(CPX400D/DP,840W)型号，每路输出0-60V/0-20A。PowerFlex技术使低电压时可输出更大电流(如20V/20A)，高电压时限制电流(如60V/7A)。双路型支持隔离跟踪，可串联至120V或并联至40A。纹波噪声低于5mV
+    RMS，负载调整率优于0.01%。
+  manufacturer: Aim-TTi
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Aim-TTi CPX系列PowerFlex可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_193:
+  class:
+    module: community_drivers.193.driver:DeviceDriver
+    type: python
+  name: BK Precision 178x系列可编程直流电源
+  description: BK Precision 178x系列包含1785B、1786B、1787B和1788四个型号的可编程线性直流电源，覆盖18V/5A至72V/1.5A的不同电压电流组合。提供10mV/10mA设定分辨率，负载调整率优于0.01%+3mV，纹波噪声低于1mV
+    RMS。支持16组用户可编程预设输出，具有闭盖校准功能。通过RS-232接口可实现PC远程控制，配套PV1785B-1788软件支持恒压、恒流设定和监控。该系列已停产，后续型号为9201B。
+  manufacturer: BK Precision
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: BK Precision 178x系列可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    1785B: 0-18V/5A
+    1786B: 0-32V/3A
+    1787B: 0-72V/1.5A
+    '1788': 0-32V/6A
+    品牌: BK Precision
+community_194:
+  class:
+    module: community_drivers.194.driver:DeviceDriver
+    type: python
+  name: EA PS 2000B系列可编程直流实验室电源
+  description: EA Elektro-Automatik PS 2000B系列是紧凑型微处理器控制的可编程直流实验室电源，提供100W、160W和332W三个功率等级。采用Flexi-range自动量程输出技术，在额定功率包络内灵活分配电压和电流。配备TFT彩色触摸屏、数字编码器设定和Mini
+    USB接口。支持ModBus RTU和SCPI通信协议，内置过压(OVP)、过流(OCP)和过温(OTP)硬件保护。适用于研发、维修、测试和教育实验室。
+  manufacturer: EA Elektro-Automatik
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: EA PS 2000B系列可编程直流实验室电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_195:
+  class:
+    module: community_drivers.195.driver:DeviceDriver
+    type: python
+  name: GW Instek GPP-4323四通道可编程直流电源
+  description: GW Instek GPP-4323是一款四通道可编程直流电源，提供两路32V/3A主通道和两路辅助通道(5V/1A和15V/1A)，总功率217W。CH1和CH2支持跟踪串联(64V)或并联(6A)模式，并内置恒流/恒压/恒阻负载功能。采用4.3英寸TFT
+    LCD大屏显示，提供1mV/0.1mA高设定分辨率和低至350µVrms的超低纹波噪声。硬件级OVP/OCP/OTP保护确保安全运行，内置8种模板序列波形输出，支持智能温控风扇静音设计。
+  manufacturer: GW Instek
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: GW Instek GPP-4323四通道可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    CH1/CH2: 0-32V/3A
+    CH3: 0-5V/1A
+    CH4: 0-15V/1A
+    品牌: GW Instek
+community_565:
+  class:
+    module: community_drivers.565.driver:DeviceDriver
+    type: python
+  name: Aim-TTi EL320P 线性直流电源
+  description: Aim-TTi EL320P(属EL-R系列)是一款紧凑型线性调节直流电源,输出范围0-30V/0-2A,最大功率60W。采用线性调节技术,确保优异的线性/负载调节特性、良好的瞬态响应和极低输出噪声。具备恒压(CV)和恒流(CC)自动切换模式,配备4位电压表和3位电流表。支持RS-232远程编程控制,无风扇静音冷却设计,关机时自动保存电压、电流和输出状态设置。
+  manufacturer: Aim-TTi
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Aim-TTi EL320P 线性直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出电压: 0-30V
+    输出电流: 0-2A
+    输出功率: 60W
+    输出数: 单路
+    调节方式: 线性调节
+    输出噪声: <1 mV rms
+    接口: RS-232
+    冷却方式: 无风扇静音对流散热
+    品牌: Aim-TTi
+community_569:
+  class:
+    module: community_drivers.569.driver:DeviceDriver
+    type: python
+  name: Cryogenic SMS120C 超导磁铁电源
+  description: Cryogenic SMS120C是英国Cryogenic Limited生产的SMS系列智能超导磁铁电源控制器,最大输出电流±120A。具备四象限操作能力,可实现线性磁场扫描平滑过零。前面板手动控制与USB远程控制兼备,支持LabVIEW软件集成。内置持续开关加热器控制、失超检测保护和自动降流功能。可选配高分辨率20位DAC(3
+    ppm/K稳定性)和电流传感器输出。适用于各类超导磁铁系统操控。
+  manufacturer: Cryogenic
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Cryogenic SMS120C 超导磁铁电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    最大输出电流: ±120A
+    输出电压: 约±5V
+    电流分辨率: 16位+符号
+    稳定性: 约20 ppm/K/hr
+    控制接口: USB
+    高分辨率选项: 20位DAC(3 ppm/K)
+    品牌: Cryogenic
+community_571:
+  class:
+    module: community_drivers.571.driver:DeviceDriver
+    type: python
+  name: Cryomagnetics Model 4G 超导磁铁电源
+  description: Cryomagnetics Model 4G是第四代双极性超导磁铁电源,专为超导磁铁高感性负载优化设计。全系列为四象限真双极系统,可平滑扫描过零。PID控制扫描,电流可设定分辨率0.1
+    mA。内置持续开关加热器电源、失超检测保护和自动降流功能。配备彩色TFT LCD显示屏,支持USB、以太网和IEEE-488.2接口。提供4G-100(±100A)、4G-150(±150A)和4G-200S(±200A)等多个功率等级,可选配磁场匀场控制功能。
+  manufacturer: Cryomagnetics
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Cryomagnetics Model 4G 超导磁铁电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    型号选择: 4G-100(±100A)/4G-150(±150A)/4G-200S(±200A)
+    最大输出电压: ±10V
+    最大功率: 800-1650W
+    电流可设定性: 0.1 mA
+    稳定性: ±0.005% Imax
+    快速扫描: 最高10 A/s
+    接口: USB/以太网/IEEE-488.2
+    品牌: Cryomagnetics
+community_534:
+  class:
+    module: community_drivers.534.driver:DeviceDriver
+    type: python
+  name: Rigol DP821 可编程线性直流电源
+  description: Rigol DP821是DP800系列双通道可编程线性直流电源，总功率140W，提供0-60V/1A和0-8V/10A两个输出通道。具有超低纹波噪声(<350μVrms/2mVpp)和快速瞬态响应(<50μs)设计。内置定时输出功能，支持最多2048组电压/电流编程。配备3.5英寸TFT显示屏，支持实时电压/电流/功率监测和波形显示。提供USB、LAN(LXI)和RS-232接口，支持SCPI远程编程和OVP/OCP保护功能。
+  manufacturer: Rigol
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rigol DP821 可编程线性直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: '2'
+    总功率: 140W
+    CH1: 0-60V/0-1A(60W)
+    CH2: 0-8V/0-10A(80W)
+    纹波噪声: <350μVrms/2mVpp
+    瞬态响应: <50μs
+    显示: 3.5英寸TFT
+    品牌: Rigol
+community_535:
+  class:
+    module: community_drivers.535.driver:DeviceDriver
+    type: python
+  name: Rigol DP831 可编程线性直流电源
+  description: Rigol DP831是DP800系列三通道可编程线性直流电源，总功率160W，提供8V/5A、30V/2A和-30V/2A三路输出，其中一个通道隔离设计。具有超低纹波噪声和快速瞬态响应能力，内置OVP/OCP/OTP保护功能。支持通道串/并联配置，内置定时器可编程最多2048组输出参数。配备GPIB、USB、LAN和RS-232多种通信接口，支持SCPI远程控制，适用于教育实验室到研发工作台的各种应用场景。
+  manufacturer: Rigol
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rigol DP831 可编程线性直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: '3'
+    总功率: 160W
+    CH1: 0-8V/5A
+    CH2: 0-30V/2A
+    CH3: 0-(-30V)/2A
+    纹波噪声: <350μVrms/2mVpp
+    瞬态响应: <50μs
+    接口: USB/LAN/RS-232/GPIB
+    品牌: Rigol
+community_536:
+  class:
+    module: community_drivers.536.driver:DeviceDriver
+    type: python
+  name: Rigol DP832 可编程线性直流电源
+  description: Rigol DP832是DP800系列三通道可编程线性直流电源，总功率195W，提供两路30V/3A和一路5V/3A输出。电压/电流分辨率均为1
+    mV/1 mA，负载调整率≤0.01%+2mV。具有超低纹波噪声(<350μVrms/2mVpp)，内置智能低噪声风扇控制。支持实时电压/电流波形监测、数据记录、远程感测(CH1/CH2)和定时输出功能。提供OVP/OCP保护，支持通道串并联操作和SCPI远程编程。
+  manufacturer: Rigol
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rigol DP832 可编程线性直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: '3'
+    总功率: 195W
+    CH1: 0-30V/3A(90W)
+    CH2: 0-30V/3A(90W)
+    CH3: 0-5V/3A(15W)
+    纹波噪声: <350μVrms/2mVpp
+    瞬态响应: <50μs
+    接口: USB/LAN/RS-232
+    品牌: Rigol
+community_523:
+  class:
+    module: community_drivers.523.driver:DeviceDriver
+    type: python
+  name: Keysight N6705B模块化直流电源分析仪
+  description: Keysight N6705B是一款模块化直流电源分析仪，集成电源、数字万用表、示波器、任意波形发生器和数据记录仪五种功能于一体。可容纳最多4个直流电源模块，提供高达600W总输出功率，超过30种模块可选。具备18位高精度电压电流测量能力，支持前面板直接操作或通过14585A软件控制。4
+    GB非易失性存储支持长时间数据记录。该产品已停产，替代型号为N6705C。
+  manufacturer: Keysight
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keysight N6705B模块化直流电源分析仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    槽位数: '4'
+    总功率: 600 W
+    电压表精度: 0.025%+50 uV(18位)
+    电流表精度: 0.025%+8 nA(18位)
+    ARB带宽: 100 kHz
+    示波器采样率: 200 kHz/512 kpts
+    数据记录间隔: 20 us至60 s
+    存储: 4 GB
+    接口: GPIB/USB/LAN(LXI)
+    状态: 已停产(替代型号N6705C)
+    品牌: Keysight
+community_717:
+  class:
+    module: community_drivers.717.driver:DeviceDriver
+    type: python
+  name: DP1116A DC Power Supply
+  description: Rigol DP1116A直流电源，具体规格需查询官方网站。
+  manufacturer: Rigol
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: DP1116A DC Power Supply
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: '直流电源, 制造商: Rigol Technologies'
+    品牌: Rigol
+community_200:
+  class:
+    module: community_drivers.200.driver:DeviceDriver
+    type: python
+  name: Keysight E3632A 双量程直流电源
+  description: Keysight E3632A是一款120W单输出台式直流电源，具备双量程输出（15V/7A或30V/4A），内置电压电流测量功能，低纹波噪声，支持GPIB和RS-232远程编程控制，适用于实验室和自动化测试。
+  manufacturer: Keysight
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keysight E3632A 双量程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    最大功率: 120W
+    量程1: 0-15V/7A
+    量程2: 0-30V/4A
+    电压精度: 0.05%+10mV
+    纹波噪声: <350µVrms
+    接口: GPIB, RS-232
+    品牌: Keysight
+community_201:
+  class:
+    module: community_drivers.201.driver:DeviceDriver
+    type: python
+  name: Keysight N6705 直流功率分析仪
+  description: Keysight N6705直流功率分析仪是一款模块化仪器平台，可容纳最多4个直流电源模块，集成电源、数字万用表、示波器、任意波形发生器和数据记录功能，支持无缝电流量程切换，适用于设备功耗分析和电池测试。
+  manufacturer: Keysight
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keysight N6705 直流功率分析仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    模块插槽: 4个
+    最大功率: 600W
+    功能: 电源/DMM/示波器/数据记录/任意波形
+    接口: GPIB, LAN, USB
+    品牌: Keysight
+community_202:
+  class:
+    module: community_drivers.202.driver:DeviceDriver
+    type: python
+  name: KORAD KD3005P 可编程线性直流电源
+  description: KORAD KD3005P是一款可编程线性直流电源，输出电压0-30V、电流0-5A，支持恒压/恒流模式，具备USB接口用于PC远程控制，内置5组存储，带过压过流保护，适用于电子原型开发和自动化测试。
+  manufacturer: KORAD
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: KORAD KD3005P 可编程线性直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    电压范围: 0-30V
+    电流范围: 0-5A
+    最大功率: 150W
+    分辨率: 1mV/0.1mA
+    接口: USB
+    存储: 5组
+    保护: OVP/OCP
+    品牌: KORAD
+community_203:
+  class:
+    module: community_drivers.203.driver:DeviceDriver
+    type: python
+  name: KORAD KWR100系列 可编程直流电源
+  description: KORAD KWR100系列是300W可编程直流电源，提供宽范围电压电流输出（30V/30A或60V/15A），1mV/1mA高精度分辨率，支持LAN、USB和RS-232多种通信接口，具备电压斜率设置和远程补偿功能，适用于大电流测试和电池充电。
+  manufacturer: KORAD
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: KORAD KWR100系列 可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    功率: 300W
+    型号KWR102: 0-30V/0-30A
+    型号KWR103: 0-60V/0-15A
+    分辨率: 1mV/1mA
+    接口: LAN, USB, RS-232
+    保护: OVP/OCP/OTP
+    品牌: KORAD
+community_204:
+  class:
+    module: community_drivers.204.driver:DeviceDriver
+    type: python
+  name: Manson HCS-3000 可编程直流电源
+  description: Manson HCS-3000是一款可编程直流电源，输出电压1-30V、电流0-10A，支持恒压恒流模式，具备USB或串口接口用于计算机远程控制，内置记忆预设功能，数字精密显示，适用于实验室和业余电子爱好者。
+  manufacturer: Manson
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Manson HCS-3000 可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    电压范围: 1-30V
+    电流范围: 0-10A
+    最大功率: 300W
+    显示: LCD
+    接口: USB/RS-232
+    模式: CV/CC
+    保护: OVP/OCP
+    品牌: Manson
+community_205:
+  class:
+    module: community_drivers.205.driver:DeviceDriver
+    type: python
+  name: Rohde & Schwarz HMP4000系列 多通道直流电源
+  description: R&S HMP4000系列是高性能多通道直流电源（3或4通道），每通道0-32V/0-10A输出，最大384W总功率，具有低纹波噪声、隔离浮动输出、远程感应、EasyArb任意波形功能，支持串并联组合，适用于工业生产和实验室测试。
+  manufacturer: Rohde & Schwarz
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rohde & Schwarz HMP4000系列 多通道直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道: 3/4通道
+    最大功率: 384W
+    电压: 0-32V/通道
+    电流: 0-10A/通道
+    编程分辨率: 1mV/0.2mA
+    纹波: <1.5mV RMS
+    接口: USB, LAN
+    品牌: Rohde & Schwarz
+community_206:
+  class:
+    module: community_drivers.206.driver:DeviceDriver
+    type: python
+  name: Rohde & Schwarz NGE100B系列 直流电源
+  description: R&S NGE100B系列是经济型多通道直流电源，提供2通道（66W）和3通道（100W）型号，每通道0-32V/3A输出，所有通道完全隔离浮动，支持EasyRamp启动功能和电子熔丝，配备3.5英寸彩色显示屏，适用于教育、研发和维修。
+  manufacturer: Rohde & Schwarz
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rohde & Schwarz NGE100B系列 直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道: 2/3通道
+    功率: 66W/100W
+    电压: 0-32V/通道
+    电流: 0-3A/通道
+    分辨率: 10mV/1mA
+    纹波: <1.5mV RMS
+    接口: USB, 可选LAN/WLAN
+    品牌: Rohde & Schwarz
+community_207:
+  class:
+    module: community_drivers.207.driver:DeviceDriver
+    type: python
+  name: RS PRO RSPD3303C 三通道可编程直流电源
+  description: RS PRO RSPD3303C是一款220W三通道可编程线性直流电源，两路可调输出（0-32V/3.2A）和一路固定可选电压输出（2.5/3.3/5V），支持独立、串联和并联三种工作模式，通过USB接口实现SCPI远程控制，适用于研发调试和生产测试。
+  manufacturer: RS
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: RS PRO RSPD3303C 三通道可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出通道: 3路
+    功率: 220W
+    CH1/CH2: 0-32V/3.2A可调
+    CH3: 2.5V/3.3V/5V可选
+    分辨率: 10mV/10mA
+    接口: USB(USBTMC)
+    模式: 独立/串联/并联
+    品牌: RS
+community_208:
+  class:
+    module: community_drivers.208.driver:DeviceDriver
+    type: python
+  name: TDK-Lambda Genesys系列 可编程直流电源
+  description: TDK-Lambda Genesys系列是高功率密度可编程直流电源，功率覆盖750W至15kW，输出电压6V至1500V，内置RS-232/RS-485接口支持最多31台菊花链控制，具备有源功率因数校正和宽范围交流输入，支持最多4台并联扩展，适用于工业生产和自动化测试。
+  manufacturer: TDK-Lambda
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: TDK-Lambda Genesys系列 可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    功率范围: 750W-15kW
+    电压范围: 6V-1500V
+    电流: 最高1000A
+    接口: RS-232/RS-485(内置), 可选LAN/USB/GPIB
+    输入: 85-265VAC宽范围
+    功率因数: '0.99'
+    品牌: TDK-Lambda
+community_209:
+  class:
+    module: community_drivers.209.driver:DeviceDriver
+    type: python
+  name: Voltcraft DSP-3005 实验室直流电源
+  description: Voltcraft DSP-3005是一款150W单通道实验室直流电源，输出电压0-30V、电流0-5A，配备2.8英寸高分辨率彩色LCD显示屏，支持SCPI协议USB远程控制，具备波形编辑输出功能，内置过压过流保护，温控静音风扇散热，适用于研发原型测试。
+  manufacturer: Voltcraft
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Voltcraft DSP-3005 实验室直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    电压范围: 0-30V
+    电流范围: 0-5A
+    最大功率: 150W
+    接口: USB(SCPI)
+    显示: 2.8英寸TFT彩屏
+    保护: OVP/OCP
+    纹波: <30mVpp
+    品牌: Voltcraft
+community_465:
+  class:
+    module: community_drivers.465.driver:DeviceDriver
+    type: python
+  name: Aim-TTi PL068-P可编程线性直流电源
+  description: Aim-TTi PL068-P是紧凑型可编程线性调节直流电源，输出0-6V/0-8A(48W)。具备真模拟旋钮控制、S-Lock设置锁定和V-Span电压范围自定义功能。支持USB、RS-232、LAN(LXI)远程控制，线性调节提供极低噪声和快速动态响应。
+  manufacturer: Aim-TTi
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Aim-TTi PL068-P可编程线性直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出: 0-6V/0-8A(48W)
+    电压分辨率: 1mV
+    电流分辨率: 1mA
+    输出数: 单路
+    接口: USB/RS-232/LAN(LXI)/模拟
+    调节方式: 线性调节
+    供电: 100-240V AC
+    品牌: Aim-TTi
+community_466:
+  class:
+    module: community_drivers.466.driver:DeviceDriver
+    type: python
+  name: Aim-TTi PL155-P可编程线性直流电源
+  description: Aim-TTi PL155-P是单路可编程线性直流电源，输出0-15V/0-5A(75W)。超紧凑1/4机架3U设计，采用先进相控预调节技术实现高能效。保留真模拟控制同时支持USB、RS-232和LAN(LXI)远程编程，可4台并装于单个机架槽位。
+  manufacturer: Aim-TTi
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Aim-TTi PL155-P可编程线性直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出: 0-15V/0-5A(75W)
+    输出数: 单路
+    接口: USB/RS-232/LAN(LXI)/模拟
+    调节方式: 线性调节
+    设计: 1/4机架3U
+    工作温度: +5°C至+40°C
+    供电: 100-240V AC
+    品牌: Aim-TTi
+community_467:
+  class:
+    module: community_drivers.467.driver:DeviceDriver
+    type: python
+  name: Aim-TTi PL303-P可编程线性直流电源
+  description: Aim-TTi PL303-P是单路可编程线性直流电源，输出0-30V/0-3A(90W)。线性调节确保极低输出噪声，恒压和恒流模式自动切换。支持远程感应补偿导线压降，配备USB、RS-232、LAN(LXI)远程控制接口，适用于精密实验台和系统集成。
+  manufacturer: Aim-TTi
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Aim-TTi PL303-P可编程线性直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出: 0-30V/0-3A(90W)
+    输出数: 单路
+    接口: USB/RS-232/LAN(LXI)/模拟
+    调节方式: 线性调节
+    模式: 恒压CV/恒流CI自动切换
+    供电: 100-240V AC
+    品牌: Aim-TTi
+community_468:
+  class:
+    module: community_drivers.468.driver:DeviceDriver
+    type: python
+  name: Aim-TTi PL303QMD-P四模式双路可编程直流电源
+  description: Aim-TTi PL303QMD-P是双路四模式可编程直流电源，每路0-30V/0-3A，总功率180W。支持独立、并联(6A)、跟踪和比例跟踪四种工作模式。半机架3U设计，配备USB、RS-232、LAN(LXI)远程控制接口，LAN符合LXI标准，提供IVI驱动程序。
+  manufacturer: Aim-TTi
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Aim-TTi PL303QMD-P四模式双路可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出: 2x(0-30V/0-3A)(180W)
+    四模式: 独立/并联/跟踪/比例跟踪
+    并联输出: 0-30V/0-6A
+    接口: USB/RS-232/LAN(LXI)/Ethernet
+    设计: 半机架3U
+    显示: 双4位LED
+    品牌: Aim-TTi
+community_469:
+  class:
+    module: community_drivers.469.driver:DeviceDriver
+    type: python
+  name: Aim-TTi PL303QMT-P四模式三路可编程直流电源
+  description: Aim-TTi PL303QMT-P是三路四模式可编程直流电源，提供两路30V/3A和一路6V/8A输出，总功率228W。两路30V通道支持独立、并联、跟踪和比例跟踪四种模式。线性调节低噪声输出，配备USB、RS-232和LAN(LXI)远程控制接口，符合LXI标准。
+  manufacturer: Aim-TTi
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Aim-TTi PL303QMT-P四模式三路可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出: 2x(0-30V/0-3A)+1x(0-6V/0-8A)(228W)
+    四模式: 独立/并联/跟踪/比例跟踪
+    接口: USB/RS-232/LAN(LXI)/模拟
+    并联: 30V通道可合并为0-30V/0-6A
+    品牌: Aim-TTi
+community_470:
+  class:
+    module: community_drivers.470.driver:DeviceDriver
+    type: python
+  name: Aim-TTi PL601-P 可编程线性直流电源
+  description: Aim-TTi PL601-P是PL-P系列超紧凑型线性稳压直流电源，单路输出60V/1.5A/90W，具备USB、RS-232、LAN(LXI)及模拟远程控制接口，适用于台式和机架式系统应用，前后面板均有输出端子。
+  manufacturer: Aim-TTi
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Aim-TTi PL601-P 可编程线性直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出通道: '1'
+    电压范围: 0-60V
+    电流范围: 0-1.5A
+    功率: 90W
+    线性/负载调节率: <0.01%
+    输出噪声: <0.4mV rms
+    接口: USB/RS-232/LAN(LXI)/模拟控制
+    品牌: Aim-TTi
+community_579:
+  class:
+    module: community_drivers.579.driver:DeviceDriver
+    type: python
+  name: Keysight E36313A 三路输出可编程直流电源
+  description: Keysight E36313A是E36300系列三路输出可编程直流电源，提供6V/10A和两路25V/2A输出，总功率160W，具有低噪声高精度特性，支持USB/LAN接口和BenchVue软件控制，适用于通用台式测试和设计验证。
+  manufacturer: Keysight
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keysight E36313A 三路输出可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出通道: '3'
+    通道1: 6V/10A
+    通道2: 25V/2A
+    通道3: 25V/2A
+    总功率: 160W
+    接口: USB/LAN/可选GPIB
+    品牌: Keysight
+community_592:
+  class:
+    module: community_drivers.592.driver:DeviceDriver
+    type: python
+  name: Oxford Instruments IPS120-10 超导磁铁电源
+  description: Oxford Instruments IPS120-10是专为超导磁铁设计的智能电源，最大输出120A/10V，支持持久模式运行、开关加热器控制和磁体淬火检测，通过GPIB远程控制，可进行精确的磁场扫描，广泛用于低温物理和凝聚态研究。
+  manufacturer: Oxford Instruments
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Oxford Instruments IPS120-10 超导磁铁电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    最大输出电流: 120A
+    最大输出电压: 10V
+    电流分辨率: 10mA
+    通信: GPIB(IEEE-488)
+    品牌: Oxford Instruments
+community_595:
+  class:
+    module: community_drivers.595.driver:DeviceDriver
+    type: python
+  name: PeakTech 15xx系列线性稳压直流电源
+  description: PeakTech 15xx系列是线性稳压台式直流电源，提供可调电压和电流输出，具备恒压/恒流模式、过载和短路保护，低纹波噪声设计，配备数字显示屏和精细/粗调旋钮，适用于电子实验室和教育场景。
+  manufacturer: PeakTech
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: PeakTech 15xx系列线性稳压直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 线性稳压
+    电压范围: 0-30V(典型)
+    电流范围: 0-5A(典型)
+    显示: LED/LCD
+    模式: CV/CC
+    保护: 过载/短路保护
+    纹波: <1mV rms
+    品牌: PeakTech
+community_596:
+  class:
+    module: community_drivers.596.driver:DeviceDriver
+    type: python
+  name: Rigol DP932 三路输出可编程直流电源
+  description: Rigol DP932是DP900系列三路输出可编程线性直流电源，提供两路32V/3A和一路6V/3A输出，低纹波噪声，支持独立/串联/并联模式，具备定时功能和波形显示，通过USB和LAN接口远程控制，适用于通用实验室测试。
+  manufacturer: Rigol
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rigol DP932 三路输出可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出通道: '3'
+    通道1: 0-32V/0-3A
+    通道2: 0-32V/0-3A
+    通道3: 0-6V/0-3A
+    总功率: ~195W
+    接口: USB/LAN(LXI)
+    分辨率: mV/mA级
+    保护: OVP/OCP
+    品牌: Rigol
+community_599:
+  class:
+    module: community_drivers.599.driver:DeviceDriver
+    type: python
+  name: Rohde & Schwarz HMC8041 单通道可编程直流电源
+  description: Rohde & Schwarz HMC8041是HMC804x系列单通道可编程直流电源，输出32V/10A/100W，具备低纹波噪声、EasyArb任意波形功能和电子保险丝，半19英寸紧凑设计支持机架安装，适用于研发和生产测试环境。
+  manufacturer: Rohde & Schwarz
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rohde & Schwarz HMC8041 单通道可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出通道: '1'
+    电压范围: 0-32V
+    电流范围: 0-10A
+    最大功率: 100W
+    电压分辨率: 1mV
+    电流分辨率: 0.1mA
+    纹波: <1mV RMS
+    接口: USB/可选LAN/GPIB
+    品牌: Rohde & Schwarz
+community_600:
+  class:
+    module: community_drivers.600.driver:DeviceDriver
+    type: python
+  name: Rohde & Schwarz HMC8042 双通道可编程直流电源
+  description: Rohde & Schwarz HMC8042是HMC804x系列双通道可编程直流电源，每通道输出32V/5A，具备EasyArb功能、电子保险丝和OVP/OCP保护，通道可串联或并联组合，半19英寸紧凑设计，适用于电子研发和自动化测试。
+  manufacturer: Rohde & Schwarz
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rohde & Schwarz HMC8042 双通道可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出通道: '2'
+    电压范围: 0-32V/通道
+    电流范围: 0-5A/通道
+    最大功率: ~160W
+    电压分辨率: 1mV
+    电流分辨率: 0.1mA
+    接口: USB/可选LAN/GPIB
+    品牌: Rohde & Schwarz
+community_601:
+  class:
+    module: community_drivers.601.driver:DeviceDriver
+    type: python
+  name: Rohde & Schwarz HMC8043 三通道可编程直流电源
+  description: Rohde & Schwarz HMC8043是HMC804x系列三通道可编程直流电源，每通道输出32V/3A，总功率约100W，通道电气隔离可串并联，具备EasyArb和数据记录功能，半19英寸紧凑设计，适用于多路供电测试需求。
+  manufacturer: Rohde & Schwarz
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rohde & Schwarz HMC8043 三通道可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出通道: '3'
+    电压范围: 0-32V/通道
+    电流范围: 0-3A/通道
+    最大总功率: ~100W
+    电压分辨率: 1mV
+    电流分辨率: 0.1mA
+    接口: USB/LAN/可选GPIB
+    品牌: Rohde & Schwarz
+community_602:
+  class:
+    module: community_drivers.602.driver:DeviceDriver
+    type: python
+  name: Rohde & Schwarz HMP2020 双通道可编程直流电源
+  description: Rohde & Schwarz HMP2020是双通道可编程线性直流电源，每通道32V/10A，总功率188W，具备EasyArb任意波形、FuseLink电子保险丝链和OVP/OCP保护，支持SCPI远程编程，适用于电子研发和自动化测试系统。
+  manufacturer: Rohde & Schwarz
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rohde & Schwarz HMP2020 双通道可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出通道: '2'
+    电压范围: 0-32V/通道
+    电流范围: 0-10A/通道
+    总功率: 188W
+    电压分辨率: 1mV
+    纹波: <1mV RMS
+    接口: USB/可选LAN/GPIB
+    品牌: Rohde & Schwarz
+community_603:
+  class:
+    module: community_drivers.603.driver:DeviceDriver
+    type: python
+  name: Rohde & Schwarz HMP2030 三通道可编程直流电源
+  description: Rohde & Schwarz HMP2030是三通道可编程线性直流电源，每通道32V/5A，总功率188W，支持跟踪模式和通道串并联，具备EasyArb和FuseLink功能，LCD同时显示全部通道，适用于实验室和自动化测试环境。
+  manufacturer: Rohde & Schwarz
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rohde & Schwarz HMP2030 三通道可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出通道: '3'
+    电压范围: 0-32V/通道
+    电流范围: 0-5A/通道
+    总功率: 188W
+    电压分辨率: 1mV
+    接口: USB/可选LAN/GPIB
+    品牌: Rohde & Schwarz
+community_604:
+  class:
+    module: community_drivers.604.driver:DeviceDriver
+    type: python
+  name: Rohde & Schwarz HMP4030 三通道高功率可编程直流电源
+  description: Rohde & Schwarz HMP4030是三通道高功率可编程直流电源，每通道32V/10A/160W，总功率384W，通道电气隔离可串并联，低纹波噪声，具备EasyArb和FuseLink功能，适用于大功率电子设备测试和自动化生产。
+  manufacturer: Rohde & Schwarz
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Rohde & Schwarz HMP4030 三通道高功率可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出通道: '3'
+    电压范围: 0-32V/通道
+    电流范围: 0-10A/通道
+    最大单通道功率: 160W
+    总功率: 384W
+    电压分辨率: 1mV
+    纹波: <150μV RMS
+    接口: USB/可选LAN/GPIB
+    品牌: Rohde & Schwarz
+community_612:
+  class:
+    module: community_drivers.612.driver:DeviceDriver
+    type: python
+  name: Stanford Research Systems SIM928 隔离直流电压源
+  description: SRS SIM928是一款超低噪声隔离直流电压源模块，设计用于SIM900主机框架。其输出电路通过光隔离与所有接地充电电路分离，内置两组独立镍氢充电电池，可在满载条件下持续运行12小时，电池切换几乎无毛刺，提供全天候不间断的超纯净直流电压输出。
+  manufacturer: Stanford Research Systems
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Stanford Research Systems SIM928 隔离直流电压源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出范围: ±20V
+    分辨率: 1mV
+    最大输出电流: ±10mA
+    噪声: 10µVrms(1kHz带宽)
+    浮动输出: ±40V(共模对地)
+    电池供电: 双镍氢可充电电池
+    通信: RS-232(最高38400bps)
+    充电周期: 1000次
+    品牌: Stanford Research Systems
+community_747:
+  class:
+    module: community_drivers.747.driver:DeviceDriver
+    type: python
+  name: Cobolt DPSS 固体激光器系列
+  description: Cobolt DPSS系列(现属HUBNER Photonics)是高性能二极管泵浦固体激光器，提供457nm至1064nm多个波长选择，单纵模运行确保窄线宽，TEM00光束质量M²<1.1，功率稳定性优于1%，广泛用于拉曼光谱和荧光显微镜。
+  manufacturer: Cobolt
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Cobolt DPSS 固体激光器系列
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 二极管泵浦固体激光器
+    波长: 457-1064nm多型号
+    功率: 数mW至400+mW
+    光束质量: TEM00(M²<1.1)
+    线宽: 单纵模窄线宽
+    功率稳定性: <1%
+    寿命: '>10,000小时'
+    品牌: Cobolt
+community_783:
+  class:
+    module: community_drivers.783.driver:DeviceDriver
+    type: python
+  name: Delmic PowerCtrl 电源控制器
+  description: Delmic PowerCtrl是Delmic显微镜系统中的定制电源控制模块，主要用于PMT光电倍增管的电压控制和过强度保护，基于TI微控制器平台，固件开源于GitHub，通过Odemis开源显微镜软件实现集成控制。
+  manufacturer: Delmic
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Delmic PowerCtrl 电源控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 定制电源控制模块
+    平台: 基于TI微控制器
+    固件: 开源(GitHub)
+    接口: USB
+    功能: PMT电压控制/过强度保护
+    集成: Odemis开源软件
+    品牌: Delmic
+community_807:
+  class:
+    module: community_drivers.807.driver:DeviceDriver
+    type: python
+  name: Aim-TTi LD400P 可编程直流电子负载
+  description: Aim-TTi LD400P是一款400W可编程直流电子负载，支持恒流、恒压、恒阻和恒功率四种工作模式，电压范围可达80V，电流可达80A，具备瞬态测试功能和可编程摆率控制，配备多种远程控制接口，适用于电源、电池等直流源的测试评估。
+  manufacturer: Aim-TTi
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Aim-TTi LD400P 可编程直流电子负载
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    额定功率: 400 W
+    电压范围: 0~80 V
+    电流范围: 0~80 A
+    工作模式: CC/CV/CR/CP
+    接口: USB/RS-232/LAN/GPIB可选
+    瞬态模式: 支持
+    品牌: Aim-TTi
+community_808:
+  class:
+    module: community_drivers.808.driver:DeviceDriver
+    type: python
+  name: AMI Model 430 磁铁电源编程器
+  description: AMI Model 430是美国磁学公司的数字化磁铁电源编程器，以0.1 mA步进精度控制超导磁铁系统，支持多轴磁铁系统控制实现虚拟磁场旋转，具备失超检测保护功能、持续电流开关控制和液氦液位监测，可选磁通门高稳定度系统将精度提升十倍以上。
+  manufacturer: AMI
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: AMI Model 430 磁铁电源编程器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    电流编程精度: 0.1 mA步进
+    标准四象限系统: 5~250 A
+    双极电流: 100~500 A
+    持续开关加热电流: 0~100 mA
+    通信接口: 以太网/RS-232
+    高稳定度选件: 磁通门
+    品牌: AMI
+community_819:
+  class:
+    module: community_drivers.819.driver:DeviceDriver
+    type: python
+  name: BK Precision 9130B 三路输出可编程直流电源
+  description: BK Precision 9130B是三路输出可编程直流电源，提供两路0-30V/3A和一路0-5V/3A独立隔离输出，具备1 mV/1
+    mA高编程分辨率和低噪声线性调节，支持串联/并联/跟踪模式，配备USB/RS-232/GPIB远程接口和SCPI命令，适用于电子研发和生产测试。
+  manufacturer: BK Precision
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: BK Precision 9130B 三路输出可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道1/2: 0~30 V/0~3 A
+    通道3: 0~5 V/0~3 A
+    编程分辨率: 1 mV/1 mA
+    调节方式: 线性
+    接口: USB/RS-232/GPIB
+    串并联模式: 支持
+    存储: 36组设置
+    品牌: BK Precision
+community_820:
+  class:
+    module: community_drivers.820.driver:DeviceDriver
+    type: python
+  name: Danfysik System 8500 电流稳定高性能电源
+  description: Danfysik System 8500是电流稳定高性能电源系列，包含Model 854线性调节型（稳定性<0.2 ppm）、855可控硅型（100
+    ppm，可达20000 A）和859开关模式型（10 ppm，真四象限运行），专为加速器磁铁应用定制设计，广泛服务于科研和医疗加速器领域。
+  manufacturer: Danfysik
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Danfysik System 8500 电流稳定高性能电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    电流范围: 40~20000 A
+    电压: 最高2000 V
+    功率: 1~1000 kW
+    稳定性: 2~100 ppm
+    型号: 854(线性)/855(可控硅)/859(开关)
+    通信: RS232/RS422/GPIB可选
+    品牌: Danfysik
+community_821:
+  class:
+    module: community_drivers.821.driver:DeviceDriver
+    type: python
+  name: Delta Elektronika SM70-45D 可编程直流电源
+  description: Delta Elektronika SM70-45D是一款3000W可编程直流电源，输出电压0-70V，电流0-45A，由欧洲领先独立电源制造商Delta
+    Elektronika生产，以稳健可靠和卓越性能著称，支持远程编程控制，适用于实验室和工业测试应用。
+  manufacturer: Delta Elektronika
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Delta Elektronika SM70-45D 可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出电压: 0~70 V
+    输出电流: 0~45 A
+    输出功率: 3000 W
+    接口: RS-232/以太网
+    调节方式: 可编程
+    产地: 欧洲
+    品牌: Delta Elektronika
+community_823:
+  class:
+    module: community_drivers.823.driver:DeviceDriver
+    type: python
+  name: Eurotest HPP-120-256 高压直流电源
+  description: Eurotest HPP-120-256是一款高压直流电源，适用于需要高电压输出的实验室和工业应用场景。该产品为小众专业设备，官方产品信息有限，建议联系制造商获取详细技术规格。
+  manufacturer: Eurotest
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Eurotest HPP-120-256 高压直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    型号: HPP-120-256
+    类型: 高压直流电源
+    品牌: Eurotest
+community_834:
+  class:
+    module: community_drivers.834.driver:DeviceDriver
+    type: python
+  name: HP 6632A 系统直流电源
+  description: HP 6632A是100W单输出系统级直流电源，输出0-20V/0-5A，采用串联线性调节技术提供极低纹波噪声，内置DVM和精密电流分流器进行回读测量，支持CV/CC双模式运行和有源下拉编程，具备软件校准和完整GPIB可编程控制，适用于自动测试系统。
+  manufacturer: Hewlett-Packard
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: HP 6632A 系统直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出电压: 0~20 V
+    输出电流: 0~5 A
+    输出功率: 100 W
+    纹波噪声: 0.3 mV rms/10 mV pp
+    回读精度: 电压0.07%+15 mV
+    调节方式: 串联线性
+    接口: HP-IB(GPIB)
+    品牌: Hewlett-Packard
+community_835:
+  class:
+    module: community_drivers.835.driver:DeviceDriver
+    type: python
+  name: HP 6633A 系统直流电源
+  description: HP 6633A是6630A系列100W单输出系统直流电源，输出0-50V/0-2A，采用串联线性调节，支持电流吸收实现快速下拉编程，内置DVM和精密电流分流器，远端感应端子可补偿每线最多2V的负载引线压降，具备完整HP-IB可编程控制和自检功能。
+  manufacturer: Hewlett-Packard
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: HP 6633A 系统直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出电压: 0~50 V
+    输出电流: 0~2 A
+    输出功率: 100 W
+    调节方式: 串联线性
+    远端感应: 支持(补偿2V/线)
+    接口: HP-IB(GPIB)
+    品牌: Hewlett-Packard
+community_836:
+  class:
+    module: community_drivers.836.driver:DeviceDriver
+    type: python
+  name: HP 6634A 系统直流电源
+  description: HP 6634A是6630A系列100W单输出系统直流电源，输出0-100V/0-1A，采用串联线性调节，具备可编程过压保护（SCR限幅）和过流保护，支持电流吸收和远端感应，后面板Fast/Normal模式开关可在响应速度和低纹波间切换，配备完整GPIB可编程控制和软件校准。
+  manufacturer: Hewlett-Packard
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: HP 6634A 系统直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出电压: 0~100 V
+    输出电流: 0~1 A
+    输出功率: 100 W
+    调节方式: 串联线性
+    过压保护: SCR限幅
+    远端感应: 支持
+    接口: HP-IB(GPIB)
+    品牌: Hewlett-Packard
+community_1052:
+  class:
+    module: community_drivers.1052.driver:DeviceDriver
+    type: python
+  name: IKA ElectraSyn 2.0 有机电合成反应器
+  description: IKA ElectraSyn 2.0是全球首款商品化台式有机电合成反应器，将电极反应和磁力搅拌集成于紧凑设计中。支持恒电流/恒电压模式，配备可互换电极系统，用户可通过USB接口编程控制反应条件，大幅降低有机电化学合成的门槛。
+  manufacturer: IKA
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: IKA ElectraSyn 2.0 有机电合成反应器
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_840:
+  class:
+    module: community_drivers.840.driver:DeviceDriver
+    type: python
+  name: Keithley 2200系列可编程直流电源
+  description: Keithley 2200系列是单输出可编程直流电源，提供20V至72V多种型号，具备高精度电压和电流设置、远程感测端子、内置List模式和数字I/O同步功能，适用于台式和自动化测试系统。
+  manufacturer: Keithley
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keithley 2200系列可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出电压: 20V/30V/60V/72V
+    最大电流: 5A/2.5A/1.2A
+    电压精度: 0.03%
+    电流精度: 0.05%
+    电流分辨率: 0.1mA
+    接口: USB,GPIB
+    品牌: Keithley
+community_841:
+  class:
+    module: community_drivers.841.driver:DeviceDriver
+    type: python
+  name: Keithley 2260B系列可编程直流电源
+  description: Keithley 2260B系列是高功率可编程直流电源，提供360W至1080W功率等级和12种电压/电流配置，支持可编程压摆率控制、恒流优先模式和电池模拟，三台并联可达3240W。
+  manufacturer: Keithley
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keithley 2260B系列可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    功率: 360W/720W/1080W
+    电压: 30V/80V/250V/800V
+    电流: 最高108A
+    电压负载调节: 0.05%+5mV
+    电流精度: 0.1%
+    瞬态恢复: 1ms
+    接口: USB,LAN,GPIB(可选),模拟控制
+    交流输入: 85-265VAC
+    品牌: Keithley
+community_842:
+  class:
+    module: community_drivers.842.driver:DeviceDriver
+    type: python
+  name: Keithley 2281S动态电池模拟器
+  description: Keithley 2281S-20-6是动态电池模拟器，采用101点电池模型模拟开路电压和内阻随荷电状态变化的特性，内置5个预装电池模型，可存储14个自定义模型，兼作精密直流电源使用。
+  manufacturer: Keithley
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keithley 2281S动态电池模拟器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    最大电压: 20V
+    最大电流: 6A
+    最大功率: 120W
+    电压精度: 0.02%
+    电流测量精度: 0.05%
+    电流分辨率: 10nA
+    最大输出电阻: 100Ω
+    电池模型: 14个
+    接口: USB,LAN,GPIB(可选)
+    品牌: Keithley
+community_843:
+  class:
+    module: community_drivers.843.driver:DeviceDriver
+    type: python
+  name: Keithley 2306双通道电池/充电器模拟器
+  description: Keithley 2306是双通道电源，通道1模拟电池（支持电流吸收），通道2模拟充电器，具备脉冲电流测量和微秒级分辨率，专为GSM/CDMA等便携式无线设备的电池寿命和充电测试设计。
+  manufacturer: Keithley
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keithley 2306双通道电池/充电器模拟器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: '2'
+    电压范围: 0-15V
+    最大电流: 5A
+    电流分辨率: 100nA
+    接口: GPIB,RS-232
+    品牌: Keithley
+community_850:
+  class:
+    module: community_drivers.850.driver:DeviceDriver
+    type: python
+  name: Keysight E36312A三路输出可编程直流电源
+  description: Keysight E36312A是80W三路输出可编程直流电源，提供6V/5A和两路25V/1A输出，具备数据记录、LIST模式、四线远程感测和输出排序功能，低纹波噪声适合精密测量应用。
+  manufacturer: Keysight
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keysight E36312A三路输出可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    总功率: 80W
+    通道1: 6V/5A
+    通道2: 25V/1A
+    通道3: 25V/1A
+    电压精度: 0.03%+2mV
+    电流精度: 0.04%+3mA
+    纹波: <350µVrms
+    建立时间: 11ms
+    接口: LAN,USB,GPIB(可选)
+    品牌: Keysight
+community_851:
+  class:
+    module: community_drivers.851.driver:DeviceDriver
+    type: python
+  name: Keysight N5767A系统直流电源
+  description: Keysight N5767A是1500W系统级直流电源，60V/25A输出，紧凑1U机架式设计，通用交流输入，支持模拟/电阻控制输出电压和电流，适用于自动化测试系统和ATE集成。
+  manufacturer: Keysight
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Keysight N5767A系统直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    最大电压: 60V
+    最大电流: 25A
+    最大功率: 1500W
+    编程精度: 60mV
+    测量精度: 120mV
+    纹波: 60mVpp
+    响应时间: 80ms
+    接口: GPIB,LAN,USB(LXI)
+    品牌: Keysight
+community_861:
+  class:
+    module: community_drivers.861.driver:DeviceDriver
+    type: python
+  name: Novanta FPU60激光电源单元
+  description: Novanta FPU60是Laser Quantum品牌旗下的60W光纤激光电源单元，为科研级光纤激光器提供稳定的电源驱动和控制，集成温控和保护功能，适用于光谱学和量子光学等精密应用。
+  manufacturer: Novanta
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Novanta FPU60激光电源单元
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出功率: 60W
+    类型: 光纤激光电源
+    品牌: Novanta
+    应用: 科研级激光系统
+community_862:
+  class:
+    module: community_drivers.862.driver:DeviceDriver
+    type: python
+  name: Oxford Instruments IPS120-10智能磁铁电源
+  description: Oxford Instruments IPS120-10是智能超导磁铁电源，提供120A/10V输出，具备精确电流控制和可编程扫描速率，支持持久模式开关操作和磁场管理，通过ISOBUS与低温系统集成，适用于超导磁铁驱动。
+  manufacturer: Oxford Instruments
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Oxford Instruments IPS120-10智能磁铁电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    最大电流: 120A
+    最大电压: 10V
+    电流分辨率: 0.01A
+    电流精度: ±0.1%
+    接口: GPIB(IEEE-488),RS-232
+    品牌: Oxford Instruments
+community_863:
+  class:
+    module: community_drivers.863.driver:DeviceDriver
+    type: python
+  name: Oxford Instruments PS120-10磁铁电源
+  description: Oxford Instruments PS120-10是超导磁铁电源系统，输出能力120A/10V，用于驱动超导磁铁产生高磁场，支持GPIB和串口远程控制，具备过流保护和磁场管理功能，广泛应用于低温物理实验。
+  manufacturer: Oxford Instruments
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Oxford Instruments PS120-10磁铁电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    最大电流: 120A
+    最大电压: 10V
+    接口: GPIB(IEEE-488),RS-232
+    品牌: Oxford Instruments
+community_873:
+  class:
+    module: community_drivers.873.driver:DeviceDriver
+    type: python
+  name: Siglent SPD1305X线性可编程直流电源
+  description: Siglent SPD1305X是单通道线性可编程直流电源，输出30V/5A/150W，具备定时输出功能和实时电压电流波形显示，低纹波低噪声设计，4.3英寸TFT彩屏，适用于研发和教育领域。
+  manufacturer: Siglent
+  tags:
+  - 电化学反应器
+  category:
+  - 电化学反应器
+  model:
+    name: Siglent SPD1305X线性可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道: '1'
+    电压范围: 0-30V
+    电流范围: 0-5A
+    功率: 150W
+    电压分辨率: 1mV
+    电流分辨率: 1mA
+    接口: USB,LAN(可选)
+    品牌: Siglent

@@ -1,0 +1,403 @@
+community_triton200:
+  class:
+    module: community_drivers.triton200.driver:Triton200
+    type: python
+    status_types:
+      temperature_channel: str
+      temperature_setpoint: str
+      temperature: str
+    action_value_mappings:
+      auto-update_heater:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_heater
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-controlled_ramp_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: controlled_ramp_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-controlled_ramp_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: controlled_ramp_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-turbo_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: turbo_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-turbo_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: turbo_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_and_receive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_and_receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-extract_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: extract_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                response:
+                  type: string
+                noun:
+                  type: string
+                unit:
+                  type: string
+        goal_default:
+          response: null
+          noun: null
+          unit: null
+        handles: {}
+  name: Oxford Instruments Triton 200 Cryofree Dilution Refrigerator
+  description: 无液氦稀释制冷机，<10mK基础温度，集成超导磁体，量子技术主力平台。已迭代为ProteoxMX。
+  manufacturer: Oxford Instruments NanoScience
+  icon: triton200.webp
+  tags:
+  - 深低温冰箱
+  category:
+  - 深低温冰箱
+  device_params:
+    Base Temp: <10mK
+    Cooling Power: 500µW@100mK, 15µW@20mK
+    Sample Space: 42/72mm
+    Magnet: up to 14T integrated
+    Software: Windows 10
+    Installed: 200+ worldwide
+    品牌: Oxford Instruments NanoScience
+  model:
+    name: Oxford Instruments Triton 200 Cryofree Dilution Refrigerator
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Storage
+    step: Ultra-Low Temperature Storage
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ip_address:
+          default: null
+          type: string
+        port_number:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string
+        bytes_to_read:
+          default: null
+          type: string
+community_gh_temptronic_ats_525:
+  class:
+    module: community_drivers.gh_temptronic_ats_525.driver:ATS545
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-next_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: next_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: Temptronic ATS-525
+  description: ATS-525 THERMOSTREAM® 数据表和规格 ... 用于测试和表征材料和组件的台下温度测试系统，包括： ...阅读更多
+    ATS-525 THERMOSTREAM® 数据表和规格 ... 用于测试和表征材料和组件的台下温度测试系统，包括： ...了解更多 先进的温度源，用于快速、精确地对组件、零件、混合动力、模块、子组件进行热调节，和印刷电路板。阅读更多
+  manufacturer: Temptronic
+  icon: gh_temptronic_ats_525.webp
+  tags:
+  - 深低温冰箱
+  category:
+  - 深低温冰箱
+  device_params:
+    Type: Thermal forcing system
+    Temperature: -80°C to +225°C
+    Transition rate: '>70°C/min'
+    Air flow: high-velocity
+    Interface: GPIB, RS-232
+    Application: semiconductor testing
+    品牌: Temptronic
+  model:
+    name: Temptronic ATS-525
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+community_gh_temptronic_ats_545:
+  class:
+    module: community_drivers.gh_temptronic_ats_545.driver:ATS545
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-next_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: next_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: Temptronic ATS-545
+  description: 高级温度源，用于对组件、零件、混合体、模块、子组件和印刷电路板进行快速和精确的热调节。阅读更多2 页 高级温度源，用于对组件、零件、混合体、模块、子组件和印刷电路板进行快速和精确的热调节。阅读更多
+    能够在不使用液氮 (LN) 或的情况下实现超低温。液态二氧化碳（LCO）。性能：温度范围。阅读更多2 页
+  manufacturer: Temptronic
+  icon: gh_temptronic_ats_545.webp
+  tags:
+  - 深低温冰箱
+  category:
+  - 深低温冰箱
+  device_params:
+    Type: Thermal forcing system
+    Temperature: -80°C to +300°C
+    Transition rate: '>70°C/min'
+    DUT size: various adapters
+    Interface: GPIB, RS-232, Ethernet
+    Application: semiconductor testing
+    品牌: Temptronic
+  model:
+    name: Temptronic ATS-545
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+community_420:
+  class:
+    module: community_drivers.420.driver:DeviceDriver
+    type: python
+  name: Sunpower CryoTel GT 斯特林低温制冷机
+  description: Sunpower CryoTel GT是一款整体式斯特林低温制冷机，在77K下提供16W制冷量。采用Sunpower气体轴承技术实现运动部件无接触运行，MTTF超过200,000小时。任意方向安装，温度稳定性±0.1K。2005年商业化以来，已成功应用于高温超导滤波器、高空气球、锗探测器、红外探测器、射电望远镜和激光二极管冷却等领域。作为CryoTel系列产品之一，代表了Sunpower三十年自由活塞斯特林技术的成果。亦有GTLT低温变体可达30K以下。
+  manufacturer: Sunpower (AMETEK)
+  tags:
+  - 深低温冰箱
+  category:
+  - 深低温冰箱
+  model:
+    name: Sunpower CryoTel GT 斯特林低温制冷机
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    制冷量: 16W@77K(23°C排热)
+    额定输入功率: 240W
+    最低温度: 40K
+    电源: 48VDC
+    质量: 3.1kg
+    长度: 276mm
+    直径: 83mm
+    温度稳定性: ±0.1K
+    工作频率: 60Hz
+    MTTF: 200000小时
+    方向: 任意
+    品牌: Sunpower (AMETEK)
+community_239:
+  class:
+    module: community_drivers.239.driver:DeviceDriver
+    type: python
+  name: Keithley 740 系统扫描温度计
+  description: Keithley 740是一款系统扫描温度计，支持J/K/T/E/R/S/B共7种热电偶类型进行温度和毫伏测量，量程覆盖-200°C至+1820°C。标配1通道内部输入，通过7057A扫描卡扩展至9通道，最多可配置81通道。扫描速率20通道/秒，支持自动扫描与HI/LO告警功能。内置24小时时钟用于定时扫描，100点数据记录器提供HI/LO/AVG统计，数字校准无需内部调整。
+  manufacturer: Keithley
+  tags:
+  - 深低温冰箱
+  category:
+  - 深低温冰箱
+  model:
+    name: Keithley 740 系统扫描温度计
+    type: device
+  version: 1.0.0
+  resource_type: device
+community_593:
+  class:
+    module: community_drivers.593.driver:DeviceDriver
+    type: python
+  name: Oxford Instruments Kelvinox IGH 稀释制冷机智能气体处理系统
+  description: Oxford Instruments Kelvinox IGH是配备智能气体处理系统的稀释制冷机，可达约10mK基底温度，具备多档混合室加热功率控制，通过ISOBUS通信接口实现远程控制，适用于量子输运、低温凝聚态物理等超低温实验研究。
+  manufacturer: Oxford Instruments
+  tags:
+  - 深低温冰箱
+  category:
+  - 深低温冰箱
+  model:
+    name: Oxford Instruments Kelvinox IGH 稀释制冷机智能气体处理系统
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    基底温度: ~10mK
+    混合室加热器范围: 2μW-20mW
+    温度设置: 0-2K
+    通信: ISOBUS
+    固件: IGH Version 3.02
+    品牌: Oxford Instruments
+community_594:
+  class:
+    module: community_drivers.594.driver:DeviceDriver
+    type: python
+  name: Oxford Instruments Proteox 无液氦稀释制冷机
+  description: Oxford Instruments Proteox是无液氦干式稀释制冷机，基底温度低于10mK，采用脉管制冷器预冷和闭循环稀释单元，模块化设计支持DC/RF/微波接线配置，可集成超导磁铁，专为量子计算和量子技术研究设计。
+  manufacturer: Oxford Instruments
+  tags:
+  - 深低温冰箱
+  category:
+  - 深低温冰箱
+  model:
+    name: Oxford Instruments Proteox 无液氦稀释制冷机
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    基底温度: <10mK
+    冷却功率: ~30μW@100mK
+    冷却方式: 脉管预冷+闭循环³He/⁴He稀释
+    品牌: Oxford Instruments
+community_622:
+  class:
+    module: community_drivers.622.driver:DeviceDriver
+    type: python
+  name: BlueFors BF-LD 稀释制冷机测量系统
+  description: BlueFors BF-LD是BlueFors最畅销的稀释制冷机测量系统，可将实验样品冷却至10mK以下极低温度。采用无液氦干式制冷设计，配备增强型脉冲管冷却器，偏心放置稀释单元最大化可用实验空间。提供经典型和侧装型配置，支持高密度柔性布线选项。
+  manufacturer: BlueFors
+  tags:
+  - 深低温冰箱
+  category:
+  - 深低温冰箱
+  model:
+    name: BlueFors BF-LD 稀释制冷机测量系统
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    基底温度: <10mK
+    20mK冷却功率: '>14µW(LD450)'
+    100mK冷却功率: '>450µW(LD450)'
+    冷却时间: <24小时至10mK
+    4K平台冷却功率: 500mW@3K(增强型PT310-RM)
+    氦3用量: 18升
+    品牌: BlueFors
+community_1050:
+  class:
+    module: community_drivers.1050.driver:DeviceDriver
+    type: python
+  name: Thermo Scientific CryoExtra 高效深低温存储系统
+  description: Thermo Scientific CryoExtra是高效液氮深低温存储系统，支持液相和气相两种存储模式。采用真空绝缘不锈钢容器，顶部到底部温差极小。配备自动温度监控和液氮液位控制，最大可存储93000支冻存管，适用于生物样本和细胞系的长期保存。
+  manufacturer: Thermo Fisher
+  tags:
+  - 深低温冰箱
+  category:
+  - 深低温冰箱
+  model:
+    name: Thermo Scientific CryoExtra 高效深低温存储系统
+    type: device
+  version: 1.0.0
+  resource_type: device

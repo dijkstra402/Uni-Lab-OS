@@ -1,0 +1,94 @@
+gh_device_63:
+  class:
+    module: community_drivers.63.driver
+    type: python
+    status_types: {}
+    action_value_mappings:
+      write_cmd:
+        action_name: write_cmd
+        args_info:
+          cmd:
+            type: str
+      check_dec:
+        action_name: check_dec
+        args_info:
+          number:
+            type: float
+      power:
+        action_name: power
+        args_info:
+          'on':
+            type: str
+      temperature:
+        action_name: temperature
+        args_info:
+          temp:
+            type: str
+      read_cmd:
+        action_name: read_cmd
+        args_info:
+          cmd:
+            type: str
+          d_fmts:
+            type: str
+      read_set_temp:
+        action_name: read_set_temp
+      read_inside_temp:
+        action_name: read_inside_temp
+      read_set_temp_hi:
+        action_name: read_set_temp_hi
+      read_set_temp_lo:
+        action_name: read_set_temp_lo
+      status:
+        action_name: status
+      naming:
+        action_name: naming
+        args_info:
+          cartella:
+            type: str
+      logging:
+        action_name: logging
+        args_info:
+          file_name:
+            type: str
+          time:
+            type: str
+          t_res:
+            type: str
+          t_set:
+            type: str
+      sampling:
+        action_name: sampling
+        args_info:
+          arg:
+            type: str
+  name: Lauda LOOP L250 帕尔贴循环恒温器
+  description: Lauda LOOP L250是一款采用帕尔贴半导体技术的紧凑型循环恒温器，通过半导体继电器电流流动实现加热和冷却，只需反转极性即可切换。100-240V通用电压输入使其可在全球灵活使用，快速接头实现即插即用。高对比度OLED显示屏配合三键软键操作，支持五种语言界面。部分负载运行时特别节能安静，适用于来料检验、质量保证、研究和样品制备等应用场景。
+  manufacturer: Lauda
+  tags: &id001
+  - 高低温循环装置
+  category: *id001
+  model:
+    name: Lauda LOOP L250 帕尔贴循环恒温器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    温度范围: 4~80°C
+    温度稳定性: ±0.1K
+    制冷量(20°C): 0.25kW
+    加热功率: 0.4kW
+    泵流量: 3L/min
+    泵压力: 0.8bar
+    填充容积: 0.32L
+    电源: 100-240V通用
+    尺寸: 261×368×312mm
+    重量: 11kg
+    品牌: Lauda
+  cover: Lauda LOOP L250 帕尔贴循环恒温器.webp
+  quality_review:
+    grade: A
+    status: usable
+    note: 'Lauda LOOP L250: 自包含串口实现; 命令逻辑正确, 但模块顶层会立刻打开 config.json 并 open() 串口, 直接
+      import 有副作用, 实际接入需包成类'
+    reviewed_at: '2026-04-26'

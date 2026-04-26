@@ -1,0 +1,45 @@
+gh_device_53:
+  class:
+    module: community_drivers.53.de5000:DE5000
+    type: python
+    status_types: {}
+    action_value_mappings:
+      read_raw_data:
+        action_name: read_raw_data
+      is_data_valid:
+        action_name: is_data_valid
+        args_info:
+          raw_data:
+            type: str
+      read_hex_str_data:
+        action_name: read_hex_str_data
+      get_meas:
+        action_name: get_meas
+      normalize_val:
+        action_name: normalize_val
+        args_info:
+          val:
+            type: str
+          units:
+            type: str
+      pretty_print:
+        action_name: pretty_print
+        args_info:
+          disp_norm_val:
+            type: str
+  name: DER EE DE-5000 手持式LCR表
+  description: DER EE DE-5000是全功能便携式LCR表,具备台式机级的测量能力。支持5个测试频率(100Hz至100kHz),自动L-C-R选择和串/并联模型切换。除测量基本L/C/R值外,还评估耗散因子(D)、品质因数(Q)、相位角和等效串联电阻(ESR)等关键参数。配备元件分选功能和可选光隔离IR-USB数据传输套件,是电子元件测试的高性价比选择。
+  manufacturer: DER EE
+  tags: &id001
+  - 频谱与网络分析仪
+  category: *id001
+  model:
+    name: DER EE DE-5000 手持式LCR表
+    type: device
+  version: 1.0.0
+  resource_type: device
+  quality_review:
+    grade: A
+    status: usable
+    note: driver.py 是 4 行 wrapper, 真实 426 行驱动在同目录 de5000.py (ES51919 协议解析)
+    reviewed_at: '2026-04-26'

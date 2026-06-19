@@ -1,0 +1,78 @@
+gh_aja_dcxs:
+  class:
+    module: community_drivers.gh_aja_dcxs.driver:DCXS
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                query_delay:
+                  type: string
+        goal_default:
+          command: null
+          query_delay: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reply_length:
+                  type: string
+        goal_default:
+          reply_length: null
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: AJA International, Inc. Sputtering Tools and Systems
+  description: 凭借超过 35 年的卓越制造经验，AJA International, Inc. 正在推动薄膜涂层和沉积领域的全球创新黄金时代。
+  manufacturer: AJA
+  icon: AJA+Logo+White+Text.png
+  tags: &id001
+  - 蒸镀仪
+  category: *id001
+  device_params:
+    Type: DC sputtering source
+    Power: 750-1500 W
+    Target diameter: 2-3 inch
+    Magnetron type: planar circular
+    Water cooling: required
+    Compatible: research vacuum systems
+    品牌: AJA
+  model:
+    name: AJA International, Inc. Sputtering Tools and Systems
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thin Film Deposition
+    step: Evaporation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string

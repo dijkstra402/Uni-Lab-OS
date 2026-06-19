@@ -1,0 +1,1411 @@
+{
+  "nodes": [
+    {
+      "id": "test_uxbus_cmd",
+      "name": "UxbusCmd",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.uxbus_cmd",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "set_feedback_key_tranid": "",
+        "host": "127.0.0.1",
+        "port": 1502
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_timeout",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_uxbus_cmd",
+      "action": "auto-ft_sensor_enable",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_uxbus_cmd",
+      "action": "auto-is_nfp32",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "set debug",
+      "description": "自动补充动作: set_debug",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_debug",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "send modbus request",
+      "description": "自动补充动作: send_modbus_request",
+      "device": "test_uxbus_cmd",
+      "action": "auto-send_modbus_request",
+      "action_args": {
+        "prot_id": -1,
+        "debug": false
+      }
+    },
+    {
+      "step": 6,
+      "name": "recv modbus response",
+      "description": "自动补充动作: recv_modbus_response",
+      "device": "test_uxbus_cmd",
+      "action": "auto-recv_modbus_response",
+      "action_args": {
+        "t_prot_id": -1,
+        "ret_raw": false,
+        "debug": false
+      }
+    },
+    {
+      "step": 7,
+      "name": "set nu8",
+      "description": "自动补充动作: set_nu8",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_nu8",
+      "action_args": {
+        "feedback_type": 2
+      }
+    },
+    {
+      "step": 8,
+      "name": "getset nu8",
+      "description": "自动补充动作: getset_nu8",
+      "device": "test_uxbus_cmd",
+      "action": "auto-getset_nu8",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "set nu16",
+      "description": "自动补充动作: set_nu16",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_nu16",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "set nfp32",
+      "description": "自动补充动作: set_nfp32",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_nfp32",
+      "action_args": {
+        "feedback_type": 2
+      }
+    },
+    {
+      "step": 11,
+      "name": "set nfp32 with bytes",
+      "description": "自动补充动作: set_nfp32_with_bytes",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_nfp32_with_bytes",
+      "action_args": {
+        "rx_len": 0,
+        "feedback_type": 2
+      }
+    },
+    {
+      "step": 12,
+      "name": "set nint32",
+      "description": "自动补充动作: set_nint32",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_nint32",
+      "action_args": {
+        "feedback_type": 2
+      }
+    },
+    {
+      "step": 13,
+      "name": "swop nfp32",
+      "description": "自动补充动作: swop_nfp32",
+      "device": "test_uxbus_cmd",
+      "action": "auto-swop_nfp32",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "check verification",
+      "description": "自动补充动作: check_verification",
+      "device": "test_uxbus_cmd",
+      "action": "auto-check_verification",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "system control",
+      "description": "自动补充动作: system_control",
+      "device": "test_uxbus_cmd",
+      "action": "auto-system_control",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "set record traj",
+      "description": "自动补充动作: set_record_traj",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_record_traj",
+      "action_args": {}
+    },
+    {
+      "step": 17,
+      "name": "playback traj",
+      "description": "自动补充动作: playback_traj",
+      "device": "test_uxbus_cmd",
+      "action": "auto-playback_traj",
+      "action_args": {
+        "spdx": 1
+      }
+    },
+    {
+      "step": 18,
+      "name": "playback traj old",
+      "description": "自动补充动作: playback_traj_old",
+      "device": "test_uxbus_cmd",
+      "action": "auto-playback_traj_old",
+      "action_args": {}
+    },
+    {
+      "step": 19,
+      "name": "save traj",
+      "description": "自动补充动作: save_traj",
+      "device": "test_uxbus_cmd",
+      "action": "auto-save_traj",
+      "action_args": {
+        "wait_time": 2
+      }
+    },
+    {
+      "step": 20,
+      "name": "load traj",
+      "description": "自动补充动作: load_traj",
+      "device": "test_uxbus_cmd",
+      "action": "auto-load_traj",
+      "action_args": {
+        "wait_time": 2
+      }
+    },
+    {
+      "step": 21,
+      "name": "set reduced mode",
+      "description": "自动补充动作: set_reduced_mode",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_reduced_mode",
+      "action_args": {}
+    },
+    {
+      "step": 22,
+      "name": "set reduced linespeed",
+      "description": "自动补充动作: set_reduced_linespeed",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_reduced_linespeed",
+      "action_args": {}
+    },
+    {
+      "step": 23,
+      "name": "set reduced jointspeed",
+      "description": "自动补充动作: set_reduced_jointspeed",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_reduced_jointspeed",
+      "action_args": {}
+    },
+    {
+      "step": 24,
+      "name": "set xyz limits",
+      "description": "自动补充动作: set_xyz_limits",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_xyz_limits",
+      "action_args": {}
+    },
+    {
+      "step": 25,
+      "name": "set timer",
+      "description": "自动补充动作: set_timer",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_timer",
+      "action_args": {
+        "param1": 0,
+        "param2": 0
+      }
+    },
+    {
+      "step": 26,
+      "name": "cancel timer",
+      "description": "自动补充动作: cancel_timer",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cancel_timer",
+      "action_args": {}
+    },
+    {
+      "step": 27,
+      "name": "set world offset",
+      "description": "自动补充动作: set_world_offset",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_world_offset",
+      "action_args": {}
+    },
+    {
+      "step": 28,
+      "name": "cnter reset",
+      "description": "自动补充动作: cnter_reset",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cnter_reset",
+      "action_args": {}
+    },
+    {
+      "step": 29,
+      "name": "cnter plus",
+      "description": "自动补充动作: cnter_plus",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cnter_plus",
+      "action_args": {}
+    },
+    {
+      "step": 30,
+      "name": "set reduced jrange",
+      "description": "自动补充动作: set_reduced_jrange",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_reduced_jrange",
+      "action_args": {}
+    },
+    {
+      "step": 31,
+      "name": "set fense on",
+      "description": "自动补充动作: set_fense_on",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_fense_on",
+      "action_args": {}
+    },
+    {
+      "step": 32,
+      "name": "set collis reb",
+      "description": "自动补充动作: set_collis_reb",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_collis_reb",
+      "action_args": {}
+    },
+    {
+      "step": 33,
+      "name": "motion en",
+      "description": "自动补充动作: motion_en",
+      "device": "test_uxbus_cmd",
+      "action": "auto-motion_en",
+      "action_args": {}
+    },
+    {
+      "step": 34,
+      "name": "set state",
+      "description": "自动补充动作: set_state",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_state",
+      "action_args": {}
+    },
+    {
+      "step": 35,
+      "name": "reload dynamics",
+      "description": "自动补充动作: reload_dynamics",
+      "device": "test_uxbus_cmd",
+      "action": "auto-reload_dynamics",
+      "action_args": {}
+    },
+    {
+      "step": 36,
+      "name": "clean err",
+      "description": "自动补充动作: clean_err",
+      "device": "test_uxbus_cmd",
+      "action": "auto-clean_err",
+      "action_args": {}
+    },
+    {
+      "step": 37,
+      "name": "clean war",
+      "description": "自动补充动作: clean_war",
+      "device": "test_uxbus_cmd",
+      "action": "auto-clean_war",
+      "action_args": {}
+    },
+    {
+      "step": 38,
+      "name": "set brake",
+      "description": "自动补充动作: set_brake",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_brake",
+      "action_args": {}
+    },
+    {
+      "step": 39,
+      "name": "set mode",
+      "description": "自动补充动作: set_mode",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_mode",
+      "action_args": {
+        "detection_param": -1
+      }
+    },
+    {
+      "step": 40,
+      "name": "set report tau or i",
+      "description": "自动补充动作: set_report_tau_or_i",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_report_tau_or_i",
+      "action_args": {}
+    },
+    {
+      "step": 41,
+      "name": "set cartesian velo continuous",
+      "description": "自动补充动作: set_cartesian_velo_continuous",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_cartesian_velo_continuous",
+      "action_args": {}
+    },
+    {
+      "step": 42,
+      "name": "set allow approx motion",
+      "description": "自动补充动作: set_allow_approx_motion",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_allow_approx_motion",
+      "action_args": {}
+    },
+    {
+      "step": 43,
+      "name": "move line",
+      "description": "自动补充动作: move_line",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_line",
+      "action_args": {
+        "only_check_type": 0,
+        "motion_type": 0
+      }
+    },
+    {
+      "step": 44,
+      "name": "move line common",
+      "description": "自动补充动作: move_line_common",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_line_common",
+      "action_args": {
+        "radius": -1,
+        "coord": 0,
+        "is_axis_angle": false,
+        "only_check_type": 0,
+        "motion_type": 0
+      }
+    },
+    {
+      "step": 45,
+      "name": "move line aa",
+      "description": "自动补充动作: move_line_aa",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_line_aa",
+      "action_args": {
+        "only_check_type": 0,
+        "motion_type": 0
+      }
+    },
+    {
+      "step": 46,
+      "name": "move servo cart aa",
+      "description": "自动补充动作: move_servo_cart_aa",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_servo_cart_aa",
+      "action_args": {}
+    },
+    {
+      "step": 47,
+      "name": "move relative",
+      "description": "自动补充动作: move_relative",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_relative",
+      "action_args": {
+        "is_joint_motion": false,
+        "is_angle_axis": false,
+        "only_check_type": 0,
+        "motion_type": 0
+      }
+    },
+    {
+      "step": 48,
+      "name": "move line tool",
+      "description": "自动补充动作: move_line_tool",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_line_tool",
+      "action_args": {
+        "only_check_type": 0,
+        "motion_type": 0
+      }
+    },
+    {
+      "step": 49,
+      "name": "move lineb",
+      "description": "自动补充动作: move_lineb",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_lineb",
+      "action_args": {
+        "only_check_type": 0,
+        "motion_type": 0
+      }
+    },
+    {
+      "step": 50,
+      "name": "move joint",
+      "description": "自动补充动作: move_joint",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_joint",
+      "action_args": {
+        "only_check_type": 0
+      }
+    },
+    {
+      "step": 51,
+      "name": "move jointb",
+      "description": "自动补充动作: move_jointb",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_jointb",
+      "action_args": {
+        "only_check_type": 0
+      }
+    },
+    {
+      "step": 52,
+      "name": "move gohome",
+      "description": "自动补充动作: move_gohome",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_gohome",
+      "action_args": {
+        "only_check_type": 0
+      }
+    },
+    {
+      "step": 53,
+      "name": "move servoj",
+      "description": "自动补充动作: move_servoj",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_servoj",
+      "action_args": {}
+    },
+    {
+      "step": 54,
+      "name": "move servo cartesian",
+      "description": "自动补充动作: move_servo_cartesian",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_servo_cartesian",
+      "action_args": {}
+    },
+    {
+      "step": 55,
+      "name": "set safe level",
+      "description": "自动补充动作: set_safe_level",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_safe_level",
+      "action_args": {}
+    },
+    {
+      "step": 56,
+      "name": "sleep instruction",
+      "description": "自动补充动作: sleep_instruction",
+      "device": "test_uxbus_cmd",
+      "action": "auto-sleep_instruction",
+      "action_args": {}
+    },
+    {
+      "step": 57,
+      "name": "move circle",
+      "description": "自动补充动作: move_circle",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_circle",
+      "action_args": {
+        "only_check_type": 0
+      }
+    },
+    {
+      "step": 58,
+      "name": "move circle common",
+      "description": "自动补充动作: move_circle_common",
+      "device": "test_uxbus_cmd",
+      "action": "auto-move_circle_common",
+      "action_args": {
+        "coord": 0,
+        "is_axis_angle": false,
+        "only_check_type": 0
+      }
+    },
+    {
+      "step": 59,
+      "name": "set tcp jerk",
+      "description": "自动补充动作: set_tcp_jerk",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_tcp_jerk",
+      "action_args": {}
+    },
+    {
+      "step": 60,
+      "name": "set tcp maxacc",
+      "description": "自动补充动作: set_tcp_maxacc",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_tcp_maxacc",
+      "action_args": {}
+    },
+    {
+      "step": 61,
+      "name": "set joint jerk",
+      "description": "自动补充动作: set_joint_jerk",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_joint_jerk",
+      "action_args": {}
+    },
+    {
+      "step": 62,
+      "name": "set joint maxacc",
+      "description": "自动补充动作: set_joint_maxacc",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_joint_maxacc",
+      "action_args": {}
+    },
+    {
+      "step": 63,
+      "name": "set tcp offset",
+      "description": "自动补充动作: set_tcp_offset",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_tcp_offset",
+      "action_args": {}
+    },
+    {
+      "step": 64,
+      "name": "set tcp load",
+      "description": "自动补充动作: set_tcp_load",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_tcp_load",
+      "action_args": {}
+    },
+    {
+      "step": 65,
+      "name": "set collis sens",
+      "description": "自动补充动作: set_collis_sens",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_collis_sens",
+      "action_args": {}
+    },
+    {
+      "step": 66,
+      "name": "set teach sens",
+      "description": "自动补充动作: set_teach_sens",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_teach_sens",
+      "action_args": {}
+    },
+    {
+      "step": 67,
+      "name": "set gravity dir",
+      "description": "自动补充动作: set_gravity_dir",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_gravity_dir",
+      "action_args": {}
+    },
+    {
+      "step": 68,
+      "name": "clean conf",
+      "description": "自动补充动作: clean_conf",
+      "device": "test_uxbus_cmd",
+      "action": "auto-clean_conf",
+      "action_args": {}
+    },
+    {
+      "step": 69,
+      "name": "save conf",
+      "description": "自动补充动作: save_conf",
+      "device": "test_uxbus_cmd",
+      "action": "auto-save_conf",
+      "action_args": {}
+    },
+    {
+      "step": 70,
+      "name": "is joint limit",
+      "description": "自动补充动作: is_joint_limit",
+      "device": "test_uxbus_cmd",
+      "action": "auto-is_joint_limit",
+      "action_args": {}
+    },
+    {
+      "step": 71,
+      "name": "is tcp limit",
+      "description": "自动补充动作: is_tcp_limit",
+      "device": "test_uxbus_cmd",
+      "action": "auto-is_tcp_limit",
+      "action_args": {}
+    },
+    {
+      "step": 72,
+      "name": "gripper addr w16",
+      "description": "自动补充动作: gripper_addr_w16",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_addr_w16",
+      "action_args": {}
+    },
+    {
+      "step": 73,
+      "name": "gripper addr r16",
+      "description": "自动补充动作: gripper_addr_r16",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_addr_r16",
+      "action_args": {}
+    },
+    {
+      "step": 74,
+      "name": "gripper addr w32",
+      "description": "自动补充动作: gripper_addr_w32",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_addr_w32",
+      "action_args": {}
+    },
+    {
+      "step": 75,
+      "name": "gripper addr r32",
+      "description": "自动补充动作: gripper_addr_r32",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_addr_r32",
+      "action_args": {}
+    },
+    {
+      "step": 76,
+      "name": "gripper set en",
+      "description": "自动补充动作: gripper_set_en",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_set_en",
+      "action_args": {}
+    },
+    {
+      "step": 77,
+      "name": "gripper set mode",
+      "description": "自动补充动作: gripper_set_mode",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_set_mode",
+      "action_args": {}
+    },
+    {
+      "step": 78,
+      "name": "gripper set zero",
+      "description": "自动补充动作: gripper_set_zero",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_set_zero",
+      "action_args": {}
+    },
+    {
+      "step": 79,
+      "name": "gripper get pos",
+      "description": "自动补充动作: gripper_get_pos",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_get_pos",
+      "action_args": {}
+    },
+    {
+      "step": 80,
+      "name": "gripper set pos",
+      "description": "自动补充动作: gripper_set_pos",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_set_pos",
+      "action_args": {}
+    },
+    {
+      "step": 81,
+      "name": "gripper set posspd",
+      "description": "自动补充动作: gripper_set_posspd",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_set_posspd",
+      "action_args": {}
+    },
+    {
+      "step": 82,
+      "name": "gripper get errcode",
+      "description": "自动补充动作: gripper_get_errcode",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_get_errcode",
+      "action_args": {}
+    },
+    {
+      "step": 83,
+      "name": "gripper clean err",
+      "description": "自动补充动作: gripper_clean_err",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_clean_err",
+      "action_args": {}
+    },
+    {
+      "step": 84,
+      "name": "tgpio addr w16",
+      "description": "自动补充动作: tgpio_addr_w16",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_addr_w16",
+      "action_args": {
+        "bid": 9
+      }
+    },
+    {
+      "step": 85,
+      "name": "tgpio addr r16",
+      "description": "自动补充动作: tgpio_addr_r16",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_addr_r16",
+      "action_args": {
+        "bid": 9,
+        "fmt": ">i"
+      }
+    },
+    {
+      "step": 86,
+      "name": "tgpio addr w32",
+      "description": "自动补充动作: tgpio_addr_w32",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_addr_w32",
+      "action_args": {
+        "bid": 9
+      }
+    },
+    {
+      "step": 87,
+      "name": "tgpio addr r32",
+      "description": "自动补充动作: tgpio_addr_r32",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_addr_r32",
+      "action_args": {
+        "bid": 9,
+        "fmt": ">i"
+      }
+    },
+    {
+      "step": 88,
+      "name": "tgpio get digital",
+      "description": "自动补充动作: tgpio_get_digital",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_get_digital",
+      "action_args": {}
+    },
+    {
+      "step": 89,
+      "name": "tgpio set digital",
+      "description": "自动补充动作: tgpio_set_digital",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_set_digital",
+      "action_args": {}
+    },
+    {
+      "step": 90,
+      "name": "tgpio get analog1",
+      "description": "自动补充动作: tgpio_get_analog1",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_get_analog1",
+      "action_args": {}
+    },
+    {
+      "step": 91,
+      "name": "tgpio get analog2",
+      "description": "自动补充动作: tgpio_get_analog2",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_get_analog2",
+      "action_args": {}
+    },
+    {
+      "step": 92,
+      "name": "set modbus timeout",
+      "description": "自动补充动作: set_modbus_timeout",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_modbus_timeout",
+      "action_args": {
+        "is_transparent_transmission": false
+      }
+    },
+    {
+      "step": 93,
+      "name": "set modbus baudrate",
+      "description": "自动补充动作: set_modbus_baudrate",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_modbus_baudrate",
+      "action_args": {}
+    },
+    {
+      "step": 94,
+      "name": "tgpio set modbus",
+      "description": "自动补充动作: tgpio_set_modbus",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_set_modbus",
+      "action_args": {
+        "host_id": 9,
+        "limit_sec": 0.0,
+        "is_transparent_transmission": false,
+        "debug": false
+      }
+    },
+    {
+      "step": 95,
+      "name": "tgpio delay set digital",
+      "description": "自动补充动作: tgpio_delay_set_digital",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_delay_set_digital",
+      "action_args": {}
+    },
+    {
+      "step": 96,
+      "name": "cgpio delay set digital",
+      "description": "自动补充动作: cgpio_delay_set_digital",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_delay_set_digital",
+      "action_args": {}
+    },
+    {
+      "step": 97,
+      "name": "cgpio position set digital",
+      "description": "自动补充动作: cgpio_position_set_digital",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_position_set_digital",
+      "action_args": {}
+    },
+    {
+      "step": 98,
+      "name": "tgpio position set digital",
+      "description": "自动补充动作: tgpio_position_set_digital",
+      "device": "test_uxbus_cmd",
+      "action": "auto-tgpio_position_set_digital",
+      "action_args": {}
+    },
+    {
+      "step": 99,
+      "name": "cgpio position set analog",
+      "description": "自动补充动作: cgpio_position_set_analog",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_position_set_analog",
+      "action_args": {}
+    },
+    {
+      "step": 100,
+      "name": "config io stop reset",
+      "description": "自动补充动作: config_io_stop_reset",
+      "device": "test_uxbus_cmd",
+      "action": "auto-config_io_stop_reset",
+      "action_args": {}
+    },
+    {
+      "step": 101,
+      "name": "gripper modbus w16s",
+      "description": "自动补充动作: gripper_modbus_w16s",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_modbus_w16s",
+      "action_args": {}
+    },
+    {
+      "step": 102,
+      "name": "gripper modbus r16s",
+      "description": "自动补充动作: gripper_modbus_r16s",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_modbus_r16s",
+      "action_args": {}
+    },
+    {
+      "step": 103,
+      "name": "gripper modbus set en",
+      "description": "自动补充动作: gripper_modbus_set_en",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_modbus_set_en",
+      "action_args": {}
+    },
+    {
+      "step": 104,
+      "name": "gripper modbus set mode",
+      "description": "自动补充动作: gripper_modbus_set_mode",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_modbus_set_mode",
+      "action_args": {}
+    },
+    {
+      "step": 105,
+      "name": "gripper modbus set zero",
+      "description": "自动补充动作: gripper_modbus_set_zero",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_modbus_set_zero",
+      "action_args": {}
+    },
+    {
+      "step": 106,
+      "name": "gripper modbus get pos",
+      "description": "自动补充动作: gripper_modbus_get_pos",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_modbus_get_pos",
+      "action_args": {}
+    },
+    {
+      "step": 107,
+      "name": "gripper modbus set pos",
+      "description": "自动补充动作: gripper_modbus_set_pos",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_modbus_set_pos",
+      "action_args": {}
+    },
+    {
+      "step": 108,
+      "name": "gripper modbus set posspd",
+      "description": "自动补充动作: gripper_modbus_set_posspd",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_modbus_set_posspd",
+      "action_args": {}
+    },
+    {
+      "step": 109,
+      "name": "gripper modbus get errcode",
+      "description": "自动补充动作: gripper_modbus_get_errcode",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_modbus_get_errcode",
+      "action_args": {}
+    },
+    {
+      "step": 110,
+      "name": "gripper modbus clean err",
+      "description": "自动补充动作: gripper_modbus_clean_err",
+      "device": "test_uxbus_cmd",
+      "action": "auto-gripper_modbus_clean_err",
+      "action_args": {}
+    },
+    {
+      "step": 111,
+      "name": "servo set zero",
+      "description": "自动补充动作: servo_set_zero",
+      "device": "test_uxbus_cmd",
+      "action": "auto-servo_set_zero",
+      "action_args": {}
+    },
+    {
+      "step": 112,
+      "name": "servo get dbmsg",
+      "description": "自动补充动作: servo_get_dbmsg",
+      "device": "test_uxbus_cmd",
+      "action": "auto-servo_get_dbmsg",
+      "action_args": {}
+    },
+    {
+      "step": 113,
+      "name": "servo addr w16",
+      "description": "自动补充动作: servo_addr_w16",
+      "device": "test_uxbus_cmd",
+      "action": "auto-servo_addr_w16",
+      "action_args": {}
+    },
+    {
+      "step": 114,
+      "name": "servo addr r16",
+      "description": "自动补充动作: servo_addr_r16",
+      "device": "test_uxbus_cmd",
+      "action": "auto-servo_addr_r16",
+      "action_args": {}
+    },
+    {
+      "step": 115,
+      "name": "servo addr w32",
+      "description": "自动补充动作: servo_addr_w32",
+      "device": "test_uxbus_cmd",
+      "action": "auto-servo_addr_w32",
+      "action_args": {}
+    },
+    {
+      "step": 116,
+      "name": "servo addr r32",
+      "description": "自动补充动作: servo_addr_r32",
+      "device": "test_uxbus_cmd",
+      "action": "auto-servo_addr_r32",
+      "action_args": {}
+    },
+    {
+      "step": 117,
+      "name": "cgpio get auxdigit",
+      "description": "自动补充动作: cgpio_get_auxdigit",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_get_auxdigit",
+      "action_args": {}
+    },
+    {
+      "step": 118,
+      "name": "cgpio get analog1",
+      "description": "自动补充动作: cgpio_get_analog1",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_get_analog1",
+      "action_args": {}
+    },
+    {
+      "step": 119,
+      "name": "cgpio get analog2",
+      "description": "自动补充动作: cgpio_get_analog2",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_get_analog2",
+      "action_args": {}
+    },
+    {
+      "step": 120,
+      "name": "cgpio set auxdigit",
+      "description": "自动补充动作: cgpio_set_auxdigit",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_set_auxdigit",
+      "action_args": {}
+    },
+    {
+      "step": 121,
+      "name": "cgpio set analog1",
+      "description": "自动补充动作: cgpio_set_analog1",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_set_analog1",
+      "action_args": {}
+    },
+    {
+      "step": 122,
+      "name": "cgpio set analog2",
+      "description": "自动补充动作: cgpio_set_analog2",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_set_analog2",
+      "action_args": {}
+    },
+    {
+      "step": 123,
+      "name": "cgpio set infun",
+      "description": "自动补充动作: cgpio_set_infun",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_set_infun",
+      "action_args": {}
+    },
+    {
+      "step": 124,
+      "name": "cgpio set outfun",
+      "description": "自动补充动作: cgpio_set_outfun",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_set_outfun",
+      "action_args": {}
+    },
+    {
+      "step": 125,
+      "name": "cgpio get state",
+      "description": "自动补充动作: cgpio_get_state",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cgpio_get_state",
+      "action_args": {}
+    },
+    {
+      "step": 126,
+      "name": "set self collision detection",
+      "description": "自动补充动作: set_self_collision_detection",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_self_collision_detection",
+      "action_args": {}
+    },
+    {
+      "step": 127,
+      "name": "set collision tool model",
+      "description": "自动补充动作: set_collision_tool_model",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_collision_tool_model",
+      "action_args": {}
+    },
+    {
+      "step": 128,
+      "name": "set simulation robot",
+      "description": "自动补充动作: set_simulation_robot",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_simulation_robot",
+      "action_args": {}
+    },
+    {
+      "step": 129,
+      "name": "vc set jointv",
+      "description": "自动补充动作: vc_set_jointv",
+      "device": "test_uxbus_cmd",
+      "action": "auto-vc_set_jointv",
+      "action_args": {
+        "duration": -1
+      }
+    },
+    {
+      "step": 130,
+      "name": "vc set linev",
+      "description": "自动补充动作: vc_set_linev",
+      "device": "test_uxbus_cmd",
+      "action": "auto-vc_set_linev",
+      "action_args": {
+        "duration": -1
+      }
+    },
+    {
+      "step": 131,
+      "name": "iden load",
+      "description": "自动补充动作: iden_load",
+      "device": "test_uxbus_cmd",
+      "action": "auto-iden_load",
+      "action_args": {
+        "timeout": 500,
+        "estimated_mass": 0
+      }
+    },
+    {
+      "step": 132,
+      "name": "iden joint friction",
+      "description": "自动补充动作: iden_joint_friction",
+      "device": "test_uxbus_cmd",
+      "action": "auto-iden_joint_friction",
+      "action_args": {
+        "timeout": 500
+      }
+    },
+    {
+      "step": 133,
+      "name": "set admittance",
+      "description": "自动补充动作: set_admittance",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_admittance",
+      "action_args": {}
+    },
+    {
+      "step": 134,
+      "name": "set admittance mbk",
+      "description": "自动补充动作: set_admittance_mbk",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_admittance_mbk",
+      "action_args": {}
+    },
+    {
+      "step": 135,
+      "name": "set admittance config",
+      "description": "自动补充动作: set_admittance_config",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_admittance_config",
+      "action_args": {}
+    },
+    {
+      "step": 136,
+      "name": "config force control",
+      "description": "自动补充动作: config_force_control",
+      "device": "test_uxbus_cmd",
+      "action": "auto-config_force_control",
+      "action_args": {}
+    },
+    {
+      "step": 137,
+      "name": "set force control pid",
+      "description": "自动补充动作: set_force_control_pid",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_force_control_pid",
+      "action_args": {}
+    },
+    {
+      "step": 138,
+      "name": "ft sensor set zero",
+      "description": "自动补充动作: ft_sensor_set_zero",
+      "device": "test_uxbus_cmd",
+      "action": "auto-ft_sensor_set_zero",
+      "action_args": {}
+    },
+    {
+      "step": 139,
+      "name": "ft sensor iden load",
+      "description": "自动补充动作: ft_sensor_iden_load",
+      "device": "test_uxbus_cmd",
+      "action": "auto-ft_sensor_iden_load",
+      "action_args": {}
+    },
+    {
+      "step": 140,
+      "name": "ft sensor cali load",
+      "description": "自动补充动作: ft_sensor_cali_load",
+      "device": "test_uxbus_cmd",
+      "action": "auto-ft_sensor_cali_load",
+      "action_args": {}
+    },
+    {
+      "step": 141,
+      "name": "ft sensor app set",
+      "description": "自动补充动作: ft_sensor_app_set",
+      "device": "test_uxbus_cmd",
+      "action": "auto-ft_sensor_app_set",
+      "action_args": {}
+    },
+    {
+      "step": 142,
+      "name": "ft sensor app get",
+      "description": "自动补充动作: ft_sensor_app_get",
+      "device": "test_uxbus_cmd",
+      "action": "auto-ft_sensor_app_get",
+      "action_args": {}
+    },
+    {
+      "step": 143,
+      "name": "ft sensor get data",
+      "description": "自动补充动作: ft_sensor_get_data",
+      "device": "test_uxbus_cmd",
+      "action": "auto-ft_sensor_get_data",
+      "action_args": {
+        "is_new": true,
+        "is_raw": false
+      }
+    },
+    {
+      "step": 144,
+      "name": "ft sensor get config",
+      "description": "自动补充动作: ft_sensor_get_config",
+      "device": "test_uxbus_cmd",
+      "action": "auto-ft_sensor_get_config",
+      "action_args": {}
+    },
+    {
+      "step": 145,
+      "name": "ft sensor get error",
+      "description": "自动补充动作: ft_sensor_get_error",
+      "device": "test_uxbus_cmd",
+      "action": "auto-ft_sensor_get_error",
+      "action_args": {
+        "is_new": true
+      }
+    },
+    {
+      "step": 146,
+      "name": "cali tcp pose",
+      "description": "自动补充动作: cali_tcp_pose",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cali_tcp_pose",
+      "action_args": {}
+    },
+    {
+      "step": 147,
+      "name": "cali user orient",
+      "description": "自动补充动作: cali_user_orient",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cali_user_orient",
+      "action_args": {
+        "mode": 0,
+        "trust_ind": 0
+      }
+    },
+    {
+      "step": 148,
+      "name": "cali tcp orient",
+      "description": "自动补充动作: cali_tcp_orient",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cali_tcp_orient",
+      "action_args": {}
+    },
+    {
+      "step": 149,
+      "name": "cali user pos",
+      "description": "自动补充动作: cali_user_pos",
+      "device": "test_uxbus_cmd",
+      "action": "auto-cali_user_pos",
+      "action_args": {}
+    },
+    {
+      "step": 150,
+      "name": "linear motor modbus w16s",
+      "description": "自动补充动作: linear_motor_modbus_w16s",
+      "device": "test_uxbus_cmd",
+      "action": "auto-linear_motor_modbus_w16s",
+      "action_args": {}
+    },
+    {
+      "step": 151,
+      "name": "linear motor modbus r16s",
+      "description": "自动补充动作: linear_motor_modbus_r16s",
+      "device": "test_uxbus_cmd",
+      "action": "auto-linear_motor_modbus_r16s",
+      "action_args": {
+        "fcode": 3
+      }
+    },
+    {
+      "step": 152,
+      "name": "iden tcp load",
+      "description": "自动补充动作: iden_tcp_load",
+      "device": "test_uxbus_cmd",
+      "action": "auto-iden_tcp_load",
+      "action_args": {
+        "estimated_mass": 0
+      }
+    },
+    {
+      "step": 153,
+      "name": "servo error addr r32",
+      "description": "自动补充动作: servo_error_addr_r32",
+      "device": "test_uxbus_cmd",
+      "action": "auto-servo_error_addr_r32",
+      "action_args": {}
+    },
+    {
+      "step": 154,
+      "name": "set dh params",
+      "description": "自动补充动作: set_dh_params",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_dh_params",
+      "action_args": {
+        "flag": 0
+      }
+    },
+    {
+      "step": 155,
+      "name": "set feedback type",
+      "description": "自动补充动作: set_feedback_type",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_feedback_type",
+      "action_args": {}
+    },
+    {
+      "step": 156,
+      "name": "check feedback",
+      "description": "自动补充动作: check_feedback",
+      "device": "test_uxbus_cmd",
+      "action": "auto-check_feedback",
+      "action_args": {}
+    },
+    {
+      "step": 157,
+      "name": "set modbus tcp data",
+      "description": "自动补充动作: set_modbus_tcp_data",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_modbus_tcp_data",
+      "action_args": {
+        "raw": true,
+        "debug": false
+      }
+    },
+    {
+      "step": 158,
+      "name": "send hex cmd",
+      "description": "自动补充动作: send_hex_cmd",
+      "device": "test_uxbus_cmd",
+      "action": "auto-send_hex_cmd",
+      "action_args": {
+        "timeout": 10
+      }
+    },
+    {
+      "step": 159,
+      "name": "set common param",
+      "description": "自动补充动作: set_common_param",
+      "device": "test_uxbus_cmd",
+      "action": "auto-set_common_param",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "UxbusCmd 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "UxbusCmd",
+    "generated_by": "driver-finder"
+  }
+}

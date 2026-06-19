@@ -1,0 +1,215 @@
+dd_mq:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_parameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                parameter_class:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_additional_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_additional_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timesec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idn_param:
+                  type: string
+                begin_time:
+                  type: string
+        goal_default:
+          idn_param: IDN
+        handles: {}
+      auto-prepare_SSB_weight_and_rotation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_SSB_weight_and_rotation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                IF:
+                  type: string
+                weight_function_I:
+                  type: string
+                weight_function_Q:
+                  type: string
+        goal_default:
+          weight_function_I: 1
+          weight_function_Q: 2
+        handles: {}
+      auto-prepare_DSB_weight_and_rotation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_DSB_weight_and_rotation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                IF:
+                  type: string
+                weight_function_I:
+                  type: string
+                weight_function_Q:
+                  type: string
+        goal_default:
+          weight_function_I: 1
+          weight_function_Q: 2
+        handles: {}
+      auto-log:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: log
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.community.dd_mq.driver:DDMq
+    status_types: {}
+    type: python
+  config_info: []
+  description: QuTech DD MQ Module是由QuTech生产的表征设备，主要功能包括日志记录、称量、设备连接。支持Signal, Slot,
+    add additional parameters等操作。
+  handles: []
+  icon: arbok_driver.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    品牌: QuTech
+    功能: 参数配置、数据采集
+    可控参数: begin_time、data、idn_param、name、parameter_class、timesec、weight_function_I、weight_function_Q
+    操作数: 11
+  manufacturer: QuTech
+  model:
+    name: QuTech QuTech DD MQ Module
+    type: device
+  name: QuTech DD MQ
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

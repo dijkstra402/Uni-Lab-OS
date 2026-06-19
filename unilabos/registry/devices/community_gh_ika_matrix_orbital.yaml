@@ -1,0 +1,86 @@
+gh_ika_matrix_orbital:
+  class:
+    module: unilabos.devices.community.gh_ika_matrix_orbital.driver:IKADevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                query:
+                  type: string
+        goal_default:
+          query: null
+        handles: {}
+      auto-command:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/numat/ika
+  name: MATRIX Orbital
+  description: 探索我们世界领先的机器人，为不同行业提供机器人解决方案并站在研究的前沿。与我们一起塑造未来！
+  manufacturer: IKA
+  icon: V1%20Desktop.jpg
+  tags: &id001
+  - 振荡器（非恒温）
+  category: *id001
+  device_params:
+    '1234': Abbildung entspricht nicht dem Lieferumfang
+    IKA G-L: 'Listenpreis
+
+      USD 1,273.00'
+    Listenpreis: USD 327.00
+    Preis: USD 1,273.00
+    品牌: IKA
+  model:
+    name: MATRIX Orbital
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Shaking
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          default: null
+          type: string

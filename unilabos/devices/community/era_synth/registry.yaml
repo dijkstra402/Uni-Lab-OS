@@ -1,0 +1,225 @@
+era_synth:
+  class:
+    module: community_drivers.era_synth.driver:ERASynth
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-print_serial_ports:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_serial_ports
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: 'on'
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: 'off'
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_configuration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_configuration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                par_name:
+                  type: string
+        goal_default:
+          par_name: null
+        handles: {}
+      auto-get_diagnostic_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_diagnostic_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                par_name:
+                  type: string
+        goal_default:
+          par_name: null
+        handles: {}
+      auto-open_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-preset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: preset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-factory_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: factory_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-esp8266_upload_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: esp8266_upload_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wifi_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wifi_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wifi_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wifi_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_self_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_self_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Exception
+  description: ERASynth Micro是ERA Instruments（土耳其伊斯坦布尔）推出的开源射频信号发生器，基于Arduino Micro平台，双PLL架构，USB供电，适合创客、学生、业余无线电和SDR用户。
+  manufacturer: ERA Instruments
+  icon: era_synth.webp
+  tags: &id001
+  - 信号源与发生器
+  category: *id001
+  device_params:
+    频率范围: 12.5MHz-6.4GHz
+    幅度范围: -50至+15dBm
+    相位噪声: -115dBc/Hz(1GHz, 10kHz偏移)
+    架构: 双PLL
+    调制: AM/FM/脉冲(内部/外部)
+    内部信号: 正弦/三角/锯齿/方波
+    参考: 内部10MHz TCXO, 可外部10MHz
+    MCU: ATmega32U4
+    供电: USB
+    显示: LCD
+    开源: 原理图/固件/GUI全部开源
+    品牌: ERA Instruments
+  model:
+    name: Exception
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string
+        baudrate:
+          default: null
+          type: integer
+        serial_timeout:
+          default: null
+          type: string

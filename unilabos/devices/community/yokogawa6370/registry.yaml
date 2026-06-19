@@ -1,0 +1,153 @@
+yokogawa6370:
+  class:
+    module: community_drivers.yokogawa6370.driver:Yokogawa6370
+    type: python
+    status_types:
+      channel: str
+    action_value_mappings:
+      auto-data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limits:
+                  type: string
+        goal_default:
+          limits: null
+        handles: {}
+      auto-wavelength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wavelength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limits:
+                  type: string
+        goal_default:
+          limits: null
+        handles: {}
+      auto-analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_sweep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_sweep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-abort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: abort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                size:
+                  type: string
+        goal_default:
+          cmd: null
+          size: null
+        handles: {}
+  name: AQ6370E Optical Spectrum Analyzer 600 - 1700 nm
+  description: 电信级光谱分析仪，600~1700nm，0.02nm分辨率，78dB动态范围。在售(AQ6370D/E)。
+  manufacturer: Yokogawa
+  icon: yokogawa6370.webp
+  tags: &id001
+  - 光栅单色仪
+  category: *id001
+  device_params:
+    Wavelength: 600~1700nm
+    Resolution: 0.02nm
+    Accuracy: ±0.01nm
+    Dynamic Range: 78dB
+    Speed: 0.2s/100nm
+    Points: '50001'
+    Interface: GP-IB×2, RS-232, Ethernet
+    品牌: Yokogawa
+  model:
+    name: AQ6370E Optical Spectrum Analyzer 600 - 1700 nm
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Analysis
+    step: IR Spectroscopy
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+        auth:
+          default: null
+          type: string
+  cover: AQ6370E Optical Spectrum Analyzer 600 - 1700 nm.webp

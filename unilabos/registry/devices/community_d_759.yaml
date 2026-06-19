@@ -1,0 +1,212 @@
+gh_device_759:
+  class:
+    module: unilabos.devices.community.d_759.driver:Remcon32
+    type: python
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-cmd_response:
+        type: UniLabJsonCommand
+        goal:
+          cmd: cmd
+          error_ok: error_ok
+        feedback: {}
+        result: {}
+        schema:
+          title: cmd_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                error_ok:
+                  type: string
+        goal_default:
+          cmd: ''
+          error_ok: ''
+        handles: {}
+      auto-limits:
+        type: UniLabJsonCommand
+        goal:
+          x: x
+          xmin: xmin
+          xmax: xmax
+        feedback: {}
+        result: {}
+        schema:
+          title: limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                xmin:
+                  type: string
+                xmax:
+                  type: string
+        goal_default:
+          x: ''
+          xmin: ''
+          xmax: ''
+        handles: {}
+      auto-get_kV:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_kV
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_kV:
+        type: UniLabJsonCommand
+        goal:
+          val: val
+        feedback: {}
+        result: {}
+        schema:
+          title: set_kV
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: string
+        goal_default:
+          val: ''
+        handles: {}
+      auto-set_eht_state:
+        type: UniLabJsonCommand
+        goal:
+          state: state
+        feedback: {}
+        result: {}
+        schema:
+          title: set_eht_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: ''
+        handles: {}
+      auto-get_eht_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_eht_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_blank_state:
+        type: UniLabJsonCommand
+        goal:
+          state: state
+        feedback: {}
+        result: {}
+        schema:
+          title: set_blank_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: ''
+        handles: {}
+      auto-get_blank_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_blank_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_stig:
+        type: UniLabJsonCommand
+        goal:
+          x_val: x_val
+          y_val: y_val
+        feedback: {}
+        result: {}
+        schema:
+          title: set_stig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_val:
+                  type: string
+                y_val:
+                  type: string
+        goal_default:
+          x_val: ''
+          y_val: ''
+        handles: {}
+  name: Zeiss SmartSEM
+  description: SmartSEM是ZEISS扫描电子显微镜的主要操作和控制软件，提供完整的SEM系统控制，包括束参数、平台移动、对焦、消像散和探测器选择。支持高分辨率图像采集和自动化工作流程。注意：SmartSEM是软件而非硬件设备。
+  manufacturer: Zeiss
+  tags: &id001
+  - 扫描电子显微镜
+  category: *id001
+  model:
+    name: Zeiss SmartSEM
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: SEM操作控制软件
+    兼容系统: ZEISS EVO/SIGMA/GeminiSEM/Merlin/SUPRA/Ultra Plus
+    操作系统: Windows
+    图像格式: TIFF等
+    远程控制: SmartSEM Remote API
+    附加模块: EDS/EBSD集成
+    SmartSEM Touch: 简化触屏版
+    测量工具: 距离/角度/面积
+    脚本自动化: 宏/API
+    品牌: Zeiss
+  quality_review:
+    grade: B
+    status: needs_sdk
+    note: 'Zeiss SmartSEM: ScopeFoundry Remcon32 实现'
+    reviewed_at: '2026-04-26'

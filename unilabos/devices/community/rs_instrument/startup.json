@@ -1,0 +1,648 @@
+{
+  "nodes": [
+    {
+      "id": "test_rs_instrument",
+      "name": "InstruDriver RsInstrument",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.rs_instrument",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "resource_name": "",
+        "id_query": true,
+        "reset": false,
+        "options": "",
+        "direct_session": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_rs_instrument",
+      "action": "auto-is_connection_active",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_rs_instrument",
+      "action": "auto-reset_time_statistics",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_rs_instrument",
+      "action": "auto-query_opc",
+      "action_args": {
+        "timeout": 0
+      }
+    },
+    {
+      "step": 4,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_rs_instrument",
+      "action": "auto-read_file_from_instrument_to_pc",
+      "action_args": {
+        "append_to_pc_file": false
+      }
+    },
+    {
+      "step": 5,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_rs_instrument",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "idn string",
+      "description": "自动补充动作: idn_string",
+      "device": "test_rs_instrument",
+      "action": "auto-idn_string",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "instrument status checking",
+      "description": "自动补充动作: instrument_status_checking",
+      "device": "test_rs_instrument",
+      "action": "auto-instrument_status_checking",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "check status",
+      "description": "自动补充动作: check_status",
+      "device": "test_rs_instrument",
+      "action": "auto-check_status",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "encoding",
+      "description": "自动补充动作: encoding",
+      "device": "test_rs_instrument",
+      "action": "auto-encoding",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "opc query after write",
+      "description": "自动补充动作: opc_query_after_write",
+      "device": "test_rs_instrument",
+      "action": "auto-opc_query_after_write",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "bin float numbers format",
+      "description": "自动补充动作: bin_float_numbers_format",
+      "device": "test_rs_instrument",
+      "action": "auto-bin_float_numbers_format",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "bin int numbers format",
+      "description": "自动补充动作: bin_int_numbers_format",
+      "device": "test_rs_instrument",
+      "action": "auto-bin_int_numbers_format",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "clear status",
+      "description": "自动补充动作: clear_status",
+      "device": "test_rs_instrument",
+      "action": "auto-clear_status",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "query all errors",
+      "description": "自动补充动作: query_all_errors",
+      "device": "test_rs_instrument",
+      "action": "auto-query_all_errors",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "query all errors with codes",
+      "description": "自动补充动作: query_all_errors_with_codes",
+      "device": "test_rs_instrument",
+      "action": "auto-query_all_errors_with_codes",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "reset",
+      "description": "自动补充动作: reset",
+      "device": "test_rs_instrument",
+      "action": "auto-reset",
+      "action_args": {
+        "timeout": 0
+      }
+    },
+    {
+      "step": 17,
+      "name": "self test",
+      "description": "自动补充动作: self_test",
+      "device": "test_rs_instrument",
+      "action": "auto-self_test",
+      "action_args": {}
+    },
+    {
+      "step": 18,
+      "name": "reconnect",
+      "description": "自动补充动作: reconnect",
+      "device": "test_rs_instrument",
+      "action": "auto-reconnect",
+      "action_args": {
+        "force_close": false
+      }
+    },
+    {
+      "step": 19,
+      "name": "opc timeout",
+      "description": "自动补充动作: opc_timeout",
+      "device": "test_rs_instrument",
+      "action": "auto-opc_timeout",
+      "action_args": {}
+    },
+    {
+      "step": 20,
+      "name": "visa timeout",
+      "description": "自动补充动作: visa_timeout",
+      "device": "test_rs_instrument",
+      "action": "auto-visa_timeout",
+      "action_args": {}
+    },
+    {
+      "step": 21,
+      "name": "data chunk size",
+      "description": "自动补充动作: data_chunk_size",
+      "device": "test_rs_instrument",
+      "action": "auto-data_chunk_size",
+      "action_args": {}
+    },
+    {
+      "step": 22,
+      "name": "opc sync query mechanism",
+      "description": "自动补充动作: opc_sync_query_mechanism",
+      "device": "test_rs_instrument",
+      "action": "auto-opc_sync_query_mechanism",
+      "action_args": {}
+    },
+    {
+      "step": 23,
+      "name": "go to local",
+      "description": "自动补充动作: go_to_local",
+      "device": "test_rs_instrument",
+      "action": "auto-go_to_local",
+      "action_args": {
+        "mixed_mode": true
+      }
+    },
+    {
+      "step": 24,
+      "name": "go to remote",
+      "description": "自动补充动作: go_to_remote",
+      "device": "test_rs_instrument",
+      "action": "auto-go_to_remote",
+      "action_args": {}
+    },
+    {
+      "step": 25,
+      "name": "lock resource",
+      "description": "自动补充动作: lock_resource",
+      "device": "test_rs_instrument",
+      "action": "auto-lock_resource",
+      "action_args": {}
+    },
+    {
+      "step": 26,
+      "name": "unlock resource",
+      "description": "自动补充动作: unlock_resource",
+      "device": "test_rs_instrument",
+      "action": "auto-unlock_resource",
+      "action_args": {}
+    },
+    {
+      "step": 27,
+      "name": "process all commands",
+      "description": "自动补充动作: process_all_commands",
+      "device": "test_rs_instrument",
+      "action": "auto-process_all_commands",
+      "action_args": {}
+    },
+    {
+      "step": 28,
+      "name": "write",
+      "description": "自动补充动作: write",
+      "device": "test_rs_instrument",
+      "action": "auto-write",
+      "action_args": {}
+    },
+    {
+      "step": 29,
+      "name": "write str",
+      "description": "自动补充动作: write_str",
+      "device": "test_rs_instrument",
+      "action": "auto-write_str",
+      "action_args": {}
+    },
+    {
+      "step": 30,
+      "name": "write int",
+      "description": "自动补充动作: write_int",
+      "device": "test_rs_instrument",
+      "action": "auto-write_int",
+      "action_args": {}
+    },
+    {
+      "step": 31,
+      "name": "write int with opc",
+      "description": "自动补充动作: write_int_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-write_int_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 32,
+      "name": "write float",
+      "description": "自动补充动作: write_float",
+      "device": "test_rs_instrument",
+      "action": "auto-write_float",
+      "action_args": {}
+    },
+    {
+      "step": 33,
+      "name": "write float with opc",
+      "description": "自动补充动作: write_float_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-write_float_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 34,
+      "name": "write bool",
+      "description": "自动补充动作: write_bool",
+      "device": "test_rs_instrument",
+      "action": "auto-write_bool",
+      "action_args": {}
+    },
+    {
+      "step": 35,
+      "name": "write bool with opc",
+      "description": "自动补充动作: write_bool_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-write_bool_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 36,
+      "name": "query",
+      "description": "自动补充动作: query",
+      "device": "test_rs_instrument",
+      "action": "auto-query",
+      "action_args": {}
+    },
+    {
+      "step": 37,
+      "name": "query str",
+      "description": "自动补充动作: query_str",
+      "device": "test_rs_instrument",
+      "action": "auto-query_str",
+      "action_args": {}
+    },
+    {
+      "step": 38,
+      "name": "query stripped",
+      "description": "自动补充动作: query_stripped",
+      "device": "test_rs_instrument",
+      "action": "auto-query_stripped",
+      "action_args": {}
+    },
+    {
+      "step": 39,
+      "name": "query str stripped",
+      "description": "自动补充动作: query_str_stripped",
+      "device": "test_rs_instrument",
+      "action": "auto-query_str_stripped",
+      "action_args": {}
+    },
+    {
+      "step": 40,
+      "name": "query bool",
+      "description": "自动补充动作: query_bool",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bool",
+      "action_args": {}
+    },
+    {
+      "step": 41,
+      "name": "query int",
+      "description": "自动补充动作: query_int",
+      "device": "test_rs_instrument",
+      "action": "auto-query_int",
+      "action_args": {}
+    },
+    {
+      "step": 42,
+      "name": "query float",
+      "description": "自动补充动作: query_float",
+      "device": "test_rs_instrument",
+      "action": "auto-query_float",
+      "action_args": {}
+    },
+    {
+      "step": 43,
+      "name": "query str list",
+      "description": "自动补充动作: query_str_list",
+      "device": "test_rs_instrument",
+      "action": "auto-query_str_list",
+      "action_args": {
+        "remove_blank_response": false
+      }
+    },
+    {
+      "step": 44,
+      "name": "query bool list",
+      "description": "自动补充动作: query_bool_list",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bool_list",
+      "action_args": {}
+    },
+    {
+      "step": 45,
+      "name": "write str with opc",
+      "description": "自动补充动作: write_str_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-write_str_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 46,
+      "name": "write with opc",
+      "description": "自动补充动作: write_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-write_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 47,
+      "name": "query str with opc",
+      "description": "自动补充动作: query_str_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_str_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 48,
+      "name": "query with opc",
+      "description": "自动补充动作: query_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 49,
+      "name": "query str list with opc",
+      "description": "自动补充动作: query_str_list_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_str_list_with_opc",
+      "action_args": {
+        "remove_blank_response": false
+      }
+    },
+    {
+      "step": 50,
+      "name": "query bool with opc",
+      "description": "自动补充动作: query_bool_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bool_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 51,
+      "name": "query bool list with opc",
+      "description": "自动补充动作: query_bool_list_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bool_list_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 52,
+      "name": "query int with opc",
+      "description": "自动补充动作: query_int_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_int_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 53,
+      "name": "query float with opc",
+      "description": "自动补充动作: query_float_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_float_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 54,
+      "name": "write bin block",
+      "description": "自动补充动作: write_bin_block",
+      "device": "test_rs_instrument",
+      "action": "auto-write_bin_block",
+      "action_args": {}
+    },
+    {
+      "step": 55,
+      "name": "query bin block",
+      "description": "自动补充动作: query_bin_block",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bin_block",
+      "action_args": {}
+    },
+    {
+      "step": 56,
+      "name": "query bin block with opc",
+      "description": "自动补充动作: query_bin_block_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bin_block_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 57,
+      "name": "query bin or ascii float list",
+      "description": "自动补充动作: query_bin_or_ascii_float_list",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bin_or_ascii_float_list",
+      "action_args": {}
+    },
+    {
+      "step": 58,
+      "name": "query bin or ascii float list with opc",
+      "description": "自动补充动作: query_bin_or_ascii_float_list_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bin_or_ascii_float_list_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 59,
+      "name": "query bin or ascii int list",
+      "description": "自动补充动作: query_bin_or_ascii_int_list",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bin_or_ascii_int_list",
+      "action_args": {}
+    },
+    {
+      "step": 60,
+      "name": "query bin or ascii int list with opc",
+      "description": "自动补充动作: query_bin_or_ascii_int_list_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bin_or_ascii_int_list_with_opc",
+      "action_args": {}
+    },
+    {
+      "step": 61,
+      "name": "query bin block to file",
+      "description": "自动补充动作: query_bin_block_to_file",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bin_block_to_file",
+      "action_args": {
+        "append": false
+      }
+    },
+    {
+      "step": 62,
+      "name": "query bin block to file with opc",
+      "description": "自动补充动作: query_bin_block_to_file_with_opc",
+      "device": "test_rs_instrument",
+      "action": "auto-query_bin_block_to_file_with_opc",
+      "action_args": {
+        "append": false
+      }
+    },
+    {
+      "step": 63,
+      "name": "write bin block from file",
+      "description": "自动补充动作: write_bin_block_from_file",
+      "device": "test_rs_instrument",
+      "action": "auto-write_bin_block_from_file",
+      "action_args": {}
+    },
+    {
+      "step": 64,
+      "name": "send file from pc to instrument",
+      "description": "自动补充动作: send_file_from_pc_to_instrument",
+      "device": "test_rs_instrument",
+      "action": "auto-send_file_from_pc_to_instrument",
+      "action_args": {}
+    },
+    {
+      "step": 65,
+      "name": "file exists",
+      "description": "自动补充动作: file_exists",
+      "device": "test_rs_instrument",
+      "action": "auto-file_exists",
+      "action_args": {}
+    },
+    {
+      "step": 66,
+      "name": "assign lock",
+      "description": "自动补充动作: assign_lock",
+      "device": "test_rs_instrument",
+      "action": "auto-assign_lock",
+      "action_args": {}
+    },
+    {
+      "step": 67,
+      "name": "clear lock",
+      "description": "自动补充动作: clear_lock",
+      "device": "test_rs_instrument",
+      "action": "auto-clear_lock",
+      "action_args": {}
+    },
+    {
+      "step": 68,
+      "name": "instr err suppressor",
+      "description": "自动补充动作: instr_err_suppressor",
+      "device": "test_rs_instrument",
+      "action": "auto-instr_err_suppressor",
+      "action_args": {
+        "visa_tout_ms": 0
+      }
+    },
+    {
+      "step": 69,
+      "name": "visa tout suppressor",
+      "description": "自动补充动作: visa_tout_suppressor",
+      "device": "test_rs_instrument",
+      "action": "auto-visa_tout_suppressor",
+      "action_args": {
+        "visa_tout_ms": 0
+      }
+    },
+    {
+      "step": 70,
+      "name": "has instr option",
+      "description": "自动补充动作: has_instr_option",
+      "device": "test_rs_instrument",
+      "action": "auto-has_instr_option",
+      "action_args": {}
+    },
+    {
+      "step": 71,
+      "name": "has instr option regex",
+      "description": "自动补充动作: has_instr_option_regex",
+      "device": "test_rs_instrument",
+      "action": "auto-has_instr_option_regex",
+      "action_args": {}
+    },
+    {
+      "step": 72,
+      "name": "has instr option k0",
+      "description": "自动补充动作: has_instr_option_k0",
+      "device": "test_rs_instrument",
+      "action": "auto-has_instr_option_k0",
+      "action_args": {}
+    },
+    {
+      "step": 73,
+      "name": "add instr option",
+      "description": "自动补充动作: add_instr_option",
+      "device": "test_rs_instrument",
+      "action": "auto-add_instr_option",
+      "action_args": {}
+    },
+    {
+      "step": 74,
+      "name": "remove instr option",
+      "description": "自动补充动作: remove_instr_option",
+      "device": "test_rs_instrument",
+      "action": "auto-remove_instr_option",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "RsInstrument 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "RsInstrument",
+    "generated_by": "driver-finder"
+  }
+}

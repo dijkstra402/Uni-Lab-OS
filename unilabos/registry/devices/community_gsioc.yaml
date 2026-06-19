@@ -1,0 +1,102 @@
+gsioc:
+  class:
+    module: unilabos.devices.community.gsioc.driver:gsioc
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-createSerial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: createSerial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+                timeout:
+                  type: string
+                baudrate:
+                  type: string
+        goal_default:
+          port: 0
+          timeout: 0.1
+          baudrate: 9600
+        handles: {}
+      auto-closeSerial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: closeSerial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ID:
+                  type: string
+        goal_default:
+          ID: 0
+        handles: {}
+      auto-iCommand:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: iCommand
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                commandstring:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-bCommand:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bCommand
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                commandstring:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: gsioc
+  category:
+  - generic_devices
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serial:
+          type: string
+          default: null

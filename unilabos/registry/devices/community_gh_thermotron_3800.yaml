@@ -1,0 +1,105 @@
+gh_thermotron_3800:
+  class:
+    module: unilabos.devices.community.gh_thermotron_3800.driver:Thermotron3800
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initalize_oven:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initalize_oven
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: 8800 Controller
+  description: Thermotron 的 8800 控制器专为运行我们的 SE、Altitude、AGREE 和步入式试验箱以及定制设计的系统而设计和制造。
+    8800 控制器配备 12 英寸彩色触摸屏显示器和熟悉的 Windows® 外观和感觉，使操作和数据收集变得简单可靠。
+  manufacturer: Thermotron
+  icon: gh_thermotron_3800.webp
+  tags: &id001
+  - 低温温度控制器
+  category: *id001
+  device_params:
+    Type: Environmental test chamber
+    Temperature: -73°C to +200°C
+    Humidity: 10-98% RH
+    Controller: 8800 series
+    Communication: GPIB, Ethernet
+    Features: programmable profiles
+    品牌: Thermotron
+  model:
+    name: 8800 Controller
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Culture
+    step: Incubation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string

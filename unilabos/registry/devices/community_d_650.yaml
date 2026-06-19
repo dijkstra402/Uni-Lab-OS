@@ -1,0 +1,249 @@
+gh_device_650:
+  class:
+    module: unilabos.devices.community.d_650.driver:BasicKinesisDevice
+    type: python
+    action_value_mappings:
+      auto-list_devices:
+        type: UniLabJsonCommand
+        goal:
+          filter_ids: filter_ids
+        feedback: {}
+        result: {}
+        schema:
+          title: list_devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filter_ids:
+                  type: string
+        goal_default:
+          filter_ids: ''
+        handles: {}
+      auto-send_comm:
+        type: UniLabJsonCommand
+        goal:
+          messageID: messageID
+          param1: param1
+          param2: param2
+          source: source
+          dest: dest
+        feedback: {}
+        result: {}
+        schema:
+          title: send_comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messageID:
+                  type: string
+                param1:
+                  type: string
+                param2:
+                  type: string
+                source:
+                  type: string
+                dest:
+                  type: string
+        goal_default:
+          messageID: ''
+          param1: ''
+          param2: ''
+          source: ''
+          dest: ''
+        handles: {}
+      auto-send_comm_data:
+        type: UniLabJsonCommand
+        goal:
+          messageID: messageID
+          data: data
+          source: source
+          dest: dest
+        feedback: {}
+        result: {}
+        schema:
+          title: send_comm_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messageID:
+                  type: string
+                data:
+                  type: string
+                source:
+                  type: string
+                dest:
+                  type: string
+        goal_default:
+          messageID: ''
+          data: ''
+          source: ''
+          dest: ''
+        handles: {}
+      auto-recv_comm:
+        type: UniLabJsonCommand
+        goal:
+          expected_id: expected_id
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: recv_comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                expected_id:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          expected_id: ''
+          timeout: ''
+        handles: {}
+      auto-flush_comm:
+        type: UniLabJsonCommand
+        goal:
+          nmax: nmax
+        feedback: {}
+        result: {}
+        schema:
+          title: flush_comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nmax:
+                  type: string
+        goal_default:
+          nmax: ''
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal:
+          messageID: messageID
+          param1: param1
+          param2: param2
+          source: source
+          dest: dest
+          replyID: replyID
+          flush: flush
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messageID:
+                  type: string
+                param1:
+                  type: string
+                param2:
+                  type: string
+                source:
+                  type: string
+                dest:
+                  type: string
+                replyID:
+                  type: string
+                flush:
+                  type: string
+        goal_default:
+          messageID: ''
+          param1: ''
+          param2: ''
+          source: ''
+          dest: ''
+          replyID: ''
+          flush: ''
+        handles: {}
+      auto-add_background_comm:
+        type: UniLabJsonCommand
+        goal:
+          messageID: messageID
+        feedback: {}
+        result: {}
+        schema:
+          title: add_background_comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messageID:
+                  type: string
+        goal_default:
+          messageID: ''
+        handles: {}
+      auto-check_background_comm:
+        type: UniLabJsonCommand
+        goal:
+          messageID: messageID
+        feedback: {}
+        result: {}
+        schema:
+          title: check_background_comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messageID:
+                  type: string
+        goal_default:
+          messageID: ''
+        handles: {}
+      auto-get_device_info:
+        type: UniLabJsonCommand
+        goal:
+          dest: dest
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dest:
+                  type: string
+        goal_default:
+          dest: ''
+        handles: {}
+      auto-get_number_of_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_number_of_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: T-Cube步进电机控制器
+  description: T-Cube步进电机控制器，用于驱动Thorlabs步进电机平移台、旋转台和执行器（如ZST系列、DRV系列）。提供精确定位和微步进控制，可通过USB连接计算机或独立使用。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: T-Cube步进电机控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  cover: T-Cube步进电机控制器.webp

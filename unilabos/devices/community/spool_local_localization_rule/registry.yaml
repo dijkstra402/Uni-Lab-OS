@@ -1,0 +1,48 @@
+spool_local_localization_rule:
+  class:
+    module: unilabos.devices.generic.rule.spool_local_generic_rule:SpoolLocalLocalizationRule
+    type: python
+    status_types:
+      total_frames: String
+      data_complete: String
+    action_value_mappings:
+      auto-on_data_complete:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: on_data_complete
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: SpoolLocalLocalizationRule
+  category:
+  - generic
+  - rule
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        spooler:
+          type: string
+          default: null
+        seriesName:
+          type: string
+          default: null
+        analysisMetadata:
+          type: string
+          default: null
+        resultsFilename:
+          type: string
+          default: null
+        startAt:
+          type: string
+          default: 0
+        serverfilter:
+          type: string
+          default: woyaochengwei11408gaoshoudeMacBook-Air

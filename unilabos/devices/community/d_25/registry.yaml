@@ -1,0 +1,115 @@
+gh_device_25:
+  class:
+    module: community_drivers.25.driver:OOIProtocol
+    type: python
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal:
+          msg_type: msg_type
+          payload: payload
+          timeout_ms: timeout_ms
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg_type:
+                  type: integer
+                payload:
+                  type: string
+                timeout_ms:
+                  type: string
+        goal_default:
+          msg_type: 0
+          payload: ''
+          timeout_ms: ''
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal:
+          size: size
+          timeout_ms: timeout_ms
+          mode: mode
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size:
+                  type: string
+                timeout_ms:
+                  type: string
+                mode:
+                  type: string
+        goal_default:
+          size: ''
+          timeout_ms: ''
+          mode: ''
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal:
+          msg_type: msg_type
+          payload: payload
+          timeout_ms: timeout_ms
+          size: size
+          mode: mode
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg_type:
+                  type: integer
+                payload:
+                  type: string
+                timeout_ms:
+                  type: string
+                size:
+                  type: string
+                mode:
+                  type: string
+        goal_default:
+          msg_type: 0
+          payload: ''
+          timeout_ms: ''
+          size: ''
+          mode: ''
+        handles: {}
+  name: Ocean Optics HR4000 高分辨率光谱仪
+  description: Ocean Optics HR4000是一款高分辨率微型光纤光谱仪，采用3648元素Toshiba CCD阵列，4英寸焦距光学平台实现最高0.02nm(0.2Å)的光学分辨率。USB2.0连接时直接从主机取电。集成10路可编程数字I/O用于外部设备接口，以及脉冲发生器用于触发。所有光学组件在制造时永久固定。适用于激光波长表征、气体吸收光谱和原子发射线测定等需要解析紧密排列光谱特征的应用。
+  manufacturer: Ocean Optics
+  tags: &id001
+  - 紫外-可见分光光度仪
+  category: *id001
+  model:
+    name: Ocean Optics HR4000 高分辨率光谱仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    探测器: Toshiba TCD1304AP CCD(3648像素)
+    波长范围: 200-1100nm(光栅配置)
+    光学分辨率: 最高0.02nm(0.2Å)FWHM
+    光学结构: 4英寸焦距
+    信噪比: '300:1'
+    动态范围: 3.4×10⁶(系统)/1300:1(单次)
+    积分时间: 3.8ms-10s
+    接口: USB2.0/RS-232
+    品牌: Ocean Optics

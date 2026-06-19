@@ -1,0 +1,148 @@
+julabo_f32_hd:
+  class:
+    module: unilabos.devices.community.julabo_f32_hd.driver:julaboF32HD
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-get_identifier:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identifier
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_thermostat:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_thermostat
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: boolean
+                  default: true
+        goal_default:
+          start: true
+        handles: {}
+      auto-stop_thermostat:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_thermostat
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Discontinued products F32-HL
+  description: JULABO F32-HD制冷加热循环器，HD(Heating Dynamics)增强型，温度范围-35°C至+150°C，温度稳定性±0.01°C，具备快速温度变化能力。该型号已停产。
+  manufacturer: Julabo
+  icon: logo_og.png
+  tags: &id001
+  - 高低温循环装置
+  category: *id001
+  device_params:
+    温度范围: -35°C~+150°C
+    温度稳定性: ±0.01°C
+    加热功率: 2kW
+    制冷功率: ~0.32kW(-20°C)/~0.7kW(20°C)
+    泵流量: 最高~22L/min
+    泵压力: 0.5-0.7bar
+    浴槽容积: ~16L
+    制冷剂: R-507
+    接口: RS232
+    品牌: Julabo
+  model:
+    name: Discontinued products F32-HL
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string

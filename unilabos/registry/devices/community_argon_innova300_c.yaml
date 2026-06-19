@@ -1,0 +1,208 @@
+argon_innova300_c:
+  class:
+    module: unilabos.devices.community.argon_innova300_c.driver:Innova300C
+    type: python
+    status_types:
+      baudrate: str
+      etalon_temperature_setpoint: str
+      magnetic_field_setpoint_high: str
+      powertrack_position: str
+      current_setpoint: str
+      power_setpoint: str
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-faults:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: faults
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_in_start_delay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_in_start_delay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-etalon_temperature_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: etalon_temperature_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-magnetic_field_setpoint_high:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: magnetic_field_setpoint_high
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-powertrack_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: powertrack_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+        goal_default:
+          key: null
+        handles: {}
+      auto-recalibrate_powertrack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: recalibrate_powertrack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-center_powertrack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: center_powertrack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-power_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Coherent Innova 300C 氩离子激光器
+  description: Coherent Innova 300C氩离子激光器的氩气等离子管控制驱动接口，负责管电流和气压监控。多线输出10-25W，TEM00模式。已停产。
+  manufacturer: Coherent
+  icon: argon_innova300_c.webp
+  tags: &id001
+  - 气体激光器
+  category: *id001
+  device_params:
+    波长: 355-1154nm
+    功率: 100mW-10W
+    多线可见光: 457.9-514.5nm
+    多线紫外: 333.4-363.8nm
+    光束质量: M²<1.1(514.5nm)
+    电源: 三相208VAC ±10%, 最大60A/相
+    冷却水: 8.5L/min
+    特性: MotoFreD自动频率双倍
+    品牌: Coherent
+  model:
+    name: Coherent Innova 300C 氩离子激光器
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+        baudrate:
+          default: null
+          type: string

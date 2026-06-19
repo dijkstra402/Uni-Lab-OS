@@ -1,0 +1,80 @@
+gh_hioki_im3536:
+  class:
+    module: community_drivers.gh_hioki_im3536.driver:hiokiIM3536
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-do_lcr_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: do_lcr_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frequency:
+                  type: string
+                parameters:
+                  type: string
+                voltage:
+                  type: integer
+                  default: 1
+                current:
+                  type: number
+                  default: 0.01
+                averaging:
+                  type: string
+        goal_default:
+          frequency: null
+          parameters: null
+          voltage: 1
+          current: 0.01
+          averaging: null
+        handles: {}
+      auto-set_display_items:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_display_items
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                items:
+                  type: string
+        goal_default:
+          items: null
+        handles: {}
+    source: https://github.com/Teslafly/Hioki-IM3536-Lcr-meter-python-IVI-driver
+  name: Hioki IM3536
+  description: Hioki IM3536是高精度LCR表/阻抗分析仪，频率4 Hz至8 MHz，基本精度±0.05%，阻抗范围0.1 mΩ至100 MΩ。
+  manufacturer: Hioki
+  icon: gh_hioki_im3536.webp
+  tags: &id001
+  - 低频介电常数测定仪
+  category: *id001
+  device_params:
+    Type: LCR Meter
+    Frequency: 4 Hz-8 MHz
+    Accuracy: ±0.05%
+    Impedance: 0.1 mΩ-100 MΩ
+    Signal: 10 mV-5 V AC
+    Parameters: Z, Y, θ, Cs, Cp, Ls, Lp, Rs, Rp, G, B, X, D, Q
+    Interfaces: USB, GP-IB, RS-232C, LAN
+    品牌: Hioki
+  model:
+    name: Hioki IM3536
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device

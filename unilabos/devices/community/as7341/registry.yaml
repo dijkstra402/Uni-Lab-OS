@@ -1,0 +1,159 @@
+as7341:
+  class:
+    module: community_drivers.as7341.driver:AS7341
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-load_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                config:
+                  type: string
+        goal_default:
+          config: null
+        handles: {}
+      auto-find_seeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_seeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect_seeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_seeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ser_port_index:
+                  type: integer
+                  default: 0
+        goal_default:
+          ser_port_index: 0
+        handles: {}
+      auto-disconnect_seeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect_seeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-blink:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: blink
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-measure_spectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_spectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                duty_cycle:
+                  type: integer
+                  default: 100
+        goal_default:
+          duty_cycle: 100
+        handles: {}
+      auto-get_raw_spectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_raw_spectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                duty_cycle:
+                  type: integer
+                  default: 100
+        goal_default:
+          duty_cycle: 100
+        handles: {}
+  name: ams OSRAM is a global leader in innovative light and sensor solutions
+  description: 11通道多光谱颜色传感器，纳米光学干涉滤波技术集成到标准CMOS硅，适用于光谱识别、颜色匹配、环境光感测
+  manufacturer: ams-OSRAM
+  icon: as7341.webp
+  tags: &id001
+  - 色度仪
+  category: *id001
+  device_params:
+    光谱范围: 350-1000nm
+    通道: 8个可见光+1个近红外+1个Clear+1个闪烁检测=11通道
+    ADC: 6通道并行+多路复用器
+    滤波: 纳米光学沉积干涉滤波
+    接口: I2C
+    封装: 3.1×2×1mm
+    品牌: ams-OSRAM
+  model:
+    name: ams OSRAM is a global leader in innovative light and sensor solutions
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Analysis
+    step: Spectroscopy
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        index:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        config:
+          default: null
+          type: string

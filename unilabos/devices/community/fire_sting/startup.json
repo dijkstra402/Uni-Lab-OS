@@ -1,0 +1,92 @@
+{
+  "nodes": [
+    {
+      "id": "test_fire_sting",
+      "name": "Test FireSting",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "fire_sting",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": "",
+        "baud": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_fire_sting",
+      "action": "auto-disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_fire_sting",
+      "action": "auto-measure",
+      "action_args": {
+        "measure_temperature": true,
+        "measure_pressure": true,
+        "measure_humidity": true,
+        "decode_status": false
+      }
+    },
+    {
+      "step": 3,
+      "name": "led intensity",
+      "description": "自动补充动作: led_intensity",
+      "device": "test_fire_sting",
+      "action": "auto-led_intensity",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "measure time",
+      "description": "自动补充动作: measure_time",
+      "device": "test_fire_sting",
+      "action": "auto-measure_time",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "amplification",
+      "description": "自动补充动作: amplification",
+      "device": "test_fire_sting",
+      "action": "auto-amplification",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "frequency",
+      "description": "自动补充动作: frequency",
+      "device": "test_fire_sting",
+      "action": "auto-frequency",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "blink",
+      "description": "自动补充动作: blink",
+      "device": "test_fire_sting",
+      "action": "auto-blink",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "FireSting 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "FireSting",
+    "generated_by": "driver-finder"
+  }
+}

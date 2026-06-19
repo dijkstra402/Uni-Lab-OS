@@ -1,0 +1,135 @@
+narda601:
+  class:
+    module: unilabos.devices.community.narda601.driver:Narda601
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-binarytoVm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: binarytoVm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                binary:
+                  type: string
+                  default: !!binary |
+                    VAAAAAA=
+        goal_default:
+          binary: !!binary |
+            VAAAAAA=
+        handles: {}
+      auto-returnstr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: returnstr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                binary:
+                  type: string
+                  default: !!binary |
+                    VAAAAAA=
+        goal_default:
+          binary: !!binary |
+            VAAAAAA=
+        handles: {}
+      auto-decode_example:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: decode_example
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hexes:
+                  type: string
+        goal_default:
+          hexes: null
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ser:
+                  type: string
+                command:
+                  type: string
+        goal_default:
+          ser: null
+          command: null
+        handles: {}
+  name: EMF Monitors
+  description: Narda 区域监视器用于验证电磁场 (EMF) 的安全性和环境兼容性。这些设备适用于需要通过长期监测持续评估电磁辐射的地方。测量电场和/或磁场强度，并自动与国家或国际机构作为标准或指南定义的极限值进行比较。
+    Narda 为此提供了各种长期测量站和测量系统，它们精确地适应了各自的要求，例如户外使用。紧凑型 EMF 监测解决方案，由于具有不同的安装选项和可互换探头，因此非常灵活。它可精确测量高达
+    60 GHz 范围内的射频辐射。宽带区域监控器
+  manufacturer: Narda Safety Test Solutions
+  icon: narda601.webp
+  tags: &id001
+  - 射频与微波测试设备
+  category: *id001
+  device_params:
+    类型: 宽带电磁辐射功率监测仪
+    频率范围: 取决于探头(300kHz-40GHz)
+    显示: 模拟表头
+    用途: RF辐射危害调查/微波泄漏测试/OSHA/FCC合规测试
+    品牌: Narda Safety Test Solutions
+  model:
+    name: EMF Monitors
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Mechanical Testing
+    step: Tensile Testing
+  version: 1.0.0
+  resource_type: device

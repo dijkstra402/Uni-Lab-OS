@@ -1,0 +1,77 @@
+rigol_ds4043:
+  class:
+    module: unilabos.devices.community.rigol_ds4043.driver:RIGOL_DS4043
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-read_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_list:
+                  type: string
+        goal_default:
+          channel_list: null
+        handles: {}
+      auto-readwfm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readwfm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                npoints:
+                  type: string
+        goal_default:
+          channel: null
+          npoints: null
+        handles: {}
+  name: DHO4000
+  description: 作为全球电子测量领域的领导者，RIGOL为全球90多个国家和地区提供测试测量仪器和解决方案。拥有DG70000系列波形发生器、数字示波器等10大产品线，具有高采样率、高带宽等优势。拥有437项发明专利，助您精准测量，应对测试挑战！
+  manufacturer: Rigol
+  icon: rigol_ds4043.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    带宽: 100-500MHz
+    通道: 4模拟+16数字
+    采样率: 4GSa/s
+    存储深度: 140Mpts
+    刷新率: 110,000wfm/s
+    录制: 最多200,000帧
+    品牌: Rigol
+  model:
+    name: DHO4000
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string

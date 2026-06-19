@@ -1,0 +1,231 @@
+modbus_tcp_client:
+  class:
+    module: unilabos.devices.community.modbus_tcp_client.driver:ModbusTcpClient
+    type: python
+    status_types: {}
+    action_value_mappings:
+      read_coils:
+        action_name: read_coils
+        args_info:
+          address:
+            type: str
+          count:
+            type: str
+          slave:
+            type: str
+      read_discrete_inputs:
+        action_name: read_discrete_inputs
+        args_info:
+          address:
+            type: str
+          count:
+            type: str
+          slave:
+            type: str
+      write_coil:
+        action_name: write_coil
+        args_info:
+          address:
+            type: str
+          value:
+            type: str
+          slave:
+            type: str
+      write_coils:
+        action_name: write_coils
+        args_info:
+          address:
+            type: str
+          values:
+            type: str
+          slave:
+            type: str
+      write_register:
+        action_name: write_register
+        args_info:
+          address:
+            type: str
+          value:
+            type: str
+          slave:
+            type: str
+      write_registers:
+        action_name: write_registers
+        args_info:
+          address:
+            type: str
+          values:
+            type: str
+          slave:
+            type: str
+      read_holding_registers:
+        action_name: read_holding_registers
+        args_info:
+          address:
+            type: str
+          count:
+            type: str
+          slave:
+            type: str
+      read_input_registers:
+        action_name: read_input_registers
+        args_info:
+          address:
+            type: str
+          count:
+            type: str
+          slave:
+            type: str
+      readwrite_registers:
+        action_name: readwrite_registers
+        args_info:
+          read_address:
+            type: str
+          read_count:
+            type: str
+          write_address:
+            type: str
+          values:
+            type: str
+          slave:
+            type: str
+      mask_write_register:
+        action_name: mask_write_register
+        args_info:
+          address:
+            type: str
+          and_mask:
+            type: str
+          or_mask:
+            type: str
+          slave:
+            type: str
+      read_device_information:
+        action_name: read_device_information
+        args_info:
+          read_code:
+            type: str
+          object_id:
+            type: str
+      report_slave_id:
+        action_name: report_slave_id
+        args_info:
+          slave:
+            type: str
+      read_exception_status:
+        action_name: read_exception_status
+        args_info:
+          slave:
+            type: str
+      get_com_event_counter:
+        action_name: get_com_event_counter
+      get_com_event_log:
+        action_name: get_com_event_log
+      return_query_data:
+        action_name: return_query_data
+        args_info:
+          message:
+            type: str
+      restart_comm_option:
+        action_name: restart_comm_option
+        args_info:
+          toggle:
+            type: str
+      return_diagnostic_register:
+        action_name: return_diagnostic_register
+        args_info:
+          data:
+            type: str
+      change_ascii_input_delimiter:
+        action_name: change_ascii_input_delimiter
+        args_info:
+          data:
+            type: str
+      force_listen_only_mode:
+        action_name: force_listen_only_mode
+        args_info:
+          data:
+            type: str
+      clear_counters:
+        action_name: clear_counters
+        args_info:
+          data:
+            type: str
+      return_bus_message_count:
+        action_name: return_bus_message_count
+        args_info:
+          data:
+            type: str
+      return_bus_com_error_count:
+        action_name: return_bus_com_error_count
+        args_info:
+          data:
+            type: str
+      return_bus_exception_error_count:
+        action_name: return_bus_exception_error_count
+        args_info:
+          data:
+            type: str
+      return_slave_message_count:
+        action_name: return_slave_message_count
+        args_info:
+          data:
+            type: str
+      return_slave_no_response_count:
+        action_name: return_slave_no_response_count
+        args_info:
+          data:
+            type: str
+      return_slave_no_ack_count:
+        action_name: return_slave_no_ack_count
+        args_info:
+          data:
+            type: str
+      return_slave_busy_count:
+        action_name: return_slave_busy_count
+        args_info:
+          data:
+            type: str
+      return_slave_bus_char_overrun_count:
+        action_name: return_slave_bus_char_overrun_count
+        args_info:
+          data:
+            type: str
+      return_iop_overrun_count:
+        action_name: return_iop_overrun_count
+        args_info:
+          data:
+            type: str
+      clear_overrun_count:
+        action_name: clear_overrun_count
+        args_info:
+          data:
+            type: str
+      get_clear_modbus_plus:
+        action_name: get_clear_modbus_plus
+        args_info:
+          data:
+            type: str
+  description: Modbus TCP Client是由Modbus (Open Standard)生产的专业实验设备。Extended request
+    support
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '45'
+    读取操作: read_coils、read_discrete_inputs、read_holding_registers、read_input_registers、readwrite_registers
+    控制操作: write_coil、write_coils、write_register、write_registers、readwrite_registers
+    通信接口: Modbus、串口
+  manufacturer: Modbus (Open Standard)
+  model:
+    name: Modbus TCP Client
+    type: device
+  name: Modbus Extended request support
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: modbus_tcp_client.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

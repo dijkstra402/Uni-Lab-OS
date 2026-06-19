@@ -1,0 +1,105 @@
+tcpip_connection:
+  class:
+    module: unilabos.devices.community.tcpip_connection.driver:TCPIPConnection
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connection_listener:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connection_listener
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_connection_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connection_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-transmit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transmit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                retries:
+                  type: integer
+        goal_default:
+          retries: 3
+        handles: {}
+  description: Socket-based TCP/IP connection adapter
+  category:
+  - network
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        connection_parameters:
+          type: object
+          default: null

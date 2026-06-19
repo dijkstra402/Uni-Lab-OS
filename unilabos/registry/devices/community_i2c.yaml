@@ -1,0 +1,195 @@
+i2c:
+  class:
+    module: unilabos.devices.community.i2c.driver:i2c
+    type: python
+    status_types:
+      mem_size: String
+      addr: String
+      address: String
+      size: String
+      is_ready: String
+      done: String
+      data: String
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_addr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_addr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_size:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_size
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_done:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_done
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          addr: 0
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+                size:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: I2c是由Open Standard生产的专业实验设备。Auto-imported from basil/HL/i2c.py
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          type: string
+          default: null
+        conf:
+          type: string
+          default: null
+  name: Open Standard I2C
+  manufacturer: Open Standard
+  icon: aio_serial.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '16'
+    读取操作: get_mem_size、get_addr、get_address、get_size、get_done
+    控制操作: reset、start、set_addr、set_address、set_size
+    设备属性数: '1'

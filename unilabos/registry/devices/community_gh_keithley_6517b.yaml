@@ -1,0 +1,293 @@
+gh_keithley_6517b:
+  class:
+    module: unilabos.devices.community.gh_keithley_6517b.driver:Keithley6517B
+    type: python
+    status_types:
+      error: str
+    action_value_mappings:
+      auto-extract_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: extract_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                result:
+                  type: string
+        goal_default:
+          result: null
+        handles: {}
+      auto-enable_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_resistance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_resistance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nplc:
+                  type: integer
+                  default: 1
+                resistance:
+                  type: number
+                  default: 210000.0
+                auto_range:
+                  type: boolean
+                  default: true
+        goal_default:
+          nplc: 1
+          resistance: 210000.0
+          auto_range: true
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nplc:
+                  type: integer
+                  default: 1
+                voltage:
+                  type: number
+                  default: 21.0
+                auto_range:
+                  type: boolean
+                  default: true
+        goal_default:
+          nplc: 1
+          voltage: 21.0
+          auto_range: true
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nplc:
+                  type: integer
+                  default: 1
+                current:
+                  type: number
+                  default: 0.000105
+                auto_range:
+                  type: boolean
+                  default: true
+        goal_default:
+          nplc: 1
+          current: 0.000105
+          auto_range: true
+        handles: {}
+      auto-auto_range_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_range_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-apply_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_range:
+                  type: string
+        goal_default:
+          voltage_range: null
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ramp_to_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_to_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_voltage:
+                  type: string
+                steps:
+                  type: integer
+                  default: 30
+                pause:
+                  type: number
+                  default: 0.02
+        goal_default:
+          target_voltage: null
+          steps: 30
+          pause: 0.02
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-trigger_immediately:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger_immediately
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-trigger_on_bus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger_on_bus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: Keithley 6517B
+  description: Keithley 6517B静电计/高阻表，集成电压、电流、电阻和电荷四种测量。电流范围1fA至20mA，输入阻抗超200TΩ，电阻测量可达10^16Ω。内置±1kV可编程电压源，支持交替极性电阻测量法。最高425读数/秒，GPIB和RS-232接口，适用于高阻材料表征、绝缘电阻测试及半导体漏电流测量。
+  manufacturer: Tektronix
+  icon: 404_image.png?h=252&w=334
+  tags: &id001
+  - 电表与万用表
+  category: *id001
+  device_params:
+    参数: Digital Multimeters Data Acquisition and Switching Low-level Instrument/Sensitive
+      and Specialty Instruments; Low-level Instrument/Sensitive and Specialty Instruments;
+      EA Elektro-Automatik Products; Multi-Brand Compliant Calibration; Multi-Brand
+      Service Request ⇨; Environmental Testing HALT & HASS Testing NEMA Compliance
+      Testing Package Testing Shock-Vibration Testing; Shock-Vibration Testing; EA
+      Elektro-Automatik Service; EA Elektro-Automatik Support FAQs Support Center
+      Technical Support; EA Elektro-Automatik Support; EA Elektro-Automatik; 1-800-833-9200;
+      Call us at 1-800-833-9200
+    品牌: Keithley
+  model:
+    name: Keithley 6517B
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string

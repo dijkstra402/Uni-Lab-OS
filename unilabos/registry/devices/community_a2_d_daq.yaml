@@ -1,0 +1,265 @@
+a2_d_daq:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-calibrate_pullup_v:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                cal_ch:
+                  type: string
+              type: object
+          title: calibrate_pullup_v
+          type: object
+        type: UniLabJsonCommand
+      auto-conf_io:
+        feedback: {}
+        goal: {}
+        goal_default:
+          channel: 0
+          dir: 1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                channel:
+                  type: string
+                dir:
+                  type: string
+              type: object
+          title: conf_io
+          type: object
+        type: UniLabJsonCommand
+      auto-configure_from_dict:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: configure_from_dict
+          type: object
+        type: UniLabJsonCommand
+      auto-initialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: initialize
+          type: object
+        type: UniLabJsonCommand
+      auto-measure_temperature:
+        feedback: {}
+        goal: {}
+        goal_default:
+          channel: 0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                channel:
+                  type: string
+              type: object
+          title: measure_temperature
+          type: object
+        type: UniLabJsonCommand
+      auto-measure_voltage:
+        feedback: {}
+        goal: {}
+        goal_default:
+          channel: 0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                channel:
+                  type: string
+              type: object
+          title: measure_voltage
+          type: object
+        type: UniLabJsonCommand
+      auto-reset:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: reset
+          type: object
+        type: UniLabJsonCommand
+      auto-set_dig:
+        feedback: {}
+        goal: {}
+        goal_default:
+          channel: 0
+          value: 0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                channel:
+                  type: string
+                value:
+                  type: string
+              type: object
+          title: set_dig
+          type: object
+        type: UniLabJsonCommand
+      auto-set_led:
+        feedback: {}
+        goal: {}
+        goal_default:
+          value: 0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                value:
+                  type: string
+              type: object
+          title: set_led
+          type: object
+        type: UniLabJsonCommand
+      auto-set_read_delay_ms:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                delay_ms:
+                  type: string
+              type: object
+          title: set_read_delay_ms
+          type: object
+        type: UniLabJsonCommand
+      auto-get_pullup_v:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pullup_v
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_analog_mv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analog_mv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: 0
+        handles: {}
+      auto-get_analog_v:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analog_v
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: 0
+        handles: {}
+      auto-get_dig_in:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_dig_in
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: 0
+        handles: {}
+    module: unilabos.devices.community.a2_d_daq.driver:A2D_DAQ
+    status_types:
+      analog_mv: String
+      analog_v: String
+      dig_in: String
+      pullup_v: String
+    type: python
+  config_info: []
+  description: A/D DAQ Module是由A/D Instruments生产的表征设备，主要功能包括初始化、参数配置、复位、日志记录、校准、测量。支持Signal,
+    Slot, conf io等操作。
+  handles: []
+  icon: a2_d_daq.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    功能: 参数配置、数据采集、温度控制、电学测量
+    可控参数: cal_ch、通道、delay_ms、dir、value
+    操作数: 14
+  manufacturer: A/D Instruments
+  model:
+    name: Generic A/D DAQ Module 数据采集模块
+    type: device
+  name: A/D DAQ
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

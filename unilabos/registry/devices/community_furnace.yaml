@@ -1,0 +1,76 @@
+furnace:
+  class:
+    module: unilabos.devices.community.furnace.driver:furnace
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-SetTemp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetTemp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                setpoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-QueryTemp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: QueryTemp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ChangeAddress:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ChangeAddress
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_address:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ReportStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ReportStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: A class for the tube furnace in the system
+  category:
+  - furnace
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          type: string
+          default: null

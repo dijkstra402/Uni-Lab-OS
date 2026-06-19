@@ -1,0 +1,102 @@
+crsf_joy_bridge:
+  class:
+    module: unilabos.devices.generic.crsf_joy_bridge:CrsfJoyBridge
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-start_serial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_serial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-serial_reader:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: serial_reader
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-handle_crsf_packet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: handle_crsf_packet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ptype:
+                  type: integer
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-publish_joy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: publish_joy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-destroy_node:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: destroy_node
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Crsf JOY Bridge是一款实验执行&合成设备，主要功能包括启动、读取数据。支持Signal, Slot, crc8 data等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '5'
+    读取操作: serial_reader
+    控制操作: start_serial
+    通信接口: 串口(RS-232)
+  manufacturer: Open Source
+  model:
+    name: Crsf JOY Bridge
+    type: device
+  name: Enumeration of CRSF packet types
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

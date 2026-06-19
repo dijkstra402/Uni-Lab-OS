@@ -1,0 +1,79 @@
+gh_maccor_macnet:
+  class:
+    module: unilabos.devices.community.gh_maccor_macnet.driver:ChannelData
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-fetch_channel_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fetch_channel_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-update_channel_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_channel_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                updated_status:
+                  type: string
+        goal_default:
+          channel: null
+          updated_status: null
+        handles: {}
+    source: https://github.com/battery-data-alliance/pymacnet
+  name: Next Generation Battery Tester
+  description: Arbin 的下一代实验室电池测试 (LBT) 系列提供业界领先的 24 位分辨率和高精度测量。阅读更多2 页 Arbin 的下一代实验室电池测试
+    (LBT) 系列提供业界领先的 24 位分辨率和高精度测量。阅读更多 2022 年 7 月 21 日 — CELLTRON™ Advantage Digital
+    是一款快速、用户友好的优质手持式测试仪，用于测量电池电导、电压、温度和...阅读更多
+  manufacturer: Maccor
+  icon: Logo.png
+  tags: &id001
+  - 电池测试设备
+  category: *id001
+  device_params:
+    Type: Battery cycler
+    Voltage: 0-5V/channel
+    Current: up to 150A
+    Channels: 16-96
+    Modes: CC, CV, CP, CCCV
+    Software: MacNotify
+    Communication: Ethernet
+    Accuracy: ±0.02% FSR
+    品牌: Maccor
+  model:
+    name: Next Generation Battery Tester
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Battery Testing
+    step: Cycling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        num_channels:
+          default: null
+          type: string

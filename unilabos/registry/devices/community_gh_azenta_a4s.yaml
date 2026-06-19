@@ -1,0 +1,60 @@
+gh_device_gh_azenta_a4s:
+  name: Azenta a4S
+  description: 我们的网站已经搬迁，并且焕然一新。请按照导航菜单进入新页面
+  manufacturer: Azenta
+  tags: &id001
+  - 深低温冰箱
+  category: *id001
+  model:
+    name: Azenta a4S
+    type: device
+  version: 1.0.0
+  resource_type: device
+  class:
+    module: unilabos.devices.community.gh_azenta_a4s.driver:A4S_SEALER_DRIVER
+    type: python
+    status_types: {}
+    action_value_mappings:
+      connect_sealer:
+        action_name: connect_sealer
+      get_status:
+        action_name: get_status
+        args_info:
+          time_wait:
+            type: str
+      send_command:
+        action_name: send_command
+        args_info:
+          command:
+            type: str
+          success_msg:
+            type: str
+          err_msg:
+            type: str
+          timeout:
+            type: str
+      reset:
+        action_name: reset
+      open_gate:
+        action_name: open_gate
+      close_gate:
+        action_name: close_gate
+      set_temp:
+        action_name: set_temp
+        args_info:
+          temp:
+            type: str
+      set_time:
+        action_name: set_time
+        args_info:
+          time:
+            type: str
+      seal:
+        action_name: seal
+      config_robot:
+        action_name: config_robot
+        args_info:
+          temp:
+            type: str
+          time:
+            type: str

@@ -1,0 +1,91 @@
+register_interface:
+  class:
+    module: unilabos.devices.community.register_interface.driver:RegisterInterface
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-is_connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Register Interface是一款实验执行&合成设备，主要功能包括写入数据、设备连接、读取数据。支持Signal, Slot,
+    format to int等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '5'
+    读取操作: get_device、read
+    控制操作: write
+    通信接口: 串口(RS-232)
+  manufacturer: Open Source
+  model:
+    name: Register Interface
+    type: device
+  name: Communication interface for the FPGA
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

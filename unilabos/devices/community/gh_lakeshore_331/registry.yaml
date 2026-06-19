@@ -1,0 +1,131 @@
+gh_lakeshore_331:
+  class:
+    module: community_drivers.gh_lakeshore_331.driver:LakeShore421
+    type: python
+    status_types:
+      field: str
+      field_range: str
+      max_hold_field: str
+      relative_field: str
+      relative_setpoint: str
+      alarm_low: str
+      alarm_high: str
+    action_value_mappings:
+      auto-zero_probe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: zero_probe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-max_hold_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: max_hold_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-delay_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delay_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: Model 331 Cryogenic Temperature Controller
+  description: LakeShore Model 331是双输入低温温度控制器，温度范围1.4K至800K，分辨率±0.001K，最大加热功率50W。
+  manufacturer: Lake Shore
+  icon: gh_lakeshore_331.webp
+  tags: &id001
+  - 冷热源
+  category: *id001
+  device_params:
+    Type: Dual-input cryo controller
+    Inputs: '2'
+    Sensors: Si diodes, Pt RTDs, Cernox, Ge, thermocouples
+    Range: 1.4K-800K
+    Resolution: ±0.001K
+    Output: 1 loop 50W
+    Heater: 0.5/5/50W
+    Control: PID
+    Interface: GPIB, RS-232
+    品牌: Lake Shore
+  model:
+    name: Model 331 Cryogenic Temperature Controller
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        baud_rate:
+          default: null
+          type: string

@@ -1,0 +1,214 @@
+gh_zahner_zennium:
+  class:
+    module: community_drivers.gh_zahner_zennium.driver:ThalesRemoteConnection
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connectToTerm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connectToTerm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                connection_name:
+                  type: string
+                  default: ScriptRemote
+        goal_default:
+          address: null
+          connection_name: ScriptRemote
+        handles: {}
+      auto-sendall:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendall
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default:
+          data: null
+        handles: {}
+      auto-readall:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readall
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                numBytes:
+                  type: integer
+        goal_default:
+          numBytes: null
+        handles: {}
+      auto-getConnectionName:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getConnectionName
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnectFromTerm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnectFromTerm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-isConnectedToTerm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isConnectedToTerm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sendTelegram:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendTelegram
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                payload:
+                  type: string
+                message_type:
+                  type: integer
+                timeout:
+                  type: string
+        goal_default:
+          payload: null
+          message_type: null
+          timeout: null
+        handles: {}
+      auto-waitForBinaryTelegram:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waitForBinaryTelegram
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message_type:
+                  type: integer
+                  default: 2
+                timeout:
+                  type: string
+        goal_default:
+          message_type: 2
+          timeout: null
+        handles: {}
+      auto-waitForStringTelegram:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waitForStringTelegram
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message_type:
+                  type: integer
+                  default: 2
+                timeout:
+                  type: string
+        goal_default:
+          message_type: 2
+          timeout: null
+        handles: {}
+      auto-sendStringAndWaitForReplyString:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendStringAndWaitForReplyString
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                payload:
+                  type: string
+                message_type:
+                  type: integer
+                timeout:
+                  type: string
+                answer_message_type:
+                  type: integer
+        goal_default:
+          payload: null
+          message_type: null
+          timeout: null
+          answer_message_type: null
+        handles: {}
+    source: https://github.com/Zahner-elektrik/Thales-Remote-Python
+  name: Precision, flexibility, reliability, and performance
+  description: Zahner 提供高精度恒电位仪，用于电化学（即电池和燃料电池研究）和光电化学的不同领域。
+  manufacturer: Zahner
+  icon: 1767872287_im7x_front.png.jpg
+  tags: &id001
+  - 恒电位仪
+  category: *id001
+  device_params:
+    Compact Potentiostat: IM7c
+    品牌: Zahner
+  model:
+    name: Precision, flexibility, reliability, and performance
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device

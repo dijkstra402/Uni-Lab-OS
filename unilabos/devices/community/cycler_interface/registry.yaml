@@ -1,0 +1,38 @@
+cycler_interface:
+  class:
+    module: unilabos.devices.devices.arbin_cycler.arbin_cycler_interface:CyclerInterface
+    type: python
+    status_types:
+      num_channels: String
+      login_feedback: String
+    action_value_mappings:
+      auto-read_channel_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_channel_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default: {}
+        handles: {}
+  description: Class for interfacing with Arbin battery cycler at a cycler level
+  category:
+  - devices
+  - arbin_cycler
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        config:
+          type: object
+          default: null
+        env_path:
+          type: string
+          default: /Users/sml/work/test/Unilab_副本/Uni-Lab-OS/.env

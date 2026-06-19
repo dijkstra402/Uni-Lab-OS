@@ -1,0 +1,96 @@
+aguc2:
+  class:
+    module: community_drivers.aguc2.driver:AGUC2
+    type: python
+    status_types:
+      axis: str
+      enable_remote_mode: str
+      error_previous_command: str
+      firmware_version: str
+      limit_status: str
+      sleep_time: str
+    action_value_mappings:
+      auto-reset_controller:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_controller
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ag_sendcmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ag_sendcmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-ag_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ag_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                size:
+                  type: string
+        goal_default:
+          cmd: null
+          size: null
+        handles: {}
+  name: Motor Controller, Piezo, 2 Axis, Agilis™, Hand-held
+  description: 紧凑型双轴压电运动控制器，50nm增量精度，USB供电/通信。在售。
+  manufacturer: Newport
+  icon: aguc2.webp
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  device_params:
+    Axes: '2'
+    Step Resolution: 50nm
+    Interface: USB Type-A
+    Connector: 4-pin Mini DIN
+    Power: USB
+    Speed: 5/100/1700 steps/s (3 levels)
+    Motor: non-resonant piezo stepper
+    品牌: Newport
+  model:
+    name: Motor Controller, Piezo, 2 Axis, Agilis™, Hand-held
+    type: device
+  scene:
+    domain: Automation
+    scene_name: Robotics
+    step: Material Handling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+  cover: Motor Controller, Piezo, 2 Axis, Agilis™, Hand-held.webp

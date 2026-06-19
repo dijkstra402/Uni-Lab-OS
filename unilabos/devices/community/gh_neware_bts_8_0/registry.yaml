@@ -1,0 +1,323 @@
+gh_neware_bts_8_0:
+  class:
+    module: community_drivers.gh_neware_bts_8_0.driver:NewareAPI
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_pipeline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pipeline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_id:
+                  type: string
+        goal_default:
+          pipeline_id: null
+        handles: {}
+      auto-command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_ids:
+                  type: string
+                sample_ids:
+                  type: string
+                xml_files:
+                  type: string
+                save_location:
+                  type: string
+        goal_default:
+          pipeline_ids: null
+          sample_ids: null
+          xml_files: null
+          save_location: null
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_ids:
+                  type: string
+        goal_default:
+          pipeline_ids: null
+        handles: {}
+      auto-getchlstatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getchlstatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_ids:
+                  type: string
+        goal_default:
+          pipeline_ids: null
+        handles: {}
+      auto-inquire:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: inquire
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_ids:
+                  type: string
+        goal_default:
+          pipeline_ids: null
+        handles: {}
+      auto-inquiredf:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: inquiredf
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_ids:
+                  type: string
+        goal_default:
+          pipeline_ids: null
+        handles: {}
+      auto-downloadlog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: downloadlog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_id:
+                  type: string
+        goal_default:
+          pipeline_id: null
+        handles: {}
+      auto-download:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: download
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_id:
+                  type: string
+                last_n_points:
+                  type: integer
+                  default: 10000
+        goal_default:
+          pipeline_id: null
+          last_n_points: 10000
+        handles: {}
+      auto-getdevinfo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getdevinfo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-light:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: light
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_ids:
+                  type: string
+                light_on:
+                  type: boolean
+                  default: true
+        goal_default:
+          pipeline_ids: null
+          light_on: true
+        handles: {}
+      auto-clearflag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clearflag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_ids:
+                  type: string
+        goal_default:
+          pipeline_ids: null
+        handles: {}
+      auto-get_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_id:
+                  type: string
+        goal_default:
+          pipeline_id: null
+        handles: {}
+      auto-get_testid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_testid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipeline_ids:
+                  type: string
+        goal_default:
+          pipeline_ids: null
+        handles: {}
+    source: https://github.com/EmpaEconversion/aurora-neware
+  name: Neware BTS 8.0系列
+  description: Neware BTS 8.0新一代电池测试系统，基于BTS 8.0升级版控制软件平台，具备更优的界面设计和数据管理能力。支持锂离子、磷酸铁锂、钠离子等多种电池类型的高精度充放电测试。高采样频率和快速脉冲测试能力，模块化架构支持大规模通道扩展。集成环境箱联动和集中式数据库管理，适用于电池研发、化成分容和循环寿命测试。
+  manufacturer: Neware
+  icon: 76SHPfje.png
+  tags: &id001
+  - 电池测试设备
+  category: *id001
+  device_params:
+    Voltage: 0-5V/channel (up to 60V+)
+    Current: mA to 300A
+    Channels: 8-16/unit
+    Accuracy: ±0.05% FSR
+    Modes: CC, CV, CP, CR
+    Functions: cycle, pulse, DCIR
+    Software: BTS 8.0
+    Communication: Ethernet
+    品牌: Neware
+  model:
+    name: Neware BTS 8.0系列
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Battery Testing
+    step: Cycling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ip:
+          default: null
+          type: string
+        port:
+          default: null
+          type: integer

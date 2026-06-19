@@ -1,0 +1,34 @@
+gh_device_430:
+  class:
+    module: community_drivers.430.driver:Dwyer16C
+    type: python
+    action_value_mappings:
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal:
+          message: message
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default:
+          message: ''
+        handles: {}
+  name: Dwyer 16C系列1/16 DIN温度控制器
+  description: Dwyer 16C系列是一款紧凑型1/16 DIN温度控制器，具备精确的温度测量与控制功能。支持多种热电偶和RTD输入，可编程为简单ON/OFF或复杂PID控制模式，配备自动整定功能。双LED显示器可同时显示过程值和设定值，内置2路报警输出。适用于食品设备、环境试验箱和包装设备等应用。该产品已停产。
+  manufacturer: Dwyer
+  tags: &id001
+  - 冷热源
+  category: *id001
+  model:
+    name: Dwyer 16C系列1/16 DIN温度控制器
+    type: device
+  version: 1.0.0
+  resource_type: device

@@ -1,0 +1,245 @@
+gh_cincinnati_sub_zero_ezt_570i:
+  class:
+    module: unilabos.devices.community.gh_cincinnati_sub_zero_ezt_570i.driver:Chamber
+    type: python
+    status_types:
+      light: str
+      temperature: str
+      profile_control_status: str
+      profile_current_step: str
+      alarms: str
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg_name:
+                  type: string
+        goal_default:
+          reg_name: null
+        handles: {}
+      auto-set_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg_name:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          reg_name: null
+          value: null
+        handles: {}
+      auto-print_read_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_read_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start_reg:
+                  type: string
+                values:
+                  type: string
+        goal_default:
+          start_reg: null
+          values: null
+        handles: {}
+      auto-print_all_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_all_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project_file:
+                  type: string
+        goal_default:
+          project_file: null
+        handles: {}
+      auto-start_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project_file:
+                  type: string
+        goal_default:
+          project_file: null
+        handles: {}
+      auto-stop_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_chamber:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_chamber
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-toggle_light:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_light
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                toggles:
+                  type: string
+        goal_default:
+          toggles: null
+        handles: {}
+      auto-log_a_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: log_a_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                header:
+                  type: string
+                my_dict:
+                  type: string
+        goal_default:
+          header: null
+          my_dict: null
+        handles: {}
+    source: https://github.com/johnstile/chamber_EZT570i
+  name: EZT-570 Touch Screen Controller
+  description: 我们的 EZT-570 触摸屏采用智能手机技术提供最新的测试室控制，易于使用。 ...阅读更多 我们的 EZT-570 触摸屏采用智能手机技术提供最新的测试室控制，易于使用。节省时间的功能内置于...阅读更多
+    缺少：规格‎|显示结果：规格
+  manufacturer: Cincinnati Sub-Zero
+  icon: gh_cincinnati_sub_zero_ezt_570i.webp
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  device_params:
+    Type: Environmental test chamber
+    Controller: EZT-570i touchscreen
+    Temperature: -73°C to +190°C
+    Humidity: 20-95% RH
+    Communication: Ethernet, USB
+    Features: web-based monitoring
+    品牌: Cincinnati Sub-Zero
+  model:
+    name: EZT-570 Touch Screen Controller
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Culture
+    step: Incubation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        log:
+          default: null
+          type: string
+        comm_params:
+          default: null
+          type: string

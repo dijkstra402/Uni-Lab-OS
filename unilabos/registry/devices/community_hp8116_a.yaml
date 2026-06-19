@@ -1,0 +1,51 @@
+hp8116_a:
+  class:
+    module: unilabos.devices.community.hp8116_a.driver:HP8116A
+    type: python
+    status_types:
+      frequency: str
+      shape: str
+      amplitude: str
+      offset: str
+      setup: str
+    action_value_mappings:
+      auto-state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: HP 8116A 50 MHz Pulse/Function Generator
+  description: 50MHz全可编程脉冲/函数发生器，6ns边沿，10ns最小脉宽，集成脉冲和函数发生器双功能。已停产。
+  manufacturer: Keysight
+  icon: hp8116_a.webp
+  tags: &id001
+  - 信号源与发生器
+  category: *id001
+  device_params:
+    Freq: 1mHz~50MHz (all waveforms)
+    Waveforms: sine/tri/ramp/square/pulse/haversine/DC
+    Amplitude: 32Vpp(open), 16Vpp(50Ω)
+    Rise/Fall: 6ns
+    Min Pulse Width: 10ns
+    Duty Cycle: 10-90%
+    Modulation: FM/AM/PWM/VCO
+    Interface: HP-IB(GPIB)
+    品牌: Keysight
+  model:
+    name: HP 8116A 50 MHz Pulse/Function Generator
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device

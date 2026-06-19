@@ -1,0 +1,73 @@
+gh_device_410:
+  class:
+    module: unilabos.devices.community.d_410.driver:Keithley6220
+    type: python
+    action_value_mappings:
+      auto-channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-voltage:
+        type: UniLabJsonCommand
+        goal:
+          newval: newval
+        feedback: {}
+        result: {}
+        schema:
+          title: voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                newval:
+                  type: string
+        goal_default:
+          newval: ''
+        handles: {}
+      auto-disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Keithley 2182A 双通道纳伏表
+  description: Keithley 2182A是一款双通道7½位高性能数字纳伏表，专为稳定、低噪声电压测量和低电阻材料表征而优化。提供比替代方案更高的测量速度和显著更好的噪声性能。简化的Delta模式可配合6220/6221可逆电流源进行电阻测量，最低可达10nΩ。内置热电偶线性化和冷端补偿功能，支持电压、温度和电阻比测量。适用于纳米技术等低功耗器件测量应用。
+  manufacturer: Tektronix
+  tags: &id001
+  - 电表与万用表
+  category: *id001
+  model:
+    name: Keithley 2182A 双通道纳伏表
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    灵敏度: 1nV
+    电压范围: 1nV-100V
+    通道数: '2'
+    分辨率: 7½位
+    噪声: ~15nV峰峰值@1s
+    缓冲区: 1024读数
+    温度范围: -200°C至1820°C
+    Delta模式电阻: 10nΩ-200MΩ
+    品牌: Tektronix
+  cover: Keithley 2182A 双通道纳伏表.webp

@@ -1,0 +1,53 @@
+mi6960:
+  class:
+    module: unilabos.devices.community.mi6960.driver:MI6960
+    type: python
+    status_types:
+      settings: str
+      calfactor: str
+      offset: str
+      linearityfactor: str
+      averages: str
+      reference: str
+      power: str
+    action_value_mappings:
+      auto-calibrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Marconi 6960B RF功率计
+  description: Marconi Instruments 6960射频功率计，单通道设计，配合6900系列功率探头覆盖宽频段微波功率精密测量。原厂已被Viavi
+    Solutions收购。
+  manufacturer: Marconi Instruments
+  icon: mi6960.webp
+  tags: &id001
+  - 射频与微波测试设备
+  category: *id001
+  device_params:
+    类型: 单通道RF功率计
+    动态范围: -70dBm~+20dBm(取决于探头)
+    显示单位: dBm/Watts
+    校准: 内建参考校准振荡器
+    自动调零: 支持
+    接口: GPIB(IEEE-488)
+    兼容探头: 6910(10MHz-20GHz)/6920(10MHz-40GHz)/6932(热电偶型)
+    品牌: Marconi Instruments
+  model:
+    name: Marconi 6960B RF功率计
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device

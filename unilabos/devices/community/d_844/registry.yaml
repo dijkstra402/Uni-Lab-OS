@@ -1,0 +1,173 @@
+gh_device_844:
+  class:
+    module: community_drivers.844.driver:Keithley2510
+    type: python
+    action_value_mappings:
+      auto-temperature_protection_range:
+        type: UniLabJsonCommand
+        goal:
+          temp_range: temp_range
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature_protection_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp_range:
+                  type: string
+        goal_default:
+          temp_range: ''
+        handles: {}
+      auto-temperature_pid:
+        type: UniLabJsonCommand
+        goal:
+          pid_consts: pid_consts
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature_pid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pid_consts:
+                  type: string
+        goal_default:
+          pid_consts: ''
+        handles: {}
+      auto-enable_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enable_temperature_protection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_temperature_protection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable_temperature_protection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_temperature_protection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_temperature_stability:
+        type: UniLabJsonCommand
+        goal:
+          tolerance: tolerance
+          period: period
+          points: points
+        feedback: {}
+        result: {}
+        schema:
+          title: check_temperature_stability
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tolerance:
+                  type: string
+                period:
+                  type: string
+                points:
+                  type: string
+        goal_default:
+          tolerance: ''
+          period: ''
+          points: ''
+        handles: {}
+      auto-wait_for_temperature_stable:
+        type: UniLabJsonCommand
+        goal:
+          tolerance: tolerance
+          period: period
+          should_stop: should_stop
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_temperature_stable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tolerance:
+                  type: string
+                period:
+                  type: string
+                should_stop:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          tolerance: ''
+          period: ''
+          should_stop: ''
+          timeout: ''
+        handles: {}
+  name: Keithley 2510 TEC源表
+  description: Keithley 2510是专用热电冷却器（TEC）控制源表，提供±5A双极性电流输出用于加热和制冷，支持多种温度传感器，PID闭环控制可实现毫开尔文级温度稳定性，广泛应用于激光二极管和光学元件测试。
+  manufacturer: Tektronix
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  model:
+    name: Keithley 2510 TEC源表
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    TEC电流: ±5A
+    顺从电压: ±10V
+    电流分辨率: 50µA
+    温度传感器: 热敏电阻/RTD/LM335
+    控制模式: PID闭环
+    温度稳定性: ±0.001°C
+    接口: GPIB,RS-232
+    品牌: Tektronix

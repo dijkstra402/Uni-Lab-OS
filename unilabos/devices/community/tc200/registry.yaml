@@ -1,0 +1,66 @@
+tc200:
+  class:
+    module: community_drivers.tc200.driver:TC200
+    type: python
+    status_types:
+      mode: str
+      enable: str
+      status: str
+      temperature_set: str
+      p: str
+      i: str
+      d: str
+      pid: str
+      degrees: str
+    action_value_mappings:
+      auto-name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Thorlabs TC200 Temperature Controller
+  description: 台式温度控制器，18W加热功率，PID控制，5段循环模式，RS-232/USB远程控制。在售。
+  manufacturer: Thorlabs
+  icon: tc200.webp
+  tags: &id001
+  - 低温温度控制器
+  category: *id001
+  device_params:
+    Range: 20.0~200.0°C
+    Resolution: 0.1°C
+    Stability(24h): ±0.1°C
+    DC Power: 18W
+    Current: 750mA
+    Sensors: PT100/PT1000/TH10K
+    Units: °C/°F/K
+    PID: programmable
+    Cycle: 5 steps
+    Interface: RS-232, USB-B
+    Size: 292×135×76mm
+    Weight: 2.27kg
+    品牌: Thorlabs
+  model:
+    name: Thorlabs TC200 Temperature Controller
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Stirring
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

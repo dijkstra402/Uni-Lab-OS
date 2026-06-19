@@ -1,0 +1,73 @@
+ux_rxxx4_a:
+  class:
+    module: unilabos.devices.community.ux_rxxx4_a.driver:UXR
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-measureStatistics:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measureStatistics
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setupAutoscale:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setupAutoscale
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+  name: Pro Benchtop Oscilloscopes
+  description: Keysight Infiniium UXR系列实时示波器，提供业界领先的信号完整性，带宽高达110 GHz，适用于高速数字、光通信和射频信号分析。支持多通道同步采集，具有超低噪声底和精确的时域测量能力。
+  manufacturer: Keysight
+  icon: ux_rxxx4_a.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    通道: '4'
+    带宽: 8-33GHz
+    采样率: 128GSa/s
+    ADC: 12位
+    品牌: Keysight
+  model:
+    name: Pro Benchtop Oscilloscopes
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        resource:
+          default: null
+          type: string
+        maxChannel:
+          default: null
+          type: string
+        wait:
+          default: null
+          type: string
+  cover: Pro Benchtop Oscilloscopes (ux_rxxx4_a).webp

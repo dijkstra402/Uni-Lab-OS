@@ -1,0 +1,107 @@
+sensirion_ekh4:
+  class:
+    module: unilabos.devices.community.sensirion_ekh4.driver:sensirionEKH4
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_humidity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_humidity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_dew_point:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_dew_point
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+  name: Sensirion
+  description: Sensirion EK-H4是4通道温度湿度传感器评估套件，USB连接PC，安装EKS4 Viewer软件。由SEK-SHT4x系列替代。
+  manufacturer: Sensirion AG
+  icon: sensirion_ekh4.webp
+  tags: &id001
+  - 冷热水机
+  category: *id001
+  device_params:
+    通道: 4路同时读取
+    接口: USB
+    软件: EKS4 Viewer
+    兼容: SHT1x/SHT2x/SHT3x系列传感器
+    精度: ±2%RH, ±0.3°C(典型)
+    湿度: 0-100%RH
+    温度: -40至+125°C
+    状态: '旧款(替代: SEK-SHT4x)'
+    品牌: Sensirion AG
+  model:
+    name: Sensirion
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string

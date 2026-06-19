@@ -1,0 +1,73 @@
+gh_omega_iseries:
+  class:
+    module: community_drivers.gh_omega_iseries.driver:OmegaIseriesModbus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bytes:
+                  type: string
+        goal_default:
+          bytes: null
+        handles: {}
+      auto-update_state:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/yaq-project/yaqd-omega
+  name: OMEGA iSeries Temperature/Process Controller
+  description: DwyerOmega 提供全面的工业传感、监测和控制解决方案，旨在提高各种应用的效率和精度。今天就来看看我们的产品吧！
+  manufacturer: Omega Engineering
+  icon: burns-banner-prodImg.png
+  tags: &id001
+  - 冷热源
+  category: *id001
+  device_params:
+    参数: Connect With Us Technology ClubGet our latest articles straight into your
+      inbox!Join clubLeave your website feedback; Technology ClubGet our latest articles
+      straight into your inbox!Join club; Get our latest articles straight into your
+      inbox!Join club
+    品牌: Omega
+  model:
+    name: OMEGA iSeries Temperature/Process Controller
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        config:
+          default: null
+          type: string
+        config_filepath:
+          default: null
+          type: string

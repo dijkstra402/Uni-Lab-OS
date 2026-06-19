@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "test_mfc",
+      "name": "Test MFC",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "mfc",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "address": "127.0.0.1",
+        "port": 1502
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_mfc",
+      "action": "auto-QueryOpMode",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_mfc",
+      "action": "auto-QueryFlow",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "SetFlow",
+      "description": "自动补充动作: SetFlow",
+      "device": "test_mfc",
+      "action": "auto-SetFlow",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "ChangeAddress",
+      "description": "自动补充动作: ChangeAddress",
+      "device": "test_mfc",
+      "action": "auto-ChangeAddress",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "MFC 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "MFC",
+    "generated_by": "driver-finder"
+  }
+}

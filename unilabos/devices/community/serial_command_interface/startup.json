@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "test_serial_command_interface",
+      "name": "Test SerialCommandInterface",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "serial_command_interface",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "serialName": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_serial_command_interface",
+      "action": "auto-waitForReplyString",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "sendStringAndWaitForReplyString",
+      "description": "自动补充动作: sendStringAndWaitForReplyString",
+      "device": "test_serial_command_interface",
+      "action": "auto-sendStringAndWaitForReplyString",
+      "action_args": {
+        "commandType": "CommandType.COMMAND"
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "SerialCommandInterface 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "SerialCommandInterface",
+    "generated_by": "driver-finder"
+  }
+}

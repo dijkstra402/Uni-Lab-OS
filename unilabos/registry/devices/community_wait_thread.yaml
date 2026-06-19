@@ -1,0 +1,58 @@
+wait_thread:
+  class:
+    module: unilabos.devices.community.wait_thread.driver:WaitThread
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Wait Thread是一款实验执行&合成设备，主要功能包括停止、关闭、启动、扫描、日志记录、设备连接。支持Signal, Slot,
+    inputTaskDone等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '13'
+    读取操作: readInputTask
+    控制操作: startInputTask、setDigital、setAnalog、stopTask
+    运动操作: runScan、scanDone
+    控制能力: 时间、电压、电流
+  manufacturer: Open Source
+  model:
+    name: Wait Thread
+    type: device
+  name: For interaction with NI-DAQ hardware interfaces
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

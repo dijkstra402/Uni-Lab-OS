@@ -1,0 +1,120 @@
+lcc25:
+  class:
+    module: community_drivers.lcc25.driver:LCC25
+    type: python
+    status_types:
+      name: str
+    action_value_mappings:
+      auto-default:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: default
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slot:
+                  type: string
+        goal_default:
+          slot: null
+        handles: {}
+      auto-get_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slot:
+                  type: string
+        goal_default:
+          slot: null
+        handles: {}
+      auto-test_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: test_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: LCC25DiscontinuedSingle Channel Liquid Crystal Voltage Controller, 0 - 25
+    V RMS, Square Wave, 50% Duty Cycle
+  description: Thorlabs LCC25液晶控制器，提供0-25V可调交流方波输出驱动液晶延迟器，支持USB计算机控制和外部调制，用于偏振控制和光学相位调制。
+  manufacturer: Thorlabs
+  icon: lcc25.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    输出电压: 0-25V(交流方波)
+    输出频率: 500Hz-2kHz可调
+    电压分辨率: ~1mV
+    输出波形: 方波(防直流损伤液晶)
+    调制: BNC外部调制输入
+    模式: 电压/调制模式
+    显示: LCD
+    输出接口: BNC
+    通信: USB
+    兼容: Thorlabs LCR系列液晶可变延迟器
+    品牌: Thorlabs
+  model:
+    name: LCC25DiscontinuedSingle Channel Liquid Crystal Voltage Controller, 0 - 25
+      V RMS, Square Wave, 50% Duty Cycle
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

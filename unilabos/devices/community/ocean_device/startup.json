@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "id": "test_ocean_device",
+      "name": "Ocean Insight OceanDevice",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.ocean_device",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "device_id": "",
+        "message_queue": "",
+        "alert_queue": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_ocean_device",
+      "action": "auto-connect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "acquire data",
+      "description": "自动补充动作: acquire_data",
+      "device": "test_ocean_device",
+      "action": "auto-acquire_data",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "scans to average",
+      "description": "自动补充动作: scans_to_average",
+      "device": "test_ocean_device",
+      "action": "auto-scans_to_average",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "OceanDevice 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "OceanDevice",
+    "generated_by": "driver-finder"
+  }
+}

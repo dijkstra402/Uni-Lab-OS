@@ -1,0 +1,187 @@
+it8500:
+  class:
+    module: unilabos.devices.community.it8500.driver:IT8500
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_setpoint_A:
+                  type: string
+        goal_default:
+          current_setpoint_A: null
+        handles: {}
+      auto-set_mode_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_mode_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_cv_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cv_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_setpoint_V:
+                  type: string
+        goal_default:
+          voltage_setpoint_V: null
+        handles: {}
+      auto-toggle_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-lock_front_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_front_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: ITECH IT8500+ 可编程直流电子负载
+  description: ITECH IT8500+系列可编程直流电子负载，功率覆盖150W-3000W，四种工作模式，10kHz动态频率，适用于电源/电池/LED测试。
+  manufacturer: ITECH Electronics
+  icon: it8500.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    功率: 150W-3000W(多型号)
+    模式: CC/CV/CR/CP四种
+    动态模式: 最高10kHz
+    分辨率: 0.1mV/0.1mA
+    存储: 100组
+    功能: 电池放电/OCP/OPP/CR-LED
+    远端补偿: 支持
+    接口: USB/RS232/RS485可选
+    品牌: ITECH Electronics
+  model:
+    name: ITECH IT8500+ 可编程直流电子负载
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Battery Testing
+    step: Cycling
+  version: 1.0.0
+  resource_type: device

@@ -1,0 +1,657 @@
+dlpc900_dmd:
+  class:
+    module: community_drivers.dlpc900_dmd.driver:dlpc900_dmd
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_raw_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_raw_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                buffer:
+                  type: string
+                listen_for_reply:
+                  type: boolean
+                  default: false
+                timeout:
+                  type: integer
+                  default: 5
+        goal_default:
+          buffer: null
+          listen_for_reply: false
+          timeout: 5
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rw_mode:
+                  type: string
+                reply:
+                  type: boolean
+                command:
+                  type: integer
+                data:
+                  type: string
+                sequence_byte:
+                  type: integer
+                  default: 0
+        goal_default:
+          rw_mode: null
+          reply: null
+          command: null
+          data: null
+          sequence_byte: 0
+        handles: {}
+      auto-decode_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: decode_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                buffer:
+                  type: string
+                is_first_packet:
+                  type: boolean
+                  default: true
+        goal_default:
+          buffer: null
+          is_first_packet: true
+        handles: {}
+      auto-decode_flag_byte:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: decode_flag_byte
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag_byte:
+                  type: string
+        goal_default:
+          flag_byte: null
+        handles: {}
+      auto-decode_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: decode_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                buffer:
+                  type: string
+        goal_default:
+          buffer: null
+        handles: {}
+      auto-read_error_code:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_error_code
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_error_description:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_error_description
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_hw_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_hw_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_system_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_system_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_main_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_main_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_firmware_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_firmware_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_firmware_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_trigger_out:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger_out
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trigger_number:
+                  type: integer
+                  default: 1
+                invert:
+                  type: boolean
+                  default: false
+                rising_edge_delay_us:
+                  type: integer
+                  default: 0
+                falling_edge_delay_us:
+                  type: integer
+                  default: 0
+        goal_default:
+          trigger_number: 1
+          invert: false
+          rising_edge_delay_us: 0
+          falling_edge_delay_us: 0
+        handles: {}
+      auto-get_trigger_in1:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_trigger_in1
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_trigger_in1:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger_in1
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                delay_us:
+                  type: integer
+                  default: 105
+                edge_to_advance:
+                  type: string
+                  default: rising
+        goal_default:
+          delay_us: 105
+          edge_to_advance: rising
+        handles: {}
+      auto-get_trigger_in2:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_trigger_in2
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_trigger_in2:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger_in2
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                edge_to_start:
+                  type: string
+                  default: rising
+        goal_default:
+          edge_to_start: rising
+        handles: {}
+      auto-set_pattern_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pattern_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                  default: on-the-fly
+        goal_default:
+          mode: on-the-fly
+        handles: {}
+      auto-start_stop_sequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_stop_sequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-get_fwbatch_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_fwbatch_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                batch_index:
+                  type: integer
+        goal_default:
+          batch_index: null
+        handles: {}
+      auto-execute_fwbatch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execute_fwbatch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                batch_index:
+                  type: integer
+        goal_default:
+          batch_index: null
+        handles: {}
+      auto-set_fwbatch_delay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_fwbatch_delay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                delay_ms:
+                  type: integer
+        goal_default:
+          delay_ms: null
+        handles: {}
+      auto-upload_pattern_sequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: upload_pattern_sequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                patterns:
+                  type: string
+                exp_times:
+                  type: string
+                dark_times:
+                  type: integer
+                  default: 0
+                triggered:
+                  type: boolean
+                  default: false
+                clear_pattern_after_trigger:
+                  type: boolean
+                  default: true
+                bit_depth:
+                  type: integer
+                  default: 1
+                num_repeats:
+                  type: integer
+                  default: 0
+                compression_mode:
+                  type: string
+                  default: erle
+        goal_default:
+          patterns: null
+          exp_times: null
+          dark_times: 0
+          triggered: false
+          clear_pattern_after_trigger: true
+          bit_depth: 1
+          num_repeats: 0
+          compression_mode: erle
+        handles: {}
+      auto-set_pattern_sequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pattern_sequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pattern_indices:
+                  type: string
+                exp_times:
+                  type: string
+                dark_times:
+                  type: integer
+                  default: 0
+                triggered:
+                  type: boolean
+                  default: false
+                clear_pattern_after_trigger:
+                  type: boolean
+                  default: true
+                bit_depth:
+                  type: integer
+                  default: 1
+                num_repeats:
+                  type: integer
+                  default: 0
+                mode:
+                  type: string
+                  default: pre-stored
+        goal_default:
+          pattern_indices: null
+          exp_times: null
+          dark_times: 0
+          triggered: false
+          clear_pattern_after_trigger: true
+          bit_depth: 1
+          num_repeats: 0
+          mode: pre-stored
+        handles: {}
+      auto-get_dmd_sequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_dmd_sequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                modes:
+                  type: string
+                channels:
+                  type: string
+                nrepeats:
+                  type: integer
+                  default: 1
+                noff_before:
+                  type: integer
+                  default: 0
+                noff_after:
+                  type: integer
+                  default: 0
+                blank:
+                  type: boolean
+                  default: false
+                mode_pattern_indices:
+                  type: string
+        goal_default:
+          modes: null
+          channels: null
+          nrepeats: 1
+          noff_before: 0
+          noff_after: 0
+          blank: false
+          mode_pattern_indices: null
+        handles: {}
+      auto-program_dmd_seq:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: program_dmd_seq
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                modes:
+                  type: string
+                channels:
+                  type: string
+                nrepeats:
+                  type: integer
+                  default: 1
+                noff_before:
+                  type: integer
+                  default: 0
+                noff_after:
+                  type: integer
+                  default: 0
+                blank:
+                  type: boolean
+                  default: false
+                mode_pattern_indices:
+                  type: string
+                triggered:
+                  type: boolean
+                  default: false
+                exp_time_us:
+                  type: string
+                clear_pattern_after_trigger:
+                  type: boolean
+                  default: false
+                verbose:
+                  type: boolean
+                  default: false
+        goal_default:
+          modes: null
+          channels: null
+          nrepeats: 1
+          noff_before: 0
+          noff_after: 0
+          blank: false
+          mode_pattern_indices: null
+          triggered: false
+          exp_time_us: null
+          clear_pattern_after_trigger: false
+          verbose: false
+        handles: {}
+  name: Texas Instruments DLPC900 数字微镜设备控制器
+  description: 可扩展DMD控制器，用于高速光图案生成，支持3D扫描、3D打印、光谱分析等工业应用，DLP9000需双DLPC900
+  manufacturer: Texas Instruments
+  icon: dlpc900_dmd.webp
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  device_params:
+    内存: 128MB DRAM
+    封装: BGA-516(ZPC)
+    支持DMD: DLP6500/DLP670S/DLP500YX/DLP9000
+    1-bit图案率: 最高9523Hz
+    8-bit灰度图案率: 最高1031Hz
+    预存图案: 最多400-1024个1-bit图案
+    数据时钟: 400MHz
+    吞吐量: 38Gbps
+    波长范围: 400-700nm
+    品牌: Texas Instruments
+  model:
+    name: Texas Instruments DLPC900 数字微镜设备控制器
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Cell Analysis
+    step: High-Content Imaging
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        vendor_id:
+          default: null
+          type: integer
+        product_id:
+          default: null
+          type: integer
+        debug:
+          default: null
+          type: boolean
+        firmware_pattern_info:
+          default: null
+          type: string
+        presets:
+          default: null
+          type: string
+        config_file:
+          default: null
+          type: string
+        firmware_patterns:
+          default: null
+          type: string
+        initialize:
+          default: null
+          type: boolean
+        dmd_index:
+          default: null
+          type: integer
+        hid_path:
+          default: null
+          type: string
+        platform:
+          default: null
+          type: string

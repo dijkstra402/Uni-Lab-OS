@@ -1,0 +1,72 @@
+servo_blaster:
+  class:
+    module: unilabos.devices.actuator.servo_blaster:ServoBlaster
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_pulse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pulse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pulse:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pulse:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Servo Blaster是由Servo Blaster (Open Source)生产的专业实验设备。Auto-imported from donkeycar/parts/actuator.py
+  category:
+  - 机械臂
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        pin:
+          type: string
+          default: null
+  name: Servo Blaster
+  manufacturer: Servo Blaster (Open Source)
+  icon: servo_blaster.webp
+  tags:
+  - 机械臂
+  device_params:
+    支持操作数: '60'
+    读取操作: run_threaded、run_threaded、read_pwm、run_threaded、readline
+    控制操作: set_pulse、set_high、set_low、set_duty_cycle、set_pulse
+    控制能力: 多通道、速度控制

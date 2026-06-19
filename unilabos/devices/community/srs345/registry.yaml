@@ -1,0 +1,101 @@
+srs345:
+  class:
+    module: community_drivers.srs345.driver:SRS345
+    type: python
+    status_types:
+      frequency: String
+      function: String
+      offset: String
+      phase: String
+    action_value_mappings:
+      auto-frequency:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                newval:
+                  type: string
+              type: object
+          title: frequency
+          type: object
+        type: UniLabJsonCommand
+      auto-function:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                newval:
+                  type: string
+              type: object
+          title: function
+          type: object
+        type: UniLabJsonCommand
+      auto-offset:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                newval:
+                  type: string
+              type: object
+          title: offset
+          type: object
+        type: UniLabJsonCommand
+      auto-phase:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                newval:
+                  type: string
+              type: object
+          title: phase
+          type: object
+        type: UniLabJsonCommand
+  name: Function Generator - DS345
+  description: 30MHz DDS合成函数发生器，1µHz频率分辨率，任意波形生成，丰富调制功能。注意：unit_id为srs345但实际型号为DS345。
+  manufacturer: Stanford Research Systems
+  icon: srs345.webp
+  tags: &id001
+  - 信号源与发生器
+  category: *id001
+  device_params:
+    Freq: 1µHz~30.2MHz(sine/square), 1µHz~100kHz(tri/ramp)
+    Resolution: 1µHz
+    Sample Rate: 40MSa/s
+    Arb: 16k pts/12-bit
+    Amplitude: 0.01~10Vpp(50Ω)
+    Modulation: AM/FM/PM/Burst/Sweep
+    AM Depth: ±100%
+    Interface: GPIB, RS-232(opt)
+    品牌: Stanford Research Systems
+  model:
+    name: Function Generator - DS345
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  cover: Function Generator - DS345.webp

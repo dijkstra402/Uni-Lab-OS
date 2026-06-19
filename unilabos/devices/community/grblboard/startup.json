@@ -1,0 +1,199 @@
+{
+  "nodes": [
+    {
+      "id": "test_grblboard",
+      "name": "GRBL (Open Source) grblboard",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.grblboard",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "serialport": "/dev/ttyUSB0",
+        "currentposition": [
+          0,
+          0,
+          0
+        ],
+        "backlash": 0
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_grblboard",
+      "action": "auto-initserial",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_grblboard",
+      "action": "auto-set_units",
+      "action_args": {
+        "is_metric": true
+      }
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_grblboard",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "zero position",
+      "description": "自动补充动作: zero_position",
+      "device": "test_grblboard",
+      "action": "auto-zero_position",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "auto detect serial unix",
+      "description": "自动补充动作: auto_detect_serial_unix",
+      "device": "test_grblboard",
+      "action": "auto-auto_detect_serial_unix",
+      "action_args": {
+        "preferred_list": [
+          "*"
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "name": "setideltime",
+      "description": "自动补充动作: setideltime",
+      "device": "test_grblboard",
+      "action": "auto-setideltime",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "setspeed",
+      "description": "自动补充动作: setspeed",
+      "device": "test_grblboard",
+      "action": "auto-setspeed",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "setaccellaration",
+      "description": "自动补充动作: setaccellaration",
+      "device": "test_grblboard",
+      "action": "auto-setaccellaration",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "setphysicalcoords",
+      "description": "自动补充动作: setphysicalcoords",
+      "device": "test_grblboard",
+      "action": "auto-setphysicalcoords",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "resethome",
+      "description": "自动补充动作: resethome",
+      "device": "test_grblboard",
+      "action": "auto-resethome",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "getcurrentpos",
+      "description": "自动补充动作: getcurrentpos",
+      "device": "test_grblboard",
+      "action": "auto-getcurrentpos",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "sendgrbl",
+      "description": "自动补充动作: sendgrbl",
+      "device": "test_grblboard",
+      "action": "auto-sendgrbl",
+      "action_args": {
+        "cmd": "?"
+      }
+    },
+    {
+      "step": 13,
+      "name": "move rel",
+      "description": "自动补充动作: move_rel",
+      "device": "test_grblboard",
+      "action": "auto-move_rel",
+      "action_args": {
+        "position": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "step": 14,
+      "name": "move abs",
+      "description": "自动补充动作: move_abs",
+      "device": "test_grblboard",
+      "action": "auto-move_abs",
+      "action_args": {
+        "position": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "step": 15,
+      "name": "go to",
+      "description": "自动补充动作: go_to",
+      "device": "test_grblboard",
+      "action": "auto-go_to",
+      "action_args": {
+        "pos_x": 0,
+        "pos_y": 0,
+        "pos_z": 0,
+        "mode": "abs"
+      }
+    },
+    {
+      "step": 16,
+      "name": "set laser intensity",
+      "description": "自动补充动作: set_laser_intensity",
+      "device": "test_grblboard",
+      "action": "auto-set_laser_intensity",
+      "action_args": {}
+    },
+    {
+      "step": 17,
+      "name": "set led",
+      "description": "自动补充动作: set_led",
+      "device": "test_grblboard",
+      "action": "auto-set_led",
+      "action_args": {
+        "state": 1
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "grblboard 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "grblboard",
+    "generated_by": "driver-finder"
+  }
+}

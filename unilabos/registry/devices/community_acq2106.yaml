@@ -1,0 +1,125 @@
+acq2106:
+  class:
+    module: unilabos.devices.community.acq2106.driver:DataNotAvailableError
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_mb_clk:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mb_clk
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hz:
+                  type: string
+                src:
+                  type: string
+                fin:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_sync_routing_slave:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_sync_routing_slave
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_master_trg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_master_trg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trg:
+                  type: string
+                edge:
+                  type: string
+                enabled:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_MR:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_MR
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: string
+                evsel0:
+                  type: string
+                evsel1:
+                  type: string
+                MR10DEC:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wr_PPS_active:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wr_PPS_active
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: ACQ2106
+  description: D-TACQ ACQ2106是高性能模块化数据采集平台，1U机架内最多192通道同步采样，支持White Rabbit亚纳秒级精密时间同步，广泛用于等离子体物理、核聚变和大科学装置的多通道同步数据采集。
+  manufacturer: D-TACQ Solutions
+  icon: dtacq.png
+  tags: &id001
+  - 介电常数测定仪
+  category: *id001
+  device_params:
+    机架: 19英寸1U标准机架
+    模块插槽: 6个ELF位
+    最大通道数: 192通道(1U)
+    ADC分辨率: 最高24-bit
+    采样率: 最高2MSa/s连续流
+    网络: 千兆以太网+可选SFP+光纤
+    同步: White Rabbit亚纳秒精密时间协议
+    系统: 嵌入式Linux(ARM+FPGA)
+    兼容模块: ACQ423(32ch/16bit)/ACQ424(32ch/24bit)/ACQ425(16ch/24bit)/AO424(32ch DAC)/DIO432(32ch
+      DIO)
+    品牌: D-TACQ Solutions
+  model:
+    name: ACQ2106
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  cover: ACQ2106 (mgtdram8).webp

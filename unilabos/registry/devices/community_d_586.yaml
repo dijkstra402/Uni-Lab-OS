@@ -1,0 +1,99 @@
+gh_device_586:
+  class:
+    module: unilabos.devices.community.d_586.driver:LighthousePhotonicsSproutG
+    type: python
+    action_value_mappings:
+      auto-ask:
+        type: UniLabJsonCommand
+        goal:
+          cmd: cmd
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: ''
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal:
+          cmd: cmd
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: ''
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ramp_up:
+        type: UniLabJsonCommand
+        goal:
+          thresh: thresh
+          show_progress: show_progress
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_up
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                thresh:
+                  type: number
+                show_progress:
+                  type: boolean
+        goal_default:
+          thresh: 0
+          show_progress: 0
+        handles: {}
+  name: Lighthouse Photonics Sprout-G 连续波DPSS绿光激光器
+  description: Lighthouse Photonics Sprout-G是紧凑型DPSS连续波激光器，输出532nm绿光最高18W功率，TEM00模式，采用Seal密封、LockT锁定和NET噪声消除专利技术，适用于泵浦钛宝石激光器、流式细胞术和光谱学应用。
+  manufacturer: Lighthouse Photonics
+  tags: &id001
+  - 固体激光器
+  category: *id001
+  model:
+    name: Lighthouse Photonics Sprout-G 连续波DPSS绿光激光器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    波长: 532nm
+    最大输出功率: 18W(多功率版本5W-18W)
+    光束模式: TEM00
+    噪声: <0.02% rms(NET技术)
+    长期稳定性: <±0.25%/24h
+    光束发散: <1.4mrad
+    接口: USB/RS-232/以太网
+    品牌: Lighthouse Photonics

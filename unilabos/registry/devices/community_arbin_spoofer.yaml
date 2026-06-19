@@ -1,0 +1,62 @@
+arbin_spoofer:
+  class:
+    module: unilabos.devices.community.arbin_spoofer.driver:ArbinSpoofer
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_channel_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_channel_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                updated_readings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: ArbinSpoofer
+  category:
+  - cycler
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        config:
+          type: object
+          default: null

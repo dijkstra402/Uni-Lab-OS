@@ -1,0 +1,87 @@
+cesar1312:
+  class:
+    module: unilabos.devices.community.cesar1312.driver:Cesar1312
+    type: python
+    status_types:
+      address: None
+      retries: string
+      control_mode: None
+      name: str
+      output_power: None
+      reflected_power: Quantity
+      regulation_mode: None
+      rf: None
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                package:
+                  type: string
+                len_data:
+                  type: integer
+                  default: 1
+        goal_default:
+          package: null
+          len_data: 1
+        handles: {}
+      auto-sendcmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendcmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pkg:
+                  type: string
+        goal_default:
+          pkg: null
+        handles: {}
+  name: Advanced Energy Cesar 1312 RF Power Generator
+  description: 1200W/13.56MHz RF功率发生器，E类开关设计，用于等离子体处理/溅射/PECVD。
+  manufacturer: Advanced Energy
+  icon: cesar1312.webp
+  tags: &id001
+  - 射频与微波测试设备
+  category: *id001
+  device_params:
+    Power: 1200W
+    Freq: 13.56MHz
+    Accuracy: ±0.005%
+    Min Power: 12W(1%)
+    Impedance: 50Ω
+    Efficiency: 66%
+    Input: 230VAC
+    Cooling: air
+    Rack: 19"
+    Interface: analog/RS-232/Ethernet/Profibus
+    品牌: Advanced Energy
+  model:
+    name: Advanced Energy Cesar 1312 RF Power Generator
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thin Film Deposition
+    step: Evaporation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

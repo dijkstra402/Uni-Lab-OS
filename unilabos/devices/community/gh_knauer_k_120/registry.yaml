@@ -1,0 +1,65 @@
+gh_knauer_k_120:
+  class:
+    module: community_drivers.gh_knauer_k_120.driver:K120LineReceiver
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-dataReceived:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dataReceived
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default:
+          data: null
+        handles: {}
+      auto-unexpectedMessage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unexpectedMessage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                line:
+                  type: string
+        goal_default:
+          line: null
+        handles: {}
+    source: https://github.com/richardingham/octopus
+  name: Knauer K-120
+  description: KNAUER 开发和制造用于液相色谱、定量和脂质纳米粒子生产的科学仪器和组件。
+  manufacturer: Knauer
+  icon: us.png
+  tags: &id001
+  - 高效液相色谱仪
+  category: *id001
+  device_params:
+    Type: Isocratic HPLC pump
+    Flow: 0.001-10 mL/min
+    Pressure: up to 400 bar
+    Piston: Sapphire
+    Communication: RS-232
+    Platform: KNAUER HPLC system
+    品牌: Knauer
+  model:
+    name: Knauer K-120
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Pumping
+  version: 1.0.0
+  resource_type: device

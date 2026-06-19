@@ -1,0 +1,88 @@
+pwm_steering:
+  class:
+    module: unilabos.devices.generic.pwm_steering:PWMSteering
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_threaded:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_threaded
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                angle:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                angle:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: PWM Steering是一款实验执行&合成设备，主要功能包括读取数据、运行。支持Signal, Slot, duty cycle等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '60'
+    读取操作: run_threaded、run_threaded、read_pwm、run_threaded、readline 等7个
+    控制操作: set_pulse、set_high、set_low、set_duty_cycle、set_pulse 等22个
+    控制能力: 位置、多通道、速度
+  manufacturer: Open Source
+  model:
+    name: PWM Steering
+    type: device
+  name: Pwm Steering
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

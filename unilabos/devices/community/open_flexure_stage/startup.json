@@ -1,0 +1,121 @@
+{
+  "nodes": [
+    {
+      "id": "test_open_flexure_stage",
+      "name": "OpenFlexureStage",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.open_flexure_stage",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {},
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_open_flexure_stage",
+      "action": "auto-test_mode",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_open_flexure_stage",
+      "action": "auto-query",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "backlash",
+      "description": "自动补充动作: backlash",
+      "device": "test_open_flexure_stage",
+      "action": "auto-backlash",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "move rel",
+      "description": "自动补充动作: move_rel",
+      "device": "test_open_flexure_stage",
+      "action": "auto-move_rel",
+      "action_args": {
+        "backlash": true
+      }
+    },
+    {
+      "step": 5,
+      "name": "release motors",
+      "description": "自动补充动作: release_motors",
+      "device": "test_open_flexure_stage",
+      "action": "auto-release_motors",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "move abs",
+      "description": "自动补充动作: move_abs",
+      "device": "test_open_flexure_stage",
+      "action": "auto-move_abs",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "focus rel",
+      "description": "自动补充动作: focus_rel",
+      "device": "test_open_flexure_stage",
+      "action": "auto-focus_rel",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "scan linear",
+      "description": "自动补充动作: scan_linear",
+      "device": "test_open_flexure_stage",
+      "action": "auto-scan_linear",
+      "action_args": {
+        "backlash": true,
+        "return_to_start": true
+      }
+    },
+    {
+      "step": 9,
+      "name": "scan z",
+      "description": "自动补充动作: scan_z",
+      "device": "test_open_flexure_stage",
+      "action": "auto-scan_z",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "list modules",
+      "description": "自动补充动作: list_modules",
+      "device": "test_open_flexure_stage",
+      "action": "auto-list_modules",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "print help",
+      "description": "自动补充动作: print_help",
+      "device": "test_open_flexure_stage",
+      "action": "auto-print_help",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "OpenFlexureStage 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "OpenFlexureStage",
+    "generated_by": "driver-finder"
+  }
+}

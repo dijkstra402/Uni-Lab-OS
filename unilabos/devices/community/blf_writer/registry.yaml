@@ -1,0 +1,89 @@
+blf_writer:
+  class:
+    module: unilabos.devices.generic.blf_writer:BLFWriter
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-on_message_received:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: on_message_received
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-log_event:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: log_event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                text:
+                  type: string
+                timestamp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-file_size:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: file_size
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: BLF Writer是一款实验执行&合成设备，主要功能包括停止、日志记录。支持Signal, Slot, file size等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '4'
+    控制操作: stop
+    控制能力: 时间、电流
+  manufacturer: Open Source
+  model:
+    name: BLF Writer
+    type: device
+  name: Blf Writer
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

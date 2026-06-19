@@ -1,0 +1,71 @@
+arduino_adc:
+  class:
+    module: unilabos.devices.community.arduino_adc.driver:ArduinoADC
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Arduino ADC 模数转换接口
+  description: Arduino ADC模块，利用Arduino微控制器板载模数转换器进行简单数据采集。适用于低速传感器信号采集。
+  manufacturer: Arduino
+  icon: arduino_adc.webp
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  device_params:
+    类型: Arduino板载ADC
+    分辨率: 10位(标准)/12位(部分型号)
+    参考电压: 5V/3.3V
+    通道: 6-16(依型号)
+    采样率: ~10kSPS
+    品牌: Arduino
+  model:
+    name: Arduino ADC 模数转换接口
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device

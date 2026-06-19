@@ -1,0 +1,91 @@
+base_client:
+  class:
+    module: unilabos.devices.community.base_client.driver:BaseClient
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Base Client 基础通信客户端是由Jeio Tech Co., Ltd - 上海代表处生产的实验执行&合成设备，主要功能包括设备连接。支持Signal,
+    Slot, ask等操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: localhost
+        port:
+          type: string
+          default: 5555
+        connect:
+          type: string
+          default: true
+        timeout:
+          type: string
+          default: 20
+        raise_exceptions:
+          type: string
+          default: true
+  device_params:
+    品牌: Jeio Tech Co., Ltd - 上海代表处
+    可控参数: message
+    操作数: 3
+  manufacturer: Jeio Tech Co., Ltd - 上海代表处
+  model:
+    name: 韩国ilSHinBioBase 进口深冷冻箱 GUDERO CHEST系列
+    type: device
+  name: Jeio Tech Co
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: base_client.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

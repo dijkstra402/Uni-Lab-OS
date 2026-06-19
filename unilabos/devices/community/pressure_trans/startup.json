@@ -1,0 +1,47 @@
+{
+  "nodes": [
+    {
+      "id": "test_pressure_trans",
+      "name": "Test pressure_trans",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "pressure_trans",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "address": "127.0.0.1",
+        "port": 1502
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_pressure_trans",
+      "action": "auto-QueryPressure",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "ReportStatus",
+      "description": "自动补充动作: ReportStatus",
+      "device": "test_pressure_trans",
+      "action": "auto-ReportStatus",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "pressure_trans 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "pressure_trans",
+    "generated_by": "driver-finder"
+  }
+}

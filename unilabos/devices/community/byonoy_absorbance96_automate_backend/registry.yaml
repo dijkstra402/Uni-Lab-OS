@@ -1,0 +1,160 @@
+byonoy_absorbance96_automate_backend:
+  class:
+    module: community_drivers.byonoy_absorbance96_automate_backend.driver:ByonoyAbsorbance96AutomateBackend
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                verbose:
+                  type: boolean
+                  default: false
+        goal_default:
+          verbose: false
+        handles: {}
+      auto-get_available_absorbance_wavelengths:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_available_absorbance_wavelengths
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialize_measurements:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_measurements
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_absorbance:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_absorbance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                wavelength:
+                  type: integer
+        goal_default:
+          plate: null
+          wells: null
+          wavelength: null
+        handles: {}
+      auto-read_luminescence:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_luminescence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                focal_height:
+                  type: number
+        goal_default:
+          plate: null
+          wells: null
+          focal_height: null
+        handles: {}
+      auto-read_fluorescence:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_fluorescence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                excitation_wavelength:
+                  type: integer
+                emission_wavelength:
+                  type: integer
+                focal_height:
+                  type: number
+        goal_default:
+          plate: null
+          wells: null
+          excitation_wavelength: null
+          emission_wavelength: null
+          focal_height: null
+        handles: {}
+  name: Specifications
+  description: Byonoy Absorbance 96是全球最小巧的微孔板读板机，内置96个独立检测单元（光电二极管），无活动部件，USB供电即插即用。适用于ELISA、蛋白检测和细胞检测等应用。
+  manufacturer: Byonoy GmbH
+  icon: byonoy_absorbance96_automate_backend.webp
+  tags: &id001
+  - 酶标仪
+  category: *id001
+  device_params:
+    检测方法: 吸光度
+    检测模式: 终点法、动力学
+    微孔板: 96孔
+    光源: 最多4个LED
+    检测器: 96个光电二极管
+    波长: 400-1000nm可选(FWHM 10nm)
+    光度范围: 0.0-4.0 OD
+    再现性: ≤0.5%+0.005OD(0-2.0OD)
+    分辨率: 0.001 OD
+    读取时间: 最快3秒(单波长)
+    尺寸: 9.6×15.4×5.5cm
+    重量: 900g
+    功耗: 2.5W
+    接口: USB 2.0
+    软件: Windows/macOS
+    品牌: Byonoy GmbH
+  model:
+    name: Specifications
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Analysis
+    step: Plate Reading
+  version: 1.0.0
+  resource_type: device

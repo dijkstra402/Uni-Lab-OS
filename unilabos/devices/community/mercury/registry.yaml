@@ -1,0 +1,316 @@
+mercury:
+  class:
+    module: community_drivers.mercury.driver:Mercury
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_board_number:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_board_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default:
+          board_number: null
+        handles: {}
+      auto-motor_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default:
+          board_number: null
+        handles: {}
+      auto-motor_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default:
+          board_number: null
+        handles: {}
+      auto-LL:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: LL
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default:
+          board_number: null
+        handles: {}
+      auto-set_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default:
+          board_number: null
+        handles: {}
+      auto-go_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: go_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default:
+          board_number: null
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default:
+          board_number: null
+        handles: {}
+      auto-get_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default:
+          board_number: null
+        handles: {}
+      auto-set_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                precision:
+                  type: integer
+                  default: 100
+                board_number:
+                  type: string
+                wait:
+                  type: boolean
+                  default: false
+        goal_default:
+          value: null
+          precision: 100
+          board_number: null
+          wait: false
+        handles: {}
+      auto-move_relative:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_relative
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                precision:
+                  type: integer
+                  default: 100
+                board_number:
+                  type: string
+                wait:
+                  type: boolean
+                  default: false
+        goal_default:
+          value: null
+          precision: 100
+          board_number: null
+          wait: false
+        handles: {}
+      auto-abort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: abort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                board_number:
+                  type: string
+        goal_default:
+          board_number: null
+        handles: {}
+      auto-find_edge:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_edge
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+                board_number:
+                  type: string
+        goal_default:
+          n: null
+          board_number: null
+        handles: {}
+  name: Oxford Instruments Mercury iTC 低温温度控制器
+  description: Oxford Instruments Mercury iTC 是低温环境控制器，温度范围<1K至>800K，支持多种低温传感器，以太网/USB远程控制。
+  manufacturer: Oxford Instruments
+  icon: mercury.webp
+  tags: &id001
+  - 低温温度控制器
+  category: *id001
+  device_params:
+    温度范围: <1K至>800K(依传感器)
+    传感器: Cernox/RuO2/铂电阻/热电偶
+    加热器: 多路输出
+    PID: 自整定
+    功能: 温度扫描/斜坡编程
+    接口: Ethernet(TCP/IP)/USB/ISOBUS
+    控制: 触摸屏
+    兼容: MercuryiPS磁体电源
+    品牌: Oxford Instruments
+  model:
+    name: Oxford Instruments Mercury iTC 低温温度控制器
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Heating
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string

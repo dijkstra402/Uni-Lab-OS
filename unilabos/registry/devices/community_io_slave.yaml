@@ -1,0 +1,102 @@
+io_slave:
+  class:
+    module: unilabos.devices.community.io_slave.driver:IOSlave
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-SetDigital:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetDigital
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SetAnalog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetAnalog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SetFlash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetFlash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetAnalog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetAnalog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetTemperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetTemperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Implementation of IOSlave without context managers on the serial commands
+  category:
+  - serial_device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: COM12

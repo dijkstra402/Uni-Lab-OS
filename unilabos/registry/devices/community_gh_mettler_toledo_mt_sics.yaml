@@ -1,0 +1,130 @@
+gh_mettler_toledo_mt_sics:
+  class:
+    module: unilabos.devices.community.gh_mettler_toledo_mt_sics.driver:MTSICS
+    type: python
+    status_types:
+      mt_sics: str
+      mt_sics_commands: str
+      name: str
+      serial_number: str
+      tare_value: str
+      weight: str
+      weight_mode: str
+    action_value_mappings:
+      auto-clear_tare:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_tare
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-tare:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tare
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                immediately:
+                  type: string
+        goal_default:
+          immediately: null
+        handles: {}
+      auto-zero:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: zero
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                immediately:
+                  type: string
+        goal_default:
+          immediately: null
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                size:
+                  type: string
+        goal_default:
+          cmd: null
+          size: null
+        handles: {}
+    source: https://github.com/instrumentkit/InstrumentKit
+  name: METTLER TOLEDO MT-SICS Balance
+  description: 梅特勒电子天平,作为电子天平品牌服务商之一,拥有多种实验室电子天平类型.更多梅特勒电子天平品牌详情,欢迎登陆梅特勒托利多METTLER
+    TOLEDO官网.
+  manufacturer: Mettler Toledo
+  icon: cq5dam.web.1280.1280.jpeg
+  tags: &id001
+  - 电子天平
+  category: *id001
+  device_params:
+    Type: Analytical balance series
+    Protocol: MT-SICS
+    Interface: RS-232, USB
+    Readability: 0.001-0.1 mg
+    Weighing modes: basic, counting, density
+    AutoCal: internal calibration
+    Housing: draft shield
+    品牌: Mettler Toledo
+  model:
+    name: METTLER TOLEDO MT-SICS Balance
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+  cover: METTLER TOLEDO MT-SICS Balance.webp

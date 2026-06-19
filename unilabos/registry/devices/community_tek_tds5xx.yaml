@@ -1,0 +1,71 @@
+tek_tds5xx:
+  class:
+    module: unilabos.devices.community.tek_tds5xx.driver:TekTDS5xx
+    type: python
+    status_types:
+      measurement: str
+      channel: str
+      ref: str
+      math: str
+      sources: str
+      data_source: str
+      data_width: str
+      horizontal_scale: str
+      trigger_level: str
+      trigger_coupling: str
+      trigger_slope: str
+      trigger_source: str
+      clock: str
+      display_clock: str
+    action_value_mappings:
+      auto-force_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: force_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_hardcopy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_hardcopy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: TDS5000 Series Digital Phosphor Oscilloscopes
+  description: TDS5000系列数字荧光示波器，提供350MHz至1GHz带宽选项，已停产，后继型号MSO/DPO5000B
+  manufacturer: Tektronix
+  icon: tek_tds5xx.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    带宽: 350MHz/500MHz/1GHz
+    通道: 2或4通道
+    采样率: 5GS/s
+    记录长度: 最高16MB(B系列)
+    波形捕获率: '>100,000wfms/s'
+    品牌: Tektronix
+  model:
+    name: TDS5000 Series Digital Phosphor Oscilloscopes
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device

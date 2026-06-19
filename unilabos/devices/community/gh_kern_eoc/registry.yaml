@@ -1,0 +1,54 @@
+gh_kern_eoc:
+  class:
+    module: community_drivers.gh_kern_eoc.driver:KernEOCDriver
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-supported:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: supported
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+        goal_default:
+          device: null
+        handles: {}
+    source: https://github.com/ellery-it/odoo-serial-scale-drivers
+  name: 'KERN & SOHN: Der Experte für Waagen, Mikroskope & Messgeräte'
+  description: Hersteller von präzisen & langlebigen Waagen、Mikroskopen & Messiinstrumenten
+    ✓180 Jahre Erfahrung ✓mehr als 5.000 产品 ✓hoher 服务
+  manufacturer: Kern
+  icon: Schaubild.jpg
+  tags: &id001
+  - 质量测量仪器
+  category: *id001
+  device_params:
+    kern-sohn.com1UserLangCodeAnstehendMaximale Speicherdauer: 'SitzungTyp: HTTP-Cookie'
+    品牌: Kern
+  model:
+    name: 'KERN & SOHN: Der Experte für Waagen, Mikroskope & Messgeräte'
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        identifier:
+          default: null
+          type: string
+        device:
+          default: null
+          type: string

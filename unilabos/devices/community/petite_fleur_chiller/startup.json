@@ -1,0 +1,139 @@
+{
+  "nodes": [
+    {
+      "id": "test_petite_fleur_chiller",
+      "name": "Test PetiteFleurChiller",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "petite_fleur_chiller",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "device_name": "",
+        "connection_mode": "",
+        "address": "",
+        "port": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-initialize_device",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-set_temperature",
+      "action_args": {
+        "sensor": 0
+      }
+    },
+    {
+      "step": 3,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-start_temperature_regulation",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-is_idle",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-stop_temperature_regulation",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "is connected",
+      "description": "自动补充动作: is_connected",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-is_connected",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "clear errors",
+      "description": "自动补充动作: clear_errors",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-clear_errors",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "check errors",
+      "description": "自动补充动作: check_errors",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-check_errors",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "temp transform",
+      "description": "自动补充动作: temp_transform",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-temp_transform",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "ramp temperature",
+      "description": "自动补充动作: ramp_temperature",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-ramp_temperature",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "start temp ctrl",
+      "description": "自动补充动作: start_temp_ctrl",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-start_temp_ctrl",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "interpret status",
+      "description": "自动补充动作: interpret_status",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-interpret_status",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "set circulator control",
+      "description": "自动补充动作: set_circulator_control",
+      "device": "test_petite_fleur_chiller",
+      "action": "auto-set_circulator_control",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "PetiteFleurChiller 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "PetiteFleurChiller",
+    "generated_by": "driver-finder"
+  }
+}

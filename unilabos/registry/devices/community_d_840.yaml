@@ -1,0 +1,71 @@
+gh_device_840:
+  class:
+    module: unilabos.devices.community.d_840.driver:Keithley4200
+    type: python
+    action_value_mappings:
+      auto-add_smu:
+        type: UniLabJsonCommand
+        goal:
+          id: id
+        feedback: {}
+        result: {}
+        schema:
+          title: add_smu
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                id:
+                  type: string
+        goal_default:
+          id: ''
+        handles: {}
+      auto-check_set_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_set_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Keithley 2200系列可编程直流电源
+  description: Keithley 2200系列是单输出可编程直流电源，提供20V至72V多种型号，具备高精度电压和电流设置、远程感测端子、内置List模式和数字I/O同步功能，适用于台式和自动化测试系统。
+  manufacturer: Tektronix
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  model:
+    name: Keithley 2200系列可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出电压: 20V/30V/60V/72V
+    最大电流: 5A/2.5A/1.2A
+    电压精度: 0.03%
+    电流精度: 0.05%
+    电流分辨率: 0.1mA
+    接口: USB,GPIB
+    品牌: Tektronix
+  cover: Keithley 2200系列可编程直流电源.webp

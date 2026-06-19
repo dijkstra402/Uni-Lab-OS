@@ -1,0 +1,154 @@
+gh_pco_pco_edge_4_2:
+  class:
+    module: unilabos.devices.community.gh_pco_pco_edge_4_2.driver:Camera
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-apply_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trigger:
+                  type: string
+                  default: auto_trigger
+                exposure_time_microseconds:
+                  type: integer
+                  default: 2200
+                region_of_interest:
+                  type: string
+        goal_default:
+          trigger: auto_trigger
+          exposure_time_microseconds: 2200
+          region_of_interest: null
+        handles: {}
+      auto-arm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: arm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_buffers:
+                  type: string
+        goal_default:
+          num_buffers: null
+        handles: {}
+      auto-disarm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disarm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-record_to_memory:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: record_to_memory
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_images:
+                  type: string
+                preframes:
+                  type: integer
+                  default: 0
+                out:
+                  type: string
+                first_frame:
+                  type: integer
+                  default: 0
+                poll_timeout:
+                  type: number
+                  default: 500000.0
+                sleep_timeout:
+                  type: integer
+                  default: 40
+                first_trigger_timeout_seconds:
+                  type: integer
+                  default: 0
+        goal_default:
+          num_images: null
+          preframes: 0
+          out: null
+          first_frame: 0
+          poll_timeout: 500000.0
+          sleep_timeout: 40
+          first_trigger_timeout_seconds: 0
+        handles: {}
+    source: https://github.com/AndrewGYork/tools
+  name: pco.edge Cooled sCMOS Cameras
+  description: PCO pco.edge 4.2 LT是科学级sCMOS相机，420万像素，极低读出噪声(~1.0 e⁻)和高量子效率(82%)，适用于荧光显微成像和生命科学应用。
+  manufacturer: PCO
+  icon: search-cross.png
+  tags: &id001
+  - 工业与科学相机
+  category: *id001
+  device_params:
+    Sensor: sCMOS
+    Resolution: 2048×2048 (4.2 MP)
+    Pixel: 6.5 µm
+    Read noise: ~1.0-1.5 e⁻
+    Frame rate: ~40 fps
+    Bit depth: 16 bit
+    Cooling: Peltier
+    Interface: USB 3.0
+    Peak QE: ~82%
+    品牌: PCO
+  model:
+    name: pco.edge Cooled sCMOS Cameras
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Imaging
+    step: Microscopy
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        verbose:
+          default: null
+          type: string
+        very_verbose:
+          default: null
+          type: string

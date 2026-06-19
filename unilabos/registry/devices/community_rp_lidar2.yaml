@@ -1,0 +1,100 @@
+rp_lidar2:
+  class:
+    module: unilabos.devices.community.rp_lidar2.driver:RPLidar2
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-poll:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: poll
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_threaded:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_threaded
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: RP Lidar2是由SLAMTEC生产的实验执行&合成设备，主要功能包括初始化、扫描、绘图、读取数据、运行。支持Signal, Slot,
+    angle in bounds等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '25'
+    读取操作: run_threaded、run_threaded、run_threaded
+    运动操作: plot_scan
+    控制能力: 位置
+    通信接口: 串口(RS-232)
+  manufacturer: SLAMTEC
+  model:
+    name: RP Lidar2
+    type: device
+  name: SLAMTEC Adapted from https://github.com/Ezward/rplidar
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: rp_lidar2.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

@@ -1,0 +1,210 @@
+gh_device_647:
+  class:
+    module: community_drivers.647.driver:KDC101
+    type: python
+    action_value_mappings:
+      auto-get_status_n:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status_n
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_status:
+        type: UniLabJsonCommand
+        goal:
+          status: status
+          enabled: enabled
+          timeout: timeout
+          period: period
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+                enabled:
+                  type: string
+                timeout:
+                  type: string
+                period:
+                  type: string
+        goal_default:
+          status: ''
+          enabled: ''
+          timeout: ''
+          period: ''
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal:
+          sync: sync
+          force: force
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sync:
+                  type: string
+                force:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          sync: ''
+          force: ''
+          timeout: ''
+        handles: {}
+      auto-is_homing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_homing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_homed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_homed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_home:
+        type: UniLabJsonCommand
+        goal:
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default:
+          timeout: ''
+        handles: {}
+      auto-get_velocity_params:
+        type: UniLabJsonCommand
+        goal:
+          scale: scale
+        feedback: {}
+        result: {}
+        schema:
+          title: get_velocity_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                scale:
+                  type: string
+        goal_default:
+          scale: ''
+        handles: {}
+      auto-set_velocity_params:
+        type: UniLabJsonCommand
+        goal:
+          max_velocity: max_velocity
+          acceleration: acceleration
+        feedback: {}
+        result: {}
+        schema:
+          title: set_velocity_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_velocity:
+                  type: string
+                acceleration:
+                  type: string
+        goal_default:
+          max_velocity: ''
+          acceleration: ''
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Thorlabs KNA101 K-Cube NanoTrak自动对准控制器
+  description: Thorlabs KNA101是一款K-Cube NanoTrak自动对准控制器，通过驱动压电执行器使光纤端面做圆形扫描运动执行功率梯度搜索，自动定位至最大光功率吞吐量位置。适用于光纤到光纤和光纤到自由空间系统的自动对准优化，USB即插即用兼容Kinesis软件。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: Thorlabs KNA101 K-Cube NanoTrak自动对准控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    功能: 光纤自动对准优化
+    驱动电压: 最高±125V
+    扫描模式: 圆形抖动功率梯度搜索
+    信号输入: 模拟光功率反馈
+    输出电压: 0-75V或0-150V
+    接口: USB(Micro-B)
+    尺寸: ~60×60×47mm
+    软件: Kinesis/APT
+    品牌: Thorlabs

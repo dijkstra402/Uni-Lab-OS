@@ -1,0 +1,270 @@
+gh_eurotherm_2416:
+  class:
+    module: unilabos.devices.community.gh_eurotherm_2416.driver:BaseGcodeRobot
+    type: python
+    status_types:
+      POLLINGDELAY: float
+      TIMEOUT: float
+      POSITIONTOLERANCE: float
+      ZHOP_HEIGHT: float
+      XLIM: float
+      YLIM: float
+      ZLIM: float
+      MAX_XY_FEEDRATE: float
+      MAX_Z_FEEDRATE: float
+      position: string
+      has_been_homed: bool
+      speed: None
+      speed_mm_per_min: None
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-moveto:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: moveto
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+                zhop:
+                  type: boolean
+                  default: false
+                do_not_check_if_move_is_valid:
+                  type: boolean
+                  default: false
+        goal_default:
+          x: null
+          y: null
+          z: null
+          zhop: false
+          do_not_check_if_move_is_valid: false
+        handles: {}
+      auto-moverel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: moverel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: integer
+                  default: 0
+                y:
+                  type: integer
+                  default: 0
+                z:
+                  type: integer
+                  default: 0
+                zhop:
+                  type: boolean
+                  default: false
+                do_not_check_if_move_is_valid:
+                  type: boolean
+                  default: false
+        goal_default:
+          x: 0
+          y: 0
+          z: 0
+          zhop: false
+          do_not_check_if_move_is_valid: false
+        handles: {}
+      auto-moveto_sequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: moveto_sequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                coordinates:
+                  type: string
+        goal_default:
+          coordinates: null
+        handles: {}
+      auto-get_current_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gohome:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gohome
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gohome_x:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gohome_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gohome_y:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gohome_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gohome_z:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gohome_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_move_is_valid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_move_is_valid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+        goal_default:
+          x: null
+          y: null
+          z: null
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default:
+          msg: null
+        handles: {}
+    source: https://github.com/CederGroupHub/alab_control
+  name: Eurotherm 2416
+  description: Eurotherm 2416 1/16 DIN温度控制器/编程器（48×48mm），支持热电偶、RTD和线性输入。PID自整定控制，继电器/SSR/模拟量输出，最多4个可配置报警。可选Modbus
+    RTU通讯，传感器断线检测，密码保护。紧凑面板设计适用于空间受限安装，广泛用于炉窑、塑料加工和实验室温控场景。
+  manufacturer: Eurotherm
+  icon: facebook.jpg
+  tags: &id001
+  - 低温温度控制器
+  category: *id001
+  device_params:
+    参数: DIN-A-MITE® A Power Controller; FLUENT® In-Line Heater; EZ-ZONE® RM Rail Mount
+      Controller; Life Sciences – CPG; Food and Beverage – CPG; ServicesSee All ServicesAccreditation
+      servicesService level agreements (SLA)Warehouse MappingIndustrial-Cybersecurity;
+      Industrial-Cybersecurity
+    品牌: Eurotherm
+  model:
+    name: Eurotherm 2416
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thermal Processing
+    step: Heating
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string

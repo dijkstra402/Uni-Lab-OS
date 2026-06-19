@@ -1,0 +1,232 @@
+spd1000:
+  class:
+    module: community_drivers.spd1000.driver:SetpointException
+    type: python
+    status_types:
+      current: String
+      output: String
+      remote_sense: String
+      voltage: String
+    action_value_mappings:
+      auto-initialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: initialize
+          type: object
+        type: UniLabJsonCommand
+      auto-lock_commands:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                state:
+                  type: string
+              type: object
+          title: lock_commands
+          type: object
+        type: UniLabJsonCommand
+      auto-measure_current:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: measure_current
+          type: object
+        type: UniLabJsonCommand
+      auto-measure_power:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: measure_power
+          type: object
+        type: UniLabJsonCommand
+      auto-measure_voltage:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: measure_voltage
+          type: object
+        type: UniLabJsonCommand
+      auto-remote_sense:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                state:
+                  type: string
+              type: object
+          title: remote_sense
+          type: object
+        type: UniLabJsonCommand
+      auto-set_current:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                current_setpoint_A:
+                  type: string
+              type: object
+          title: set_current
+          type: object
+        type: UniLabJsonCommand
+      auto-set_voltage:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                voltage_setpoint_V:
+                  type: string
+              type: object
+          title: set_voltage
+          type: object
+        type: UniLabJsonCommand
+      auto-toggle_output:
+        feedback: {}
+        goal: {}
+        goal_default:
+          ch: 1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                ch:
+                  type: string
+                state:
+                  type: string
+              type: object
+          title: toggle_output
+          type: object
+        type: UniLabJsonCommand
+      auto-get_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: SPD1168X
+  description: 输出：0 – 16 V / 0-8 Amps (128 Watts) 分辨率：1 mV / 1 mA 低纹波和噪声：<= 350 uVrms
+    / 3 mVpp / <2 mArms 远程电压传感能力 支持前面板定时输出功能 清晰的图形界面，具有波形显示功能 内部 5 组系统参数保存/调用 包括 PC
+    软件：Easypower，支持 SCPI、LabView
+  manufacturer: Siglent
+  icon: spd1000.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Output: 0~16V/0~8A/128W
+    Resolution: 1mV/1mA
+    Ripple: ≤350µVrms
+    Response: <50µs
+    Display: 2.8" TFT
+    Interface: USB, LAN
+    品牌: Siglent
+  model:
+    name: SPD1168X
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  cover: SPD1168X.webp

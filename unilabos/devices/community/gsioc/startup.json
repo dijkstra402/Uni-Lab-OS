@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "test_gsioc",
+      "name": "Test gsioc",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "gsioc",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "serial": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_gsioc",
+      "action": "auto-connect",
+      "action_args": {
+        "ID": 0
+      }
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_gsioc",
+      "action": "auto-closeSerial",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "createSerial",
+      "description": "自动补充动作: createSerial",
+      "device": "test_gsioc",
+      "action": "auto-createSerial",
+      "action_args": {
+        "port": 0,
+        "timeout": 0.1,
+        "baudrate": 9600
+      }
+    },
+    {
+      "step": 4,
+      "name": "iCommand",
+      "description": "自动补充动作: iCommand",
+      "device": "test_gsioc",
+      "action": "auto-iCommand",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "bCommand",
+      "description": "自动补充动作: bCommand",
+      "device": "test_gsioc",
+      "action": "auto-bCommand",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "gsioc 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "gsioc",
+    "generated_by": "driver-finder"
+  }
+}

@@ -1,0 +1,58 @@
+hp6624a:
+  class:
+    module: unilabos.devices.community.hp6624a.driver:HP6624a
+    type: python
+    status_types:
+      channel: str
+      voltage: str
+      current: str
+      voltage_sense: str
+      current_sense: str
+      channel_count: str
+    action_value_mappings:
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: 6624A DC Power Supply, Quad-Output, 2 Outputs at 7V/5A, 2 Outputs at 20V/2A,
+    GPIB [Obsolete]
+  description: 四路输出系统直流电源，双量程，快速低噪声，GPIB可编程。2016停产，替代N6700B+N6751A。
+  manufacturer: Keysight
+  icon: hp6624a.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Outputs: 4 independent, 40W each
+    CH1&2: 0~7V/5A or 0~20V/2A
+    CH3&4: 0~20V/2A or 0~50V/0.8A
+    Transient: <75µs
+    Interface: GPIB
+    品牌: Keysight
+  model:
+    name: 6624A DC Power Supply, Quad-Output, 2 Outputs at 7V/5A, 2 Outputs at 20V/2A,
+      GPIB [Obsolete]
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

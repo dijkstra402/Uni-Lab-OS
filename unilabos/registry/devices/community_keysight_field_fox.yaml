@@ -1,0 +1,96 @@
+keysight_field_fox:
+  class:
+    module: unilabos.devices.community.keysight_field_fox.driver:KeysightFieldFox
+    type: python
+    status_types:
+      points: str
+      start: str
+      stop: str
+      bandwidth: str
+      display: str
+      trigger: str
+      format: str
+      sparameter: str
+    action_value_mappings:
+      auto-sweep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sweep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readRI:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readRI
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readFormatted:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readFormatted
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Keysight FieldFox N9914A 手持式RF分析仪
+  description: Keysight FieldFox N9914A是一款坚固耐用的手持式RF分析仪（已停产），基础功能为线缆和天线分析仪，可扩展VNA、频谱分析仪、功率计等。无风扇无通风口设计，符合MIL-810G标准。
+  manufacturer: Keysight
+  icon: keysight_field_fox.webp
+  tags: &id001
+  - 频谱与网络分析仪
+  category: *id001
+  device_params:
+    频率范围: 30kHz-6.5GHz
+    端口数: '2'
+    输出功率: 最高1dBm
+    迹线噪声: 0.004dB rms
+    幅度精度: ±0.5dB(无需预热)
+    工作温度: -10至+55°C
+    尺寸: 29.2×18.8×7.1cm
+    重量: 3.0kg
+    电池续航: 约3.5小时
+    功能: 线缆天线分析仪、矢量网络分析仪(VNA)、频谱分析仪
+    S参数: 全2端口(S11/S21/S12/S22)
+    可选: 功率计/信号源/矢量电压表/干扰分析仪/GPS
+    品牌: Keysight
+  model:
+    name: Keysight FieldFox N9914A 手持式RF分析仪
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        instrument:
+          default: null
+          type: string
+        logger:
+          default: null
+          type: string

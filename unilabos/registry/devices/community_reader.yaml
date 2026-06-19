@@ -1,0 +1,119 @@
+reader:
+  class:
+    module: unilabos.devices.community.reader.driver:Reader
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-decode_raw_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: decode_raw_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                raw_data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-extract_meaningful_data_from_chunk:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: extract_meaningful_data_from_chunk
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                raw_data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_chunked_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_chunked_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                raw_data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-raw_data_to_keys:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: raw_data_to_keys
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                extracted_data:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Reader是一款实验执行&合成设备，主要功能包括初始化、设备连接、读取数据。支持Signal, Slot, decode raw data等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '7'
+    读取操作: read、get_chunked_data
+    通信接口: USB
+  manufacturer: Open Source
+  model:
+    name: Reader
+    type: device
+  name: Reader
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

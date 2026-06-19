@@ -1,0 +1,177 @@
+gh_idex_rheodyne_mx_series_ii:
+  class:
+    module: community_drivers.gh_idex_rheodyne_mx_series_ii.driver:MX_valve
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-stripped_hex:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stripped_hex
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target:
+                  type: string
+        goal_default:
+          target: null
+        handles: {}
+      auto-wait_ready:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_ready
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-message_builder:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: message_builder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                objective:
+                  type: string
+                port:
+                  type: integer
+                  default: 1
+        goal_default:
+          objective: null
+          port: 1
+        handles: {}
+      auto-read_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default:
+          message: null
+        handles: {}
+      auto-response_interpret:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: response_interpret
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                response:
+                  type: string
+        goal_default:
+          response: null
+        handles: {}
+      auto-get_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-change_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+        goal_default:
+          port: null
+        handles: {}
+    source: https://github.com/linnarsson-lab/MXII-valve
+  name: Rheodyne MX II Stand-Alone Valves
+  description: 自动切换和进样阀 ✓ 采用 Rapid Replacement Pods™ 时压力高达 15,000 psi ✓ 串行、USB 和触点闭合控制
+    ☞ 查看阀门
+  manufacturer: IDEX Health & Science
+  icon: banner-background-blue.png
+  tags: &id001
+  - 多通阀
+  category: *id001
+  device_params:
+    参数: Multi-layer Manifolds
+    品牌: IDEX (Rheodyne)
+  model:
+    name: Rheodyne MX II Stand-Alone Valves
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          default: null
+          type: string
+        ports:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        verbose:
+          default: null
+          type: string
+        baudrate:
+          default: null
+          type: string

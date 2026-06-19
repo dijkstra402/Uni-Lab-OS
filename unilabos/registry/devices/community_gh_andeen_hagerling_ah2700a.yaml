@@ -1,0 +1,73 @@
+gh_andeen_hagerling_ah2700a:
+  class:
+    module: unilabos.devices.community.gh_andeen_hagerling_ah2700a.driver:AH2700A
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: Andeen-Hagerling AH 2700A Capacitance Bridge
+  description: Andeen-Hagerling AH 2700A超精密电容电桥，具有50 Hz至20 kHz可编程测试频率，分辨率0.5 aF。支持自动量程和频率扫描，适用于材料表征、传感器校准和计量标准实验室。
+  manufacturer: Andeen-Hagerling
+  icon: gh_andeen_hagerling_ah2700a.webp
+  tags: &id001
+  - 频谱与网络分析仪
+  category: *id001
+  device_params:
+    Type: Ultra-precision capacitance bridge
+    Accuracy: 5 ppm
+    Resolution: 0.5 aF
+    Frequency: 50-20000 Hz
+    Range: 0-15 nF
+    Interface: GPIB
+    Stability: 0.001 ppm/min
+    品牌: Andeen-Hagerling
+  model:
+    name: Andeen-Hagerling AH 2700A Capacitance Bridge
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string

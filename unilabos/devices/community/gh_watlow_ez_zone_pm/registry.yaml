@@ -1,0 +1,189 @@
+gh_watlow_ez_zone_pm:
+  class:
+    module: community_drivers.gh_watlow_ez_zone_pm.driver:AsyncioModbusClient
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-read_coils:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_coils
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+        goal_default:
+          address: null
+          count: null
+        handles: {}
+      auto-read_registers:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+        goal_default:
+          address: null
+          count: null
+        handles: {}
+      auto-read_holding_registers:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_holding_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+        goal_default:
+          address: null
+          count: null
+        handles: {}
+      auto-write_coil:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_coil
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          address: null
+          value: null
+        handles: {}
+      auto-write_coils:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_coils
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                values:
+                  type: string
+        goal_default:
+          address: null
+          values: null
+        handles: {}
+      auto-write_register:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                value:
+                  type: string
+                skip_encode:
+                  type: boolean
+                  default: false
+        goal_default:
+          address: null
+          value: null
+          skip_encode: false
+        handles: {}
+      auto-write_registers:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                values:
+                  type: string
+                skip_encode:
+                  type: boolean
+                  default: false
+        goal_default:
+          address: null
+          values: null
+          skip_encode: false
+        handles: {}
+    source: https://github.com/numat/watlow
+  name: 'DISCONTINUED: EZ-ZONE® PM Panel Mount Controller'
+  description: 搜索 Watlow 的资源，查找有关产品的规格表，例如：电源控制器、带状加热器和电加热器。
+  manufacturer: Watlow
+  icon: Watlow%20Logo_color%20rev.png
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Type: PID controller
+    Inputs: universal (TC, RTD, process)
+    Output: relay/SSR/analog
+    Display: color touchscreen
+    Communication: Ethernet, RS-485, USB
+    Features: adaptive tuning, data logging, remote access
+    品牌: Watlow
+  model:
+    name: 'DISCONTINUED: EZ-ZONE® PM Panel Mount Controller'
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thermal Processing
+    step: Heating
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string

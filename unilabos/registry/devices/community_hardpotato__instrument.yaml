@@ -1,0 +1,139 @@
+hardpotato__instrument:
+  class:
+    module: unilabos.devices.community.hardpotato__instrument.driver:Instrument
+    type: python
+    status_types:
+      firmware_version: String
+      device_type: String
+      mscript_version: String
+      serial_number: String
+      register: String
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                text:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-writelines:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writelines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lines:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-readline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readlines_until_end:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readlines_until_end
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-load_mscript_from_flash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_mscript_from_flash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_mscript_from_flash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_mscript_from_flash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_script:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_script
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-abort_and_sync:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: abort_and_sync
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Communication interface for MethodSCRIPT instruments
+  category:
+  - emstat_pico
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        comm:
+          type: string
+          default: null

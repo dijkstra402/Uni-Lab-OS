@@ -1,0 +1,245 @@
+gh_device_64:
+  class:
+    module: unilabos.devices.community.d_64.driver:NeslabController
+    type: python
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal:
+          cmd: cmd
+          dat: dat
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                dat:
+                  type: string
+        goal_default:
+          cmd: ''
+          dat: ''
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-status_set:
+        type: UniLabJsonCommand
+        goal:
+          unit_on: unit_on
+          probe_ext: probe_ext
+          faults: faults
+          mute: mute
+          auto_restart: auto_restart
+          prec_hi: prec_hi
+          fullrange_cool: fullrange_cool
+          remote: remote
+        feedback: {}
+        result: {}
+        schema:
+          title: status_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unit_on:
+                  type: string
+                probe_ext:
+                  type: string
+                faults:
+                  type: string
+                mute:
+                  type: string
+                auto_restart:
+                  type: string
+                prec_hi:
+                  type: string
+                fullrange_cool:
+                  type: string
+                remote:
+                  type: string
+        goal_default:
+          unit_on: ''
+          probe_ext: ''
+          faults: ''
+          mute: ''
+          auto_restart: ''
+          prec_hi: ''
+          fullrange_cool: ''
+          remote: ''
+        handles: {}
+      auto-status_get:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status_get
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-on:
+        type: UniLabJsonCommand
+        goal:
+          status: status
+        feedback: {}
+        result: {}
+        schema:
+          title: 'on'
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+        goal_default:
+          status: ''
+        handles: {}
+      auto-probe_ext:
+        type: UniLabJsonCommand
+        goal:
+          status: status
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_ext
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+        goal_default:
+          status: ''
+        handles: {}
+      auto-temp_set:
+        type: UniLabJsonCommand
+        goal:
+          temp: temp
+        feedback: {}
+        result: {}
+        schema:
+          title: temp_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: string
+        goal_default:
+          temp: ''
+        handles: {}
+      auto-fault_lo:
+        type: UniLabJsonCommand
+        goal:
+          limit: limit
+        feedback: {}
+        result: {}
+        schema:
+          title: fault_lo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limit:
+                  type: string
+        goal_default:
+          limit: ''
+        handles: {}
+      auto-fault_hi:
+        type: UniLabJsonCommand
+        goal:
+          limit: limit
+        feedback: {}
+        result: {}
+        schema:
+          title: fault_hi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limit:
+                  type: string
+        goal_default:
+          limit: ''
+        handles: {}
+      auto-pid:
+        type: UniLabJsonCommand
+        goal:
+          drive: drive
+          p: p
+          i: i
+          d: d
+        feedback: {}
+        result: {}
+        schema:
+          title: pid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                drive:
+                  type: string
+                p:
+                  type: string
+                i:
+                  type: string
+                d:
+                  type: string
+        goal_default:
+          drive: ''
+          p: ''
+          i: ''
+          d: ''
+        handles: {}
+  name: Thermo NESLAB RTE-740/RTE-111 制冷加热循环浴
+  description: Thermo NESLAB RTE系列是经典的制冷加热循环浴，RTE-740温度范围-40°C至200°C，RTE-111温度范围-25°C至150°C，均具有±0.01°C的出色温度稳定性。采用无CFC风冷制冷系统，配备微处理器PID控制器和数字显示。组合式压力-吸力泵可同时为开放容器和封闭回路系统提供循环。适用于激光、冷凝器、旋转蒸发仪、反应器和分析仪器等多种温控应用。
+  manufacturer: Thermo Scientific
+  tags: &id001
+  - 高低温循环装置
+  category: *id001
+  model:
+    name: Thermo NESLAB RTE-740/RTE-111 制冷加热循环浴
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    RTE-740温度范围: -40~200°C
+    RTE-111温度范围: -25~150°C
+    温度稳定性: ±0.01°C
+    制冷量(20°C): 800W
+    加热功率: 800W
+    浴槽容积: 7.0L
+    泵流量: 15LPM
+    最大泵扬程: 4.9m
+    制冷剂: R404a
+    接口: RS-232/RS-485
+    重量: 39kg
+    品牌: Thermo Scientific

@@ -1,0 +1,118 @@
+gh_device_1062:
+  class:
+    module: unilabos.devices.community.d_1062.driver:LightCyclerConnection
+    type: python
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-command:
+        type: UniLabJsonCommand
+        goal:
+          msg_type: msg_type
+          payload: payload
+          timeout: timeout
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg_type:
+                  type: integer
+                payload:
+                  type: string
+                timeout:
+                  type: number
+        goal_default:
+          msg_type: 0
+          payload: ''
+          timeout: 0
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal:
+          msg_type: msg_type
+          timeout: timeout
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg_type:
+                  type: integer
+                timeout:
+                  type: number
+        goal_default:
+          msg_type: 0
+          timeout: 0
+        handles: {}
+      auto-wait_for_event:
+        type: UniLabJsonCommand
+        goal:
+          predicate: predicate
+          timeout: timeout
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: wait_for_event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                predicate:
+                  type: string
+                timeout:
+                  type: number
+        goal_default:
+          predicate: ''
+          timeout: 0
+        handles: {}
+  name: Roche LightCycler 480 II 实时荧光定量PCR仪
+  description: Roche LightCycler 480 II是高通量微孔板式实时荧光定量PCR系统，支持96孔和384孔板格式。采用氙灯宽光谱光源和CCD相机检测，最多6个检测通道支持多重荧光标记。动态范围跨10个数量级，内置高分辨率熔解(HRM)分析功能，适用于基因定量、基因分型和病原体检测。
+  manufacturer: Roche
+  tags: &id001
+  - 实时定量PCR仪
+  category: *id001
+  model:
+    name: Roche LightCycler 480 II 实时荧光定量PCR仪
+    type: device
+  version: 1.0.0
+  resource_type: device

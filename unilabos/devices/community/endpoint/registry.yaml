@@ -1,0 +1,80 @@
+endpoint:
+  class:
+    module: unilabos.devices.generic.endpoint:Endpoint
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size_or_buffer:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clear_halt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_halt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Endpoint是设备驱动。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '30'
+    读取操作: get_interface_and_endpoint、get_active_configuration、read、get_active_configuration、read
+    控制操作: managed_set_configuration、managed_set_interface、setup_request、write、set_altsetting 等10个
+    设备属性: langids、serial_number、product、parent、manufacturer、backend
+    控制能力: 时间
+    通信接口: USB
+  manufacturer: Open Source
+  model:
+    name: Endpoint
+    type: device
+  name: Endpoint
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

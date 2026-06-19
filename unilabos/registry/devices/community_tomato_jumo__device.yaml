@@ -1,0 +1,150 @@
+tomato_jumo__device:
+  class:
+    module: unilabos.devices.community.tomato_jumo__device.driver:Device
+    type: python
+    status_types:
+      temperature: String
+      setpoint: String
+      duty_cycle: String
+      heater_on: String
+      attr: String
+    action_value_mappings:
+      auto-attrs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: attrs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_attr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_attr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                attr:
+                  type: string
+                val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-capabilities:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: capabilities
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-do_measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: do_measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prepare_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                task:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: JUMO Quantrol LC系列通用PID控制器，三种DIN尺寸可选，支持Modbus通信和JUMO自整定功能。
+  category: &id001
+  - 冷热水机
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        driver:
+          type: string
+          default: null
+        key:
+          type: string
+          default: null
+  name: JUMO Quantrol LC100/LC200/LC300 PID控制器
+  icon: tomato-jumo_0cc24ae2.webp
+  tags: *id001
+  manufacturer: 久茂
+  device_params:
+    可控参数: DIN尺寸、安装深度、重量、接口、功能、探头
+    操作数: 6
+    品牌: JUMO
+    DIN尺寸: LC100/LC200/LC300三种
+    安装深度: LC100最大95mm, LC200/LC300最大80mm
+    重量: 150g/200g/300g
+    接口: USB Mini-B, Modbus
+    功能: PID自整定, 两点/三点控制, 连续输出
+  model:
+    name: JUMO Quantrol LC100/LC200/LC300 PID控制器
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device

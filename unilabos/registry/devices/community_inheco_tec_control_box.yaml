@@ -1,0 +1,126 @@
+inheco_tec_control_box:
+  class:
+    module: unilabos.devices.community.inheco_tec_control_box.driver:InhecoTECControlBox
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                timeout:
+                  type: integer
+                  default: 3
+        goal_default:
+          command: null
+          timeout: 3
+        handles: {}
+      auto-set_touchscreen:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_touchscreen
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                active:
+                  type: boolean
+        goal_default:
+          active: null
+        handles: {}
+      auto-reset_action_display:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_action_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: CPAC – Cold Plate Air Cooled Heater/Cooler
+  description: INHECO TEC Control是实验室自动化温度控制单元，控制温度和振荡，测量环境温度和湿度。支持手动触摸屏操作和USB自动化接口，可编程复杂温度/振荡序列。放置在工作台外以节省空间。
+  manufacturer: Inheco
+  icon: inheco_tec_control_box.webp
+  tags: &id001
+  - 冷热源
+  category: *id001
+  device_params:
+    型号: Multi TEC Control(MTC) 185×249×264mm / Single TEC Control(STC) 147×224×177mm
+      / MTC Compact 300×260×100mm
+    默认目标温度: 70°C
+    STC电气: 100VAC, 50/60Hz, 150W
+    环境温度: +15至+32°C
+    STC重量: 3.3kg
+    接口: USB, 触摸屏
+    兼容设备: Thermoshake/CPAC/HeatPAC/Teleshake/IMP
+    模块: Blue/Black/Yellow Slot Modules
+    品牌: Inheco
+  model:
+    name: CPAC – Cold Plate Air Cooled Heater/Cooler
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Thermal Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        vid:
+          default: null
+          type: string
+        pid:
+          default: null
+          type: string
+        serial_number:
+          default: null
+          type: string

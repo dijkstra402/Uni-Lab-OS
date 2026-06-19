@@ -1,0 +1,62 @@
+gh_device_890:
+  class:
+    module: community_drivers.890.driver:SmartlineV1
+    type: python
+    action_value_mappings:
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: ''
+        handles: {}
+      auto-check_set_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_set_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Smartline V1真空计
+  description: Thyracont Smartline系列紧凑型数字真空计，适用于工业和科研应用，提供直观界面和多种接口选项
+  manufacturer: Thyracont
+  tags: &id001
+  - 真空测量仪器
+  category: *id001
+  model:
+    name: Smartline V1真空计
+    type: device
+  version: 1.0.0
+  resource_type: device

@@ -1,0 +1,207 @@
+gh_lakeshore_model_335:
+  class:
+    module: unilabos.devices.community.gh_lakeshore_model_335.driver:LakeshoreModel335Channel
+    type: python
+    status_types:
+      sensor_type: str
+      auto_range_enabled: str
+      range: str
+      compensation_enabled: str
+      units: str
+    action_value_mappings:
+      auto-get_sensor_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sensor_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_sensor_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_sensor_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_auto_range_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_auto_range_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_auto_range_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_auto_range_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_compensation_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_compensation_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_compensation_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_compensation_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_units:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_units:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+    source: https://github.com/microsoft/Qcodes
+  name: Model 335 cryogenic temperature controller
+  description: LakeShore Model 335是双通道低温温度控制器，温度范围300mK至1500K，支持USB、GPIB和任选支架接口。
+  manufacturer: Lake Shore
+  icon: gh_lakeshore_model_335.webp
+  tags: &id001
+  - 冷热源
+  category: *id001
+  device_params:
+    Type: Dual-channel cryo controller
+    Inputs: '2'
+    Range: 300mK-1500K
+    Resolution: ±0.001K
+    Outputs: 2 (50W+1-2W)
+    Control: PID AutoTune
+    Interface: USB, GPIB, Ethernet
+    Zones: '10'
+    Features: ramping, data logging
+    品牌: Lake Shore
+  model:
+    name: Model 335 cryogenic temperature controller
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        parent:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        channel:
+          default: null
+          type: string

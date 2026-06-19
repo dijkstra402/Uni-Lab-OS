@@ -1,0 +1,166 @@
+pv_logger:
+  class:
+    module: unilabos.devices.community.pv_logger.driver:PVLogger
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-read_configfile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_configfile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-make_pvlog_folder:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: make_pvlog_folder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chdir:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-connect_pvs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_pvs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_pv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_pv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pvname:
+                  type: string
+                desc:
+                  type: string
+                mdel:
+                  type: string
+                descpv:
+                  type: string
+                mdelpv:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-look_for_new_pvs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: look_for_new_pvs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-look_for_exit_signal:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: look_for_exit_signal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-finish:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: finish
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-on_exit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: on_exit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: PV Logger是由EPICS (Argonne National Lab)生产的专业实验设备。wraps a PV for logging
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '17'
+    读取操作: read_configfile
+    控制操作: write、set_mdel、set_desc、write_data
+    控制能力: 多通道、时间、电流
+  manufacturer: EPICS (Argonne National Lab)
+  model:
+    name: PV Logger
+    type: device
+  name: EPICS PV Logger
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: epics_dxp_mapping.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

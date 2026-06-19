@@ -1,0 +1,148 @@
+manifest:
+  class:
+    module: unilabos.devices.community.manifest.driver:Manifest
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write_record:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_record
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                record:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-delete_records:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete_records
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                record_indexes:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-restore_records:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restore_records
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                record_indexes:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create_new_session_id:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_new_session_id
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_deleted_indexes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_deleted_indexes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                indexes:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-exit_hook:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: exit_hook
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Manifest是一款实验执行&合成设备，主要功能包括关闭、写入数据、启动、记录、读取数据、运行。支持Signal, Slot, add
+    deleted indexes等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '23'
+    读取操作: readline、read_from
+    控制操作: writeline、seek_line_start、write_record、start_index、write_record 等6个
+  manufacturer: Open Source
+  model:
+    name: Manifest
+    type: device
+  name: Manifest
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

@@ -1,0 +1,102 @@
+gh_device_1005:
+  class:
+    module: community_drivers.1005.driver:Controller
+    type: python
+    action_value_mappings:
+      auto-move_door:
+        type: UniLabJsonCommand
+        goal:
+          direction: direction
+          wait_s: wait_s
+        feedback: {}
+        result: {}
+        schema:
+          title: move_door
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                direction:
+                  type: string
+                wait_s:
+                  type: string
+        goal_default:
+          direction: ''
+          wait_s: ''
+        handles: {}
+      auto-zero:
+        type: UniLabJsonCommand
+        goal:
+          wait_s: wait_s
+        feedback: {}
+        result: {}
+        schema:
+          title: zero
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait_s:
+                  type: string
+        goal_default:
+          wait_s: ''
+        handles: {}
+      auto-tare:
+        type: UniLabJsonCommand
+        goal:
+          wait_s: wait_s
+        feedback: {}
+        result: {}
+        schema:
+          title: tare
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait_s:
+                  type: string
+        goal_default:
+          wait_s: ''
+        handles: {}
+      auto-get_immediate_weight:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_immediate_weight
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: A&D GX-K/GF-K系列精密天平
+  description: A&D GX-K/GF-K系列精密天平配备内部自动校准功能，支持SBI通信协议通过RS-232C接口进行数据传输。具有高精度称量能力、多种称量单位切换、环境自适应调节及风罩设计，广泛应用于实验室精密称量。
+  manufacturer: A&D
+  tags: &id001
+  - 电子天平
+  category: *id001
+  model:
+    name: A&D GX-K/GF-K系列精密天平
+    type: device
+  version: 1.0.0
+  resource_type: device

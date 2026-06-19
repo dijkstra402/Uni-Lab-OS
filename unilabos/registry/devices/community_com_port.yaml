@@ -1,0 +1,128 @@
+com_port:
+  class:
+    module: unilabos.devices.community.com_port.driver:ComPort
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-readBytes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readBytes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readText:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readText
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setControlLineState:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setControlLineState
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                RTS:
+                  type: string
+                DTR:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setLineCoding:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setLineCoding
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                baudrate:
+                  type: string
+                parity:
+                  type: string
+                databits:
+                  type: string
+                stopbits:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getLineCoding:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getLineCoding
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: COM Port是由Open Standard生产的专业实验设备。Gets a single character from standard
+    input. Does not echo to the screen
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '7'
+    读取操作: readBytes、readText、getLineCoding
+    控制操作: write、setControlLineState、setLineCoding
+    控制能力: 速度
+    通信接口: USB
+  manufacturer: Open Standard
+  model:
+    name: COM Port
+    type: device
+  name: Open Standard Gets a single character from standard input
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: aio_serial.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

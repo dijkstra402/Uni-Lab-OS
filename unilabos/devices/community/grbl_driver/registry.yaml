@@ -1,0 +1,478 @@
+grbl_driver:
+  class:
+    module: unilabos.devices.motion.grbl.grbl_driver:GrblDriver
+    type: python
+    status_types:
+      status_report: String
+      positions: String
+    action_value_mappings:
+      auto-write_global_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_global_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: string
+        goal_default:
+          wait: 0.02
+        handles: {}
+      auto-write_all_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_all_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-verify_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: verify_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shake_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shake_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                d_shift:
+                  type: string
+                time_shake:
+                  type: string
+        goal_default:
+          d_shift: 100
+          time_shake: 30
+        handles: {}
+      auto-move_rel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_rel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position_rel:
+                  type: string
+                blocking:
+                  type: string
+                pingwait:
+                  type: string
+        goal_default:
+          position_rel:
+          - 0
+          - 0
+          - 0
+          blocking: true
+          pingwait: 0.25
+        handles: {}
+      auto-move_abs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_abs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position_rel:
+                  type: string
+                blocking:
+                  type: string
+                pingwait:
+                  type: string
+        goal_default:
+          position_rel:
+          - 0
+          - 0
+          - 0
+          blocking: true
+          pingwait: 0.25
+        handles: {}
+      auto-move_xyz:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_xyz
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                blocking:
+                  type: string
+                pingwait:
+                  type: string
+                config:
+                  type: string
+        goal_default:
+          position:
+          - 0
+          - 0
+          - 0
+          blocking: true
+          pingwait: 0.25
+          config: abs
+        handles: {}
+      auto-xmove:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: xmove
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: string
+                blocking:
+                  type: string
+        goal_default:
+          blocking: true
+        handles: {}
+      auto-ymove:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ymove
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: string
+                blocking:
+                  type: string
+        goal_default:
+          blocking: true
+        handles: {}
+      auto-zmove:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: zmove
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: string
+                blocking:
+                  type: string
+        goal_default:
+          blocking: true
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                offset:
+                  type: string
+                blocking:
+                  type: string
+                pingwait:
+                  type: string
+                zhome:
+                  type: string
+        goal_default:
+          offset:
+          - 0
+          - 0
+          - 0
+          blocking: true
+          pingwait: 0.01
+          zhome: false
+        handles: {}
+      auto-zhome:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: zhome
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: string
+        goal_default:
+          steps: 20000
+        handles: {}
+      auto-check_alarm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_alarm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bufferoutput:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset_stage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_stage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-zero_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: zero_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_laser_intensity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_laser_intensity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                intensity:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_led:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_led
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: 1
+        handles: {}
+      auto-soft_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: soft_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-controlled_stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: controlled_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pingwait:
+                  type: string
+        goal_default:
+          pingwait: 0.25
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-alarm_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: alarm_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_positions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_positions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status_report:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status_report
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: GRBL Motor Driver 自动化设备是由Open Source (GRBL)生产的专业实验设备。Class for interfacing with GRBL loaded on an Arduino Uno
+  category:
+  - 物流/机械
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          type: string
+          default: /dev/ttyACM0
+  device_params:
+    品牌: Open Source
+    功能: 参数配置、搅拌/混合、数据采集、电学测量、运动控制
+    可控参数: blocking、bufferoutput、config、d_shift、intensity、偏移、pingwait、位置
+    操作数: 25
+  manufacturer: Open Source (GRBL)
+  model:
+    name: Open GRBL Motor Driver
+    type: device
+  name: GRBL Motor
+  tags:
+  - 物流/机械
+  resource_type: device
+  icon: grbl_driver.webp
+  scene:
+    domain: Automation
+    scene_name: Motion Control
+    step: Positioning
+  version: 1.0.0

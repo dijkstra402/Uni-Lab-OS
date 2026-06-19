@@ -1,0 +1,210 @@
+gh_device_645:
+  class:
+    module: unilabos.devices.community.d_645.driver:KDC101
+    type: python
+    action_value_mappings:
+      auto-get_status_n:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status_n
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_status:
+        type: UniLabJsonCommand
+        goal:
+          status: status
+          enabled: enabled
+          timeout: timeout
+          period: period
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+                enabled:
+                  type: string
+                timeout:
+                  type: string
+                period:
+                  type: string
+        goal_default:
+          status: ''
+          enabled: ''
+          timeout: ''
+          period: ''
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal:
+          sync: sync
+          force: force
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sync:
+                  type: string
+                force:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          sync: ''
+          force: ''
+          timeout: ''
+        handles: {}
+      auto-is_homing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_homing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_homed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_homed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_home:
+        type: UniLabJsonCommand
+        goal:
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default:
+          timeout: ''
+        handles: {}
+      auto-get_velocity_params:
+        type: UniLabJsonCommand
+        goal:
+          scale: scale
+        feedback: {}
+        result: {}
+        schema:
+          title: get_velocity_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                scale:
+                  type: string
+        goal_default:
+          scale: ''
+        handles: {}
+      auto-set_velocity_params:
+        type: UniLabJsonCommand
+        goal:
+          max_velocity: max_velocity
+          acceleration: acceleration
+        feedback: {}
+        result: {}
+        schema:
+          title: set_velocity_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_velocity:
+                  type: string
+                acceleration:
+                  type: string
+        goal_default:
+          max_velocity: ''
+          acceleration: ''
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Thorlabs MFF102 电动滤光片翻转架
+  description: Thorlabs MFF102是一款双位高速电动滤光片翻转架，可将滤光片、透镜等光学元件快速翻入或翻出自由空间光束路径。支持四种控制方式：顶部按钮、遥控手柄、SMA外部信号触发和PC软件控制。具有速度反馈平滑过渡和机械硬止动定位，含Kinesis软件和电源。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 光学调整架
+  category: *id001
+  model:
+    name: Thorlabs MFF102 电动滤光片翻转架
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    翻转位置: 2个(0°和90°)
+    翻转时间: ~500ms(典型,<50g负载)
+    兼容光学元件: 最大Ø2英寸(50.8mm)
+    螺纹: SM1(1.035"-40)
+    截面尺寸: 30×30mm
+    控制方式: 顶部按钮/遥控手柄/SMA外部触发/PC软件
+    供电: 15V
+    安装: 8-32螺孔
+    品牌: Thorlabs

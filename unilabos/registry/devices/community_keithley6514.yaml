@@ -1,0 +1,81 @@
+keithley6514:
+  class:
+    module: unilabos.devices.community.keithley6514.driver:Keithley6514
+    type: python
+    status_types:
+      unit: str
+      auto_range: str
+      input_range: str
+    action_value_mappings:
+      auto-auto_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default:
+          mode: null
+        handles: {}
+      auto-fetch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fetch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_measurements:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_measurements
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Keithley 6514 System Electrometer
+  description: 6.5位高性能系统静电计，1fA电流灵敏度，200TΩ输入阻抗。已停产，后续为6517B。
+  manufacturer: Tektronix
+  icon: keithley6514.webp
+  tags: &id001
+  - 电表与万用表
+  category: *id001
+  device_params:
+    Resolution: 6.5 digits
+    Voltage: 2V~200V (>200TΩ input)
+    Current: 100aA~20mA (1fA sensitivity)
+    Resistance: 10mΩ~200GΩ
+    Charge: from 10fC
+    Input Bias: <3fA
+    Speed: 1200 readings/s
+    CMRR: '>120dB'
+    Interface: IEEE-488, RS-232
+    品牌: Tektronix
+  model:
+    name: Keithley 6514 System Electrometer
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device

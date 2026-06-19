@@ -1,0 +1,98 @@
+gh_device_165:
+  class:
+    module: unilabos.devices.community.d_165.driver:SEM
+    type: python
+    action_value_mappings:
+      auto-start_acquire:
+        type: UniLabJsonCommand
+        goal:
+          detector: detector
+        feedback: {}
+        result: {}
+        schema:
+          title: start_acquire
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                detector:
+                  type: string
+        goal_default:
+          detector: ''
+        handles: {}
+      auto-stop_acquire:
+        type: UniLabJsonCommand
+        goal:
+          detector: detector
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_acquire
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                detector:
+                  type: string
+        goal_default:
+          detector: ''
+        handles: {}
+      auto-terminate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: terminate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-host:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: host
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Tescan MIRA/VEGA 扫描电子显微镜
+  description: Tescan MIRA和VEGA是两个不同定位的扫描电子显微镜产品线。MIRA4采用Schottky场发射枪，分辨率可达约1nm，适用于先进材料科学、纳米技术和半导体应用。VEGA采用热电子发射(钨丝或LaB6阴极)，分辨率约3nm，是性价比优异的常规分析SEM，广泛用于学术和工业质控。两者均支持多种探测器和分析附件。
+  manufacturer: Tescan
+  tags: &id001
+  - 扫描电子显微镜
+  category: *id001
+  model:
+    name: Tescan MIRA/VEGA 扫描电子显微镜
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    MIRA4: Schottky场发射
+    VEGA: 热电子发射(钨/LaB6)
+    品牌: Tescan

@@ -1,0 +1,74 @@
+raw2_disk:
+  class:
+    module: unilabos.devices.community.raw2_disk.driver:Raw2Disk
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socket:
+                  type: string
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socket:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Raw2 Disk是一款后处理设备，主要功能包括关闭、写入数据、打开。支持Signal, Slot, main等操作。
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        context:
+          type: string
+          default: null
+  name: RAW2 Disk
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 后处理设备
+  device_params:
+    支持操作数: '3'
+    控制操作: write

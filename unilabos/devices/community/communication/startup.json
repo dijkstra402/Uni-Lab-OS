@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "test_communication",
+      "name": "Communication",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.communication",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "device_name": "",
+        "vid": 0,
+        "pid": 0
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_communication",
+      "action": "auto-connect",
+      "action_args": {
+        "device_name": "",
+        "vid": 0,
+        "pid": 0
+      }
+    },
+    {
+      "step": 2,
+      "name": "disconnect",
+      "description": "自动补充动作: disconnect",
+      "device": "test_communication",
+      "action": "auto-disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "is connect",
+      "description": "自动补充动作: is_connect",
+      "device": "test_communication",
+      "action": "auto-is_connect",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "send",
+      "description": "自动补充动作: send",
+      "device": "test_communication",
+      "action": "auto-send",
+      "action_args": {
+        "timeout": 2
+      }
+    },
+    {
+      "step": 5,
+      "name": "record",
+      "description": "自动补充动作: record",
+      "device": "test_communication",
+      "action": "auto-record",
+      "action_args": {
+        "timeout": 4
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "Communication 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Communication",
+    "generated_by": "driver-finder"
+  }
+}

@@ -1,0 +1,176 @@
+bronkhorst_elflow:
+  class:
+    module: unilabos.devices.community.bronkhorst_elflow.driver:Bronkhorst_ELFLOW
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_valve_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_valve_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-get_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_flow:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_flow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Reliable EL-FLOW Select mass flow meter/controller
+  description: 探索 EL-FLOW Select，这是我们最受欢迎的气体流量设备，以其准确性、流量范围的多功能性以及在不同应用中经过验证的性能而闻名。
+  manufacturer: Bronkhorst
+  icon: bronkhorst_elflow.webp
+  tags: &id001
+  - 科里奥利质量流量计
+  category: *id001
+  device_params:
+    Flow: 0.16mln/min~25ln/min
+    Accuracy: ±0.5%Rd+±0.1%FS
+    Repeatability: <0.2%Rd
+    Pressure: 64bar
+    Temp: 0~70°C
+    Material: 316L SS
+    Interface: analog/PROFIBUS/RS-232/EtherCAT/PROFINET
+    品牌: Bronkhorst
+  model:
+    name: Reliable EL-FLOW Select mass flow meter/controller
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Dispensing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string

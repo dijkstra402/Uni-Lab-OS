@@ -1,0 +1,105 @@
+serial:
+  class:
+    module: unilabos.devices.community.serial.driver:Serial
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Serial是由Open Standard生产的专业实验设备。Transfer layer of serial device using
+    the pySerial module
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '5'
+    读取操作: read、query
+    控制操作: write
+    通信接口: 串口(RS-232)
+  manufacturer: Open Standard
+  model:
+    name: Serial
+    type: device
+  name: Open Standard Serial
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: aio_serial.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

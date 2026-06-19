@@ -1,0 +1,73 @@
+gh_device_570:
+  class:
+    module: unilabos.devices.community.d_570.driver:LM_500
+    type: python
+    action_value_mappings:
+      auto-_set_unit:
+        type: UniLabJsonCommand
+        goal:
+          val: val
+        feedback: {}
+        result: {}
+        schema:
+          title: _set_unit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: string
+        goal_default:
+          val: ''
+        handles: {}
+      auto-_get_float:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: _get_float
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-_get_unit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: _get_unit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Cryomagnetics LM-500 液态低温液位计
+  description: Cryomagnetics LM-500是液态低温介质液位监测仪,用于测量低温储罐和恒温器中的液氦(LHe)和液氮(LN2)液位。支持多通道同时监测,精度达±0.1%满量程。具备数字显示、模拟输出和RS-232/GPIB远程控制接口。内置高低液位报警功能,可配置自动补液控制。兼容Cryomagnetics各种长度的超导液位传感器,广泛用于MRI磁体、超导磁体系统和低温物理研究实验中的低温介质管理。
+  manufacturer: Cryomagnetics
+  tags: &id001
+  - 低温液位监测仪
+  category: *id001
+  model:
+    name: Cryomagnetics LM-500 液态低温液位计
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    测量类型: 超导线液位传感(液氦)/电容或电阻传感(液氮)
+    通道数: 多通道
+    精度: ±0.1% F.S.
+    显示: 数字读数
+    输出: 模拟0-5V/0-10V
+    接口: RS-232/GPIB
+    报警: 高/低液位报警
+    品牌: Cryomagnetics

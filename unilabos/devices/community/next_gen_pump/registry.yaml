@@ -1,0 +1,278 @@
+next_gen_pump:
+  class:
+    module: unilabos.devices.pumps.next_gen_pump:NextGenPump
+    type: python
+    status_types:
+      is_running: String
+      stroke_counter: String
+      flowrate_compensation: String
+      flowrate: String
+      pressure: String
+      upper_pressure_limit: String
+      lower_pressure_limit: String
+      leak_detected: String
+      solvent: String
+    action_value_mappings:
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-keypad_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: keypad_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-keypad_disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: keypad_disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_faults:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_faults
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-zero_seal:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: zero_seal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current_conditions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_conditions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pump_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pump_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_faults:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_faults
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-flowrate_compensation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flowrate_compensation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-flowrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flowrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flowrate:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-upper_pressure_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: upper_pressure_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limit:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-lower_pressure_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lower_pressure_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limit:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_leak_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_leak_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-solvent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: solvent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Serial port wrapper for Next Generation pumps
+  category:
+  - pumps
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device:
+          type: string
+          default: null
+        logger:
+          type: string
+          default: null

@@ -1,0 +1,101 @@
+gh_device_458:
+  class:
+    module: unilabos.devices.community.d_458.driver:EdaqIsoPod
+    type: python
+    action_value_mappings:
+      auto-add_calibration_point:
+        type: UniLabJsonCommand
+        goal:
+          chno: chno
+          pointno: pointno
+          knownval: knownval
+        feedback: {}
+        result: {}
+        schema:
+          title: add_calibration_point
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chno:
+                  type: string
+                pointno:
+                  type: string
+                knownval:
+                  type: string
+        goal_default:
+          chno: ''
+          pointno: ''
+          knownval: ''
+        handles: {}
+      auto-blink:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: blink
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal:
+          message: message
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default:
+          message: ''
+        handles: {}
+      auto-remove_calibration:
+        type: UniLabJsonCommand
+        goal:
+          chno: chno
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_calibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chno:
+                  type: string
+        goal_default:
+          chno: ''
+        handles: {}
+  name: eDAQ IsoPod隔离式传感器数据记录仪
+  description: eDAQ IsoPod是微型电隔离传感器数据记录仪，每通道隔离度超过250Vrms，有效消除信号噪声和串扰。支持pH、电导率、温度、溶解氧等多种传感器，USB直连电脑。配套Pod-Vu软件记录数据，兼容LabVIEW，适用于化学和生物实验连续监测。
+  manufacturer: eDAQ
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  model:
+    name: eDAQ IsoPod隔离式传感器数据记录仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    隔离度: '>250Vrms'
+    传感器类型: pH/电导率/温度/溶解氧/生物传感器
+    接口: USB(虚拟COM端口)
+    软件: Pod-Vu
+    兼容: LabVIEW
+    pH输入范围: ±2000mV
+    电导率范围: 0.002-200mS
+    品牌: eDAQ

@@ -1,0 +1,100 @@
+{
+  "nodes": [
+    {
+      "id": "test_picomotor_stage",
+      "name": "PicomotorStage 电机控制器",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.picomotor_stage",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "axis_controller_dict": "",
+        "C1": "",
+        "C2": "",
+        "c1_c2_distance_mask_um": "",
+        "update_position_absolute": 100.0,
+        "filename": "",
+        "reverse_axis_x": false,
+        "reverse_axis_y": false,
+        "reverse_axis_z": false,
+        "x_axis_motor": "x",
+        "y_axis_motor": "y",
+        "z_axis_motor": "z",
+        "resolve_address_conflicts": false,
+        "picomotor_system": "",
+        "PicomotorStage_usb": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "get product id",
+      "description": "get product id",
+      "device": "test_picomotor_stage",
+      "action": "auto-get_product_id",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "wait scan done",
+      "description": "wait scan done",
+      "device": "test_picomotor_stage",
+      "action": "auto-wait_scan_done",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "resolve address conflicts",
+      "description": "resolve address conflicts",
+      "device": "test_picomotor_stage",
+      "action": "auto-resolve_address_conflicts",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "get controllers scan",
+      "description": "get controllers scan",
+      "device": "test_picomotor_stage",
+      "action": "auto-get_controllers_scan",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "wait motor moved",
+      "description": "wait motor moved",
+      "device": "test_picomotor_stage",
+      "action": "auto-wait_motor_moved",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "get home position",
+      "description": "get home position",
+      "device": "test_picomotor_stage",
+      "action": "auto-get_home_position",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "set home position",
+      "description": "set home position",
+      "device": "test_picomotor_stage",
+      "action": "auto-set_home_position",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Newport Picomotor Piezo Stage 工作流",
+    "description": "Newport Picomotor Piezo Stage 自动生成工作流",
+    "instrument": "Newport Picomotor Piezo Stage",
+    "generated_by": "driver-finder"
+  }
+}

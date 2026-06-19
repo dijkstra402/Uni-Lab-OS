@@ -1,0 +1,206 @@
+gh_device_682:
+  class:
+    module: unilabos.devices.community.d_682.driver:Lakeshore370
+    type: python
+    action_value_mappings:
+      auto-get_resistance:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+        feedback: {}
+        result: {}
+        schema:
+          title: get_resistance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: ''
+        handles: {}
+      auto-get_sensor_power:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sensor_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: ''
+        handles: {}
+      auto-select_channel:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+        feedback: {}
+        result: {}
+        schema:
+          title: select_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: ''
+        handles: {}
+      auto-get_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_channel:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          mode: mode
+          exc_range: exc_range
+          res_range: res_range
+          autorange: autorange
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                mode:
+                  type: string
+                exc_range:
+                  type: string
+                res_range:
+                  type: string
+                autorange:
+                  type: string
+        goal_default:
+          channel: ''
+          mode: ''
+          exc_range: ''
+          res_range: ''
+          autorange: ''
+        handles: {}
+      auto-setup_heater_openloop:
+        type: UniLabJsonCommand
+        goal:
+          heater_range: heater_range
+          heater_percent: heater_percent
+          heater_res: heater_res
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_heater_openloop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                heater_range:
+                  type: string
+                heater_percent:
+                  type: string
+                heater_res:
+                  type: string
+        goal_default:
+          heater_range: ''
+          heater_percent: ''
+          heater_res: ''
+        handles: {}
+      auto-get_heater_settings_openloop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_heater_settings_openloop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_analog_output:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          value: value
+        feedback: {}
+        result: {}
+        schema:
+          title: set_analog_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          channel: ''
+          value: ''
+        handles: {}
+      auto-get_analog_output:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analog_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: ''
+        handles: {}
+  name: Lake Shore 235低温温度控制器
+  description: Lake Shore 235是一款单通道低温温度控制器，专为低温环境设计，支持硅二极管、铂RTD和Cernox等多种传感器，内置完整PID温度控制和可配置加热器输出，提供RS-232或USB数字接口实现远程操控，适用于低温恒温器和材料表征。
+  manufacturer: Lake Shore
+  tags: &id001
+  - 低温温度控制器
+  category: *id001
+  model:
+    name: Lake Shore 235低温温度控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: '1'
+    温度范围: 1.4K-1000K
+    传感器: 硅二极管/铂RTD/Cernox/热电偶
+    控制: PID
+    接口: RS-232/USB
+    加热器输出: 可配置
+    品牌: Lake Shore

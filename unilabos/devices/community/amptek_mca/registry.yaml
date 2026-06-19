@@ -1,0 +1,195 @@
+amptek_mca:
+  class:
+    module: community_drivers.amptek_mca.driver:AmptekMCA
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-getMcaIP:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getMcaIP
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getMcaPort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getMcaPort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-openConnection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: openConnection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mca_ip:
+                  type: string
+                  default: 10.2.48.34
+                udp_port:
+                  type: integer
+                  default: 10001
+        goal_default:
+          mca_ip: 10.2.48.34
+          udp_port: 10001
+        handles: {}
+      auto-getDeadTime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDeadTime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getSpectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSpectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getScaCounters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getScaCounters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-closeConnection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: closeConnection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-startCount:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startCount
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getValue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getValue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+  name: AMPTEK FastSDD
+  description: AMPTEK FastSDD是高性能热电制冷硅漂移X射线探测器，配合DP5数字脉冲处理器和多通道分析器，用于X射线荧光(XRF)和能量色散谱(EDS)分析。
+  manufacturer: AMPTEK
+  icon: amptek_mca.webp
+  tags: &id001
+  - 元素分析仪
+  category: *id001
+  device_params:
+    探测器: FastSDD硅漂移探测器
+    能量范围: ~0.2-30+keV
+    能量分辨率: 125-140eV FWHM@5.9keV
+    有效面积: 17/25/70mm²
+    冷却: 热电制冷(无液氮)
+    MCA: DP5数字脉冲处理器
+    ADC: 80MHz
+    MCA通道: 最多8192
+    计数率: '>1M输入计数/秒'
+    接口: USB 2.0, Ethernet, RS-232
+    品牌: AMPTEK
+  model:
+    name: AMPTEK FastSDD
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: XRD Analysis
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        mca_ip:
+          default: null
+          type: string
+        udp_port:
+          default: null
+          type: string

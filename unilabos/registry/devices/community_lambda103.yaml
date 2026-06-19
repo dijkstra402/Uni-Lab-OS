@@ -1,0 +1,154 @@
+lambda103:
+  class:
+    module: unilabos.devices.community.lambda103.driver:Lambda103
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open_A:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_A
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          key: null
+          value: null
+        handles: {}
+      auto-motorsON:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motorsON
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remote:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: PerkinElmer Lambda 103 紫外-可见分光光度计
+  description: PerkinElmer Lambda 103是早期双光束UV/Vis分光光度计，波长范围190-900nm，用于溶液吸光度测量和浓度分析。
+  manufacturer: PerkinElmer
+  icon: lambda103.webp
+  tags: &id001
+  - 紫外-可见分光光度仪
+  category: *id001
+  device_params:
+    类型: UV/Vis分光光度计
+    波长: ~190-900nm
+    光源: 氘灯+钨卤灯
+    检测器: 光电倍增管
+    扫描: 可变光谱带宽
+    状态: 老型号/已停产
+    厂商: PerkinElmer
+    品牌: PerkinElmer
+  model:
+    name: PerkinElmer Lambda 103 紫外-可见分光光度计
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Analysis
+    step: Spectroscopy
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+        baudrate:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string

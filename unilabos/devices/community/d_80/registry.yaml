@@ -1,0 +1,220 @@
+gh_device_80:
+  class:
+    module: community_drivers.80.driver:SecondaryMonitor
+    type: python
+    action_value_mappings:
+      auto-send_program:
+        type: UniLabJsonCommand
+        goal:
+          prog: prog
+        feedback: {}
+        result: {}
+        schema:
+          title: send_program
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                prog:
+                  type: string
+        goal_default:
+          prog: ''
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait:
+        type: UniLabJsonCommand
+        goal:
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: wait
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default:
+          timeout: ''
+        handles: {}
+      auto-get_cartesian_info:
+        type: UniLabJsonCommand
+        goal:
+          wait: wait
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cartesian_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: string
+        goal_default:
+          wait: ''
+        handles: {}
+      auto-get_all_data:
+        type: UniLabJsonCommand
+        goal:
+          wait: wait
+        feedback: {}
+        result: {}
+        schema:
+          title: get_all_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: string
+        goal_default:
+          wait: ''
+        handles: {}
+      auto-get_joint_data:
+        type: UniLabJsonCommand
+        goal:
+          wait: wait
+        feedback: {}
+        result: {}
+        schema:
+          title: get_joint_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: string
+        goal_default:
+          wait: ''
+        handles: {}
+      auto-get_digital_out:
+        type: UniLabJsonCommand
+        goal:
+          nb: nb
+          wait: wait
+        feedback: {}
+        result: {}
+        schema:
+          title: get_digital_out
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nb:
+                  type: string
+                wait:
+                  type: string
+        goal_default:
+          nb: ''
+          wait: ''
+        handles: {}
+      auto-get_digital_out_bits:
+        type: UniLabJsonCommand
+        goal:
+          wait: wait
+        feedback: {}
+        result: {}
+        schema:
+          title: get_digital_out_bits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: string
+        goal_default:
+          wait: ''
+        handles: {}
+      auto-get_digital_in:
+        type: UniLabJsonCommand
+        goal:
+          nb: nb
+          wait: wait
+        feedback: {}
+        result: {}
+        schema:
+          title: get_digital_in
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nb:
+                  type: string
+                wait:
+                  type: string
+        goal_default:
+          nb: ''
+          wait: ''
+        handles: {}
+      auto-get_digital_in_bits:
+        type: UniLabJsonCommand
+        goal:
+          wait: wait
+        feedback: {}
+        result: {}
+        schema:
+          title: get_digital_in_bits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: string
+        goal_default:
+          wait: ''
+        handles: {}
+  name: Universal Robots UR5e 协作机器人
+  description: Universal Robots UR5e是e系列中最畅销的中型协作机器人，5kg有效载荷和850mm工作半径覆盖最广泛的应用场景。内置六轴力/扭矩传感器提供精密力控制能力，±0.03mm重复精度支持高要求的质量检测和精密装配。e系列控制器增强了安全认证(PL
+    d/Cat.3)，IP54防护等级和IP67可选配置适应各种工作环境。支持ROS和URScript编程，丰富的UR+生态系统提供大量即插即用的末端执行器和配件。
+  manufacturer: Universal Robots
+  tags: &id001
+  - 转运与协作机器人
+  category: *id001
+  model:
+    name: Universal Robots UR5e 协作机器人
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    有效载荷: 5kg
+    工作半径: 850mm
+    自重: 20.6kg
+    重复精度: ±0.03mm
+    自由度: 6轴
+    关节范围: ±360°
+    关节速度: 最高180°/s
+    功耗: 约200W
+    底座直径: 149mm
+    防护等级: IP54
+    通信: TCP/IP/Modbus/EtherNet/IP
+    品牌: Universal Robots
+  quality_review:
+    grade: A
+    status: usable
+    note: python-urx SecondaryMonitor; 与 76 共享代码
+    reviewed_at: '2026-04-26'
+    duplicate_of: gh_device_76

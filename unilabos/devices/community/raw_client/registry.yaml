@@ -1,0 +1,65 @@
+raw_client:
+  class:
+    module: unilabos.devices.generic.raw_client:RawClient
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nelems:
+                  type: string
+                data_size:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_blocks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_blocks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nelems:
+                  type: string
+                data_size:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: RAW Client是一款实验执行&合成设备，主要功能包括使能、停止、关闭、初始化、加载、参数配置。支持SVC, Signal, Slot等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '99'
+    读取操作: read、get_blocks、get_state、get_pre、get_post 等23个
+    控制操作: wait_stopped、uut_demux_enabled、set_sync_routing_master、set_sync_routing_slave、set_sync_routing 等24个
+    控制能力: 位置、多通道、时间、电压、电流
+    通信接口: TCP/IP
+  manufacturer: Open Source
+  model:
+    name: RAW Client
+    type: device
+  name: Raw Client
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: raw_client.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

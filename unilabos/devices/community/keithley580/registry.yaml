@@ -1,0 +1,203 @@
+keithley580:
+  class:
+    module: community_drivers.keithley580.driver:Keithley580
+    type: python
+    status_types:
+      polarity: str
+      drive: str
+      dry_circuit_test: str
+      operate: str
+      relative: str
+      trigger_mode: str
+      input_range: str
+    action_value_mappings:
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-auto_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_calibration_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_calibration_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-store_calibration_constants:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: store_calibration_constants
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status_word:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status_word
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-parse_status_word:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_status_word
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                statusword:
+                  type: string
+        goal_default:
+          statusword: null
+        handles: {}
+      auto-measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-parse_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                measurement:
+                  type: string
+        goal_default:
+          measurement: null
+        handles: {}
+      auto-sendcmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendcmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                size:
+                  type: string
+        goal_default:
+          cmd: null
+          size: null
+        handles: {}
+  name: Model 580 Micro-ohmmeter Specifications Rev. A
+  description: 使用 Keithley 4200A-SCS 半导体参数分析仪加速研究和故障分析。集成 I-V、C-V 和脉冲 I-V，设置速度加快 50%。
+  manufacturer: Tektronix
+  icon: keithley580.webp
+  tags: &id001
+  - 电表与万用表
+  category: *id001
+  device_params:
+    Resolution: 4.5 digits
+    Sensitivity: 10µΩ
+    Range: 10µΩ~200kΩ (7 ranges)
+    Accuracy: 0.04%
+    Dry Circuit Test: 20mV clamp
+    Settling: <1s
+    Interface: IEEE-488 (optional)
+    品牌: Tektronix
+  model:
+    name: Model 580 Micro-ohmmeter Specifications Rev. A
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Mechanical Testing
+    step: Tensile Testing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

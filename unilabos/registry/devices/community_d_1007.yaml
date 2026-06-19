@@ -1,0 +1,95 @@
+gh_device_1007:
+  class:
+    module: unilabos.devices.community.d_1007.driver:SEM
+    type: python
+    action_value_mappings:
+      auto-start_acquire:
+        type: UniLabJsonCommand
+        goal:
+          detector: detector
+        feedback: {}
+        result: {}
+        schema:
+          title: start_acquire
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                detector:
+                  type: string
+        goal_default:
+          detector: ''
+        handles: {}
+      auto-stop_acquire:
+        type: UniLabJsonCommand
+        goal:
+          detector: detector
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_acquire
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                detector:
+                  type: string
+        goal_default:
+          detector: ''
+        handles: {}
+      auto-terminate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: terminate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-host:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: host
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Tescan MIRA场发射扫描电子显微镜
+  description: Tescan MIRA是高性能场发射扫描电子显微镜，采用Schottky FEG电子源，在30kV下分辨率可达1.0nm。配备In-Flight
+    Beam Tracing实时束流优化技术，大样品室可容纳200mm样品，支持多种分析检测器，适用于材料科学和纳米技术研究。
+  manufacturer: Tescan
+  tags: &id001
+  - 扫描电子显微镜
+  category: *id001
+  model:
+    name: Tescan MIRA场发射扫描电子显微镜
+    type: device
+  version: 1.0.0
+  resource_type: device

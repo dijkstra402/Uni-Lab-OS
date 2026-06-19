@@ -1,0 +1,309 @@
+rs_hmp4040:
+  class:
+    module: community_drivers.rs_hmp4040.driver:rs_HMP4040
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reinit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reinit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                'on':
+                  type: string
+                channel:
+                  type: integer
+                  default: 1
+        goal_default:
+          'on': null
+          channel: 1
+        handles: {}
+      auto-get_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-get_current_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                channel:
+                  type: integer
+                  default: 1
+        goal_default:
+          value: null
+          channel: 1
+        handles: {}
+      auto-set_current_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                channel:
+                  type: integer
+                  default: 1
+        goal_default:
+          value: null
+          channel: 1
+        handles: {}
+      auto-reset_trip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_trip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: R&S®HMP4000 Power supply series
+  description: R&S®HMP 电源主要设计用于工业用途。这些坚固耐用的仪器具有两个、三个或四个输出通道，每个通道的输出电流高达 10 A，非常适合各种应用。
+  manufacturer: Rohde & Schwarz
+  icon: rs_hmp4040.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Channels: '4'
+    Voltage: 0~32V/ch
+    Current: 0~10A/ch
+    Power: 160W/ch, 384W total
+    Resolution: 1mV/0.2mA
+    Isolation: floating
+    Series: 128V
+    Parallel: 40A
+    Interface: USB/LAN/RS-232/GPIB(opt)
+    品牌: Rohde & Schwarz
+  model:
+    name: R&S®HMP4000 Power supply series
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string

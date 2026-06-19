@@ -1,0 +1,183 @@
+masterflex_ls:
+  category:
+  - pump_and_valve
+  class:
+    module: unilabos.devices.pump_and_valve.masterflex_ls:MasterflexLSPump
+    type: python
+    status_types:
+      status: str
+      motor_speed: float
+      cumulative_revolutions: float
+    action_value_mappings:
+      initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 切到远程控制模式并就绪
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: initialize参数
+          type: object
+      set_speed:
+        type: UniLabJsonCommand
+        goal:
+          speed: speed
+        goal_default:
+          speed: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置转速大小 rpm (0~100)，方向由正转/反转决定
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                speed:
+                  type: number
+                  description: 目标转速 rpm (0~100)
+              required:
+              - speed
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_speed参数
+          type: object
+      set_revolutions:
+        type: UniLabJsonCommand
+        goal:
+          revolutions: revolutions
+        goal_default:
+          revolutions: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置本次运行圈数 (<99999.99)，0 表示连续运行
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                revolutions:
+                  type: number
+                  description: 目标圈数
+              required:
+              - revolutions
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_revolutions参数
+          type: object
+      rotate_forward:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 正转 (CW) 并启动
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: rotate_forward参数
+          type: object
+      rotate_reverse:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 反转 (CCW) 并启动
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: rotate_reverse参数
+          type: object
+      stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 停止泵
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: stop参数
+          type: object
+  description: Masterflex L/S 蠕动泵（自包含串口驱动，7O1 / 4800 baud）
+  version: 1.0.0
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        port:
+          type: string
+          default: /dev/ttyUSB0
+        pump_addr:
+          type: integer
+          default: 1
+      required:
+      - port
+      type: object
+    data:
+      properties:
+        status:
+          type: string
+        motor_speed:
+          type: number
+        cumulative_revolutions:
+          type: number
+      required:
+      - status
+      type: object
+  registry_type: device

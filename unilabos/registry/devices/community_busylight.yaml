@@ -1,0 +1,190 @@
+busylight:
+  class:
+    module: unilabos.devices.community.busylight.driver:busylight
+    type: python
+    status_types:
+      rgb: String
+    action_value_mappings:
+      auto-pulse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pulse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pulse_length:
+                  type: string
+                rgb:
+                  type: string
+                color:
+                  type: string
+                count:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-available_colors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: available_colors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_sound:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_sound
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sound:
+                  type: string
+                volume:
+                  type: string
+        goal_default:
+          sound: 128
+          volume: 0
+        handles: {}
+      auto-set_rgb:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_rgb
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rgb:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_color:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_color
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                color:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-blink:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: blink
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rgb:
+                  type: string
+                color:
+                  type: string
+                interval:
+                  type: string
+                count:
+                  type: string
+        goal_default:
+          interval: 0.5
+        handles: {}
+      auto-turn_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: turn_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_rgb:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_rgb
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Busylight Status Indicator是由Kuando/Plenom生产的实验执行&合成设备。支持Signal, Slot,
+    available colors等操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        debug:
+          type: string
+          default: false
+  device_params:
+    品牌: Kuando/Plenom
+    功能: 参数配置、数据采集
+    可控参数: color、count、interval、pulse_length、rgb、sound、体积
+    操作数: 9
+  manufacturer: Kuando/Plenom
+  model:
+    name: Kuando/Plenom Busylight Status Indicator
+    type: device
+  name: Kuando Busylight
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: busylight.webp
+  scene:
+    domain: Physics
+    scene_name: Optics
+    step: Laser Operation
+  version: 1.0.0

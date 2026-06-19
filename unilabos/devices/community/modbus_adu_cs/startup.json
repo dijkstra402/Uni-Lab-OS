@@ -1,0 +1,79 @@
+{
+  "nodes": [
+    {
+      "id": "test_modbus_adu_cs",
+      "name": "Modbus ADU CS",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.modbus_adu_cs",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "host": "127.0.0.1",
+        "port": 1502
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "parse",
+      "description": "parse",
+      "device": "test_modbus_adu_cs",
+      "action": "auto-parse",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "parse read data command",
+      "description": "parse read data command",
+      "device": "test_modbus_adu_cs",
+      "action": "auto-parse_read_data_command",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "parse single byte request",
+      "description": "parse single byte request",
+      "device": "test_modbus_adu_cs",
+      "action": "auto-parse_single_byte_request",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "parse write multiple",
+      "description": "parse write multiple",
+      "device": "test_modbus_adu_cs",
+      "action": "auto-parse_write_multiple",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "parse read file record",
+      "description": "parse read file record",
+      "device": "test_modbus_adu_cs",
+      "action": "auto-parse_read_file_record",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "parse read write registers",
+      "description": "parse read write registers",
+      "device": "test_modbus_adu_cs",
+      "action": "auto-parse_read_write_registers",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "modbus_adu_cs 工作流",
+    "description": "modbus_adu_cs 自动生成工作流",
+    "instrument": "modbus_adu_cs",
+    "generated_by": "driver-finder"
+  }
+}

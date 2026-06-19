@@ -1,0 +1,62 @@
+scanner_interface:
+  class:
+    module: unilabos.devices.community.scanner_interface.driver:ScannerInterface
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-fileno:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileno
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                reply:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Scanner Interface是一款实验执行&合成设备，主要功能包括停止、运动控制。支持Signal, Slot, add arguments等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '9'
+    控制操作: stop
+    运动操作: move_absolute
+    设备属性: position、moving、velocity、velocity_max、velocity_min、range_min 等10个
+    控制能力: 位置、速度
+    通信接口: 串口(RS-232)
+  manufacturer: Open Source
+  model:
+    name: Scanner Interface
+    type: device
+  name: Scanner
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

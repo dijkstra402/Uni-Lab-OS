@@ -1,0 +1,108 @@
+shared_serial:
+  class:
+    module: unilabos.devices.community.shared_serial.driver:SharedSerial
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-lock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readlines:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readlines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hint:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-read_until:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_until
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                terminator:
+                  type: string
+                size:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Shared Serial是由Open Standard生产的专业实验设备。Utility mixin for devices that
+    only trigger "once" with software
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '6'
+    读取操作: readline、readlines、read_until
+    控制操作: set_trigger、set_trigger、write
+    设备属性: trigger_type、trigger_mode、trigger_type、trigger_mode、lock
+    通信接口: DLL/SDK、串口(RS-232)
+  manufacturer: Open Standard
+  model:
+    name: Shared Serial
+    type: device
+  name: Open Standard Shared Serial
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: shared_serial.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

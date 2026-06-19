@@ -1,0 +1,70 @@
+lakeshore370:
+  class:
+    module: community_drivers.lakeshore370.driver:Lakeshore370
+    type: python
+    status_types:
+      channel: String
+    action_value_mappings:
+      auto-channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-resistance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resistance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Model 370 AC Resistance Bridge
+  description: '*我们。专利#6, 501, 255，2002 年 12 月，“具有主动共模抑制功能的差分电流源”，Lake Shore Cryotronics,
+    Inc.。370 型交流电阻电桥设计用于精确、准确、低噪声、低激励功率交流电阻测量。其主要应用是在 20 mK 至 1 K 的低温环境中测量电阻材料。370
+    型完全集成，具有在电阻测量过程的每个步骤中减少和控制噪声的功能。独特的专利匹配阻抗电流源和有源共模降低电路可最大限度地减少噪声和自热误差。 370 型具有多达
+    16 个通道、IEEE-488 和串行接口以及闭环温度控制，可与现有的 CR 无缝集成。'
+  manufacturer: Lake Shore
+  icon: lakeshore370.webp
+  tags: &id001
+  - 频谱与网络分析仪
+  category: *id001
+  device_params:
+    Type: AC 4-wire differential resistance
+    Range: 2mΩ~2MΩ
+    Temp: 20mK~1K (primary)
+    Inputs: 1 (expandable to 8/16)
+    Excitation: 3.16pA~31.6mA RMS (21 levels)
+    Freq: 13.7Hz
+    Interface: GPIB, RS-232
+    品牌: Lake Shore
+  model:
+    name: Model 370 AC Resistance Bridge
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

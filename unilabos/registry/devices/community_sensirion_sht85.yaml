@@ -1,0 +1,271 @@
+sensirion_sht85:
+  class:
+    module: unilabos.devices.community.sensirion_sht85.driver:sensirionSHT85
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_humidity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_humidity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature_and_humidity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature_and_humidity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_dew_point:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_dew_point
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_asynchronous_read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_asynchronous_read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                measurments_per_second:
+                  type: integer
+                  default: 1
+                ART:
+                  type: boolean
+                  default: false
+        goal_default:
+          measurments_per_second: 1
+          ART: false
+        handles: {}
+      auto-read_asynchronous:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_asynchronous
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout_us:
+                  type: integer
+                  default: 0
+        goal_default:
+          timeout_us: 0
+        handles: {}
+      auto-stop_asynchronous_read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_asynchronous_read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-asynchronous:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: asynchronous
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                measurments_per_second:
+                  type: integer
+                  default: 1
+                ART:
+                  type: boolean
+                  default: false
+        goal_default:
+          measurments_per_second: 1
+          ART: false
+        handles: {}
+      auto-enable_heater:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_heater
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable_heater:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_heater
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_heater_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_heater_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_sensor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_sensor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-to_dew_point:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_dew_point
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                T:
+                  type: string
+                RH:
+                  type: string
+        goal_default:
+          T: null
+          RH: null
+        handles: {}
+  name: SHT85 - ±1.5% Digital pin-type humidity and temperature sensor
+  description: Sensirion最高精度的pin型数字温湿度传感器，PTFE防护膜IP67防护，出厂校准，适用于恶劣环境
+  manufacturer: Sensirion AG
+  icon: sensirion_sht85.webp
+  tags: &id001
+  - 物性测量仪器与设备
+  category: *id001
+  device_params:
+    湿度精度: ±1.5%RH
+    湿度范围: 0-100%RH
+    湿度响应时间: 8s(τ63%)
+    温度精度: ±0.1°C
+    温度范围: -40~105°C
+    温度响应时间: 5s
+    供电: 2.15-5.5V
+    平均电流: 28μA
+    最大电流: 1000μA
+    接口: I2C
+    分辨率: 16bit
+    尺寸: 19×5.6×3.5mm
+    防护: IP67(PTFE膜)
+    校准: 出厂校准
+    长期漂移: <0.5%RH/年
+    品牌: Sensirion AG
+  model:
+    name: SHT85 - ±1.5% Digital pin-type humidity and temperature sensor
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string

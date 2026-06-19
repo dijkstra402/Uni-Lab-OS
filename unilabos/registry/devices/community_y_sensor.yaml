@@ -1,0 +1,258 @@
+y_sensor:
+  class:
+    module: unilabos.devices.community.y_sensor.driver:YSensor
+    type: python
+    status_types:
+      unit: String
+      currentValue: String
+      lowestValue: String
+      highestValue: String
+      currentRawValue: String
+      logFrequency: String
+      reportFrequency: String
+      advMode: String
+      calibrationParam: String
+      resolution: String
+      sensorState: String
+      dataLogger: String
+      recordedData: String
+    action_value_mappings:
+      auto-set_lowestValue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_lowestValue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                newval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_highestValue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_highestValue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                newval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_logFrequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_logFrequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                newval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_reportFrequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_reportFrequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                newval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_advMode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_advMode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                newval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_calibrationParam:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_calibrationParam
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                newval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_resolution:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_resolution
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                newval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-isSensorReady:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isSensorReady
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-startDataLogger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startDataLogger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stopDataLogger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopDataLogger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-registerTimedReportCallback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: registerTimedReportCallback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                callback:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-calibrateFromPoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrateFromPoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rawValues:
+                  type: string
+                refValues:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-loadCalibrationPoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadCalibrationPoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rawValues:
+                  type: string
+                refValues:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-nextSensor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: nextSensor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: The YSensor class is the parent class for all Yoctopuce sensor types
+  category:
+  - temperature
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        func:
+          type: string
+          default: null
+device:
+  class:
+    module: unilabos.devices.community.y_sensor.driver:Device
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Driver class for Velox Temperature Control
+  category:
+  - temperature

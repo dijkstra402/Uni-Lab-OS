@@ -1,0 +1,152 @@
+gh_device_723:
+  class:
+    module: community_drivers.723.driver:RelayBoard
+    type: python
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal:
+          comm: comm
+          addr: addr
+          data: data
+          multi_result: multi_result
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                comm:
+                  type: string
+                addr:
+                  type: string
+                data:
+                  type: string
+                multi_result:
+                  type: string
+        goal_default:
+          comm: ''
+          addr: ''
+          data: ''
+          multi_result: ''
+        handles: {}
+      auto-get_all_relays:
+        type: UniLabJsonCommand
+        goal:
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: get_all_relays
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default:
+          addr: ''
+        handles: {}
+      auto-set_all_relays:
+        type: UniLabJsonCommand
+        goal:
+          values: values
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: set_all_relays
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                values:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          values: ''
+          addr: ''
+        handles: {}
+      auto-get_relay:
+        type: UniLabJsonCommand
+        goal:
+          relay: relay
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: get_relay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                relay:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          relay: ''
+          addr: ''
+        handles: {}
+      auto-set_relay:
+        type: UniLabJsonCommand
+        goal:
+          relay: relay
+          enable: enable
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: set_relay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                relay:
+                  type: string
+                enable:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          relay: ''
+          enable: ''
+          addr: ''
+        handles: {}
+  name: Conrad USB/Serial Relay Board
+  description: Conrad继电器板主要有4通道(USB)和8通道(串行)两种变体，关键规格包括DPDT继电器、最高2000W负载容量和USB/串行接口。存在多个开源Python库用于编程控制这些板。
+  manufacturer: Conrad
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  model:
+    name: Conrad USB/Serial Relay Board
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    型号: 'USB 4通道(型号393905)和8通道串行(型号197720), 继电器数量: 4或8, 继电器类型: DPDT继电器, 负载容量: 2000W,
+      接口: USB或串行通信, 控制: 通过串行命令, Python库支持(Siemens开源库)'
+    品牌: Conrad

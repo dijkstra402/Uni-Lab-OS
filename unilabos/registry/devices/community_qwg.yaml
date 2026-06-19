@@ -1,0 +1,99 @@
+qwg:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-dio_calibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dio_calibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                qwgs:
+                  type: array
+                verbose:
+                  type: string
+        goal_default:
+          verbose: false
+        handles: {}
+      auto-calibrate_dio_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_dio_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dio_mask:
+                  type: number
+                expected_sequence:
+                  type: string
+                port:
+                  type: number
+        goal_default:
+          port: 0
+        handles: {}
+      auto-output_dio_calibration_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: output_dio_calibration_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dio_mode:
+                  type: string
+                port:
+                  type: number
+        goal_default:
+          port: 0
+        handles: {}
+    module: unilabos.devices.community.qwg.driver:QWG
+    status_types: {}
+    type: python
+  config_info: []
+  description: QuTech QWG Qubit Waveform Generator是由QuTech生产的表征设备，主要功能包括校准。支持Signal,
+    Slot, dio calibration等操作。
+  handles: []
+  icon: qwg.webp
+  init_param_schema:
+    config:
+      properties:
+        name:
+          default: null
+          type: string
+        transport:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: QuTech
+    可控参数: dio_mask、dio_mode、expected_sequence、port、qwgs、verbose
+    操作数: 3
+  manufacturer: QuTech
+  model:
+    name: QuTech QuTech QWG Qubit Waveform Generator
+    type: device
+  name: QuTech QWG Qubit Waveform Generator
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

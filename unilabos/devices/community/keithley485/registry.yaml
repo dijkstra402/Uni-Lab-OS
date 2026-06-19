@@ -1,0 +1,80 @@
+keithley485:
+  class:
+    module: community_drivers.keithley485.driver:Keithley485
+    type: python
+    status_types:
+      zero_check: str
+      log: str
+      input_range: str
+      relative: str
+      eoi_mode: str
+      trigger_mode: str
+    action_value_mappings:
+      auto-auto_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Keithley 485 Autoranging Picoammeter
+  description: 使用 Keithley 4200A-SCS 半导体参数分析仪加速研究和故障分析。集成 I-V、C-V 和脉冲 I-V，设置速度加快 50%。
+  manufacturer: Tektronix
+  icon: keithley485.webp
+  tags: &id001
+  - 半导体参数测试仪
+  category: *id001
+  device_params:
+    Resolution: 4.5 digits
+    Sensitivity: 100fA
+    Range: 2nA~2mA (7 ranges, 10 decades)
+    Accuracy: 0.4%
+    Voltage Burden: <200µV
+    Overload Protection: 1000V
+    Data Storage: 100pts
+    Interface: IEEE-488 (optional)
+    品牌: Tektronix
+  model:
+    name: Keithley 485 Autoranging Picoammeter
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device

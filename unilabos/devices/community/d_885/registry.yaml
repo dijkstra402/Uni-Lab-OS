@@ -1,0 +1,96 @@
+gh_device_885:
+  class:
+    module: community_drivers.885.driver:AFG3152CChannel
+    type: python
+    action_value_mappings:
+      auto-insert_id:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+        feedback: {}
+        result: {}
+        schema:
+          title: insert_id
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: ''
+        handles: {}
+      auto-enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-waveform:
+        type: UniLabJsonCommand
+        goal:
+          shape: shape
+          frequency: frequency
+          units: units
+          amplitude: amplitude
+          offset: offset
+        feedback: {}
+        result: {}
+        schema:
+          title: waveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shape:
+                  type: string
+                frequency:
+                  type: string
+                units:
+                  type: string
+                amplitude:
+                  type: string
+                offset:
+                  type: string
+        goal_default:
+          shape: ''
+          frequency: ''
+          units: ''
+          amplitude: ''
+          offset: ''
+        handles: {}
+  name: AFG3152C任意函数发生器
+  description: 双通道任意函数发生器，提供150MHz带宽、14位分辨率和多种调制功能，配备ArbExpress软件用于波形创建，适用于研发和生产测试
+  manufacturer: Tektronix
+  tags: &id001
+  - 信号源与发生器
+  category: *id001
+  model:
+    name: AFG3152C任意函数发生器
+    type: device
+  version: 1.0.0
+  resource_type: device

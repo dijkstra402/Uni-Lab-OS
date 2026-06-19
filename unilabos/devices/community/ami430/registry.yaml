@@ -1,0 +1,77 @@
+ami430:
+  class:
+    module: community_drivers.ami430.driver:AMI430
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_field:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_field
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+  name: AMI Model 430 Power Supply Programmer
+  description: 高精度超导磁体电源编程器，支持多段斜率控制、失超检测和持续开关管理，用于低温物理和磁场实验。在售。
+  manufacturer: American Magnetics
+  icon: ami430.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Current Ratings: ±5A~±300A (customizable)
+    Stability: ±0.05% FS
+    Resolution: 16-bit DAC
+    Ramp Rate: 0.001~33.333 A/s
+    Ramp Segments: 5 programmable
+    Voltage Limit: 0.1~10V
+    Quench Detection: programmable voltage threshold
+    Display: 4.3" TFT LCD touchscreen
+    Interface: GPIB, RS-232, Ethernet (2017+)
+    Size: 3.5"H x 19"W x 14"D
+    Power: 100-240VAC
+    品牌: American Magnetics
+  model:
+    name: AMI Model 430 Power Supply Programmer
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string
+        port:
+          default: null
+          type: string
+        persistent_switch:
+          default: null
+          type: string
+        reset:
+          default: null
+          type: string
+        current_ramp_limit:
+          default: null
+          type: string
+        terminator:
+          default: null
+          type: string

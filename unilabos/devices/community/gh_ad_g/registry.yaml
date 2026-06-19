@@ -1,0 +1,271 @@
+gh_ad_g:
+  class:
+    module: community_drivers.gh_ad_g.driver:pyvisaDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                override_params:
+                  type: string
+                quiet:
+                  type: boolean
+                  default: false
+        goal_default:
+          override_params: null
+          quiet: false
+        handles: {}
+      auto-activate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: activate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                quiet:
+                  type: boolean
+                  default: false
+        goal_default:
+          quiet: false
+        handles: {}
+      auto-deactivate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-apply_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                config_keys:
+                  type: string
+        goal_default:
+          config_keys: null
+        handles: {}
+      auto-updateTimestamp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: updateTimestamp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-scope_channel_params:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scope_channel_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-instrumentQuery:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: instrumentQuery
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                q:
+                  type: string
+        goal_default:
+          q: null
+        handles: {}
+      auto-instrumentWrite:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: instrumentWrite
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                q:
+                  type: string
+        goal_default:
+          q: null
+        handles: {}
+      auto-configure_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configure_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-convert_to_array:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: convert_to_array
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default:
+          data: null
+        handles: {}
+      auto-get_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                delimiter:
+                  type: string
+                  default: ','
+        goal_default:
+          delimiter: ','
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reset:
+                  type: boolean
+                  default: false
+        goal_default:
+          reset: false
+        handles: {}
+    source: https://github.com/djorlando24/pyLabDataLogger
+  name: A&D G系列
+  description: A&D GX/GF系列精密电子天平，采用专利Super Hybrid Sensor技术，响应时间低至1秒。称量范围220g至32.2kg，可读性0.001g至0.1g。GX型内置电动校准砝码，GF型外部校准。RS-232C和USB双向通信，支持GLP/GMP/ISO合规数据输出，IP65防护等级（M系列），用于实验室称量和质量控制。
+  manufacturer: A&D
+  icon: gh_ad_g.webp
+  tags: &id001
+  - 电子天平
+  category: *id001
+  device_params:
+    Type: Analytical/precision balance
+    Capacity: 62-3200 g (model dependent)
+    Readability: 0.001-0.1 g
+    Interface: RS-232
+    Weighing modes: counting, percent
+    Display: LCD
+    品牌: A&D
+  model:
+    name: A&D G系列
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        params:
+          default: null
+          type: string
+        quiet:
+          default: null
+          type: string

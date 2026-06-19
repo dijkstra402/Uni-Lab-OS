@@ -1,0 +1,215 @@
+bio_shake:
+  class:
+    module: community_drivers.bio_shake.driver:BioShake
+    type: python
+    status_types:
+      supports_locking: bool
+      supports_active_cooling: bool
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                skip_home:
+                  type: boolean
+                  default: false
+        goal_default:
+          skip_home: false
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shake:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shake
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: number
+                acceleration:
+                  type: integer
+                  default: 0
+        goal_default:
+          speed: null
+          acceleration: 0
+        handles: {}
+      auto-stop_shaking:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_shaking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                deceleration:
+                  type: integer
+                  default: 0
+        goal_default:
+          deceleration: 0
+        handles: {}
+      auto-lock_plate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unlock_plate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unlock_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+        goal_default:
+          temperature: null
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-deactivate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: BioShake iQ
+  description: 适用于微孔板和试管的高端恒温摇床 BioShake iQ 高端恒温摇床设计紧凑、时尚，让您只需最少的调整即可执行所有标准混合运行。 BioShake
+    iQ 具有出色的性能，可处理生物技术、制药和学术研究领域的广泛应用。通过将混合操作与孵育阶段相结合，可以减少反应过程时间和操作员工作量，并提高许多程序的效率，从而提高产量。
+  manufacturer: Q.Instruments
+  icon: bio_shake.webp
+  tags: &id001
+  - 振荡培养箱
+  category: *id001
+  device_params:
+    类型: 微孔板加热振荡器
+    厂商: Q.Instruments(现Analytik Jena)
+    温度: 室温至+100°C
+    振荡: 200-3000rpm
+    兼容: 96/384孔板
+    接口: USB
+    品牌: Q.Instruments
+  model:
+    name: BioShake iQ
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Shaking
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: integer

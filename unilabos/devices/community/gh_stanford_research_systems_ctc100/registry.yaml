@@ -1,0 +1,126 @@
+gh_stanford_research_systems_ctc100:
+  class:
+    module: community_drivers.gh_stanford_research_systems_ctc100.driver:SRSCTC100
+    type: python
+    status_types:
+      channel: str
+      display_figures: str
+      error_check_toggle: str
+    action_value_mappings:
+      auto-channel_units:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: channel_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-errcheck:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: errcheck
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sendcmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendcmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                size:
+                  type: string
+        goal_default:
+          cmd: null
+          size: null
+        handles: {}
+      auto-clear_log:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_log
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/instrumentkit/InstrumentKit
+  name: Cryogenic Temperature Controller - CTC100
+  description: 该系统由四个传感器输入、两个供电输出和四个模拟电压输出以及多达六个反馈控制回路组成。 X. CTC100 温度控制器。了解更多 该系统由四个传感器输入、两个供电输出和四个模拟电压输出以及多达六个反馈控制回路组成。
+    X. CTC100 温度控制器。了解更多 4 个温度传感器输入。 • 2 个供电输出和4 个模拟电压输出。 • 最多6 个反馈控制回路。 • 4 个模拟和8
+    个数字I/O 通道。 • 图形...阅读更多4 页
+  manufacturer: Stanford Research Systems
+  icon: SRS%20Navigation%20Background.png
+  tags: &id001
+  - 冷热源
+  category: *id001
+  device_params:
+    Datasheet: Manual
+    Min. sampling rate: 1 Hz
+    Max. sampling rate: 50 to 60 Hz (depending on AC line frequency)
+    Data logging rate: 10 samples/second/channel to sample/hour/channel (can be set
+      independently for each channel or globally for all channels)
+    Display resolution: 0.001°C, °F, K, V, A, W, etc.if -1000 < displayed value <
+      1000, 6 significant figures otherwise
+    PID auto tuning: Single step response or relay tuning with conservative, moderate,
+      and aggressive response targets
+    品牌: Stanford Research Systems
+  model:
+    name: Cryogenic Temperature Controller - CTC100
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+  cover: Cryogenic Temperature Controller - CTC100.webp

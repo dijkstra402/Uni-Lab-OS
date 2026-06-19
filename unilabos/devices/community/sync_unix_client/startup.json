@@ -1,0 +1,82 @@
+{
+  "nodes": [
+    {
+      "id": "test_sync_unix_client",
+      "name": "SyncUnixClient",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.sync_unix_client",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "socket_path": "/run/runtime/plc_runtime.socket"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_sync_unix_client",
+      "action": "auto-is_connected",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_sync_unix_client",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "connect",
+      "description": "自动补充动作: connect",
+      "device": "test_sync_unix_client",
+      "action": "auto-connect",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "send message",
+      "description": "自动补充动作: send_message",
+      "device": "test_sync_unix_client",
+      "action": "auto-send_message",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "recv message",
+      "description": "自动补充动作: recv_message",
+      "device": "test_sync_unix_client",
+      "action": "auto-recv_message",
+      "action_args": {
+        "timeout": 0.5
+      }
+    },
+    {
+      "step": 6,
+      "name": "send and receive",
+      "description": "自动补充动作: send_and_receive",
+      "device": "test_sync_unix_client",
+      "action": "auto-send_and_receive",
+      "action_args": {
+        "timeout": 0.5
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "SyncUnixClient 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "SyncUnixClient",
+    "generated_by": "driver-finder"
+  }
+}

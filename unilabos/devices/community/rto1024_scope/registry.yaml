@@ -1,0 +1,86 @@
+rto1024_scope:
+  class:
+    module: community_drivers.rto1024_scope.driver:RTO1024_scope
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-prepare_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                t_start:
+                  type: string
+                t_stop:
+                  type: string
+                acq_rate:
+                  type: integer
+                  default: 10000000000
+        goal_default:
+          t_start: null
+          t_stop: null
+          acq_rate: 10000000000
+        handles: {}
+      auto-measure_trace:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_trace
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: R&amp;S®RTO2000 oscilloscope
+  description: 2GHz 4通道高性能示波器，10GSa/s每通道，百万级刷新率。在售(部分更新为RTO6)。
+  manufacturer: Rohde & Schwarz
+  icon: rto1024_scope.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    BW: 2GHz
+    Channels: '4'
+    Sample Rate: 10GSa/s/ch
+    Memory: 20/80MSa
+    ENOB: '>7bit'
+    Update: 1M wfms/s
+    Logic: 16ch 400MHz opt
+    Interface: LAN, 4xUSB, GPIB(opt)
+    品牌: Rohde & Schwarz
+  model:
+    name: R&amp;S®RTO2000 oscilloscope
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string
+        terminator:
+          default: null
+          type: string

@@ -1,0 +1,136 @@
+gh_device_823:
+  class:
+    module: unilabos.devices.community.d_823.driver:EurotestHPP120256
+    type: python
+    action_value_mappings:
+      auto-emergency_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: emergency_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal:
+          voltage_rate: voltage_rate
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_rate:
+                  type: string
+        goal_default:
+          voltage_rate: ''
+        handles: {}
+      auto-ramp_to_zero:
+        type: UniLabJsonCommand
+        goal:
+          voltage_rate: voltage_rate
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_to_zero
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_rate:
+                  type: string
+        goal_default:
+          voltage_rate: ''
+        handles: {}
+      auto-wait_for_output_voltage_reached:
+        type: UniLabJsonCommand
+        goal:
+          voltage_setpoint: voltage_setpoint
+          abs_output_voltage_error: abs_output_voltage_error
+          check_period: check_period
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_output_voltage_reached
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_setpoint:
+                  type: string
+                abs_output_voltage_error:
+                  type: string
+                check_period:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          voltage_setpoint: ''
+          abs_output_voltage_error: ''
+          check_period: ''
+          timeout: ''
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: ''
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: ''
+        handles: {}
+  name: Eurotest HPP-120-256 高压直流电源
+  description: Eurotest HPP-120-256是一款高压直流电源，适用于需要高电压输出的实验室和工业应用场景。该产品为小众专业设备，官方产品信息有限，建议联系制造商获取详细技术规格。
+  manufacturer: Eurotest
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  model:
+    name: Eurotest HPP-120-256 高压直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    型号: HPP-120-256
+    类型: 高压直流电源
+    品牌: Eurotest

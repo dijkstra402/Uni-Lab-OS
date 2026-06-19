@@ -1,0 +1,117 @@
+{
+  "nodes": [
+    {
+      "id": "test_aa_opto_mds",
+      "name": "Test AAOptoMDS",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "aa_opto_mds",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "calibrations": "",
+        "com_port": "COM6",
+        "name": "AAOptoMDS",
+        "n_chans": 8,
+        "serial_timeout": 1,
+        "baud_rate": 57600
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_aa_opto_mds",
+      "action": "auto-Enable",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_aa_opto_mds",
+      "action": "auto-query",
+      "action_args": {
+        "lines_expected": 1
+      }
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_aa_opto_mds",
+      "action": "auto-Disable",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "GetStatus",
+      "description": "自动补充动作: GetStatus",
+      "device": "test_aa_opto_mds",
+      "action": "auto-GetStatus",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "SetPower",
+      "description": "自动补充动作: SetPower",
+      "device": "test_aa_opto_mds",
+      "action": "auto-SetPower",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "GetPower",
+      "description": "自动补充动作: GetPower",
+      "device": "test_aa_opto_mds",
+      "action": "auto-GetPower",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "SetPowerAndEnable",
+      "description": "自动补充动作: SetPowerAndEnable",
+      "device": "test_aa_opto_mds",
+      "action": "auto-SetPowerAndEnable",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "SetFreq",
+      "description": "自动补充动作: SetFreq",
+      "device": "test_aa_opto_mds",
+      "action": "auto-SetFreq",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "GetFreq",
+      "description": "自动补充动作: GetFreq",
+      "device": "test_aa_opto_mds",
+      "action": "auto-GetFreq",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "Close",
+      "description": "自动补充动作: Close",
+      "device": "test_aa_opto_mds",
+      "action": "auto-Close",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "AAOptoMDS 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "AAOptoMDS",
+    "generated_by": "driver-finder"
+  }
+}

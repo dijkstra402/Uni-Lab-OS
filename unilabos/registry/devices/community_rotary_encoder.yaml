@@ -1,0 +1,70 @@
+rotary_encoder:
+  class:
+    module: unilabos.devices.community.rotary_encoder.driver:RotaryEncoder
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_threaded:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_threaded
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                throttle:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Rotary Encoder是一款实验执行&合成设备，主要功能包括读取数据。支持Signal, Slot, shutdown等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '9'
+    读取操作: run_threaded、run_threaded、run_threaded
+  manufacturer: Open Source
+  model:
+    name: Rotary Encoder
+    type: device
+  name: Rotary Encoder
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

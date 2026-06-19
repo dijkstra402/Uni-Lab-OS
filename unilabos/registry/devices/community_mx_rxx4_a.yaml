@@ -1,0 +1,76 @@
+mx_rxx4_a:
+  class:
+    module: unilabos.devices.community.mx_rxx4_a.driver:MXR
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-measureStatistics:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measureStatistics
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setupAutoscale:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setupAutoscale
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+  name: Infiniium MXR-Series
+  description: Keysight Infiniium MXR 4通道，八合一集成含实时分析，200Mpts存储深度。
+  manufacturer: Keysight
+  icon: mx_rxx4_a.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    带宽: 500MHz-6GHz
+    通道: '4'
+    ADC: 10位
+    采样率: 16GSa/s
+    内存: 200Mpts/通道(可升级400M)
+    刷新率: '>200,000wfm/s'
+    集成: 八合一(含RTSA/逻辑分析/协议分析/波特图)
+    RTSA带宽: 最高2GHz
+    品牌: Keysight
+  model:
+    name: Infiniium MXR-Series
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        resource:
+          default: null
+          type: string
+        maxChannel:
+          default: null
+          type: string
+        wait:
+          default: null
+          type: string

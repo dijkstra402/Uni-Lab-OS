@@ -1,0 +1,499 @@
+dg1000_z:
+  class:
+    module: unilabos.devices.community.dg1000_z.driver:DG1000Z
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_channel_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_channel_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                enabled:
+                  type: boolean
+                  default: true
+        goal_default:
+          channel: null
+          enabled: true
+        handles: {}
+      auto-query_channel_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_channel_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-set_channel_waveform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_channel_waveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                waveform:
+                  type: string
+        goal_default:
+          channel: null
+          waveform: null
+        handles: {}
+      auto-query_waveform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_waveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                  default: 1
+        goal_default:
+          channel: 1
+        handles: {}
+      auto-set_pulse_width:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pulse_width
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                width:
+                  type: string
+                  default: 5us
+        goal_default:
+          channel: null
+          width: 5us
+        handles: {}
+      auto-set_pulse_period:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pulse_period
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                period:
+                  type: string
+                  default: 100ms
+        goal_default:
+          channel: null
+          period: 100ms
+        handles: {}
+      auto-set_pulse_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pulse_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                frequency:
+                  type: string
+                  default: 10Hz
+        goal_default:
+          channel: null
+          frequency: 10Hz
+        handles: {}
+      auto-set_low_voltage_level:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_low_voltage_level
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                voltage:
+                  type: string
+                  default: 0.0V
+        goal_default:
+          channel: null
+          voltage: 0.0V
+        handles: {}
+      auto-set_high_voltage_level:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_high_voltage_level
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                voltage:
+                  type: string
+                  default: 1.0V
+        goal_default:
+          channel: null
+          voltage: 1.0V
+        handles: {}
+      auto-set_voltage_levels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage_levels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                low:
+                  type: string
+                  default: 0.0V
+                high:
+                  type: string
+                  default: 1.0V
+        goal_default:
+          channel: null
+          low: 0.0V
+          high: 1.0V
+        handles: {}
+      auto-set_channel_dc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_channel_dc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                voltage:
+                  type: string
+                  default: 0.0V
+        goal_default:
+          channel: null
+          voltage: 0.0V
+        handles: {}
+      auto-set_volatile_waveform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_volatile_waveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                waveform:
+                  type: string
+        goal_default:
+          channel: null
+          waveform: null
+        handles: {}
+      auto-set_channel_arbitrary:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_channel_arbitrary
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                samplerate:
+                  type: string
+                  default: 100MSa/s
+                high_voltage:
+                  type: number
+                  default: 5.0
+                low_voltage:
+                  type: number
+                  default: 0.0
+        goal_default:
+          channel: null
+          samplerate: 100MSa/s
+          high_voltage: 5.0
+          low_voltage: 0.0
+        handles: {}
+      auto-set_arb_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_arb_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                mode:
+                  type: string
+        goal_default:
+          channel: null
+          mode: null
+        handles: {}
+      auto-set_burst_period:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_burst_period
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                period:
+                  type: string
+                  default: 100ms
+        goal_default:
+          channel: null
+          period: 100ms
+        handles: {}
+      auto-set_burst_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_burst_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                mode:
+                  type: string
+        goal_default:
+          channel: null
+          mode: null
+        handles: {}
+      auto-set_burst_ncycles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_burst_ncycles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                ncycles:
+                  type: integer
+                  default: 1000
+        goal_default:
+          channel: null
+          ncycles: 1000
+        handles: {}
+      auto-set_arb_samplerate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_arb_samplerate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                samplerate:
+                  type: string
+                  default: 100MSa/s
+        goal_default:
+          channel: null
+          samplerate: 100MSa/s
+        handles: {}
+      auto-set_burst_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_burst_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                enabled:
+                  type: boolean
+                  default: true
+        goal_default:
+          channel: null
+          enabled: true
+        handles: {}
+      auto-set_burst_delay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_burst_delay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                delay:
+                  type: string
+                  default: 0s
+        goal_default:
+          channel: null
+          delay: 0s
+        handles: {}
+      auto-burst_trigger_now:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: burst_trigger_now
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-set_burst_trigger_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_burst_trigger_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                source:
+                  type: string
+        goal_default:
+          channel: null
+          source: null
+        handles: {}
+  name: DG1000Z
+  description: RIGOL DG1000Z系列函数/任意波形发生器，集函数发生器、任意波形发生器、噪声发生器、脉冲发生器、谐波发生器和频率计于一体，采用SiFi逐点生成技术实现高保真信号输出。
+  manufacturer: Rigol
+  icon: dg1000_z.webp
+  tags: &id001
+  - 信号源与发生器
+  category: *id001
+  device_params:
+    最大频率: 25MHz(DG1022Z)/30MHz(DG1032Z)/60MHz(DG1062Z)
+    采样率: 200MSa/s
+    垂直分辨率: 14-bit
+    通道数: '2'
+    内建波形: 160+种
+    调制: AM/FM/PM/ASK/FSK/PSK/PWM
+    内建频率计: 7位200MHz
+    谐波发生器: 8次
+    接口: USB Host/USB Device/LAN(LXI)
+    SiFi逐点技术: 抖动200ps
+    品牌: Rigol
+  model:
+    name: DG1000Z
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        inst:
+          default: null
+          type: string

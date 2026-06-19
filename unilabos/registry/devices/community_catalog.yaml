@@ -1,0 +1,58 @@
+catalog:
+  class:
+    module: unilabos.devices.community.catalog.driver:Catalog
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write_record:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_record
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                record:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Catalog是一款实验执行&合成设备，主要功能包括关闭、写入数据、启动、记录、读取数据、运行。支持Signal, Slot, add
+    deleted indexes等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '23'
+    读取操作: readline、read_from
+    控制操作: writeline、seek_line_start、write_record、start_index、write_record 等6个
+  manufacturer: Open Source
+  model:
+    name: Catalog
+    type: device
+  name: Catalog
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

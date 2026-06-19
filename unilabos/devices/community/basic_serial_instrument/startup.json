@@ -1,0 +1,133 @@
+{
+  "nodes": [
+    {
+      "id": "test_basic_serial_instrument",
+      "name": "InstruDriver BasicSerialInstrument",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.basic_serial_instrument",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-open",
+      "action_args": {
+        "quiet": true
+      }
+    },
+    {
+      "step": 2,
+      "name": "query",
+      "description": "查询关键状态用于校验",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-query",
+      "action_args": {
+        "multiline": false
+      }
+    },
+    {
+      "step": 3,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-readline",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "write",
+      "description": "自动补充动作: write",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-write",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "flush input buffer",
+      "description": "自动补充动作: flush_input_buffer",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-flush_input_buffer",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "read multiline",
+      "description": "自动补充动作: read_multiline",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-read_multiline",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "parsed query",
+      "description": "自动补充动作: parsed_query",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-parsed_query",
+      "action_args": {
+        "response_string": "%d",
+        "re_flags": 0
+      }
+    },
+    {
+      "step": 9,
+      "name": "int query",
+      "description": "自动补充动作: int_query",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-int_query",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "float query",
+      "description": "自动补充动作: float_query",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-float_query",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "test communications",
+      "description": "自动补充动作: test_communications",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-test_communications",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "find port",
+      "description": "自动补充动作: find_port",
+      "device": "test_basic_serial_instrument",
+      "action": "auto-find_port",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "BasicSerialInstrument 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "BasicSerialInstrument",
+    "generated_by": "driver-finder"
+  }
+}

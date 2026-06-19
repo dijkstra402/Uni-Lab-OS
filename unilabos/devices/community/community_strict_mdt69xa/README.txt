@@ -1,0 +1,12 @@
+repo: AlexShkarin/pyLabLib
+repo_url: https://github.com/AlexShkarin/pyLabLib
+source_url: https://github.com/AlexShkarin/pyLabLib/blob/main/pylablib/devices/Thorlabs/serial.py
+registry_id: community_strict_mdt69xa
+source_file: pylablib/devices/Thorlabs/serial.py
+class_name: MDT69xA
+manufacturer: thorlabs
+model: MDT69xA
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.11
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_mdt69xa.yaml

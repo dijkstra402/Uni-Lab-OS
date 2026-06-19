@@ -1,0 +1,81 @@
+gh_keithley_6514:
+  class:
+    module: unilabos.devices.community.gh_keithley_6514.driver:Keithley6514
+    type: python
+    status_types:
+      unit: str
+      auto_range: str
+      input_range: str
+    action_value_mappings:
+      auto-auto_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default:
+          mode: null
+        handles: {}
+      auto-fetch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fetch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_measurements:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_measurements
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/instrumentkit/InstrumentKit
+  name: Keithley 6514
+  description: Keithley 6514系统静电计，支持电压（最高200V，输入阻抗>200TΩ）、电流（±10fA至±20mA）、电阻（最高200GΩ）和电荷（10fC至20μC）四种测量。5½位分辨率，最高1200读数/秒。三同轴输入和保护端子，GPIB、RS-232及数字I/O接口，适用于半导体表征、绝缘电阻测试和光电探测器测量。
+  manufacturer: Tektronix
+  icon: 404_image.png?h=252&w=334
+  tags: &id001
+  - 电表与万用表
+  category: *id001
+  device_params:
+    参数: Digital Multimeters Data Acquisition and Switching Low-level Instrument/Sensitive
+      and Specialty Instruments; Low-level Instrument/Sensitive and Specialty Instruments;
+      EA Elektro-Automatik Products; Multi-Brand Compliant Calibration; Multi-Brand
+      Service Request ⇨; Environmental Testing HALT & HASS Testing NEMA Compliance
+      Testing Package Testing Shock-Vibration Testing; Shock-Vibration Testing; EA
+      Elektro-Automatik Service; EA Elektro-Automatik Support FAQs Support Center
+      Technical Support; EA Elektro-Automatik Support; EA Elektro-Automatik; 1-800-833-9200;
+      Call us at 1-800-833-9200
+    品牌: Keithley
+  model:
+    name: Keithley 6514
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device

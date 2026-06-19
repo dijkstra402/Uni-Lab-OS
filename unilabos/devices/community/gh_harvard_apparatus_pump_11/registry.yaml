@@ -1,0 +1,179 @@
+gh_harvard_apparatus_pump_11:
+  class:
+    module: community_drivers.gh_harvard_apparatus_pump_11.driver:Pump
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bytes:
+                  type: integer
+                  default: 5
+        goal_default:
+          bytes: 5
+        handles: {}
+      auto-setdiameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setdiameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                diameter:
+                  type: string
+        goal_default:
+          diameter: null
+        handles: {}
+      auto-setflowrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setflowrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flowrate:
+                  type: string
+        goal_default:
+          flowrate: null
+        handles: {}
+      auto-infuse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: infuse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-withdraw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: withdraw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-settargetvolume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: settargetvolume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                targetvolume:
+                  type: string
+        goal_default:
+          targetvolume: null
+        handles: {}
+      auto-waituntiltarget:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waituntiltarget
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/tomwphillips/pumpy
+  name: Standard Infuse/Withdraw PHD 22/2000 Syringe Pumps
+  description: 哈佛仪器是美国专业生理研究实验室设备的主要制造商，目前总部位于马萨诸塞州霍利斯顿
+  manufacturer: Harvard Apparatus
+  icon: gh_harvard_apparatus_pump_11.webp
+  tags: &id001
+  - 注射泵
+  category: *id001
+  device_params:
+    Search: "Search\n                \n\n                \n                    \n\n\
+      \                    \n\n                                    \n            \n\
+      \n            \n                \n                    Search"
+    Expert and Technical Support: "Order Online: 800-232-2380\n                  \
+      \      Sales: 800-597-0580\n                        Support: 800-547-6766"
+    品牌: Harvard Apparatus
+  model:
+    name: Standard Infuse/Withdraw PHD 22/2000 Syringe Pumps
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Dispensing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string

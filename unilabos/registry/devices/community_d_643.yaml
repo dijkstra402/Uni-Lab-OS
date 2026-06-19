@@ -1,0 +1,208 @@
+gh_device_643:
+  class:
+    module: unilabos.devices.community.d_643.driver:KDC101
+    type: python
+    action_value_mappings:
+      auto-get_status_n:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status_n
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_status:
+        type: UniLabJsonCommand
+        goal:
+          status: status
+          enabled: enabled
+          timeout: timeout
+          period: period
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+                enabled:
+                  type: string
+                timeout:
+                  type: string
+                period:
+                  type: string
+        goal_default:
+          status: ''
+          enabled: ''
+          timeout: ''
+          period: ''
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal:
+          sync: sync
+          force: force
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sync:
+                  type: string
+                force:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          sync: ''
+          force: ''
+          timeout: ''
+        handles: {}
+      auto-is_homing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_homing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_homed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_homed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_home:
+        type: UniLabJsonCommand
+        goal:
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default:
+          timeout: ''
+        handles: {}
+      auto-get_velocity_params:
+        type: UniLabJsonCommand
+        goal:
+          scale: scale
+        feedback: {}
+        result: {}
+        schema:
+          title: get_velocity_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                scale:
+                  type: string
+        goal_default:
+          scale: ''
+        handles: {}
+      auto-set_velocity_params:
+        type: UniLabJsonCommand
+        goal:
+          max_velocity: max_velocity
+          acceleration: acceleration
+        feedback: {}
+        result: {}
+        schema:
+          title: set_velocity_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_velocity:
+                  type: string
+                acceleration:
+                  type: string
+        goal_default:
+          max_velocity: ''
+          acceleration: ''
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Thorlabs TPA101 T-Cube光束位置对准器
+  description: Thorlabs TPA101是一款T-Cube光束位置对准器，配合PDP和PDQ系列四象限探测器使用。输出X/Y差分信号和总和信号，支持监测、开环和闭环三种工作模式。闭环模式下通过PID控制环路驱动压电定位元件自动将光束对准探测器中心，适用于光束稳定和自动对准应用。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: Thorlabs TPA101 T-Cube光束位置对准器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    兼容探测器: PDQ80A(Si,400-1050nm)/PDQ30C(InGaAs,1000-1700nm)/PDP90A
+    输出: XDIFF/YDIFF(-10至>10V)/SUM(0至>10V)
+    控制模式: 监测/开环/闭环
+    连接器: SMA/HIROSE
+    尺寸: 60×60×47mm
+    供电: ±15V/5V
+    品牌: Thorlabs

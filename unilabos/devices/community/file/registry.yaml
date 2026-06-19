@@ -1,0 +1,46 @@
+file:
+  class:
+    module: unilabos.devices.file.obf_file_driver:File
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-find_stack_by_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_stack_by_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name_part:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: OBF file access
+  category:
+  - file
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        file_path:
+          type: string
+          default: null

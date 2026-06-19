@@ -1,0 +1,79 @@
+marconi_instruments203_n:
+  class:
+    module: community_drivers.marconi_instruments203_n.driver:MarconiInstruments203N
+    type: python
+    status_types:
+      frequency: str
+      amplitude: str
+      output: str
+      modulation_output: str
+      modulation: str
+      SystemErrorQueue: str
+    action_value_mappings:
+      auto-modulation_disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: modulation_disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                modulation:
+                  type: string
+        goal_default:
+          modulation: null
+        handles: {}
+      auto-modulation_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: modulation_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                modulation:
+                  type: string
+        goal_default:
+          modulation: null
+        handles: {}
+  name: Marconi 2030/2031/203N 信号发生器
+  description: Marconi Instruments 2031/2032合成射频信号发生器，高频谱分布，广泛用于通信、航空航天和国防领域的射频测试。原厂已被收购(Marconi→IFR→Aeroflex→Viavi
+    Solutions)。
+  manufacturer: Marconi Instruments
+  icon: marconi_instruments203_n.webp
+  tags: &id001
+  - 信号源与发生器
+  category: *id001
+  device_params:
+    频率范围: 10kHz-2.7GHz(2031)/10kHz-5.4GHz(2032)
+    频率分辨率: 0.01Hz
+    输出电平: -144dBm~+13dBm(选件+19dBm)
+    相位噪声: ~-120dBc/Hz@20kHz偏移(1GHz)
+    调制: AM/FM/PhiM/脉冲
+    电平精度: ±0.5dB
+    接口: GPIB(IEEE-488)
+    品牌: Marconi Instruments
+  model:
+    name: Marconi 2030/2031/203N 信号发生器
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        inst:
+          default: null
+          type: string

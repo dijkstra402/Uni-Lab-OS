@@ -1,0 +1,164 @@
+gh_agilent_4156:
+  class:
+    module: community_drivers.gh_agilent_4156.driver:Agilent4156
+    type: python
+    status_types:
+      data_variables: str
+    action_value_mappings:
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                period:
+                  type: string
+                  default: INF
+                points:
+                  type: integer
+                  default: 100
+        goal_default:
+          period: INF
+          points: 100
+        handles: {}
+      auto-disable_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-configure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                config_file:
+                  type: string
+        goal_default:
+          config_file: null
+        handles: {}
+      auto-save:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trace_list:
+                  type: string
+        goal_default:
+          trace_list: null
+        handles: {}
+      auto-save_var:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_var
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trace_list:
+                  type: string
+        goal_default:
+          trace_list: null
+        handles: {}
+      auto-get_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default:
+          path: null
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: 4156C Precision Semiconductor Parameter Analyzer [Obsolete]
+  description: 是德科技为创新者提供以软件为中心的设计、仿真和测试解决方案，以快速实现未来的突破并降低风险。
+  manufacturer: Keysight
+  icon: Facebook.png
+  tags: &id001
+  - 半导体参数测试仪
+  category: *id001
+  device_params:
+    Date: Title
+    Reset: By Type of Content
+    user-manuals: "User Manuals \n                                            (9)"
+    User Manuals: 16441A R Box User's Guide (.pdf 507.41 KB)
+    reference-guides: "Reference Guides \n                                       \
+      \     (4)"
+    Reference Guides: 4155C/4156C Semiconductor Parameter Analyzer Setup Screen Reference
+      (.pdf 585.44 KB)
+    application-notes: "Application Notes \n                                     \
+      \       (3)"
+    品牌: Keysight
+  model:
+    name: 4156C Precision Semiconductor Parameter Analyzer [Obsolete]
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string

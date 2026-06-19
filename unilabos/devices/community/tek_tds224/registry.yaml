@@ -1,0 +1,58 @@
+tek_tds224:
+  class:
+    module: community_drivers.tek_tds224.driver:TekTDS224
+    type: python
+    status_types:
+      channel: str
+      ref: str
+      math: str
+      data_source: str
+      data_width: str
+    action_value_mappings:
+      auto-force_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: force_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Tektronix TDS224 Digital Real-Time Oscilloscope
+  description: 使用 Keithley 4200A-SCS 半导体参数分析仪加速研究和故障分析。集成 I-V、C-V 和脉冲 I-V，设置速度加快 50%。
+  manufacturer: Tektronix
+  icon: tek_tds224.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    带宽: 100MHz
+    通道: 4通道
+    采样率: 1GS/s
+    存储深度: 2.5kpts
+    垂直分辨率: 8bit
+    显示: LCD单色
+    探头: P6112(100MHz 10X)
+    重量: 1.7kg
+    品牌: Tektronix
+  model:
+    name: Tektronix TDS224 Digital Real-Time Oscilloscope
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

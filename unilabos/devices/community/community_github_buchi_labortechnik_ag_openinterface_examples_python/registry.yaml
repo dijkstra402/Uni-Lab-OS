@@ -1,0 +1,91 @@
+community_github_buchi_labortechnik_ag_openinterface_examples_python:
+  class:
+    module: community_drivers.community_github_buchi_labortechnik_ag_openinterface_examples_python.driver:CommunityGithubBuchiLabortechnikAgOpeninterfaceExamplesPython
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/buchi-labortechnik-ag_openinterface_examples_python
+          source_file:
+            type: string
+            default: modbus_server/modbus_server.py
+          class_name:
+            type: string
+            default: CallbackDataBlock
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - setValues
+          metadata:
+            type: object
+            default:
+              repo: buchi-labortechnik-ag/openinterface_examples_python
+              repo_url: https://github.com/buchi-labortechnik-ag/openinterface_examples_python
+              unit_id: gh_buchi_rotavapor_r_300
+              source_file: modbus_server/modbus_server.py
+              candidate_score: 33
+              manufacturer: Buchi
+              model_name: Buchi Rotavapor R-300
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-setValues:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setValues
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'Buchi Rotavapor R-300是模块化旋转蒸发仪，转速10-280 rpm，支持50 mL至5 L蒸发瓶，加热浴温度20-220°C。
+    GitHub驱动: https://github.com/buchi-labortechnik-ag/openinterface_examples_python'
+  category:
+  - community
+  device_params:
+    repo: buchi-labortechnik-ag/openinterface_examples_python
+    source_file: modbus_server/modbus_server.py
+    candidate_class: CallbackDataBlock
+    communication: ''
+    photo_url: https://assets.buchi.com/image/upload/s--a2W-PoO_--/q_auto,w_1000,ar_16000:9000,c_fill,g_auto,f_auto/v1614687928/Website/AS4A8938.jpg
+    instrument_params: 'Type: Rotary evaporator; Speed: 10-280 rpm; Flask: 50-5000
+      mL; Bath temp: 20-220°C; Accuracy: ±1°C; Power: ~1300 W; Lift: Motorized; Seal:
+      PTFE/FKM'
+    official_url: https://www.buchi.com/en/products/laboratory-evaporation/rotavapor-r-300
+  manufacturer: Buchi
+  model:
+    name: Buchi Rotavapor R-300
+    type: device
+  name: Buchi Rotavapor R-300
+  tags:
+  - 旋转蒸发器
+  resource_type: device
+  icon: https://assets.buchi.com/image/upload/s--a2W-PoO_--/q_auto,w_1000,ar_16000:9000,c_fill,g_auto,f_auto/v1614687928/Website/AS4A8938.jpg
+  scene:
+    domain: Chemistry
+    scene_name: Sample Prep
+    step: Evaporation
+  version: 0.1.0

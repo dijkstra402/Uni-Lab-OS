@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "test_gcode_client",
+      "name": "GcodeClient",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.gcode_client",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "robot_ip": "",
+        "logger": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_gcode_client",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "execute",
+      "description": "自动补充动作: execute",
+      "device": "test_gcode_client",
+      "action": "auto-execute",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "execute file",
+      "description": "自动补充动作: execute_file",
+      "device": "test_gcode_client",
+      "action": "auto-execute_file",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "GcodeClient 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "GcodeClient",
+    "generated_by": "driver-finder"
+  }
+}

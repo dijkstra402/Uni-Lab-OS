@@ -1,0 +1,209 @@
+gh_device_639:
+  class:
+    module: unilabos.devices.community.d_639.driver:KDC101
+    type: python
+    action_value_mappings:
+      auto-get_status_n:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status_n
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_status:
+        type: UniLabJsonCommand
+        goal:
+          status: status
+          enabled: enabled
+          timeout: timeout
+          period: period
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+                enabled:
+                  type: string
+                timeout:
+                  type: string
+                period:
+                  type: string
+        goal_default:
+          status: ''
+          enabled: ''
+          timeout: ''
+          period: ''
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal:
+          sync: sync
+          force: force
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sync:
+                  type: string
+                force:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          sync: ''
+          force: ''
+          timeout: ''
+        handles: {}
+      auto-is_homing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_homing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_homed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_homed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_home:
+        type: UniLabJsonCommand
+        goal:
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default:
+          timeout: ''
+        handles: {}
+      auto-get_velocity_params:
+        type: UniLabJsonCommand
+        goal:
+          scale: scale
+        feedback: {}
+        result: {}
+        schema:
+          title: get_velocity_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                scale:
+                  type: string
+        goal_default:
+          scale: ''
+        handles: {}
+      auto-set_velocity_params:
+        type: UniLabJsonCommand
+        goal:
+          max_velocity: max_velocity
+          acceleration: acceleration
+        feedback: {}
+        result: {}
+        schema:
+          title: set_velocity_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_velocity:
+                  type: string
+                acceleration:
+                  type: string
+        goal_default:
+          max_velocity: ''
+          acceleration: ''
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Thorlabs BNT001 台式NanoTrak控制器
+  description: Thorlabs BNT001是一款台式NanoTrak自动对准控制器，设计用于最大化光学系统的光功率吞吐量。通过驱动压电执行器使光纤端面做圆形扫描运动，执行功率梯度搜索确定峰值功率方向并自动定位。内置红外InGaAs光电二极管，支持PID闭环控制。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: Thorlabs BNT001 台式NanoTrak控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    探测器类型: Si或InGaAs PIN光电二极管
+    光电流范围: 1nA-10mA
+    光功率监测: BNC多量程
+    信号相位补偿: -180°至180°
+    圆形扫描频率: 1-300Hz
+    接口: USB
+    软件: APT/Kinesis
+    品牌: Thorlabs

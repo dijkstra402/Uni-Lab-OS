@@ -1,0 +1,133 @@
+{
+  "nodes": [
+    {
+      "id": "test_piezo_e709",
+      "name": "Test piezo_e709",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "piezo_e709",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "portname": "COM1",
+        "maxtravel": 400.0,
+        "Osen": "",
+        "hasTrigger": false
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_piezo_e709",
+      "action": "auto-ReInit",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_piezo_e709",
+      "action": "auto-GetControlReady",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "SetServo",
+      "description": "自动补充动作: SetServo",
+      "device": "test_piezo_e709",
+      "action": "auto-SetServo",
+      "action_args": {
+        "val": 1
+      }
+    },
+    {
+      "step": 4,
+      "name": "MoveTo",
+      "description": "自动补充动作: MoveTo",
+      "device": "test_piezo_e709",
+      "action": "auto-MoveTo",
+      "action_args": {
+        "bTimeOut": true
+      }
+    },
+    {
+      "step": 5,
+      "name": "MoveRel",
+      "description": "自动补充动作: MoveRel",
+      "device": "test_piezo_e709",
+      "action": "auto-MoveRel",
+      "action_args": {
+        "bTimeOut": true
+      }
+    },
+    {
+      "step": 6,
+      "name": "GetPos",
+      "description": "自动补充动作: GetPos",
+      "device": "test_piezo_e709",
+      "action": "auto-GetPos",
+      "action_args": {
+        "iChannel": 0
+      }
+    },
+    {
+      "step": 7,
+      "name": "GetChannelObject",
+      "description": "自动补充动作: GetChannelObject",
+      "device": "test_piezo_e709",
+      "action": "auto-GetChannelObject",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "GetChannelPhase",
+      "description": "自动补充动作: GetChannelPhase",
+      "device": "test_piezo_e709",
+      "action": "auto-GetChannelPhase",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "GetMin",
+      "description": "自动补充动作: GetMin",
+      "device": "test_piezo_e709",
+      "action": "auto-GetMin",
+      "action_args": {
+        "iChan": 1
+      }
+    },
+    {
+      "step": 10,
+      "name": "GetMax",
+      "description": "自动补充动作: GetMax",
+      "device": "test_piezo_e709",
+      "action": "auto-GetMax",
+      "action_args": {
+        "iChan": 1
+      }
+    },
+    {
+      "step": 11,
+      "name": "GetFirmwareVersion",
+      "description": "自动补充动作: GetFirmwareVersion",
+      "device": "test_piezo_e709",
+      "action": "auto-GetFirmwareVersion",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "piezo_e709 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "piezo_e709",
+    "generated_by": "driver-finder"
+  }
+}

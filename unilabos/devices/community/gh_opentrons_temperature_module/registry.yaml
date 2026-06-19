@@ -1,0 +1,183 @@
+gh_opentrons_temperature_module:
+  class:
+    module: community_drivers.gh_opentrons_temperature_module.driver:TempdeckControl
+    type: python
+    status_types:
+      model_name: str
+      serial_no: str
+      fw_version: str
+    action_value_mappings:
+      auto-open_first_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_first_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                usb_vidpid:
+                  type: string
+        goal_default:
+          usb_vidpid: null
+        handles: {}
+      auto-from_usb_location:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_usb_location
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location:
+                  type: string
+                usb_vidpid:
+                  type: string
+        goal_default:
+          location: null
+          usb_vidpid: null
+        handles: {}
+      auto-from_serial_portname:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_serial_portname
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                portname:
+                  type: string
+        goal_default:
+          portname: null
+        handles: {}
+      auto-list_connected_devices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: list_connected_devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                usb_vidpid:
+                  type: string
+        goal_default:
+          usb_vidpid: null
+        handles: {}
+      auto-set_target_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_target_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: number
+        goal_default:
+          temp: null
+        handles: {}
+      auto-get_temps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_target_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_target_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-deactivate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/czbiohub-sf/ot-tempdeck-control
+  name: Opentrons Temperature Module
+  description: Opentrons温度模块是帕尔贴温度控制模块，温度范围4-95°C，兼容OT-2和Flex机器人。
+  manufacturer: Opentrons
+  icon: image-13.png.webp
+  tags: &id001
+  - 高低温金属浴
+  category: *id001
+  device_params:
+    Type: Peltier temperature module
+    Compatible: OT-2 and Flex
+    Temperature: 4-95°C
+    Deck slots: '1'
+    品牌: Opentrons
+  model:
+    name: Opentrons Temperature Module
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Temperature Control
+    step: Heating/Cooling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ser_port:
+          default: null
+          type: string

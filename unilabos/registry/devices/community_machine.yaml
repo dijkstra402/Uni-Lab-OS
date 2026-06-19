@@ -1,0 +1,682 @@
+machine:
+  class:
+    module: unilabos.devices.community.machine.driver:Machine
+    type: python
+    status_types:
+      configured_axes: String
+      configured_tools: String
+      active_tool_index: String
+      tool_z_offsets: String
+      axis_limits: String
+      position: String
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-active_tool_index:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: active_tool_index
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tool_index:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-load_deck:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_deck
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                deck_filename:
+                  type: string
+                path:
+                  type: string
+        goal_default:
+          path: /Users/sml/work/test/Unilab_副本/Uni-Lab-OS/unilabos/devices/generic/decks/deck_definition
+        handles: {}
+      auto-split_response_objects:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: split_response_objects
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                s:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-gcode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gcode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                timeout:
+                  type: string
+                response_wait:
+                  type: number
+        goal_default:
+          cmd: ''
+          response_wait: 60
+        handles: {}
+      auto-delay_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delay_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-push_machine_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: push_machine_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pop_machine_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pop_machine_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-download_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: download_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filepath:
+                  type: string
+                timeout:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home_xyu:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home_xyu
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home_x:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home_y:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home_u:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home_u
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home_v:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home_v
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home_z:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home_e:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home_e
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home_in_place:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home_in_place
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_tool_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_tool_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tool_idx:
+                  type: string
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_to:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: number
+                y:
+                  type: number
+                z:
+                  type: number
+                e:
+                  type: number
+                v:
+                  type: number
+                s:
+                  type: number
+                param:
+                  type: string
+                wait:
+                  type: boolean
+        goal_default:
+          s: 6000
+          wait: true
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dx:
+                  type: number
+                dy:
+                  type: number
+                dz:
+                  type: number
+                de:
+                  type: number
+                dv:
+                  type: number
+                s:
+                  type: number
+                param:
+                  type: string
+                wait:
+                  type: boolean
+        goal_default:
+          dx: 0
+          dy: 0
+          dz: 0
+          de: 0
+          dv: 0
+          s: 6000
+          wait: true
+        handles: {}
+      auto-dwell:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dwell
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                t:
+                  type: number
+                millis:
+                  type: boolean
+        goal_default:
+          millis: true
+        handles: {}
+      auto-safe_z_movement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: safe_z_movement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-load_tool:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_tool
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tool:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reload_tool:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reload_tool
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tool:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-pickup_tool:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pickup_tool
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-park_tool:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: park_tool
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-load_labware:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_labware
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                labware_filename:
+                  type: string
+                slot:
+                  type: integer
+                path:
+                  type: string
+                order:
+                  type: string
+        goal_default:
+          order: rows
+        handles: {}
+      auto-tool_lock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tool_lock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-tool_unlock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tool_unlock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-configured_axes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configured_axes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-configured_tools:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configured_tools
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-tool_z_offsets:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tool_z_offsets
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-axis_limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: axis_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Jubilee Multi-Tool Motion Platform 自动化设备是由Jubilee生产的专业实验设备。Raise this
+    error if there is something wrong with how the machine is configured
+  category:
+  - 物流/机械
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        baudrate:
+          type: integer
+          default: 115200
+        address:
+          type: string
+          default: null
+        deck_config:
+          type: string
+          default: null
+        simulated:
+          type: boolean
+          default: false
+        crash_detection:
+          type: boolean
+          default: false
+        crash_handler:
+          type: string
+          default: null
+  device_params:
+    品牌: Jubilee
+    功能: 参数配置、数据采集、运动控制
+    可控参数: cmd、deck_filename、filepath、labware_filename、millis、order、param、path
+    操作数: 38
+  manufacturer: Jubilee
+  model:
+    name: Jubilee Jubilee Multi-Tool Motion Platform
+    type: device
+  name: Jubilee Multi-Tool Motion Platform
+  tags:
+  - 物流/机械
+  resource_type: device
+  icon: machine.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

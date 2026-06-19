@@ -1,0 +1,226 @@
+gh_device_67:
+  class:
+    module: unilabos.devices.community.d_67.driver:watsonFn
+    type: python
+    action_value_mappings:
+      auto-watson_init:
+        type: UniLabJsonCommand
+        goal:
+          COM: COM
+          num: num
+          lbl_init: lbl_init
+        feedback: {}
+        result: {}
+        schema:
+          title: watson_init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                COM:
+                  type: string
+                num:
+                  type: string
+                lbl_init:
+                  type: string
+        goal_default:
+          COM: ''
+          num: ''
+          lbl_init: ''
+        handles: {}
+      auto-watson_lbl_update:
+        type: UniLabJsonCommand
+        goal:
+          value: value
+          lbl: lbl
+        feedback: {}
+        result: {}
+        schema:
+          title: watson_lbl_update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                lbl:
+                  type: string
+        goal_default:
+          value: ''
+          lbl: ''
+        handles: {}
+      auto-watson_status_update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: watson_status_update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-watson_pumping:
+        type: UniLabJsonCommand
+        goal:
+          chan: chan
+          timeEntry: timeEntry
+          rate: rate
+          lbl: lbl
+        feedback: {}
+        result: {}
+        schema:
+          title: watson_pumping
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+                timeEntry:
+                  type: string
+                rate:
+                  type: string
+                lbl:
+                  type: string
+        goal_default:
+          chan: ''
+          timeEntry: ''
+          rate: ''
+          lbl: ''
+        handles: {}
+      auto-watson_dosing:
+        type: UniLabJsonCommand
+        goal:
+          chan: chan
+          timeEntry: timeEntry
+          rate: rate
+          lbl: lbl
+        feedback: {}
+        result: {}
+        schema:
+          title: watson_dosing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+                timeEntry:
+                  type: string
+                rate:
+                  type: string
+                lbl:
+                  type: string
+        goal_default:
+          chan: ''
+          timeEntry: ''
+          rate: ''
+          lbl: ''
+        handles: {}
+      auto-watson_stoping:
+        type: UniLabJsonCommand
+        goal:
+          chan: chan
+          timeEntry: timeEntry
+          lbl: lbl
+        feedback: {}
+        result: {}
+        schema:
+          title: watson_stoping
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+                timeEntry:
+                  type: string
+                lbl:
+                  type: string
+        goal_default:
+          chan: ''
+          timeEntry: ''
+          lbl: ''
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal:
+          cmd: cmd
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: ''
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Watson-Marlow 520/530 蠕动泵
+  description: Watson-Marlow 520/530系列蠕动泵是中高流量应用的理想选择，最大流量达3500mL/min，调速比高达2200:1，提供0.1RPM精细步进控制。支持多种泵头配置包括520R、520R2、520REL等。IP66(NEMA
+    4X)防护等级可选，适应严苛工业环境。丰富的通信协议支持(EtherNet/IP、PROFIBUS、PROFINET、SCADA)便于自动化集成。530型号增加了闭环反馈功能，适用于过程控制和工业计量场景。
+  manufacturer: Watson-Marlow
+  tags: &id001
+  - 蠕动泵
+  category: *id001
+  model:
+    name: Watson-Marlow 520/530 蠕动泵
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    流量范围: 0.004~3500mL/min
+    转速: 0.1~220RPM(0.1RPM步进)
+    调速比: '2200:1'
+    管径: 0.5~9.6mm
+    通信: EtherNet/IP/PROFIBUS/RS232/RS485
+    电源: 115/230V 50/60Hz 135VA
+    重量: 9.82~10.7kg(驱动器)
+    品牌: Watson-Marlow
+  quality_review:
+    grade: F
+    status: code_error
+    note: Watson-Marlow 抽了 tkinter GUI 内嵌脚本; '%d %d' %rate 单参数填两个 %d 是语法错误; watson_pumping
+      先 sleep 再发命令
+    reviewed_at: '2026-04-26'

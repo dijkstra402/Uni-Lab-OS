@@ -1,0 +1,64 @@
+gh_yaskawa_motoman_fs100:
+  class:
+    module: unilabos.devices.community.gh_yaskawa_motoman_fs100.driver:FS100PacketHeader
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-to_bytes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_bytes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/hsinkoyu/fs100
+  name: FS100
+  description: FS100 控制器体积小、功能强大且开放。它专为包装、小零件处理和装配应用而设计，具有高速、离散操作所需的性能。
+  manufacturer: Yaskawa
+  icon: gh_yaskawa_motoman_fs100.webp
+  tags: &id001
+  - 转运与协作机器人
+  category: *id001
+  device_params:
+    Single controller supports up to eight axes: 4-axis robot + 2 external axes 6-axis
+      robot + 2 external axes 7-axis robot + 1 external axis
+    品牌: Yaskawa
+  model:
+    name: FS100
+    type: device
+  scene:
+    domain: Automation
+    scene_name: Robotics
+    step: Material Handling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        packet:
+          default: null
+          type: string
+        data_size:
+          default: null
+          type: string
+        division:
+          default: null
+          type: string
+        ack:
+          default: null
+          type: string
+        req_id:
+          default: null
+          type: string
+        block_no:
+          default: null
+          type: string
+  cover: FS100.webp

@@ -1,0 +1,213 @@
+aio_serial:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-loop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                value:
+                  type: string
+              type: object
+          title: loop
+          type: object
+        type: UniLabJsonCommand
+      auto-read_async:
+        feedback: {}
+        goal: {}
+        goal_default:
+          size: 1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                size:
+                  type: integer
+              type: object
+          title: read_async
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-read_until_async:
+        feedback: {}
+        goal: {}
+        goal_default:
+          expected: b'\n'
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                expected:
+                  type: string
+                size:
+                  type: string
+              type: object
+          title: read_until_async
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-readinto_async:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                b:
+                  type: string
+              type: object
+          title: readinto_async
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-readline_async:
+        feedback: {}
+        goal: {}
+        goal_default:
+          size: -1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                size:
+                  type: integer
+              type: object
+          title: readline_async
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-readlines_async:
+        feedback: {}
+        goal: {}
+        goal_default:
+          hint: -1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                hint:
+                  type: integer
+              type: object
+          title: readlines_async
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-write_async:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                data:
+                  type: string
+              type: object
+          title: write_async
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-writelines_async:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                lines:
+                  type: string
+              type: object
+          title: writelines_async
+          type: object
+        type: UniLabJsonCommandAsync
+    module: unilabos.devices.serial.aio_serial:AioSerial
+    status_types:
+      loop: String
+    type: python
+  config_info: []
+  description: Aio Serial是由Open Standard生产的实验执行&合成设备，主要功能包括写入数据、读取数据。支持Signal, Slot, loop等操作。
+  handles: []
+  icon: aio_serial.webp
+  init_param_schema:
+    config:
+      properties:
+        baudrate:
+          default: 9600
+          type: integer
+        bytesize:
+          default: 8
+          type: integer
+        cancel_read_timeout:
+          default: 1
+          type: integer
+        cancel_write_timeout:
+          default: 1
+          type: integer
+        dsrdtr:
+          default: false
+          type: boolean
+        exclusive:
+          default: null
+          type: string
+        inter_byte_timeout:
+          default: null
+          type: string
+        loop:
+          default: null
+          type: string
+        parity:
+          default: N
+          type: string
+        port:
+          default: null
+          type: string
+        rtscts:
+          default: false
+          type: boolean
+        stopbits:
+          default: 1
+          type: string
+        timeout:
+          default: null
+          type: string
+        write_timeout:
+          default: null
+          type: string
+        xonxoff:
+          default: false
+          type: boolean
+      type: object
+  version: 1.0.0
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: data、expected、hint、lines、size、value
+    操作数: 8
+  manufacturer: Open Standard
+  model:
+    name: Generic Aio Serial 串口设备
+    type: device
+  name: Open Standard Aio Serial
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Electronics
+    scene_name: Interfacing
+    step: Communication

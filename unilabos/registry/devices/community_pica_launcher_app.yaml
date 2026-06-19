@@ -1,0 +1,239 @@
+pica_launcher_app:
+  class:
+    module: unilabos.devices.community.pica_launcher_app.driver:PICALauncherApp
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setup_styles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_styles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-create_widgets:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_widgets
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-create_resource_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_resource_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parent:
+                  type: string
+        goal_default:
+          parent: null
+        handles: {}
+      auto-create_launcher_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_launcher_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parent:
+                  type: string
+        goal_default:
+          parent: null
+        handles: {}
+      auto-log:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: log
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default:
+          message: null
+        handles: {}
+      auto-open_script_folder:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_script_folder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                script_key:
+                  type: string
+        goal_default:
+          script_key: null
+        handles: {}
+      auto-open_readme:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_readme
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_updates:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_updates
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_manual_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_manual_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_license:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_license
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_repo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_repo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+        goal_default:
+          event: null
+        handles: {}
+      auto-launch_script:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: launch_script
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                script_path:
+                  type: string
+        goal_default:
+          script_path: null
+        handles: {}
+      auto-run_gpib_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_gpib_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: G2301 Gas Concentration Analyzer
+  description: Picarro基于腔衰荡光谱(CRDS)技术的气体分析仪，ppb级灵敏度，低漂移无需频繁校准。此为启动器(Launcher)应用。
+  manufacturer: Picarro, Inc.
+  icon: pica_launcher_app.webp
+  tags: &id001
+  - 气相分子吸收光谱仪
+  category: *id001
+  device_params:
+    技术: CRDS腔衰荡光谱
+    代表型号: G2301(CO2/CH4/H2O), G2401(CO2/CH4/CO/H2O)
+    CO2精度: <50ppb(5分钟平均)
+    CH4精度: <1ppb
+    CO精度: <1.5ppb
+    灵敏度: ppb-ppt级
+    特性: 低漂移,几乎无需常规校准
+    测量: 连续实时
+    品牌: Picarro, Inc.
+  model:
+    name: G2301 Gas Concentration Analyzer
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Analysis
+    step: GC-MS
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        root:
+          default: null
+          type: string

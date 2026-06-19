@@ -1,0 +1,83 @@
+tpg261:
+  class:
+    module: unilabos.devices.community.tpg261.driver:TPG261
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-rcv_vals:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rcv_vals
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Pfeiffer Vacuum TPG 261 Compact Pressure Gauge
+  description: Pfeiffer Vacuum TPG 261紧凑型真空计控制器，单通道显示和控制单元，兼容Pfeiffer全系列真空传感器（皮拉尼、冷阴极、电容薄膜等）。测量范围从大气压至5×10⁻¹¹
+    mbar，带2个开关继电器输出和RS-232C接口，适用于真空系统监测和过程控制。
+  manufacturer: Pfeiffer Vacuum
+  icon: tpg261.webp
+  tags: &id001
+  - 真空测量仪器
+  category: *id001
+  device_params:
+    Channels: '1'
+    Gauges: TPR/PCR/IKR/PKR/IMR/PBR/CMR/APR
+    Range: atm~5×10⁻¹¹mbar (gauge dependent)
+    Switches: '2'
+    Interface: RS-232C
+    Power: 90~250VAC
+    品牌: Pfeiffer Vacuum
+  model:
+    name: Pfeiffer Vacuum TPG 261 Compact Pressure Gauge
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Sample Preparation
+    step: Drying
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        descr:
+          default: null
+          type: string
+        port:
+          default: null
+          type: string

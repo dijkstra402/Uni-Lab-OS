@@ -1,0 +1,205 @@
+gh_device_386:
+  class:
+    module: unilabos.devices.community.d_386.driver:ANC_Interface
+    type: python
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_anc_hw_state:
+        type: UniLabJsonCommand
+        goal:
+          ground: ground
+        feedback: {}
+        result: {}
+        schema:
+          title: get_anc_hw_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ground:
+                  type: string
+        goal_default:
+          ground: ''
+        handles: {}
+      auto-ground_outputs:
+        type: UniLabJsonCommand
+        goal:
+          state: state
+        feedback: {}
+        result: {}
+        schema:
+          title: ground_outputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: ''
+        handles: {}
+      auto-select_chan:
+        type: UniLabJsonCommand
+        goal:
+          chan: chan
+        feedback: {}
+        result: {}
+        schema:
+          title: select_chan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+        goal_default:
+          chan: ''
+        handles: {}
+      auto-set_volts:
+        type: UniLabJsonCommand
+        goal:
+          volt: volt
+        feedback: {}
+        result: {}
+        schema:
+          title: set_volts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volt:
+                  type: string
+        goal_default:
+          volt: ''
+        handles: {}
+      auto-get_volts:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_volts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_freqs:
+        type: UniLabJsonCommand
+        goal:
+          freq: freq
+        feedback: {}
+        result: {}
+        schema:
+          title: set_freqs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                freq:
+                  type: string
+        goal_default:
+          freq: ''
+        handles: {}
+      auto-get_freqs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_freqs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-delta_pos:
+        type: UniLabJsonCommand
+        goal:
+          chan: chan
+          steps: steps
+          wait: wait
+        feedback: {}
+        result: {}
+        schema:
+          title: delta_pos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+                steps:
+                  type: string
+                wait:
+                  type: string
+        goal_default:
+          chan: ''
+          steps: ''
+          wait: ''
+        handles: {}
+      auto-goto_pos:
+        type: UniLabJsonCommand
+        goal:
+          chan: chan
+          pos: pos
+        feedback: {}
+        result: {}
+        schema:
+          title: goto_pos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chan:
+                  type: string
+                pos:
+                  type: string
+        goal_default:
+          chan: ''
+          pos: ''
+        handles: {}
+  name: Attocube ANC150压电步进运动控制器
+  description: Attocube ANC150是三轴压电步进运动控制器，采用惯性滑移驱动原理，通过USB接口控制。兼容ANP系列定位器，可在超高真空、低温和强磁场等极端环境中工作，提供亚纳米级步进精度，适用于扫描探针显微镜和光学对准应用。
+  manufacturer: Attocube
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: Attocube ANC150压电步进运动控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    控制轴数: 3轴
+    驱动原理: 惯性滑移(slip-stick)
+    驱动电压: 最高~70V
+    步进精度: 亚纳米至微米级
+    接口: USB
+    兼容环境: 超高真空/低温/强磁场
+    兼容: ANP系列定位器
+    品牌: Attocube

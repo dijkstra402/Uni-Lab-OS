@@ -1,0 +1,278 @@
+gh_device_698:
+  class:
+    module: community_drivers.698.driver:TMCM1100
+    type: python
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal:
+          comm: comm
+          comm_type: comm_type
+          value: value
+          result_format: result_format
+          bank: bank
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                comm:
+                  type: string
+                comm_type:
+                  type: string
+                value:
+                  type: string
+                result_format:
+                  type: string
+                bank:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          comm: ''
+          comm_type: ''
+          value: ''
+          result_format: ''
+          bank: ''
+          addr: ''
+        handles: {}
+      auto-get_axis_parameter:
+        type: UniLabJsonCommand
+        goal:
+          parameter: parameter
+          result_format: result_format
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: get_axis_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parameter:
+                  type: string
+                result_format:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          parameter: ''
+          result_format: ''
+          addr: ''
+        handles: {}
+      auto-set_axis_parameter:
+        type: UniLabJsonCommand
+        goal:
+          parameter: parameter
+          value: value
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: set_axis_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parameter:
+                  type: string
+                value:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          parameter: ''
+          value: ''
+          addr: ''
+        handles: {}
+      auto-store_axis_parameter:
+        type: UniLabJsonCommand
+        goal:
+          parameter: parameter
+          value: value
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: store_axis_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parameter:
+                  type: string
+                value:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          parameter: ''
+          value: ''
+          addr: ''
+        handles: {}
+      auto-get_global_parameter:
+        type: UniLabJsonCommand
+        goal:
+          parameter: parameter
+          result_format: result_format
+          bank: bank
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: get_global_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parameter:
+                  type: string
+                result_format:
+                  type: string
+                bank:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          parameter: ''
+          result_format: ''
+          bank: ''
+          addr: ''
+        handles: {}
+      auto-set_global_parameter:
+        type: UniLabJsonCommand
+        goal:
+          parameter: parameter
+          value: value
+          bank: bank
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: set_global_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parameter:
+                  type: string
+                value:
+                  type: string
+                bank:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          parameter: ''
+          value: ''
+          bank: ''
+          addr: ''
+        handles: {}
+      auto-move_to:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          position: ''
+          addr: ''
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal:
+          steps: steps
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          steps: ''
+          addr: ''
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal:
+          addr: addr
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default:
+          addr: ''
+        handles: {}
+  name: Trinamic TMCM-3110三轴步进电机控制器/驱动器模块
+  description: Trinamic TMCM-3110是高集成度三轴步进电机控制器/驱动模块，每轴支持2.8A RMS电流和52V供电，配备StallGuard2无传感器负载检测、CoolStep节能和SpreadCycle斩波技术，支持RS485/CAN/USB三种通信接口，TMCL编程实现独立运行。
+  manufacturer: Trinamic
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: Trinamic TMCM-3110三轴步进电机控制器/驱动器模块
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    轴数: '3'
+    电流: 2.8A RMS (4A峰值带散热)
+    电压: 9-52V
+    接口: RS485/CAN/USB
+    IO: 8输入+8输出
+    编码器: 每轴增量编码器
+    尺寸: 130×100mm
+    通信: TMCL协议
+    品牌: Trinamic

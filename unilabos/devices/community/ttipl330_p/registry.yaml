@@ -1,0 +1,81 @@
+ttipl330_p:
+  class:
+    module: community_drivers.ttipl330_p.driver:TTIPL330P
+    type: python
+    status_types:
+      volts: str
+      current: str
+      output: str
+    action_value_mappings:
+      auto-volts:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: volts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volts:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                boolean:
+                  type: string
+        goal_default: {}
+        handles: {}
+  name: PL068
+  description: Aim-TTi PL330P是单路线性稳压电源，PowerFlex技术实现灵活功率分配，低噪声低纹波。
+  manufacturer: Aim-TTi
+  icon: ttipl330_p.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    输出: 0-32V/0-3A, 最大105W
+    技术: PowerFlex(低电压时可提供更大电流)
+    模式: CV/CC
+    显示: 数字表头
+    接口: USB/RS-232(GPIB/LAN可选)
+    品牌: Aim-TTi
+  model:
+    name: PL068
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  cover: PL068.webp

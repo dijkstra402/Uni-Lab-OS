@@ -1,0 +1,357 @@
+gh_biotek_cytation_5:
+  class:
+    module: community_drivers.gh_biotek_cytation_5.driver:BioTekPlateReaderBackend
+    type: python
+    status_types:
+      version: str
+      abs_wavelength_range: string
+      focal_height_range: string
+      excitation_range: string
+      emission_range: string
+      supports_heating: bool
+      supports_cooling: bool
+      temperature_range: string
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                parameter:
+                  type: string
+                wait_for_response:
+                  type: boolean
+                  default: true
+                timeout:
+                  type: string
+        goal_default:
+          command: null
+          parameter: null
+          wait_for_response: true
+          timeout: null
+        handles: {}
+      auto-get_serial_number:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_firmware_version:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slow:
+                  type: boolean
+                  default: false
+        goal_default:
+          slow: false
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                slow:
+                  type: boolean
+                  default: false
+        goal_default:
+          plate: null
+          slow: false
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+        goal_default:
+          temperature: null
+        handles: {}
+      auto-stop_heating_or_cooling:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_heating_or_cooling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_plate:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+        goal_default:
+          plate: null
+        handles: {}
+      auto-read_absorbance:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_absorbance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                wavelength:
+                  type: integer
+        goal_default:
+          plate: null
+          wells: null
+          wavelength: null
+        handles: {}
+      auto-read_luminescence:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_luminescence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                focal_height:
+                  type: number
+                integration_time:
+                  type: integer
+                  default: 1
+        goal_default:
+          plate: null
+          wells: null
+          focal_height: null
+          integration_time: 1
+        handles: {}
+      auto-read_fluorescence:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_fluorescence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                excitation_wavelength:
+                  type: integer
+                emission_wavelength:
+                  type: integer
+                focal_height:
+                  type: number
+        goal_default:
+          plate: null
+          wells: null
+          excitation_wavelength: null
+          emission_wavelength: null
+          focal_height: null
+        handles: {}
+      auto-shake:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shake
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shake_type:
+                  type: string
+                frequency:
+                  type: integer
+        goal_default:
+          shake_type: null
+          frequency: null
+        handles: {}
+      auto-stop_shaking:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_shaking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/PyLabRobot/pylabrobot
+  name: BioTek Cytation 5
+  description: BioTek Instruments于1981年开始生产微孔板仪器，现已发展成为生命科学仪器领域的全球先锋。
+  manufacturer: Agilent
+  icon: Transparent_Tagline_image.png
+  tags: &id001
+  - 化学发光检测仪
+  category: *id001
+  device_params:
+    描述: 中国总部 | 其他分公司 北京市朝阳区望京北路 3 号 100102 var contactURL = ''
+    '}else{ document.getElementById(''contactPageURLFooter'').setAttribute( "href", "https': //www.agilent.com/en-us/contact-us/page"
+      )
+    品牌: BioTek
+  model:
+    name: BioTek Cytation 5
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Analysis
+    step: Plate Reading
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        timeout:
+          default: null
+          type: number
+        device_id:
+          default: null
+          type: string

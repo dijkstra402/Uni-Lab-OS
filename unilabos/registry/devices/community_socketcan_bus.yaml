@@ -1,0 +1,75 @@
+socketcan_bus:
+  class:
+    module: unilabos.devices.community.socketcan_bus.driver:SocketcanBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fileno:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileno
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'Socketcan BUS是由Open Standard (SocketCAN)生产的专业实验设备。A SocketCAN cyclic
+    send task supports:'
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '6'
+    控制操作: stop、start
+    控制能力: 时间
+    通信接口: DLL/SDK、TCP/IP
+  manufacturer: Open Standard (SocketCAN)
+  model:
+    name: Socketcan BUS
+    type: device
+  name: 'Open Standard A SocketCAN cyclic send task supports:'
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: socketcan_bus.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

@@ -1,0 +1,204 @@
+gh_device_262:
+  class:
+    module: unilabos.devices.community.d_262.driver:AccretechProber
+    type: python
+    action_value_mappings:
+      auto-register_srq_event:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: register_srq_event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unregister_srq_event:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unregister_srq_event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_verbose:
+        type: UniLabJsonCommand
+        goal:
+          state: state
+        feedback: {}
+        result: {}
+        schema:
+          title: set_verbose
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: boolean
+        goal_default:
+          state: 0
+        handles: {}
+      auto-get_prober_status_message:
+        type: UniLabJsonCommand
+        goal:
+          prober_status: prober_status
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_prober_status_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                prober_status:
+                  type: string
+        goal_default:
+          prober_status: ''
+        handles: {}
+      auto-get_waferlist_from_status:
+        type: UniLabJsonCommand
+        goal:
+          wafer_status: wafer_status
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_waferlist_from_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wafer_status:
+                  type: string
+        goal_default:
+          wafer_status: ''
+        handles: {}
+      auto-wait_until_status_byte:
+        type: UniLabJsonCommand
+        goal:
+          stb_success: stb_success
+          timeout: timeout
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: wait_until_status_byte
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stb_success:
+                  type: string
+                timeout:
+                  type: number
+        goal_default:
+          stb_success: ''
+          timeout: 0
+        handles: {}
+      auto-acquire_status_byte:
+        type: UniLabJsonCommand
+        goal:
+          timeout: timeout
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: acquire_status_byte
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+        goal_default:
+          timeout: 0
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal:
+          cmd: cmd
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: ''
+        handles: {}
+      auto-raise_error:
+        type: UniLabJsonCommand
+        goal:
+          stb: stb
+        feedback: {}
+        result: {}
+        schema:
+          title: raise_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stb:
+                  type: integer
+        goal_default:
+          stb: 0
+        handles: {}
+      auto-request_prober_id:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: request_prober_id
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Accretech UF200/UF300 晶圆探针台
+  description: Accretech UF200/UF300系列是全自动晶圆探针台，UF200支持5至8英寸晶圆，UF300支持300mm晶圆。采用CCD
+    ITV图像处理实现精确对准，标配热卡盘支持室温至150°C测试。具备实时晶圆地图显示、彩色触摸屏、自动针位对准、针痕检查等功能。适用于分立器件、功率器件、逻辑器件和MEMS测试，可选低温至高温测试、翘曲和超薄晶圆专用传送机构、微电流和高压测试环境等扩展配置。
+  manufacturer: Accretech
+  tags: &id001
+  - 蒸镀仪
+  category: *id001
+  model:
+    name: Accretech UF200/UF300 晶圆探针台
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    晶圆尺寸: UF200支持5-8英寸(最大Φ200mm)
+    定位精度: ±4µm
+    X/Y探测区域: ±120mm
+    最大速度: 200mm/s
+    Z轴行程: 69mm
+    θ轴旋转: ±5°
+    对准: CCD ITV图像处理
+    温度: 室温~+150°C(标配热卡盘)
+    品牌: Accretech

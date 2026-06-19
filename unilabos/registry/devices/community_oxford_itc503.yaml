@@ -1,0 +1,68 @@
+oxford_itc503:
+  class:
+    module: unilabos.devices.community.oxford_itc503.driver:OxfordITC503
+    type: python
+    status_types:
+      sensor: String
+    action_value_mappings:
+      auto-sensor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sensor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Oxford Instruments ITC503 Intelligent Temperature Controller
+  description: 智能温度控制器，0.3~1500K，PID控制，ISOBUS级联。已停产(后续Mercury iTC)。
+  manufacturer: Oxford Instruments
+  icon: oxford_itc503.webp
+  tags: &id001
+  - 低温温度控制器
+  category: *id001
+  device_params:
+    Temp: 0.3~1500K
+    Resolution: 0.001K (<20K)
+    Inputs: 1(std)+3(opt)
+    Excitation: 10µA/100µA/1mA
+    Sensors: voltage/resistance(4-wire)/thermocouple
+    Heater: 80W max
+    Interface: GPIB, RS-232(ISOBUS)
+    Size: 446×106×298mm
+    品牌: Oxford Instruments
+  model:
+    name: Oxford Instruments ITC503 Intelligent Temperature Controller
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Stirring
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

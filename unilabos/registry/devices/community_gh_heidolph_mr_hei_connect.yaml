@@ -1,0 +1,116 @@
+gh_heidolph_mr_hei_connect:
+  class:
+    module: unilabos.devices.community.gh_heidolph_mr_hei_connect.driver:MRHeiConnect
+    type: python
+    status_types:
+      temperature_sp: str
+    action_value_mappings:
+      auto-keepalive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: keepalive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-switch_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: switch_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                protocol:
+                  type: string
+                  default: new
+        goal_default:
+          protocol: new
+        handles: {}
+      auto-watchdog_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: watchdog_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_heating:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_heating
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/croningp/ChemputerSoftware
+  name: Heidolph MR Hei-Connect Magnetic Stirrer
+  description: 115 V 单元为 600 W。标准电源电压：230 V - 可根据要求提供其他电压，请在订购时注明。模型。先生。 Hei-Mix S.
+    MR.嘿标准。 MR.阅读更多1 页 115 V 装置为 600 W。标准电源电压：230 V - 可根据要求提供其他电压，请在订购时注明。模型。先生。 Hei-Mix
+    S. MR.嘿标准。 MR.阅读更多 以下概述展示了不同技术条件下的各种磁力搅拌器型号。基本单元始终为 230V 版本。了解更多
+  manufacturer: Heidolph
+  icon: Heidolph_with%20ATS%20Company_RGB_150.png
+  tags: &id001
+  - 加热磁力搅拌器
+  category: *id001
+  device_params:
+    参数: Large-Scale Rotary Evaporators; Automatic Module Hei-VOLUME Distimatic; +49-9122-9920-0
+    品牌: Heidolph
+  model:
+    name: Heidolph MR Hei-Connect Magnetic Stirrer
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Stirring
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+        connect_on_instantiation:
+          default: null
+          type: string
+        soft_fail_for_testing:
+          default: null
+          type: string

@@ -1,0 +1,139 @@
+gh_eurotherm_2408:
+  class:
+    module: unilabos.devices.community.gh_eurotherm_2408.driver:Eurotherm
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send_read_param:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_read_param
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+        goal_default:
+          param: null
+        handles: {}
+      auto-read_param:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_param
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+        goal_default:
+          param: null
+        handles: {}
+      auto-write_param:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_param
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mnemonic:
+                  type: string
+                data:
+                  type: string
+        goal_default:
+          mnemonic: null
+          data: null
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: string
+        goal_default:
+          temperature: null
+        handles: {}
+      auto-get_setpoint_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_setpoint_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/badarirao/Eurotemp
+  name: Eurotherm 2408
+  description: Eurotherm 2408 1/8 DIN紧凑型温度控制器/编程器（96×48mm），支持热电偶、RTD/Pt100及线性mA/V输入，精度±0.1%。提供继电器、SSR驱动、直流线性及可控硅最多3路输出。PID自整定，最多20个升温/保温程序，RS-232/RS-485
+    Modbus通讯，传感器和加热器断线检测，用于炉窑和实验室温控。
+  manufacturer: Eurotherm
+  icon: facebook.jpg
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  device_params:
+    参数: DIN-A-MITE® A Power Controller; FLUENT® In-Line Heater; EZ-ZONE® RM Rail Mount
+      Controller; Life Sciences – CPG; Food and Beverage – CPG; ServicesSee All ServicesAccreditation
+      servicesService level agreements (SLA)Warehouse MappingIndustrial-Cybersecurity;
+      Industrial-Cybersecurity
+    品牌: Eurotherm
+  model:
+    name: Eurotherm 2408
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thermal Processing
+    step: Heating
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serial_device:
+          default: null
+          type: string
+        baudrate:
+          default: null
+          type: string

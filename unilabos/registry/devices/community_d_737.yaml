@@ -1,0 +1,105 @@
+gh_device_737:
+  class:
+    module: unilabos.devices.community.d_737.driver:_LightChannelConnection
+    type: python
+    action_value_mappings:
+      auto-get_light_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_light_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_light_state:
+        type: UniLabJsonCommand
+        goal:
+          state: state
+        feedback: {}
+        result: {}
+        schema:
+          title: set_light_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: boolean
+        goal_default:
+          state: 0
+        handles: {}
+      auto-get_max_intensity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_max_intensity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_intensity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_intensity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_intensity:
+        type: UniLabJsonCommand
+        goal:
+          intensity: intensity
+        feedback: {}
+        result: {}
+        schema:
+          title: set_intensity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                intensity:
+                  type: integer
+        goal_default:
+          intensity: 0
+        handles: {}
+  name: Lumencor Spectra III 固态光源引擎
+  description: Lumencor Spectra III是专为荧光显微镜设计的高性能固态光源引擎，提供最多8个独立可控光谱通道，覆盖紫外至近红外波段，具备微秒级切换速度，无汞无需预热，兼容主流显微镜平台。
+  manufacturer: Lumencor
+  tags: &id001
+  - 仪用光源
+  category: *id001
+  model:
+    name: Lumencor Spectra III 固态光源引擎
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    光源类型: 固态LED/激光混合
+    通道数: 最多8个独立可控波段
+    波长范围: UV至近红外(380-750nm)
+    切换速度: 微秒级
+    控制接口: TTL/模拟输入
+    寿命: 数万小时
+    品牌: Lumencor

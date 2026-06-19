@@ -1,0 +1,216 @@
+gh_device_291:
+  class:
+    module: unilabos.devices.community.d_291.driver:PrevacCommunicationInterface
+    type: python
+    action_value_mappings:
+      auto-send_data_frame:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+          data: data
+        feedback: {}
+        result: {}
+        schema:
+          title: send_data_frame
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: integer
+                data:
+                  type: string
+        goal_default:
+          command: 0
+          data: ''
+        handles: {}
+      auto-receive_data_frame:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: receive_data_frame
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_double_value:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_double_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: integer
+        goal_default:
+          command: 0
+        handles: {}
+      auto-get_double_value_and_channel:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+          channel: channel
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_double_value_and_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: integer
+                channel:
+                  type: string
+        goal_default:
+          command: 0
+          channel: ''
+        handles: {}
+      auto-send_double_value_and_channel:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+          value: value
+        feedback: {}
+        result: {}
+        schema:
+          title: send_double_value_and_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: integer
+                value:
+                  type: number
+        goal_default:
+          command: 0
+          value: 0
+        handles: {}
+      auto-get_byte_value:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_byte_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: integer
+        goal_default:
+          command: 0
+        handles: {}
+      auto-get_byte_value_and_channel:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_byte_value_and_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: integer
+        goal_default:
+          command: 0
+        handles: {}
+      auto-check_response_for_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: check_response_for_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_error_status:
+        type: UniLabJsonCommand
+        goal:
+          error_index: error_index
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: check_error_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                error_index:
+                  type: integer
+        goal_default:
+          error_index: 0
+        handles: {}
+      auto-check_warning_status:
+        type: UniLabJsonCommand
+        goal:
+          warning_index: warning_index
+        feedback: {}
+        result: {}
+        schema:
+          title: check_warning_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                warning_index:
+                  type: integer
+        goal_default:
+          warning_index: 0
+        handles: {}
+  name: PREVAC TM1x 薄膜厚度监控仪
+  description: PREVAC TM1x（包括TM13和TM14型号）是石英晶振薄膜厚度监控传感器，由石英振荡器、频率测量系统和通信接口组成。通过RS232将测量结果传输至TMC13控制器或PC。专为超高真空(UHV)环境设计，适配标准真空法兰，广泛应用于分子束外延(MBE)、物理气相沉积(PVD)等薄膜沉积研究。PREVAC是波兰精密真空仪器制造商。
+  manufacturer: PREVAC
+  tags: &id001
+  - 蒸镀仪
+  category: *id001
+  model:
+    name: PREVAC TM1x 薄膜厚度监控仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    测量原理: 石英晶振微天平(QCM)
+    组成: 石英振荡器+频率测量系统+通信接口
+    通信: RS232
+    控制器: TMC13
+    适用环境: 超高真空(UHV)
+    应用: MBE/PVD/溅射/蒸发
+    品牌: PREVAC
+  cover: PREVAC TM1x 薄膜厚度监控仪.webp

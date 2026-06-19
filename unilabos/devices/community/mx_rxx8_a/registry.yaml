@@ -1,0 +1,71 @@
+mx_rxx8_a:
+  class:
+    module: community_drivers.mx_rxx8_a.driver:MXR
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-measureStatistics:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measureStatistics
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setupAutoscale:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setupAutoscale
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+  name: Infiniium MXR-Series
+  description: Keysight Infiniium MXR 系列示波器具有完全可升级的型号，性能范围从 500 MHz 到 6 GHz、4 或 8
+    个模拟通道以及数十种硬件和软件选项。
+  manufacturer: Keysight
+  icon: mx_rxx8_a.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    通道: '8'
+    带宽: 500MHz-6GHz
+    品牌: Keysight
+  model:
+    name: Infiniium MXR-Series
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        resource:
+          default: null
+          type: string
+        maxChannel:
+          default: null
+          type: string
+        wait:
+          default: null
+          type: string

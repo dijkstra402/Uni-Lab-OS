@@ -1,0 +1,61 @@
+stream_socket:
+  class:
+    module: unilabos.devices.community.stream_socket.driver:StreamSocket
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Stream Socket是由Open Standard生产的专业实验设备。An IStream interface implementation
+    to stdin/out of a piped process
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '11'
+    读取操作: read、read、read、read
+    控制操作: write、write、write、write
+    通信接口: TCP/IP、串口(RS-232)
+  manufacturer: Open Standard
+  model:
+    name: Stream Socket
+    type: device
+  name: Open Standard Stream Socket
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: aio_serial.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

@@ -1,0 +1,244 @@
+gh_kd_scientific_legato_100:
+  class:
+    module: unilabos.devices.community.gh_kd_scientific_legato_100.driver:KdsLegato100
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default:
+          message: null
+        handles: {}
+      auto-purge:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: purge
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prime:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_infuse_rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_infuse_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                infuse_rate:
+                  type: string
+        goal_default:
+          infuse_rate: null
+        handles: {}
+      auto-get_force:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_force
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_force:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_force
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                force:
+                  type: string
+        goal_default:
+          force: null
+        handles: {}
+      auto-get_diameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_diameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_diameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_diameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                diameter:
+                  type: string
+        goal_default:
+          diameter: null
+        handles: {}
+      auto-set_brightness:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_brightness
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                brightness:
+                  type: string
+        goal_default:
+          brightness: null
+        handles: {}
+      auto-update_state:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/yaq-project/yaqd-kds
+  name: Legato® 100 Syringe Pump
+  description: 仅注射单个注射泵。可容纳 0.5 µl 至 60 ml 的注射器。用户可定义流速以及可选择的目标体积或时间值来控制总输注体积。
+  manufacturer: KD Scientific
+  icon: Syringe-Pumps-by-KD-Scientific-newLogo.jpg
+  tags: &id001
+  - 注射泵
+  category: *id001
+  device_params:
+    Accuracy: ±0.5%
+    Syringes (Min/Max): 0.5 µl to 60ml
+    Flow Rate: 'Minimum (0.5 µl syringe): 1.28 pl/min Maximum (10ml syringe): 25.99
+      ml/min Maximum (60ml syringe): 88.28 ml/min'
+    Display: 4.3 WQVGA TFT Color Display with Touchpad
+    Non-Volatile Memory: Stores all Settings
+    Connectors: RS485 - IEEE-1394 6 pos USB - Type B I/O & TTL - 15 pin D-Sub Connector
+    Linear Force (Max): 13.6 kg (30 lb) @ 100% Force Selection
+    Drive Motor: 0.9 Stepper Motor
+    品牌: KD Scientific
+  model:
+    name: Legato® 100 Syringe Pump
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Dispensing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        config:
+          default: null
+          type: string
+        config_filepath:
+          default: null
+          type: string

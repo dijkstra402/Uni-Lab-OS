@@ -1,0 +1,59 @@
+gh_device_874:
+  class:
+    module: community_drivers.874.driver:VoltageChannel
+    type: python
+    action_value_mappings:
+      auto-get_waveform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_waveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_descriptor:
+        type: UniLabJsonCommand
+        goal:
+          descriptor: descriptor
+        feedback: {}
+        result: {}
+        schema:
+          title: get_descriptor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                descriptor:
+                  type: string
+        goal_default:
+          descriptor: ''
+        handles: {}
+  name: Siglent SDS1072CML数字示波器
+  description: Siglent SDS1072CML是70MHz双通道入门级数字示波器，实时采样率1GSa/s，2Mpts存储深度，7英寸LCD显示屏，支持边沿/脉宽/视频等触发模式，内置FFT和数学运算功能，性价比优异。
+  manufacturer: Siglent
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  model:
+    name: Siglent SDS1072CML数字示波器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    带宽: 70MHz
+    通道: 2+EXT
+    采样率: 1GSa/s
+    存储深度: 2Mpts
+    等效采样: 50GSa/s
+    显示: 7英寸TFT(800×480)
+    触发: 边沿/脉宽/视频/斜率
+    接口: USB主机,USB设备(TMC),LAN(VXI-11)
+    品牌: Siglent
+  cover: Siglent SDS1072CML数字示波器.webp

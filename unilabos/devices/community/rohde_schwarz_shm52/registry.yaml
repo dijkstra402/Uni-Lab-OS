@@ -1,0 +1,78 @@
+rohde_schwarz_shm52:
+  class:
+    module: community_drivers.rohde_schwarz_shm52.driver:RohdeSchwarzSHM52
+    type: python
+    status_types:
+      frequency: str
+      amplitude: str
+      output: str
+    action_value_mappings:
+      auto-frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frequency:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-amplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: amplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                amplitude:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                boolean:
+                  type: string
+        goal_default: {}
+        handles: {}
+  name: Test and measurement
+  description: 罗德与施瓦茨的测试与测量仪器和系统在全球研究、开发、生产和服务方面树立了标准。
+  manufacturer: Rohde & Schwarz
+  icon: rohde_schwarz_shm52.webp
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  device_params:
+    类型: 微波收发器
+    厂商: Rohde & Schwarz
+    用途: 微波信号收发和测量
+    品牌: Rohde & Schwarz
+  model:
+    name: Test and measurement
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device

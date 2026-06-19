@@ -1,0 +1,76 @@
+gh_aja_international_dcxs_750:
+  class:
+    module: community_drivers.gh_aja_international_dcxs_750.driver:DCXS
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                query_delay:
+                  type: string
+        goal_default:
+          command: null
+          query_delay: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reply_length:
+                  type: string
+        goal_default:
+          reply_length: null
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: AJA International, Inc. Sputtering Tools and Systems
+  description: AJA DCXS系列是直流磁控溅射沉积系统，支持DC/RF/脉冲DC电源，基板加热可达850°C，用于研究薄膜沉积。
+  manufacturer: AJA
+  icon: AJA+Logo+White+Text.png
+  tags: &id001
+  - 蒸镀仪
+  category: *id001
+  device_params:
+    Type: DC magnetron sputtering
+    Power: DC, RF, pulsed DC
+    Substrate heating: up to 850°C
+    Features: computer-controlled, load-lock, co-sputtering
+    品牌: AJA
+  model:
+    name: AJA International, Inc. Sputtering Tools and Systems
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thin Film Deposition
+    step: Evaporation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string

@@ -1,0 +1,76 @@
+gh_renishaw_invia_qontor:
+  class:
+    module: unilabos.devices.community.gh_renishaw_invia_qontor.driver:WDFReader
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/alchem0x2A/py-wdf-reader
+  name: 'Renishaw: inVia confocal Raman microscope'
+  description: inVia 提供灵活性和功能，但不复杂。具有出色的性能和可靠性，它是终极研究级共焦拉曼显微镜
+  manufacturer: Renishaw
+  icon: c65adf82da034ad1b7c5c50be04f8ba9.jpg
+  tags: &id001
+  - 激光拉曼光谱仪
+  category: *id001
+  device_params:
+    Parameter: Value
+    Wavelength range: 200 nm to 2200 nm
+    Lasers supported: From 229 nm to 1064 nm
+    Spectral resolution: 0.3 cm-1 (FWHM)
+    Stability: < ±0.01 cm-1
+    Low wavenumber cut-off: 5 cm-1
+    High wavenumber cut-off: 30,000 cm-1
+    Spatial resolution (lateral): 0.25 µm
+    Spatial resolution (axial): < 1 µm
+    Detector size (standard): 1024 pixel × 256 pixel
+    Detector operating temperature: -70 °C
+    Rayleigh filters supported: Unlimited
+    Number of lasers supported: Unlimited
+    品牌: Renishaw
+  model:
+    name: 'Renishaw: inVia confocal Raman microscope'
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Analysis
+    step: Raman Spectroscopy
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        file_name:
+          default: null
+          type: string
+        debug:
+          default: null
+          type: string

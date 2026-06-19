@@ -1,0 +1,265 @@
+gh_metrohm_autolab_pgstat:
+  class:
+    module: community_drivers.gh_metrohm_autolab_pgstat.driver:AUTOLAB
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-disconnectAutolab:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnectAutolab
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setSDKandADX:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSDKandADX
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sdk:
+                  type: string
+                adx:
+                  type: string
+        goal_default:
+          sdk: null
+          adx: null
+        handles: {}
+      auto-isMeasuring:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isMeasuring
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connectToAutolab:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connectToAutolab
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hdw:
+                  type: string
+                  default: C:\Program Files\Metrohm Autolab\autolabsdk\Hardware Setup
+                    Files\PGSTAT302N\HardwareSetup.FRA32M.xml
+        goal_default:
+          hdw: C:\Program Files\Metrohm Autolab\autolabsdk\Hardware Setup Files\PGSTAT302N\HardwareSetup.FRA32M.xml
+        handles: {}
+      auto-measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                procedure:
+                  type: string
+        goal_default:
+          procedure: null
+        handles: {}
+      auto-save:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-saveAs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: saveAs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                saveName:
+                  type: string
+        goal_default:
+          saveName: null
+        handles: {}
+      auto-setCellOn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setCellOn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                'On':
+                  type: boolean
+                  default: true
+        goal_default:
+          'On': true
+        handles: {}
+      auto-setMode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setMode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Mode:
+                  type: string
+                  default: Potentialstatic
+        goal_default:
+          Mode: Potentialstatic
+        handles: {}
+      auto-setPotential:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setPotential
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                potential:
+                  type: string
+        goal_default:
+          potential: null
+        handles: {}
+      auto-setCurrentRange:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setCurrentRange
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                EstimateCurrentInAmpere:
+                  type: number
+                  default: 1.0e-06
+        goal_default:
+          EstimateCurrentInAmpere: 1.0e-06
+        handles: {}
+      auto-wait:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                QuietTime:
+                  type: integer
+                  default: 5
+        goal_default:
+          QuietTime: 5
+        handles: {}
+      auto-loadData:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadData
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+        goal_default:
+          filename: null
+        handles: {}
+    source: https://github.com/shuayliu/pyMetrohmAUTOLAB
+  name: Metrohm Autolab PGSTAT Potentiostat
+  description: Metrohm Autolab PGSTAT系列恒电位仪/恒电流仪，是电化学研究和应用的行业标准。支持循环伏安、电化学阻抗谱(EIS)、计时电流/电位法等技术，模块化设计可扩展至多种电化学测量需求。
+  manufacturer: Metrohm Autolab
+  icon: gh_metrohm_autolab_pgstat.webp
+  tags: &id001
+  - 恒电位仪
+  category: *id001
+  device_params:
+    Type: Potentiostat/galvanostat
+    Max Current: ±2 A
+    Compliance: ±30 V
+    Potential: ±10 V
+    Resolution: 0.3 µV
+    Current ranges: '9'
+    Bandwidth: 1 MHz
+    EIS: 10 µHz-32 MHz
+    Software: NOVA
+    品牌: Metrohm Autolab
+  model:
+    name: Metrohm Autolab PGSTAT Potentiostat
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        sdk:
+          default: null
+          type: string
+        adx:
+          default: null
+          type: string

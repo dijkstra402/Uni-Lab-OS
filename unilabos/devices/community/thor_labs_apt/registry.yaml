@@ -1,0 +1,55 @@
+thor_labs_apt:
+  class:
+    module: community_drivers.thor_labs_apt.driver:ThorLabsAPT
+    type: python
+    status_types:
+      serial_number: str
+      model_number: str
+      name: str
+      channel: str
+      n_channels: str
+      destination: str
+    action_value_mappings:
+      auto-identify:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: identify
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Thorlabs APT/Kinesis 运动控制系统
+  description: Thorlabs APT运动控制系统，涵盖直流伺服/步进电机/无刷DC/压电多个控制器，统一APT/Kinesis软件平台。
+  manufacturer: Thorlabs
+  icon: thor_labs_apt.webp
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  device_params:
+    形态: T-Cube/K-Cube/台式/机架式
+    类型: DC伺服(KDC101/TDC001)/步进电机(BSC201/KST101)/无刷DC(BBD201)/压电(TPZ001/BPC301)
+    软件: APT/Kinesis统一平台
+    接口: USB/RS-232
+    品牌: Thorlabs
+  model:
+    name: Thorlabs APT/Kinesis 运动控制系统
+    type: device
+  scene:
+    domain: Automation
+    scene_name: Robotics
+    step: Material Handling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

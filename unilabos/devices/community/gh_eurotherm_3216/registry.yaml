@@ -1,0 +1,157 @@
+gh_eurotherm_3216:
+  class:
+    module: community_drivers.gh_eurotherm_3216.driver:Eurotherm3216
+    type: python
+    status_types:
+      process_value: float
+      target_setpoint: str
+      output_level: float
+      working_output: str
+      working_setpoint: float
+      active_setpoint: str
+      program_status: str
+      setpoint1: str
+      setpoint2: str
+      remote_setpoint: str
+      setpoint_rate_limit: str
+      calculated_error: float
+      remote_setpoint_enabled: str
+      end_type: str
+      program_cycles: str
+      current_program_cycle: int
+      ramp_units: str
+    action_value_mappings:
+      auto-read_float:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_float
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                registeraddress:
+                  type: integer
+                functioncode:
+                  type: integer
+                  default: 3
+                number_of_registers:
+                  type: integer
+                  default: 2
+                byteorder:
+                  type: integer
+                  default: 0
+        goal_default:
+          registeraddress: null
+          functioncode: 3
+          number_of_registers: 2
+          byteorder: 0
+        handles: {}
+      auto-write_float:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_float
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                registeraddress:
+                  type: integer
+                val:
+                  type: number
+                number_of_registers:
+                  type: integer
+                  default: 2
+                byteorder:
+                  type: integer
+                  default: 0
+        goal_default:
+          registeraddress: null
+          val: null
+          number_of_registers: 2
+          byteorder: 0
+        handles: {}
+      auto-read_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                register:
+                  type: integer
+        goal_default:
+          register: null
+        handles: {}
+      auto-write_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                register:
+                  type: integer
+                val:
+                  type: number
+        goal_default:
+          register: null
+          val: null
+        handles: {}
+    source: https://github.com/hailegroup/nupylab
+  name: 3216 IGES file
+  description: Eurotherm 3216 1/16 DIN温度控制器（48×48mm），支持热电偶、RTD/Pt100和线性输入，精度±0.25%。PID自整定，可选升温/保温编程，继电器/SSR/模拟量输出。双四位LED显示，Modbus
+    RTU通讯，传感器断线检测和手动/自动无扰切换。适用于炉窑、包装机械和实验室设备温控。
+  manufacturer: Eurotherm
+  icon: facebook.jpg
+  tags: &id001
+  - 冷热水机
+  category: *id001
+  device_params:
+    参数: DIN-A-MITE® A Power Controller; FLUENT® In-Line Heater; EZ-ZONE® RM Rail Mount
+      Controller; Life Sciences – CPG; Food and Beverage – CPG; ServicesSee All ServicesAccreditation
+      servicesService level agreements (SLA)Warehouse MappingIndustrial-Cybersecurity;
+      Industrial-Cybersecurity
+    品牌: Eurotherm
+  model:
+    name: 3216 IGES file
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thermal Processing
+    step: Heating
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+        clientaddress:
+          default: null
+          type: integer
+        baudrate:
+          default: null
+          type: integer
+        timeout:
+          default: null
+          type: number

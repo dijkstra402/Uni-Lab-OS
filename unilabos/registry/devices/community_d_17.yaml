@@ -1,0 +1,90 @@
+gh_device_17:
+  class:
+    module: unilabos.devices.community.d_17.driver:LUDLFilterWheel
+    type: python
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal:
+          cls: cls
+          comport: comport
+          baudrate: baudrate
+          timeout: timeout
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cls:
+                  type: string
+                comport:
+                  type: string
+                baudrate:
+                  type: integer
+                timeout:
+                  type: number
+        goal_default:
+          cls: ''
+          comport: ''
+          baudrate: 0
+          timeout: 0
+        handles: {}
+      auto-set_filter:
+        type: UniLabJsonCommand
+        goal:
+          filter_name: filter_name
+          wait_until_done: wait_until_done
+        feedback: {}
+        result: {}
+        schema:
+          title: set_filter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filter_name:
+                  type: string
+                wait_until_done:
+                  type: boolean
+        goal_default:
+          filter_name: ''
+          wait_until_done: 0
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: LUDL MAC6000 显微镜自动化控制器
+  description: LUDL MAC6000是第五代专为显微镜控制设计的模块化自动化控制系统。支持步进电机、DC伺服电机、线性DC电机和压电驱动等多种运动轴类型。微步电机驱动采用独特的DC线性功率调节技术，消除辐射电磁干扰和电机温升。内置BASIC宏语言支持脚本编程，事件驱动命令集消除传统软件轮询提升系统吞吐量。每个LEP自动化组件均包含数字ID用于出厂参数存储和组件识别。
+  manufacturer: LUDL
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: LUDL MAC6000 显微镜自动化控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    运动轴: 几乎无限数量
+    电机类型: 步进/DC伺服/线性DC/压电
+    微步分辨率: 40000微步/转
+    驱动电流: 2A/相@24V
+    通信: 双RS-232(115K波特率)/以太网/USB
+    品牌: LUDL

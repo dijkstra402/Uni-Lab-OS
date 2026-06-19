@@ -1,0 +1,65 @@
+lakeshore340:
+  class:
+    module: unilabos.devices.community.lakeshore340.driver:Lakeshore340
+    type: python
+    status_types:
+      sensor: String
+    action_value_mappings:
+      auto-sensor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sensor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Model 340 Cryogenic Temperature Controller
+  description: 典型传感器性能的计算示例 11 在理想的热系统中，仅控制电子器件的稳定性 12 电流源误差对测量精度的影响可以忽略不计 13 二极管输入激励电流可设置为
+    1 mA — 有关详细信息，请参阅 331 型用户手册 14 校准期间消除电流源误差 15 精度规格不包括室温补偿带来的误差 扩展温度控制器加热器功率 通常需要扩展低温温度控制器的加热器功率才能在室温以上进行实验。该图说明了将
+    340 型控制输出增加到数百瓦的实用方法。编程电阻 Rpgm 放置在 acr
+  manufacturer: Lake Shore
+  icon: lakeshore340.webp
+  tags: &id001
+  - 低温温度控制器
+  category: *id001
+  device_params:
+    Temp Range: 5mK~1500K
+    Inputs: 2 (expandable to 10)
+    ADC: 24-bit
+    Resolution: 0.1mK @4.2K
+    Control: 2 PID loops
+    Heater: 100W max
+    Zones: '10'
+    CalCurves: 20×200pts
+    Sensors: diode/RTD/thermocouple/capacitance
+    Interface: GPIB, RS-232
+    品牌: Lake Shore
+  model:
+    name: Model 340 Cryogenic Temperature Controller
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Stirring
+  version: 1.0.0
+  resource_type: device

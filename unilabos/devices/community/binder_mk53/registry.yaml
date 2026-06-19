@@ -1,0 +1,174 @@
+binder_mk53:
+  class:
+    module: community_drivers.binder_mk53.driver:binderMK53
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reps:
+                  type: integer
+                  default: 10
+        goal_default:
+          reps: 10
+        handles: {}
+      auto-get_temperature_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_door_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_door_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: string
+        goal_default:
+          temperature: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+                n_words:
+                  type: string
+        goal_default:
+          addr: null
+          n_words: null
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          addr: null
+          value: null
+        handles: {}
+  name: BINDER MK 53 Dynamic Climate Chamber
+  description: 用于研究和工业的精确环境模拟。可靠的质量、可持续的产品和专家支持——您成功的最佳条件。
+  manufacturer: Binder
+  icon: binder_mk53.webp
+  tags: &id001
+  - 温湿度试验箱
+  category: *id001
+  device_params:
+    Temp: -40~+180°C
+    Volume: 53L
+    Fluctuation: ±0.1~0.5K
+    Heating Rate: ~4.6K/min
+    Cooling Rate: ~4.1K/min
+    Power: 2.6kW
+    Interface: RS-422
+    Controller: MB1 (25 programs/100 segments)
+    品牌: Binder
+  model:
+    name: BINDER MK 53 Dynamic Climate Chamber
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Temperature Control
+    step: Heating/Cooling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string
+  cover: BINDER MK 53 Dynamic Climate Chamber (gh_binder_mk_53).webp

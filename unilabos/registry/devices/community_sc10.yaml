@@ -1,0 +1,101 @@
+sc10:
+  class:
+    module: unilabos.devices.community.sc10.driver:SC10
+    type: python
+    status_types:
+      name: str
+      enable: str
+      baud_rate: str
+    action_value_mappings:
+      auto-default:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: default
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-restore:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restore
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Thorlabs SC10 Optical Beam Shutter Controller
+  description: 台式光学快门控制器，支持RS-232远程控制和BNC外部触发，兼容SH05/SH1快门。在售。
+  manufacturer: Thorlabs
+  icon: sc10.webp
+  tags: &id001
+  - 光学组件
+  category: *id001
+  device_params:
+    Compatible Shutters: SH05/SH1
+    Timing Resolution: 0.001s
+    Timing Accuracy: 0.0002s
+    Min Exposure: 10ms
+    Max Rate: 25Hz
+    Output: 24V pulse(10V hold)
+    Max Power: 5W
+    Interface: RS-232
+    Trigger: BNC 5V TTL
+    Modes: continuous/single/repeat(1-99)
+    品牌: Thorlabs
+  model:
+    name: Thorlabs SC10 Optical Beam Shutter Controller
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+  cover: Thorlabs SC10 Optical Beam Shutter Controller.webp

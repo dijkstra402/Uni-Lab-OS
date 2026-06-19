@@ -1,0 +1,101 @@
+{
+  "nodes": [
+    {
+      "id": "test_slew__scan",
+      "name": "Slew Scan",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.slew__scan",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "filename": null,
+        "auto_increment": true,
+        "comments": null,
+        "messenger": null,
+        "scandb": null,
+        "prescan_func": null,
+        "mkernel": null,
+        "kws": null
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "check beam ok",
+      "description": "check beam ok",
+      "device": "test_slew__scan",
+      "action": "auto-check_beam_ok",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "post slew scan",
+      "description": "post slew scan",
+      "device": "test_slew__scan",
+      "action": "auto-post_slew_scan",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "prepare scan",
+      "description": "prepare scan",
+      "device": "test_slew__scan",
+      "action": "auto-prepare_scan",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "run",
+      "description": "run",
+      "device": "test_slew__scan",
+      "action": "auto-run",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "save envdata",
+      "description": "save envdata",
+      "device": "test_slew__scan",
+      "action": "auto-save_envdata",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "save extra data",
+      "description": "save extra data",
+      "device": "test_slew__scan",
+      "action": "auto-save_extra_data",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "save mcs data",
+      "description": "save mcs data",
+      "device": "test_slew__scan",
+      "action": "auto-save_mcs_data",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "write master",
+      "description": "write master",
+      "device": "test_slew__scan",
+      "action": "auto-write_master",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Slew Scan Controller 工作流",
+    "description": "Slew Scan Controller 自动生成工作流",
+    "instrument": "Slew Scan Controller",
+    "generated_by": "driver-finder"
+  }
+}

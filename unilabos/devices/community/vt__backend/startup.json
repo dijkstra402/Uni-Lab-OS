@@ -1,0 +1,76 @@
+{
+  "nodes": [
+    {
+      "id": "test_vt__backend",
+      "name": "VT Backend",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.vt__backend",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {},
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_vt__backend",
+      "action": "auto-connect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_vt__backend",
+      "action": "auto-configure_instruments",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_vt__backend",
+      "action": "auto-start_ramp",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "teardown",
+      "description": "断开连接或执行收尾操作",
+      "device": "test_vt__backend",
+      "action": "auto-shutdown",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "set heater range",
+      "description": "自动补充动作: set_heater_range",
+      "device": "test_vt__backend",
+      "action": "auto-set_heater_range",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "set setpoint",
+      "description": "自动补充动作: set_setpoint",
+      "device": "test_vt__backend",
+      "action": "auto-set_setpoint",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "VT_Backend 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "VT_Backend",
+    "generated_by": "driver-finder"
+  }
+}

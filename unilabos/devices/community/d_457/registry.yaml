@@ -1,0 +1,88 @@
+gh_device_457:
+  class:
+    module: community_drivers.457.driver:ZaberBinary
+    type: python
+    action_value_mappings:
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_knob:
+        type: UniLabJsonCommand
+        goal:
+          enable: enable
+        feedback: {}
+        result: {}
+        schema:
+          title: set_knob
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: string
+        goal_default:
+          enable: ''
+        handles: {}
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: ''
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Zaber Binary协议电机控制器
+  description: Zaber Binary协议电机控制器系列支持Binary和ASCII两种通信协议，适用于Zaber全系列运动产品。通过RS-232、USB或Ethernet接口控制，支持菊花链连接多台设备。提供LabVIEW、Python等多语言开发库，广泛应用于光学定位和自动化实验系统。
+  manufacturer: Zaber
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: Zaber Binary协议电机控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    协议: Zaber Binary/Zaber ASCII
+    波特率: 9600-115200bps
+    接口: RS-232/USB 2.0/Ethernet
+    支持: 直线执行器/旋转台/多轴系统
+    特点: 菊花链连接/单端口多设备
+    软件: LabVIEW/C#/Python等
+    品牌: Zaber

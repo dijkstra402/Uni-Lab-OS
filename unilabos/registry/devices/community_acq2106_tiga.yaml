@@ -1,0 +1,74 @@
+acq2106_tiga:
+  class:
+    module: unilabos.devices.community.acq2106_tiga.driver:DataNotAvailableError
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-load_dio482pg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_dio482pg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                site:
+                  type: string
+                stl:
+                  type: string
+                trace:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_DO:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_DO
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                site:
+                  type: string
+                dox:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+  name: ACQ2106
+  description: D-TACQ ACQ2106载板配TIGA(时间间隔生成器和采集器)固件，支持精密时间间隔触发和事件驱动采集模式。
+  manufacturer: D-TACQ Solutions
+  icon: acq2106_tiga.webp
+  tags: &id001
+  - 介电常数测定仪
+  category: *id001
+  device_params:
+    模块槽: 6个ELF插件模块槽
+    最大通道: 192通道(依模块)
+    模块类型: ACQ423/424/425/480(模拟输入), AO424(模拟输出), DIO432(数字IO)
+    分辨率: 16-24位
+    采样率: 最高128kSPS(ACQ480达80MSPS)
+    处理器: Xilinx Zynq FPGA+ARM Cortex-A9
+    接口: 1GbE(可选10GbE/SFP+光纤)
+    同步: White Rabbit PTP
+    安装: 桌面或1U/2U机架
+    系统: Linux(EPICS/MATLAB/Python)
+    品牌: D-TACQ Solutions
+  model:
+    name: ACQ2106
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device

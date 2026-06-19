@@ -1,0 +1,186 @@
+bk8600:
+  class:
+    module: unilabos.devices.community.bk8600.driver:BK8600
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_setpoint_A:
+                  type: string
+        goal_default:
+          current_setpoint_A: null
+        handles: {}
+      auto-set_mode_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_mode_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_cv_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cv_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_setpoint_V:
+                  type: string
+        goal_default:
+          voltage_setpoint_V: null
+        handles: {}
+      auto-toggle_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-lock_front_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_front_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: B&K Precision 8601 DC Electronic Load
+  description: B&K Precision 设计和制造可靠且经济高效的测试和测量设备，被工程师和技术人员广泛应用。
+  manufacturer: BK Precision
+  icon: bk8600.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Voltage: 0~120V
+    Current: 0~30A
+    Power: 150W
+    Resolution: 16-bit
+    Transient: 25kHz
+    Modes: CC/CV/CR/CW
+    Interface: USB/RS-232/GPIB
+    品牌: BK Precision
+  model:
+    name: B&K Precision 8601 DC Electronic Load
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Battery Testing
+    step: Cycling
+  version: 1.0.0
+  resource_type: device

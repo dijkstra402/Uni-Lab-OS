@@ -1,0 +1,261 @@
+open_flexure_stage:
+  class:
+    module: unilabos.devices.community.open_flexure_stage.driver:OpenFlexureStage
+    type: python
+    status_types:
+      n_axes: String
+      backlash: String
+      test_mode: String
+    action_value_mappings:
+      auto-backlash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: backlash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                blsh:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_rel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_rel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                displacement:
+                  type: string
+                axis:
+                  type: string
+                backlash:
+                  type: string
+        goal_default:
+          backlash: true
+        handles: {}
+      auto-release_motors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: release_motors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_abs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_abs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                final:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-focus_rel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: focus_rel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                z:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-scan_linear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan_linear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rel_positions:
+                  type: string
+                backlash:
+                  type: string
+                return_to_start:
+                  type: string
+        goal_default:
+          backlash: true
+          return_to_start: true
+        handles: {}
+      auto-scan_z:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dz:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-list_modules:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: list_modules
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_help:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_help
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-test_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: test_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-n_axes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: n_axes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                direction:
+                  type: string
+                axes:
+                  type: string
+        goal_default:
+          direction: min
+          axes: '[''x'', ''y'', ''z'']'
+        handles: {}
+  description: OpenFlexure Nano Motor Stage 电机 自动化设备 位移台是由OpenFlexure生产的专业实验设备。Class
+    managing serial communications with an Openflexure Motor Controller
+  category:
+  - 物流/机械
+  device_params:
+    品牌: OpenFlexure
+    功能: 扫描测量、运动控制
+    可控参数: axes、axis、backlash、blsh、direction、displacement、final、message
+    操作数: 14
+  manufacturer: OpenFlexure
+  model:
+    name: OpenFlexure Nano Motor Stage 电机 自动化设备 位移台
+    type: device
+  name: OpenFlexure Nano Motor Stage
+  tags:
+  - 物流/机械
+  resource_type: device
+  icon: open_flexure_stage.webp
+  scene:
+    domain: Automation
+    scene_name: Motion Control
+    step: Positioning
+  version: 1.0.0

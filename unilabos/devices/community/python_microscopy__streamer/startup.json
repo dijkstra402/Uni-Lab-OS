@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "test_python_microscopy__streamer",
+      "name": "Test Streamer",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "python_microscopy__streamer",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "serverfilter": "woyaochengwei11408gaoshoudeMacBook-Air",
+        "servers": "",
+        "distribution_fcn": "<function distribution_function_round_robin at 0x109228720>",
+        "filter": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_python_microscopy__streamer",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "put",
+      "description": "自动补充动作: put",
+      "device": "test_python_microscopy__streamer",
+      "action": "auto-put",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "put stream",
+      "description": "自动补充动作: put_stream",
+      "device": "test_python_microscopy__streamer",
+      "action": "auto-put_stream",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Streamer 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Streamer",
+    "generated_by": "driver-finder"
+  }
+}

@@ -1,0 +1,68 @@
+gh_device_72:
+  class:
+    module: unilabos.devices.community.d_72.driver:ViciValcoValveIO
+    type: python
+    action_value_mappings:
+      auto-from_config:
+        type: UniLabJsonCommand
+        goal:
+          cls: cls
+          port: port
+        feedback: {}
+        result: {}
+        schema:
+          title: from_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cls:
+                  type: string
+                port:
+                  type: string
+        goal_default:
+          cls: ''
+          port: ''
+        handles: {}
+      auto-name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: VICI Valco 多位置选择阀
+  description: VICI Valco多位置选择阀是色谱和流体控制领域的业界标准产品，可在连续旋转中逐步递进切换位置，支持双向步进。提供SD(死端)、SC(公共出口)、SF(流通)、ST(捕获)和STF(捕获/流通)五种低压流路配置，以及两种高压流路(HPLC/UHPLC)。低压型适用于气相色谱，高压型压力可达20000psi满足超高效液相色谱需求。预载设计允许在不拆卸阀体的情况下检查或更换转子。
+  manufacturer: VICI Valco
+  tags: &id001
+  - 多通阀
+  category: *id001
+  model:
+    name: VICI Valco 多位置选择阀
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    位数: 4~16位(最多34端口)
+    低压型耐压: 100~400psi(取决于位数)
+    高压型耐压: 最高20000psi
+    最高温度: 200°C
+    材质: Nitronic 60/Valco E复合材料
+    接头: 1/16"/1/8"/1/4"
+    孔径: 0.40~4.0mm
+    驱动: 手动/电动/气动
+    品牌: VICI Valco
+  quality_review:
+    grade: B
+    status: needs_sdk
+    note: 'VICI Valco: flowchem ViciValve 类; 需要 flowchem 包'
+    reviewed_at: '2026-04-26'

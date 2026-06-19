@@ -1,0 +1,228 @@
+weiss_sb22:
+  class:
+    module: community_drivers.weiss_sb22.driver:weissSB22
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temperature_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_humidity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_humidity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_humidity_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_humidity_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_digital_ch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_digital_ch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_digital_ch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_digital_ch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                value:
+                  type: integer
+                  default: 1
+        goal_default:
+          channel: null
+          value: 1
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: string
+        goal_default:
+          temperature: null
+        handles: {}
+      auto-set_humidity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_humidity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                humidity:
+                  type: string
+        goal_default:
+          humidity: null
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: null
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_for_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_for_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                answer:
+                  type: string
+        goal_default:
+          answer: null
+        handles: {}
+  name: Weiss Technik SB22 环境模拟试验箱
+  description: Weiss Technik SB22是22升台式紧凑型环境模拟试验箱，温度范围-42至+180°C，可选湿度控制。
+  manufacturer: Weiss Technik
+  icon: weiss_sb22.webp
+  tags: &id001
+  - 高低温试验箱
+  category: *id001
+  device_params:
+    容积: ~22升
+    温度: -42至+180°C(无湿度), +10至+95°C(有湿度)
+    湿度: 10-98%RH(选配)
+    温度波动: ±0.3至±0.5°C
+    升温: ~3-5K/min
+    降温: ~2-3K/min
+    设计: 台式紧凑型
+    品牌: Weiss Technik
+  model:
+    name: Weiss Technik SB22 环境模拟试验箱
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Temperature Control
+    step: Heating/Cooling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        intf:
+          default: null
+          type: string
+        conf:
+          default: null
+          type: string

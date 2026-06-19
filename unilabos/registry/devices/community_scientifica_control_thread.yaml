@@ -1,0 +1,206 @@
+scientifica_control_thread:
+  class:
+    module: unilabos.devices.community.scientifica_control_thread.driver:ScientificaControlThread
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_pos_callback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pos_callback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                func:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_obj_callback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_obj_callback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                func:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_default_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_default_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reason:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos:
+                  type: string
+                speed:
+                  type: string
+                attempts_allowed:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-quit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: quit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-cancel_move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cancel_move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                req:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_move_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_move_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                miss_reason:
+                  type: string
+                recheck:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_objective:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_objective
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Scientifica Control Thread是由Scientifica生产的专业实验设备。Monitor position,
+    initiate and track move status
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '18'
+    控制操作: set_pos_callback、set_obj_callback、set_default_speed、stop、set_callback 等7个
+    运动操作: move、cancel_move、send_move_command
+    设备属性: can_retry、target_pos
+    控制能力: 位置、多通道、时间、温度、速度
+  manufacturer: Scientifica
+  model:
+    name: Scientifica Control Thread
+    type: device
+  name: Scientifica Monitor position, initiate and track move status
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: scientifica_control_thread.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

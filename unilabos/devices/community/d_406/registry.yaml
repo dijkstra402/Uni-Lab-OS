@@ -1,0 +1,115 @@
+gh_device_406:
+  class:
+    module: community_drivers.406.driver:TC038D
+    type: python
+    action_value_mappings:
+      auto-CRC16:
+        type: UniLabJsonCommand
+        goal:
+          data: data
+        feedback: {}
+        result: {}
+        schema:
+          title: CRC16
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default:
+          data: ''
+        handles: {}
+      auto-readRegister:
+        type: UniLabJsonCommand
+        goal:
+          address: address
+          count: count
+        feedback: {}
+        result: {}
+        schema:
+          title: readRegister
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+        goal_default:
+          address: ''
+          count: ''
+        handles: {}
+      auto-writeMultiple:
+        type: UniLabJsonCommand
+        goal:
+          address: address
+          values: values
+        feedback: {}
+        result: {}
+        schema:
+          title: writeMultiple
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                values:
+                  type: string
+        goal_default:
+          address: ''
+          values: ''
+        handles: {}
+      auto-setpoint:
+        type: UniLabJsonCommand
+        goal:
+          value: value
+        feedback: {}
+        result: {}
+        schema:
+          title: setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: ''
+        handles: {}
+      auto-temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: HCP TC038 温度控制器
+  description: HCP TC038是一款实验室用温度控制器，用于精确控制加热设备的温度。具备数字显示和可编程温度设定功能，配备过温保护等安全特性。适用于化学合成、样品制备、材料测试等实验室加热应用。由于该产品为小众专用设备，官方产品页面和详细技术规格未能在公开网络资源中找到。
+  manufacturer: HCP
+  tags: &id001
+  - 冷热源
+  category: *id001
+  model:
+    name: HCP TC038 温度控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 实验室温度控制器
+    控制方式: 数字控制
+    适用: 加热设备温度调节
+    品牌: HCP

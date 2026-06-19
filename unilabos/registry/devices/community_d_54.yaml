@@ -1,0 +1,109 @@
+gh_device_54:
+  class:
+    module: unilabos.devices.community.d_54.driver:SQM160
+    type: python
+    action_value_mappings:
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: ''
+        handles: {}
+      auto-check_set_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_set_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_system_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_system_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_thickness_rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_thickness_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Inficon IC/5 薄膜沉积控制器
+  description: Inficon IC/5是基于石英晶体微天平的薄膜沉积控制器,用于真空镀膜工艺的速率和厚度精密测控。支持多源共蒸镀和多层膜堆叠工艺,内置PID控制器实现闭环速率控制。预载常用材料的声学阻抗比(Z-ratio)和密度值,配备仿真模式用于工艺开发。已被后继型号IC6替代,IC6支持ModeLock频率测量技术和最多6源同步控制。
+  manufacturer: Inficon
+  tags: &id001
+  - 蒸镀仪
+  category: *id001
+  model:
+    name: Inficon IC/5 薄膜沉积控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  quality_review:
+    grade: B
+    status: needs_sdk
+    note: 需要 pymeasure; SQM160 完整 CRC + 6 通道
+    reviewed_at: '2026-04-26'

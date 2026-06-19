@@ -1,0 +1,107 @@
+socket:
+  class:
+    module: unilabos.devices.community.socket.driver:Socket
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                buffer_size:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                buffer_size:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Socket是由Open Standard生产的实验执行&合成设备，主要功能包括关闭、写入数据、初始化、读取数据。支持Signal,
+    Slot, query等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '5'
+    读取操作: read、query
+    控制操作: write
+    通信接口: TCP/IP
+  manufacturer: Open Standard
+  model:
+    name: Socket
+    type: device
+  name: Open Standard General direct socket TL implementation
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: socket.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

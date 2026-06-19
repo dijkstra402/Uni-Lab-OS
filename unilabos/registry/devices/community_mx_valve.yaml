@@ -1,0 +1,174 @@
+mx_valve:
+  class:
+    module: unilabos.devices.community.mx_valve.driver:MX_valve
+    type: python
+    status_types:
+      port: String
+    action_value_mappings:
+      auto-stripped_hex:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stripped_hex
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wait_ready:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_ready
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-message_builder:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: message_builder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                objective:
+                  type: string
+                port:
+                  type: string
+        goal_default:
+          port: 1
+        handles: {}
+      auto-read_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-response_interpret:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: response_interpret
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                response:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-change_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: MXII 多位阀是由IDEX Health & Science生产的专业实验设备。Class to control MXII valves
+    from Rheodyne (part of IDEX)
+  category:
+  - 多通阀
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        address:
+          type: string
+          default: null
+        ports:
+          type: string
+          default: 10
+        name:
+          type: string
+          default: ''
+        verbose:
+          type: string
+          default: false
+        baudrate:
+          type: string
+          default: 19200
+  device_params:
+    品牌: IDEX Health & Science
+    功能: 参数配置、数据采集
+    可控参数: message、objective、port、response、target
+    操作数: 8
+  manufacturer: IDEX Health & Science
+  model:
+    name: IDEX MXII Multi-Position Valve 阀门
+    type: device
+  name: MXII 多位阀
+  tags:
+  - 多通阀
+  resource_type: device
+  icon: mx_valve.webp
+  scene:
+    domain: Automation
+    scene_name: Motion Control
+    step: Positioning
+  version: 1.0.0

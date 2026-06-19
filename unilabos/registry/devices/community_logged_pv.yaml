@@ -1,0 +1,166 @@
+logged_pv:
+  class:
+    module: unilabos.devices.community.logged_pv.driver:LoggedPV
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                txt:
+                  type: string
+                flush:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_mdel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mdel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mdel:
+                  type: string
+                mdelpv:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_desc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_desc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                desc:
+                  type: string
+                descpv:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-onConnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: onConnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pvname:
+                  type: string
+                conn:
+                  type: string
+                pv:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-onChanges:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: onChanges
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pvname:
+                  type: string
+                value:
+                  type: string
+                char_value:
+                  type: string
+                timestamp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-save_current_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_current_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Logged PV是由EPICS (Argonne National Lab)生产的专业实验设备。wraps a PV for logging
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '17'
+    读取操作: read_configfile
+    控制操作: write、set_mdel、set_desc、write_data
+    控制能力: 多通道、时间、电流
+  manufacturer: EPICS (Argonne National Lab)
+  model:
+    name: Logged PV
+    type: device
+  name: EPICS Logged PV
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: epics_dxp_mapping.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

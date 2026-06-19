@@ -1,0 +1,73 @@
+gh_device_841:
+  class:
+    module: unilabos.devices.community.d_841.driver:Keithley4200
+    type: python
+    action_value_mappings:
+      auto-add_smu:
+        type: UniLabJsonCommand
+        goal:
+          id: id
+        feedback: {}
+        result: {}
+        schema:
+          title: add_smu
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                id:
+                  type: string
+        goal_default:
+          id: ''
+        handles: {}
+      auto-check_set_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_set_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Keithley 2260B系列可编程直流电源
+  description: Keithley 2260B系列是高功率可编程直流电源，提供360W至1080W功率等级和12种电压/电流配置，支持可编程压摆率控制、恒流优先模式和电池模拟，三台并联可达3240W。
+  manufacturer: Tektronix
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  model:
+    name: Keithley 2260B系列可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    功率: 360W/720W/1080W
+    电压: 30V/80V/250V/800V
+    电流: 最高108A
+    电压负载调节: 0.05%+5mV
+    电流精度: 0.1%
+    瞬态恢复: 1ms
+    接口: USB,LAN,GPIB(可选),模拟控制
+    交流输入: 85-265VAC
+    品牌: Tektronix
+  cover: Keithley 2260B系列可编程直流电源.webp

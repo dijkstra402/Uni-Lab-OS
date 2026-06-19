@@ -1,0 +1,949 @@
+tiger_controller:
+  class:
+    module: unilabos.devices.custom.tiger_controller:TigerController
+    type: python
+    status_types:
+      default_motor_axis_sequence: String
+      axis_position: String
+      axis_position_um: String
+      position: String
+      speed: String
+      encoder_counts_per_mm: String
+      axis_addr: String
+    action_value_mappings:
+      auto-connect_to_serial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_to_serial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rx_size:
+                  type: integer
+                tx_size:
+                  type: integer
+                read_timeout:
+                  type: integer
+                write_timeout:
+                  type: integer
+        goal_default:
+          rx_size: 12800
+          tx_size: 12800
+          read_timeout: 1
+          write_timeout: 1
+        handles: {}
+      auto-set_feedback_alignment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_feedback_alignment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                aa:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_backlash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_backlash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                val:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_finishing_accuracy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_finishing_accuracy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                ac:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                ac:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-disconnect_from_serial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect_from_serial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-report_to_console:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: report_to_console
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-moverel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: moverel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: integer
+                y:
+                  type: integer
+                z:
+                  type: integer
+        goal_default:
+          x: 0
+          y: 0
+          z: 0
+        handles: {}
+      auto-moverel_axis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: moverel_axis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                distance:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos_dict:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_axis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_axis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                distance:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_max_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_max_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                speed:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-is_axis_busy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_axis_busy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_device_busy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_device_busy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+        goal_default:
+          timeout: 1.75
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed_dict:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-set_speed_as_percent_max:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_speed_as_percent_max
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pct:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-scanr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scanr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start_position_mm:
+                  type: number
+                end_position_mm:
+                  type: number
+                enc_divide:
+                  type: number
+                axis:
+                  type: string
+        goal_default:
+          enc_divide: 0
+          axis: X
+        handles: {}
+      auto-scanv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scanv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start_position_mm:
+                  type: number
+                end_position_mm:
+                  type: number
+                number_of_lines:
+                  type: number
+                overshoot:
+                  type: number
+                axis:
+                  type: string
+        goal_default:
+          overshoot: 1.0
+          axis: X
+        handles: {}
+      auto-start_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                is_single_axis_scan:
+                  type: boolean
+        goal_default:
+          is_single_axis_scan: true
+        handles: {}
+      auto-stop_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_moving:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_moving
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_filter_wheel_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_filter_wheel_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-select_filter_wheel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: select_filter_wheel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filter_wheel_number:
+                  type: integer
+        goal_default:
+          filter_wheel_number: 0
+        handles: {}
+      auto-move_filter_wheel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_filter_wheel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filter_wheel_position:
+                  type: integer
+        goal_default:
+          filter_wheel_position: 0
+        handles: {}
+      auto-move_filter_wheel_to_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_filter_wheel_to_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-change_filter_wheel_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_filter_wheel_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: integer
+        goal_default:
+          speed: 0
+        handles: {}
+      auto-halt_filter_wheel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: halt_filter_wheel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_dichroic:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_dichroic
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dichroic_id:
+                  type: string
+                dichroic_position:
+                  type: integer
+        goal_default:
+          dichroic_position: 0
+        handles: {}
+      auto-square_wave:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: square_wave
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                on_time:
+                  type: integer
+                delay_time:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-logic_card_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logic_card_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-logic_card_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logic_card_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-logic_cell_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logic_cell_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-logic_cell_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logic_cell_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-single_axis_waveform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: single_axis_waveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                waveform:
+                  type: integer
+                amplitude:
+                  type: integer
+                offset:
+                  type: integer
+                period:
+                  type: integer
+                rise_time:
+                  type: integer
+        goal_default:
+          waveform: 0
+          amplitude: 1000
+          offset: 500
+          period: 10
+          rise_time: 0
+        handles: {}
+      auto-single_axis_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: single_axis_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                mode:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-setup_control_loop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_control_loop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                delays:
+                  type: string
+                camera_delay:
+                  type: number
+                remote_focus_delay:
+                  type: number
+                exposure_time:
+                  type: number
+                sweep_time:
+                  type: number
+                analog_outputs:
+                  type: object
+                num_cycles:
+                  type: string
+        goal_default:
+          num_cycles: 0
+        handles: {}
+      auto-setup_laser:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_laser
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wait_for_loop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_loop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_z_stage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_z_stage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                addr:
+                  type: integer
+                step_size:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-scan_ports:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan_ports
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_default_motor_axis_sequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_default_motor_axis_sequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_axis_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_axis_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_axis_position_um:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_axis_position_um
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axes:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_encoder_counts_per_mm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_encoder_counts_per_mm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_axis_addr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_axis_addr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: ASI Tiger Controller 自动化设备是由Applied Scientific Instrumentation生产的专业实验设备。Tiger Controller class
+  category:
+  - 物流/机械
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        com_port:
+          type: string
+          default: null
+        baud_rate:
+          type: integer
+          default: null
+        verbose:
+          type: boolean
+          default: false
+  device_params:
+    品牌: Applied Scientific Instrumentation
+    功能: 参数配置、扫描测量、数据采集、运动控制
+    可控参数: addr、振幅、analog_outputs、axes、axis、camera_delay、cmd、delay_time
+    操作数: 52
+  manufacturer: Applied Scientific Instrumentation
+  model:
+    name: Applied ASI Tiger Controller 控制器
+    type: device
+  name: ASI Tiger
+  tags:
+  - 物流/机械
+  resource_type: device
+  icon: tiger_controller.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

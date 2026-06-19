@@ -1,0 +1,115 @@
+tc038_d:
+  category:
+  - 冷热水机
+  class:
+    action_value_mappings:
+      auto-readRegister:
+        feedback: {}
+        goal: {}
+        goal_default:
+          count: 1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+              type: object
+          title: readRegister
+          type: object
+        type: UniLabJsonCommand
+      auto-setpoint:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                value:
+                  type: string
+              type: object
+          title: setpoint
+          type: object
+        type: UniLabJsonCommand
+      auto-writeMultiple:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                values:
+                  type: string
+              type: object
+          title: writeMultiple
+          type: object
+        type: UniLabJsonCommand
+      auto-CRC16:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: CRC16
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.community.tc038_d.driver:TC038D
+    status_types:
+      setpoint: String
+      temperature: String
+    type: python
+  config_info: []
+  description: TC038D Temperature Controller是由Novus Automation生产的冷热水机，主要功能包括写入数据、读取数据。支持CRC16,
+    Signal, Slot等操作。
+  handles: []
+  icon: tc038_d.webp
+  init_param_schema: {}
+  version: 1.0.0
+  device_params:
+    支持操作数: '4'
+    读取操作: readRegister
+    控制操作: writeMultiple、setpoint
+    设备属性: setpoint、temperature
+  manufacturer: Novus Automation
+  model:
+    name: Generic TC038D Temperature Controller 温度控制器
+    type: device
+  name: TC038D Temperature
+  tags:
+  - 冷热水机
+  resource_type: device
+  scene:
+    domain: Physics
+    scene_name: Temperature Control
+    step: Cooling/Heating

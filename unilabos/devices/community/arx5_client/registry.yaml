@@ -1,0 +1,182 @@
+arx5_client:
+  class:
+    module: community_drivers.arx5_client.driver:Arx5Client
+    type: python
+    status_types:
+      timestamp: str
+      ee_pose: str
+      joint_pos: str
+      joint_vel: str
+      joint_torque: str
+      gripper_pos: str
+      gripper_vel: str
+      gripper_torque: str
+      tcp_pose: str
+    action_value_mappings:
+      auto-send_recv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_recv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default:
+          msg: null
+        handles: {}
+      auto-get_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_ee_pose:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ee_pose
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pose_6d:
+                  type: string
+                gripper_pos:
+                  type: string
+        goal_default:
+          pose_6d: null
+          gripper_pos: null
+        handles: {}
+      auto-set_tcp_pose:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_tcp_pose
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tcp_pose_6d:
+                  type: string
+                gripper_pos:
+                  type: string
+        goal_default:
+          tcp_pose_6d: null
+          gripper_pos: null
+        handles: {}
+      auto-reset_to_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_to_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_to_damping:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_to_damping
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_gain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_gain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gain:
+                  type: string
+        goal_default:
+          gain: null
+        handles: {}
+  name: ARXrobotics
+  description: ARX X5是方舟无限(北京)科技有限公司研发的6自由度协作机械臂，负载约5kg，专为科研和教育应用设计。支持ROS/ROS2框架，提供开源C++
+    SDK，广泛应用于遥操作、模仿学习和具身智能等机器人研究领域。
+  manufacturer: WattRex
+  icon: arx5_client.webp
+  tags: &id001
+  - 转运与协作机器人
+  category: *id001
+  device_params:
+    自由度: 6-DOF+夹爪
+    有效负载: ~5kg
+    工作半径: ~600-700mm
+    自重: ~5-7kg
+    通信: CAN总线
+    软件支持: ROS/ROS2
+    SDK: 开源C++(BSD-3-Clause)
+    应用: 遥操作/模仿学习/具身智能研究
+    品牌: WattRex
+  model:
+    name: ARXrobotics
+    type: device
+  scene:
+    domain: Automation
+    scene_name: Robotics
+    step: Material Handling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        zmq_ip:
+          default: null
+          type: string
+        zmq_port:
+          default: null
+          type: integer

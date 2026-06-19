@@ -1,0 +1,71 @@
+gh_lakeshore_370:
+  class:
+    module: unilabos.devices.community.gh_lakeshore_370.driver:Lakeshore475
+    type: python
+    status_types:
+      field: str
+      field_units: str
+      temp_units: str
+      field_setpoint: str
+      field_control_params: str
+      p_value: str
+      i_value: str
+      ramp_rate: str
+      control_slope_limit: str
+    action_value_mappings:
+      auto-change_measurement_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_measurement_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                resolution:
+                  type: string
+                filter_type:
+                  type: string
+                peak_mode:
+                  type: string
+                peak_disp:
+                  type: string
+        goal_default:
+          mode: null
+          resolution: null
+          filter_type: null
+          peak_mode: null
+          peak_disp: null
+        handles: {}
+    source: https://github.com/instrumentkit/InstrumentKit
+  name: Model 370 AC Resistance Bridge
+  description: 370 型交流电阻电桥优化了分辨率，并最大限度地降低了低功率电阻测量中的测量不确定度。
+  manufacturer: Lake Shore
+  icon: gh_lakeshore_370.webp
+  tags: &id001
+  - 电表与万用表
+  category: *id001
+  device_params:
+    Type: AC resistance bridge
+    Range: <10mK to room temp
+    Excitation: 0.3pA-10mA
+    Channels: up to 16
+    Resolution: sub-µΩ
+    Control: built-in PID
+    Interface: GPIB, RS-232
+    Sensors: Cernox, RuO₂, Ge RTD
+    品牌: Lake Shore
+  model:
+    name: Model 370 AC Resistance Bridge
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device

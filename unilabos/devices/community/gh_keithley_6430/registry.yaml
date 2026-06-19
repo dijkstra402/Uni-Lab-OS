@@ -1,0 +1,105 @@
+gh_keithley_6430:
+  class:
+    module: community_drivers.gh_keithley_6430.driver:Keithley_6430
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_trigger_immediate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger_immediate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/QCoDeS/Qcodes_contrib_drivers
+  name: Keithley 6430
+  description: Keithley 6430亚飞安远端源表，最小电流灵敏度0.4fA，分辨率低至10aA。独特远端前置放大器设计可紧贴被测器件放置，最大程度降低电缆噪声和泄漏电流。电压源范围±200V，四象限源/吸操作，6.5位分辨率。配备保护端子和GPIB/RS-232接口，用于半导体器件表征、纳米材料研究及光电探测器测试。
+  manufacturer: Tektronix
+  icon: 404_image.png?h=252&w=334
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    参数: Digital Multimeters Data Acquisition and Switching Low-level Instrument/Sensitive
+      and Specialty Instruments; Low-level Instrument/Sensitive and Specialty Instruments;
+      EA Elektro-Automatik Products; Multi-Brand Compliant Calibration; Multi-Brand
+      Service Request ⇨; Environmental Testing HALT & HASS Testing NEMA Compliance
+      Testing Package Testing Shock-Vibration Testing; Shock-Vibration Testing; EA
+      Elektro-Automatik Service; EA Elektro-Automatik Support FAQs Support Center
+      Technical Support; EA Elektro-Automatik Support; EA Elektro-Automatik; 1-800-833-9200;
+      Call us at 1-800-833-9200
+    品牌: Keithley
+  model:
+    name: Keithley 6430
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string
+        terminator:
+          default: null
+          type: string
+        reset:
+          default: null
+          type: boolean

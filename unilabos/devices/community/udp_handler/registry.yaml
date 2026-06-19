@@ -1,0 +1,45 @@
+udp_handler:
+  class:
+    module: unilabos.devices.common.network.udp_handler:UDPHandler
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-receive_new_scan_segment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive_new_scan_segment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: UDP Handler是由Open Standard生产的专业实验设备。This class receives UDP packets which arrive from a specified port
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        local_address:
+          type: string
+          default: null
+        local_port:
+          type: integer
+          default: null
+        buffer_size:
+          type: integer
+          default: null
+  name: Open Standard UDP Handler
+  manufacturer: Open Standard
+  icon: aio_serial.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '1'
+    运动操作: receive_new_scan_segment
+    通信接口: TCP/IP

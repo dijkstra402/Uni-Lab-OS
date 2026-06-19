@@ -1,0 +1,98 @@
+gh_intellemetrics_il800:
+  class:
+    module: community_drivers.gh_intellemetrics_il800.driver:IL800
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-comm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-thickness:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: thickness
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/CINF/PyExpLabSys
+  name: IL570 Overview
+  description: LEP500 系列具有多种不同的配置，可满足各种不同材料和应用的蚀刻需求
+  manufacturer: Intellemetrics
+  icon: gh_intellemetrics_il800.webp
+  tags: &id001
+  - 化学气相沉积设备
+  category: *id001
+  device_params:
+    Type: Thin film deposition controller
+    Channels: up to 6
+    Sensors: crystal monitors
+    Interface: RS-232
+    Features: rate control, thickness monitoring
+    Compatible: PVD/CVD systems
+    品牌: Intellemetrics
+  model:
+    name: IL570 Overview
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Thin Film Deposition
+    step: Evaporation
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+  cover: IL570 Overview.webp

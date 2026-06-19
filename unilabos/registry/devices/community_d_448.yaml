@@ -1,0 +1,85 @@
+gh_device_448:
+  class:
+    module: unilabos.devices.community.d_448.driver:ThorlabsAptMotor
+    type: python
+    action_value_mappings:
+      auto-units_to_steps:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        feedback: {}
+        result: {}
+        schema:
+          title: units_to_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: ''
+        handles: {}
+      auto-steps_to_units:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        feedback: {}
+        result: {}
+        schema:
+          title: steps_to_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: ''
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal:
+          message: message
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default:
+          message: ''
+        handles: {}
+  name: Thorlabs BSC203三通道台式步进电机控制器
+  description: BSC203是Thorlabs BSC200系列三通道台式步进电机控制器，可同时驱动三台高功率双相双极步进电机。采用高速DSP与低噪声模拟电子技术相结合，提供409600微步分辨率和过流/过温保护。支持USB多台级联和双轴/三轴手柄操控，后面板配备电机驱动和控制I/O连接器用于外部触发同步。兼容Kinesis和APT软件。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: Thorlabs BSC203三通道台式步进电机控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  cover: Thorlabs BSC203三通道台式步进电机控制器.webp

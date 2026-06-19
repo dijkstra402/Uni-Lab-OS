@@ -1,0 +1,288 @@
+mp285:
+  class:
+    module: community_drivers.mp285.driver:MP285
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                response_num:
+                  type: integer
+                  default: 1
+        goal_default:
+          command: null
+          response_num: 1
+        handles: {}
+      auto-read_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idx:
+                  type: integer
+        goal_default:
+          idx: null
+        handles: {}
+      auto-connect_to_serial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_to_serial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect_from_serial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect_from_serial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-convert_microsteps_to_microns:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: convert_microsteps_to_microns
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                microsteps:
+                  type: number
+        goal_default:
+          microsteps: null
+        handles: {}
+      auto-convert_microns_to_microsteps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: convert_microns_to_microsteps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                microns:
+                  type: number
+        goal_default:
+          microns: null
+        handles: {}
+      auto-get_current_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_to_specified_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to_specified_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_pos:
+                  type: number
+                y_pos:
+                  type: number
+                z_pos:
+                  type: number
+        goal_default:
+          x_pos: null
+          y_pos: null
+          z_pos: null
+        handles: {}
+      auto-set_resolution_and_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_resolution_and_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: integer
+                resolution:
+                  type: string
+        goal_default:
+          speed: null
+          resolution: null
+        handles: {}
+      auto-interrupt_move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: interrupt_move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_absolute_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_absolute_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-refresh_display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: refresh_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_controller:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_controller
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_controller_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_controller_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: MP-285 Motorized Micromanipulator
+  description: Sutter MP-285三轴电动微操纵器，步进分辨率达40nm，长期漂移低于1μm/4h，支持可编程自动化控制，广泛用于电生理膜片钳和显微注射。
+  manufacturer: Sutter Instrument
+  icon: mp285.webp
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  device_params:
+    行程: 25mm(三轴X/Y/Z)
+    分辨率: 0.04μm(高)/0.2μm(低)
+    最大速度: 2.9mm/sec
+    稳定性: <1.0μm/4小时
+    驱动: 精密蜗轮绞盘
+    虚拟第四轴: 自定义对角进针角度
+    程序: 10个(各50个位置)
+    串口: RS-232/9600baud
+    尺寸: 11×15×16cm
+    重量: 1.7kg
+    品牌: Sutter Instrument
+  model:
+    name: MP-285 Motorized Micromanipulator
+    type: device
+  scene:
+    domain: Automation
+    scene_name: Robotics
+    step: Material Handling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        com_port:
+          default: null
+          type: string
+        baud_rate:
+          default: null
+          type: integer
+        timeout:
+          default: null
+          type: string

@@ -1,0 +1,282 @@
+hardpotato__serial:
+  category:
+  - serial
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.hardpotato__serial.driver:Serial
+    status_types: {}
+    type: python
+  config_info: []
+  description: CdcAcmSerialPort
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+example_protocol:
+  category:
+  - serial
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.hardpotato__serial.driver:ExampleProtocol
+    status_types: {}
+    type: python
+  config_info: []
+  description: ExampleProtocol
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+menu:
+  category:
+  - serial
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.hardpotato__serial.driver:Menu
+    status_types: {}
+    type: python
+  config_info: []
+  description: Menu
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+serial_connection:
+  category:
+  - serial
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.hardpotato__serial.driver:SerialConnection
+    status_types: {}
+    type: python
+  config_info: []
+  description: Serial connection adapter
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+serial_port:
+  category:
+  - serial
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.hardpotato__serial.driver:SerialPort
+    status_types: {}
+    type: python
+  config_info: []
+  description: SerialPort
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+serial_snooper:
+  category:
+  - serial
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.hardpotato__serial.driver:SerialSnooper
+    status_types: {}
+    type: python
+  config_info: []
+  description: Modbus RTU serial snooper that listens for and decodes Modbus messages
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+serial_device:
+  class:
+    module: unilabos.devices.community.hardpotato__serial.driver:SerialDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-launch_command_handler:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: launch_command_handler
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+                get_return:
+                  type: string
+                return_pattern:
+                  type: string
+                multiline:
+                  type: string
+        goal_default:
+          get_return: false
+          multiline: false
+        handles: {}
+      auto-non_blocking_wait:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: non_blocking_wait
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                callback:
+                  type: string
+                interval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-keepalive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: keepalive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: This is a generic parent class handling serial communication with lab
+    equipment
+  category:
+  - serial
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        device_name:
+          type: string
+          default: null
+        soft_fail_for_testing:
+          type: string
+          default: false
+serial:
+  class:
+    module: unilabos.devices.community.hardpotato__serial.driver:Serial
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-readline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Serial communication interface for EmStat Pico
+  category:
+  - serial
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        timeout:
+          type: string
+          default: null

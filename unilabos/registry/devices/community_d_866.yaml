@@ -1,0 +1,97 @@
+gh_device_866:
+  class:
+    module: unilabos.devices.community.d_866.driver:PM6669
+    type: python
+    action_value_mappings:
+      auto-spoll:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: spoll
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_measurement:
+        type: UniLabJsonCommand
+        goal:
+          wait_for_srq: wait_for_srq
+        feedback: {}
+        result: {}
+        schema:
+          title: read_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait_for_srq:
+                  type: string
+        goal_default:
+          wait_for_srq: ''
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_to_defaults:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_to_defaults
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Philips PM6669高精度频率计数器
+  description: Philips PM6669是高精度通用频率计数器/定时器，标准频率测量至1.3GHz，可扩展至2.4GHz，具备频率、周期、时间间隔和比率测量功能，10位分辨率和100ps时间间隔精度，广泛用于电子测量。
+  manufacturer: Racal-Dana
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  model:
+    name: Philips PM6669高精度频率计数器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    频率范围: 0.1Hz-1.3GHz(标准)/2.4GHz(可选)
+    分辨率: 10位
+    时间间隔分辨率: 100ps
+    通道: 2+1(可选)
+    接口: GPIB(IEEE-488)
+    品牌: Racal-Dana

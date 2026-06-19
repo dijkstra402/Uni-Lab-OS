@@ -1,0 +1,92 @@
+gh_stanford_research_systems_cs580:
+  class:
+    module: community_drivers.gh_stanford_research_systems_cs580.driver:CS580
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_overload:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_overload
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/QCoDeS/Qcodes_contrib_drivers
+  name: CS580 Current Source
+  description: Stanford Research Systems CS580超低噪声电压控制电流源，输出范围100fA至100mA，顺从电压可调至±50V，四象限源/漏操作。采用线性电源和CPU时钟停止架构消除数字干扰，带宽最高150kHz，谐波失真0.01%。三同轴输出和主动驱动保护端，光纤隔离远程控制接口，用于半导体输运测量和超导研究。
+  manufacturer: Stanford Research Systems
+  icon: SRS%20Navigation%20Background.png
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Datasheet: Manual
+    Compliance voltage: 0 to 50 V (bipolar)
+    Compliance voltage error: 0.5 % + 50 mV
+    DC output resistance: 1012 Ω (1 nA/V gain)
+    Output capacitance: <12 pF (filter off),<500 pF (filter on)
+    Guard output: -50 V to +50 V,5 kΩ internal resistance
+    Output power: 5 W(four quadrant sourcing/sinking)
+    THD: 0.01 % typ.
+    Output connector: 3-lug Triax for current output.Banana jacks for load voltage
+      monitoring
+    Common mode voltage: 250 Vrms (DC to 60 Hz)
+    品牌: Stanford Research Systems
+  model:
+    name: CS580 Current Source
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string
+        terminator:
+          default: null
+          type: string
+  cover: CS580 Current Source.webp

@@ -1,0 +1,100 @@
+gh_keithley_2401:
+  class:
+    module: unilabos.devices.community.gh_keithley_2401.driver:Keithley2400
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-enable_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                  default: true
+        goal_default:
+          state: true
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage:
+                  type: number
+        goal_default:
+          voltage: null
+        handles: {}
+      auto-sweep_voltage_measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sweep_voltage_measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_start:
+                  type: number
+                voltage_stop:
+                  type: number
+                steps:
+                  type: integer
+        goal_default:
+          voltage_start: null
+          voltage_stop: null
+          steps: null
+        handles: {}
+    source: https://github.com/QCoDeS/Qcodes_contrib_drivers
+  name: Keithley 2400 Standard Series SMU
+  description: Keithley 2400 标准系列 SMU
+  manufacturer: Tektronix
+  icon: sourcemeasureunitseries2400sourcemeasureunitdatasheetenus1spng.jpg
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Model: Touchscreen
+    '2401.': 'No'
+    '2400': 'No'
+    '2410.': 'No'
+    Datasheet / Manual: Accessory
+    View Datasheet: 8501-1
+    品牌: Tektronix
+  model:
+    name: Keithley 2400 Standard Series SMU
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string
+  cover: Keithley 2400 Standard Series SMU (gh_keithley_2401).webp

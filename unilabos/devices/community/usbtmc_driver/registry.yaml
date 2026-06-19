@@ -1,0 +1,115 @@
+usbtmc_driver:
+  category:
+  - 实验执行&合成设备
+  class:
+    action_value_mappings:
+      auto-recv:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                encoding:
+                  type: string
+                recv_chunk:
+                  type: string
+                termination:
+                  type: string
+              type: object
+          title: recv
+          type: object
+        type: UniLabJsonCommand
+      auto-send:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                command:
+                  type: string
+                encoding:
+                  type: string
+                termination:
+                  type: string
+              type: object
+          title: send
+          type: object
+        type: UniLabJsonCommand
+      auto-build_array:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: build_array
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                eom:
+                  type: string
+                chunk:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-from_bytes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_bytes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+    module: unilabos.devices.usb_tmc.usb_tmc_driver:USBTMCDriver
+    status_types: {}
+    type: python
+  config_info: []
+  description: Usbtmc Driver是由Open Standard (USBTMC)生产的实验执行&合成设备。支持Signal, Slot, build array等操作。
+  handles: []
+  icon: usbtmc_driver.webp
+  init_param_schema:
+    config:
+      properties:
+        product:
+          default: null
+          type: string
+        serial_number:
+          default: null
+          type: string
+        vendor:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    可控参数: chunk、command、data、encoding、eom、recv_chunk、termination
+    操作数: 4
+  manufacturer: Open Standard (USBTMC)
+  model:
+    name: Generic Usbtmc Driver
+    type: device
+  name: Open Standard From USB-TMC table2
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment

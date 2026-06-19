@@ -1,0 +1,76 @@
+gh_device_875:
+  class:
+    module: community_drivers.875.driver:MeasureChannel
+    type: python
+    action_value_mappings:
+      auto-get_simple_value:
+        type: UniLabJsonCommand
+        goal:
+          measurement_type: measurement_type
+        feedback: {}
+        result: {}
+        schema:
+          title: get_simple_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                measurement_type:
+                  type: string
+        goal_default:
+          measurement_type: ''
+        handles: {}
+      auto-clear_simple:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_simple
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_advanced:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_advanced
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_statistics:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_statistics
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: SDS1000X-HD系列数字示波器
+  description: 高分辨率数字示波器，采用12位ADC，提供优异的信号保真度和低噪声性能，适用于精密测量应用
+  manufacturer: Siglent
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  model:
+    name: SDS1000X-HD系列数字示波器
+    type: device
+  version: 1.0.0
+  resource_type: device

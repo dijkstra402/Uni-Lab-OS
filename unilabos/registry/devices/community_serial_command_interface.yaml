@@ -1,0 +1,5112 @@
+serial_command_interface:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:SerialCommandInterface
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-waitForReplyString:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waitForReplyString
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                commandType:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sendStringAndWaitForReplyString:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendStringAndWaitForReplyString
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                string:
+                  type: string
+                commandType:
+                  type: string
+        goal_default:
+          commandType: CommandType.COMMAND
+        handles: {}
+  description: Class which implements the command interface
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serialName:
+          type: string
+          default: null
+asyncio_modbus_client:
+  category:
+  - generic
+  class:
+    action_value_mappings:
+      auto-read_coils:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+              type: object
+          title: read_coils
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-read_discrete_inputs:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+              type: object
+          title: read_discrete_inputs
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-read_registers:
+        feedback: {}
+        goal: {}
+        goal_default:
+          max_count: 125
+          type: holding
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+                max_count:
+                  type: string
+                type:
+                  type: string
+              type: object
+          title: read_registers
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-write_coil:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                value:
+                  type: string
+              type: object
+          title: write_coil
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-write_coils:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                values:
+                  type: string
+              type: object
+          title: write_coils
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-write_register:
+        feedback: {}
+        goal: {}
+        goal_default:
+          skip_encode: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                skip_encode:
+                  type: string
+                value:
+                  type: string
+              type: object
+          title: write_register
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-write_registers:
+        feedback: {}
+        goal: {}
+        goal_default:
+          skip_encode: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                address:
+                  type: string
+                skip_encode:
+                  type: string
+                values:
+                  type: string
+              type: object
+          title: write_registers
+          type: object
+        type: UniLabJsonCommandAsync
+    module: unilabos.devices.community.serial_command_interface.driver:AsyncioModbusClient
+    status_types: {}
+    type: python
+  config_info: []
+  description: A generic asyncio client
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        address:
+          default: null
+          type: string
+        timeout:
+          default: 1
+          type: string
+      type: object
+  version: 1.0.0
+bi_talino:
+  category:
+  - generic
+  class:
+    action_value_mappings:
+      auto-connect:
+        feedback: {}
+        goal: {}
+        goal_default:
+          timeout: 10.0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                timeout:
+                  type: number
+              type: object
+          title: connect
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-disconnect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: disconnect
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-set_callback:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                callback:
+                  type: string
+              type: object
+          title: set_callback
+          type: object
+        type: UniLabJsonCommand
+      auto-start:
+        feedback: {}
+        goal: {}
+        goal_default:
+          channels:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          sampling_rate: 1000
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                channels:
+                  type: string
+                sampling_rate:
+                  type: integer
+              type: object
+          title: start
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommandAsync
+    module: unilabos.devices.community.serial_command_interface.driver:BITalino
+    status_types: {}
+    type: python
+  config_info: []
+  description: Async driver for BITalino (BLE)
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        address:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+bitalino_lsl:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:BitalinoLSL
+    status_types: {}
+    type: python
+  config_info: []
+  description: This class is implements Lab Streaming Layer for BITalino
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+cdc_acm_serial_port:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:CdcAcmSerialPort
+    status_types: {}
+    type: python
+  config_info: []
+  description: CdcAcmSerialPort
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+click_plc:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:ClickPLC
+    status_types: {}
+    type: python
+  config_info: []
+  description: Ethernet driver for the Koyo ClickPLC
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+control_center:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:ControlCenter
+    status_types: {}
+    type: python
+  config_info: []
+  description: Main Qt window, Used to control devices, open scanner
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+controller:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Controller
+    status_types: {}
+    type: python
+  config_info: []
+  description: Controller
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+driver_remote:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Driver_REMOTE
+    status_types: {}
+    type: python
+  config_info: []
+  description: Driver_REMOTE
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+driver_socket:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Driver_SOCKET
+    status_types: {}
+    type: python
+  config_info: []
+  description: Driver_SOCKET
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+driver_visa:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Driver_VISA
+    status_types: {}
+    type: python
+  config_info: []
+  description: Driver_VISA
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+example_protocol:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:ExampleProtocol
+    status_types: {}
+    type: python
+  config_info: []
+  description: ExampleProtocol
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+fast_hall:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:FastHall
+    status_types: {}
+    type: python
+  config_info: []
+  description: Class object representing the operation status register
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+flight_controller:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:FlightController
+    status_types: {}
+    type: python
+  config_info: []
+  description: FlightController
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+grove_o2:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:GroveO2
+    status_types: {}
+    type: python
+  config_info: []
+  description: GroveO 2
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+hamilton_interface:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:HamiltonInterface
+    status_types: {}
+    type: python
+  config_info: []
+  description: HamiltonInterface
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+ips120:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Ips120
+    status_types: {}
+    type: python
+  config_info: []
+  description: Ips 120
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+magnet:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Magnet
+    status_types: {}
+    type: python
+  config_info: []
+  description: Constructor for a magnet along a certain axis
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+mhz16:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:MHZ16
+    status_types: {}
+    type: python
+  config_info: []
+  description: MHZ 16
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+modbus_client:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:ModbusClient
+    status_types: {}
+    type: python
+  config_info: []
+  description: ModbusClient
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+modbus_slave_device:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:ModbusSlaveDevice
+    status_types: {}
+    type: python
+  config_info: []
+  description: Handles a single Modbus TCP device with its own connection
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+model240:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Model240
+    status_types: {}
+    type: python
+  config_info: []
+  description: A class that configures the user curve header and corresponding parameters
+    | (Model) | 型号:240
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+mqtt_broker:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:MqttBroker
+    status_types: {}
+    type: python
+  config_info: []
+  description: modbus2mqtt
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+msp_client:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:MSPClient
+    status_types: {}
+    type: python
+  config_info: []
+  description: MSPClient
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+multi_dimension_selector:
+  category:
+  - generic
+  class:
+    action_value_mappings:
+      auto-connectNode:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                node:
+                  type: string
+              type: object
+          title: connectNode
+          type: object
+        type: UniLabJsonCommand
+      auto-emitSelection:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: emitSelection
+          type: object
+        type: UniLabJsonCommand
+      auto-getSelected:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: getSelected
+          type: object
+        type: UniLabJsonCommand
+      auto-setDimensions:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                dimensions:
+                  type: string
+              type: object
+          title: setDimensions
+          type: object
+        type: UniLabJsonCommand
+      auto-setSelected:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                selected:
+                  type: string
+              type: object
+          title: setSelected
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.community.serial_command_interface.driver:MultiDimensionSelector
+    status_types: {}
+    type: python
+  config_info: []
+  description: A simple list widget that allows selection of multiple data dimensions
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        dimensionType:
+          default: all
+          type: string
+        parent:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+nobo:
+  category:
+  - generic
+  class:
+    action_value_mappings:
+      auto-async_add_week_profile:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                name:
+                  type: string
+                profile:
+                  type: string
+              type: object
+          title: async_add_week_profile
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-async_connect_hub:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                ip:
+                  type: string
+                serial:
+                  type: string
+              type: object
+          title: async_connect_hub
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-async_create_override:
+        feedback: {}
+        goal: {}
+        goal_default:
+          end_time: '-1'
+          start_time: '-1'
+          target_id: '-1'
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                end_time:
+                  type: string
+                mode:
+                  type: string
+                start_time:
+                  type: string
+                target_id:
+                  type: string
+                target_type:
+                  type: string
+                type:
+                  type: string
+              type: object
+          title: async_create_override
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-async_remove_week_profile:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                week_profile_id:
+                  type: string
+              type: object
+          title: async_remove_week_profile
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-async_send_command:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                commands:
+                  type: string
+              type: object
+          title: async_send_command
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-async_update_week_profile:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                name:
+                  type: string
+                profile:
+                  type: string
+                week_profile_id:
+                  type: string
+              type: object
+          title: async_update_week_profile
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-async_update_zone:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                name:
+                  type: string
+                override_allowed:
+                  type: string
+                temp_comfort_c:
+                  type: string
+                temp_eco_c:
+                  type: string
+                week_profile_id:
+                  type: string
+                zone_id:
+                  type: string
+              type: object
+          title: async_update_zone
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-connect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: connect
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-connect_hub:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                ip:
+                  type: string
+                serial:
+                  type: string
+              type: object
+          title: connect_hub
+          type: object
+        type: UniLabJsonCommand
+      auto-create_override:
+        feedback: {}
+        goal: {}
+        goal_default:
+          end_time: '-1'
+          start_time: '-1'
+          target_id: '-1'
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                end_time:
+                  type: string
+                mode:
+                  type: string
+                start_time:
+                  type: string
+                target_id:
+                  type: string
+                target_type:
+                  type: string
+                type:
+                  type: string
+              type: object
+          title: create_override
+          type: object
+        type: UniLabJsonCommand
+      auto-deregister_callback:
+        feedback: {}
+        goal: {}
+        goal_default:
+          callback: <function nobo.<lambda> at 0x107a51b20>
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                callback:
+                  type: string
+              type: object
+          title: deregister_callback
+          type: object
+        type: UniLabJsonCommand
+      auto-keep_alive:
+        feedback: {}
+        goal: {}
+        goal_default:
+          interval: 14
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                interval:
+                  type: string
+              type: object
+          title: keep_alive
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-reconnect_hub:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: reconnect_hub
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-register_callback:
+        feedback: {}
+        goal: {}
+        goal_default:
+          callback: <function nobo.<lambda> at 0x107a519e0>
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                callback:
+                  type: string
+              type: object
+          title: register_callback
+          type: object
+        type: UniLabJsonCommand
+      auto-response_handler:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                response:
+                  type: string
+              type: object
+          title: response_handler
+          type: object
+        type: UniLabJsonCommand
+      auto-send_command:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                commands:
+                  type: string
+              type: object
+          title: send_command
+          type: object
+        type: UniLabJsonCommand
+      auto-socket_receive:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: socket_receive
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-start:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: start
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-update_zone:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                name:
+                  type: string
+                override_allowed:
+                  type: string
+                temp_comfort_c:
+                  type: string
+                temp_eco_c:
+                  type: string
+                week_profile_id:
+                  type: string
+                zone_id:
+                  type: string
+              type: object
+          title: update_zone
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.community.serial_command_interface.driver:nobo
+    status_types:
+      current_component_temperature: String
+      current_zone_mode: String
+      current_zone_temperature: String
+      response: String
+      week_profile_status: String
+      zone_override_mode: String
+    type: python
+  config_info: []
+  description: This is where all the Nobø Hub magic happens!
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        discover:
+          default: true
+          type: string
+        ip:
+          default: null
+          type: string
+        loop:
+          default: null
+          type: string
+        serial:
+          default: null
+          type: string
+        synchronous:
+          default: true
+          type: string
+        timezone:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+open_bci_board:
+  category:
+  - generic
+  class:
+    action_value_mappings:
+      auto-check_connection:
+        feedback: {}
+        goal: {}
+        goal_default:
+          interval: 2
+          max_packets_to_skip: 10
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                interval:
+                  type: string
+                max_packets_to_skip:
+                  type: string
+              type: object
+          title: check_connection
+          type: object
+        type: UniLabJsonCommand
+      auto-disable_filters:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: disable_filters
+          type: object
+        type: UniLabJsonCommand
+      auto-disconnect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: disconnect
+          type: object
+        type: UniLabJsonCommand
+      auto-enable_filters:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: enable_filters
+          type: object
+        type: UniLabJsonCommand
+      auto-find_port:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: find_port
+          type: object
+        type: UniLabJsonCommand
+      auto-getNbAUXChannels:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: getNbAUXChannels
+          type: object
+        type: UniLabJsonCommand
+      auto-getNbEEGChannels:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: getNbEEGChannels
+          type: object
+        type: UniLabJsonCommand
+      auto-getSampleRate:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: getSampleRate
+          type: object
+        type: UniLabJsonCommand
+      auto-openbci_id:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                serial:
+                  type: string
+              type: object
+          title: openbci_id
+          type: object
+        type: UniLabJsonCommand
+      auto-print_bytes_in:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: print_bytes_in
+          type: object
+        type: UniLabJsonCommand
+      auto-print_incoming_text:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                print_enable:
+                  type: string
+              type: object
+          title: print_incoming_text
+          type: object
+        type: UniLabJsonCommand
+      auto-print_packets_in:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: print_packets_in
+          type: object
+        type: UniLabJsonCommand
+      auto-print_register_settings:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: print_register_settings
+          type: object
+        type: UniLabJsonCommand
+      auto-reconnect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: reconnect
+          type: object
+        type: UniLabJsonCommand
+      auto-run:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: run
+          type: object
+        type: UniLabJsonCommand
+      auto-set_channel:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                channel:
+                  type: string
+                toggle_position:
+                  type: string
+              type: object
+          title: set_channel
+          type: object
+        type: UniLabJsonCommand
+      auto-start_streaming:
+        feedback: {}
+        goal: {}
+        goal_default:
+          lapse: -1
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                callback:
+                  type: string
+                lapse:
+                  type: string
+              type: object
+          title: start_streaming
+          type: object
+        type: UniLabJsonCommand
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommand
+      auto-test_signal:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                signal:
+                  type: string
+              type: object
+          title: test_signal
+          type: object
+        type: UniLabJsonCommand
+      auto-warn:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                text:
+                  type: string
+              type: object
+          title: warn
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.community.serial_command_interface.driver:OpenBCIBoard
+    status_types: {}
+    type: python
+  config_info: []
+  description: Handle a connection to an OpenBCI board | 型号:v3
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        baud:
+          default: 115200
+          type: string
+        daisy:
+          default: null
+          type: string
+        filter_data:
+          default: true
+          type: string
+        log:
+          default: true
+          type: string
+        port:
+          default: null
+          type: string
+        print_enable:
+          default: true
+          type: string
+        scaled_output:
+          default: true
+          type: string
+        timeout:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+oscilloscope:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Oscilloscope
+    status_types: {}
+    type: python
+  config_info: []
+  description: PyVISA communication with the oscilloscope
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+plotter:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Plotter
+    status_types: {}
+    type: python
+  config_info: []
+  description: Plotter
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+productivity_plc:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:ProductivityPLC
+    status_types: {}
+    type: python
+  config_info: []
+  description: Driver for AutomationDirect Productivity Series PLCs
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+r300_rotovap:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:R300Rotovap
+    status_types: {}
+    type: python
+  config_info: []
+  description: Collection of command definitions for Buchi R300 rotavap | 型号:300Rotovap
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+reader:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:reader
+    status_types: {}
+    type: python
+  config_info: []
+  description: reader
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+recorder:
+  category:
+  - generic
+  class:
+    action_value_mappings:
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommand
+      auto-createFolder:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                path:
+                  type: string
+              type: object
+          title: createFolder
+          type: object
+        type: UniLabJsonCommand
+      auto-getPath:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: getPath
+          type: object
+        type: UniLabJsonCommand
+      auto-getValue:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                varName:
+                  type: string
+              type: object
+          title: getValue
+          type: object
+        type: UniLabJsonCommand
+      auto-getValueType:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                varName:
+                  type: string
+              type: object
+          title: getValueType
+          type: object
+        type: UniLabJsonCommand
+      auto-getVariableList:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: getVariableList
+          type: object
+        type: UniLabJsonCommand
+      auto-initialize:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: initialize
+          type: object
+        type: UniLabJsonCommand
+      auto-save:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: save
+          type: object
+        type: UniLabJsonCommand
+      auto-setPath:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                folderPath:
+                  type: string
+              type: object
+          title: setPath
+          type: object
+        type: UniLabJsonCommand
+      auto-setValue:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                value:
+                  type: string
+                varName:
+                  type: string
+              type: object
+          title: setValue
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.community.serial_command_interface.driver:Recorder
+    status_types: {}
+    type: python
+  config_info: []
+  description: Recorder
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        customPath:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        verbose:
+          default: true
+          type: string
+      type: object
+  version: 1.0.0
+register:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Register
+    status_types: {}
+    type: python
+  config_info: []
+  description: modbus2mqtt
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+renogy_charge_controller:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:RenogyChargeController
+    status_types: {}
+    type: python
+  config_info: []
+  description: Instrument class for Renogy Charge Controllers
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+renogy_smart_battery:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:RenogySmartBattery
+    status_types: {}
+    type: python
+  config_info: []
+  description: Instrument class for Renogy Smart Batteries
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+resources:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Resources
+    status_types: {}
+    type: python
+  config_info: []
+  description: Static class with functions to generate python classes from Venus resources
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+ric:
+  category:
+  - generic
+  class:
+    action_value_mappings:
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommand
+      auto-execute:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                cmd:
+                  type: string
+              type: object
+          title: execute
+          type: object
+        type: UniLabJsonCommand
+      auto-gettemp:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: gettemp
+          type: object
+        type: UniLabJsonCommand
+      auto-idle:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: idle
+          type: object
+        type: UniLabJsonCommand
+      auto-open:
+        feedback: {}
+        goal: {}
+        goal_default:
+          unit: 0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                unit:
+                  type: string
+              type: object
+          title: open
+          type: object
+        type: UniLabJsonCommand
+      auto-setdebug:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: setdebug
+          type: object
+        type: UniLabJsonCommand
+      auto-settemp:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                temp:
+                  type: string
+              type: object
+          title: settemp
+          type: object
+        type: UniLabJsonCommand
+      auto-status:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: status
+          type: object
+        type: UniLabJsonCommand
+      auto-version:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: version
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.community.serial_command_interface.driver:RIC
+    status_types: {}
+    type: python
+  config_info: []
+  description: RIC
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+rv10_rotovap:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:RV10Rotovap
+    status_types: {}
+    type: python
+  config_info: []
+  description: Collection of command definitions for RV10 rotavap | 型号:10Rotovap
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+serial_driver:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:SerialDriver
+    status_types: {}
+    type: python
+  config_info: []
+  description: SerialDriver
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+server:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:Server
+    status_types: {}
+    type: python
+  config_info: []
+  description: Server
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+ssm_system:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:SSMSystem
+    status_types: {}
+    type: python
+  config_info: []
+  description: Class object representing the operation status register
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+streamer_lsl:
+  category:
+  - generic
+  class:
+    action_value_mappings:
+      auto-begin:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: begin
+          type: object
+        type: UniLabJsonCommand
+      auto-change_locations:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                locs:
+                  type: string
+              type: object
+          title: change_locations
+          type: object
+        type: UniLabJsonCommand
+      auto-cleanUp:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: cleanUp
+          type: object
+        type: UniLabJsonCommand
+      auto-create_lsl:
+        feedback: {}
+        goal: {}
+        goal_default:
+          default: true
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                default:
+                  type: string
+                stream1:
+                  type: string
+                stream2:
+                  type: string
+              type: object
+          title: create_lsl
+          type: object
+        type: UniLabJsonCommand
+      auto-init_board_settings:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: init_board_settings
+          type: object
+        type: UniLabJsonCommand
+      auto-initialize_board:
+        feedback: {}
+        goal: {}
+        goal_default:
+          autodetect: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                autodetect:
+                  type: string
+                daisy:
+                  type: string
+                port:
+                  type: string
+              type: object
+          title: initialize_board
+          type: object
+        type: UniLabJsonCommand
+      auto-send:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                sample:
+                  type: string
+              type: object
+          title: send
+          type: object
+        type: UniLabJsonCommand
+      auto-set_board_settings:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: set_board_settings
+          type: object
+        type: UniLabJsonCommand
+      auto-start_streaming:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: start_streaming
+          type: object
+        type: UniLabJsonCommand
+      auto-stop_streaming:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop_streaming
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.community.serial_command_interface.driver:StreamerLSL
+    status_types: {}
+    type: python
+  config_info: []
+  description: StreamerLSL
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        GUI:
+          default: false
+          type: string
+        port:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+tcpip_connection:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:TCPIPConnection
+    status_types: {}
+    type: python
+  config_info: []
+  description: Socket-based TCP/IP connection adapter
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+tpg300:
+  category:
+  - generic
+  class:
+    action_value_mappings:
+      auto-connect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: connect
+          type: object
+        type: UniLabJsonCommand
+      auto-disconnect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: disconnect
+          type: object
+        type: UniLabJsonCommand
+      auto-rcv_vals:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: rcv_vals
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.community.serial_command_interface.driver:TPG300
+    status_types: {}
+    type: python
+  config_info: []
+  description: Pfeiffer TPG 300 vacuum gauge sensor with Arduino ADC readout
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        adc_analog_in:
+          default: null
+          type: integer
+        descr:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+tree_widget_item_action:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:TreeWidgetItemAction
+    status_types: {}
+    type: python
+  config_info: []
+  description: This class represents an action in an item of the tree
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+unix_log_server:
+  category:
+  - generic
+  class:
+    action_value_mappings:
+      auto-start:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: start
+          type: object
+        type: UniLabJsonCommand
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommand
+    module: unilabos.devices.community.serial_command_interface.driver:UnixLogServer
+    status_types: {}
+    type: python
+  config_info: []
+  description: UnixLogServer
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        socket_path:
+          default: /run/runtime/log_runtime.socket
+          type: string
+      type: object
+  version: 1.0.0
+wellue_pulse_ox:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:WelluePulseOx
+    status_types: {}
+    type: python
+  config_info: []
+  description: WelluePulseOx
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+xip_instrument:
+  category:
+  - generic
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.serial_command_interface.driver:XIPInstrument
+    status_types: {}
+    type: python
+  config_info: []
+  description: Names a new type of exception specific to XIP instrument connectivity
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+mettler_toledo_device:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:MettlerToledoDevice
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: MettlerToledoDevice
+  category:
+  - generic
+serial_connection:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:SerialConnection
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connection_listener:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connection_listener
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_connection_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connection_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-transmit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transmit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                retries:
+                  type: integer
+        goal_default:
+          retries: 3
+        handles: {}
+  description: Serial connection adapter
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        connection_parameters:
+          type: object
+          default: null
+http_connection:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:HTTPConnection
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-transmit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transmit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_connection_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connection_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: HTTP REST connection adapter based on Requests library
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        connection_parameters:
+          type: object
+          default: null
+petite_fleur_chiller:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:PetiteFleurChiller
+    type: python
+    status_types:
+      errors: String
+      temperature: String
+      temperature_setpoint: String
+      ramp_details: String
+      status: String
+      pump_pressure: String
+    action_value_mappings:
+      auto-initialize_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_idle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_idle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-temp_transform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temp_transform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_temperature_regulation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_temperature_regulation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_temperature_regulation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_temperature_regulation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+                sensor:
+                  type: integer
+        goal_default:
+          sensor: 0
+        handles: {}
+      auto-ramp_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                end_temperature:
+                  type: number
+                time:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-start_temp_ctrl:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_temp_ctrl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                program:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-interpret_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: interpret_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status_string:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_circulator_control:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_circulator_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump_mode:
+                  type: integer
+        goal_default: {}
+        handles: {}
+  description: Collection of command definitions for Huber PetiteFleur chiller
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_name:
+          type: string
+          default: null
+        connection_mode:
+          type: string
+          default: null
+        address:
+          type: string
+          default: null
+        port:
+          type: string
+          default: null
+cf41_chiller:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:CF41Chiller
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Collection of command definitions for CF41 chiller | 型号:41Chiller
+  category:
+  - generic
+c815_flash_chromatography_system:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:C815FlashChromatographySystem
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: C 815FlashChromatographySystem
+  category:
+  - generic
+lab_device:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:LabDevice
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Base controller class for all labware devices
+  category:
+  - generic
+ret_control_visc_hotplate_commands:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:RETControlViscHotplateCommands
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Collection of commands for IKA RET Control Visc stirring hotplate
+  category:
+  - generic
+mr_hei_connect:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:MRHeiConnect
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: MRHeiConnect
+  category:
+  - generic
+julabocf41:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:JULABOCF41
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: This provides a python class for the JULABO CF41 chiller | (JULABOCF)
+  category:
+  - generic
+huber:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:Huber
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: This provides a python class for the Huber chiller
+  category:
+  - generic
+rzr_2052:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:RZR_2052
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: This provides a python class for the overhead stirrer | 型号:2052
+  category:
+  - generic
+acquisition:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:Acquisition
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Acquisition
+  category:
+  - generic
+beam_shift_controller:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:BeamShiftController
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Driver for the Thermofischer beam deflection controller
+  category:
+  - generic
+ammeter:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:Ammeter
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Implements a simple detector to report/measure current intensity
+  category:
+  - generic
+spectra_pro:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:SpectraPro
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: SpectraPro
+  category:
+  - generic
+wave_generator:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:WaveGenerator
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: WaveGenerator
+  category:
+  - generic
+smo_controller:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:SMOController
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: 'Controller managed via the test open-loop command ''SMO'' (ex: C-867)'
+  category:
+  - generic
+lle:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:LLE
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Represent (interfaces) a Lumencor Light Engine (multi-channels light
+    engine)
+  category:
+  - generic
+usb_accesser:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:USBAccesser
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Represents the connection to a device via serial-over-USB
+  category:
+  - generic
+dpss:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:DPSS
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Exception used to indicate a problem reported by the device
+  category:
+  - generic
+ip_bus_accesser:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:IPBusAccesser
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Manage TCP/IP connections over ethernet
+  category:
+  - generic
+pi_red_stone:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:PIRedStone
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: PIRedStone
+  category:
+  - generic
+sem:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:SEM
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Connects to a Zeiss SEM via the RemCon interface (over RS-232)
+  category:
+  - generic
+ip_accesser:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:IPAccesser
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Manages low-level connections over IP
+  category:
+  - generic
+mighty_ebic_ua_client:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:MightyEBICUaClient
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Represents the MightyEBIC, connected over OPC-UA
+  category:
+  - generic
+bus:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:Bus
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Represent a chain of PIGCS controllers over a serial port
+  category:
+  - generic
+usb_1208:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:usb_1208
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: usb_1208
+  category:
+  - generic
+tmcm3110:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:TMCM3110
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: TMCM 3110
+  category:
+  - generic
+acquirer:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:Acquirer
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Messages for the control queue of the Acquirer
+  category:
+  - generic
+hubx_x:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:HubxX
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: HubxX
+  category:
+  - generic
+fib_aperture:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:FIBAperture
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Represents the Aperture carrier of the Orsay FIB
+  category:
+  - generic
+mighty_ebic:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:MightyEBIC
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Represents the MightyEBIC, connected over OPC-UA
+  category:
+  - generic
+charge_coupled_device:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:ChargeCoupledDevice
+    type: python
+    status_types:
+      configuration: String
+      gain_token: String
+      speed_token: String
+      parallel_speed: String
+      fit_parameters: String
+      timer_resolution: String
+      x_axis_conversion_type: String
+      acquisition_count: String
+      clean_count: String
+      acquisition_data_size: String
+      chip_temperature: String
+      chip_size: String
+      exposure_time: String
+      trigger_input: String
+      signal_output: String
+      acquisition_ready: String
+      acquisition_busy: String
+      acquisition_data: String
+      em_gain: String
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-restart:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_gain:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gain_token:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_speed:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed_token:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_parallel_speed:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_parallel_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parallel_speed_token:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_fit_parameters:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_fit_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fit_params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_timer_resolution:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_timer_resolution
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timer_resolution:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_acquisition_format:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_acquisition_format
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                number_of_rois:
+                  type: integer
+                acquisition_format:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_region_of_interest:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_region_of_interest
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                roi_index:
+                  type: integer
+                x_origin:
+                  type: integer
+                y_origin:
+                  type: integer
+                x_size:
+                  type: integer
+                y_size:
+                  type: integer
+                x_bin:
+                  type: integer
+                y_bin:
+                  type: integer
+        goal_default:
+          roi_index: 1
+          x_origin: 0
+          y_origin: 0
+          x_size: 1024
+          y_size: 256
+          x_bin: 1
+          y_bin: 256
+        handles: {}
+      auto-set_x_axis_conversion_type:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_x_axis_conversion_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                conversion_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_acquisition_count:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_acquisition_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                count:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_clean_count:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_clean_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                count:
+                  type: integer
+                mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_exposure_time:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_exposure_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                exposure_time:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_trigger_input:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger_input
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enabled:
+                  type: boolean
+                address:
+                  type: integer
+                event:
+                  type: integer
+                signal_type:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_signal_output:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_signal_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enabled:
+                  type: boolean
+                address:
+                  type: integer
+                event:
+                  type: integer
+                signal_type:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-acquisition_start:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquisition_start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                open_shutter:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-acquisition_abort:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquisition_abort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_center_wavelength:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_center_wavelength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mono_index:
+                  type: number
+                center_wavelength:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-range_mode_center_wavelengths:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: range_mode_center_wavelengths
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                monochromator_index:
+                  type: integer
+                start_wavelength:
+                  type: number
+                end_wavelength:
+                  type: number
+                pixel_overlap:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_em_gain:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_em_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gain:
+                  type: integer
+        goal_default: {}
+        handles: {}
+  description: Charge Coupled Device This class should not be instanced by the end
+    user
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_id:
+          type: integer
+          default: null
+        communicator:
+          type: string
+          default: null
+        error_db:
+          type: string
+          default: null
+websocket_communicator:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:WebsocketCommunicator
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-opened:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: opened
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-response:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-binary_response:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: binary_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-register_binary_message_callback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: register_binary_message_callback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                callback:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-request_with_response:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: request_with_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                timeout:
+                  type: integer
+        goal_default:
+          timeout: 5
+        handles: {}
+  description: The WebsocketCommunicator implements the `horiba_sdk
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        uri:
+          type: string
+          default: ws://127.0.0.1:25010
+pipette_controller:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:PipetteController
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-parseError:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parseError
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                answer:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-waitAck:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waitAck
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ans:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-readFeedback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readFeedback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sendCmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendCmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                pos:
+                  type: string
+        goal_default:
+          pos: 1
+        handles: {}
+      auto-tellPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tellPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-tellLevel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tellLevel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initiate_rline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initiate_rline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-aspirate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aspirate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-dispense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clear_and_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_and_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-blowout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: blowout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-eject:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: eject
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-eject_and_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: eject_and_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect_pipette:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect_pipette
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: PipetteController
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+scpi:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:scpi
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-rx_txt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rx_txt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chunksize:
+                  type: string
+        goal_default:
+          chunksize: 4096
+        handles: {}
+      auto-rx_arb:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rx_arb
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-tx_txt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tx_txt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-txrx_txt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: txrx_txt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-cls:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cls
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ese:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ese
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-ese_q:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ese_q
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-esr_q:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: esr_q
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-idn_q:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: idn_q
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-opc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: opc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-opc_q:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: opc_q
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-rst:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rst
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sre:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sre
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sre_q:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sre_q
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stb_q:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stb_q
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-err_c:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: err_c
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: SCPI class used to access Red Pitaya over an IP network
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: null
+        timeout:
+          type: string
+          default: null
+        port:
+          type: string
+          default: 5000
+psu_ea:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:PsuEA
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: PsuEA
+  category:
+  - generic
+device:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:Device
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Device
+  category:
+  - generic
+g2_v_sunbrick:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:G2VSunbrick
+    type: python
+    status_types:
+      brick_id: String
+      channel_count: String
+      channel_list: String
+      node_count: String
+      node_list: String
+      firmware_version: String
+      address: String
+      avg_temperature: String
+      all_temperatures: String
+      channel_value: String
+      intensity_factor: String
+      spectrum: String
+    action_value_mappings:
+      auto-set_channel_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_channel_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                value:
+                  type: string
+                node:
+                  type: string
+        goal_default:
+          node: 0
+        handles: {}
+      auto-set_intensity_factor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_intensity_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                node:
+                  type: string
+        goal_default:
+          node: 0
+        handles: {}
+      auto-turn_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: turn_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_spectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_spectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                spectrum_file:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setup_network_arbitration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_network_arbitration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: G 2VSunbrick
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serial_obj:
+          type: string
+          default: null
+        slave_address:
+          type: string
+          default: 1
+accretech_prober:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:AccretechProber
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: This class is used to communicate with the Accretech UF series prober
+  category:
+  - generic
+x_calibur_d:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:XCaliburD
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initDebugLogging:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initDebugLogging
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                debug_log_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-logCall:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logCall
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                f_name:
+                  type: string
+                f_locals:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-logDebug:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logDebug
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                init_force:
+                  type: string
+                direction:
+                  type: string
+                in_port:
+                  type: string
+                out_port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-extractToWaste:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: extractToWaste
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                in_port:
+                  type: string
+                volume_ul:
+                  type: string
+                out_port:
+                  type: string
+                speed_code:
+                  type: string
+                minimal_reset:
+                  type: string
+                flush:
+                  type: string
+        goal_default:
+          minimal_reset: false
+          flush: false
+        handles: {}
+      auto-primePort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: primePort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                in_port:
+                  type: string
+                volume_ul:
+                  type: string
+                speed_code:
+                  type: string
+                out_port:
+                  type: string
+                split_command:
+                  type: string
+        goal_default:
+          split_command: false
+        handles: {}
+      auto-executeChain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: executeChain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                minimal_reset:
+                  type: string
+        goal_default:
+          minimal_reset: false
+        handles: {}
+      auto-resetChain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resetChain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                on_execute:
+                  type: string
+                minimal_reset:
+                  type: string
+        goal_default:
+          on_execute: false
+          minimal_reset: false
+        handles: {}
+      auto-updateSimState:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: updateSimState
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-cacheSimSpeeds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cacheSimSpeeds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-restoreSimSpeeds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restoreSimSpeeds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-execWrap:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execWrap
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                func:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-dispenseToWaste:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dispenseToWaste
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                retain_port:
+                  type: string
+        goal_default:
+          retain_port: true
+        handles: {}
+      auto-extract:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: extract
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                from_port:
+                  type: string
+                volume_ul:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-dispense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                to_port:
+                  type: string
+                volume_ul:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-changePort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: changePort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                to_port:
+                  type: string
+                from_port:
+                  type: string
+                direction:
+                  type: string
+        goal_default:
+          direction: CW
+        handles: {}
+      auto-movePlungerAbs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: movePlungerAbs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                abs_position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-movePlungerRel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: movePlungerRel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rel_position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed_code:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setStartSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setStartSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pulses_per_sec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setTopSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setTopSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pulses_per_sec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setCutoffSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setCutoffSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pulses_per_sec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setSlope:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSlope
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slope_code:
+                  type: string
+                chain:
+                  type: string
+        goal_default:
+          chain: false
+        handles: {}
+      auto-repeatCmdSeq:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: repeatCmdSeq
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_repeats:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-markRepeatStart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: markRepeatStart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-delayExec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delayExec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                delay_ms:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-haltExec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: haltExec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                input_pin:
+                  type: string
+        goal_default:
+          input_pin: 0
+        handles: {}
+      auto-updateSpeeds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: updateSpeeds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getPlungerPos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPlungerPos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getStartSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getStartSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getTopSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getTopSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getCutoffSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCutoffSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getEncoderPos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getEncoderPos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getCurPort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCurPort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getBufferStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getBufferStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setMicrostep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setMicrostep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                'on':
+                  type: string
+        goal_default:
+          'on': false
+        handles: {}
+      auto-terminateCmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: terminateCmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-waitReady:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waitReady
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+                polling_interval:
+                  type: string
+                delay:
+                  type: string
+        goal_default:
+          timeout: 10
+          polling_interval: 0.3
+        handles: {}
+      auto-sendRcv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendRcv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd_string:
+                  type: string
+                execute:
+                  type: string
+        goal_default:
+          execute: false
+        handles: {}
+  description: Class to control XCalibur pumps with distribution valves
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        com_link:
+          type: string
+          default: null
+        num_ports:
+          type: string
+          default: 9
+        syringe_ul:
+          type: string
+          default: 1000
+        direction:
+          type: string
+          default: CW
+        microstep:
+          type: string
+          default: false
+        waste_port:
+          type: string
+          default: 9
+        slope:
+          type: string
+          default: 14
+        init_force:
+          type: string
+          default: 0
+        debug:
+          type: string
+          default: false
+        debug_log_path:
+          type: string
+          default: .
+channel_interface:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:ChannelInterface
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Class for interfacing with Arbin battery cycler at a channel level
+  category:
+  - generic
+biologic_device:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:BiologicDevice
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Represents a Biologic Device
+  category:
+  - generic
+serial_interface:
+  class:
+    module: unilabos.devices.community.serial_command_interface.driver:SerialInterface
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                serialName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-isConnected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isConnected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-writeLog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writeLog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                direction:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getDebugString:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDebugString
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                withTime:
+                  type: boolean
+                direction:
+                  type: string
+        goal_default:
+          withTime: false
+        handles: {}
+      auto-getLastCommandWithAnswer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getLastCommandWithAnswer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                withTime:
+                  type: boolean
+                direction:
+                  type: string
+        goal_default:
+          withTime: false
+        handles: {}
+  description: Abstract base class from which the data and command interfaces are
+    derived
+  category:
+  - generic
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serialName:
+          type: string
+          default: null

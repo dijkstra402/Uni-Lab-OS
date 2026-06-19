@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {
+      "id": "test_owis",
+      "name": "owis",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.owis",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "conf": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_owis",
+      "action": "auto-configure",
+      "action_args": {
+        "motor": 0,
+        "ref": 6
+      }
+    },
+    {
+      "step": 2,
+      "name": "activate",
+      "description": "自动补充动作: activate",
+      "device": "test_owis",
+      "action": "auto-activate",
+      "action_args": {
+        "motor": 0
+      }
+    },
+    {
+      "step": 3,
+      "name": "move",
+      "description": "自动补充动作: move",
+      "device": "test_owis",
+      "action": "auto-move",
+      "action_args": {
+        "motor": 0,
+        "absol": true
+      }
+    },
+    {
+      "step": 4,
+      "name": "isMoving",
+      "description": "自动补充动作: isMoving",
+      "device": "test_owis",
+      "action": "auto-isMoving",
+      "action_args": {
+        "motor": 0
+      }
+    },
+    {
+      "step": 5,
+      "name": "getPos",
+      "description": "自动补充动作: getPos",
+      "device": "test_owis",
+      "action": "auto-getPos",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "setCurrents",
+      "description": "自动补充动作: setCurrents",
+      "device": "test_owis",
+      "action": "auto-setCurrents",
+      "action_args": {
+        "motor": 0
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "owis 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "owis",
+    "generated_by": "driver-finder"
+  }
+}

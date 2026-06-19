@@ -1,0 +1,135 @@
+{
+  "nodes": [
+    {
+      "id": "test_rtde",
+      "name": "RTDE",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.rtde",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "hostname": "",
+        "port": null
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_rtde",
+      "action": "auto-connect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_rtde",
+      "action": "auto-send_start",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "disconnect",
+      "description": "自动补充动作: disconnect",
+      "device": "test_rtde",
+      "action": "auto-disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "is connected",
+      "description": "自动补充动作: is_connected",
+      "device": "test_rtde",
+      "action": "auto-is_connected",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "negotiate protocol version",
+      "description": "自动补充动作: negotiate_protocol_version",
+      "device": "test_rtde",
+      "action": "auto-negotiate_protocol_version",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "send input setup",
+      "description": "自动补充动作: send_input_setup",
+      "device": "test_rtde",
+      "action": "auto-send_input_setup",
+      "action_args": {
+        "types": []
+      }
+    },
+    {
+      "step": 7,
+      "name": "send output setup",
+      "description": "自动补充动作: send_output_setup",
+      "device": "test_rtde",
+      "action": "auto-send_output_setup",
+      "action_args": {
+        "types": [],
+        "frequency": 125
+      }
+    },
+    {
+      "step": 8,
+      "name": "send pause",
+      "description": "自动补充动作: send_pause",
+      "device": "test_rtde",
+      "action": "auto-send_pause",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "send",
+      "description": "自动补充动作: send",
+      "device": "test_rtde",
+      "action": "auto-send",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "receive",
+      "description": "自动补充动作: receive",
+      "device": "test_rtde",
+      "action": "auto-receive",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "send message",
+      "description": "自动补充动作: send_message",
+      "device": "test_rtde",
+      "action": "auto-send_message",
+      "action_args": {
+        "source": "Python Client",
+        "type": 3
+      }
+    },
+    {
+      "step": 12,
+      "name": "has data",
+      "description": "自动补充动作: has_data",
+      "device": "test_rtde",
+      "action": "auto-has_data",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "RTDE 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "RTDE",
+    "generated_by": "driver-finder"
+  }
+}

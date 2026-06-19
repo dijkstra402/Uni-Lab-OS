@@ -1,0 +1,239 @@
+stpdrv:
+  class:
+    module: unilabos.devices.community.stpdrv.driver:Stpdrv
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-resource_kwargs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resource_kwargs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-motion_timeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motion_timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                motion_timeout:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-acceleration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acceleration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                acceleration:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-mm_to_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mm_to_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                distance:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-steps_to_mm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: steps_to_mm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-len_axes_mm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: len_axes_mm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-goto:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: goto
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target:
+                  type: string
+                timeout:
+                  type: number
+                debug_prints:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                procedure:
+                  type: string
+                timeout:
+                  type: number
+                expected_lengths:
+                  type: string
+                allowed_deviation:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-estop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Stpdrv是一款实验执行&合成设备，主要功能包括停止、归零、设备连接。支持Signal, Slot, acceleration等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '12'
+    读取操作: get_position
+    控制操作: estop
+    运动操作: goto、home、get_position
+    设备属性: address、resource_kwargs、motion_timeout、speed、acceleration、idn 等7个
+    控制能力: 时间、速度
+    通信接口: 串口(RS-232)
+  manufacturer: Open Source
+  model:
+    name: Stpdrv
+    type: device
+  name: Ark Metrica Stepper Motor
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: stpdrv.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

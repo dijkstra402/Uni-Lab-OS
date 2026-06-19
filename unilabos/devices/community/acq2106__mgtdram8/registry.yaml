@@ -1,0 +1,65 @@
+acq2106__mgtdram8:
+  class:
+    module: community_drivers.acq2106__mgtdram8.driver:DataNotAvailableError
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-run_mgt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_mgt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filter:
+                  type: string
+                set_arm:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create_mgtdram_pull_client:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_mgtdram_pull_client
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: ACQ2106
+  description: D-TACQ ACQ2106载板配8GB MGTDRAM高速缓存扩展模块，支持高速突发采集模式下的大容量数据暂存，适用于等离子体物理和核聚变实验。
+  manufacturer: D-TACQ Solutions
+  icon: acq2106__mgtdram8.webp
+  tags: &id001
+  - 介电常数测定仪
+  category: *id001
+  device_params:
+    模块站位: 6个ELF/FMC
+    最大通道: 192路同步
+    机箱: 1U 19英寸机架
+    FPGA: Xilinx Z7030
+    通信: 千兆以太网+最多4个SFP+(5Gbps)光纤
+    DRAM扩展: 8GB
+    功耗: 15-25W+每站10W
+    软件: 嵌入式Linux+EPICS IOC
+    品牌: D-TACQ Solutions
+  model:
+    name: ACQ2106
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  cover: ACQ2106 (mgtdram8).webp

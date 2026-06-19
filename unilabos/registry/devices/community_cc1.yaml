@@ -1,0 +1,61 @@
+cc1:
+  class:
+    module: unilabos.devices.community.cc1.driver:CC1
+    type: python
+    status_types:
+      acknowledge: str
+      gate: str
+      subtract: str
+      trigger_mode: str
+      window: str
+      delay: str
+      dwell_time: str
+      firmware: str
+      channel: str
+    action_value_mappings:
+      auto-clear_counts:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_counts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Qubitekk CC1 Coincidence Counter
+  description: 双通道符合计数器，纳秒级分辨率，用于量子光学实验。注意：原标记为Thorlabs是错误的，实际为Qubitekk。在售。
+  manufacturer: Qubitekk
+  icon: cc1.webp
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  device_params:
+    Inputs: 2 signal + 1 gate (SMA)
+    Coincidence Window: 1-8ns (integer steps)
+    CH1 Delay: 0-14ns
+    FPGA: Cyclone IV
+    Interface: USB-B (virtual COM)
+    Baud: '19200'
+    Power: USB
+    品牌: Qubitekk
+  model:
+    name: Qubitekk CC1 Coincidence Counter
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Photochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

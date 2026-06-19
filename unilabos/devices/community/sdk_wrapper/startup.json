@@ -1,0 +1,99 @@
+{
+  "nodes": [
+    {
+      "id": "test_sdk_wrapper",
+      "name": "Test SDKWrapper",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "sdk_wrapper",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "sdk_root_path": "",
+        "sdk_bin_name": "",
+        "sdk_log_path": "",
+        "sdk_license_path": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_sdk_wrapper",
+      "action": "auto-connect_serial",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_sdk_wrapper",
+      "action": "auto-set_logging_level",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_sdk_wrapper",
+      "action": "auto-open",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_sdk_wrapper",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "process message",
+      "description": "自动补充动作: process_message",
+      "device": "test_sdk_wrapper",
+      "action": "auto-process_message",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "process message str",
+      "description": "自动补充动作: process_message_str",
+      "device": "test_sdk_wrapper",
+      "action": "auto-process_message_str",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "connect usb",
+      "description": "自动补充动作: connect_usb",
+      "device": "test_sdk_wrapper",
+      "action": "auto-connect_usb",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "connect",
+      "description": "自动补充动作: connect",
+      "device": "test_sdk_wrapper",
+      "action": "auto-connect",
+      "action_args": {
+        "use_serial": false
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "SDKWrapper 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "SDKWrapper",
+    "generated_by": "driver-finder"
+  }
+}

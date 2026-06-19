@@ -1,0 +1,141 @@
+gh_ssi_teledyne_next_generation:
+  class:
+    module: unilabos.devices.community.gh_ssi_teledyne_next_generation.driver:NextGenPumpBase
+    type: python
+    status_types:
+      is_open: bool
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-identify:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: identify
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                delay:
+                  type: number
+                  default: 0.015
+        goal_default:
+          msg: null
+          delay: 0.015
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/pct-code/py-hplc
+  name: MX Class
+  description: 经济型 MX 级等度泵可处理高达 5,000 psi 的压力，可用于分析或小规模制备 HPLC 分离。
+  manufacturer: SSI
+  icon: spcommon.png
+  tags: &id001
+  - 柱塞泵
+  category: *id001
+  device_params:
+    FLOW RATE: 5 mL/min10 mL/min
+    PRESSURE: 5,000 psi(5 mL/min)
+    FLUID PATH: Stainless Steel​
+    CONTROL: 'RS-232, Micro USB,
+
+      Ethernet, Run/Stop,
+
+      Analog
+
+      ​(0-10 V, 4-20 mA)'
+    Stainless Steel: PEEK
+    品牌: SSI
+  model:
+    name: MX Class
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Pumping
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device:
+          default: null
+          type: string
+        logger:
+          default: null
+          type: string

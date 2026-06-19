@@ -1,0 +1,127 @@
+siteclient:
+  class:
+    module: unilabos.devices.community.siteclient.driver:Siteclient
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-synchronized:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: synchronized
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                f:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-build_knobs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: build_knobs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                knobstr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-help:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: help
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                regex:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_knob:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_knob
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_knob:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_knob
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Siteclient是由D-TACQ Solutions生产的专业实验设备。connects and holds open a socket
+    to defined port
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '14'
+    读取操作: get_knob
+    控制操作: set_knob
+    通信接口: TCP/IP
+  manufacturer: D-TACQ Solutions
+  model:
+    name: Siteclient
+    type: device
+  name: D-TACQ Solutions Siteclient
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: siteclient.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

@@ -1,0 +1,82 @@
+{
+  "nodes": [
+    {
+      "id": "test_connection",
+      "name": "Connection",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.connection",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "parent": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_connection",
+      "action": "auto-connect",
+      "action_args": {
+        "connected": true
+      }
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_connection",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "send",
+      "description": "自动补充动作: send",
+      "device": "test_connection",
+      "action": "auto-send",
+      "action_args": {
+        "connected": true
+      }
+    },
+    {
+      "step": 4,
+      "name": "listen",
+      "description": "自动补充动作: listen",
+      "device": "test_connection",
+      "action": "auto-listen",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "receive data",
+      "description": "自动补充动作: receive_data",
+      "device": "test_connection",
+      "action": "auto-receive_data",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "discover",
+      "description": "自动补充动作: discover",
+      "device": "test_connection",
+      "action": "auto-discover",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Connection 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Connection",
+    "generated_by": "driver-finder"
+  }
+}

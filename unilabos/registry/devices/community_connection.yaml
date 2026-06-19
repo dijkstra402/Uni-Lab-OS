@@ -1,0 +1,136 @@
+connection:
+  class:
+    module: unilabos.devices.community.connection.driver:Connection
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                connected:
+                  type: string
+        goal_default:
+          connected: true
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+                connected:
+                  type: string
+                slot:
+                  type: string
+        goal_default:
+          connected: true
+        handles: {}
+      auto-listen:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: listen
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ip_address:
+                  type: string
+                callback:
+                  type: string
+                port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-receive_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-discover:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: discover
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parse_procedural_parameter:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Instrument Connection Handler驱动，支持connect/send/listen/close/receive
+    data等6个操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        parent:
+          type: string
+          default: null
+  device_params:
+    可控参数: callback、connected、ip_address、parse_procedural_parameter、port、request、slot
+    操作数: 6
+  manufacturer: Open Standard
+  model:
+    name: Generic Instrument Connection Handler
+    type: device
+  name: Instrument Connection Handler
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: connection.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

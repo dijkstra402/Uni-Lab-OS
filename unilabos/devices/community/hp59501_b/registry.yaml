@@ -1,0 +1,57 @@
+hp59501_b:
+  class:
+    module: community_drivers.hp59501_b.driver:HP59501B
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vrange:
+                  type: string
+                setpoint:
+                  type: string
+        goal_default:
+          vrange: null
+          setpoint: null
+        handles: {}
+  name: 59501B D/A CONVERTER [Obsolete]
+  description: HP 59501B数模转换器是HP-IB总线电源编程器，将GPIB数字指令转换为模拟直流电压输出，实现对模拟可编程电源的远程控制。双通道独立输出，电压范围0至±10V，10位DAC转换，精度±0.1%满量程。通过IEEE-488接口实现计算机自动化控制，专为不具备数字接口的模拟电源提供远程编程能力。已停产。
+  manufacturer: Keysight
+  icon: hp59501_b.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Interface: HP-IB (Listener only)
+    Unipolar: 0~9.99V
+    Bipolar: -10~+9.98V
+    Max Output Current: 10mA
+    Resolution: 10mV(high)/1mV(low)
+    Settling: ~250µs
+    品牌: Keysight
+  model:
+    name: 59501B D/A CONVERTER [Obsolete]
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        inst:
+          default: null
+          type: string

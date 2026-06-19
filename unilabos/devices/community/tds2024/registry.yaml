@@ -1,0 +1,252 @@
+tds2024:
+  class:
+    module: community_drivers.tds2024.driver:TDS2024
+    type: python
+    status_types:
+      trigger: str
+    action_value_mappings:
+      auto-autoconf:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: autoconf
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-triggerlevel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: triggerlevel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-forcetrigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: forcetrigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-datasource:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: datasource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chn:
+                  type: string
+        goal_default:
+          chn: null
+        handles: {}
+      auto-acqparams:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acqparams
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-dataencoding:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dataencoding
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-curv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: curv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-measure_min:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_min
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-measure_max:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_max
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chn:
+                  type: string
+        goal_default:
+          chn: null
+        handles: {}
+      auto-measure_mean:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_mean
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chn:
+                  type: string
+        goal_default:
+          chn: null
+        handles: {}
+  name: Tektronix TDS2024 Digital Storage Oscilloscope
+  description: 200MHz四通道彩色DSO，2GSa/s采样率，TDS2000系列。已停产(含后续TDS2024B/C)。
+  manufacturer: Tektronix
+  icon: tds2024.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    BW: 200MHz
+    Channels: '4'
+    Sample Rate: 2GSa/s
+    Record: 2.5kpts
+    Display: Color LCD
+    Trigger: Auto/Normal/Single
+    Math: FFT
+    Measurements: 11 auto
+    Optional: TDS2MEM(CF/GPIB/RS-232)
+    品牌: Tektronix
+  model:
+    name: Tektronix TDS2024 Digital Storage Oscilloscope
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string

@@ -1,0 +1,84 @@
+web_fpv:
+  class:
+    module: unilabos.devices.community.web_fpv.driver:WebFpv
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_threaded:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_threaded
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                img_arr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                img_arr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: WEB FPV是一款机械臂，主要功能包括关闭、打开、读取数据、运行。支持Signal, Slot, check origin等操作。
+  category:
+  - 机械臂
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: 8890
+  name: Web Fpv
+  manufacturer: Open Source
+  icon: ascii_stl__writer.webp
+  tags:
+  - 机械臂
+  device_params:
+    支持操作数: '24'
+    读取操作: run_threaded、run_threaded、get、get、run_threaded

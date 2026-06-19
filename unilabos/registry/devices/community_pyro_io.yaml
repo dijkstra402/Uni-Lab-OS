@@ -1,0 +1,836 @@
+pyro_io:
+  class:
+    module: unilabos.devices.community.pyro_io.driver:PyroIO
+    type: python
+    status_types:
+      connected: String
+      device_information: String
+      version_info: String
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                baud:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                repeat_on_fail:
+                  type: string
+        goal_default:
+          repeat_on_fail: true
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_unique_id:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_unique_id
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-blink:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: blink
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-calibrate_zero:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_zero
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                temperature:
+                  type: number
+                save:
+                  type: string
+        goal_default:
+          save: true
+        handles: {}
+      auto-calibrate_air:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate_air
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                temperature:
+                  type: number
+                pressure:
+                  type: number
+                humidity:
+                  type: number
+                save:
+                  type: string
+        goal_default:
+          save: true
+        handles: {}
+      auto-trigger_oxygen_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger_oxygen_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-trigger_temperature_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger_temperature_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-trigger_pressure_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger_pressure_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-trigger_humidity_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger_humidity_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-clear_background:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_background
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                save:
+                  type: boolean
+        goal_default:
+          save: true
+        handles: {}
+      auto-measure_background:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_background
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                save:
+                  type: boolean
+        goal_default:
+          save: true
+        handles: {}
+      auto-read_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                reg_type:
+                  type: string
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_multiple_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_multiple_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                reg_type:
+                  type: string
+                addr:
+                  type: string
+                number:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                reg_type:
+                  type: string
+                addr:
+                  type: string
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-save_to_flash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_to_flash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default:
+          channel: 1
+        handles: {}
+      auto-load_from_flash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_from_flash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default:
+          channel: 1
+        handles: {}
+      auto-read_all_settings_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_all_settings_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_calibration_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_calibration_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_cal_register_by_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_cal_register_by_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_bkgd_amp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_bkgd_amp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-read_bkgd_dphi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_bkgd_dphi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-read_all_cal_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_all_cal_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_result_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_result_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_result_register_by_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_result_register_by_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_dphi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_dphi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_sample_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_sample_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_pressure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_pressure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_signal_intensity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_signal_intensity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_ambient_light:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_ambient_light
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_all_result_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_all_result_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-write_temperature_setting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_temperature_setting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-write_pressure_setting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_pressure_setting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-write_salinity_setting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_salinity_setting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-write_measure_time_setting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_measure_time_setting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_intensity_setting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_intensity_setting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_amplification_setting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_amplification_setting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_frequency_setting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_frequency_setting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                value:
+                  type: string
+                save:
+                  type: string
+        goal_default:
+          save: false
+        handles: {}
+      auto-write_fiber_type_setting:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_fiber_type_setting
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                fiber_type:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-write_calibration_register_by_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_calibration_register_by_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                name:
+                  type: string
+                value:
+                  type: number
+                save:
+                  type: string
+        goal_default:
+          save: true
+        handles: {}
+      auto-write_bkgd_amp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_bkgd_amp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                value:
+                  type: number
+                save:
+                  type: string
+        goal_default:
+          save: true
+        handles: {}
+      auto-write_bkgd_dphi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_bkgd_dphi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                value:
+                  type: number
+                save:
+                  type: string
+        goal_default:
+          save: true
+        handles: {}
+  description: FireSting3
+  category:
+  - oxygen
+  - pyroscience
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        baud:
+          type: string
+          default: null

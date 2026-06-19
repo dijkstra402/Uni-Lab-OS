@@ -1,0 +1,114 @@
+gh_device_30:
+  class:
+    module: unilabos.devices.community.d_30.driver:OOIProtocol
+    type: python
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal:
+          msg_type: msg_type
+          payload: payload
+          timeout_ms: timeout_ms
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg_type:
+                  type: integer
+                payload:
+                  type: string
+                timeout_ms:
+                  type: string
+        goal_default:
+          msg_type: 0
+          payload: ''
+          timeout_ms: ''
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal:
+          size: size
+          timeout_ms: timeout_ms
+          mode: mode
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size:
+                  type: string
+                timeout_ms:
+                  type: string
+                mode:
+                  type: string
+        goal_default:
+          size: ''
+          timeout_ms: ''
+          mode: ''
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal:
+          msg_type: msg_type
+          payload: payload
+          timeout_ms: timeout_ms
+          size: size
+          mode: mode
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg_type:
+                  type: integer
+                payload:
+                  type: string
+                timeout_ms:
+                  type: string
+                size:
+                  type: string
+                mode:
+                  type: string
+        goal_default:
+          msg_type: 0
+          payload: ''
+          timeout_ms: ''
+          size: ''
+          mode: ''
+        handles: {}
+  name: Ocean Optics STS 微型光谱仪
+  description: Ocean Optics STS系列是超轻量紧凑型微型光谱仪，覆盖UV、可见光和近红外波段。尽管体积极小，但性能可比拟更大型的系统。提供STS-VIS(可见光)、STS-UV(紫外)和STS-NIR(近红外)等多种配置。专为OEM集成和空间受限系统设计，适用于颜色测量、LED表征、在线控制和材料分析。现已逐步过渡到新一代Ocean
+    ST微型光谱仪系列。
+  manufacturer: Ocean Optics
+  tags: &id001
+  - 紫外-可见分光光度仪
+  category: *id001
+  model:
+    name: Ocean Optics STS 微型光谱仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 超紧凑微型光谱仪
+    覆盖: UV/可见光/短波近红外
+    版本: STS-VIS/STS-UV/STS-NIR
+    性能: 可比拟大型系统
+    适用: OEM集成/空间受限系统
+    接口: USB
+    品牌: Ocean Optics

@@ -1,0 +1,73 @@
+gh_arbin_mits_pro:
+  class:
+    module: unilabos.devices.community.gh_arbin_mits_pro.driver:ChannelData
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-fetch_channel_readings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fetch_channel_readings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-update_channel_readings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_channel_readings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                updated_readings:
+                  type: string
+        goal_default:
+          channel: null
+          updated_readings: null
+        handles: {}
+    source: https://github.com/battery-data-alliance/pyctiarbin
+  name: Battery Test Equipment
+  description: Arbin 产品可提供快速、准确的自放电电流测量，同时保持电池电化学平衡。我们的技术允许施加的小电流恒定且不受温度变化的影响，从而确保整个过程的精度。
+  manufacturer: Arbin
+  icon: Arbin-navbar-products-v2.png
+  tags: &id001
+  - 电池测试设备
+  category: *id001
+  device_params:
+    <img decoding="async" style="width: 74px
+    margin: 6px 40px" src="/wp-content/uploads/2024/12/ARBIN-Cell-Finishing-i2.png"
+      />
+    品牌: Arbin
+  model:
+    name: Battery Test Equipment
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Battery Testing
+    step: Cycling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        num_channels:
+          default: null
+          type: string
+  cover: Battery Test Equipment.webp

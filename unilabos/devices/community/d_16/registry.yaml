@@ -1,0 +1,211 @@
+gh_device_16:
+  class:
+    module: community_drivers.16.driver:MotionController
+    type: python
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal:
+          port: port
+          baud: baud
+          timeout_s: timeout_s
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+                baud:
+                  type: string
+                timeout_s:
+                  type: string
+        goal_default:
+          port: ''
+          baud: ''
+          timeout_s: ''
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_with_response:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+          terminator: terminator
+        feedback: {}
+        result: {}
+        schema:
+          title: write_with_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                terminator:
+                  type: string
+        goal_default:
+          command: ''
+          terminator: ''
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_target_x:
+        type: UniLabJsonCommand
+        goal:
+          target_x_mm: target_x_mm
+        feedback: {}
+        result: {}
+        schema:
+          title: set_target_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_x_mm:
+                  type: string
+        goal_default:
+          target_x_mm: ''
+        handles: {}
+      auto-set_target_y:
+        type: UniLabJsonCommand
+        goal:
+          target_y_mm: target_y_mm
+        feedback: {}
+        result: {}
+        schema:
+          title: set_target_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_y_mm:
+                  type: string
+        goal_default:
+          target_y_mm: ''
+        handles: {}
+      auto-set_speed:
+        type: UniLabJsonCommand
+        goal:
+          speed_mms: speed_mms
+        feedback: {}
+        result: {}
+        schema:
+          title: set_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed_mms:
+                  type: string
+        goal_default:
+          speed_mms: ''
+        handles: {}
+      auto-move_abs:
+        type: UniLabJsonCommand
+        goal:
+          pos_mm: pos_mm
+          sleep_s: sleep_s
+        feedback: {}
+        result: {}
+        schema:
+          title: move_abs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos_mm:
+                  type: string
+                sleep_s:
+                  type: string
+        goal_default:
+          pos_mm: ''
+          sleep_s: ''
+        handles: {}
+      auto-set_trigger_intervals:
+        type: UniLabJsonCommand
+        goal:
+          interval_mm: interval_mm
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger_intervals
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                interval_mm:
+                  type: string
+        goal_default:
+          interval_mm: ''
+        handles: {}
+  name: ASI MS-2000 XYZ自动化载物台
+  description: ASI MS-2000 XYZ自动化载物台采用交叉滚柱导轨、高精度丝杠和零背隙微型齿轮DC伺服电机，提供平滑精确的运动控制。所有轴均采用闭环DC伺服电机配合高分辨率旋转编码器实现精确位置反馈，防止开环系统中常见的位置丢失问题。支持XY操纵杆手动控制，RS-232和USB计算机通信。可选配线性编码器、扩展顶板和自动聚焦功能。
+  manufacturer: ASI
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: ASI MS-2000 XYZ自动化载物台
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    XY行程: 120mm×100mm
+    XY分辨率(编码器步长): 22nm
+    XY重复性: <700nm(RMS)
+    XY最大速度: 7mm/s
+    最大负载: 5kg
+    最高工作温度: 65°C
+    驱动: 闭环DC伺服电机/高分辨率旋转编码器
+    通信: RS-232/USB
+    品牌: ASI
+  cover: ASI MS-2000 XYZ自动化载物台.webp

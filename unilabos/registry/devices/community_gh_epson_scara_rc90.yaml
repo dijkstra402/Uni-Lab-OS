@@ -1,0 +1,150 @@
+gh_epson_scara_rc90:
+  class:
+    module: unilabos.devices.community.gh_epson_scara_rc90.driver:RobotServer
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-operation_update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: operation_update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                handle:
+                  type: string
+                message:
+                  type: string
+                  default: ''
+                stage:
+                  type: string
+                  default: update
+                error:
+                  type: string
+        goal_default:
+          handle: null
+          message: ''
+          stage: update
+          error: null
+        handles: {}
+      auto-values_update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: values_update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: string
+        goal_default:
+          update: null
+        handles: {}
+      auto-refresh:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: refresh
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                handle:
+                  type: string
+                level:
+                  type: string
+        goal_default:
+          handle: null
+          level: null
+        handles: {}
+    source: https://github.com/AustralianSynchrotron/aspyrobot
+  name: Epson SCARA
+  description: Epson RC90控制器是用于Epson SCARA和6轴机器人的高性能运动控制器。支持多轴协调控制、视觉引导和力传感，提供RC+开发环境，广泛应用于自动化组装、材料搬运和实验室自动化。
+  manufacturer: Epson
+  icon: gh_epson_scara_rc90.webp
+  tags: &id001
+  - 转运与协作机器人
+  category: *id001
+  device_params:
+    参数: Ultra Short-Throw Projectors; Voice-activated Printing; Heat-Free Technology;
+      Receipt Paper-savings Technology
+    品牌: Epson
+  model:
+    name: Epson SCARA
+    type: device
+  scene:
+    domain: Automation
+    scene_name: Robotics
+    step: Material Handling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        robot:
+          default: null
+          type: string
+        logger:
+          default: null
+          type: string
+        update_addr:
+          default: null
+          type: string
+        request_addr:
+          default: null
+          type: string

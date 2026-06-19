@@ -1,0 +1,272 @@
+ascii_device:
+  class:
+    module: unilabos.devices.community.ascii_device.driver:AsciiDevice
+    type: python
+    status_types:
+      status: String
+    action_value_mappings:
+      auto-axis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: axis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                number:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-poll_until_idle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: poll_until_idle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis_number:
+                  type: string
+        goal_default:
+          axis_number: 0
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_abs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_abs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                blocking:
+                  type: string
+        goal_default:
+          blocking: true
+        handles: {}
+      auto-move_rel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_rel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                distance:
+                  type: string
+                blocking:
+                  type: string
+        goal_default:
+          blocking: true
+        handles: {}
+      auto-move_vel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_vel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+                blocking:
+                  type: string
+        goal_default:
+          blocking: false
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-encode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: encode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-timeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-baudrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: baudrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Ascii Device是由Open Standard生产的专业实验设备。Represents an ASCII device
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        address:
+          type: string
+          default: null
+  device_params:
+    功能: 参数配置、数据采集、运动控制
+    可控参数: axis_number、blocking、command、距离、message、number、位置、速度
+    操作数: 15
+  manufacturer: Open Standard
+  model:
+    name: Generic Ascii Device
+    type: device
+  name: Open Standard Represents one axis of an ASCII device
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_device.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

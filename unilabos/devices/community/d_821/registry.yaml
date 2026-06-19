@@ -1,0 +1,107 @@
+gh_device_821:
+  class:
+    module: community_drivers.821.driver:SM7045D
+    type: python
+    action_value_mappings:
+      auto-enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ramp_to_current:
+        type: UniLabJsonCommand
+        goal:
+          target_current: target_current
+          current_step: current_step
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_to_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_current:
+                  type: string
+                current_step:
+                  type: string
+        goal_default:
+          target_current: ''
+          current_step: ''
+        handles: {}
+      auto-ramp_to_zero:
+        type: UniLabJsonCommand
+        goal:
+          current_step: current_step
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_to_zero
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_step:
+                  type: string
+        goal_default:
+          current_step: ''
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Delta Elektronika SM70-45D 可编程直流电源
+  description: Delta Elektronika SM70-45D是一款3000W可编程直流电源，输出电压0-70V，电流0-45A，由欧洲领先独立电源制造商Delta
+    Elektronika生产，以稳健可靠和卓越性能著称，支持远程编程控制，适用于实验室和工业测试应用。
+  manufacturer: Delta Elektronika
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  model:
+    name: Delta Elektronika SM70-45D 可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    输出电压: 0~70 V
+    输出电流: 0~45 A
+    输出功率: 3000 W
+    接口: RS-232/以太网
+    调节方式: 可编程
+    产地: 欧洲
+    品牌: Delta Elektronika

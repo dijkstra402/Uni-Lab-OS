@@ -1,0 +1,58 @@
+pm100_usb:
+  class:
+    module: community_drivers.pm100_usb.driver:PM100USB
+    type: python
+    status_types:
+      cache_units: str
+      sensor: str
+      averaging_count: str
+    action_value_mappings:
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size:
+                  type: string
+                encoding:
+                  type: string
+                  default: utf-8
+        goal_default:
+          size: null
+          encoding: utf-8
+        handles: {}
+  name: Thorlabs PM100USB Power and Energy Meter Interface
+  description: 紧凑型USB光功率/能量计接口，兼容30+种C系列传感器，20Hz/100kHz可选带宽。在售。
+  manufacturer: Thorlabs
+  icon: pm100_usb.webp
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  device_params:
+    Type: USB power/energy meter interface
+    Sensors: 30+ C-series
+    Power: pW~20W
+    Wavelength: 185nm~25µm
+    Current Resolution: 1pA(50nA range)
+    BW: 20Hz/100kHz selectable
+    Sample Rate: 1000/s
+    Interface: USB 2.0
+    Size: 93×60×29mm
+    Weight: ~140g
+    品牌: Thorlabs
+  model:
+    name: Thorlabs PM100USB Power and Energy Meter Interface
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Analysis
+    step: Spectroscopy
+  version: 1.0.0
+  resource_type: device

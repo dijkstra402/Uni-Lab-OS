@@ -1,0 +1,113 @@
+hp3456a:
+  class:
+    module: unilabos.devices.community.hp3456a.driver:HP3456a
+    type: python
+    status_types:
+      number_of_readings: str
+      number_of_digits: str
+      nplc: str
+      delay: str
+      mean: str
+      variance: str
+      count: str
+      lower: str
+      upper: str
+      r: str
+      y: str
+      z: str
+      input_range: str
+      relative: str
+    action_value_mappings:
+      auto-auto_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-fetch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fetch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default:
+          mode: null
+        handles: {}
+      auto-measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default:
+          mode: null
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: HP 3456A 6½-Digit Digital Multimeter
+  description: 6.5位高精度数字万用表，支持DC/AC电压和电阻测量，自动调零，HP-IB远程编程。已停产。
+  manufacturer: Keysight
+  icon: hp3456a.webp
+  tags: &id001
+  - 电表与万用表
+  category: *id001
+  device_params:
+    Resolution: 6.5 digits
+    DCV: 100nV~1000V (5 ranges)
+    ACV: 1µV~700Vrms (True RMS, 4 ranges)
+    Resistance: 100µΩ~1GΩ (2/4-wire, 8 ranges)
+    DC Accuracy: ±0.0012%
+    Interface: HP-IB(GPIB)
+    品牌: Keysight
+  model:
+    name: HP 3456A 6½-Digit Digital Multimeter
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

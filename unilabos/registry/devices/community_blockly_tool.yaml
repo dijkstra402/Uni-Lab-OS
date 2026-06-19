@@ -1,0 +1,85 @@
+blockly_tool:
+  class:
+    module: unilabos.devices.community.blockly_tool.driver:BlocklyTool
+    type: python
+    status_types:
+      codes: String
+    action_value_mappings:
+      auto-to_python:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_python
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+                arm:
+                  type: string
+                init:
+                  type: string
+                wait_seconds:
+                  type: string
+                mode:
+                  type: string
+                state:
+                  type: string
+                error_exit:
+                  type: string
+                stop_exit:
+                  type: string
+        goal_default:
+          init: true
+          wait_seconds: 1
+          mode: 0
+          state: 0
+          error_exit: true
+          stop_exit: true
+        handles: {}
+      auto-codes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: codes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: BioTools振动圆二色光谱仪ChiralIR-2X驱动（华洋科仪），支持to python/codes。
+  category:
+  - 机械臂
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        xml_path:
+          type: string
+          default: null
+  device_params:
+    仪器种类: 振动圆二色光谱（VCD）
+    品牌: 华洋科仪
+    自由度: 6轴
+  manufacturer: 华洋科仪
+  model:
+    name: BioTools振动圆二色光谱仪ChiralIR-2X
+    type: device
+  name: BioTools振动圆二色光谱仪ChiralIR-2X
+  tags:
+  - 机械臂
+  resource_type: device
+  icon: blockly_tool.webp
+  scene:
+    domain: Automation
+    scene_name: Robotics
+    step: Material Handling
+  version: 1.0.0

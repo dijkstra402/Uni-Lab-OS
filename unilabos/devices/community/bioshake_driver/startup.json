@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {
+      "id": "test_bioshake_driver",
+      "name": "BioshakeDriver",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.bioshake_driver",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "my_device_name": "/dev/ttyUSB0"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_bioshake_driver",
+      "action": "auto-set_shake",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_bioshake_driver",
+      "action": "auto-home_shaker",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "temp on",
+      "description": "自动补充动作: temp_on",
+      "device": "test_bioshake_driver",
+      "action": "auto-temp_on",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "temp off",
+      "description": "自动补充动作: temp_off",
+      "device": "test_bioshake_driver",
+      "action": "auto-temp_off",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "unlock",
+      "description": "自动补充动作: unlock",
+      "device": "test_bioshake_driver",
+      "action": "auto-unlock",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "lock",
+      "description": "自动补充动作: lock",
+      "device": "test_bioshake_driver",
+      "action": "auto-lock",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "BioshakeDriver 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "BioshakeDriver",
+    "generated_by": "driver-finder"
+  }
+}

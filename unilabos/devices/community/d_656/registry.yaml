@@ -1,0 +1,248 @@
+gh_device_656:
+  class:
+    module: community_drivers.656.driver:BasicKinesisDevice
+    type: python
+    action_value_mappings:
+      auto-list_devices:
+        type: UniLabJsonCommand
+        goal:
+          filter_ids: filter_ids
+        feedback: {}
+        result: {}
+        schema:
+          title: list_devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filter_ids:
+                  type: string
+        goal_default:
+          filter_ids: ''
+        handles: {}
+      auto-send_comm:
+        type: UniLabJsonCommand
+        goal:
+          messageID: messageID
+          param1: param1
+          param2: param2
+          source: source
+          dest: dest
+        feedback: {}
+        result: {}
+        schema:
+          title: send_comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messageID:
+                  type: string
+                param1:
+                  type: string
+                param2:
+                  type: string
+                source:
+                  type: string
+                dest:
+                  type: string
+        goal_default:
+          messageID: ''
+          param1: ''
+          param2: ''
+          source: ''
+          dest: ''
+        handles: {}
+      auto-send_comm_data:
+        type: UniLabJsonCommand
+        goal:
+          messageID: messageID
+          data: data
+          source: source
+          dest: dest
+        feedback: {}
+        result: {}
+        schema:
+          title: send_comm_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messageID:
+                  type: string
+                data:
+                  type: string
+                source:
+                  type: string
+                dest:
+                  type: string
+        goal_default:
+          messageID: ''
+          data: ''
+          source: ''
+          dest: ''
+        handles: {}
+      auto-recv_comm:
+        type: UniLabJsonCommand
+        goal:
+          expected_id: expected_id
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: recv_comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                expected_id:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          expected_id: ''
+          timeout: ''
+        handles: {}
+      auto-flush_comm:
+        type: UniLabJsonCommand
+        goal:
+          nmax: nmax
+        feedback: {}
+        result: {}
+        schema:
+          title: flush_comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nmax:
+                  type: string
+        goal_default:
+          nmax: ''
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal:
+          messageID: messageID
+          param1: param1
+          param2: param2
+          source: source
+          dest: dest
+          replyID: replyID
+          flush: flush
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messageID:
+                  type: string
+                param1:
+                  type: string
+                param2:
+                  type: string
+                source:
+                  type: string
+                dest:
+                  type: string
+                replyID:
+                  type: string
+                flush:
+                  type: string
+        goal_default:
+          messageID: ''
+          param1: ''
+          param2: ''
+          source: ''
+          dest: ''
+          replyID: ''
+          flush: ''
+        handles: {}
+      auto-add_background_comm:
+        type: UniLabJsonCommand
+        goal:
+          messageID: messageID
+        feedback: {}
+        result: {}
+        schema:
+          title: add_background_comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messageID:
+                  type: string
+        goal_default:
+          messageID: ''
+        handles: {}
+      auto-check_background_comm:
+        type: UniLabJsonCommand
+        goal:
+          messageID: messageID
+        feedback: {}
+        result: {}
+        schema:
+          title: check_background_comm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                messageID:
+                  type: string
+        goal_default:
+          messageID: ''
+        handles: {}
+      auto-get_device_info:
+        type: UniLabJsonCommand
+        goal:
+          dest: dest
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dest:
+                  type: string
+        goal_default:
+          dest: ''
+        handles: {}
+      auto-get_number_of_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_number_of_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: 模块化机架步进电机控制器
+  description: 模块化机架步进电机控制器，设计用于Thorlabs模块化控制器机架系统。允许用户在单个机架中组合多个步进电机和压电控制模块，适用于多轴定位系统。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: 模块化机架步进电机控制器
+    type: device
+  version: 1.0.0
+  resource_type: device

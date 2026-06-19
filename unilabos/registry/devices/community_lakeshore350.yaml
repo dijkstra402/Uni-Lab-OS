@@ -1,0 +1,186 @@
+lakeshore350:
+  class:
+    module: unilabos.devices.community.lakeshore350.driver:Lakeshore350
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-reset_and_clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_and_clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_heater:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_heater
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: string
+                resistance_code:
+                  type: string
+                max_current_code:
+                  type: string
+        goal_default:
+          output: null
+          resistance_code: null
+          max_current_code: null
+        handles: {}
+      auto-setup_ramp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_ramp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: string
+                rate_k_per_min:
+                  type: string
+                ramp_on:
+                  type: boolean
+                  default: true
+        goal_default:
+          output: null
+          rate_k_per_min: null
+          ramp_on: true
+        handles: {}
+      auto-set_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: string
+                temperature_k:
+                  type: string
+        goal_default:
+          output: null
+          temperature_k: null
+        handles: {}
+      auto-set_heater_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_heater_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: string
+                heater_range:
+                  type: string
+        goal_default:
+          output: null
+          heater_range: null
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sensor:
+                  type: string
+        goal_default:
+          sensor: null
+        handles: {}
+      auto-get_heater_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_heater_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: string
+        goal_default:
+          output: null
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Model 350 cryogenic temperature controller
+  description: 超低温温度控制器，专为泵浦He-3系统设计，4路输入/4路输出，优化Cernox传感器。在售。
+  manufacturer: Lake Shore
+  icon: lakeshore350.webp
+  tags: &id001
+  - 低温温度控制器
+  category: *id001
+  device_params:
+    Temp Range: 100mK~1000+K
+    Inputs: 4ch
+    Control: 4 outputs (75W main + 1W sample + 2×1W aux)
+    Min Excitation: 10nA
+    Sensors: Cernox/RuOx/Pt RTD/NTC
+    Interface: Ethernet, USB, GPIB
+    品牌: Lake Shore
+  model:
+    name: Model 350 cryogenic temperature controller
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Stirring
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        visa_address:
+          default: null
+          type: string

@@ -1,0 +1,54 @@
+{
+  "nodes": [
+    {
+      "id": "test_usbtmc_device",
+      "name": "USB TMC (Generic) UsbtmcDevice",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.usbtmc_device",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "device": "/dev/usbtmc0"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_usbtmc_device",
+      "action": "auto-read",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "write",
+      "description": "自动补充动作: write",
+      "device": "test_usbtmc_device",
+      "action": "auto-write",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "ask",
+      "description": "自动补充动作: ask",
+      "device": "test_usbtmc_device",
+      "action": "auto-ask",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "UsbtmcDevice 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "UsbtmcDevice",
+    "generated_by": "driver-finder"
+  }
+}

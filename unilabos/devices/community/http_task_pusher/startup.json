@@ -1,0 +1,52 @@
+{
+  "nodes": [
+    {
+      "id": "test_http_task_pusher",
+      "name": "Test HTTPTaskPusher",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "http_task_pusher",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "dataSourceID": "",
+        "metadata": "",
+        "resultsFilename": "",
+        "queueName": "",
+        "startAt": 10,
+        "dataSourceModule": "",
+        "serverfilter": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "teardown",
+      "description": "断开连接或执行收尾操作",
+      "device": "test_http_task_pusher",
+      "action": "auto-cleanup",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "fileTasksForFrames",
+      "description": "自动补充动作: fileTasksForFrames",
+      "device": "test_http_task_pusher",
+      "action": "auto-fileTasksForFrames",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "HTTPTaskPusher 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "HTTPTaskPusher",
+    "generated_by": "driver-finder"
+  }
+}

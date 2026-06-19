@@ -1,0 +1,60 @@
+mgt508:
+  class:
+    module: community_drivers.mgt508.driver:DataNotAvailableError
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-pull:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pull
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                verbose:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_capture_length:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_capture_length
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mb:
+                  type: string
+        goal_default: {}
+        handles: {}
+  name: MGT508 14GB DRAM expansion
+  description: MGT508 巨大的 DRAM 扩展，具有 ZYNQMP 和快速串行链路
+  manufacturer: D-TACQ Solutions
+  icon: mgt508.webp
+  tags: &id001
+  - 介电常数测定仪
+  category: *id001
+  device_params:
+    通道: 8路高速模拟输入
+    类型: 高速数字化器模块
+    采样率: 高速(具体取决于配置)
+    接口: MGT光纤
+    品牌: D-TACQ Solutions
+  model:
+    name: MGT508 14GB DRAM expansion
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device

@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    {
+      "id": "test_mstp_director",
+      "name": "MSTPDirector",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.mstp_director",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "localDevice": "",
+        "address": "",
+        "timeout": 0,
+        "reuse": false,
+        "actorClass": "<class 'bacpypes.udp.UDPActor'>",
+        "sid": "",
+        "sapID": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_mstp_director",
+      "action": "auto-handle_connect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_mstp_director",
+      "action": "auto-readable",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_mstp_director",
+      "action": "auto-close_socket",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "add actor",
+      "description": "自动补充动作: add_actor",
+      "device": "test_mstp_director",
+      "action": "auto-add_actor",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "del actor",
+      "description": "自动补充动作: del_actor",
+      "device": "test_mstp_director",
+      "action": "auto-del_actor",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "actor error",
+      "description": "自动补充动作: actor_error",
+      "device": "test_mstp_director",
+      "action": "auto-actor_error",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "handle read",
+      "description": "自动补充动作: handle_read",
+      "device": "test_mstp_director",
+      "action": "auto-handle_read",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "writable",
+      "description": "自动补充动作: writable",
+      "device": "test_mstp_director",
+      "action": "auto-writable",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "handle write",
+      "description": "自动补充动作: handle_write",
+      "device": "test_mstp_director",
+      "action": "auto-handle_write",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "handle close",
+      "description": "自动补充动作: handle_close",
+      "device": "test_mstp_director",
+      "action": "auto-handle_close",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "handle error",
+      "description": "自动补充动作: handle_error",
+      "device": "test_mstp_director",
+      "action": "auto-handle_error",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "indication",
+      "description": "自动补充动作: indication",
+      "device": "test_mstp_director",
+      "action": "auto-indication",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "MSTPDirector 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "MSTPDirector",
+    "generated_by": "driver-finder"
+  }
+}

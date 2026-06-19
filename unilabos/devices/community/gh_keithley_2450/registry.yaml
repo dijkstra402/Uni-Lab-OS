@@ -1,0 +1,378 @@
+gh_keithley_2450:
+  class:
+    module: community_drivers.gh_keithley_2450.driver:Keithley2450
+    type: python
+    status_types:
+      error: str
+      mean_voltage: str
+      max_voltage: str
+      min_voltage: str
+      std_voltage: str
+      mean_current: str
+      max_current: str
+      min_current: str
+      std_current: str
+      mean_resistance: str
+      max_resistance: str
+      min_resistance: str
+      std_resistance: str
+    action_value_mappings:
+      auto-enable_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_resistance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_resistance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nplc:
+                  type: integer
+                  default: 1
+                resistance:
+                  type: number
+                  default: 210000.0
+                auto_range:
+                  type: boolean
+                  default: true
+        goal_default:
+          nplc: 1
+          resistance: 210000.0
+          auto_range: true
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nplc:
+                  type: integer
+                  default: 1
+                voltage:
+                  type: number
+                  default: 21.0
+                auto_range:
+                  type: boolean
+                  default: true
+        goal_default:
+          nplc: 1
+          voltage: 21.0
+          auto_range: true
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nplc:
+                  type: integer
+                  default: 1
+                current:
+                  type: number
+                  default: 0.000105
+                auto_range:
+                  type: boolean
+                  default: true
+        goal_default:
+          nplc: 1
+          current: 0.000105
+          auto_range: true
+        handles: {}
+      auto-auto_range_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_range_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-apply_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_range:
+                  type: string
+                compliance_voltage:
+                  type: number
+                  default: 0.1
+        goal_default:
+          current_range: null
+          compliance_voltage: 0.1
+        handles: {}
+      auto-apply_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_range:
+                  type: string
+                compliance_current:
+                  type: number
+                  default: 0.1
+        goal_default:
+          voltage_range: null
+          compliance_current: 0.1
+        handles: {}
+      auto-beep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: beep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frequency:
+                  type: string
+                duration:
+                  type: string
+        goal_default:
+          frequency: null
+          duration: null
+        handles: {}
+      auto-triad:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: triad
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                base_frequency:
+                  type: string
+                duration:
+                  type: string
+        goal_default:
+          base_frequency: null
+          duration: null
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ramp_to_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_to_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_current:
+                  type: string
+                steps:
+                  type: integer
+                  default: 30
+                pause:
+                  type: number
+                  default: 0.02
+        goal_default:
+          target_current: null
+          steps: 30
+          pause: 0.02
+        handles: {}
+      auto-ramp_to_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_to_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_voltage:
+                  type: string
+                steps:
+                  type: integer
+                  default: 30
+                pause:
+                  type: number
+                  default: 0.02
+        goal_default:
+          target_voltage: null
+          steps: 30
+          pause: 0.02
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-use_rear_terminals:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: use_rear_terminals
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-use_front_terminals:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: use_front_terminals
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: Keithley 2450
+  description: 使用 Keithley 4200A-SCS 半导体参数分析仪加速研究和故障分析。集成 I-V、C-V 和脉冲 I-V，设置速度加快 50%。
+  manufacturer: Tektronix
+  icon: 404_image.png?h=252&w=334
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    参数: Digital Multimeters Data Acquisition and Switching Low-level Instrument/Sensitive
+      and Specialty Instruments; Low-level Instrument/Sensitive and Specialty Instruments;
+      EA Elektro-Automatik Products; Multi-Brand Compliant Calibration; Multi-Brand
+      Service Request ⇨; Environmental Testing HALT & HASS Testing NEMA Compliance
+      Testing Package Testing Shock-Vibration Testing; Shock-Vibration Testing; EA
+      Elektro-Automatik Service; EA Elektro-Automatik Support FAQs Support Center
+      Technical Support; EA Elektro-Automatik Support; EA Elektro-Automatik; 1-800-833-9200;
+      Call us at 1-800-833-9200
+    品牌: Keithley
+  model:
+    name: Keithley 2450
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string

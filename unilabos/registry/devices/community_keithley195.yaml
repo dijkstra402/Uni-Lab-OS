@@ -1,0 +1,118 @@
+keithley195:
+  class:
+    module: unilabos.devices.community.keithley195.driver:Keithley195
+    type: python
+    status_types:
+      mode: str
+      trigger_mode: str
+      relative: str
+      input_range: str
+    action_value_mappings:
+      auto-measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default:
+          mode: null
+        handles: {}
+      auto-get_status_word:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status_word
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-parse_status_word:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_status_word
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                statusword:
+                  type: string
+        goal_default:
+          statusword: null
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-auto_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Keithley 195/195A System Digital Multimeter
+  description: 使用 Keithley 4200A-SCS 半导体参数分析仪加速研究和故障分析。集成 I-V、C-V 和脉冲 I-V，设置速度加快 50%。
+  manufacturer: Tektronix
+  icon: keithley195.webp
+  tags: &id001
+  - 半导体参数测试仪
+  category: *id001
+  device_params:
+    Resolution: 5.5 digits
+    DCV: 20mV~1000V (100nV res)
+    ACV: 200mV~700V True RMS (20Hz-50kHz)
+    DCI: 20µA~2A
+    Resistance: 20Ω~20MΩ
+    Speed: 5/s DCV
+    Interface: IEEE-488
+    品牌: Tektronix
+  model:
+    name: Keithley 195/195A System Digital Multimeter
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

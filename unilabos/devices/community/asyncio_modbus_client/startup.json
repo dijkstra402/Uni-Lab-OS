@@ -1,0 +1,92 @@
+{
+  "nodes": [
+    {
+      "id": "test_asyncio_modbus_client",
+      "name": "AsyncioModbusClient",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.asyncio_modbus_client",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "address": "127.0.0.1",
+        "timeout": 1,
+        "port": 1502
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_asyncio_modbus_client",
+      "action": "auto-read_coils",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "read registers",
+      "description": "自动补充动作: read_registers",
+      "device": "test_asyncio_modbus_client",
+      "action": "auto-read_registers",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "read holding registers",
+      "description": "自动补充动作: read_holding_registers",
+      "device": "test_asyncio_modbus_client",
+      "action": "auto-read_holding_registers",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "write coil",
+      "description": "自动补充动作: write_coil",
+      "device": "test_asyncio_modbus_client",
+      "action": "auto-write_coil",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "write coils",
+      "description": "自动补充动作: write_coils",
+      "device": "test_asyncio_modbus_client",
+      "action": "auto-write_coils",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "write register",
+      "description": "自动补充动作: write_register",
+      "device": "test_asyncio_modbus_client",
+      "action": "auto-write_register",
+      "action_args": {
+        "skip_encode": false
+      }
+    },
+    {
+      "step": 7,
+      "name": "write registers",
+      "description": "自动补充动作: write_registers",
+      "device": "test_asyncio_modbus_client",
+      "action": "auto-write_registers",
+      "action_args": {
+        "skip_encode": false
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "AsyncioModbusClient 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "AsyncioModbusClient",
+    "generated_by": "driver-finder"
+  }
+}

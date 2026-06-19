@@ -1,0 +1,831 @@
+gh_fanuc_m_900ib:
+  class:
+    module: community_drivers.gh_fanuc_m_900ib.driver:FaRoC_Reader
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_cmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_cmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                d_type:
+                  type: string
+        goal_default:
+          cmd: null
+          d_type: null
+        handles: {}
+      auto-handle_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: handle_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                resp:
+                  type: string
+                d_type:
+                  type: string
+        goal_default:
+          resp: null
+          d_type: null
+        handles: {}
+      auto-ping:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ping
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-error_detail:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: error_detail
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+                source:
+                  type: string
+                  default: manual
+        goal_default:
+          status: null
+          source: manual
+        handles: {}
+      auto-get_curpos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_curpos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_curjpos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_curjpos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_j:
+                  type: integer
+                  default: 6
+        goal_default:
+          max_j: 6
+        handles: {}
+      auto-get_rdo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_rdo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rdo_nr:
+                  type: integer
+        goal_default:
+          rdo_nr: null
+        handles: {}
+      auto-get_rdi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_rdi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rdi_nr:
+                  type: integer
+        goal_default:
+          rdi_nr: null
+        handles: {}
+      auto-get_flag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_flag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flag_nr:
+                  type: integer
+        goal_default:
+          flag_nr: null
+        handles: {}
+      auto-get_var:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_var
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                var_name:
+                  type: string
+                k_type:
+                  type: string
+                  default: REAL
+                prog_name:
+                  type: string
+                  default: '*SYSTEM*'
+        goal_default:
+          var_name: null
+          k_type: REAL
+          prog_name: '*SYSTEM*'
+        handles: {}
+      auto-get_var_list:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_var_list
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                var_name:
+                  type: string
+                start:
+                  type: integer
+                end:
+                  type: integer
+                k_type:
+                  type: string
+                  default: REAL
+                prog_name:
+                  type: string
+                  default: '*SYSTEM*'
+        goal_default:
+          var_name: null
+          start: null
+          end: null
+          k_type: REAL
+          prog_name: '*SYSTEM*'
+        handles: {}
+      auto-get_ins_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ins_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mch_pos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mch_pos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_rem_ofs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_rem_ofs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_app_ofs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_app_ofs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_var_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_var_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                var_name:
+                  type: string
+                prog_name:
+                  type: string
+                  default: '*SYSTEM*'
+        goal_default:
+          var_name: null
+          prog_name: '*SYSTEM*'
+        handles: {}
+      auto-sort_var_list:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sort_var_list
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sv_list:
+                  type: string
+                prog_name:
+                  type: string
+                  default: '*SYSTEM*'
+        goal_default:
+          sv_list: null
+          prog_name: '*SYSTEM*'
+        handles: {}
+      auto-check_sys_var_lst:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_sys_var_lst
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sys_var_lst:
+                  type: string
+                k_type:
+                  type: string
+                  default: REAL
+                show_detail:
+                  type: boolean
+                  default: false
+        goal_default:
+          sys_var_lst: null
+          k_type: REAL
+          show_detail: false
+        handles: {}
+      auto-get_user_fram:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_user_fram
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_tool_fram:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_tool_fram
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_frame:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_frame
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frame_type:
+                  type: string
+                frame_nr:
+                  type: integer
+        goal_default:
+          frame_type: null
+          frame_nr: null
+        handles: {}
+      auto-get_reg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_reg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg_nr:
+                  type: integer
+        goal_default:
+          reg_nr: null
+        handles: {}
+      auto-get_reg_comment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_reg_comment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg_nr:
+                  type: integer
+        goal_default:
+          reg_nr: null
+        handles: {}
+      auto-get_str_reg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_str_reg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                str_reg_nr:
+                  type: integer
+        goal_default:
+          str_reg_nr: null
+        handles: {}
+      auto-get_str_reg_cmt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_str_reg_cmt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                str_reg_nr:
+                  type: integer
+        goal_default:
+          str_reg_nr: null
+        handles: {}
+      auto-get_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_data_client:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_data_client
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                client_nr:
+                  type: integer
+        goal_default:
+          client_nr: null
+        handles: {}
+      auto-stop_data_client:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_data_client
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                client_nr:
+                  type: integer
+        goal_default:
+          client_nr: null
+        handles: {}
+      auto-get_client_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_client_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                client_nr:
+                  type: integer
+        goal_default:
+          client_nr: null
+        handles: {}
+      auto-check_attributes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_attributes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_task_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_task_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                task_name:
+                  type: string
+                attribute:
+                  type: string
+        goal_default:
+          task_name: null
+          attribute: null
+        handles: {}
+      auto-get_task_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_task_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                task_name:
+                  type: string
+        goal_default:
+          task_name: null
+        handles: {}
+      auto-get_prog_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_prog_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                task_name:
+                  type: string
+        goal_default:
+          task_name: null
+        handles: {}
+      auto-get_pos_reg_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pos_reg_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos_reg_nr:
+                  type: integer
+        goal_default:
+          pos_reg_nr: null
+        handles: {}
+      auto-get_pos_reg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pos_reg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos_reg_nr:
+                  type: integer
+        goal_default:
+          pos_reg_nr: null
+        handles: {}
+      auto-set_check_pos_reg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_check_pos_reg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos_reg_nr:
+                  type: integer
+                point_type:
+                  type: string
+                vals:
+                  type: string
+                ext_ang:
+                  type: string
+                config:
+                  type: string
+        goal_default:
+          pos_reg_nr: null
+          point_type: null
+          vals: null
+          ext_ang: null
+          config: null
+        handles: {}
+      auto-is_reachable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_reachable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                point_type:
+                  type: string
+                vals:
+                  type: string
+                ext_ang:
+                  type: string
+                config:
+                  type: string
+        goal_default:
+          point_type: null
+          vals: null
+          ext_ang: null
+          config: null
+        handles: {}
+      auto-pos_to_joint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pos_to_joint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vals:
+                  type: string
+                config:
+                  type: string
+        goal_default:
+          vals: null
+          config: null
+        handles: {}
+      auto-joint_to_pos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: joint_to_pos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vals:
+                  type: string
+                ext_ang:
+                  type: string
+        goal_default:
+          vals: null
+          ext_ang: null
+        handles: {}
+      auto-rsi_is_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rsi_is_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_faroc_mover:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_faroc_mover
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://codeberg.org/hojak/faroc
+  name: FANUC M-900iB/700
+  description: FANUC M-900iB/700 是一款重载 6 轴机器人，有效负载为 700 千克，非常适合金属、汽车和建筑行业中的重载、卸载和维护应用。
+  manufacturer: FANUC
+  icon: int-ro-pr-m900700-l-1.jpg
+  tags: &id001
+  - 转运与协作机器人
+  category: *id001
+  device_params:
+    参数: Specifications Download Specs 6 Controlled Axes 700 kg Max Payload 0.1 mm
+      Repeatability Floor Mounting Method 2832 mm Reach
+    品牌: FANUC
+  model:
+    name: FANUC M-900iB/700
+    type: device
+  scene:
+    domain: Automation
+    scene_name: Robotics
+    step: Material Handling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        robot_ip:
+          default: null
+          type: string
+        port:
+          default: null
+          type: integer
+        byte_order:
+          default: null
+          type: string
+        socket_timeout:
+          default: null
+          type: integer
+        debug_mode:
+          default: null
+          type: boolean

@@ -1,0 +1,62 @@
+hp6652a:
+  class:
+    module: community_drivers.hp6652a.driver:HP6652a
+    type: python
+    status_types:
+      name: str
+      mode: str
+      channel: str
+    action_value_mappings:
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-display_text:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: display_text
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                text_to_display:
+                  type: string
+        goal_default:
+          text_to_display: null
+        handles: {}
+  name: 6652A 500 Watt System Power Supply, 20V, 25A [Obsolete]
+  description: 500W单路系统电源，25A大电流输出，风扇转速可控。已停产，替代N6765A/N6755A。
+  manufacturer: Keysight
+  icon: hp6652a.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Output: 0~20V, 0~25A, 500W
+    Input: 100~240VAC
+    Interface: GPIB, SCPI
+    品牌: Keysight
+  model:
+    name: 6652A 500 Watt System Power Supply, 20V, 25A [Obsolete]
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device
+  cover: 6652A 500 Watt System Power Supply, 20V, 25A [Obsolete].webp

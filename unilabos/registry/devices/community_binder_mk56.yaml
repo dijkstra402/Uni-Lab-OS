@@ -1,0 +1,82 @@
+binder_mk56:
+  class:
+    module: unilabos.devices.community.binder_mk56.driver:binderMK56
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-get_door_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_door_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: string
+                reps:
+                  type: integer
+                  default: 10
+        goal_default:
+          temperature: null
+          reps: 10
+        handles: {}
+  name: Model MK 56
+  description: BINDER MK 系列试验箱适用于 -40 °C 至 +180 °C 之间的所有冷热测试。 MK 是循环温度测试复杂的单独解决方案的巧妙替代方案。
+  manufacturer: Binder
+  icon: binder_mk56.webp
+  tags: &id001
+  - 高低温试验箱
+  category: *id001
+  device_params:
+    Temp: -40~+180°C
+    Volume: 60L
+    Humidity: 'yes'
+    Power: 2.8kW
+    Refrigerant: R-744(climate-neutral)
+    Display: touchscreen
+    Data Logger: built-in USB
+    Interface: Ethernet
+    Weight: ~168kg
+    品牌: Binder
+  model:
+    name: Model MK 56
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Temperature Control
+    step: Heating/Cooling
+  version: 1.0.0
+  resource_type: device

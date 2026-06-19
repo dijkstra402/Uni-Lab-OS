@@ -1,0 +1,189 @@
+watlow:
+  class:
+    module: community_drivers.watlow.driver:Watlow
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                instance:
+                  type: string
+                  default: '01'
+        goal_default:
+          instance: '01'
+        handles: {}
+      auto-readSetpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readSetpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                instance:
+                  type: string
+                  default: '01'
+        goal_default:
+          instance: '01'
+        handles: {}
+      auto-readParam:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readParam
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+                data_type:
+                  type: string
+                instance:
+                  type: string
+                  default: '01'
+        goal_default:
+          param: null
+          data_type: null
+          instance: '01'
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                instance:
+                  type: string
+                  default: '01'
+        goal_default:
+          value: null
+          instance: '01'
+        handles: {}
+      auto-writeParam:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writeParam
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+                value:
+                  type: string
+                data_type:
+                  type: string
+                instance:
+                  type: string
+                  default: '01'
+        goal_default:
+          param: null
+          value: null
+          data_type: null
+          instance: '01'
+        handles: {}
+  name: 'DISCONTINUED: EZ-ZONE® PM 1/4 DIN Panel Mount Controller'
+  description: Watlow EZ-ZONE PM是工业级PID温度控制器，支持PID控制、过温/欠温限制和集成功率控制器。TRU-TUNE+自适应控制技术，蓝牙连接，IP66前面板防护。3年质保。
+  manufacturer: Watlow
+  icon: watlow.webp
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  device_params:
+    TRU-TUNE自适应控制: 是
+    报警: 4个
+    工作温度: -18至65°C
+    通信: Bluetooth/Modbus TCP/Modbus RTU/EtherNet IP/DeviceNet/PROFIBUS DP/SAE J1939/CAN
+      Bus
+    控制/限制回路: 2/1
+    监控通道: '2'
+    最大输出: 15A
+    安装: 1/4 DIN面板
+    输出触发: 过零/相角
+    精度: ±0.1% span ±1°C
+    采样率: 10Hz
+    认证: UL/CSA/CE/FM/IP66
+    品牌: Watlow
+  model:
+    name: 'DISCONTINUED: EZ-ZONE® PM 1/4 DIN Panel Mount Controller'
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Stirring
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serial:
+          default: null
+          type: string
+        port:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string

@@ -1,0 +1,179 @@
+gh_device_868:
+  class:
+    module: unilabos.devices.community.d_868.driver:Racal1992
+    type: python
+    action_value_mappings:
+      auto-decode:
+        type: UniLabJsonCommand
+        goal:
+          v: v
+          allowed_types: allowed_types
+        feedback: {}
+        result: {}
+        schema:
+          title: decode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                v:
+                  type: string
+                allowed_types:
+                  type: string
+        goal_default:
+          v: ''
+          allowed_types: ''
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal:
+          s: s
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                s:
+                  type: string
+        goal_default:
+          s: ''
+        handles: {}
+      auto-read_and_decode:
+        type: UniLabJsonCommand
+        goal:
+          allowed_types: allowed_types
+        feedback: {}
+        result: {}
+        schema:
+          title: read_and_decode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                allowed_types:
+                  type: string
+        goal_default:
+          allowed_types: ''
+        handles: {}
+      auto-channel_settings:
+        type: UniLabJsonCommand
+        goal:
+          channel_name: channel_name
+        feedback: {}
+        result: {}
+        schema:
+          title: channel_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_name:
+                  type: string
+        goal_default:
+          channel_name: ''
+        handles: {}
+      auto-preset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: preset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_measurement:
+        type: UniLabJsonCommand
+        goal:
+          timeout: timeout
+          progressDots: progressDots
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+                progressDots:
+                  type: string
+        goal_default:
+          timeout: ''
+          progressDots: ''
+        handles: {}
+      auto-measured_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measured_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Racal-Dana 1992通用频率计数器
+  description: Racal-Dana 1992是经典通用频率计数器/定时器，频率测量至1.3GHz，10位分辨率和100ps时间间隔精度，支持频率、周期、时间间隔和比率测量，GPIB接口适合自动化测试系统集成。
+  manufacturer: Racal-Dana
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  model:
+    name: Racal-Dana 1992通用频率计数器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    频率范围: DC-1.3GHz
+    分辨率: 10位
+    时间间隔分辨率: 100ps
+    通道: '2'
+    接口: GPIB(IEEE-488)
+    时基: TCXO/OCXO可选
+    品牌: Racal-Dana
+  cover: Racal-Dana 1992通用频率计数器.webp

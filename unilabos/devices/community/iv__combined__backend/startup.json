@@ -1,0 +1,77 @@
+{
+  "nodes": [
+    {
+      "id": "test_iv__combined__backend",
+      "name": "IV Combined Backend",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.iv__combined__backend",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {},
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_iv__combined__backend",
+      "action": "auto-connect_instruments",
+      "action_args": {
+        "k2400_addr": "GPIB::4",
+        "k2182_addr": "GPIB::7"
+      }
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_iv__combined__backend",
+      "action": "auto-configure_source",
+      "action_args": {
+        "compliance_voltage": 210,
+        "current_range": 0.001
+      }
+    },
+    {
+      "step": 3,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_iv__combined__backend",
+      "action": "auto-run_sweep",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_iv__combined__backend",
+      "action": "auto-measure_point",
+      "action_args": {
+        "num_readings": 2,
+        "interval": 1
+      }
+    },
+    {
+      "step": 5,
+      "name": "teardown",
+      "description": "断开连接或执行收尾操作",
+      "device": "test_iv__combined__backend",
+      "action": "auto-shutdown",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "IV_Combined_Backend 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "IV_Combined_Backend",
+    "generated_by": "driver-finder"
+  }
+}

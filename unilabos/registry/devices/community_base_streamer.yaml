@@ -1,0 +1,147 @@
+base_streamer:
+  class:
+    module: unilabos.devices.community.base_streamer.driver:BaseStreamer
+    type: python
+    status_types:
+      subscriptions: String
+    action_value_mappings:
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-subscriptions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: subscriptions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-backend:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: backend
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-make_chunk:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: make_chunk
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chunk_ind:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Base Streamer 基础数据流模块是由Jeio Tech Co., Ltd - 上海代表处生产的专业实验设备。Base class
+    for streaming data through an LSL outlet | 型号:ble2lsl
+  category:
+  - 后处理设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device:
+          type: string
+          default: null
+        subscriptions:
+          type: string
+          default: null
+        time_func:
+          type: string
+          default: <built-in function time>
+        ch_names:
+          type: string
+          default: null
+  device_params:
+    品牌: Jeio Tech Co., Ltd - 上海代表处
+    可控参数: chunk_ind、value
+    操作数: 7
+  manufacturer: Jeio Tech Co., Ltd - 上海代表处
+  model:
+    name: 韩国ilSHinBioBase 进口深冷冻箱 GUDERO CHEST系列
+    type: device
+  name: Base Streamer
+  tags:
+  - 后处理设备
+  resource_type: device
+  icon: base_streamer.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

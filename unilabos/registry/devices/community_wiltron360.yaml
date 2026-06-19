@@ -1,0 +1,158 @@
+wiltron360:
+  class:
+    module: unilabos.devices.community.wiltron360.driver:Wiltron360
+    type: python
+    status_types:
+      frequency: str
+    action_value_mappings:
+      auto-xaxis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: xaxis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-yaxis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: yaxis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-trace:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trace
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trace:
+                  type: string
+        goal_default:
+          trace: null
+        handles: {}
+      auto-traces:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: traces
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-select:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: select
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trace:
+                  type: string
+        goal_default:
+          trace: null
+        handles: {}
+      auto-points:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: points
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-arange:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: arange
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-IDN:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IDN
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Vector Network Analyzer
+  description: Wiltron/Anritsu 360B矢量网络分析仪，全功能双端口设计，支持完整S参数测量和12项误差校正，广泛用于航空航天和微波元件测试。
+  manufacturer: Anritsu
+  icon: wiltron360.webp
+  tags: &id001
+  - 频谱与网络分析仪
+  category: *id001
+  device_params:
+    频率范围: 10MHz-40GHz(360SS67可达65GHz)
+    动态范围: '>90dB'
+    测量参数: S11/S21/S12/S22全双端口
+    误差校正: 12项全矢量校正
+    显示: 幅度/相位/Smith圆图/极坐标
+    时域: 支持
+    接口: GPIB(IEEE-488)
+    连接器: Type-N/3.5mm/2.4mm/K
+    品牌: Anritsu
+  model:
+    name: Vector Network Analyzer
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        inst:
+          default: null
+          type: string

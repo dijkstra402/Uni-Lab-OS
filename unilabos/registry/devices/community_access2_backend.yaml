@@ -1,0 +1,185 @@
+access2_backend:
+  class:
+    module: unilabos.devices.community.access2_backend.driver:Access2Backend
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send_command:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-serialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: serialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-park:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: park
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-load:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unload:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unload
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Automated Sample Storage
+  description: Hamilton Storage ACCESS2是全自动化生物样品存储管理系统，支持-20°C和-80°C存储配置，可容纳数十万个SBS格式样品管。通过2D条码追踪实现精确样品管理，支持Cherry-picking单管检索，可与LIMS系统和Hamilton液体处理平台无缝集成，适用于生物样本库、药物发现和临床研究。
+  manufacturer: Hamilton
+  icon: access2_backend.webp
+  tags: &id001
+  - 自动化工作站
+  category: *id001
+  device_params:
+    温度配置: -20°C/-80°C可选
+    样品管: 0.5/1.0/2.0mL SBS格式
+    条码追踪: 2D条码扫描
+    容量: 模块化扩展(最大数十万管)
+    检索方式: Cherry-picking单管检索
+    集成: LIMS系统兼容
+    自动化: 机械臂自动存取
+    管理软件: Hamilton Storage Management Software
+    品牌: Hamilton
+  model:
+    name: Automated Sample Storage
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Storage
+    step: Ultra-Low Temperature Storage
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_id:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: integer

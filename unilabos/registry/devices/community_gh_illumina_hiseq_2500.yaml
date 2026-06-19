@@ -1,0 +1,466 @@
+gh_illumina_hiseq_2500:
+  class:
+    module: unilabos.devices.community.gh_illumina_hiseq_2500.driver:HiSeq2500
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-check_COM:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_COM
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initializeCams:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initializeCams
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Logger:
+                  type: string
+        goal_default:
+          Logger: null
+        handles: {}
+      auto-initializeInstruments:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initializeInstruments
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-LED:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: LED
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flowcells:
+                  type: string
+                indicate:
+                  type: string
+        goal_default:
+          flowcells: null
+          indicate: null
+        handles: {}
+      auto-wait_for_flowcells:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_flowcells
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-flush_lines:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush_lines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flowcells:
+                  type: string
+                flush_ports:
+                  type: string
+                flowrate:
+                  type: string
+                volume:
+                  type: string
+        goal_default:
+          flowcells: null
+          flush_ports: null
+          flowrate: null
+          volume: null
+        handles: {}
+      auto-write_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_frames:
+                  type: string
+                image_name:
+                  type: string
+        goal_default:
+          n_frames: null
+          image_name: null
+        handles: {}
+      auto-take_picture:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: take_picture
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_frames:
+                  type: string
+                image_name:
+                  type: string
+        goal_default:
+          n_frames: null
+          image_name: null
+        handles: {}
+      auto-obj_stack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: obj_stack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_frames:
+                  type: string
+                velocity:
+                  type: string
+        goal_default:
+          n_frames: null
+          velocity: null
+        handles: {}
+      auto-reset_stage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_stage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_stage_out:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_stage_out
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_inlet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_inlet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_ports:
+                  type: string
+        goal_default:
+          n_ports: null
+        handles: {}
+      auto-expose:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: expose
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos_dict:
+                  type: string
+                repeat:
+                  type: integer
+                  default: 1
+                power:
+                  type: integer
+                  default: 200
+                OD:
+                  type: string
+                  default: open
+        goal_default:
+          pos_dict: null
+          repeat: 1
+          power: 200
+          OD: open
+        handles: {}
+      auto-autofocus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: autofocus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos_dict:
+                  type: string
+        goal_default:
+          pos_dict: null
+        handles: {}
+      auto-autolevel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: autolevel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                focal_points:
+                  type: string
+                obj_focus:
+                  type: string
+        goal_default:
+          focal_points: null
+          obj_focus: null
+        handles: {}
+      auto-zstack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: zstack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_Zplanes:
+                  type: string
+                n_frames:
+                  type: string
+                image_name:
+                  type: string
+        goal_default:
+          n_Zplanes: null
+          n_frames: null
+          image_name: null
+        handles: {}
+      auto-scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_tiles:
+                  type: string
+                n_Zplanes:
+                  type: string
+                n_frames:
+                  type: string
+                image_name:
+                  type: string
+        goal_default:
+          n_tiles: null
+          n_Zplanes: null
+          n_frames: null
+          image_name: null
+        handles: {}
+      auto-twoscan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: twoscan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+        goal_default:
+          n: null
+        handles: {}
+      auto-position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                AorB:
+                  type: string
+                box:
+                  type: string
+        goal_default:
+          AorB: null
+          box: null
+        handles: {}
+      auto-px_to_step:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: px_to_step
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                row:
+                  type: string
+                col:
+                  type: string
+                pos_dict:
+                  type: string
+                scale:
+                  type: string
+        goal_default:
+          row: null
+          col: null
+          pos_dict: null
+          scale: null
+        handles: {}
+      auto-optimize_filter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: optimize_filter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos_dict:
+                  type: string
+                init_filter:
+                  type: string
+                n_filters:
+                  type: string
+        goal_default:
+          pos_dict: null
+          init_filter: null
+          n_filters: null
+        handles: {}
+      auto-message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/nygctech/PySeq2500
+  name: Sequencing platforms
+  description: Illumina 测序和阵列技术推动生命科学研究、转化和消费者基因组学以及分子诊断领域的进步。
+  manufacturer: Illumina
+  icon: improving-human-health-cant-wait.jpeg
+  tags: &id001
+  - DNA测序仪
+  category: *id001
+  device_params:
+    Webinar: April 30, 2026
+    DRAGEN™ v4.5: Expanding Accurate Variant Discovery Across the Entire Genome
+    Feature article: April 07, 2026
+    品牌: Illumina
+  model:
+    name: Sequencing platforms
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Genomics
+    step: Sequencing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        Logger:
+          default: null
+          type: string
+        com_ports:
+          default: null
+          type: string

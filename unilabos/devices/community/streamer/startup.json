@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {
+      "id": "test_streamer",
+      "name": "Streamer",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.streamer",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "device": "",
+        "address": "",
+        "backend": "bgapi",
+        "interface": "",
+        "autostart": true,
+        "scan_timeout": 10.5,
+        "internal_timestamps": false
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_streamer",
+      "action": "auto-disconnect",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_streamer",
+      "action": "auto-start",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_streamer",
+      "action": "auto-stop",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "send command",
+      "description": "自动补充动作: send_command",
+      "device": "test_streamer",
+      "action": "auto-send_command",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "connect",
+      "description": "自动补充动作: connect",
+      "device": "test_streamer",
+      "action": "auto-connect",
+      "action_args": {
+        "max_attempts": 20
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "Streamer 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Streamer",
+    "generated_by": "driver-finder"
+  }
+}

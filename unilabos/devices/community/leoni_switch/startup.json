@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "test_leoni_switch",
+      "name": "LeoniSwitch 开关矩阵",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.leoni_switch",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "ip_addr": "",
+        "simulation": false
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_leoni_switch",
+      "action": "auto-set_active_channel",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_leoni_switch",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "ping",
+      "description": "自动补充动作: ping",
+      "device": "test_leoni_switch",
+      "action": "auto-ping",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "LeoniSwitch 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "LeoniSwitch",
+    "generated_by": "driver-finder"
+  }
+}

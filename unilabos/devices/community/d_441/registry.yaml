@@ -1,0 +1,34 @@
+gh_device_441:
+  class:
+    module: community_drivers.441.driver:OmegaD8200
+    type: python
+    action_value_mappings:
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal:
+          bytes: bytes
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bytes:
+                  type: string
+        goal_default:
+          bytes: ''
+        handles: {}
+  name: Omega D8200 USB数据采集接口模块
+  description: Omega D8200是D8000系列USB数据采集接口模块，可测量7路4-20mA电流回路。通过USB端口使用Modbus RTU协议进行通信，具备500Vrms隔离保护和10-30Vdc宽电压供电范围。未使用的模拟输入通道可通过软件禁用，配置参数存储在EEPROM中。采用ABS热塑外壳，适用于工业过程监控和数据采集应用。
+  manufacturer: Omega Engineering
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  model:
+    name: Omega D8200 USB数据采集接口模块
+    type: device
+  version: 1.0.0
+  resource_type: device

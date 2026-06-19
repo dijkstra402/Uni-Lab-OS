@@ -1,0 +1,116 @@
+gh_device_26:
+  class:
+    module: unilabos.devices.community.d_26.driver:OOIProtocol
+    type: python
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal:
+          msg_type: msg_type
+          payload: payload
+          timeout_ms: timeout_ms
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg_type:
+                  type: integer
+                payload:
+                  type: string
+                timeout_ms:
+                  type: string
+        goal_default:
+          msg_type: 0
+          payload: ''
+          timeout_ms: ''
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal:
+          size: size
+          timeout_ms: timeout_ms
+          mode: mode
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size:
+                  type: string
+                timeout_ms:
+                  type: string
+                mode:
+                  type: string
+        goal_default:
+          size: ''
+          timeout_ms: ''
+          mode: ''
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal:
+          msg_type: msg_type
+          payload: payload
+          timeout_ms: timeout_ms
+          size: size
+          mode: mode
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg_type:
+                  type: integer
+                payload:
+                  type: string
+                timeout_ms:
+                  type: string
+                size:
+                  type: string
+                mode:
+                  type: string
+        goal_default:
+          msg_type: 0
+          payload: ''
+          timeout_ms: ''
+          size: ''
+          mode: ''
+        handles: {}
+  name: Ocean Optics Maya2000 Pro 高灵敏度光谱仪
+  description: Ocean Optics Maya2000 Pro是一款高灵敏度光谱仪，采用Hamamatsu背照式2D FFT-CCD探测器，在低光照应用中表现出色。探测器覆盖165-1100nm超宽波长范围，动态范围达85000:1，信噪比450:1。极低杂散光(<0.05%@600nm)确保测量准确性。可选TEC制冷进一步降低暗噪声。适用于荧光、拉曼光谱和吸收测量等低光应用，支持多种光栅和狭缝配置。
+  manufacturer: Ocean Optics (Ocean Insight)
+  tags: &id001
+  - 紫外-可见分光光度仪
+  category: *id001
+  model:
+    name: Ocean Optics Maya2000 Pro 高灵敏度光谱仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    探测器: Hamamatsu S10420-1006-01背照式2D FFT-CCD(2048像素)
+    波长范围: 165-1100nm
+    动态范围: '85000:1'
+    信噪比: '450:1'
+    积分时间: 7.2ms-5s
+    光学分辨率: ~0.35nm FWHM
+    杂散光: <0.05%@600nm/<0.10%@435nm
+    接口: USB2.0/RS-232
+    品牌: Ocean Optics (Ocean Insight)
+  cover: Ocean Optics Maya2000 Pro 高灵敏度光谱仪.webp

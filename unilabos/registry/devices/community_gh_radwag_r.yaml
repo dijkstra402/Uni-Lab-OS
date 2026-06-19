@@ -1,0 +1,408 @@
+gh_radwag_r:
+  class:
+    module: unilabos.devices.community.gh_radwag_r.driver:serialDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                override_params:
+                  type: string
+        goal_default:
+          override_params: null
+        handles: {}
+      auto-activate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: activate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-deactivate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-apply_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                config_keys:
+                  type: string
+        goal_default:
+          config_keys: null
+        handles: {}
+      auto-updateTimestamp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: updateTimestamp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-simpleSerialRequest:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: simpleSerialRequest
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+                terminationChar:
+                  type: string
+                maxlen:
+                  type: string
+                min_response_length:
+                  type: integer
+                  default: 0
+                sleeptime:
+                  type: number
+                  default: 0.1
+        goal_default:
+          request: null
+          terminationChar: null
+          maxlen: null
+          min_response_length: 0
+          sleeptime: 0.1
+        handles: {}
+      auto-blockingSerialRequest:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: blockingSerialRequest
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+                terminationChar:
+                  type: string
+                  default: "\r"
+                maxlen:
+                  type: integer
+                  default: 1024
+                min_response_length:
+                  type: integer
+                  default: 0
+                sleeptime:
+                  type: number
+                  default: 0.01
+        goal_default:
+          request: null
+          terminationChar: "\r"
+          maxlen: 1024
+          min_response_length: 0
+          sleeptime: 0.01
+        handles: {}
+      auto-blockingRawSerialRequest:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: blockingRawSerialRequest
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+                terminationChar:
+                  type: string
+                  default: "\r"
+                maxlen:
+                  type: integer
+                  default: 1024
+                min_response_length:
+                  type: integer
+                  default: 0
+                sleeptime:
+                  type: number
+                  default: 0.01
+        goal_default:
+          request: null
+          terminationChar: "\r"
+          maxlen: 1024
+          min_response_length: 0
+          sleeptime: 0.01
+        handles: {}
+      auto-esd508_modbus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: esd508_modbus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+                terminationChar:
+                  type: string
+                maxlen:
+                  type: integer
+                  default: 99999
+                min_response_length:
+                  type: integer
+                  default: 0
+                sleeptime:
+                  type: number
+                  default: 0.001
+        goal_default:
+          request: null
+          terminationChar: null
+          maxlen: 99999
+          min_response_length: 0
+          sleeptime: 0.001
+        handles: {}
+      auto-p6000SerialRequest:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: p6000SerialRequest
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+                  default: !!binary ""
+                terminationChar:
+                  type: string
+                maxlen:
+                  type: string
+                min_response_length:
+                  type: string
+                sleeptime:
+                  type: string
+        goal_default:
+          request: !!binary ""
+          terminationChar: null
+          maxlen: null
+          min_response_length: null
+          sleeptime: null
+        handles: {}
+      auto-k3hbvlc_checksum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: k3hbvlc_checksum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                s:
+                  type: string
+        goal_default:
+          s: null
+        handles: {}
+      auto-a5000_checksum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: a5000_checksum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                s:
+                  type: string
+        goal_default:
+          s: null
+        handles: {}
+      auto-configure_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configure_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-convert_raw_string_to_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: convert_raw_string_to_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rawData:
+                  type: string
+                requests:
+                  type: string
+        goal_default:
+          rawData: null
+          requests: null
+        handles: {}
+      auto-get_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reset:
+                  type: boolean
+                  default: false
+        goal_default:
+          reset: false
+        handles: {}
+    source: https://github.com/djorlando24/pyLabDataLogger
+  name: Look again
+  description: 为实验室和工业提供先进电子称重解决方案的全球制造商。适合专业人士的高精度天平和秤。
+  manufacturer: Radwag
+  icon: scanCamera.png
+  tags: &id001
+  - 电子天平
+  category: *id001
+  device_params:
+    Type: Analytical balance
+    Capacity: 62-220 g
+    Readability: 0.01-0.1 mg
+    Internal calibration: automatic
+    Interface: RS-232, USB
+    Protection: IP54 (select models)
+    Display: touch panel
+    品牌: Radwag
+  model:
+    name: Look again
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        params:
+          default: null
+          type: string
+        tty_prefix:
+          default: null
+          type: string
+        quiet:
+          default: null
+          type: string

@@ -1,0 +1,660 @@
+community_strict_fwv1:
+  class:
+    module: community_drivers.community_strict_fwv1.driver:CommunityStrictFwv1
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/AlexShkarin__pyLabLib
+          source_file:
+            type: string
+            default: pylablib/devices/Thorlabs/serial.py
+          class_name:
+            type: string
+            default: FWv1
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - ask
+            - get_position
+            - set_position
+            - get_pcount
+            - get_trigger_mode
+            - set_trigger_mode
+            - open
+            - reconnect
+            - sleep
+            - using_write_buffer
+            - get_id
+            - get_esr
+            - wait_sync
+            - wait_dev
+            - wait
+            - get_arg_type
+            - flush
+            - read_binary_array_data
+            - parse_array_data
+            - apply_settings
+            - close
+            - is_opened
+            - lock
+            - unlock
+            - locking
+            - get_settings
+            - get_full_status
+            - get_full_info
+            - get_device_variable
+            - set_device_variable
+          metadata:
+            type: object
+            default:
+              repo: AlexShkarin/pyLabLib
+              repo_url: https://github.com/AlexShkarin/pyLabLib
+              source_url: https://github.com/AlexShkarin/pyLabLib/blob/main/pylablib/devices/Thorlabs/serial.py
+              source_file: pylablib/devices/Thorlabs/serial.py
+              class_name: FWv1
+              manufacturer_guess: thorlabs
+              manufacturer_resolved: thorlabs
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.95
+              quality_score: 1.11
+              code_evidence: 'L143: class FWv1(ThorlabsSerialInterface):'
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001 {}
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                data_type:
+                  type: string
+                  default: string
+                delay:
+                  type: string
+                  default: 0.0
+                timeout:
+                  type: string
+                read_echo:
+                  type: string
+                  default: false
+        goal_default:
+          data_type: string
+          delay: 0.0
+          read_echo: false
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_pcount:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pcount
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_trigger_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_trigger_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_trigger_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_trigger_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trigger_mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_instrument:
+                  type: string
+                  default: true
+                ignore_error:
+                  type: string
+                  default: true
+        goal_default:
+          new_instrument: true
+          ignore_error: true
+        handles: {}
+      auto-sleep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sleep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                delay:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-using_write_buffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: using_write_buffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_id:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_id
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_esr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_esr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wait_sync:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_sync
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+                wait_callback:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wait_dev:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_dev
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait_type:
+                  type: string
+                  default: sync
+                timeout:
+                  type: string
+                wait_callback:
+                  type: string
+        goal_default:
+          wait_type: sync
+        handles: {}
+      auto-get_arg_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_arg_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                arg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                one_line:
+                  type: string
+                  default: false
+        goal_default:
+          one_line: false
+        handles: {}
+      auto-read_binary_array_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_binary_array_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                include_header:
+                  type: string
+                  default: false
+                timeout:
+                  type: string
+                flush_term:
+                  type: string
+                  default: true
+        goal_default:
+          include_header: false
+          flush_term: true
+        handles: {}
+      auto-parse_array_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_array_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                fmt:
+                  type: string
+                include_header:
+                  type: string
+                  default: false
+        goal_default:
+          include_header: false
+        handles: {}
+      auto-apply_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_opened:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_opened
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-lock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unlock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unlock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-locking:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: locking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                include:
+                  type: string
+                  default: 0
+        goal_default:
+          include: 0
+        handles: {}
+      auto-get_full_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_full_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                include:
+                  type: string
+                  default: 0
+        goal_default:
+          include: 0
+        handles: {}
+      auto-get_full_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_full_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                include:
+                  type: string
+                  default: 0
+        goal_default:
+          include: 0
+        handles: {}
+      auto-get_device_variable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_variable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_device_variable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_device_variable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: FWv1驱动（thorlabs），支持ask/get_position/set_position/get_pcount/get_trigger_mode等30个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: AlexShkarin/pyLabLib
+    source_file: pylablib/devices/Thorlabs/serial.py
+    candidate_class: FWv1
+    quality_score: 1.11
+    confidence: 0.95
+    quality_status: usable
+    操作数: 30
+  manufacturer: thorlabs
+  model:
+    name: FWv1
+    type: device
+  name: thorlabs FWv1
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

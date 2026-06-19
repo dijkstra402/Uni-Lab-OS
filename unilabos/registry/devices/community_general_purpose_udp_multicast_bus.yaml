@@ -1,0 +1,96 @@
+general_purpose_udp_multicast_bus:
+  class:
+    module: unilabos.devices.community.general_purpose_udp_multicast_bus.driver:GeneralPurposeUdpMulticastBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-recv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: recv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fileno:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fileno
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: General Purpose UDP Multicast BUS是由Open Standard生产的实验执行&合成设备。支持Signal,
+    Slot, fileno等操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        group:
+          type: string
+          default: null
+        port:
+          type: integer
+          default: null
+        hop_limit:
+          type: integer
+          default: null
+        max_buffer:
+          type: integer
+          default: 4096
+  name: Open Standard General Purpose UDP Multicast Bus
+  manufacturer: Open Standard
+  icon: aio_serial.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '7'
+    设备属性数: '1'

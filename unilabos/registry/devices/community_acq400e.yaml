@@ -1,0 +1,208 @@
+acq400e:
+  class:
+    module: unilabos.devices.community.acq400e.driver:States
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-get_sites:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sites
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-int_statemon:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: int_statemon
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-caget:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: caget
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pvname:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-caput:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: caput
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pvname:
+                  type: string
+                pvvalue:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-monitor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: monitor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pv:
+                  type: string
+                callback:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clearpv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clearpv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pv:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-readpv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readpv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pv:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stream_to_disk:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stream_to_disk
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ssb:
+                  type: string
+                maxbytes:
+                  type: string
+                maxtime:
+                  type: string
+                update:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop_stream:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_stream
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pv_callback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pv_callback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pvname:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clean:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clean
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pvname:
+                  type: string
+        goal_default: {}
+        handles: {}
+  name: ACQ424ELF
+  description: D-TACQ ACQ400系列ELF格式数据采集前端模块，插入ACQ2106/ACQ1001载板使用。
+  manufacturer: D-TACQ Solutions
+  icon: acq400e.webp
+  tags: &id001
+  - 介电常数测定仪
+  category: *id001
+  device_params:
+    类型: ELF格式前端模块
+    系列: ACQ423(32通道16位)/ACQ424(32通道16位差分)/ACQ425(16通道16位)/ACQ480(8通道14位80MSPS)
+    品牌: D-TACQ Solutions
+  model:
+    name: ACQ424ELF
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device

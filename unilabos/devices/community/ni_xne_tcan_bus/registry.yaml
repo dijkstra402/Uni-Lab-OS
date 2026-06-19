@@ -1,0 +1,96 @@
+ni_xne_tcan_bus:
+  class:
+    module: unilabos.devices.generic.ni_xnet.ni_xnet_can_bus:NiXNETcanBus
+    type: python
+    status_types:
+      fd: String
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: NI-XNET CAN总线是由National Instruments生产的专业实验设备。Auto-imported from can/interfaces/nixnet.py
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        channel:
+          type: string
+          default: CAN1
+        bitrate:
+          type: integer
+          default: 500000
+        timing:
+          type: string
+          default: null
+        can_filters:
+          type: string
+          default: null
+        receive_own_messages:
+          type: boolean
+          default: false
+        can_termination:
+          type: boolean
+          default: false
+        fd:
+          type: boolean
+          default: false
+        fd_bitrate:
+          type: string
+          default: null
+        poll_interval:
+          type: number
+          default: 0.001
+  name: NI-XNET CAN总线
+  manufacturer: National Instruments
+  icon: digital_input_task.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '3'
+    控制操作: reset
+    设备属性数: '1'

@@ -1,0 +1,186 @@
+i7540d:
+  class:
+    module: community_drivers.i7540d.driver:I7540d
+    type: python
+    status_types:
+      host: str
+      timeout: str
+      connected: str
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reinitialize:
+                  type: boolean
+                  default: false
+        goal_default:
+          reinitialize: false
+        handles: {}
+      auto-reboot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reboot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_can_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_can_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_can_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_can_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                can_config:
+                  type: string
+        goal_default:
+          can_config: null
+        handles: {}
+      auto-standard_dataframe_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: standard_dataframe_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: integer
+                data:
+                  type: string
+        goal_default:
+          identifier: null
+          data: null
+        handles: {}
+      auto-standard_dataframe_write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: standard_dataframe_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: integer
+                data:
+                  type: string
+        goal_default:
+          identifier: null
+          data: null
+        handles: {}
+  name: I-7540D
+  description: I-7540D | CAN以太网网关使CAN网络能够与互联网/以太网集成。支持 -25 至 75°C 的工作温度。
+  manufacturer: ICP DAS
+  icon: i7540d.webp
+  tags: &id001
+  - 网络与通信设备
+  category: *id001
+  device_params:
+    Ethernet port: 10/100 Base-T
+    CAN Signal Support: CAN_H, CAN_L
+    Power Consumption: 3W
+    Reauired Supply Voltage: +10 ~ +30VDC
+    品牌: ICP DAS
+  model:
+    name: I-7540D
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: number

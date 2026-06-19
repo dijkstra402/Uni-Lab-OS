@@ -1,0 +1,158 @@
+agilent33210_a:
+  class:
+    module: community_drivers.agilent33210_a.driver:Agilent33210A
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                str:
+                  type: string
+        goal_default:
+          str: null
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-beep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: beep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sleep:
+                  type: number
+                  default: 0.5
+        goal_default:
+          sleep: 0.5
+        handles: {}
+      auto-config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                freq:
+                  type: string
+                volts:
+                  type: integer
+                  default: 1
+                shape:
+                  type: string
+                  default: SIN
+        goal_default:
+          freq: null
+          volts: 1
+          shape: SIN
+        handles: {}
+      auto-config_burst:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: config_burst
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ncyc:
+                  type: integer
+                  default: 1
+        goal_default:
+          ncyc: 1
+        handles: {}
+      auto-config_free_running_burst:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: config_free_running_burst
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ncyc:
+                  type: integer
+                  default: 1
+                rate:
+                  type: integer
+                  default: 1
+        goal_default:
+          ncyc: 1
+          rate: 1
+        handles: {}
+  name: 33210A Waveform/Function Generator [Discontinued]
+  description: 10MHz单通道函数/任意波形发生器，支持正弦/方波/锯齿/脉冲/噪声/任意波形，内置调制和扫频功能。已停产，被33500B系列(Trueform)替代。
+  manufacturer: Keysight
+  icon: agilent33210_a.webp
+  tags: &id001
+  - 信号源与发生器
+  category: *id001
+  device_params:
+    Channels: '1'
+    Sine/Square Freq: 1 µHz~10 MHz
+    Ramp/Triangle: 1 µHz~200 kHz
+    Pulse: 500 µHz~5 MHz
+    Arb: 1 µHz~5 MHz
+    Sample Rate: 50 MSa/s
+    Resolution: 14-bit
+    Arb Memory: 8K points
+    Amplitude: 10 mVpp~10 Vpp (50Ω)
+    Accuracy: ±1% @1kHz
+    THD: <-0.04% (<20kHz)
+    Modulation: AM/FM/PM/FSK/PWM
+    Interface: USB, GPIB(opt), LAN/LXI(opt)
+    品牌: Keysight
+  model:
+    name: 33210A Waveform/Function Generator [Discontinued]
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ipaddr:
+          default: null
+          type: string

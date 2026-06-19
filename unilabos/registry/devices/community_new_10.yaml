@@ -1,0 +1,217 @@
+gh_device_new_10:
+  class:
+    module: unilabos.devices.community.new_10.driver:HamiltonInterface
+    type: python
+    action_value_mappings:
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal:
+          template: template
+          block_until_sent: block_until_sent
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                template:
+                  type: string
+                block_until_sent:
+                  type: string
+        goal_default:
+          template: ''
+          block_until_sent: ''
+        handles: {}
+      auto-wait_on_response:
+        type: UniLabJsonCommand
+        goal:
+          id: id
+          timeout: timeout
+          raise_first_exception: raise_first_exception
+          return_data: return_data
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_on_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                id:
+                  type: string
+                timeout:
+                  type: string
+                raise_first_exception:
+                  type: string
+                return_data:
+                  type: string
+        goal_default:
+          id: ''
+          timeout: ''
+          raise_first_exception: ''
+          return_data: ''
+        handles: {}
+      auto-parse_response:
+        type: UniLabJsonCommand
+        goal:
+          server_response: server_response
+          raise_first_exception: raise_first_exception
+          return_data: return_data
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                server_response:
+                  type: string
+                raise_first_exception:
+                  type: boolean
+                return_data:
+                  type: str
+        goal_default:
+          server_response: ''
+          raise_first_exception: 0
+          return_data: 0
+        handles: {}
+      auto-set_log_dir:
+        type: UniLabJsonCommand
+        goal:
+          log_dir: log_dir
+        feedback: {}
+        result: {}
+        schema:
+          title: set_log_dir
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                log_dir:
+                  type: string
+        goal_default:
+          log_dir: ''
+        handles: {}
+      auto-log:
+        type: UniLabJsonCommand
+        goal:
+          msg: msg
+          msg_type: msg_type
+        feedback: {}
+        result: {}
+        schema:
+          title: log
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                msg_type:
+                  type: string
+        goal_default:
+          msg: ''
+          msg_type: ''
+        handles: {}
+      auto-log_and_raise:
+        type: UniLabJsonCommand
+        goal:
+          err: err
+        feedback: {}
+        result: {}
+        schema:
+          title: log_and_raise
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                err:
+                  type: string
+        goal_default:
+          err: ''
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Hamilton Microlab STAR 全自动移液工作站
+  description: Hamilton Microlab STAR是全球最广泛使用的自动化液体处理工作站之一。采用专利CO-RE II（压缩O型环膨胀）技术实现吸头无应力锁键式连接，XYZ三轴定位精度±0.1mm。支持最多16个独立1000µL通道和8个5mL通道，可选96/384通道多探头模块。核心监控技术包括TADM全程吸液分液监控（实时追踪压力检测气泡和体积异常）、ADC防滴液控制（补偿挥发性溶剂压力波动）和双模式液面检测（电容式cLLD+压力式pLLD，最小检测体积10µL）。三种台面配置：STARlet(30轨)/STAR(54轨)/STARplus(71轨)。Venus软件提供拖放式方法编辑、LIMS集成和第三方外设对接。广泛应用于基因组学、药物筛选、临床诊断和生物样本库。
+  manufacturer: Hamilton
+  tags: &id001
+  - 移液工作站
+  category: *id001
+  model:
+    name: Hamilton Microlab STAR 全自动移液工作站
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    移液通道: 最多16×1000µL+8×5mL独立通道
+    可选: 96通道(1-1000µL)/384通道(0.1-50µL)
+    定位精度: ±0.1mm(XYZ)
+    液面检测: 电容式+压力式双模
+    台面: STARlet 30轨/STAR 54轨/STARplus 71轨
+    尺寸(STAR): 1664×795×903mm
+    软件: Venus
+    品牌: Hamilton

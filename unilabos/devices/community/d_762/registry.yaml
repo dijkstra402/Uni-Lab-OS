@@ -1,0 +1,205 @@
+gh_device_762:
+  class:
+    module: community_drivers.762.driver:PMD401Bus
+    type: python
+    action_value_mappings:
+      auto-terminate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: terminate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal:
+          axes: axes
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axes:
+                  type: string
+        goal_default:
+          axes: ''
+        handles: {}
+      auto-moveRel:
+        type: UniLabJsonCommand
+        goal:
+          shift: shift
+        feedback: {}
+        result: {}
+        schema:
+          title: moveRel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shift:
+                  type: string
+        goal_default:
+          shift: ''
+        handles: {}
+      auto-moveAbs:
+        type: UniLabJsonCommand
+        goal:
+          pos: pos
+        feedback: {}
+        result: {}
+        schema:
+          title: moveAbs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos:
+                  type: string
+        goal_default:
+          pos: ''
+        handles: {}
+      auto-reference:
+        type: UniLabJsonCommand
+        goal:
+          axes: axes
+        feedback: {}
+        result: {}
+        schema:
+          title: reference
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axes:
+                  type: string
+        goal_default:
+          axes: ''
+        handles: {}
+      auto-stopAxis:
+        type: UniLabJsonCommand
+        goal:
+          axis: axis
+        feedback: {}
+        result: {}
+        schema:
+          title: stopAxis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default:
+          axis: ''
+        handles: {}
+      auto-getVersion:
+        type: UniLabJsonCommand
+        goal:
+          axis: axis
+        feedback: {}
+        result: {}
+        schema:
+          title: getVersion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default:
+          axis: ''
+        handles: {}
+      auto-getSerialNumber:
+        type: UniLabJsonCommand
+        goal:
+          axis: axis
+        feedback: {}
+        result: {}
+        schema:
+          title: getSerialNumber
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default:
+          axis: ''
+        handles: {}
+      auto-initFromFlash:
+        type: UniLabJsonCommand
+        goal:
+          axis: axis
+        feedback: {}
+        result: {}
+        schema:
+          title: initFromFlash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default:
+          axis: ''
+        handles: {}
+      auto-setLimitType:
+        type: UniLabJsonCommand
+        goal:
+          axis: axis
+          limit_type: limit_type
+        feedback: {}
+        result: {}
+        schema:
+          title: setLimitType
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                limit_type:
+                  type: string
+        goal_default:
+          axis: ''
+          limit_type: ''
+        handles: {}
+  name: PI E-725 Digital Piezo Controller
+  description: PI E-725是数字多通道压电控制器，用于纳米定位、显微镜(AFM/共聚焦/超分辨率)、半导体检测、干涉测量和主动隔振。提供亚纳米分辨率和高伺服带宽。
+  manufacturer: Physik Instrumente
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: PI E-725 Digital Piezo Controller
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 数字压电伺服控制器
+    通道: 1-3通道可配置
+    控制: 数字闭环伺服
+    传感器: 电容传感器/应变片兼容
+    分辨率: 亚纳米级
+    接口: USB, TCP/IP, RS-232
+    数字信号处理: 高级伺服算法
+    品牌: Physik Instrumente

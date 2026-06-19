@@ -1,0 +1,120 @@
+gh_device_652:
+  class:
+    module: community_drivers.652.driver:MotorChannel
+    type: python
+    action_value_mappings:
+      auto-motion_timeout:
+        type: UniLabJsonCommand
+        goal:
+          newval: newval
+        feedback: {}
+        result: {}
+        schema:
+          title: motion_timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                newval:
+                  type: string
+        goal_default:
+          newval: ''
+        handles: {}
+      auto-set_scale:
+        type: UniLabJsonCommand
+        goal:
+          motor_model: motor_model
+        feedback: {}
+        result: {}
+        schema:
+          title: set_scale
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                motor_model:
+                  type: string
+        goal_default:
+          motor_model: ''
+        handles: {}
+      auto-motor_model:
+        type: UniLabJsonCommand
+        goal:
+          newval: newval
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_model
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                newval:
+                  type: string
+        goal_default:
+          newval: ''
+        handles: {}
+      auto-backlash_correction:
+        type: UniLabJsonCommand
+        goal:
+          pos: pos
+        feedback: {}
+        result: {}
+        schema:
+          title: backlash_correction
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos:
+                  type: string
+        goal_default:
+          pos: ''
+        handles: {}
+      auto-home_parameters:
+        type: UniLabJsonCommand
+        goal:
+          values: values
+        feedback: {}
+        result: {}
+        schema:
+          title: home_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                values:
+                  type: string
+        goal_default:
+          values: ''
+        handles: {}
+      auto-status_bits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status_bits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: T-Cube应变仪读数器
+  description: T-Cube应变仪读数器，读取配备应变计的压电执行器的位置反馈信号，与TPZ001压电控制器配合实现高精度闭环定位控制。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: T-Cube应变仪读数器
+    type: device
+  version: 1.0.0
+  resource_type: device

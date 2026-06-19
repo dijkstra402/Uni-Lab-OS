@@ -1,0 +1,49 @@
+serial_data_interface:
+  class:
+    module: unilabos.devices.community.serial_data_interface.driver:SerialDataInterface
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-availableBytes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: availableBytes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readBytes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readBytes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                numberOfBytes:
+                  type: integer
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Class which implements the data interface
+  category:
+  - devices
+  - device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serialName:
+          type: string
+          default: null

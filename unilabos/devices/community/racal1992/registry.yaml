@@ -1,0 +1,89 @@
+racal1992:
+  class:
+    module: community_drivers.racal1992.driver:Racal1992
+    type: python
+    status_types:
+      frequency: str
+    action_value_mappings:
+      auto-preset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: preset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+        goal_default:
+          port: null
+        handles: {}
+      auto-remote:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-local:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: local
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Racal 1992 通用计数器
+  description: Racal-Dana 1992通用频率计/计时器，采用倒数计数技术，最高1.3GHz，广泛用于频率和时间间隔精密测量。原厂已被Fluke/Danaher收购。
+  manufacturer: Fluke
+  icon: racal1992.webp
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  device_params:
+    频率范围: 最高1.3GHz(C通道)
+    输入通道: 2个通用(A/B)+1个高频(C)
+    输入阻抗: 50Ω/1MΩ可选
+    测量功能: 频率/周期/时间间隔/计数/比率/脉宽/占空比/上升下降时间
+    接口: GPIB(IEEE-488)
+    品牌: Fluke
+  model:
+    name: Racal 1992 通用计数器
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device

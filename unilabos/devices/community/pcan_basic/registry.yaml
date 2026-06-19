@@ -1,0 +1,275 @@
+pcan_basic:
+  class:
+    module: unilabos.devices.pcan.pcan_basic:PCANBasic
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-Initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+                Btr0Btr1:
+                  type: string
+                HwType:
+                  type: string
+                IOPort:
+                  type: string
+                Interrupt:
+                  type: string
+        goal_default:
+          HwType: c_ubyte(0)
+          IOPort: c_uint(0)
+          Interrupt: c_ushort(0)
+        handles: {}
+      auto-InitializeFD:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: InitializeFD
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+                BitrateFD:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Uninitialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Uninitialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ReadFD:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ReadFD
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+                MessageBuffer:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-WriteFD:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: WriteFD
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+                MessageBuffer:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-FilterMessages:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: FilterMessages
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+                FromID:
+                  type: string
+                ToID:
+                  type: string
+                Mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetValue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetValue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+                Parameter:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SetValue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetValue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Channel:
+                  type: string
+                Parameter:
+                  type: string
+                Buffer:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetErrorText:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetErrorText
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Error:
+                  type: string
+                Language:
+                  type: string
+        goal_default:
+          Language: 0
+        handles: {}
+      auto-LookUpChannel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: LookUpChannel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Parameters:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: PEAK PCAN CAN总线适配器是由PEAK-System Technik生产的专业实验设备。Auto-imported from can/interfaces/pcan/basic.py
+  category:
+  - 实验执行&合成设备
+  name: PEAK PCAN CAN总线适配器
+  manufacturer: PEAK-System Technik
+  icon: pcan_basic.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '14'
+    读取操作: GetStatus、Read、ReadFD、GetValue、GetErrorText
+    控制操作: Reset、Write、WriteFD、SetValue
+    控制能力: 多通道

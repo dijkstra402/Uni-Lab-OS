@@ -1,0 +1,127 @@
+gh_thermotek_t255p:
+  class:
+    module: unilabos.devices.community.gh_thermotek_t255p.driver:ThermotekT255p
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-alarm_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: alarm_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/QCoDeS/Qcodes_contrib_drivers
+  name: Thermotek
+  description: ThermoTek T255P固态热电循环冷水机，采用珀尔帖半导体制冷，体积比同等制冷量压缩机机组小50%。制冷量210W，温控范围-5°C至+45°C，稳定性±0.1°C。配备智能数字控制器和断电记忆功能，1/4"
+    NPT液路接口，RS-232接口，100-240V通用供电，用于激光器冷却和实验室精密温控。
+  manufacturer: Thermotek
+  icon: product-heater.jpg
+  tags: &id001
+  - 低温循环装置
+  category: *id001
+  device_params:
+    Sign In Specifying Software: Sign In
+    Air Volume: '0 - 21000 cfm: Maximum SP: 2" wg. @ standard air desnity'
+    品牌: Thermotek
+  model:
+    name: Thermotek
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: number
+        device_clear:
+          default: null
+          type: boolean
+        visalib:
+          default: null
+          type: string
+        pyvisa_sim_file:
+          default: null
+          type: string
+  cover: Thermotek.webp

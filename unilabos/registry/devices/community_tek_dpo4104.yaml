@@ -1,0 +1,53 @@
+tek_dpo4104:
+  class:
+    module: unilabos.devices.community.tek_dpo4104.driver:TekDPO4104
+    type: python
+    status_types:
+      channel: str
+      ref: str
+      math: str
+      data_source: str
+      aquisition_length: str
+      aquisition_running: str
+      aquisition_continuous: str
+      data_width: str
+      y_offset: str
+    action_value_mappings:
+      auto-force_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: force_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Tektronix DPO4104 Digital Phosphor Oscilloscope
+  description: 4通道1GHz数字荧光示波器(DPO)，具有DPX采集技术，支持LabVIEW/OpenChoice软件，已停产，后继型号DPO4104B
+  manufacturer: Tektronix
+  icon: tek_dpo4104.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    带宽: 1GHz
+    通道: 4通道
+    采样率: 5GS/s(1-2通道)/2.5GS/s(4通道)
+    记录长度: 10M点
+    显示: 10.4英寸XGA
+    重量: 5kg
+    品牌: Tektronix
+  model:
+    name: Tektronix DPO4104 Digital Phosphor Oscilloscope
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device

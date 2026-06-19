@@ -1,0 +1,12 @@
+repo: instrumentkit/InstrumentKit
+repo_url: https://github.com/instrumentkit/InstrumentKit
+source_url: https://github.com/instrumentkit/InstrumentKit/blob/main/src/instruments/lakeshore/lakeshore475.py
+registry_id: community_strict_lakeshore475
+source_file: src/instruments/lakeshore/lakeshore475.py
+class_name: Lakeshore475
+manufacturer: lakeshore
+model: Lakeshore475
+tag: 表征设备
+confidence: 0.75
+quality_score: 0.89
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_lakeshore475.yaml

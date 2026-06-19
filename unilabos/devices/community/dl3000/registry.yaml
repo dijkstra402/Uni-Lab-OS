@@ -1,0 +1,203 @@
+dl3000:
+  class:
+    module: community_drivers.dl3000.driver:DL3000
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_setpoint_A:
+                  type: string
+        goal_default:
+          current_setpoint_A: null
+        handles: {}
+      auto-set_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                set_range:
+                  type: string
+        goal_default:
+          set_range: null
+        handles: {}
+      auto-set_mode_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_mode_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_cv_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cv_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_setpoint_V:
+                  type: string
+        goal_default:
+          voltage_setpoint_V: null
+        handles: {}
+      auto-toggle_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-lock_front_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_front_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: DL3000
+  description: RIGOL DL3000系列可编程直流电子负载，支持30kHz高速动态模式和5A/μs电流变化率，广泛用于汽车电子、燃料电池及电源测试。
+  manufacturer: Rigol
+  icon: dl3000.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    型号/功率: DL3021(200W)/DL3031(350W)/DL3041(450W)
+    电压: 最高150V(DL3021/DL3031)/200V(DL3041)
+    电流: 最高40A(DL3021)/60A(DL3031)
+    模式: CC/CV/CR/CP
+    动态频率: 最高30kHz
+    电流变化率: 最高5A/μs
+    接口: USB/LAN(LXI)/RS-232/可选GPIB
+    品牌: Rigol
+  model:
+    name: DL3000
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Battery Testing
+    step: Cycling
+  version: 1.0.0
+  resource_type: device

@@ -1,0 +1,313 @@
+gh_novocontrol_alpha_analyzer:
+  class:
+    module: unilabos.devices.community.gh_novocontrol_alpha_analyzer.driver:Database
+    type: python
+    status_types:
+      tasks: str
+    action_value_mappings:
+      auto-change_to_passed_db:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_to_passed_db
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unpickled_db:
+                  type: string
+        goal_default:
+          unpickled_db: null
+        handles: {}
+      auto-start_fresh:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_fresh
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                  default: Run1
+                pickle_path:
+                  type: string
+                experimenter:
+                  type: string
+                  default: Tron
+                room:
+                  type: string
+                  default: Dream World
+                comment:
+                  type: string
+                  default: I fight for the User!
+                creation_time:
+                  type: string
+        goal_default:
+          name: Run1
+          pickle_path: null
+          experimenter: Tron
+          room: Dream World
+          comment: I fight for the User!
+          creation_time: null
+        handles: {}
+      auto-measurement_finished:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measurement_finished
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pickle_database:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pickle_database
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                suffix:
+                  type: string
+                  default: ''
+        goal_default:
+          suffix: ''
+        handles: {}
+      auto-new_pickle_path:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: new_pickle_path
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_pickle_path:
+                  type: string
+        goal_default:
+          new_pickle_path: null
+        handles: {}
+      auto-start_post_processing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_post_processing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path_to_opened_db:
+                  type: string
+        goal_default:
+          path_to_opened_db: null
+        handles: {}
+      auto-add_point:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_point
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: string
+                Datapoint:
+                  type: string
+        goal_default:
+          identifier: null
+          Datapoint: null
+        handles: {}
+      auto-make_storage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: make_storage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: string
+                data_source:
+                  type: string
+                human_readable_taskname:
+                  type: string
+        goal_default:
+          identifier: null
+          data_source: null
+          human_readable_taskname: null
+        handles: {}
+      auto-calculate_all_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calculate_all_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                geometry:
+                  type: string
+        goal_default:
+          geometry: null
+        handles: {}
+      auto-merge_same_level_datapoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: merge_same_level_datapoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier1:
+                  type: string
+                identifier2:
+                  type: string
+        goal_default:
+          identifier1: null
+          identifier2: null
+        handles: {}
+      auto-merge_diff_level_datapoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: merge_diff_level_datapoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier1:
+                  type: string
+                identifier2:
+                  type: string
+        goal_default:
+          identifier1: null
+          identifier2: null
+        handles: {}
+      auto-insert_sub_datapoints_into_parent_datapoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: insert_sub_datapoints_into_parent_datapoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parent_identifier:
+                  type: string
+                sub_identifier:
+                  type: string
+        goal_default:
+          parent_identifier: null
+          sub_identifier: null
+        handles: {}
+      auto-get_transposed_parent_child_datapoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_transposed_parent_child_datapoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: string
+        goal_default:
+          identifier: null
+        handles: {}
+    source: https://github.com/JMoVS/JUMP
+  name: Novocontrol Alpha Analyzer
+  description: Novocontrol Alpha-A高性能阻抗分析仪/介电频谱仪，频率范围3 μHz至40 MHz，阻抗测量范围0.01 Ω至10¹⁴
+    Ω。用于材料介电性能、聚合物松弛动力学和电化学阻抗谱研究。
+  manufacturer: Novocontrol
+  icon: sig3d_leipzig.webp
+  tags: &id001
+  - 低频介电常数测定仪
+  category: *id001
+  device_params:
+    参数: Applications Overview BDS on PVDF High impedance measurements Low-loss material
+      Wide impedance range High speed measurements; Low-loss material; Analyzers Overview
+      Alpha-A Series Alpha-A Mainframes Alpha-A Test Interfaces ZGS ZG4 ZG2 HVB300
+      HVB1000 HVB4000 POTGAL15V10A POTGAL30V2A NEISYS Series Beta Series Alpha Series
+      RF Analyzers; Alpha-A Series Alpha-A Mainframes Alpha-A Test Interfaces ZGS
+      ZG4 ZG2 HVB300 HVB1000 HVB4000 POTGAL15V10A POTGAL30V2A; Alpha-A Mainframes;
+      Alpha-A Test Interfaces; Temperature Control Overview Quatro Cryosystem Novocool
+      Phecos Novotherm Novotherm-HT Industrial Cont
+    品牌: Novocontrol
+  model:
+    name: Novocontrol Alpha Analyzer
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        pickle_path:
+          default: null
+          type: string
+        experimenter:
+          default: null
+          type: string
+        room:
+          default: null
+          type: string
+        comment:
+          default: null
+          type: string
+        creation_time:
+          default: null
+          type: string

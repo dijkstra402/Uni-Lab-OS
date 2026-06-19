@@ -1,0 +1,95 @@
+{
+  "nodes": [
+    {
+      "id": "test_piezo_e255",
+      "name": "Test piezo_e255",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "piezo_e255",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "portname": "COM1",
+        "maxtravel": 100
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_piezo_e255",
+      "action": "auto-GetControlReady",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "MoveTo",
+      "description": "自动补充动作: MoveTo",
+      "device": "test_piezo_e255",
+      "action": "auto-MoveTo",
+      "action_args": {
+        "bTimeOut": true
+      }
+    },
+    {
+      "step": 3,
+      "name": "GetPos",
+      "description": "自动补充动作: GetPos",
+      "device": "test_piezo_e255",
+      "action": "auto-GetPos",
+      "action_args": {
+        "iChannel": 1
+      }
+    },
+    {
+      "step": 4,
+      "name": "GetChannelObject",
+      "description": "自动补充动作: GetChannelObject",
+      "device": "test_piezo_e255",
+      "action": "auto-GetChannelObject",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "GetChannelPhase",
+      "description": "自动补充动作: GetChannelPhase",
+      "device": "test_piezo_e255",
+      "action": "auto-GetChannelPhase",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "GetMin",
+      "description": "自动补充动作: GetMin",
+      "device": "test_piezo_e255",
+      "action": "auto-GetMin",
+      "action_args": {
+        "iChan": 1
+      }
+    },
+    {
+      "step": 7,
+      "name": "GetMax",
+      "description": "自动补充动作: GetMax",
+      "device": "test_piezo_e255",
+      "action": "auto-GetMax",
+      "action_args": {
+        "iChan": 1
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "piezo_e255 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "piezo_e255",
+    "generated_by": "driver-finder"
+  }
+}

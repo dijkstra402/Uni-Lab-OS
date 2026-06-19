@@ -1,0 +1,38 @@
+gh_device_1014:
+  class:
+    module: unilabos.devices.community.d_1014.driver:HamiltonHepaFanBackend
+    type: python
+    status_types: {}
+    action_value_mappings:
+      setup:
+        action_name: setup
+      turn_on:
+        action_name: turn_on
+        args_info:
+          intensity:
+            type: str
+      turn_off:
+        action_name: turn_off
+      stop:
+        action_name: stop
+      send:
+        action_name: send
+        args_info:
+          command:
+            type: str
+  name: Hamilton Microlab VANTAGE自动化移液工作站
+  description: Hamilton Microlab VANTAGE是高端自动化移液工作站，采用专利CO-RE移液技术确保精确吸头连接。可配置独立移液通道和多通道移液头，模块化甲板支持集成第三方设备。配备VENUS编程软件和液面检测功能，适用于NGS文库制备、PCR设置和ELISA等应用。
+  manufacturer: Hamilton
+  tags: &id001
+  - 移液工作站
+  category: *id001
+  model:
+    name: Hamilton Microlab VANTAGE自动化移液工作站
+    type: device
+  version: 1.0.0
+  resource_type: device
+  quality_review:
+    grade: D
+    status: name_class_mismatch
+    note: registry 标 Hamilton VANTAGE 移液工作站, driver.py 实际是 HEPA 风扇 ON/OFF 调速
+    reviewed_at: '2026-04-26'

@@ -1,0 +1,140 @@
+usb4000:
+  class:
+    module: unilabos.devices.community.usb4000.driver:USB4000
+    type: python
+    status_types:
+      integration_time: str
+      trigger: str
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: null
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pcb_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pcb_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-firmware_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-request_spectra:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: request_spectra
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Spectrometers
+  description: USB2000升级版微型光纤光谱仪，3648像素CCD，UV-VIS-NIR。已停产(后续Ocean HDX)。
+  manufacturer: Ocean Optics (Ocean Insight)
+  icon: usb4000.webp
+  tags: &id001
+  - 光栅单色仪
+  category: *id001
+  device_params:
+    Detector: Toshiba TCD1304AP 3648px CCD
+    Wavelength: 200~1100nm
+    Resolution: ~1.5nm FWHM
+    Shutter: built-in
+    Interface: USB 2.0/RS-232
+    Models: UV-VIS(200-850nm)/FL(360-1000nm)
+    品牌: Ocean Optics (Ocean Insight)
+  model:
+    name: Spectrometers
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Analysis
+    step: Spectroscopy
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serial_number:
+          default: null
+          type: string

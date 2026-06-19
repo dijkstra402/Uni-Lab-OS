@@ -1,0 +1,48 @@
+keithley6220:
+  class:
+    module: unilabos.devices.community.keithley6220.driver:Keithley6220
+    type: python
+    status_types:
+      channel: str
+      voltage: str
+    action_value_mappings:
+      auto-disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Keithley 6220 DC Precision Current Source
+  description: 超低噪声精密DC电流源，100fA~100mA，四象限，配合2182A纳伏表实现Delta模式。在售。
+  manufacturer: Tektronix
+  icon: keithley6220.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    Output: 100fA~100mA
+    Max Power: 11W
+    Output Impedance: '>10¹⁴Ω'
+    Program Storage: 65536pts
+    Max Trigger Rate: 1000/s
+    Pulse Width: 50µs~12ms
+    Delta Mode: 1000:1 noise reduction
+    Interface: GPIB, RS-232
+    品牌: Tektronix
+  model:
+    name: Keithley 6220 DC Precision Current Source
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Electrochemistry
+    step: Measurement
+  version: 1.0.0
+  resource_type: device

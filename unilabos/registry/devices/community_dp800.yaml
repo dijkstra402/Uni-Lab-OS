@@ -1,0 +1,189 @@
+dp800:
+  class:
+    module: unilabos.devices.community.dp800.driver:DP800
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-select_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: select_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+      auto-set_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_setpoint_A:
+                  type: string
+        goal_default:
+          current_setpoint_A: null
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_setpoint_V:
+                  type: string
+        goal_default:
+          voltage_setpoint_V: null
+        handles: {}
+      auto-toggle_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toggle_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-remote_sense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_sense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-lock_front_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_front_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default:
+          state: null
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: DP800
+  description: RIGOL DP800系列低纹波线性可编程直流电源，提供单/双/三通道配置，纹波低至350μVrms，内建丰富的测量分析和定时输出功能。
+  manufacturer: Rigol
+  icon: dp800.webp
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  device_params:
+    通道: 单通道(DP811/DP813)/双通道(DP821/DP822)/三通道(DP831/DP832)
+    典型输出(DP832): 30V/3A+30V/3A+5V/3A
+    纹波噪声: <350μVrms/2mVpp
+    瞬态响应: <50μs
+    定时器: 最高2048组预设
+    显示: 3.5英寸TFT
+    接口: USB/LAN(LXI)/RS-232/可选GPIB
+    品牌: Rigol
+  model:
+    name: DP800
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Electrochemical Reaction
+  version: 1.0.0
+  resource_type: device

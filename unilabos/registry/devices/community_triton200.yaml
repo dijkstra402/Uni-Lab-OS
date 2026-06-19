@@ -1,0 +1,159 @@
+triton200:
+  class:
+    module: unilabos.devices.community.triton200.driver:Triton200
+    type: python
+    status_types:
+      temperature_channel: str
+      temperature_setpoint: str
+      temperature: str
+    action_value_mappings:
+      auto-update_heater:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_heater
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-controlled_ramp_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: controlled_ramp_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-controlled_ramp_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: controlled_ramp_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-turbo_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: turbo_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-turbo_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: turbo_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_and_receive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_and_receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-extract_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: extract_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                response:
+                  type: string
+                noun:
+                  type: string
+                unit:
+                  type: string
+        goal_default:
+          response: null
+          noun: null
+          unit: null
+        handles: {}
+  name: Oxford Instruments Triton 200 Cryofree Dilution Refrigerator
+  description: 无液氦稀释制冷机，<10mK基础温度，集成超导磁体，量子技术主力平台。已迭代为ProteoxMX。
+  manufacturer: Oxford Instruments
+  icon: triton200.webp
+  tags: &id001
+  - 冷热水机
+  category: *id001
+  device_params:
+    Base Temp: <10mK
+    Cooling Power: 500µW@100mK, 15µW@20mK
+    Sample Space: 42/72mm
+    Magnet: up to 14T integrated
+    Software: Windows 10
+    Installed: 200+ worldwide
+    品牌: Oxford Instruments
+  model:
+    name: Oxford Instruments Triton 200 Cryofree Dilution Refrigerator
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Storage
+    step: Ultra-Low Temperature Storage
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ip_address:
+          default: null
+          type: string
+        port_number:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string
+        bytes_to_read:
+          default: null
+          type: string

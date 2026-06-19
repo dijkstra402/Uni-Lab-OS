@@ -1,0 +1,242 @@
+oscilloscope_device:
+  class:
+    module: unilabos.devices.generic.oscilloscope_device:OscilloscopeDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-displayWaveforms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: displayWaveforms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channels:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getWaveform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getWaveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-doInitializeDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doInitializeDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-doShutdownDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doShutdownDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-doSendQuery:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doSendQuery
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                query:
+                  type: string
+                replyPattern:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-doSendFloatQuery:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doSendFloatQuery
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                query:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-doSendIntQuery:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doSendIntQuery
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                query:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-doSendCommand:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doSendCommand
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-doReadBinaryBlock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doReadBinaryBlock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-doGetTektronikStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doGetTektronikStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-doGetStatusUserInfo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doGetStatusUserInfo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-doGetTektronikError:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doGetTektronikError
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-showHelp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: showHelp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cls:
+                  type: string
+                err:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Oscilloscope Device是一款实验执行&合成设备，主要功能包括初始化、状态查询、读取数据。支持Signal, Slot, displayWaveforms等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '14'
+    读取操作: getWaveform、doSendQuery、doSendFloatQuery、doSendIntQuery、doReadBinaryBlock 等8个
+    控制能力: 多通道
+    通信接口: 串口(RS-232)
+  manufacturer: Open Source
+  model:
+    name: Oscilloscope Device
+    type: device
+  name: Oscilloscope
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

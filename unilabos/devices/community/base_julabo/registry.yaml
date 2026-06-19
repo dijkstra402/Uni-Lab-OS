@@ -1,0 +1,54 @@
+base_julabo:
+  class:
+    module: community_drivers.base_julabo.driver:IntEnum
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-decode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: decode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                v:
+                  type: string
+        goal_default:
+          v: null
+        handles: {}
+  name: JULABO MAGIO MS-BC4 加热循环浴槽
+  description: JULABO MAGIO MS-BC4是一款高端加热循环浴槽，配备4L不锈钢浴槽和盖子，温度可达300°C，精度±0.01°C。支持内部和外部温度控制，具有USB/RS232/Modbus
+    TCP/IP多种通信接口。
+  manufacturer: Julabo
+  icon: base_julabo.webp
+  tags: &id001
+  - 高温恒温槽
+  category: *id001
+  device_params:
+    温度范围: +20°C至+300°C
+    温度稳定性: ±0.01°C
+    显示分辨率: 0.01°C
+    加热功率: 1kW(115V)/2kW(230V)
+    填充体积: 3~4.5L
+    泵流量: 最高31L/min
+    泵压力: 0.92bar(正压)/-0.4bar(负压)
+    尺寸: 231×409×419mm
+    重量: 11.1kg
+    接口: USB, RS232, Modbus TCP/IP
+    安全等级: Class III(FL) DIN 12876-1
+    显示: TFT彩色触摸屏
+    品牌: Julabo
+  model:
+    name: JULABO MAGIO MS-BC4 加热循环浴槽
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device

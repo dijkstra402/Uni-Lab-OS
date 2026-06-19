@@ -1,0 +1,128 @@
+gh_device_58:
+  class:
+    module: community_drivers.58.driver:Chiller_CC_505
+    type: python
+    action_value_mappings:
+      auto-turn_on_off:
+        type: UniLabJsonCommand
+        goal:
+          mode: mode
+          min_runtime: min_runtime
+        feedback: {}
+        result: {}
+        schema:
+          title: turn_on_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                min_runtime:
+                  type: integer
+        goal_default:
+          mode: ''
+          min_runtime: 0
+        handles: {}
+      auto-set_point:
+        type: UniLabJsonCommand
+        goal:
+          setpoint_temperature: setpoint_temperature
+        feedback: {}
+        result: {}
+        schema:
+          title: set_point
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                setpoint_temperature:
+                  type: integer
+        goal_default:
+          setpoint_temperature: 0
+        handles: {}
+      auto-read_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_internal_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_internal_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_external_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_external_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Huber CC-505 冷热循环器
+  description: Huber CC-505是紧凑型冷热循环器,温度范围覆盖-40°C至+200°C,采用环保制冷剂和自优化级联控制算法实现快速精确的温度调节。配备Pilot
+    ONE直觉式彩色触摸屏控制器,支持RS232/USB和可选Ethernet远程通信。内置过温和液位保护,适用于反应器、旋转蒸发仪和分析仪器等外部闭环循环温控应用。
+  manufacturer: Huber
+  tags: &id001
+  - 高低温循环装置
+  category: *id001
+  model:
+    name: Huber CC-505 冷热循环器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  cover: Huber CC-505 冷热循环器.webp

@@ -1,0 +1,82 @@
+{
+  "nodes": [
+    {
+      "id": "test_handle",
+      "name": "Handle",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.handle",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "layout": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_handle",
+      "action": "auto-bulkRead",
+      "action_args": {
+        "timeout": 0
+      }
+    },
+    {
+      "step": 2,
+      "name": "write messages",
+      "description": "自动补充动作: write_messages",
+      "device": "test_handle",
+      "action": "auto-write_messages",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "bulkWrite",
+      "description": "自动补充动作: bulkWrite",
+      "device": "test_handle",
+      "action": "auto-bulkWrite",
+      "action_args": {
+        "timeout": 0
+      }
+    },
+    {
+      "step": 4,
+      "name": "controlMsg",
+      "description": "自动补充动作: controlMsg",
+      "device": "test_handle",
+      "action": "auto-controlMsg",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "reset",
+      "description": "自动补充动作: reset",
+      "device": "test_handle",
+      "action": "auto-reset",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "releaseInterface",
+      "description": "自动补充动作: releaseInterface",
+      "device": "test_handle",
+      "action": "auto-releaseInterface",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Handle 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "Handle",
+    "generated_by": "driver-finder"
+  }
+}

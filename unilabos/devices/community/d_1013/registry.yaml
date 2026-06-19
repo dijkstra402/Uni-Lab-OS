@@ -1,0 +1,205 @@
+gh_device_1013:
+  class:
+    module: community_drivers.1013.driver:_Robot
+    type: python
+    action_value_mappings:
+      auto-RegisterCallbacks:
+        type: UniLabJsonCommand
+        goal:
+          callbacks: callbacks
+          run_callbacks_in_separate_thread: run_callbacks_in_separate_thread
+        feedback: {}
+        result: {}
+        schema:
+          title: RegisterCallbacks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                callbacks:
+                  type: string
+                run_callbacks_in_separate_thread:
+                  type: boolean
+        goal_default:
+          callbacks: ''
+          run_callbacks_in_separate_thread: 0
+        handles: {}
+      auto-RegisterCallback:
+        type: UniLabJsonCommand
+        goal:
+          callback_name: callback_name
+          callback_method: callback_method
+        feedback: {}
+        result: {}
+        schema:
+          title: RegisterCallback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                callback_name:
+                  type: string
+                callback_method:
+                  type: string
+        goal_default:
+          callback_name: ''
+          callback_method: ''
+        handles: {}
+      auto-UnregisterCallbacks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: UnregisterCallbacks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-UnregisterCallback:
+        type: UniLabJsonCommand
+        goal:
+          callback_name: callback_name
+        feedback: {}
+        result: {}
+        schema:
+          title: UnregisterCallback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                callback_name:
+                  type: string
+        goal_default:
+          callback_name: ''
+        handles: {}
+      auto-Disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-IsConnected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: IsConnected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-IsControlling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: IsControlling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-IsSynchronousMode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: IsSynchronousMode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ConnectionWatchdog:
+        type: UniLabJsonCommand
+        goal:
+          timeout: timeout
+          message: message
+        feedback: {}
+        result: {}
+        schema:
+          title: ConnectionWatchdog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+                message:
+                  type: string
+        goal_default:
+          timeout: 0
+          message: ''
+        handles: {}
+      auto-AutoConnectionWatchdog:
+        type: UniLabJsonCommand
+        goal:
+          enable: enable
+          timeout: timeout
+          message: message
+        feedback: {}
+        result: {}
+        schema:
+          title: AutoConnectionWatchdog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: boolean
+                timeout:
+                  type: number
+                message:
+                  type: string
+        goal_default:
+          enable: 0
+          timeout: 0
+          message: ''
+        handles: {}
+  name: Mecademic Meca500超紧凑六轴工业机器人
+  description: Mecademic Meca500是全球最小最精密的六轴工业机器人，仅重4.5kg，重复定位精度5µm。采用Harmonic Drive零背隙减速器和精密铝合金加工结构，控制器集成在底座内。通过以太网TCP/IP或EtherCAT通信，支持任意方向安装，适用于精密装配和实验室自动化。
+  manufacturer: Mecademic
+  tags: &id001
+  - 转运与协作机器人
+  category: *id001
+  model:
+    name: Mecademic Meca500超紧凑六轴工业机器人
+    type: device
+  version: 1.0.0
+  resource_type: device
+  cover: Mecademic Meca500超紧凑六轴工业机器人.webp
+  quality_review:
+    grade: C
+    status: import_fail
+    note: .mx_robot_def/.robot_classes/.tools 缺失; 还需 PyPI mecademicpy
+    reviewed_at: '2026-04-26'

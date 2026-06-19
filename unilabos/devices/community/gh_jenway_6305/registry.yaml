@@ -1,0 +1,259 @@
+gh_jenway_6305:
+  class:
+    module: community_drivers.gh_jenway_6305.driver:Spectrometer
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-pause:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pausetime:
+                  type: string
+        goal_default:
+          pausetime: null
+        handles: {}
+      auto-set_shutter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_shutter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                isopen:
+                  type: boolean
+                  default: true
+        goal_default:
+          isopen: true
+        handles: {}
+      auto-printout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: printout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-transmission:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transmission
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-absorbance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: absorbance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-concentration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: concentration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                luminosity:
+                  type: boolean
+                  default: false
+        goal_default:
+          luminosity: false
+        handles: {}
+      auto-calibrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trans:
+                  type: boolean
+                  default: false
+        goal_default:
+          trans: false
+        handles: {}
+      auto-set_wavelength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_wavelength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wavelen:
+                  type: integer
+                  default: 540
+        goal_default:
+          wavelen: 540
+        handles: {}
+      auto-set_conc_factor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_conc_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                factor:
+                  type: integer
+                  default: 1
+        goal_default:
+          factor: 1
+        handles: {}
+      auto-scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: integer
+                  default: 198
+                end:
+                  type: integer
+                  default: 1000
+                interval:
+                  type: integer
+                  default: 10
+        goal_default:
+          start: 198
+          end: 1000
+          interval: 10
+        handles: {}
+      auto-luminosity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: luminosity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-scan_to_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan_to_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+        goal_default:
+          filename: null
+        handles: {}
+    source: https://github.com/davidmam/UvSpec
+  name: Cole Parmer® Lab Equipment and Cole Parmer® Essentials Supplies
+  description: Jenway 6305是紫外-可见分光光度计，波长范围198-1000nm，氙灯光源，单光束光学设计，带宽8nm，适用于常规实验室分析。
+  manufacturer: Jenway
+  icon: gh_jenway_6305.webp
+  tags: &id001
+  - 紫外-可见分光光度仪
+  category: *id001
+  device_params:
+    Wavelength: 198-1000 nm
+    Bandwidth: 8 nm
+    Accuracy: ±2 nm
+    Photometric range: -0.3-2.5 Abs
+    Source: Xenon lamp
+    Detector: Silicon photodiode
+    Design: Single-beam
+    品牌: Jenway
+  model:
+    name: Cole Parmer® Lab Equipment and Cole Parmer® Essentials Supplies
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Analysis
+    step: Spectroscopy
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serialport:
+          default: null
+          type: string

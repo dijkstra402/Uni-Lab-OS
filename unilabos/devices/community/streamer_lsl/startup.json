@@ -1,0 +1,115 @@
+{
+  "nodes": [
+    {
+      "id": "test_streamer_lsl",
+      "name": "StreamerLSL",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.streamer_lsl",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": "",
+        "GUI": false
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_streamer_lsl",
+      "action": "auto-initialize_board",
+      "action_args": {
+        "autodetect": false
+      }
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_streamer_lsl",
+      "action": "auto-set_board_settings",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_streamer_lsl",
+      "action": "auto-start_streaming",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_streamer_lsl",
+      "action": "auto-stop_streaming",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "teardown",
+      "description": "断开连接或执行收尾操作",
+      "device": "test_streamer_lsl",
+      "action": "auto-cleanUp",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "init board settings",
+      "description": "自动补充动作: init_board_settings",
+      "device": "test_streamer_lsl",
+      "action": "auto-init_board_settings",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "send",
+      "description": "自动补充动作: send",
+      "device": "test_streamer_lsl",
+      "action": "auto-send",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "create lsl",
+      "description": "自动补充动作: create_lsl",
+      "device": "test_streamer_lsl",
+      "action": "auto-create_lsl",
+      "action_args": {
+        "default": true
+      }
+    },
+    {
+      "step": 9,
+      "name": "begin",
+      "description": "自动补充动作: begin",
+      "device": "test_streamer_lsl",
+      "action": "auto-begin",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "change locations",
+      "description": "自动补充动作: change_locations",
+      "device": "test_streamer_lsl",
+      "action": "auto-change_locations",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "StreamerLSL 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "StreamerLSL",
+    "generated_by": "driver-finder"
+  }
+}

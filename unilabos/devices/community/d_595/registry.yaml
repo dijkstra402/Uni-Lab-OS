@@ -1,0 +1,101 @@
+gh_device_595:
+  class:
+    module: community_drivers.595.driver:PeakTech15xx
+    type: python
+    action_value_mappings:
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_until:
+        type: UniLabJsonCommand
+        goal:
+          termination: termination
+          timeout: timeout
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: read_until
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                termination:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          termination: ''
+          timeout: ''
+        handles: {}
+      auto-write_raw:
+        type: UniLabJsonCommand
+        goal:
+          cmd: cmd
+        feedback: {}
+        result: {}
+        schema:
+          title: write_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: ''
+        handles: {}
+      auto-ask_raw:
+        type: UniLabJsonCommand
+        goal:
+          cmd: cmd
+        feedback: {}
+        result:
+          result: result
+        schema:
+          title: ask_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: ''
+        handles: {}
+  name: PeakTech 15xx系列线性稳压直流电源
+  description: PeakTech 15xx系列是线性稳压台式直流电源，提供可调电压和电流输出，具备恒压/恒流模式、过载和短路保护，低纹波噪声设计，配备数字显示屏和精细/粗调旋钮，适用于电子实验室和教育场景。
+  manufacturer: PeakTech
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  model:
+    name: PeakTech 15xx系列线性稳压直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    类型: 线性稳压
+    电压范围: 0-30V(典型)
+    电流范围: 0-5A(典型)
+    显示: LED/LCD
+    模式: CV/CC
+    保护: 过载/短路保护
+    纹波: <1mV rms
+    品牌: PeakTech
+  cover: PeakTech 15xx系列线性稳压直流电源.webp

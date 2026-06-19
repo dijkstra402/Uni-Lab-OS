@@ -1,0 +1,110 @@
+ets2090:
+  class:
+    module: unilabos.devices.community.ets2090.driver:ETS2090
+    type: python
+    status_types:
+      device_type: str
+      limit_upper: str
+      limit_lower: str
+      polarization: str
+      target: str
+      position: str
+      local: str
+    action_value_mappings:
+      auto-moving:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: moving
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sweep_up:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sweep_up
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sweep_down:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sweep_down
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-target_seek:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: target_seek
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sequence:
+                  type: string
+        goal_default:
+          sequence: null
+        handles: {}
+  name: Positioners Archives
+  description: ETS-Lindgren Model 2090是专业EMC电磁兼容性测试定位系统，用于在屏蔽室或开阔场中精确定位天线和被测设备(EUT)，支持自动化EMC合规测试和RF安全评估。
+  manufacturer: ETS-Lindgren
+  icon: ets2090.webp
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  device_params:
+    类型: 天线定位器/转台
+    频率范围: 适用100kHz-6GHz EMC测试
+    测量: 三轴各向同性
+    数据连接: 光纤链路
+    应用: EMC合规测试/RF安全评估
+    控制: 自动化序列控制
+    品牌: ETS-Lindgren
+  model:
+    name: Positioners Archives
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Mechanical Testing
+    step: Tensile Testing
+  version: 1.0.0
+  resource_type: device

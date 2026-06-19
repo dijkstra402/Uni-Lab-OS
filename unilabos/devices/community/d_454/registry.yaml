@@ -1,0 +1,92 @@
+gh_device_454:
+  class:
+    module: community_drivers.454.driver:ThorlabsAptMotor
+    type: python
+    action_value_mappings:
+      auto-units_to_steps:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        feedback: {}
+        result: {}
+        schema:
+          title: units_to_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: ''
+        handles: {}
+      auto-steps_to_units:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        feedback: {}
+        result: {}
+        schema:
+          title: steps_to_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: ''
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal:
+          message: message
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default:
+          message: ''
+        handles: {}
+  name: Thorlabs PAX1000系列高动态范围偏振分析仪
+  description: Thorlabs PAX1000系列偏振分析仪用于测量准直单色光的偏振态，三种型号覆盖400-1700nm波长范围。采用真零级四分之一波片旋转测量法，采样率最高200Hz，可同时显示5个测量源。配套软件支持长期测量和数据校正，需外接DS15电源实现最高采样率。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 光传感器
+  category: *id001
+  model:
+    name: Thorlabs PAX1000系列高动态范围偏振分析仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    型号: VIS(400-700nm)/IR1(600-1080nm)/IR2(900-1700nm)
+    采样率: 最高200Hz
+    波片: 真零级λ/4波片
+    测量: 偏振态SOP/椭圆度/DOP
+    接口: USB
+    校准: 建议年度校准
+    品牌: Thorlabs

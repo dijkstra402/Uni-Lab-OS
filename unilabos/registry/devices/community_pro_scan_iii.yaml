@@ -1,0 +1,46 @@
+pro_scan_iii:
+  class:
+    module: unilabos.devices.community.pro_scan_iii.driver:ProScanIII
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-devices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: PRO Scan III是由Prior Scientific生产的专业实验设备。Prior ProScanIII controller
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '13'
+    读取操作: readline、read_until_timeout、get_command、get_description、get_n_filter_positions
+      等6个
+    控制操作: set_command、set_filter_position
+    运动操作: move_command、get_n_filter_positions、get_filter_position
+    设备属性: devices
+    控制能力: 位置、时间
+    通信接口: 串口(RS-232)
+  manufacturer: Prior Scientific
+  model:
+    name: PRO Scan III
+    type: device
+  name: Prior Scientific Pro Scan Iii
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: pro_scan_iii.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

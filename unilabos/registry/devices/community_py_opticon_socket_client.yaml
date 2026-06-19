@@ -1,0 +1,142 @@
+py_opticon_socket_client:
+  class:
+    module: unilabos.devices.community.py_opticon_socket_client.driver:PyOpticonSocketClient
+    type: python
+    status_types:
+      field: String
+    action_value_mappings:
+      auto-set_field:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_field
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                widget_nickname:
+                  type: string
+                field_name:
+                  type: string
+                new_value:
+                  type: string
+                printout:
+                  type: string
+        goal_default:
+          printout: true
+        handles: {}
+      auto-do_confirm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: do_confirm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                widget_nickname:
+                  type: string
+                printout:
+                  type: string
+        goal_default:
+          printout: true
+        handles: {}
+      auto-do_eval:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: do_eval
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                expression:
+                  type: string
+                printout:
+                  type: string
+        goal_default:
+          printout: true
+        handles: {}
+      auto-do_exec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: do_exec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fn:
+                  type: string
+                printout:
+                  type: string
+        goal_default:
+          printout: true
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_field:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_field
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                widget_nickname:
+                  type: string
+                field_name:
+                  type: string
+                printout:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: Py Opticon Socket Client是一款实验执行&合成设备，主要功能包括关闭。支持Signal, Slot, do confirm等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    功能: 参数配置、数据采集
+    可控参数: expression、field_name、new_value、printout、widget_nickname
+    操作数: 6
+  manufacturer: Open Source
+  model:
+    name: Generic Py Opticon Socket Client
+    type: device
+  name: Py Opticon Socket
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: py_opticon_socket_client.webp
+  scene:
+    domain: Physics
+    scene_name: Optics
+    step: Laser Operation
+  version: 1.0.0

@@ -1,0 +1,100 @@
+gh_device_485:
+  class:
+    module: unilabos.devices.community.d_485.driver:HP8753D
+    type: python
+    action_value_mappings:
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_continously:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_continously
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_N_times:
+        type: UniLabJsonCommand
+        goal:
+          N: N
+        feedback: {}
+        result: {}
+        schema:
+          title: run_N_times
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                N:
+                  type: integer
+        goal_default:
+          N: 0
+        handles: {}
+      auto-invalidate_trace:
+        type: UniLabJsonCommand
+        goal:
+          cmd: cmd
+          value: value
+        feedback: {}
+        result: {}
+        schema:
+          title: invalidate_trace
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          cmd: ''
+          value: ''
+        handles: {}
+      auto-startup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: 8753D RF矢量网络分析仪
+  description: HP 8753D是Hewlett-Packard生产的经典RF矢量网络分析仪，频率覆盖30kHz至3GHz（可扩展至6GHz）。内置合成RF源和S参数测试集，支持全双端口校准和误差校正。配备彩色CRT显示屏，可同时显示4个通道。具有时域分析（选件010）、列表频率扫描和混频器测试等功能，广泛用于滤波器、放大器、电缆和天线的特性分析。该产品已停产，替代型号为E5071C
+    ENA。
+  manufacturer: Keysight
+  tags: &id001
+  - 频谱与网络分析仪
+  category: *id001
+  model:
+    name: 8753D RF矢量网络分析仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  cover: 8753D RF矢量网络分析仪.webp

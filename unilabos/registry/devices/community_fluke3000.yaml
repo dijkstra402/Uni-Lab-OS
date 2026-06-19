@@ -1,0 +1,156 @@
+fluke3000:
+  class:
+    module: unilabos.devices.community.fluke3000.driver:Fluke3000
+    type: python
+    status_types:
+      mode: str
+      trigger_mode: str
+      relative: str
+      input_range: str
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_lines:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_lines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nlines:
+                  type: integer
+                  default: 1
+        goal_default:
+          nlines: 1
+        handles: {}
+      auto-query_lines:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_lines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                nlines:
+                  type: integer
+                  default: 1
+        goal_default:
+          cmd: null
+          nlines: 1
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default:
+          mode: null
+        handles: {}
+  name: Fluke 3000 FC Series Wireless Multimeter
+  description: 使用 Fluke 3000 FC 系列无线万用表提高安全性和效率。获得真有效值电压、电流测量频率、二极管测量等！
+  manufacturer: Fluke
+  icon: e5bd2c36-864d-4529-94ba-b108002e7a21_original__size.jpg
+  tags: &id001
+  - 电表与万用表
+  category: *id001
+  device_params:
+    Voltage AC/DC: 1000 V
+    Current AC/DC: 10 A
+    Temperature: -200.0 °C to 1090 °C
+    Accuracy 2 3 4: 45 Hz to 500 Hz
+    Accuracy: 0.5% + 3
+    Range / resolution: 99.99 Hz / 0.01 Hz 999.9 Hz / 0.1 Hz 9.999 kHz / 0.001 kHz
+      99.99 kHz / 0.01 kHz
+    Accuracy 1: 0.1% + 1
+    品牌: Fluke
+  model:
+    name: Fluke 3000 FC Series Wireless Multimeter
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string
+  cover: Fluke 3000 FC Series Wireless Multimeter.webp

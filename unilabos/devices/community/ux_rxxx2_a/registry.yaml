@@ -1,0 +1,75 @@
+ux_rxxx2_a:
+  class:
+    module: community_drivers.ux_rxxx2_a.driver:UXR
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-measureStatistics:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measureStatistics
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setupAutoscale:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setupAutoscale
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default:
+          channel: null
+        handles: {}
+  name: Pro Benchtop Oscilloscopes
+  description: Keysight Infiniium UXR旗舰级2通道，带宽最高110GHz，采样率256GSa/s。
+  manufacturer: Keysight
+  icon: ux_rxxx2_a.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    带宽: 8GHz-110GHz
+    通道: '2'
+    ADC: 10-12位
+    采样率: 最高256GSa/s
+    内存: 最高8Gpts
+    特性: 业界最低噪声和抖动测量基底, 最高ENOB
+    品牌: Keysight
+  model:
+    name: Pro Benchtop Oscilloscopes
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        resource:
+          default: null
+          type: string
+        maxChannel:
+          default: null
+          type: string
+        wait:
+          default: null
+          type: string
+  cover: Pro Benchtop Oscilloscopes.webp

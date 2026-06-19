@@ -1,0 +1,87 @@
+{
+  "nodes": [
+    {
+      "id": "test_data_source",
+      "name": "DataSource",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.data_source",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "file_name": "",
+        "mode": "w"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_data_source",
+      "action": "auto-setup",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_data_source",
+      "action": "auto-mode",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "measure",
+      "description": "读取测量值或结果数据",
+      "device": "test_data_source",
+      "action": "auto-read",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_data_source",
+      "action": "auto-close",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "set metadata from configuration experiment",
+      "description": "自动补充动作: set_metadata_from_configuration_experiment",
+      "device": "test_data_source",
+      "action": "auto-set_metadata_from_configuration_experiment",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "set metadata",
+      "description": "自动补充动作: set_metadata",
+      "device": "test_data_source",
+      "action": "auto-set_metadata",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "write",
+      "description": "自动补充动作: write",
+      "device": "test_data_source",
+      "action": "auto-write",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "DataSource 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "DataSource",
+    "generated_by": "driver-finder"
+  }
+}

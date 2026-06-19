@@ -1,0 +1,100 @@
+mc1:
+  class:
+    module: unilabos.devices.community.mc1.driver:MC1
+    type: python
+    status_types:
+      increment: str
+      lower_limit: str
+      upper_limit: str
+      internal_position: str
+      firmware: str
+      move_timeout: str
+    action_value_mappings:
+      auto-is_centering:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_centering
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-center:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: center
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_position:
+                  type: string
+        goal_default:
+          new_position: null
+        handles: {}
+  name: Qubitekk MC1 Motor Controller
+  description: IonQ 为现实世界的量子应用提供捕获离子量子计算系统、云访问和企业解决方案。
+  manufacturer: Qubitekk
+  icon: mc1.webp
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  device_params:
+    类型: 单轴电机控制器
+    厂商: Qubitekk
+    用途: 量子光学实验精密运动控制
+    接口: 串口
+    品牌: Qubitekk
+  model:
+    name: Qubitekk MC1 Motor Controller
+    type: device
+  scene:
+    domain: Automation
+    scene_name: Robotics
+    step: Material Handling
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

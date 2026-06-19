@@ -1,0 +1,66 @@
+gh_device_108:
+  class:
+    module: community_drivers.108.driver:EditSketch
+    type: python
+    action_value_mappings:
+      auto-render_GET:
+        type: UniLabJsonCommand
+        goal:
+          request: request
+        feedback: {}
+        result: {}
+        schema:
+          title: render_GET
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+        goal_default:
+          request: ''
+        handles: {}
+      auto-getChild:
+        type: UniLabJsonCommand
+        goal:
+          action: action
+          request: request
+        feedback: {}
+        result: {}
+        schema:
+          title: getChild
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                action:
+                  type: string
+                request:
+                  type: string
+        goal_default:
+          action: ''
+          request: ''
+        handles: {}
+  name: Parr 4848 反应器控制器
+  description: Parr 4848是Parr公司的通用型反应器控制器，模块化设计支持最多3个扩展模块(压力显示、搅拌控制、高温切断、外部温限、电磁阀等7种可选)。主温控模块采用全PID控制并具备自整定能力，支持49段升温-保温程序。所有模块均配备RS-485双向数字通信，可通过PC远程设定参数和记录数据。压力显示模块支持psi/bar/mPa切换，搅拌电机控制模块提供真正闭环速度反馈控制，特别适用于粘度变化的反应过程监控。
+  manufacturer: Parr Instruments
+  tags: &id001
+  - 反应釜
+  category: *id001
+  model:
+    name: Parr 4848 反应器控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    温控: PID自整定+49段程序升温
+    模块: 最多3个扩展模块
+    温度输入: 热电偶/RTD
+    压力显示: 1psi分辨率/1%FS精度
+    搅拌控制: 开环/闭环
+    通信: RS-485+USB
+    尺寸: 282×246×287mm
+    品牌: Parr Instruments
+  cover: Parr 4848 反应器控制器.webp

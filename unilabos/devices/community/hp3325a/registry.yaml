@@ -1,0 +1,102 @@
+hp3325a:
+  class:
+    module: community_drivers.hp3325a.driver:HP3325a
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                size:
+                  type: string
+        goal_default:
+          cmd: null
+          size: null
+        handles: {}
+      auto-amplitude_calibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: amplitude_calibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-assign_zero_phase:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: assign_zero_phase
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: 3325A Synthesizer/Function Generator [Obsolete]
+  description: HP 3325A合成器/函数信号发生器，频率范围1μHz至21MHz（正弦波），采用直接数字合成架构，频率分辨率达1μHz，幅度范围1mV至10Vpp（50Ω负载）。内置线性/对数扫频、AM/FM/相位调制功能，配备HP-IB（IEEE-488/GPIB）接口，适用于实验室校准、通信测试及自动化测试系统。已停产。
+  manufacturer: Keysight
+  icon: hp3325a.webp
+  tags: &id001
+  - 信号源与发生器
+  category: *id001
+  device_params:
+    Freq: 1µHz~21MHz(sine), 11MHz(square), 11kHz(tri/ramp)
+    Freq Resolution: 1µHz (<100kHz)
+    Amplitude: 1mV~10Vpp(50Ω)
+    THD: -65dBc (<50kHz)
+    Square Rise/Fall: 20ns
+    Freq Stability: 5×10⁻⁶/yr
+    Sweep: log/linear
+    Modulation: ext AM/phase
+    Interface: HP-IB(GPIB)
+    品牌: Keysight
+  model:
+    name: 3325A Synthesizer/Function Generator [Obsolete]
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

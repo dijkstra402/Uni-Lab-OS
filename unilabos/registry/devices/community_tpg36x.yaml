@@ -1,0 +1,62 @@
+tpg36x:
+  class:
+    module: unilabos.devices.community.tpg36x.driver:TPG36x
+    type: python
+    status_types:
+      channel: str
+      ethernet_configuration: str
+      language: str
+      mac_address: str
+      name: str
+      number_channels: str
+      pressure: str
+      unit: str
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+  name: Pfeiffer Vacuum TPG 36x ActiveLine Pressure Gauge
+  description: Pfeiffer Vacuum TPG 361/362单/双通道真空测量与控制单元，支持多种规管类型组合使用，实现从大气压到超高真空的宽范围测量。
+  manufacturer: Pfeiffer Vacuum
+  icon: tpg36x.webp
+  tags: &id001
+  - 真空测量仪器
+  category: *id001
+  device_params:
+    型号: TPG361(单通道)/TPG362(双通道)
+    兼容规管: Pirani/冷阴极/电容规
+    测量范围: 大气压~10⁻⁹mbar
+    显示单位: mbar/Torr/Pa可选
+    接口: RS-232/可选RS-485
+    电源: 100-240VAC
+    品牌: Pfeiffer Vacuum
+  model:
+    name: Pfeiffer Vacuum TPG 36x ActiveLine Pressure Gauge
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Sample Preparation
+    step: Drying
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        filelike:
+          default: null
+          type: string

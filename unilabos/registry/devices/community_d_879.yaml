@@ -1,0 +1,108 @@
+gh_device_879:
+  class:
+    module: unilabos.devices.community.d_879.driver:LDC500SeriesTEC
+    type: python
+    action_value_mappings:
+      auto-temperature_limits:
+        type: UniLabJsonCommand
+        goal:
+          temp_limits: temp_limits
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp_limits:
+                  type: string
+        goal_default:
+          temp_limits: ''
+        handles: {}
+      auto-resistance_limits:
+        type: UniLabJsonCommand
+        goal:
+          res_limits: res_limits
+        feedback: {}
+        result: {}
+        schema:
+          title: resistance_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                res_limits:
+                  type: string
+        goal_default:
+          res_limits: ''
+        handles: {}
+      auto-check_temperature_stability:
+        type: UniLabJsonCommand
+        goal:
+          tolerance: tolerance
+          period: period
+          points: points
+        feedback: {}
+        result: {}
+        schema:
+          title: check_temperature_stability
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tolerance:
+                  type: string
+                period:
+                  type: string
+                points:
+                  type: string
+        goal_default:
+          tolerance: ''
+          period: ''
+          points: ''
+        handles: {}
+      auto-wait_for_temperature_stable:
+        type: UniLabJsonCommand
+        goal:
+          tolerance: tolerance
+          period: period
+          should_stop: should_stop
+          timeout: timeout
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_temperature_stable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tolerance:
+                  type: string
+                period:
+                  type: string
+                should_stop:
+                  type: string
+                timeout:
+                  type: string
+        goal_default:
+          tolerance: ''
+          period: ''
+          should_stop: ''
+          timeout: ''
+        handles: {}
+  name: LDC500激光二极管控制器
+  description: 精密激光二极管控制器，提供恒流驱动和集成TEC温度控制，具有低噪声、高稳定性特性，适用于光谱学、电信测试和激光二极管表征
+  manufacturer: Stanford Research Systems
+  tags: &id001
+  - 信号源与发生器
+  category: *id001
+  model:
+    name: LDC500激光二极管控制器
+    type: device
+  version: 1.0.0
+  resource_type: device

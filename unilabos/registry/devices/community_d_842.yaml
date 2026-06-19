@@ -1,0 +1,74 @@
+gh_device_842:
+  class:
+    module: unilabos.devices.community.d_842.driver:Keithley4200
+    type: python
+    action_value_mappings:
+      auto-add_smu:
+        type: UniLabJsonCommand
+        goal:
+          id: id
+        feedback: {}
+        result: {}
+        schema:
+          title: add_smu
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                id:
+                  type: string
+        goal_default:
+          id: ''
+        handles: {}
+      auto-check_set_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_set_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Keithley 2281S动态电池模拟器
+  description: Keithley 2281S-20-6是动态电池模拟器，采用101点电池模型模拟开路电压和内阻随荷电状态变化的特性，内置5个预装电池模型，可存储14个自定义模型，兼作精密直流电源使用。
+  manufacturer: Tektronix
+  tags: &id001
+  - 电池测试设备
+  category: *id001
+  model:
+    name: Keithley 2281S动态电池模拟器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    最大电压: 20V
+    最大电流: 6A
+    最大功率: 120W
+    电压精度: 0.02%
+    电流测量精度: 0.05%
+    电流分辨率: 10nA
+    最大输出电阻: 100Ω
+    电池模型: 14个
+    接口: USB,LAN,GPIB(可选)
+    品牌: Tektronix
+  cover: Keithley 2281S动态电池模拟器.webp

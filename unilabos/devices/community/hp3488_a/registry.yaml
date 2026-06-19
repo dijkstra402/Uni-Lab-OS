@@ -1,0 +1,48 @@
+hp3488_a:
+  class:
+    module: community_drivers.hp3488_a.driver:Switch
+    type: python
+    status_types:
+      switchpath: str
+    action_value_mappings:
+      auto-load_switchpath:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_switchpath
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                switchpaths:
+                  type: string
+        goal_default:
+          switchpaths: null
+        handles: {}
+  name: 3488A Switch/Control Unit Operating, Programming, and Configuration Manual
+  description: 零件号：03488-90003（95 年 9 月）。 3488A 已停产；本手册仅供参考。
+  manufacturer: Keysight
+  icon: hp3488_a.webp
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  device_params:
+    Slots: 5 plug-in modules
+    Interface: HP-IB(GPIB)
+    Config Storage: 40 groups
+    Scan Rate: '>43ch/s'
+    Modules: 44470A(10ch MUX), 44471A(10ch relay), 44472A(dual 4ch VHF), 44473A(4x4
+      matrix), 44474A(16-bit DIO), 44476A(microwave DC-18GHz)
+    品牌: Keysight
+  model:
+    name: 3488A Switch/Control Unit Operating, Programming, and Configuration Manual
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device

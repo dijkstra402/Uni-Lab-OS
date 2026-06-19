@@ -1,0 +1,46 @@
+thorlabs_fw102_c:
+  class:
+    module: unilabos.devices.community.thorlabs_fw102_c.driver:ThorlabsFilterWheel
+    type: python
+    status_types: {}
+    action_value_mappings:
+      initialize:
+        action_name: initialize
+  name: FW102CSix-Position Motorized Filter Wheel for Ø1" (Ø25 mm) Optics
+  description: 6位电动滤光片轮，适用于Ø1英寸光学滤光片，支持USB/串口/TTL远程控制和可编程滤光片序列
+  manufacturer: Thorlabs
+  icon: thorlabs_fw102_c.webp
+  tags: &id001
+  - 光学组件
+  category: *id001
+  device_params:
+    滤光片位数: 6位
+    滤光片尺寸: Ø1英寸(25mm)
+    最大厚度: 6.35mm
+    切换时间: 900ms(典型)
+    精度: '>±1°'
+    安装: SM1螺纹
+    控制: USB2.0/RS232/TTL(BNC)
+    品牌: Thorlabs
+  model:
+    name: FW102CSix-Position Motorized Filter Wheel for Ø1" (Ø25 mm) Optics
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Valve Switching
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        com:
+          default: null
+          type: string
+        baud:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string

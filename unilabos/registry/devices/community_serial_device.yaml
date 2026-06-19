@@ -1,0 +1,220 @@
+serial_device:
+  class:
+    module: unilabos.devices.community.serial_device.driver:SerialDevice
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-normalizePortName:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: normalizePortName
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cls:
+                  type: string
+                port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+                baudrate:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readAll:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readAll
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                length:
+                  type: string
+                timeout:
+                  type: string
+                term:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-readUntil:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readUntil
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                term:
+                  type: string
+                minBytes:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-readline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-hasDataToRead:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: hasDataToRead
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clearBuffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clearBuffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getPort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getBaudrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getBaudrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Serial Device是由Open Standard生产的专业实验设备。Raised when a serial communication
+    is corrupt
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '12'
+    读取操作: readAll、read、readUntil、readline、hasDataToRead 等7个
+    控制操作: write
+    控制能力: 时间、速度
+    通信接口: 串口(RS-232)
+  manufacturer: Open Standard
+  model:
+    name: Serial Device
+    type: device
+  name: Open Standard Serial Device
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: aio_serial.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

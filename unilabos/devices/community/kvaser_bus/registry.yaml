@@ -1,0 +1,94 @@
+kvaser_bus:
+  class:
+    module: unilabos.devices.can_bus.kvaser.kvaser_bus:KvaserBus
+    type: python
+    status_types:
+      stats: String
+    action_value_mappings:
+      auto-flush_tx_buffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush_tx_buffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-flash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flash:
+                  type: string
+        goal_default:
+          flash: true
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Kvaser BUS是由Kvaser生产的专业实验设备。Auto-imported from can/interfaces/kvaser/canlib.py
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        channel:
+          type: integer
+          default: null
+        can_filters:
+          type: string
+          default: null
+        timing:
+          type: string
+          default: null
+  name: Kvaser Bus
+  manufacturer: Kvaser
+  icon: kvaser_bus.webp
+  tags:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '5'
+    读取操作: get_stats

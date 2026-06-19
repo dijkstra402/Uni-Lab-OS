@@ -1,0 +1,69 @@
+gh_device_843:
+  class:
+    module: community_drivers.843.driver:Keithley4200
+    type: python
+    action_value_mappings:
+      auto-add_smu:
+        type: UniLabJsonCommand
+        goal:
+          id: id
+        feedback: {}
+        result: {}
+        schema:
+          title: add_smu
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                id:
+                  type: string
+        goal_default:
+          id: ''
+        handles: {}
+      auto-check_set_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_set_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Keithley 2306双通道电池/充电器模拟器
+  description: Keithley 2306是双通道电源，通道1模拟电池（支持电流吸收），通道2模拟充电器，具备脉冲电流测量和微秒级分辨率，专为GSM/CDMA等便携式无线设备的电池寿命和充电测试设计。
+  manufacturer: Tektronix
+  tags: &id001
+  - 电池测试设备
+  category: *id001
+  model:
+    name: Keithley 2306双通道电池/充电器模拟器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道数: '2'
+    电压范围: 0-15V
+    最大电流: 5A
+    电流分辨率: 100nA
+    接口: GPIB,RS-232
+    品牌: Tektronix

@@ -1,0 +1,128 @@
+agilent_e8357_a:
+  class:
+    module: unilabos.devices.community.agilent_e8357_a.driver:AgilentE8357A
+    type: python
+    status_types:
+      points: str
+      bandwidth: str
+      sourcepower: str
+      start: str
+      stop: str
+      reference: str
+    action_value_mappings:
+      auto-trace:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trace
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trace:
+                  type: string
+                  default: S21
+        goal_default:
+          trace: S21
+        handles: {}
+      auto-catalog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: catalog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readX:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readX
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readS:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readS
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nn:
+                  type: string
+                cat:
+                  type: string
+        goal_default:
+          nn: null
+          cat: null
+        handles: {}
+      auto-screenshot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: screenshot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: E8357A PNA Network Analyzer, 300 kHz to 6 GHz [Obsolete]
+  description: PNA 系列网络分析仪用于高性能射频元件表征。全 2 端口 S 参数测量 (S11/S21/S12/S22)。 CW/步进/模拟扫描模式。选项：014/UNL（可配置测试装置）、080（频偏模式）、010（时域）。属于
+    E835xA 系列的一部分。已停产，由 PNA-L/PNA-X 取代。 [过时的]
+  manufacturer: Keysight
+  icon: agilent_e8357_a.webp
+  tags: &id001
+  - 频谱与网络分析仪
+  category: *id001
+  device_params:
+    Frequency Range: 300 kHz to 6 GHz
+    Ports: 2-port (integrated S-param test set)
+    Dynamic Range: '>123 dB (10 Hz IF BW)'
+    Trace Noise: < 0.004 dB rms (1 kHz IF BW)
+    Output Power: -90 dBm to +3 dBm
+    IF Bandwidth: 1 Hz to 40 kHz
+    Max Points: '16001'
+    Sweep Speed: 26 µs/point
+    Directivity: '>42 dB raw / >50 dB calibrated'
+    Test Port Connector: 3.5 mm (male) / SMA compatible
+    Impedance: 50Ω
+    Display: 10.4-inch color
+    Weight: 22 kg
+    Dimensions: 432 × 221 × 556 mm
+    OS: Windows
+    Interfaces: GPIB, LAN, USB
+    品牌: Keysight
+  model:
+    name: E8357A PNA Network Analyzer, 300 kHz to 6 GHz [Obsolete]
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device
+  cover: E8357A PNA Network Analyzer, 300 kHz to 6 GHz [Obsolete].webp

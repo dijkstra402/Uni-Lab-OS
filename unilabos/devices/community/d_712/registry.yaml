@@ -1,0 +1,124 @@
+gh_device_712:
+  class:
+    module: community_drivers.712.driver:OmronE5xCController
+    type: python
+    action_value_mappings:
+      auto-get_device_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_reg:
+        type: UniLabJsonCommand
+        goal:
+          address: address
+          kind: kind
+          nbytes: nbytes
+        feedback: {}
+        result: {}
+        schema:
+          title: get_reg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                kind:
+                  type: string
+                nbytes:
+                  type: string
+        goal_default:
+          address: ''
+          kind: ''
+          nbytes: ''
+        handles: {}
+      auto-set_reg:
+        type: UniLabJsonCommand
+        goal:
+          address: address
+          value: value
+        feedback: {}
+        result: {}
+        schema:
+          title: set_reg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                value:
+                  type: string
+        goal_default:
+          address: ''
+          value: ''
+        handles: {}
+      auto-get_measurementi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_measurementi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_setpointi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_setpointi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_setpointi:
+        type: UniLabJsonCommand
+        goal:
+          value: value
+        feedback: {}
+        result: {}
+        schema:
+          title: set_setpointi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: ''
+        handles: {}
+  name: E5CC Temperature Controller
+  description: Omron E5CC是紧凑型数字温度控制器，尺寸48×48mm，具有易读白色LED显示屏和自整定功能，适用于工业温度控制应用。
+  manufacturer: Omron
+  tags: &id001
+  - 冷热源
+  category: *id001
+  model:
+    name: E5CC Temperature Controller
+    type: device
+  version: 1.0.0
+  resource_type: device

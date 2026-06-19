@@ -1,0 +1,63 @@
+wiltron6672_b:
+  class:
+    module: community_drivers.wiltron6672_b.driver:Wiltron6672B
+    type: python
+    status_types:
+      frequency: str
+      amplitude: str
+    action_value_mappings:
+      auto-frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frequency:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-amplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: amplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                amplitude:
+                  type: string
+        goal_default: {}
+        handles: {}
+  name: Wiltron 6672B 扫频合成器
+  description: Wiltron 6672B可编程微波扫频信号发生器，覆盖2-40GHz，用于微波元件测试和网络分析。现为Anritsu产品线。
+  manufacturer: Wiltron (Anritsu)
+  icon: wiltron6672_b.webp
+  tags: &id001
+  - 信号源与发生器
+  category: *id001
+  device_params:
+    频率范围: 2GHz-40GHz
+    工作模式: CW和扫频
+    输出功率: 整平输出
+    频率精度: 高(合成源)
+    接口: GPIB(IEEE-488)
+    品牌: Wiltron (Anritsu)
+  model:
+    name: Wiltron 6672B 扫频合成器
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device

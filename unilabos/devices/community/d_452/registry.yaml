@@ -1,0 +1,96 @@
+gh_device_452:
+  class:
+    module: community_drivers.452.driver:ThorlabsAptMotor
+    type: python
+    action_value_mappings:
+      auto-units_to_steps:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        feedback: {}
+        result: {}
+        schema:
+          title: units_to_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: ''
+        handles: {}
+      auto-steps_to_units:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        feedback: {}
+        result: {}
+        schema:
+          title: steps_to_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: ''
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal:
+          message: message
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default:
+          message: ''
+        handles: {}
+  name: Thorlabs MPC320电动光纤偏振控制器
+  description: Thorlabs MPC320是三桨片电动光纤偏振控制器，利用光纤中的应力双折射动态控制输出偏振态。直流伺服电机驱动，旋转范围0-170°，步长精度0.12°，波长覆盖300-2100nm。USB供电和控制，配合Kinesis软件实现自动化偏振控制。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 光学组件
+  category: *id001
+  model:
+    name: Thorlabs MPC320电动光纤偏振控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    桨片数: '3'
+    环直径: 18mm
+    旋转范围: 0-170°
+    最小步长: 0.12°
+    最大速度: 400°/s
+    波长范围: 300-2100nm
+    光纤: Ø900µm
+    接口: USB供电
+    最小光纤长度: 95cm
+    品牌: Thorlabs
+  cover: Thorlabs MPC320电动光纤偏振控制器.webp

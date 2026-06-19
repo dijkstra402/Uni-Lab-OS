@@ -1,0 +1,230 @@
+qxafs__scan:
+  category:
+  - 表征设备
+  class:
+    action_value_mappings:
+      auto-connect_qxafs:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: connect_qxafs
+          type: object
+        type: UniLabJsonCommand
+      auto-finish_qscan:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: finish_qscan
+          type: object
+        type: UniLabJsonCommand
+      auto-gathering2energy:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                text:
+                  type: string
+              type: object
+          title: gathering2energy
+          type: object
+        type: UniLabJsonCommand
+      auto-make_trajectory:
+        feedback: {}
+        goal: {}
+        goal_default:
+          reverse: false
+          theta_accel: 0.5
+          width_accel: 0.05
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                reverse:
+                  type: string
+                theta_accel:
+                  type: string
+                width_accel:
+                  type: string
+              type: object
+          title: make_trajectory
+          type: object
+        type: UniLabJsonCommand
+      auto-post_scan:
+        feedback: {}
+        goal: {}
+        goal_default:
+          row: 0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                filename:
+                  type: string
+                row:
+                  type: string
+              type: object
+          title: post_scan
+          type: object
+        type: UniLabJsonCommand
+      auto-run:
+        feedback: {}
+        goal: {}
+        goal_default:
+          debug: false
+          reverse: false
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                comments:
+                  type: string
+                debug:
+                  type: string
+                filename:
+                  type: string
+                reverse:
+                  type: string
+                use_full:
+                  type: string
+              type: object
+          title: run
+          type: object
+        type: UniLabJsonCommand
+      auto-set_energy_pv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_energy_pv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                energy_pv:
+                  type: string
+                read_pv:
+                  type: string
+                extra_pvs:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_region:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_region
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                stop:
+                  type: string
+                step:
+                  type: string
+                npts:
+                  type: string
+                relative:
+                  type: string
+                use_k:
+                  type: string
+                e0:
+                  type: string
+                dtime:
+                  type: string
+                dtime_final:
+                  type: string
+                dtime_wt:
+                  type: string
+                min_estep:
+                  type: string
+        goal_default:
+          relative: true
+          use_k: false
+          dtime_wt: 1
+          min_estep: 0.01
+        handles: {}
+    module: unilabos.devices.xafs.qxafs_scan:QXAFS_Scan
+    status_types: {}
+    type: python
+  config_info: []
+  description: Quick XAFS Scan Controller是EPICS / Synchrotron提供的设备驱动。
+  handles: []
+  icon: qxafs__scan.webp
+  init_param_schema:
+    config:
+      properties:
+        e0:
+          default: 0
+          type: string
+        edge:
+          default: ''
+          type: string
+        elem:
+          default: ''
+          type: string
+        energy_pv:
+          default: null
+          type: string
+        extra_pvs:
+          default: null
+          type: string
+        label:
+          default: null
+          type: string
+        read_pv:
+          default: null
+          type: string
+        scandb:
+          default: null
+          type: string
+      type: object
+  version: 1.0.0
+  device_params:
+    品牌: EPICS / Synchrotron
+    功能: 参数配置、扫描测量
+    可控参数: comments、debug、dtime、dtime_final、dtime_wt、energy_pv、extra_pvs、filename
+    操作数: 8
+  manufacturer: EPICS / Synchrotron
+  model:
+    name: EPICS Quick XAFS Scan Controller 控制器
+    type: device
+  name: Quick XAFS Scan
+  tags:
+  - 表征设备
+  resource_type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Analysis

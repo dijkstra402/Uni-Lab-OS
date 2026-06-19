@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "test_grbl_driver",
+      "name": "GRBL (Open Source) GrblDriver",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community.ba.grbl_driver",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "address": "/dev/ttyACM0"
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_grbl_driver",
+      "action": "auto-write_global_config",
+      "action_args": {
+        "wait": 0.02
+      }
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_grbl_driver",
+      "action": "auto-shake_plate",
+      "action_args": {
+        "d_shift": 100,
+        "time_shake": 30
+      }
+    },
+    {
+      "step": 3,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_grbl_driver",
+      "action": "auto-controlled_stop",
+      "action_args": {
+        "pingwait": 0.25
+      }
+    },
+    {
+      "step": 4,
+      "name": "write all settings",
+      "description": "自动补充动作: write_all_settings",
+      "device": "test_grbl_driver",
+      "action": "auto-write_all_settings",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "verify settings",
+      "description": "自动补充动作: verify_settings",
+      "device": "test_grbl_driver",
+      "action": "auto-verify_settings",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "move rel",
+      "description": "自动补充动作: move_rel",
+      "device": "test_grbl_driver",
+      "action": "auto-move_rel",
+      "action_args": {
+        "position_rel": [
+          0,
+          0,
+          0
+        ],
+        "blocking": true,
+        "pingwait": 0.25
+      }
+    },
+    {
+      "step": 7,
+      "name": "move abs",
+      "description": "自动补充动作: move_abs",
+      "device": "test_grbl_driver",
+      "action": "auto-move_abs",
+      "action_args": {
+        "position_rel": [
+          0,
+          0,
+          0
+        ],
+        "blocking": true,
+        "pingwait": 0.25
+      }
+    },
+    {
+      "step": 8,
+      "name": "move xyz",
+      "description": "自动补充动作: move_xyz",
+      "device": "test_grbl_driver",
+      "action": "auto-move_xyz",
+      "action_args": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "blocking": true,
+        "pingwait": 0.25,
+        "config": "abs"
+      }
+    },
+    {
+      "step": 9,
+      "name": "xmove",
+      "description": "自动补充动作: xmove",
+      "device": "test_grbl_driver",
+      "action": "auto-xmove",
+      "action_args": {
+        "blocking": true
+      }
+    },
+    {
+      "step": 10,
+      "name": "ymove",
+      "description": "自动补充动作: ymove",
+      "device": "test_grbl_driver",
+      "action": "auto-ymove",
+      "action_args": {
+        "blocking": true
+      }
+    },
+    {
+      "step": 11,
+      "name": "zmove",
+      "description": "自动补充动作: zmove",
+      "device": "test_grbl_driver",
+      "action": "auto-zmove",
+      "action_args": {
+        "blocking": true
+      }
+    },
+    {
+      "step": 12,
+      "name": "home",
+      "description": "自动补充动作: home",
+      "device": "test_grbl_driver",
+      "action": "auto-home",
+      "action_args": {
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "blocking": true,
+        "pingwait": 0.01,
+        "zhome": false
+      }
+    },
+    {
+      "step": 13,
+      "name": "zhome",
+      "description": "自动补充动作: zhome",
+      "device": "test_grbl_driver",
+      "action": "auto-zhome",
+      "action_args": {
+        "steps": 20000
+      }
+    },
+    {
+      "step": 14,
+      "name": "check alarm",
+      "description": "自动补充动作: check_alarm",
+      "device": "test_grbl_driver",
+      "action": "auto-check_alarm",
+      "action_args": {}
+    },
+    {
+      "step": 15,
+      "name": "reset stage",
+      "description": "自动补充动作: reset_stage",
+      "device": "test_grbl_driver",
+      "action": "auto-reset_stage",
+      "action_args": {}
+    },
+    {
+      "step": 16,
+      "name": "current position",
+      "description": "自动补充动作: current_position",
+      "device": "test_grbl_driver",
+      "action": "auto-current_position",
+      "action_args": {}
+    },
+    {
+      "step": 17,
+      "name": "zero position",
+      "description": "自动补充动作: zero_position",
+      "device": "test_grbl_driver",
+      "action": "auto-zero_position",
+      "action_args": {}
+    },
+    {
+      "step": 18,
+      "name": "set laser intensity",
+      "description": "自动补充动作: set_laser_intensity",
+      "device": "test_grbl_driver",
+      "action": "auto-set_laser_intensity",
+      "action_args": {}
+    },
+    {
+      "step": 19,
+      "name": "set led",
+      "description": "自动补充动作: set_led",
+      "device": "test_grbl_driver",
+      "action": "auto-set_led",
+      "action_args": {
+        "state": 1
+      }
+    },
+    {
+      "step": 20,
+      "name": "soft reset",
+      "description": "自动补充动作: soft_reset",
+      "device": "test_grbl_driver",
+      "action": "auto-soft_reset",
+      "action_args": {}
+    },
+    {
+      "step": 21,
+      "name": "stop",
+      "description": "自动补充动作: stop",
+      "device": "test_grbl_driver",
+      "action": "auto-stop",
+      "action_args": {}
+    },
+    {
+      "step": 22,
+      "name": "alarm reset",
+      "description": "自动补充动作: alarm_reset",
+      "device": "test_grbl_driver",
+      "action": "auto-alarm_reset",
+      "action_args": {}
+    },
+    {
+      "step": 23,
+      "name": "close",
+      "description": "自动补充动作: close",
+      "device": "test_grbl_driver",
+      "action": "auto-close",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "GrblDriver 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "GrblDriver",
+    "generated_by": "driver-finder"
+  }
+}

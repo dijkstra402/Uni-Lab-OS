@@ -1,0 +1,59 @@
+gs_usb_bus:
+  class:
+    module: unilabos.devices.generic.gs_usb_bus:GsUsbBus
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: GS USB BUS，支持send、shutdown等功能。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '2'
+    控制能力: 时间
+    通信接口: USB
+  manufacturer: Open Standard
+  model:
+    name: GS USB BUS
+    type: device
+  name: GS-USB CAN总线适配器
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: aio_serial.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

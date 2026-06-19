@@ -1,0 +1,163 @@
+sensirion_sensor_bridge:
+  class:
+    module: unilabos.devices.community.sensirion_sensor_bridge.driver:SensirionSensorBridge
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_i2c_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_i2c_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bridge_port:
+                  type: string
+                voltage:
+                  type: string
+                frequency:
+                  type: string
+        goal_default:
+          bridge_port: 0
+          voltage: 3.3
+          frequency: 400000.0
+        handles: {}
+      auto-disable_i2c_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_i2c_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                bridge_port:
+                  type: string
+        goal_default:
+          bridge_port: 0
+        handles: {}
+      auto-print_i2c_device_information:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_i2c_device_information
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_i2c:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_i2c
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                port:
+                  type: string
+                address:
+                  type: string
+                command:
+                  type: string
+                read_n_bytes:
+                  type: string
+                timeout_us:
+                  type: string
+        goal_default:
+          read_n_bytes: 0
+          timeout_us: 100000.0
+        handles: {}
+      auto-write_i2c:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_i2c
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                port:
+                  type: string
+                address:
+                  type: string
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Sensirion Sensor Bridge是由Sensirion AG生产的专业实验设备。Auto-imported from basil/TL/SensirionSensorBridge.py
+  category:
+  - 表征设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        conf:
+          type: string
+          default: null
+  name: Sensirion AG Sensirion Sensor Bridge
+  manufacturer: Sensirion AG
+  icon: sensirion_ekh4.webp
+  tags:
+  - 表征设备
+  device_params:
+    支持操作数: '7'
+    读取操作: read_i2c
+    控制操作: setup_i2c_device、disable_i2c_device、write_i2c
+    控制能力: 电压控制、频率控制
+    通信接口: I2C

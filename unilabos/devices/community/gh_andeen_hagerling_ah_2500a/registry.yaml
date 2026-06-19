@@ -1,0 +1,80 @@
+gh_andeen_hagerling_ah_2500a:
+  class:
+    module: community_drivers.gh_andeen_hagerling_ah_2500a.driver:AH2500A
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-triggered_caplossvolt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: triggered_caplossvolt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: Andeen-Hagerling AH 2500A Capacitance Bridge
+  description: Andeen-Hagerling AH 2500A超精密电容电桥，分辨率优于0.5 aF（attofarad），精度达±5 ppm。工作频率1
+    kHz，适用于精密电容标准校准、介电常数测量和超高精度阻抗测量。
+  manufacturer: Andeen-Hagerling
+  icon: gh_andeen_hagerling_ah_2500a.webp
+  tags: &id001
+  - 频谱与网络分析仪
+  category: *id001
+  device_params:
+    Type: Ultra-precision capacitance bridge
+    Accuracy: 10 ppm
+    Resolution: 1 aF
+    Frequency: 1 kHz
+    Range: 0-100 pF (expandable to 1 nF)
+    Interface: GPIB
+    Temperature: mK to room temp
+    品牌: Andeen-Hagerling
+  model:
+    name: Andeen-Hagerling AH 2500A Capacitance Bridge
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string
+        write_termination:
+          default: null
+          type: string
+        read_termination:
+          default: null
+          type: string

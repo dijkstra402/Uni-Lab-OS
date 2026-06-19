@@ -1,0 +1,129 @@
+gh_oxford_instruments_itc503:
+  class:
+    module: community_drivers.gh_oxford_instruments_itc503.driver:ITC503
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-wait_for_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                error:
+                  type: number
+                  default: 0.01
+                timeout:
+                  type: integer
+                  default: 3600
+                check_interval:
+                  type: number
+                  default: 0.5
+                stability_interval:
+                  type: integer
+                  default: 10
+                thermalize_interval:
+                  type: integer
+                  default: 300
+                should_stop:
+                  type: string
+        goal_default:
+          error: 0.01
+          timeout: 3600
+          check_interval: 0.5
+          stability_interval: 10
+          thermalize_interval: 300
+          should_stop: null
+        handles: {}
+      auto-program_sweep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: program_sweep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperatures:
+                  type: string
+                sweep_time:
+                  type: string
+                hold_time:
+                  type: string
+                steps:
+                  type: string
+        goal_default:
+          temperatures: null
+          sweep_time: null
+          hold_time: null
+          steps: null
+        handles: {}
+      auto-wipe_sweep_table:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wipe_sweep_table
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/pymeasure/pymeasure
+  name: Oxford Instruments ITC503
+  description: Oxford Instruments ITC503低温温度控制器，温控范围约0.3K至500K，3个传感器输入通道，兼容铑铁电阻、Cernox、Pt100等多种温度计。PID控制并自整定，加热器最高80W，可选配针阀控制氦气流量。GPIB和RS-232通信，控温精度达毫开尔文级别，适用于低温恒温器和超导磁体系统。
+  manufacturer: Oxford Instruments
+  icon: 2026_03_17_QD-Oxford_partnership_with_FSU_300x200.jpg
+  tags: &id001
+  - 冷热源
+  category: *id001
+  device_params:
+    Type: Temperature controller
+    Inputs: '3'
+    Control: PID auto-tune
+    Heater output: 80W
+    Sensors: Pt100, thermocouple, Cernox
+    Range: 0.3K-500K
+    Interface: GPIB, RS-232
+    Gas flow control: built-in
+    品牌: Oxford Instruments
+  model:
+    name: Oxford Instruments ITC503
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Environmental Control
+    step: Temperature Control
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        adapter:
+          default: null
+          type: string
+        name:
+          default: null
+          type: string
+        clear_buffer:
+          default: null
+          type: string
+        min_temperature:
+          default: null
+          type: string
+        max_temperature:
+          default: null
+          type: string

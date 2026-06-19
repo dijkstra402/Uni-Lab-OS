@@ -1,0 +1,281 @@
+gh_agilent_e4980a:
+  class:
+    module: community_drivers.gh_agilent_e4980a.driver:DataSetInMem
+    type: python
+    status_types:
+      pristine: bool
+      running: bool
+      completed: bool
+      run_id: int
+      captured_run_id: int
+      counter: int
+      captured_counter: int
+      guid: str
+      number_of_results: int
+      name: str
+      exp_name: str
+      exp_id: int
+      sample_name: str
+      path_to_db: string
+      run_timestamp_raw: string
+      completed_timestamp_raw: string
+      snapshot: string
+      metadata: string
+      paramspecs: string
+      description: RunDescriber
+      parent_dataset_links: string
+      cache: DataSetCacheInMem
+      export_info: ExportInfo
+    action_value_mappings:
+      auto-write_metadata_to_db:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_metadata_to_db
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path_to_db:
+                  type: string
+        goal_default:
+          path_to_db: null
+        handles: {}
+      auto-set_netcdf_location:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_netcdf_location
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default:
+          path: null
+        handles: {}
+      auto-prepare:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-mark_completed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mark_completed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_snapshot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_snapshot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                snapshot:
+                  type: string
+                overwrite:
+                  type: boolean
+                  default: false
+        goal_default:
+          snapshot: null
+          overwrite: false
+        handles: {}
+      auto-add_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tag:
+                  type: string
+                metadata:
+                  type: string
+        goal_default:
+          tag: null
+          metadata: null
+        handles: {}
+      auto-to_xarray_dataset_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_xarray_dataset_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-to_xarray_dataset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_xarray_dataset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-to_pandas_dataframe_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_pandas_dataframe_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-to_pandas_dataframe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_pandas_dataframe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_parameter_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_parameter_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/microsoft/Qcodes
+  name: 'Benchtop LCR Meters: E4980A'
+  description: 是德科技为创新者提供以软件为中心的设计、仿真和测试解决方案，以快速实现未来的突破并降低风险。
+  manufacturer: Keysight
+  icon: Facebook.png
+  tags: &id001
+  - 频谱与网络分析仪
+  category: *id001
+  device_params:
+    ZA2-class LCR Meter, 2 MHz: The Keysight E4980A precision LCR meter provides the
+      best combination of accuracy, speed, and versatility for a wide range of component
+      measurements.
+    Type of Engagement * Required Field: Need technical support
+    How would you like to be contacted? *Required Field: Email
+    品牌: Keysight
+  model:
+    name: 'Benchtop LCR Meters: E4980A'
+    type: device
+  scene:
+    domain: Materials Science
+    scene_name: Characterization
+    step: Dielectric Measurement
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        run_id:
+          default: null
+          type: integer
+        captured_run_id:
+          default: null
+          type: integer
+        counter:
+          default: null
+          type: integer
+        captured_counter:
+          default: null
+          type: integer
+        name:
+          default: null
+          type: string
+        exp_id:
+          default: null
+          type: integer
+        exp_name:
+          default: null
+          type: string
+        sample_name:
+          default: null
+          type: string
+        guid:
+          default: null
+          type: string
+        path_to_db:
+          default: null
+          type: string
+        run_timestamp_raw:
+          default: null
+          type: string
+        completed_timestamp_raw:
+          default: null
+          type: string
+        snapshot:
+          default: null
+          type: string
+        metadata:
+          default: null
+          type: string
+        rundescriber:
+          default: null
+          type: string
+        parent_dataset_links:
+          default: null
+          type: string
+        export_info:
+          default: null
+          type: string

@@ -1,0 +1,285 @@
+a_pump:
+  class:
+    module: unilabos.devices.community.a_pump.driver:APump
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-getIdentification:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getIdentification
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enableRemoteControl:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enableRemoteControl
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                remote:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-readDisplay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readDisplay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setFlowDirection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setFlowDirection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                forward:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rotation_speed:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-startFlow:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startFlow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+                direction:
+                  type: string
+        goal_default:
+          direction: Forward
+        handles: {}
+      auto-stopFlow:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopFlow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sendImmediate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendImmediate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unitNumber:
+                  type: string
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sendBuffered:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendBuffered
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unitNumber:
+                  type: string
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-selectUnit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: selectUnit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unitNumber:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sendAndAcknowledge:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendAndAcknowledge
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                string:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sendString:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendString
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                string:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getResponse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getResponse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Automated Pump Controller是由Tricontinent (Gardner Denver)生产的注射泵，主要功能包括使能、停止、关闭、启动、状态查询、设备连接。
+  category:
+  - 注射泵
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        parameters:
+          type: string
+          default: false
+  device_params:
+    支持操作数: '16'
+    读取操作: getIdentification、readDisplay、getStatus、getResponse
+    控制操作: enableRemoteControl、setFlowDirection、setSpeed、startFlow、stopFlow
+    控制能力: 速度
+    通信接口: 串口(RS-232)
+  manufacturer: Tricontinent (Gardner Denver)
+  model:
+    name: Generic Automated Pump Controller 控制器
+    type: device
+  name: Automated Pump
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: a_pump.webp
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Dispensing
+  version: 1.0.0

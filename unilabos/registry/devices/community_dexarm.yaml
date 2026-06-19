@@ -1,0 +1,620 @@
+dexarm:
+  class:
+    module: unilabos.devices.community.dexarm.driver:Dexarm
+    type: python
+    status_types:
+      module_type: String
+      current_position: String
+    action_value_mappings:
+      auto-go_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: go_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_workorigin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_workorigin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_acceleration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_acceleration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                acceleration:
+                  type: string
+                travel_acceleration:
+                  type: string
+                retract_acceleration:
+                  type: string
+        goal_default:
+          retract_acceleration: 60
+        handles: {}
+      auto-set_module_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_module_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                module_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_to:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+                e:
+                  type: string
+                feedrate:
+                  type: string
+                mode:
+                  type: string
+                wait:
+                  type: string
+        goal_default:
+          feedrate: 2000
+          mode: G1
+          wait: true
+        handles: {}
+      auto-fast_move_to:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fast_move_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+                feedrate:
+                  type: string
+                wait:
+                  type: string
+        goal_default:
+          feedrate: 2000
+          wait: true
+        handles: {}
+      auto-dealy_ms:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dealy_ms
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-dealy_s:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dealy_s
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-soft_gripper_pick:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: soft_gripper_pick
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-soft_gripper_place:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: soft_gripper_place
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-soft_gripper_nature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: soft_gripper_nature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-soft_gripper_stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: soft_gripper_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-air_picker_pick:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: air_picker_pick
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-air_picker_place:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: air_picker_place
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-air_picker_nature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: air_picker_nature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-air_picker_stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: air_picker_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-laser_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: laser_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: 0
+        handles: {}
+      auto-laser_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: laser_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-conveyor_belt_forward:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: conveyor_belt_forward
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+        goal_default:
+          speed: 0
+        handles: {}
+      auto-conveyor_belt_backward:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: conveyor_belt_backward
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+        goal_default:
+          speed: 0
+        handles: {}
+      auto-conveyor_belt_stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: conveyor_belt_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+        goal_default:
+          speed: 0
+        handles: {}
+      auto-sliding_rail_init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sliding_rail_init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Python class for Dexarm
+  category:
+  - arm
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+on_robot_rg2_ft:
+  category:
+  - arm
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.dexarm.driver:OnRobotRG2FT
+    status_types: {}
+    type: python
+  config_info: []
+  description: OnRobotRG 2FT
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+on_robot_tcp_client:
+  category:
+  - arm
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.dexarm.driver:OnRobotTcpClient
+    status_types: {}
+    type: python
+  config_info: []
+  description: communication sends commands and receives the status of RG gripper
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+ros2_interface:
+  category:
+  - arm
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.dexarm.driver:ROS2Interface
+    status_types: {}
+    type: python
+  config_info: []
+  description: Class to interface with a MoveIt2 manipulator | (ROS) | 型号:2Interface
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+ros2_robot:
+  category:
+  - arm
+  class:
+    action_value_mappings: {}
+    module: unilabos.devices.community.dexarm.driver:ROS2Robot
+    status_types: {}
+    type: python
+  config_info: []
+  description: ROS 2Robot
+  handles: []
+  icon: ''
+  init_param_schema: {}
+  version: 1.0.0
+imx:
+  class:
+    module: unilabos.devices.community.dexarm.driver:IMX
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: IMX
+  category:
+  - arm
+robot_with_tools:
+  class:
+    module: unilabos.devices.community.dexarm.driver:RobotWithTools
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-HasIoModule:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: HasIoModule
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ActivateRobot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ActivateRobot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-DeactivateRobot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: DeactivateRobot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ActivateAndHome:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ActivateAndHome
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-Disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_dirty_if_params_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_dirty_if_params_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                motion_queue_params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-clear_dirty_flags:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_dirty_flags
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                motion_queue_params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_cmd_dirty:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_cmd_dirty
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_if_dirty:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_if_dirty
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+  description: RobotWithTools
+  category:
+  - arm
+device:
+  class:
+    module: unilabos.devices.community.dexarm.driver:Device
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: Device
+  category:
+  - arm
+magician_interface:
+  class:
+    module: unilabos.devices.community.dexarm.driver:MagicianInterface
+    type: python
+    status_types: {}
+    action_value_mappings: {}
+  description: MagicianInterface
+  category:
+  - arm

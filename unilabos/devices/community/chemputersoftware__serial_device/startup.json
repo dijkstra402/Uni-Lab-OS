@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "id": "test_chemputersoftware__serial_device",
+      "name": "Test SerialDevice",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "chemputersoftware__serial_device",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "port": "",
+        "device_name": "",
+        "soft_fail_for_testing": false
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "setup",
+      "description": "建立连接并完成基础初始化",
+      "device": "test_chemputersoftware__serial_device",
+      "action": "auto-open_connection",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_chemputersoftware__serial_device",
+      "action": "auto-non_blocking_wait",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "launch command handler",
+      "description": "自动补充动作: launch_command_handler",
+      "device": "test_chemputersoftware__serial_device",
+      "action": "auto-launch_command_handler",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "close connection",
+      "description": "自动补充动作: close_connection",
+      "device": "test_chemputersoftware__serial_device",
+      "action": "auto-close_connection",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "send message",
+      "description": "自动补充动作: send_message",
+      "device": "test_chemputersoftware__serial_device",
+      "action": "auto-send_message",
+      "action_args": {
+        "get_return": false,
+        "multiline": false
+      }
+    },
+    {
+      "step": 6,
+      "name": "keepalive",
+      "description": "自动补充动作: keepalive",
+      "device": "test_chemputersoftware__serial_device",
+      "action": "auto-keepalive",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "SerialDevice 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "SerialDevice",
+    "generated_by": "driver-finder"
+  }
+}

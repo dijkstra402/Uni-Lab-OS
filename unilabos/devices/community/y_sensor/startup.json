@@ -1,0 +1,142 @@
+{
+  "nodes": [
+    {
+      "id": "test_y_sensor",
+      "name": "Test YSensor",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "y_sensor",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "func": ""
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "configure",
+      "description": "设置运行前关键参数",
+      "device": "test_y_sensor",
+      "action": "auto-set_lowestValue",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "start",
+      "description": "启动设备主动作",
+      "device": "test_y_sensor",
+      "action": "auto-startDataLogger",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "wait",
+      "description": "等待目标状态达到或动作完成",
+      "device": "test_y_sensor",
+      "action": "auto-isSensorReady",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "stop",
+      "description": "停止主动作并安全收尾",
+      "device": "test_y_sensor",
+      "action": "auto-stopDataLogger",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "set highestValue",
+      "description": "自动补充动作: set_highestValue",
+      "device": "test_y_sensor",
+      "action": "auto-set_highestValue",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "set logFrequency",
+      "description": "自动补充动作: set_logFrequency",
+      "device": "test_y_sensor",
+      "action": "auto-set_logFrequency",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "set reportFrequency",
+      "description": "自动补充动作: set_reportFrequency",
+      "device": "test_y_sensor",
+      "action": "auto-set_reportFrequency",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "set advMode",
+      "description": "自动补充动作: set_advMode",
+      "device": "test_y_sensor",
+      "action": "auto-set_advMode",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "set calibrationParam",
+      "description": "自动补充动作: set_calibrationParam",
+      "device": "test_y_sensor",
+      "action": "auto-set_calibrationParam",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "set resolution",
+      "description": "自动补充动作: set_resolution",
+      "device": "test_y_sensor",
+      "action": "auto-set_resolution",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "registerTimedReportCallback",
+      "description": "自动补充动作: registerTimedReportCallback",
+      "device": "test_y_sensor",
+      "action": "auto-registerTimedReportCallback",
+      "action_args": {}
+    },
+    {
+      "step": 12,
+      "name": "calibrateFromPoints",
+      "description": "自动补充动作: calibrateFromPoints",
+      "device": "test_y_sensor",
+      "action": "auto-calibrateFromPoints",
+      "action_args": {}
+    },
+    {
+      "step": 13,
+      "name": "loadCalibrationPoints",
+      "description": "自动补充动作: loadCalibrationPoints",
+      "device": "test_y_sensor",
+      "action": "auto-loadCalibrationPoints",
+      "action_args": {}
+    },
+    {
+      "step": 14,
+      "name": "nextSensor",
+      "description": "自动补充动作: nextSensor",
+      "device": "test_y_sensor",
+      "action": "auto-nextSensor",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "YSensor 自动生成工作流",
+    "description": "由 action_value_mappings 自动生成，可按需编辑参数与顺序",
+    "instrument": "YSensor",
+    "generated_by": "driver-finder"
+  }
+}

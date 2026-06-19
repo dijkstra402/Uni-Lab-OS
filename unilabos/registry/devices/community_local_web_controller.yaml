@@ -1,0 +1,116 @@
+local_web_controller:
+  class:
+    module: unilabos.devices.community.local_web_controller.driver:LocalWebController
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_wsclients:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_wsclients
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run_threaded:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_threaded
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                img_arr:
+                  type: string
+                num_records:
+                  type: string
+                mode:
+                  type: string
+                recording:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                img_arr:
+                  type: string
+                num_records:
+                  type: string
+                mode:
+                  type: string
+                recording:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Local WEB Controller是一款实验执行&合成设备，主要功能包括关闭、打开、读取数据、运行。支持Signal, Slot,
+    check origin等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '24'
+    读取操作: run_threaded、run_threaded、get、get、run_threaded
+    通信接口: TCP/IP
+  manufacturer: Open Source
+  model:
+    name: Local WEB Controller
+    type: device
+  name: Local Web
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

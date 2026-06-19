@@ -1,0 +1,139 @@
+gh_device_865:
+  class:
+    module: community_drivers.865.driver:CNT91
+    type: python
+    action_value_mappings:
+      auto-batch_size:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: batch_size
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measurement_time:
+        type: UniLabJsonCommand
+        goal:
+          value: value
+        feedback: {}
+        result: {}
+        schema:
+          title: measurement_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default:
+          value: ''
+        handles: {}
+      auto-read_buffer:
+        type: UniLabJsonCommand
+        goal:
+          n: n
+        feedback: {}
+        result: {}
+        schema:
+          title: read_buffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+        goal_default:
+          n: ''
+        handles: {}
+      auto-configure_frequency_array_measurement:
+        type: UniLabJsonCommand
+        goal:
+          n_samples: n_samples
+          channel: channel
+          back_to_back: back_to_back
+        feedback: {}
+        result: {}
+        schema:
+          title: configure_frequency_array_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_samples:
+                  type: string
+                channel:
+                  type: string
+                back_to_back:
+                  type: string
+        goal_default:
+          n_samples: ''
+          channel: ''
+          back_to_back: ''
+        handles: {}
+      auto-buffer_frequency_time_series:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          n_samples: n_samples
+          sample_rate: sample_rate
+          gate_time: gate_time
+          trigger_source: trigger_source
+          back_to_back: back_to_back
+        feedback: {}
+        result: {}
+        schema:
+          title: buffer_frequency_time_series
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                n_samples:
+                  type: string
+                sample_rate:
+                  type: string
+                gate_time:
+                  type: string
+                trigger_source:
+                  type: string
+                back_to_back:
+                  type: string
+        goal_default:
+          channel: ''
+          n_samples: ''
+          sample_rate: ''
+          gate_time: ''
+          trigger_source: ''
+          back_to_back: ''
+        handles: {}
+  name: Pendulum CNT-91定时器/计数器/分析仪
+  description: Pendulum CNT-91是高精度频率计数器/分析仪，50ps单次时间分辨率和12位/秒频率分辨率，零死区连续时间戳技术捕获全部周期，支持直方图、趋势和调制域分析，可选原子铷钟参考。
+  manufacturer: Pendulum
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  model:
+    name: Pendulum CNT-91定时器/计数器/分析仪
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    频率范围: 0.001Hz-400MHz(可扩展至20GHz)
+    时间分辨率: 50ps单次
+    频率分辨率: 12位/秒
+    测量速率: 250000次/秒
+    存储: 3.5M
+    时基: OCXO(0.01ppm/月)
+    接口: USB,GPIB(IEEE 488.2)
+    品牌: Pendulum

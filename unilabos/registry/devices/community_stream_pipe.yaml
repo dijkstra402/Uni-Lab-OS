@@ -1,0 +1,74 @@
+stream_pipe:
+  class:
+    module: unilabos.devices.community.stream_pipe.driver:StreamPipe
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                size:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Stream Pipe是一款实验执行&合成设备，主要功能包括关闭、写入数据、打开、读取数据。支持Signal, Slot等操作。
+  category:
+  - 实验执行&合成设备
+  device_params:
+    支持操作数: '11'
+    读取操作: read、read、read、read
+    控制操作: write、write、write、write
+    通信接口: TCP/IP、串口(RS-232)
+  manufacturer: Open Source
+  model:
+    name: Stream Pipe
+    type: device
+  name: Stream Pipe
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 1.0.0

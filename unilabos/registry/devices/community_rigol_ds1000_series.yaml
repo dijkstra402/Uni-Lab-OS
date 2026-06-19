@@ -1,0 +1,93 @@
+rigol_ds1000_series:
+  class:
+    module: unilabos.devices.community.rigol_ds1000_series.driver:RigolDS1000Series
+    type: python
+    status_types:
+      channel: str
+      math: str
+      ref: str
+      acquire_averages: str
+    action_value_mappings:
+      auto-force_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: force_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-release_panel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: release_panel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: DS1000Z-E
+  description: RIGOL DS1000Z系列是4通道入门级数字示波器，24Mpts深存储，30000波形/秒刷新率。Plus型号支持MSO和内置波形发生器。
+  manufacturer: Rigol
+  icon: rigol_ds1000_series.webp
+  tags: &id001
+  - 示波器与波形分析仪
+  category: *id001
+  device_params:
+    带宽: 50/70/100MHz
+    通道: 4模拟
+    采样率: 1GSa/s
+    存储深度: 24Mpts
+    刷新率: 30,000wfms/s
+    ADC: 8位
+    显示: 7英寸WVGA
+    MSO: 可选16数字通道
+    内置: 25MHz任意波发生器(Plus)
+    品牌: Rigol
+  model:
+    name: DS1000Z-E
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Mixing
+  version: 1.0.0
+  resource_type: device

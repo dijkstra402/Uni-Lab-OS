@@ -1,0 +1,121 @@
+gh_quantum_design_opticool:
+  class:
+    module: community_drivers.gh_quantum_design_opticool.driver:DynaCool
+    type: python
+    status_types:
+      error_code: int
+    action_value_mappings:
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ramp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                  default: blocking
+        goal_default:
+          mode: blocking
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default:
+          cmd: null
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+    source: https://github.com/microsoft/Qcodes
+  name: Quantum Design OptiCool
+  description: 无冷冻剂 OptiCool 平台利用了 Quantum Design 在工程和制造自动化温度和磁场控制系统方面 40 多年的经验。 OptiCool
+    平台具有全自动冷却和 350 K 至 1.7 K 范围内的无缝温度控制，还具有对光学测量至关重要的低振动和稳定性。 OptiCool 的创新样品盒技术和 89
+    毫米直径 x 84 毫米高的大样品体积为实验设计提供了令人兴奋的可能性，使研究人员能够创建和构建用于光学测量的定制设置。系统具有顶部窗口和多个侧窗选项，可定制您的光学访问，包括底部窗口选项。标准
+    OptiCool 具有 7 特斯拉 spli
+  manufacturer: Quantum Design
+  icon: OptiCool_400x400.jpg
+  tags: &id001
+  - 冷热水机
+  category: *id001
+  device_params:
+    Cookieytidb: :LAST_RESULT_ENTRY_KEY
+    品牌: Quantum Design
+  model:
+    name: Quantum Design OptiCool
+    type: device
+  scene:
+    domain: Laboratory
+    scene_name: Storage
+    step: Cold Storage
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        name:
+          default: null
+          type: string
+        address:
+          default: null
+          type: string
+  cover: Quantum Design OptiCool.webp

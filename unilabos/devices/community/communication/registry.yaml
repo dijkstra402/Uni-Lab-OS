@@ -1,0 +1,128 @@
+communication:
+  class:
+    module: unilabos.devices.custom.communication:Communication
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_name:
+                  type: string
+                vid:
+                  type: integer
+                pid:
+                  type: integer
+        goal_default:
+          device_name: ''
+          vid: 0
+          pid: 0
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: number
+        goal_default:
+          timeout: 2
+        handles: {}
+      auto-record:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: record
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                timeout:
+                  type: number
+        goal_default:
+          timeout: 4
+        handles: {}
+  description: Communication是由Open Standard生产的实验执行&合成设备，主要功能包括记录、设备连接。支持Signal, Slot, send等操作。
+  category:
+  - 实验执行&合成设备
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        device_name:
+          type: string
+          default: ''
+        vid:
+          type: integer
+          default: 0
+        pid:
+          type: integer
+          default: 0
+  device_params:
+    可控参数: device_name、msg、pid、timeout、vid
+    操作数: 5
+  manufacturer: Open Standard
+  model:
+    name: Generic Communication
+    type: device
+  name: Open Standard Communication
+  tags:
+  - 实验执行&合成设备
+  resource_type: device
+  icon: communication.webp
+  scene:
+    domain: Laboratory
+    scene_name: General
+    step: Experiment
+  version: 1.0.0

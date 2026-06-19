@@ -1,0 +1,328 @@
+feetech_motors_bus:
+  class:
+    module: unilabos.devices.community.feetech_motors_bus.driver:FeetechMotorsBus
+    type: python
+    status_types:
+      motor_names: String
+      motor_models: String
+      motor_indices: String
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-are_motors_configured:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: are_motors_configured
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-find_motor_indices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_motor_indices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                possible_ids:
+                  type: string
+                num_retry:
+                  type: string
+        goal_default:
+          num_retry: 2
+        handles: {}
+      auto-set_bus_baudrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_bus_baudrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                baudrate:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_calibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_calibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                calibration:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-apply_calibration_autocorrect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_calibration_autocorrect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                values:
+                  type: string
+                motor_names:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-apply_calibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_calibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                values:
+                  type: string
+                motor_names:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-autocorrect_calibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: autocorrect_calibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                values:
+                  type: string
+                motor_names:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-revert_calibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: revert_calibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                values:
+                  type: string
+                motor_names:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-avoid_rotation_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: avoid_rotation_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                values:
+                  type: string
+                motor_names:
+                  type: string
+                data_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_with_motor_ids:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_with_motor_ids
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                motor_models:
+                  type: string
+                motor_ids:
+                  type: string
+                data_name:
+                  type: string
+                num_retry:
+                  type: string
+        goal_default:
+          num_retry: 20
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data_name:
+                  type: string
+                motor_names:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_with_motor_ids:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_with_motor_ids
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                motor_models:
+                  type: string
+                motor_ids:
+                  type: string
+                data_name:
+                  type: string
+                values:
+                  type: string
+                num_retry:
+                  type: string
+        goal_default:
+          num_retry: 20
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data_name:
+                  type: string
+                values:
+                  type: string
+                motor_names:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Feetech Motors BUS是由Feetech RC Model生产的机械臂，主要功能包括写入数据、参数配置、复位、捕获、日志记录、设备连接。支持Signal,
+    Slot, apply calibration等操作。
+  category:
+  - 机械臂
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          type: string
+          default: null
+        motors:
+          type: object
+          default: null
+        extra_model_control_table:
+          type: object
+          default: null
+        extra_model_resolution:
+          type: object
+          default: null
+        mock:
+          type: string
+          default: false
+  name: Feetech RC Model Feetech Motors Bus
+  manufacturer: Feetech RC Model
+  icon: feetech_motors_bus.webp
+  tags:
+  - 机械臂
+  device_params:
+    支持操作数: '16'
+    读取操作: read_with_motor_ids、read
+    控制操作: are_motors_configured、set_bus_baudrate、set_calibration、avoid_rotation_reset、write_with_motor_ids
+    设备属性数: '3'
+    控制能力: 位置控制

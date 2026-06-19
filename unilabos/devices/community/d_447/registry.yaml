@@ -1,0 +1,90 @@
+gh_device_447:
+  class:
+    module: community_drivers.447.driver:ThorlabsAptMotor
+    type: python
+    action_value_mappings:
+      auto-units_to_steps:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        feedback: {}
+        result: {}
+        schema:
+          title: units_to_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: ''
+        handles: {}
+      auto-steps_to_units:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        feedback: {}
+        result: {}
+        schema:
+          title: steps_to_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default:
+          position: ''
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal:
+          message: message
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default:
+          message: ''
+        handles: {}
+  name: Thorlabs BSC201单通道台式步进电机控制器
+  description: BSC201是Thorlabs BSC200系列单通道台式步进电机控制器，专为驱动高功率双相双极步进电机设计，支持编码器反馈闭环定位。提供梯形和S形速度曲线选择，理论微步分辨率达409600步，速度是前代产品的两倍以上。USB连接支持多台设备通过集线器级联实现多轴控制，兼容Kinesis和APT软件平台。
+  manufacturer: Thorlabs
+  tags: &id001
+  - 运动控制系统
+  category: *id001
+  model:
+    name: Thorlabs BSC201单通道台式步进电机控制器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  cover: Thorlabs BSC201单通道台式步进电机控制器.webp
+  quality_review:
+    grade: D
+    status: name_class_mismatch
+    note: registry 标 Knauer Azura Compact, driver 实际是 ThorlabsAptMotor 步进电机
+    reviewed_at: '2026-04-26'

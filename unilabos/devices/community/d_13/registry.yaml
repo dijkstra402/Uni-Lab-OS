@@ -1,0 +1,45 @@
+gh_device_13:
+  class:
+    module: community_drivers.13.driver:OmegaD8200
+    type: python
+    action_value_mappings:
+      auto-direct_serial_write:
+        type: UniLabJsonCommand
+        goal:
+          bytes: bytes
+        feedback: {}
+        result: {}
+        schema:
+          title: direct_serial_write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bytes:
+                  type: string
+        goal_default:
+          bytes: ''
+        handles: {}
+  name: Omega iServer DRi/DRE 网络温湿度监测器
+  description: Omega iServer DRi/DRE系列是基于以太网的温度和湿度监测设备，内置Web服务器，无需专用软件即可通过标准浏览器进行配置和监控。支持TCP/IP、HTTP、SNMP、Modbus
+    TCP等多种网络协议，可配置报警阈值并通过SMTP邮件通知。内置数据记录功能，支持多用户同时访问。DRi为室内版本，DRE支持外部探头。可选NIST可追溯校准。
+  manufacturer: Omega Engineering
+  tags: &id001
+  - 数据采集与记录仪
+  category: *id001
+  model:
+    name: Omega iServer DRi/DRE 网络温湿度监测器
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    功能: 温度/湿度实时监测
+    通信: 以太网(RJ-45)/内置Web服务器
+    协议: TCP/IP/HTTP/SNMP/SMTP/Modbus TCP
+    温度范围: -40°C至+124°C
+    湿度范围: 0-100%RH
+    温度精度: ±0.5°C
+    湿度精度: ±2%RH
+    供电: PoE/外部电源
+    品牌: Omega Engineering

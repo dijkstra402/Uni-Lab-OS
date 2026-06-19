@@ -1,0 +1,111 @@
+minipump:
+  class:
+    module: unilabos.devices.community.minipump.driver:minipump
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-primePump:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: primePump
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume:
+                  type: string
+                speed:
+                  type: string
+                direction:
+                  type: string
+                read:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-runPump:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: runPump
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                read:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stopPump:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopPump
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                read:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-readPump:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readPump
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Miniature Pump是一款注射泵，主要功能包括停止、泵送、读取数据。支持Signal, Slot等操作。
+  category:
+  - 注射泵
+  device_params:
+    支持操作数: '5'
+    读取操作: readPump、read
+    控制操作: stopPump
+    控制能力: 速度
+    通信接口: 串口(RS-232)
+  manufacturer: Open Source
+  model:
+    name: Generic Miniature Pump 泵
+    type: device
+  name: Miniature Pump
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: minipump.webp
+  scene:
+    domain: Chemistry
+    scene_name: Fluid Control
+    step: Dispensing
+  version: 1.0.0

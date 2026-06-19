@@ -1,0 +1,80 @@
+online_display:
+  class:
+    module: unilabos.devices.community.online_display.driver:OnlineDisplay
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-stopProcessingLoop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopProcessingLoop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setMinimumSendInterval:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setMinimumSendInterval
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                interval:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-processingLoop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: processingLoop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Online Display Status
+  category:
+  - display
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        dataReceiver:
+          type: string
+          default: null
+        data:
+          type: string
+          default: null
+        displayConfiguration:
+          type: string
+          default: null

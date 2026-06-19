@@ -1,0 +1,62 @@
+lakeshore336:
+  class:
+    module: community_drivers.lakeshore336.driver:Lakeshore336
+    type: python
+    status_types:
+      sensor: String
+    action_value_mappings:
+      auto-sensor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sensor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: Model 336 cryogenic temperature controller
+  description: 高性能低温温度控制器，4路传感器输入+4路控制输出，兼容主流低温传感器，PID自整定和区间控制，用于低温物理、材料表征、半导体测试和超导研究。在售。
+  manufacturer: Lake Shore
+  icon: lakeshore336.webp
+  tags: &id001
+  - 低温温度控制器
+  category: *id001
+  device_params:
+    Temp Range: 300mK~1505K
+    Sensor Inputs: 4ch
+    Control Outputs: 4 (100W+50W+2x analog ±10V)
+    Stability: ±0.1mK
+    Resolution: 0.001K
+    A/D: 24-bit
+    Sensors: Si diode, Pt RTD, Cernox, RhFe, thermocouple, GaAlAs, Ge RTD, capacitance
+    Control: PID with autotuning, zone control (10 zones/output), ramp rate
+    Interface: USB, GPIB, Ethernet
+    品牌: Lake Shore
+  model:
+    name: Model 336 cryogenic temperature controller
+    type: device
+  scene:
+    domain: Chemistry
+    scene_name: Synthesis
+    step: Stirring
+  version: 1.0.0
+  resource_type: device

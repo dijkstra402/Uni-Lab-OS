@@ -1,0 +1,57 @@
+gh_device_873:
+  class:
+    module: community_drivers.873.driver:VoltageChannel
+    type: python
+    action_value_mappings:
+      auto-get_waveform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_waveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_descriptor:
+        type: UniLabJsonCommand
+        goal:
+          descriptor: descriptor
+        feedback: {}
+        result: {}
+        schema:
+          title: get_descriptor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                descriptor:
+                  type: string
+        goal_default:
+          descriptor: ''
+        handles: {}
+  name: Siglent SPD1305X线性可编程直流电源
+  description: Siglent SPD1305X是单通道线性可编程直流电源，输出30V/5A/150W，具备定时输出功能和实时电压电流波形显示，低纹波低噪声设计，4.3英寸TFT彩屏，适用于研发和教育领域。
+  manufacturer: Siglent
+  tags: &id001
+  - 电源与源表
+  category: *id001
+  model:
+    name: Siglent SPD1305X线性可编程直流电源
+    type: device
+  version: 1.0.0
+  resource_type: device
+  device_params:
+    通道: '1'
+    电压范围: 0-30V
+    电流范围: 0-5A
+    功率: 150W
+    电压分辨率: 1mV
+    电流分辨率: 1mA
+    接口: USB,LAN(可选)
+    品牌: Siglent

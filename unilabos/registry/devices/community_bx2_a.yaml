@@ -1,0 +1,192 @@
+bx2_a:
+  class:
+    module: unilabos.devices.community.bx2_a.driver:IXBX
+    type: python
+    status_types:
+      soft_limits: str
+      z: str
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default:
+          command: null
+        handles: {}
+      auto-idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-lamp_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lamp_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-soft_limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: soft_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-movement_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: movement_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_relative:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_relative
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                distance:
+                  type: string
+        goal_default:
+          distance: null
+        handles: {}
+      auto-z:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-init_origin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init_origin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  name: BX53 Semi-Motorized Fluorescence Microscope | Evident Scientific | Olympus
+  description: BX2系列正置研究显微镜平台，人体工程学设计，UIS2光学系统提供卓越图像质量，支持多种观察模式
+  manufacturer: Evident
+  icon: bx2_a.webp
+  tags: &id001
+  - 荧光显微镜
+  category: *id001
+  device_params:
+    光学系统: UIS2万能无穷远
+    目镜视场数: '22'
+    物镜: UIS2系列(plan校正,无铅玻璃)
+    冷凝器: U-UCD8八位万能
+    观察模式: 明场/暗场/相差/DIC/荧光
+    型号包含: BX41/BX45/BX51/BX52/BX61
+    品牌: Evident
+  model:
+    name: BX53 Semi-Motorized Fluorescence Microscope | Evident Scientific | Olympus
+    type: device
+  scene:
+    domain: Biology
+    scene_name: Imaging
+    step: Microscopy
+  version: 1.0.0
+  resource_type: device
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        port:
+          default: null
+          type: string
+        baudrate:
+          default: null
+          type: string
+        bytesize:
+          default: null
+          type: string
+        parity:
+          default: null
+          type: string
+        stopbits:
+          default: null
+          type: string
+        flow:
+          default: null
+          type: string
+        timeout:
+          default: null
+          type: string
+        write_timeout:
+          default: null
+          type: string

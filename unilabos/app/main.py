@@ -780,6 +780,32 @@ def main():
             args_dict["_community_aliases"] = community_result.aliases
             args_dict["_apply_community_aliases"] = apply_community_aliases
 
+            # §10.4：社区包就绪后，sim/twin 模式再解析仿真配对 bundle（real 模式跳过）
+            runtime_mode = args_dict.get("mode")
+            if runtime_mode in ("sim", "twin"):
+                from unilabos.app.simulation_pairs import (
+                    SimulationPairError,
+                    prepare_simulation_pairs,
+                )
+                from unilabos.registry.pair_registry import set_pair_registry_path
+
+                try:
+                    pair_result = prepare_simulation_pairs(
+                        graph_preview,
+                        working_dir=BasicConfig.working_dir,
+                        mode=runtime_mode,
+                        http_client=http_client_for_community,
+                    )
+                except SimulationPairError as exc:
+                    print_status(str(exc), "error")
+                    os._exit(1)
+
+                if pair_result.devices_dirs:
+                    existing_devices_dirs = args_dict.get("devices") or []
+                    args_dict["devices"] = existing_devices_dirs + pair_result.devices_dirs
+                if pair_result.generated_yaml is not None:
+                    set_pair_registry_path(pair_result.generated_yaml)
+
     # Step 0: AST 分析优先 + YAML 注册表加载
     # check_mode 和 upload_registry 都会执行实际 import 验证
     devices_dirs = args_dict.get("devices", None)

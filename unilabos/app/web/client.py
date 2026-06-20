@@ -622,6 +622,91 @@ class HTTPClient:
             logger.error(f"发布模型异常: {e}")
         return None
 
+    # ──────────────────── 设备广场 / 仿真配对（迁移脚本用） ────────────────────
+
+    def list_square_devices(self, page_size: int = 2000) -> List[Dict[str, Any]]:
+        """枚举设备广场全部模板项（公开 list 接口，分页拉全）。
+
+        后端 GET /lab/square/list 返回 PageResp：data.data 为本页条目，data.total 为总数。
+        page_size 上限 2000（后端 MaxPageSize），单页通常足够覆盖单实验室模板量。
+        """
+        items: List[Dict[str, Any]] = []
+        page = 1
+        while True:
+            response = self._session.get(
+                f"{self.remote_addr}/lab/square/list",
+                params={"page": page, "page_size": page_size},
+                headers={"Authorization": f"Lab {self.auth}"},
+                timeout=(5, 60),
+            )
+            response.raise_for_status()
+            page_resp = response.json().get("data") or {}
+            batch = page_resp.get("data") or []
+            items.extend(batch)
+            total = page_resp.get("total", len(items))
+            if len(items) >= total or not batch:
+                break
+            page += 1
+        return items
+
+    def get_square_device_detail(self, template_uuid: str) -> Dict[str, Any]:
+        """获取单个设备模板详情（公开 detail 接口）。"""
+        response = self._session.get(
+            f"{self.remote_addr}/lab/square/detail/{template_uuid}",
+            headers={"Authorization": f"Lab {self.auth}"},
+            timeout=(5, 30),
+        )
+        response.raise_for_status()
+        return response.json().get("data") or {}
+
+    def create_simulation_pair(self, payload: Dict[str, Any]) -> Dict[str, Any]:
+        """创建仿真配对（管理员接口，需权威实验室管理员权限）。
+
+        返回后端原始响应体 {code, message, data}，由调用方据 code 判断成败。
+        """
+        response = self._session.post(
+            f"{self.remote_addr}/lab/square/admin/simulation-pairs",
+            json=payload,
+            headers={"Authorization": f"Lab {self.auth}"},
+            timeout=(5, 30),
+        )
+        if response.status_code != 200:
+            return {"code": response.status_code, "message": response.text}
+        return response.json()
+
+    def resolve_simulation_pairs(
+        self,
+        real_classes: List[str],
+        *,
+        mode: str,
+        lab_uuid: str = "",
+        edge_uuid: str = "",
+        package_locks: Optional[List[Dict[str, Any]]] = None,
+        unilabos_version: str = "",
+    ) -> Dict[str, Any]:
+        """sim/twin 启动时解析真实设备 class 对应的 virtual driver bundle（Lab 鉴权）。
+
+        请求体字段严格对齐后端 EdgeResolveReq（snake_case）。返回后端原始响应体
+        {code, data}，由调用方取 data；非 200 返回 {code, message} 交给上层按离线处理。
+        """
+        payload = {
+            "mode": mode,
+            "real_classes": real_classes,
+            "lab_uuid": lab_uuid,
+            "edge_uuid": edge_uuid,
+            "package_locks": package_locks or [],
+            "unilabos_version": unilabos_version,
+        }
+        response = self._session.post(
+            f"{self.remote_addr}/lab/square/edge/simulation-pairs/resolve",
+            json=payload,
+            headers={"Authorization": f"Lab {self.auth}"},
+            timeout=(5, 30),
+        )
+        if response.status_code != 200:
+            return {"code": response.status_code, "message": response.text}
+        return response.json()
+
 
 # 创建默认客户端实例
 http_client = HTTPClient()

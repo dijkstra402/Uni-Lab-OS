@@ -70,3 +70,29 @@ def get_pair_registry() -> PairRegistry:
 
 def lookup(real_class_name: str) -> PairEntry:
     return get_pair_registry().lookup(real_class_name)
+
+
+def resolve_pair_registry_path(
+    explicit_path: str | Path | None = None,
+    generated_path: str | Path | None = None,
+) -> Path:
+    """选择 PairRegistry 数据源：显式配置 > Edge 生成 bundle > 仓库默认 device_pair.yaml。"""
+    for candidate in (explicit_path, generated_path):
+        if candidate and Path(candidate).exists():
+            return Path(candidate)
+    return Path(__file__).with_name("device_pair.yaml")
+
+
+def set_pair_registry_path(path: str | Path) -> PairRegistry:
+    """用给定 yaml 重建模块级单例，使 lookup() 立即读取该路径（如 Edge 生成的 bundle）。"""
+    global _default_registry
+    _default_registry = PairRegistry(path)
+    return _default_registry
+
+
+def init_pair_registry(
+    explicit_path: str | Path | None = None,
+    generated_path: str | Path | None = None,
+) -> PairRegistry:
+    """按优先级解析数据源并重建单例。"""
+    return set_pair_registry_path(resolve_pair_registry_path(explicit_path, generated_path))

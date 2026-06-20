@@ -200,6 +200,18 @@ class VirtualMultiwayValve:
         # 删除debug日志：self.logger.debug(f"🎯 兼容性调用: set_valve_position({command})")
         return self.set_position(command)
 
+    def send_command(self, command: Union[int, str]):
+        """
+        通用命令入口 - 兼容注册表暴露的 send_command / auto-send_command 动作 📨
+        注册表声明了该动作但此前驱动未实现，导致 _execute_driver_command 调用报 AttributeError。
+        这里委托给 set_position 执行实际切换。
+
+        Args:
+            command: 目标位置 (0-8) 或位置字符串（open/close/default 等）
+        """
+        self.logger.info(f"📨 send_command 收到命令: {command}")
+        return self.set_position(command)
+
     def is_at_position(self, position: int) -> bool:
         """检查是否在指定位置 🎯"""
         result = self._current_position == position

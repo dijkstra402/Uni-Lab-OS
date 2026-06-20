@@ -679,6 +679,7 @@ class HTTPClient:
         real_classes: List[str],
         *,
         mode: str,
+        engine: str = "none",
         lab_uuid: str = "",
         edge_uuid: str = "",
         package_locks: Optional[List[Dict[str, Any]]] = None,
@@ -686,11 +687,13 @@ class HTTPClient:
     ) -> Dict[str, Any]:
         """sim/twin 启动时解析真实设备 class 对应的 virtual driver bundle（Lab 鉴权）。
 
-        请求体字段严格对齐后端 EdgeResolveReq（snake_case）。返回后端原始响应体
+        请求体字段严格对齐后端 EdgeResolveReq（snake_case）。engine 为启动仿真引擎，
+        后端按 (real_resource_template, engine) 选 pair；空视为 none。返回后端原始响应体
         {code, data}，由调用方取 data；非 200 返回 {code, message} 交给上层按离线处理。
         """
         payload = {
             "mode": mode,
+            "engine": engine or "none",
             "real_classes": real_classes,
             "lab_uuid": lab_uuid,
             "edge_uuid": edge_uuid,

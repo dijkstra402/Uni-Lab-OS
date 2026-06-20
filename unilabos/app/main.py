@@ -312,6 +312,12 @@ def build_argparser():
         help="Runtime mode: real hardware, full simulation, or one-way digital twin.",
     )
     parser.add_argument(
+        "--sim_engine",
+        choices=["none", "isaac", "gazebo", "genesis", "matterix", "custom"],
+        default="none",
+        help="Simulation engine used to resolve device pairs in sim/twin mode (pair selection key).",
+    )
+    parser.add_argument(
         "--sim_rate",
         type=float,
         default=1.0,
@@ -794,6 +800,7 @@ def main():
                         graph_preview,
                         working_dir=BasicConfig.working_dir,
                         mode=runtime_mode,
+                        engine=args_dict.get("sim_engine") or "none",
                         http_client=http_client_for_community,
                     )
                 except SimulationPairError as exc:

@@ -11,11 +11,27 @@ import yaml
 MissingSimPolicy = Literal["stub", "skip", "fail"]
 
 
+def _parse_twin(item: dict) -> tuple[list[str], float]:
+    """解析孪生观测字段，兼容两种 YAML 格式：
+
+    - 新版 Edge bundle：嵌套 ``twin_capability: {enabled, observed, throttle_hz}``；
+      ``enabled`` 为假时视为无孪生（observed 置空），即使误填 observed 也不启用。
+    - Phase 1A / 仓库默认：扁平 ``twin_observed`` + ``twin_throttle_hz``。
+    """
+    cap = item.get("twin_capability")
+    if isinstance(cap, dict):
+        if not cap.get("enabled"):
+            return [], float(cap.get("throttle_hz", 10.0))
+        return list(cap.get("observed") or []), float(cap.get("throttle_hz", 10.0))
+    return list(item.get("twin_observed") or []), float(item.get("twin_throttle_hz", 10.0))
+
+
 @dataclass(frozen=True)
 class PairEntry:
     real: str
     virtual: str | None = None
     missing_sim_policy: MissingSimPolicy = "stub"
+    engine: str = "none"
     twin_observed: list[str] = field(default_factory=list)
     twin_throttle_hz: float = 10.0
     explicit: bool = True
@@ -37,12 +53,14 @@ class PairRegistry:
             if policy not in ("stub", "skip", "fail"):
                 raise ValueError(f"invalid missing_sim_policy for {item.get('real')}: {policy}")
             real = item["real"]
+            observed, throttle = _parse_twin(item)
             pairs[real] = PairEntry(
                 real=real,
                 virtual=item.get("virtual"),
                 missing_sim_policy=policy,
-                twin_observed=list(item.get("twin_observed") or []),
-                twin_throttle_hz=float(item.get("twin_throttle_hz", 10.0)),
+                engine=item.get("engine") or "none",
+                twin_observed=observed,
+                twin_throttle_hz=throttle,
             )
         return pairs
 

@@ -20,15 +20,20 @@ GRAPH = {"nodes": [{"class": "dalong_heaterstirrer"}, {"class": "cam"}]}
 
 BUNDLE = {
     "bundle_version": "2026-06-20T00:00:00Z",
+    "engine": "none",
     "pairs": [
         {
             "real": "dalong_heaterstirrer",
+            "engine": "none",
             "virtual": "community.dalong.virtual_x",
             "missing_sim_policy": "stub",
-            "twin_observed": ["temperature", "rpm"],
-            "twin_throttle_hz": 20,
+            "twin_capability": {
+                "enabled": True,
+                "observed": ["temperature", "rpm"],
+                "throttle_hz": 20,
+            },
         },
-        {"real": "cam", "virtual": None, "missing_sim_policy": "skip"},
+        {"real": "cam", "engine": "none", "virtual": None, "missing_sim_policy": "skip"},
     ],
     "warnings": [],
 }
@@ -72,12 +77,13 @@ def test_resolve_simulation_pairs_builds_snake_case_payload(monkeypatch):
     monkeypatch.setattr(client._session, "post", fake_post)
 
     resp = client.resolve_simulation_pairs(
-        ["dalong_heaterstirrer"], mode="sim", lab_uuid="L", edge_uuid="E"
+        ["dalong_heaterstirrer"], mode="sim", engine="gazebo", lab_uuid="L", edge_uuid="E"
     )
     assert resp == {"code": 0, "data": {"bundle_version": "v1", "pairs": []}}
     assert captured["url"].endswith("/lab/square/edge/simulation-pairs/resolve")
     assert captured["json"] == {
         "mode": "sim",
+        "engine": "gazebo",
         "real_classes": ["dalong_heaterstirrer"],
         "lab_uuid": "L",
         "edge_uuid": "E",
@@ -106,9 +112,30 @@ def test_compile_bundle_to_yaml_compatible_with_pair_registry(tmp_path: Path):
     pair_file = tmp_path / "device_pair.generated.yaml"
     pair_file.write_text(text, encoding="utf-8")
     reg = PairRegistry(pair_file)
-    assert reg.lookup("dalong_heaterstirrer").virtual == "community.dalong.virtual_x"
-    assert reg.lookup("dalong_heaterstirrer").twin_throttle_hz == 20
+    dalong = reg.lookup("dalong_heaterstirrer")
+    assert dalong.virtual == "community.dalong.virtual_x"
+    assert dalong.engine == "none"
+    assert dalong.twin_observed == ["temperature", "rpm"]
+    assert dalong.twin_throttle_hz == 20
     assert reg.lookup("cam").missing_sim_policy == "skip"
+
+
+def test_compile_disabled_twin_clears_observed(tmp_path: Path):
+    """twin_capability.enabled=false 时即使误填 observed 也不启用孪生（observed 置空）。"""
+    pairs = [
+        {
+            "real": "qone_nmr",
+            "engine": "gazebo",
+            "virtual": "mock_qone_nmr",
+            "missing_sim_policy": "stub",
+            "twin_capability": {"enabled": False, "observed": ["t"], "throttle_hz": 5},
+        }
+    ]
+    pair_file = tmp_path / "device_pair.generated.yaml"
+    pair_file.write_text(compile_bundle_to_yaml(pairs), encoding="utf-8")
+    entry = PairRegistry(pair_file).lookup("qone_nmr")
+    assert entry.engine == "gazebo"
+    assert entry.twin_observed == []
 
 
 def test_prepare_generates_yaml_and_manifest(tmp_path: Path):
@@ -123,6 +150,7 @@ def test_prepare_generates_yaml_and_manifest(tmp_path: Path):
 
     manifest = json.loads((tmp_path / "simulation_pairs" / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["real_classes"] == ["cam", "dalong_heaterstirrer"]
+    assert manifest["engine"] == "none"
     assert manifest["bundle_version"] == "2026-06-20T00:00:00Z"
     assert manifest["generated_yaml"] == "device_pair.generated.yaml"
 
@@ -161,6 +189,16 @@ def test_offline_incompatible_cache_falls_back(tmp_path: Path):
     new_graph = {"nodes": [{"class": "brand_new_device"}]}
     result = prepare_simulation_pairs(
         new_graph, working_dir=tmp_path, mode="sim", http_client=_FakeClient(raise_exc=True)
+    )
+    assert result.offline is True
+    assert result.generated_yaml is None
+
+
+def test_offline_engine_mismatch_falls_back(tmp_path: Path):
+    """缓存为 engine=none，换 engine=gazebo 离线启动 → 缓存不可用，回退仓库默认。"""
+    prepare_simulation_pairs(GRAPH, working_dir=tmp_path, mode="sim", engine="none", http_client=_FakeClient(BUNDLE))
+    result = prepare_simulation_pairs(
+        GRAPH, working_dir=tmp_path, mode="sim", engine="gazebo", http_client=_FakeClient(raise_exc=True)
     )
     assert result.offline is True
     assert result.generated_yaml is None

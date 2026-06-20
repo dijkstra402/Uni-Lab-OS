@@ -24,16 +24,21 @@ from unilabos.registry.pair_registry import PairRegistry
 
 BUNDLE = {
     "bundle_version": "2026-06-20T00:00:00Z",
+    "engine": "none",
     "pairs": [
         {
             "real": "dalong_heaterstirrer",
+            "engine": "none",
             "virtual": "community.dalong.virtual_x",
             "missing_sim_policy": "stub",
-            "twin_observed": ["temperature", "rpm"],
-            "twin_throttle_hz": 20,
+            "twin_capability": {
+                "enabled": True,
+                "observed": ["temperature", "rpm"],
+                "throttle_hz": 20,
+            },
         },
-        {"real": "cam", "virtual": None, "missing_sim_policy": "skip"},
-        {"real": "no_policy_dev", "virtual": None},  # 缺 missing_sim_policy → 编译默认 stub
+        {"real": "cam", "engine": "none", "virtual": None, "missing_sim_policy": "skip"},
+        {"real": "no_policy_dev", "engine": "none", "virtual": None},  # 缺 missing_sim_policy → 编译默认 stub
     ],
     "warnings": [],
 }
@@ -99,6 +104,7 @@ def check_prepare_generates_yaml_and_manifest() -> None:
         assert manifest["real_classes"] == ["cam", "dalong_heaterstirrer", "no_policy_dev"], manifest[
             "real_classes"
         ]
+        assert manifest["engine"] == "none", manifest.get("engine")
         assert manifest["generated_yaml"] == "device_pair.generated.yaml"
 
 

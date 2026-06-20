@@ -10,8 +10,6 @@ import sys
 import threading
 import time
 from typing import Dict, Any, List
-import networkx as nx
-import yaml
 
 # Windows 中文系统 stdout 默认 GBK，无法编码 banner / emoji 日志中的 Unicode 字符
 # 强制 stdout/stderr 用 UTF-8，避免 print 触发 UnicodeEncodeError 导致进程崩溃
@@ -30,7 +28,7 @@ if unilabos_dir not in sys.path:
 
 from unilabos.app.utils import cleanup_for_restart
 from unilabos.utils.banner_print import print_status, print_unilab_banner
-from unilabos.config.config import load_config, BasicConfig, HTTPConfig
+from unilabos.config.config import load_config, BasicConfig, HTTPConfig, SimGatewayConfig
 
 # Global restart flags (used by ws_client and web/server)
 _restart_requested: bool = False
@@ -141,7 +139,7 @@ def convert_argv_dashes_to_underscores(args: argparse.ArgumentParser):
                 break
 
 
-def parse_args():
+def build_argparser():
     """解析命令行参数"""
     parser = argparse.ArgumentParser(description="Start Uni-Lab Edge server.")
     subparsers = parser.add_subparsers(title="Valid subcommands", dest="command")
@@ -307,6 +305,91 @@ def parse_args():
         default=500,
         help="Maximum number of automatic restarts in restart mode (default: 500)",
     )
+    parser.add_argument(
+        "--mode",
+        choices=["real", "sim", "twin"],
+        default="real",
+        help="Runtime mode: real hardware, full simulation, or one-way digital twin.",
+    )
+    parser.add_argument(
+        "--sim_rate",
+        type=float,
+        default=1.0,
+        help="Simulation acceleration ratio. Only sim mode can run faster than real time.",
+    )
+    parser.add_argument(
+        "--sim_paused",
+        action="store_true",
+        default=False,
+        help="Start the simulation clock paused.",
+    )
+    parser.add_argument(
+        "--disable_sim_services",
+        action="store_true",
+        default=False,
+        help="Do not auto-start /clock publisher and sim clock control ROS services.",
+    )
+    parser.add_argument(
+        "--physics",
+        choices=["none", "fake", "isaac"],
+        default="none",
+        help="Physics backend for sim mode: none, fake in-process backend, or Isaac HTTP bridge.",
+    )
+    parser.add_argument(
+        "--physics_endpoint",
+        type=str,
+        default=None,
+        help="Physics backend endpoint, required for --physics isaac.",
+    )
+    parser.add_argument(
+        "--physics_scene",
+        type=str,
+        default=None,
+        help="Scene path to load into the selected physics backend during startup.",
+    )
+    parser.add_argument(
+        "--scene",
+        type=str,
+        default=None,
+        help="Path to a lab architecture scene JSON ({nodes, rootNodeIds}); overrides the scene "
+        "carried in the startup download. Walls/slabs are merged into full_dev for MoveIt collision.",
+    )
+    parser.add_argument(
+        "--physics_timeout",
+        type=float,
+        default=120.0,
+        help="Physics backend RPC timeout in seconds.",
+    )
+    parser.add_argument(
+        "--disable_query_api",
+        action="store_true",
+        default=False,
+        help="Do not auto-start the Robo-UniLabOS query API (ROS2 /unilabos/query + gRPC).",
+    )
+    parser.add_argument(
+        "--query_grpc_port",
+        type=int,
+        default=50051,
+        help="gRPC port for the query API (0 disables gRPC; ROS2 service still starts).",
+    )
+    parser.add_argument(
+        "--query_labutopia_assets",
+        type=str,
+        default=None,
+        help="Directory of LabUtopia asset cards (*.json) to serve as a query scene source.",
+    )
+    parser.add_argument(
+        "--query_labutopia_config",
+        type=str,
+        default=None,
+        help="Directory of LabUtopia task config (*.yaml) to serve action schemas / affordances.",
+    )
+    parser.add_argument(
+        "--query_labutopia_usd",
+        type=str,
+        default=None,
+        help="Path to a LabUtopia USD stage for precise per-prim poses (requires pxr/usd-core).",
+    )
     # workflow upload subcommand
     workflow_parser = subparsers.add_parser(
         "workflow_upload",
@@ -412,6 +495,10 @@ def parse_args():
     return parser
 
 
+def parse_args():
+    return build_argparser()
+
+
 def _resolve_graph_file_path(file_path: str | None) -> str | None:
     if file_path is None:
         return None
@@ -433,6 +520,14 @@ def _load_graph_json_preview(file_path: str | None) -> Dict[str, Any] | None:
     except Exception as exc:
         print_status(f"预读取 graph JSON 失败，跳过 community 包解析: {exc}", "warning")
         return None
+
+
+def _can_start_without_cloud_auth(args_dict: Dict[str, Any], graph_file_path: str | None) -> bool:
+    if graph_file_path is None:
+        return False
+    if args_dict.get("use_remote_resource", False):
+        return False
+    return "websocket" not in (args_dict.get("app_bridges") or [])
 
 
 def main():
@@ -745,19 +840,44 @@ def main():
         print_status("工作流上传完成，程序退出", "info")
         os._exit(0)
 
-    if not BasicConfig.ak or not BasicConfig.sk:
-        print_status("后续运行必须拥有一个实验室，请前往 https://leap-lab.bohrium.com 注册实验室！", "warning")
-        os._exit(1)
+    import networkx as nx
+    import yaml
+
     graph: nx.Graph
     resource_tree_set: ResourceTreeSet
     resource_links: List[Dict[str, Any]]
-    request_startup_json = args_dict.get("_startup_json")
-    if request_startup_json is None:
-        request_startup_json = http_client.request_startup_json()
-
     file_path = args_dict.get("_graph_file_path")
     if file_path is None:
         file_path = _resolve_graph_file_path(args_dict.get("graph") or BasicConfig.startup_json_path)
+    can_start_without_auth = _can_start_without_cloud_auth(args_dict, file_path)
+    if not BasicConfig.ak or not BasicConfig.sk:
+        if not can_start_without_auth:
+            print_status("后续运行必须拥有一个实验室，请前往 https://leap-lab.bohrium.com 注册实验室！", "warning")
+            os._exit(1)
+        print_status("未提供 ak/sk，使用本地 graph 和非 websocket bridge 进入离线启动模式", "warning")
+
+    request_startup_json = args_dict.get("_startup_json")
+    if request_startup_json is None and BasicConfig.ak and BasicConfig.sk:
+        request_startup_json = http_client.request_startup_json()
+
+    # 实验室建筑场景：--scene 本地文件优先，否则取启动下载里携带的 scene 字段
+    # （方案 A，后端未提供时为 None，优雅降级，不影响设备装配）
+    scene_json = None
+    scene_file = args_dict.get("scene")
+    if scene_file:
+        if os.path.exists(scene_file):
+            try:
+                with open(scene_file, encoding="utf-8") as f:
+                    scene_json = json.load(f)
+                print_status(f"已从本地文件加载实验室建筑场景: {scene_file}", "info")
+            except (OSError, json.JSONDecodeError) as e:
+                print_status(f"加载实验室建筑场景文件失败 {scene_file}: {e}", "warning")
+        else:
+            print_status(f"实验室建筑场景文件不存在: {scene_file}", "warning")
+    elif isinstance(request_startup_json, dict):
+        scene_json = request_startup_json.get("scene")
+    args_dict["scene_json"] = scene_json
+
     if file_path is None:
         if not request_startup_json:
             print_status(
@@ -838,6 +958,7 @@ def main():
     if "fastapi" in args_dict["app_bridges"]:
         args_dict["bridges"].append(http_client)
     # 获取通信客户端（仅支持WebSocket）
+    isaac_gateway = None
     if BasicConfig.is_host_mode:
         comm_client = get_communication_client()
         if "websocket" in args_dict["app_bridges"]:
@@ -845,6 +966,8 @@ def main():
 
             def _exit(signum, frame):
                 comm_client.stop()
+                if isaac_gateway is not None:
+                    isaac_gateway.stop()
                 sys.exit(0)
 
             signal.signal(signal.SIGINT, _exit)
@@ -852,6 +975,30 @@ def main():
             comm_client.start()
     else:
         print_status("SlaveMode跳过Websocket连接")
+
+    if SimGatewayConfig.enabled:
+        try:
+            from unilabos.sim.isaac_gateway import IsaacSimGateway
+
+            isaac_gateway = IsaacSimGateway.from_config()
+            isaac_gateway.start()
+
+            def _default_collision_handler(payload):
+                # 默认安全处理：结构化告警日志；可后续替换为停机/审计逻辑
+                print_status(f"[IsaacSim] 碰撞事件: {payload.get('pairs') or payload}", "warning")
+
+            isaac_gateway.add_collision_handler(_default_collision_handler)
+            print_status(f"IsaacSimGateway 已启动: {SimGatewayConfig.endpoint}", "info")
+            # visual != disable 时改用 ResourceVisualization 的整场景 URDF（见下方 RV 构建后），
+            # 避免给设备发占位 URI；仅在无可视化（无 RV）时走逐资源 sync 兜底。
+            if args_dict["visual"] == "disable":
+                try:
+                    synced = isaac_gateway.sync_from_resource_tree_set(args_dict["resources_config"])
+                    print_status(f"IsaacSimGateway 资源同步完成，已发送 {synced} 条 asset.upsert", "info")
+                except Exception as sync_err:
+                    print_status(f"IsaacSimGateway 资源同步失败: {sync_err}", "warning")
+        except Exception as e:
+            print_status(f"IsaacSimGateway 启动失败: {e}", "warning")
 
     args_dict["resources_mesh_config"] = {}
     args_dict["resources_edge_config"] = resource_edge_info
@@ -868,8 +1015,16 @@ def main():
                 devices_and_resources,
                 [n.res_content for n in args_dict["resources_config"].all_nodes],  # type: ignore  # FIXME
                 enable_rviz=enable_rviz,
+                scene_json=args_dict.get("scene_json"),
             )
             args_dict["resources_mesh_config"] = resource_visualization.resource_model
+            # 把整场景展开后的 URDF 作为单个 full_dev 设备发给 Isaac Sim
+            if isaac_gateway is not None:
+                try:
+                    isaac_gateway.upsert_scene_urdf(resource_visualization.urdf_str)
+                    print_status("IsaacSimGateway 已发送整场景 scene.urdf", "info")
+                except Exception as scene_err:
+                    print_status(f"IsaacSimGateway 场景URDF发送失败: {scene_err}", "warning")
             start_backend(**args_dict)
             server_thread = threading.Thread(
                 target=start_server,
@@ -904,6 +1059,8 @@ def main():
             )
             if restart_requested:
                 print_status("[Main] Restart requested, cleaning up...", "info")
+                if isaac_gateway is not None:
+                    isaac_gateway.stop()
                 cleanup_for_restart()
                 return
     else:
@@ -916,6 +1073,8 @@ def main():
         )
         if restart_requested:
             print_status("[Main] Restart requested, cleaning up...", "info")
+            if isaac_gateway is not None:
+                isaac_gateway.stop()
             cleanup_for_restart()
             os._exit(RESTART_EXIT_CODE)
 

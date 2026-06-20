@@ -289,7 +289,10 @@ def job_add(req: JobAddReq) -> JobData:
 
     if action_args is None:
         action_args = req.action_args or {}
-    elif isinstance(action_args, dict) and "command" in action_args:
+    elif isinstance(action_args, dict) and isinstance(action_args.get("command"), dict):
+        # 仅当 command 包裹的是嵌套 dict 时才解包；扁平 {"command": 标量} 必须整体传给
+        # send_goal->convert_to_ros_msg，否则降级成裸标量后 _extract_data 落到 "data" 键，
+        # Goal.command 收不到值（表现为 command=''，驱动报"无法识别的命令"）。
         action_args = action_args["command"]
 
     # 自动获取 action_type

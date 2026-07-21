@@ -342,6 +342,19 @@ def build_resources_from_registry(
     return resources
 
 
+def _merge_resources_ast_priority(
+    yaml_resources: List[Dict[str, Any]],
+    ast_resources: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    """按 resource["id"] 求并集，同 id 时 AST 版覆盖 YAML 版——与运行时 Registry 一致：
+    运行时对 AST 已注册的 device_id 视 YAML 为冗余并跳过（registry.py _load_single_device_file）。
+    先放 YAML，再用 AST update 覆盖，最后按 id 排序为稳定 list。
+    """
+    merged: Dict[str, Dict[str, Any]] = {res["id"]: res for res in yaml_resources}
+    merged.update({res["id"]: res for res in ast_resources})
+    return [merged[rid] for rid in sorted(merged)]
+
+
 def build_package_info(
     project: Dict[str, Any],
     class_namespace: str,
@@ -393,23 +406,30 @@ def inspect_package(
 
     package_info = build_package_info(project, class_namespace, sha256)
 
-    # 设备来源优先级：根目录 registry.yaml > 文件夹式外部注册表(unilabos_registry/) > @device AST 扫描
-    # 前两者条目均自带完整 class.action_value_mappings，可直接作为 source_registry。
+    # 设备来源：YAML(root registry.yaml 优先于 unilabos_registry/) 与 @device AST 扫描并集合并，
+    # 同 device_id 时 AST 覆盖 YAML——与运行时 Registry 一致（对 AST 已注册的 id 视 YAML 为冗余并跳过）。
     yaml_entries = read_registry_yaml_devices(pkg_dir)
-    if not yaml_entries:
-        yaml_entries = read_external_registry_devices(pkg_dir)
-        registry_source = "unilabos_registry/"
-    else:
-        registry_source = "registry.yaml"
     if yaml_entries:
-        device_source = registry_source
-        device_ids = sorted(yaml_entries)
-        resources = build_resources_from_registry(yaml_entries, package_info)
+        yaml_source = "registry.yaml"
     else:
+        yaml_entries = read_external_registry_devices(pkg_dir)
+        yaml_source = "unilabos_registry/"
+    yaml_resources = build_resources_from_registry(yaml_entries, package_info) if yaml_entries else []
+
+    ast_devices = scan_package_devices(pkg_dir)
+    ast_resources = build_resources_from_ast(ast_devices, package_info) if ast_devices else []
+
+    resources = _merge_resources_ast_priority(yaml_resources, ast_resources)
+    device_ids = [res["id"] for res in resources]
+
+    if yaml_resources and ast_resources:
+        device_source = f"{yaml_source} + @device AST (merged)"
+    elif yaml_resources:
+        device_source = yaml_source
+    elif ast_resources:
         device_source = "@device AST"
-        ast_devices = scan_package_devices(pkg_dir)
-        device_ids = sorted(ast_devices)
-        resources = build_resources_from_ast(ast_devices, package_info)
+    else:
+        device_source = "无"
     devices = {rid: None for rid in device_ids}
     if not resources:
         print_status(f"警告：{pkg_dir} 未发现 registry.yaml / unilabos_registry/ 或 @device 设备，仅生成 package_info", "warning")

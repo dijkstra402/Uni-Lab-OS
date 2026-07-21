@@ -4,10 +4,8 @@
 
 import hashlib
 import json
-import os
 import re
 import subprocess
-import sys
 import tarfile
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -252,109 +250,44 @@ def build_archive(pkg_dir: Path, archive_path: Path) -> str:
     return "sha256:" + _sha256_file(archive_path)
 
 
-_PY_TO_JSON_SCHEMA_TYPE = {
-    "float": "number",
-    "int": "integer",
-    "str": "string",
-    "bool": "boolean",
-    "dict": "object",
-    "list": "array",
-    "Dict": "object",
-    "List": "array",
-    "Any": "string",
-}
+def build_resources_from_ast(
+    ast_devices: Dict[str, Dict[str, Any]],
+    package_info: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    """把 @device AST 扫描出的设备 meta 交给运行时注册表的权威构建器，映射为 /lab/resource 项。
 
-
-def _json_schema_type(py_type: str) -> str:
-    """把 Python 类型注解字符串归一化为 JSON Schema type（取裸类型名，未知回退 string）。"""
-    base = (py_type or "").strip().split("[")[0].split(".")[-1]
-    return _PY_TO_JSON_SCHEMA_TYPE.get(base, "string")
-
-
-def build_action_value_mappings(actions: Dict[str, Any]) -> Dict[str, Any]:
-    """把 AST 扫描的原始 action（params/return_type）转换成前后端期望的
+    复用 `Registry._build_device_entry_from_ast` 而非自造简化实现：保证每个 action 带
+    完整 `schema`(wrap_action_schema)、`goal_default`、`placeholder_keys`、result schema、
+    async 类型归一化等字段，与运行时注册表完全一致，杜绝"空 schema"类漏字段 bug。
     """
-    result: Dict[str, Any] = {}
-    for name, meta in actions.items():
-        if not isinstance(meta, dict):
-            continue
-        params = meta.get("params") if isinstance(meta.get("params"), list) else []
-        goal_props: Dict[str, Any] = {}
-        required: List[str] = []
-        goal_default: Dict[str, Any] = {}
-        for param in params:
-            if not isinstance(param, dict):
-                continue
-            pname = str(param.get("name") or "").strip()
-            if not pname:
-                continue
-            goal_props[pname] = {"type": _json_schema_type(str(param.get("type", ""))), "title": pname}
-            if param.get("required"):
-                required.append(pname)
-            if param.get("default") is not None:
-                goal_default[pname] = param.get("default")
-        goal_schema: Dict[str, Any] = {"type": "object", "properties": goal_props}
-        if required:
-            goal_schema["required"] = required
-        action_args = meta.get("action_args") if isinstance(meta.get("action_args"), dict) else {}
-        action_type_raw = action_args.get("action_type")
-        action_type = "UniLabJsonCommand"
-        if isinstance(action_type_raw, str) and action_type_raw.strip():
-            action_type = action_type_raw.strip().split(":")[-1].split(".")[-1]
-        entry: Dict[str, Any] = {
-            "type": action_type,
-            "goal": goal_schema,
-            "result": {"type": "object", "properties": {}},
-            "feedback": {"type": "object", "properties": {}},
-            "description": str(meta.get("docstring") or action_args.get("description") or ""),
-        }
-        if goal_default:
-            entry["goal_default"] = goal_default
-        result[name] = entry
-    return result
+    from unilabos.registry.registry import Registry
 
-
-def build_resources(devices: Dict[str, Dict[str, Any]], package_info: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """把扫描出的设备 meta 映射为 /lab/resource 的 resources 项，并附 resource 级 source_registry。"""
+    registry = Registry()  # __init__ 不触发扫描，仅借用 AST→条目构建器
     resources: List[Dict[str, Any]] = []
-    for device_id, meta in devices.items():
-        actions = meta.get("actions") if isinstance(meta.get("actions"), dict) else {}
-        action_value_mappings = build_action_value_mappings(actions)
-        status_props = meta.get("status_properties") if isinstance(meta.get("status_properties"), dict) else {}
-        handles = meta.get("handles") if isinstance(meta.get("handles"), list) else []
-
-        reg_class = {
-            "module": meta.get("module", ""),
-            "type": meta.get("device_type", "python"),
-            "action_value_mappings": action_value_mappings,
-            "status_types": status_props,
+    for device_id in sorted(ast_devices):
+        ast_meta = ast_devices[device_id]
+        # 权威 entry：{category, class:{module,status_types,action_value_mappings,type[,hardware_interface]},
+        #   config_info, description, displayname, handles, icon, init_param_schema, version, ...}
+        entry = registry._build_device_entry_from_ast(device_id, ast_meta)
+        resource: Dict[str, Any] = {
+            "id": device_id,
+            "registry_type": str(entry.get("registry_type", "device")),
+            "version": str(entry.get("version", package_info.get("version", "0.0.1"))),
+            "description": entry.get("description", ""),
+            "displayname": entry.get("displayname") or device_id,
+            "icon": entry.get("icon", ""),
+            "class": entry.get("class", {}),
+            "category": entry.get("category", []),
+            "handles": _map_handles(entry.get("handles", [])),
+            "init_param_schema": entry.get("init_param_schema", {}),
+            "package_info": package_info,
+            # source_registry：整份权威 entry（含 class.action_value_mappings），供后端 BuildEffectiveTemplate
+            "source_registry": entry,
         }
-        # source_registry：保存设备原始注册表，供后端 BuildEffectiveTemplate 读取 class.action_value_mappings
-        source_registry = {
-            "class": reg_class,
-            "handles": handles,
-            "device_id": device_id,
-            "version": meta.get("version", package_info.get("version", "")),
-            "description": meta.get("description", ""),
-            "displayname": meta.get("displayname") or device_id,
-            "icon": meta.get("icon", ""),
-        }
-        category = meta.get("category") if isinstance(meta.get("category"), list) else []
-        resources.append(
-            {
-                "id": device_id,
-                "registry_type": "device",
-                "version": meta.get("version", package_info.get("version", "0.0.1")),
-                "description": meta.get("description", ""),
-                "displayname": meta.get("displayname") or device_id,
-                "icon": meta.get("icon", ""),
-                "class": reg_class,
-                "category": category,
-                "handles": _map_handles(handles),
-                "package_info": package_info,
-                "source_registry": source_registry,
-            }
-        )
+        model = entry.get("model")
+        if model is not None:
+            resource["model"] = model
+        resources.append(resource)
     return resources
 
 
@@ -476,7 +409,7 @@ def inspect_package(
         device_source = "@device AST"
         ast_devices = scan_package_devices(pkg_dir)
         device_ids = sorted(ast_devices)
-        resources = build_resources(ast_devices, package_info)
+        resources = build_resources_from_ast(ast_devices, package_info)
     devices = {rid: None for rid in device_ids}
     if not resources:
         print_status(f"警告：{pkg_dir} 未发现 registry.yaml / unilabos_registry/ 或 @device 设备，仅生成 package_info", "warning")

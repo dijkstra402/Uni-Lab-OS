@@ -143,7 +143,7 @@ class Registry:
         )
 
         # 社区包根目录可只放一个 registry.yaml 声明设备（device_id -> 条目），
-        self._load_community_device_registries(devices_dirs)
+        self._load_community_device_registries(devices_dirs, community_namespaces=community_namespaces)
 
         # 2. Host node 内置设备
         self._setup_host_node()
@@ -167,7 +167,10 @@ class Registry:
 
         # 4. --devices 目录内嵌的同构注册表 (devices/ resources/ device_comms/) — 两种模式下都加载
         self._load_devices_dir_registries(
-            devices_dirs, upload_registry=upload_registry, complete_registry=complete_registry
+            devices_dirs,
+            upload_registry=upload_registry,
+            complete_registry=complete_registry,
+            community_namespaces=community_namespaces,
         )
 
         self._startup_executor.shutdown(wait=True)
@@ -350,6 +353,11 @@ class Registry:
                 if parent_dir not in sys.path:
                     sys.path.insert(0, parent_dir)
                     logger.info(f"[UniLab Registry] 添加 Python 路径: {parent_dir}")
+                if str(d_path) in community_namespaces:
+                    pkg_dir = str(d_path)
+                    if pkg_dir not in sys.path:
+                        sys.path.append(pkg_dir)
+                        logger.info(f"[UniLab Registry] 添加社区包 Python 路径(末尾): {pkg_dir}")
                 extra_dirs.append(d_path)
 
         # 主扫描
@@ -1834,10 +1842,14 @@ class Registry:
             )
 
     def _load_single_device_file(
-        self, file: Path, complete_registry: bool
+        self, file: Path, complete_registry: bool, namespace: Optional[str] = None
     ) -> Tuple[Dict[str, Any], Dict[str, Any], bool, List[str]]:
         """
         加载单个设备文件 (线程安全)
+
+        namespace: 社区包命名空间（community.<ns>）。仅用于 "AST 已注册则跳过 YAML" 去重判断——
+        AST 路径按 community.<ns>.<id> 注册，故去重需比较命名空间化后的 key；返回的 data/
+        complete_data/device_ids 仍以裸 device_id 为 key，前缀在 load_device_types 写注册表时施加。
 
         Returns:
             (data, complete_data, is_valid, device_ids): 设备数据, 完整数据, 是否有效, 设备ID列表
@@ -1890,10 +1902,10 @@ class Registry:
                 device_config["init_param_schema"] = {}
 
             if "class" in device_config:
-                # --- AST 已有该设备 → 跳过，提示冗余 ---
-                if self.device_type_registry.get(device_id):
+                # --- AST 已有该设备 → 跳过，提示冗余（按命名空间化后的 key 比较）---
+                if self.device_type_registry.get(self._namespaced_key(namespace, device_id)):
                     logger.warning(
-                        f"[UniLab Registry] 设备 '{device_id}' 已由 AST 扫描注册，"
+                        f"[UniLab Registry] 设备 '{self._namespaced_key(namespace, device_id)}' 已由 AST 扫描注册，"
                         f"YAML 定义冗余，跳过 YAML 处理"
                     )
                     skip_ids.add(device_id)
@@ -2190,7 +2202,18 @@ class Registry:
             self._add_builtin_actions(device_config, device_id)
         return data
 
-    def load_device_types(self, path: os.PathLike, complete_registry: bool = False):
+    @staticmethod
+    def _namespaced_key(namespace: Optional[str], device_id: str) -> str:
+        """社区包 device/resource id 命名空间化：ns 非空 → community.<ns>.<id>；否则维持裸 id。
+
+        与 AST 扫描路径（_run_ast_scan）保持同一 key 规则，使内嵌 YAML 与 @device 装饰器
+        两条加载路径对称，云端 community.<ns>.<id> 引用可解析。
+        """
+        return f"{namespace}.{device_id}" if namespace else device_id
+
+    def load_device_types(
+        self, path: os.PathLike, complete_registry: bool = False, namespace: Optional[str] = None
+    ):
         import hashlib as _hl
         t0 = time.time()
         abs_path = Path(path).absolute()
@@ -2222,14 +2245,16 @@ class Registry:
                     continue
                 cached = yaml_dev_cache.get(file_key)
                 if cached and cached.get("yaml_md5") == yaml_md5 and cached.get("entries"):
-                    complete_data = cached["entries"]
-                    # 过滤掉 AST 已有的设备
+                    # 缓存条目按裸 device_id 存储（file_key/entries 不受命名空间污染）；
+                    # 去重与注册表写入时才施加 community 前缀，避免缓存命中写入裸 key。
                     complete_data = {
-                        did: cfg for did, cfg in complete_data.items()
-                        if not self.device_type_registry.get(did)
+                        did: cfg for did, cfg in cached["entries"].items()
+                        if not self.device_type_registry.get(self._namespaced_key(namespace, did))
                     }
                     runtime_data = self._rebuild_device_runtime_data(complete_data)
-                    self.device_type_registry.update(runtime_data)
+                    self.device_type_registry.update(
+                        {self._namespaced_key(namespace, did): cfg for did, cfg in runtime_data.items()}
+                    )
                     cache_hits += 1
                     continue
                 uncached_files.append(file)
@@ -2237,7 +2262,7 @@ class Registry:
         executor = self._startup_executor
         future_to_file = {
             executor.submit(
-                self._load_single_device_file, file, complete_registry
+                self._load_single_device_file, file, complete_registry, namespace
             ): file
             for file in uncached_files
         }
@@ -2247,7 +2272,12 @@ class Registry:
             try:
                 data, _complete_data, is_valid, device_ids = future.result()
                 if is_valid:
-                    runtime_data = {did: data[did] for did in device_ids if did in data}
+                    # 注册表 key 施加 community 前缀；缓存仍按裸 device_id 写入
+                    runtime_data = {
+                        self._namespaced_key(namespace, did): data[did]
+                        for did in device_ids
+                        if did in data
+                    }
                     self.device_type_registry.update(runtime_data)
                     # 写入缓存
                     file_key = str(file.absolute()).replace("\\", "/")
@@ -2276,17 +2306,22 @@ class Registry:
             f"(耗时 {time.time() - t0:.2f}s){extra}"
         )
 
-    def _load_community_device_registries(self, devices_dirs=None):
+    def _load_community_device_registries(self, devices_dirs=None, community_namespaces=None):
         """加载社区设备包根目录下的 registry.yaml（device_id -> 条目）。
+
+        community_namespaces 命中的目录，其设备 key 按 community.<ns>.<id> 注册，与
+        _run_ast_scan / _load_devices_dir_registries 两条路径对称（namespace 以 str(d_path) 为 key）。
         """
         if not devices_dirs:
             return
 
+        community_namespaces = community_namespaces or {}
         loaded_total = 0
         for d in devices_dirs:
             d_path = Path(d).resolve()
             if not d_path.is_dir():
                 continue
+            namespace = community_namespaces.get(str(d_path))
             reg_file = None
             for name in ("registry.yaml", "registry.yml"):
                 candidate = d_path / name
@@ -2298,7 +2333,7 @@ class Registry:
 
             try:
                 data, _complete_data, is_valid, device_ids = self._load_single_device_file(
-                    reg_file, complete_registry=False
+                    reg_file, complete_registry=False, namespace=namespace
                 )
             except Exception as e:
                 logger.warning(f"[UniLab Registry] 社区包 registry.yaml 加载失败: {reg_file}, 错误: {e}")
@@ -2306,7 +2341,9 @@ class Registry:
             if not is_valid:
                 continue
 
-            runtime_data = {did: data[did] for did in device_ids if did in data}
+            runtime_data = {
+                self._namespaced_key(namespace, did): data[did] for did in device_ids if did in data
+            }
             for cfg in runtime_data.values():
                 # _load_single_device_file 会按 file.stem 追加分类，这里去掉无意义的 "registry"
                 category = cfg.get("category")
@@ -2364,29 +2401,41 @@ class Registry:
         candidates.append(base)
         return candidates
 
-    def _load_devices_dir_registries(self, devices_dirs=None, upload_registry=False, complete_registry=False):
+    def _load_devices_dir_registries(
+        self, devices_dirs=None, upload_registry=False, complete_registry=False, community_namespaces=None
+    ):
         """为每个 --devices 目录自动加载其内嵌的、与 unilabos/registry 同构的注册表。
 
         约定：内嵌注册表与内置注册表结构一致（ROOT/registry/{devices,device_comms,resources}/*.yaml）。
         命中即复用 load_device_types / load_resource_types 加载。external_only 模式下同样加载——
         外部设备包自带的注册表不应被跳过。
+
+        community_namespaces: {已解析的 --devices 绝对路径 -> community.<ns>}。命中的社区包目录，
+        其内嵌 YAML 设备 key 按 community.<ns>.<id> 注册，与 _run_ast_scan 路径对称。namespace 以
+        base（--devices 目录本身，即 str(Path(d).resolve())）为 key 查询——与 _run_ast_scan 及
+        community_packages 构建 namespaces 时的 str(Path(package_dir).resolve()) 完全一致。
         """
         if not devices_dirs:
             return
 
+        community_namespaces = community_namespaces or {}
         seen: set = set()
         for d in devices_dirs:
             base = Path(d).resolve()
             if not base.is_dir():
                 continue
+            namespace = community_namespaces.get(str(base))
             for candidate in self._registry_root_candidates(base):
                 root = candidate.resolve()
                 key = str(root)
                 if key in seen or not self._is_registry_root(root):
                     continue
                 seen.add(key)
-                logger.info(f"[UniLab Registry] 加载 --devices 内嵌注册表: {root}")
-                self.load_device_types(root, complete_registry=complete_registry)
+                logger.info(
+                    f"[UniLab Registry] 加载 --devices 内嵌注册表: {root}"
+                    + (f" (命名空间 {namespace})" if namespace else "")
+                )
+                self.load_device_types(root, complete_registry=complete_registry, namespace=namespace)
                 if BasicConfig.enable_resource_load:
                     self.load_resource_types(root, upload_registry, complete_registry=complete_registry)
                 else:

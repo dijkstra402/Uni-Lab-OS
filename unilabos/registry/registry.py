@@ -322,7 +322,18 @@ class Registry:
                 if parent_dir not in sys.path:
                     sys.path.insert(0, parent_dir)
                     logger.info(f"[UniLab Registry] 添加 Python 路径: {parent_dir}")
-                extra_dirs.append(d_path)
+                # [AI] Model: Claude Opus 4.8 | 2026-07-22 | --devices 目录自身追加进 sys.path 修复包内绝对导入
+                # 社区包内以顶层名（如 unilab_virtual）做绝对导入时，只加父目录不够——包体在
+                # d_path/ 下，需把 d_path 本身也放上路径。追加到末尾（非 insert(0)）：优先级最低，
+                # 保证 pip 版同名库不被包内副本 shadow（否则污染进程内所有设备）。
+                # ponytail: 上限——若社区包确想覆盖某 pip 同名模块将不生效；届时需 per-package
+                # import 隔离（独立 sys.path 上下文 / importlib 命名空间），本处不做。
+                pkg_dir = str(d_path)
+                if pkg_dir not in sys.path:
+                    sys.path.append(pkg_dir)
+                    logger.info(f"[UniLab Registry] 添加社区包 Python 路径(末尾): {pkg_dir}")
+                if d_path not in extra_dirs:
+                    extra_dirs.append(d_path)
 
         # 主扫描
         if external_only:

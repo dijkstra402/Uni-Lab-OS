@@ -812,6 +812,15 @@ def main():
                     args_dict["devices"] = existing_devices_dirs + pair_result.devices_dirs
                 if pair_result.generated_yaml is not None:
                     set_pair_registry_path(pair_result.generated_yaml)
+                # virtual 设备类不在 graph 内，不会走社区包 alias 注册；此处按同一规则补注册
+                # community.* -> 裸 registry id 的 alias，否则 sim swap 到 virtual 类会 not found。
+                if pair_result.virtual_classes:
+                    from unilabos.app.community_packages import infer_alias_target
+
+                    community_aliases = args_dict.get("_community_aliases") or {}
+                    for virtual_class in pair_result.virtual_classes:
+                        community_aliases.setdefault(virtual_class, infer_alias_target(virtual_class))
+                    args_dict["_community_aliases"] = community_aliases
 
     # Step 0: AST 分析优先 + YAML 注册表加载
     # check_mode 和 upload_registry 都会执行实际 import 验证

@@ -42,6 +42,9 @@ class SimulationPairPrepareResult:
     devices_dirs: List[str] = field(default_factory=list)  # 下载的 virtual package 源码目录
     bundle_version: Optional[str] = None
     offline: bool = False
+    # bundle 中命中的 virtual 类名（community.* 命名空间）。real 设备走 graph 的 community
+    # alias 注册，virtual 设备不在 graph 内，需调用方据此补注册命名空间 alias 才能被 swap 解析。
+    virtual_classes: List[str] = field(default_factory=list)
 
 
 def extract_real_classes(graph_data: Optional[Dict[str, Any]]) -> List[str]:
@@ -153,11 +156,16 @@ def prepare_simulation_pairs(
             json.dumps(bundle, ensure_ascii=False, indent=2), encoding="utf-8"
         )
 
+    virtual_classes = sorted({
+        str(p["virtual"]) for p in pairs if isinstance(p.get("virtual"), str) and p["virtual"]
+    })
+
     print_status(f"仿真配对 bundle 已编译: {generated_yaml_path} (version={bundle_version})", "info")
     return SimulationPairPrepareResult(
         generated_yaml=str(generated_yaml_path),
         devices_dirs=devices_dirs,
         bundle_version=bundle_version,
+        virtual_classes=virtual_classes,
     )
 
 

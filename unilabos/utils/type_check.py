@@ -49,9 +49,28 @@ NoAliasDumper.add_representer(OrderedDict, represent_ordereddict)
 class ResultInfoEncoder(json.JSONEncoder):
     """专门用于处理任务执行结果信息的JSON编码器"""
 
+    def __init__(self, *args, **kwargs):
+        # 关闭 json 内建的循环检测（它在 default 之前就对重复对象抛 ValueError，
+        # 会先于我们的 _seen 短路触发），改由 _seen 在 default 里切断环。
+        # ponytail: 代价是 dict/list 自引用这类不经过 default 的纯容器环会退化为
+        # RecursionError 而非 ValueError；设备返回值是 pylabrobot Resource 对象环，
+        # 不走纯容器路径，故可接受。
+        kwargs["check_circular"] = False
+        super().__init__(*args, **kwargs)
+        # 记录已展开过的对象 id，切断 pylabrobot Resource 等父子互引导致的循环引用
+        # ponytail: 用"曾见过"而非"当前栈上"策略（JSONEncoder 由 json 驱动递归，
+        # 无法感知退栈时机）。代价是同一对象在 DAG 中非环地重复出现时，第二次会退化为
+        # str(obj) 而非完整展开；Resource 是带父指针的树，重复项即环，故不受影响。
+        self._seen = set()
+
     def default(self, obj):
         if isinstance(obj, type):
             return json_default(obj)
+
+        # 二次进入同一对象说明存在环，直接降级为字符串终止递归
+        if id(obj) in self._seen:
+            return str(obj)
+        self._seen.add(id(obj))
 
         try:
             if hasattr(obj, "__dict__"):
@@ -87,7 +106,9 @@ def get_result_info_str(error: str, suc: bool, return_value=None) -> str:
     #         samples = return_value.pop("samples")
     result_info = {"error": error, "suc": suc, "return_value": return_value}
 
-    return json.dumps(result_info, ensure_ascii=False, cls=ResultInfoEncoder)
+    # ponytail: skipkeys 静默跳过 bytes/tuple/对象等非法 dict key（json 只允许 str/int/float/bool/None，
+    # 否则在 key 编码阶段抛 TypeError，_seen/default 兜不住）。上限=丢字段不丢流程，对 debug 性质的 return_info 可接受。
+    return json.dumps(result_info, ensure_ascii=False, cls=ResultInfoEncoder, skipkeys=True)
 
 
 
@@ -105,4 +126,5 @@ def serialize_result_info(error: str, suc: bool, return_value=None) -> dict:
     """
     result_info = {"error": error, "suc": suc, "return_value": return_value}
 
-    return json.loads(json.dumps(result_info, ensure_ascii=False, cls=ResultInfoEncoder))
+    # ponytail: 与 get_result_info_str 一致，skipkeys 跳过非法 dict key，上限=丢字段不丢流程。
+    return json.loads(json.dumps(result_info, ensure_ascii=False, cls=ResultInfoEncoder, skipkeys=True))

@@ -113,6 +113,47 @@ def _run_as_supervisor(max_restarts: int):
             sys.exit(exit_code)
 
 
+def _dedup_community_package_dirs(dirs):
+    """同一 community 包多版本只留最高版，避免同名 @device 重复扫描。
+
+    版本错开来源：真机 graph 解析到最新版，仿真配对 bundle 可能钉在旧版；二者同包不同版会
+    撞 @device id。community 包目录固定为 .../community_devices/<pkg>/<ver>/package，按 <pkg>
+    分组取最高 <ver>；非 community 布局的 --devices 目录原样保留、顺序不变。
+    ponytail: 版本比较依赖 packaging.version，缺失时退化字符串比较（同名多版极罕见，够用）。
+    """
+    from pathlib import Path
+
+    try:
+        from packaging.version import Version
+        _ver = Version
+    except Exception:
+        _ver = str
+
+    def _is_comm(p: Path) -> bool:
+        return p.name == "package" and p.parent.parent.parent.name == "community_devices"
+
+    best: dict = {}
+    for d in dirs:
+        p = Path(d).resolve()
+        if _is_comm(p):
+            root = str(p.parent.parent)
+            key = _ver(p.parent.name)
+            if root not in best or key > best[root][0]:
+                best[root] = (key, d)
+    out, seen = [], set()
+    for d in dirs:
+        p = Path(d).resolve()
+        if not _is_comm(p):
+            out.append(d)
+            continue
+        root = str(p.parent.parent)
+        if root in seen:
+            continue
+        seen.add(root)
+        out.append(best[root][1])
+    return out
+
+
 def load_config_from_file(config_path):
     if config_path is None:
         config_path = os.environ.get("UNILABOS_BASICCONFIG_CONFIG_PATH", None)
@@ -825,6 +866,13 @@ def main():
     # Step 0: AST 分析优先 + YAML 注册表加载
     # check_mode 和 upload_registry 都会执行实际 import 验证
     devices_dirs = args_dict.get("devices", None)
+    if devices_dirs:
+        _deduped = _dedup_community_package_dirs(devices_dirs)
+        if len(_deduped) != len(devices_dirs):
+            dropped = [d for d in devices_dirs if d not in _deduped]
+            print_status(f"社区包多版本去重：保留最高版，丢弃 {dropped}", "info")
+        devices_dirs = _deduped
+        args_dict["devices"] = devices_dirs
     complete_registry = args_dict.get("complete_registry", False) or check_mode
     external_only = args_dict.get("external_devices_only", False)
     lab_registry = build_registry(

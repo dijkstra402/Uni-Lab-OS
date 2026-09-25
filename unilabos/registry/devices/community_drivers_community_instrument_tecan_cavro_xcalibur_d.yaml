@@ -1,0 +1,828 @@
+community_instrument_tecan_cavro_xcalibur_d:
+  class:
+    module: community_drivers.community_instrument_tecan_cavro_xcalibur_d.driver:CommunityInstrumentTecanCavroXcaliburD
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/benpruitt__tecancavro
+          source_file:
+            type: string
+            default: tecancavro/models.py
+          class_name:
+            type: string
+            default: XCaliburD
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - initDebugLogging
+            - logCall
+            - logDebug
+            - init
+            - extractToWaste
+            - primePort
+            - executeChain
+            - resetChain
+            - updateSimState
+            - cacheSimSpeeds
+            - restoreSimSpeeds
+            - execWrap
+            - dispenseToWaste
+            - extract
+            - dispense
+            - changePort
+            - movePlungerAbs
+            - movePlungerRel
+            - setSpeed
+            - setStartSpeed
+            - setTopSpeed
+            - setCutoffSpeed
+            - setSlope
+            - repeatCmdSeq
+            - markRepeatStart
+            - delayExec
+            - haltExec
+            - updateSpeeds
+            - getPlungerPos
+            - getStartSpeed
+            - getTopSpeed
+            - getCutoffSpeed
+            - getEncoderPos
+            - getCurPort
+            - getBufferStatus
+            - setMicrostep
+            - terminateCmd
+            - waitReady
+            - sendRcv
+          metadata:
+            type: object
+            default:
+              repo: benpruitt/tecancavro
+              repo_url: https://github.com/benpruitt/tecancavro
+              source_file: tecancavro/models.py
+              class_name: XCaliburD
+              brand: Tecan Cavro
+              model: XCalibur D
+              device_type_cn: 注射泵
+              device_type_en: Syringe Pump
+              source_framework: 泵阀/液体处理
+              tag_id: '4413'
+              tag_name: 注射泵
+              tag_name_en: Syringe Pump
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 378
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-initDebugLogging:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initDebugLogging
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                debug_log_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-logCall:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logCall
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                f_name:
+                  type: string
+                f_locals:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-logDebug:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logDebug
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-init:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                init_force:
+                  type: string
+                direction:
+                  type: string
+                in_port:
+                  type: string
+                out_port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-extractToWaste:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: extractToWaste
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                in_port:
+                  type: string
+                volume_ul:
+                  type: string
+                out_port:
+                  type: string
+                speed_code:
+                  type: string
+                minimal_reset:
+                  type: string
+                  default: false
+                flush:
+                  type: string
+                  default: false
+        goal_default:
+          minimal_reset: false
+          flush: false
+        handles: {}
+      auto-primePort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: primePort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                in_port:
+                  type: string
+                volume_ul:
+                  type: string
+                speed_code:
+                  type: string
+                out_port:
+                  type: string
+                split_command:
+                  type: string
+                  default: false
+        goal_default:
+          split_command: false
+        handles: {}
+      auto-executeChain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: executeChain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                minimal_reset:
+                  type: string
+                  default: false
+        goal_default:
+          minimal_reset: false
+        handles: {}
+      auto-resetChain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resetChain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                on_execute:
+                  type: string
+                  default: false
+                minimal_reset:
+                  type: string
+                  default: false
+        goal_default:
+          on_execute: false
+          minimal_reset: false
+        handles: {}
+      auto-updateSimState:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: updateSimState
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-cacheSimSpeeds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cacheSimSpeeds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-restoreSimSpeeds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restoreSimSpeeds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-execWrap:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execWrap
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                func:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-dispenseToWaste:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dispenseToWaste
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                retain_port:
+                  type: string
+                  default: true
+        goal_default:
+          retain_port: true
+        handles: {}
+      auto-extract:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: extract
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                from_port:
+                  type: string
+                volume_ul:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-dispense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                to_port:
+                  type: string
+                volume_ul:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-changePort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: changePort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                to_port:
+                  type: string
+                from_port:
+                  type: string
+                direction:
+                  type: string
+                  default: CW
+        goal_default:
+          direction: CW
+        handles: {}
+      auto-movePlungerAbs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: movePlungerAbs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                abs_position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-movePlungerRel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: movePlungerRel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rel_position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed_code:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setStartSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setStartSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pulses_per_sec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setTopSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setTopSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pulses_per_sec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setCutoffSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setCutoffSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pulses_per_sec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setSlope:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSlope
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slope_code:
+                  type: string
+                chain:
+                  type: string
+                  default: false
+        goal_default:
+          chain: false
+        handles: {}
+      auto-repeatCmdSeq:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: repeatCmdSeq
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_repeats:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-markRepeatStart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: markRepeatStart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-delayExec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delayExec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                delay_ms:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-haltExec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: haltExec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                input_pin:
+                  type: string
+                  default: 0
+        goal_default:
+          input_pin: 0
+        handles: {}
+      auto-updateSpeeds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: updateSpeeds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getPlungerPos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPlungerPos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getStartSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getStartSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getTopSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getTopSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getCutoffSpeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCutoffSpeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getEncoderPos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getEncoderPos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getCurPort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCurPort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getBufferStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getBufferStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setMicrostep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setMicrostep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                'on':
+                  type: string
+                  default: false
+        goal_default:
+          'on': false
+        handles: {}
+      auto-terminateCmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: terminateCmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-waitReady:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waitReady
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+                  default: 10
+                polling_interval:
+                  type: string
+                  default: 0.3
+                delay:
+                  type: string
+        goal_default:
+          timeout: 10
+          polling_interval: 0.3
+        handles: {}
+      auto-sendRcv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendRcv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd_string:
+                  type: string
+                execute:
+                  type: string
+                  default: false
+        goal_default:
+          execute: false
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: XCalibur D 驱动（Tecan Cavro），支持 initDebugLogging/logCall/logDebug/init/extractToWaste
+    等 39 个操作。
+  category:
+  - 注射泵
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: benpruitt/tecancavro
+    source_file: tecancavro/models.py
+    candidate_class: XCaliburD
+    candidate_score: 378
+    quality_status: usable
+    操作数: 39
+  manufacturer: 帝肯Cavro
+  model:
+    name: XCalibur D
+    type: device
+  name: Tecan Cavro XCalibur D
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

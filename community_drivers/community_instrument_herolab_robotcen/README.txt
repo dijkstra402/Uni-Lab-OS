@@ -1,0 +1,14 @@
+row_index: 147
+registry_id: community_instrument_herolab_robotcen
+repo: BAMresearch/MAPz_at_BAM
+repo_url: https://github.com/BAMresearch/MAPz_at_BAM
+brand: Herolab
+model: RobotCen
+device_type_cn: 离心机
+device_type_en: Centrifuge
+source_framework: 反应器/合成设备
+tag_id: 4434
+tag_name: 离心机
+tag_name_en: Centrifuge
+language: Python
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_instrument_herolab_robotcen.yaml

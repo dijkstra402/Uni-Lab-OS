@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilent6035A.py
+registry_id: community_strict_agilent6035a
+source_file: ivi/agilent/agilent6035A.py
+class_name: agilent6035A
+manufacturer: agilent
+model: agilent6035A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilent6035a.yaml

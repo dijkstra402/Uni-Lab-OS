@@ -1,0 +1,535 @@
+community_missing_joshduran_brukeropus:
+  class:
+    module: community_drivers.community_missing_joshduran_brukeropus.driver:CommunityMissingJoshduranBrukeropus
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/joshduran__brukeropus
+          source_file:
+            type: string
+            default: brukeropus/control/opus.py
+          class_name:
+            type: string
+            default: Opus
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect
+            - disconnect
+            - raw_query
+            - parse_response
+            - _parse_error
+            - query
+            - close_opus
+            - get_param_label
+            - get_param_options
+            - get_version
+            - get_opus_path
+            - send_command
+            - evacuate_sample
+            - vent_sample
+            - close_flaps
+            - open_flaps
+            - unload_file
+            - unload_all
+            - measure_ref
+            - measure_sample
+            - check_signal
+            - save_ref
+            - _param_str
+            - __bool__
+            - __init__
+          metadata:
+            type: object
+            default:
+              repo: joshduran/brukeropus
+              repo_url: https://github.com/joshduran/brukeropus
+              source_file: brukeropus/control/opus.py
+              candidate_score: 111
+              candidate_reason: ''
+              manufacturers:
+              - Bruker
+              models:
+              - Vertex 80V, 其他OPUS兼容FTIR
+              tags: &id001
+              - 红外光谱仪
+              notes:
+              - 'PyPI: brukeropus / 含DDE控制+数据文件读取'
+              comm_protocols:
+              - Windows DDE (控制OPUS软件)
+              review_status: good
+              review_notes:
+              - 测量流程方法完整。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-raw_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: raw_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                req_str:
+                  type: string
+                timeout:
+                  type: string
+                  default: 10000
+        goal_default:
+          timeout: 10000
+        handles: {}
+      auto-parse_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                byte_response:
+                  type: string
+                decode:
+                  type: string
+                  default: ascii
+        goal_default:
+          decode: ascii
+        handles: {}
+      auto-_parse_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: _parse_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                response:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                req_str:
+                  type: string
+                timeout:
+                  type: string
+                  default: 10000
+                decode:
+                  type: string
+                  default: ascii
+        goal_default:
+          timeout: 10000
+          decode: ascii
+        handles: {}
+      auto-close_opus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_opus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_param_label:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_param_label
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_param_options:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_param_options
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_opus_path:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_opus_path
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                text_command:
+                  type: string
+                timeout:
+                  type: string
+                  default: 10000
+        goal_default:
+          timeout: 10000
+        handles: {}
+      auto-evacuate_sample:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: evacuate_sample
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-vent_sample:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: vent_sample
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_flaps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_flaps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_flaps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_flaps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unload_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unload_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filepath:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unload_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unload_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_ref:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_ref
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+                  default: 1000000
+        goal_default:
+          timeout: 1000000
+        handles: {}
+      auto-measure_sample:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_sample
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unload:
+                  type: string
+                  default: false
+                timeout:
+                  type: string
+                  default: 1000000
+        goal_default:
+          unload: false
+          timeout: 1000000
+        handles: {}
+      auto-check_signal:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_signal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nss:
+                  type: string
+                  default: 1
+        goal_default:
+          nss: 1
+        handles: {}
+      auto-save_ref:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_ref
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-_param_str:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: _param_str
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-__bool__:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: __bool__
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-__init__:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: __init__
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: joshduran/brukeropus
+    source_file: brukeropus/control/opus.py
+    candidate_class: Opus
+    communication: Windows DDE (控制OPUS软件)
+  manufacturer: 布鲁克
+  model:
+    name: Vertex 80V, 其他OPUS兼容FTIR
+    type: device
+  name: brukeropus
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

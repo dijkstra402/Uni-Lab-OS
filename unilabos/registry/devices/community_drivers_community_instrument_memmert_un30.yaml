@@ -1,0 +1,199 @@
+community_instrument_memmert_un30:
+  class:
+    module: community_drivers.community_instrument_memmert_un30.driver:CommunityInstrumentMemmertUn30
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/bec4__ovenControl
+          source_file:
+            type: string
+            default: ovenControl.py
+          class_name:
+            type: string
+            default: ''
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - getTemperature
+            - setTemperature
+            - getProgram
+            - appendToCSVFile
+          metadata:
+            type: object
+            default:
+              repo: bec4/ovenControl
+              repo_url: https://github.com/bec4/ovenControl
+              source_file: ovenControl.py
+              class_name: ''
+              brand: Memmert
+              model: UN30
+              device_type_cn: 真空干燥箱
+              device_type_en: Vacuum Drying Oven
+              source_framework: 专用驱动
+              tag_id: '4430'
+              tag_name: 真空干燥箱
+              tag_name_en: Vacuum Drying Oven
+              language: Python
+              parse_status: module_selected
+              quality_status: thin
+              quality_reasons: []
+              candidate_score: 68
+              action_targets:
+                getTemperature: getTemperature
+                setTemperature: setTemperature
+                getProgram: getProgram
+                appendToCSVFile: appendToCSVFile
+          action_targets:
+            type: object
+            default:
+              getTemperature: getTemperature
+              setTemperature: setTemperature
+              getProgram: getProgram
+              appendToCSVFile: appendToCSVFile
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-getTemperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getTemperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ip:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setTemperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setTemperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ip:
+                  type: string
+                temperature:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getProgram:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getProgram
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-appendToCSVFile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: appendToCSVFile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: UN30 驱动（Memmert），支持 getTemperature/setTemperature/getProgram/appendToCSVFile
+    等 4 个操作。
+  category:
+  - 真空干燥箱
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: bec4/ovenControl
+    source_file: ovenControl.py
+    candidate_class: ''
+    candidate_score: 68
+    quality_status: thin
+    操作数: 4
+  manufacturer: 美墨尔特
+  model:
+    name: UN30
+    type: device
+  name: Memmert UN30
+  tags:
+  - 真空干燥箱
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

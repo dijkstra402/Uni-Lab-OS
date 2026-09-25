@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilentMSO7104B.py
+registry_id: community_strict_agilentmso7104b
+source_file: ivi/agilent/agilentMSO7104B.py
+class_name: agilentMSO7104B
+manufacturer: agilent
+model: agilentMSO7104B
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilentmso7104b.yaml

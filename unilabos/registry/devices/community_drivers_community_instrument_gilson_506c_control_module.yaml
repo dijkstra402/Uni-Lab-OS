@@ -1,0 +1,567 @@
+community_instrument_gilson_506c_control_module:
+  class:
+    module: community_drivers.community_instrument_gilson_506c_control_module.driver:CommunityInstrumentGilson506cControlModule
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/richardingham__octopus
+          source_file:
+            type: string
+            default: octopus/blocktopus/workspace.py
+          class_name:
+            type: string
+            default: Block
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - state
+            - disabled
+            - created
+            - disposed
+            - emitLogMessage
+            - connectNextBlock
+            - disconnectNextBlock
+            - getSurroundParent
+            - getChildren
+            - setFieldValue
+            - getFieldValue
+            - getInput
+            - getInputValue
+            - connectInput
+            - disconnectInput
+            - getReferencedVariables
+            - getReferencedVariableNames
+            - getGlobalDeclarationNames
+            - getUnmatchedVariableNames
+            - run
+            - eval
+            - pause
+            - resume
+            - cancel
+            - reset
+            - toEvents
+            - root
+            - abort
+            - 'on'
+            - once
+            - 'off'
+            - listeners
+            - emit
+          metadata:
+            type: object
+            default:
+              repo: richardingham/octopus
+              repo_url: https://github.com/richardingham/octopus
+              source_file: octopus/blocktopus/workspace.py
+              class_name: Block
+              brand: Gilson
+              model: 506C Control Module
+              device_type_cn: HPLC控制模块
+              device_type_en: HPLC Control Module
+              source_framework: 色谱/质谱
+              tag_id: '4418'
+              tag_name: 液相色谱质谱联用仪
+              tag_name_en: LC-MS
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 246
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-getChildren:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getChildren
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setFieldValue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setFieldValue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fieldName:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getFieldValue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getFieldValue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fieldName:
+                  type: string
+                default:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getInput:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getInput
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                inputName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getInputValue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getInputValue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                inputName:
+                  type: string
+                default:
+                  type: string
+                  default: false
+        goal_default:
+          default: false
+        handles: {}
+      auto-connectInput:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connectInput
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                inputName:
+                  type: string
+                childBlock:
+                  type: string
+                type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-disconnectInput:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnectInput
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                inputName:
+                  type: string
+                type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getReferencedVariables:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getReferencedVariables
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                variables:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getReferencedVariableNames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getReferencedVariableNames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                variables:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getGlobalDeclarationNames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getGlobalDeclarationNames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                variables:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getUnmatchedVariableNames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getUnmatchedVariableNames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                variables:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parent:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-eval:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: eval
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pause:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-resume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-cancel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cancel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                abort:
+                  type: string
+                  default: false
+                propagate:
+                  type: string
+                  default: false
+        goal_default:
+          abort: false
+          propagate: false
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                propagate:
+                  type: string
+                  default: true
+        goal_default:
+          propagate: true
+        handles: {}
+      auto-toEvents:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: toEvents
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-root:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: root
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-abort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: abort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: 'on'
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                function:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-once:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: once
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                function:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: 'off'
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                function:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-listeners:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: listeners
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-emit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: emit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                _event:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: cleaned
+  quality_reasons: "删除 8 个框架内部回调"
+  description: 506C Control Module 驱动（Gilson），支持 state/disabled/created/disposed/emitLogMessage
+    等 33 个操作。
+  category:
+  - 液相色谱质谱联用仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: richardingham/octopus
+    source_file: octopus/blocktopus/workspace.py
+    candidate_class: Block
+    candidate_score: 246
+    quality_status: usable
+    操作数: 33
+  manufacturer: 吉尔森
+  model:
+    name: 506C Control Module
+    type: device
+  name: Gilson 506C Control Module
+  tags:
+  - 液相色谱质谱联用仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

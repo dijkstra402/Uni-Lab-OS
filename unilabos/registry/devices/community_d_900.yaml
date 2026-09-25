@@ -169,6 +169,106 @@ gh_device_900:
               properties: {}
         goal_default: {}
         handles: {}
+      start:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 打开输出 / 开始运行
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: start参数
+          type: object
+      stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 关闭输出 / 停止
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: stop参数
+          type: object
+      set_voltage:
+        type: UniLabJsonCommand
+        goal:
+          voltage: voltage
+        goal_default:
+          voltage: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电压
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                voltage:
+                  type: number
+                  description: voltage
+              required:
+              - voltage
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_voltage参数
+          type: object
+      set_current:
+        type: UniLabJsonCommand
+        goal:
+          current: current
+        goal_default:
+          current: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电流
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                current:
+                  type: number
+                  description: current
+              required:
+              - current
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_current参数
+          type: object
   name: Yokogawa AQ6375 Long Wavelength Optical Spectrum Analyzer
   description: AQ6375是横河公司推出的长波长光谱分析仪，专为近红外至中红外波段(1200-2400 nm)的光谱测量设计。该仪器采用高性能InGaAs探测器和衍射光栅技术，提供0.05
     nm的高波长分辨率和-70 dBm的高灵敏度。主要应用于光纤激光器表征、掺铥光纤放大器(TDFA)测试、气体传感、医疗激光测试和环境监测组件测试等领域。仪器配备彩色LCD显示屏和内置分析功能，支持GPIB、以太网和USB接口进行远程控制。

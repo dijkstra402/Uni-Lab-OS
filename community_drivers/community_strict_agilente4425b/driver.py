@@ -1,0 +1,913 @@
+from __future__ import annotations
+
+from unilabos.devices.generic.community_repo_loader import CommunityRepoLoader
+
+
+class CommunityStrictAgilente4425b(CommunityRepoLoader):
+    DEFAULT_CONFIG = {'repo_root': '/Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/python-ivi__python-ivi', 'source_file': 'ivi/agilent/agilentE4425B.py', 'class_name': 'agilentE4425B', 'import_roots': [], 'candidate_methods': ['get_rf_frequency_multiplier', 'set_rf_frequency_multiplier', 'get_rf_frequency_offset', 'set_rf_frequency_offset', 'get_rf_frequency_reference', 'set_rf_frequency_reference', 'get_rf_frequency_reference_enabled', 'set_rf_frequency_reference_enabled', 'get_sweep_frequency_step_points', 'set_sweep_frequency_step_points', 'get_sweep_power_step_points', 'set_sweep_power_step_points', 'get_identity_instrument_serial_number', 'get_measurement_function', 'set_measurement_function', 'get_channels_name', 'get_channels_impedance', 'set_channels_impedance', 'get_channels_coupling', 'set_channels_coupling', 'get_channels_attenuation', 'set_channels_attenuation', 'get_channels_level', 'set_channels_level', 'get_channels_hysteresis', 'set_channels_hysteresis', 'get_channels_slope', 'set_channels_slope', 'get_channels_filter_enabled', 'set_channels_filter_enabled', 'get_frequency_channel', 'set_frequency_channel', 'get_frequency_estimate', 'set_frequency_estimate', 'get_frequency_resolution', 'set_frequency_resolution', 'get_frequency_aperture_time', 'set_frequency_aperture_time', 'get_frequency_estimate_auto', 'set_frequency_estimate_auto', 'get_frequency_resolution_auto', 'set_frequency_resolution_auto', 'get_period_channel', 'set_period_channel', 'get_period_estimate', 'set_period_estimate', 'get_period_resolution', 'set_period_resolution', 'get_period_aperture_time', 'set_period_aperture_time', 'get_pulse_width_channel', 'set_pulse_width_channel', 'get_pulse_width_estimate', 'set_pulse_width_estimate', 'get_pulse_width_resolution', 'set_pulse_width_resolution', 'get_duty_cycle_channel', 'set_duty_cycle_channel', 'get_duty_cycle_frequency_estimate', 'set_duty_cycle_frequency_estimate', 'get_duty_cycle_resolution', 'set_duty_cycle_resolution', 'get_edge_time_channel', 'set_edge_time_channel', 'get_edge_time_reference_type', 'set_edge_time_reference_type', 'get_edge_time_estimate', 'set_edge_time_estimate', 'get_edge_time_resolution', 'set_edge_time_resolution', 'get_edge_time_high_reference', 'set_edge_time_high_reference', 'get_edge_time_low_reference', 'set_edge_time_low_reference', 'get_frequency_ratio_numerator_channel', 'set_frequency_ratio_numerator_channel', 'get_frequency_ratio_denominator_channel', 'set_frequency_ratio_denominator_channel', 'get_frequency_ratio_numerator_frequency_estimate', 'set_frequency_ratio_numerator_frequency_estimate', 'get_frequency_ratio_estimate', 'set_frequency_ratio_estimate', 'get_frequency_ratio_resolution', 'set_frequency_ratio_resolution', 'get_time_interval_start_channel', 'set_time_interval_start_channel', 'get_time_interval_stop_channel', 'set_time_interval_stop_channel', 'get_time_interval_estimate', 'set_time_interval_estimate', 'get_time_interval_resolution', 'set_time_interval_resolution', 'get_phase_input_channel', 'set_phase_input_channel', 'get_phase_reference_channel', 'set_phase_reference_channel', 'get_phase_frequency_estimate', 'set_phase_frequency_estimate', 'get_phase_resolution', 'set_phase_resolution', 'get_totalize_continuous_channel', 'set_totalize_continuous_channel', 'get_totalize_gated_channel', 'set_totalize_gated_channel', 'get_totalize_gated_gate_source', 'set_totalize_gated_gate_source', 'get_totalize_gated_gate_slope', 'set_totalize_gated_gate_slope', 'get_totalize_timed_channel', 'set_totalize_timed_channel', 'get_totalize_timed_gate_time', 'set_totalize_timed_gate_time', 'get_arm_start_type', 'set_arm_start_type', 'get_arm_start_external_source', 'set_arm_start_external_source', 'get_arm_start_external_level', 'set_arm_start_external_level', 'get_arm_start_external_slope', 'set_arm_start_external_slope', 'get_arm_start_external_delay', 'set_arm_start_external_delay', 'get_arm_stop_type', 'set_arm_stop_type', 'get_arm_stop_external_source', 'set_arm_stop_external_source', 'get_arm_stop_external_level', 'set_arm_stop_external_level', 'get_arm_stop_external_slope', 'set_arm_stop_external_slope', 'get_arm_stop_external_delay', 'set_arm_stop_external_delay', 'measurement_abort', 'measurement_is_measurement_complete', 'channels_configure', 'channels_configure_level', 'frequency_configure', 'frequency_configure_manual', 'frequency_configure_with_aperture', 'period_configure', 'period_configure_with_aperture', 'pulse_width_configure', 'duty_cycle_configure', 'edge_time_configure', 'frequency_ratio_configure', 'time_interval_configure', 'phase_configure', 'totalize_continuous_configure', 'totalize_continuous_start', 'totalize_continuous_stop', 'totalize_continuous_fetch_count', 'totalize_gated_configure', 'totalize_timed_configure', 'arm_start_external_configure', 'arm_stop_external_configure', 'measurement_fetch', 'measurement_initiate', 'measurement_read', 'get_analog_modulation_am_enabled', 'set_analog_modulation_am_enabled', 'get_analog_modulation_am_source', 'set_analog_modulation_am_source', 'get_analog_modulation_am_scaling', 'set_analog_modulation_am_scaling', 'get_analog_modulation_am_external_coupling', 'set_analog_modulation_am_external_coupling', 'get_analog_modulation_am_nominal_voltage', 'set_analog_modulation_am_nominal_voltage', 'get_analog_modulation_am_depth', 'set_analog_modulation_am_depth', 'analog_modulation_am_configure', 'get_outputs_fm_enabled', 'set_outputs_fm_enabled', 'get_outputs_fm_source', 'set_outputs_fm_source', 'get_fm_internal_deviation', 'set_fm_internal_deviation', 'get_fm_internal_frequency', 'set_fm_internal_frequency', 'get_fm_internal_waveform', 'set_fm_internal_waveform', 'fm_configure_internal', 'get_analog_modulation_pm_enabled', 'set_analog_modulation_pm_enabled', 'get_analog_modulation_pm_source', 'set_analog_modulation_pm_source', 'get_analog_modulation_pm_external_coupling', 'set_analog_modulation_pm_external_coupling', 'get_analog_modulation_pm_nominal_voltage', 'set_analog_modulation_pm_nominal_voltage', 'get_analog_modulation_pm_deviation', 'set_analog_modulation_pm_deviation', 'analog_modulation_pm_configure', 'get_pulse_modulation_enabled', 'set_pulse_modulation_enabled', 'get_pulse_modulation_source', 'set_pulse_modulation_source', 'get_pulse_modulation_external_polarity', 'set_pulse_modulation_external_polarity', 'get_lf_generator_active_lf_generator', 'set_lf_generator_active_lf_generator', 'get_lf_generator_frequency', 'set_lf_generator_frequency', 'get_lf_generator_waveform', 'set_lf_generator_waveform', 'lf_generator_configure', 'get_lf_generator_output_enabled', 'set_lf_generator_output_enabled', 'get_lf_generator_output_amplitude', 'set_lf_generator_output_amplitude', 'lf_generator_output_configure', 'get_sweep_mode', 'set_sweep_mode', 'get_sweep_trigger_source', 'set_sweep_trigger_source', 'sweep_configure', 'get_sweep_frequency_step_start', 'set_sweep_frequency_step_start', 'get_sweep_frequency_step_stop', 'set_sweep_frequency_step_stop', 'get_sweep_frequency_step_scaling', 'set_sweep_frequency_step_scaling', 'get_sweep_frequency_step_size', 'set_sweep_frequency_step_size', 'get_sweep_frequency_step_single_step_enabled', 'set_sweep_frequency_step_single_step_enabled', 'get_sweep_frequency_step_dwell', 'set_sweep_frequency_step_dwell', 'sweep_frequency_step_configure_start_stop', 'sweep_frequency_step_configure_dwell', 'sweep_frequency_step_reset', 'get_sweep_power_step_start', 'set_sweep_power_step_start', 'get_sweep_power_step_stop', 'set_sweep_power_step_stop', 'get_sweep_power_step_size', 'set_sweep_power_step_size', 'get_sweep_power_step_single_step_enabled', 'set_sweep_power_step_single_step_enabled', 'get_sweep_power_step_dwell', 'set_sweep_power_step_dwell', 'sweep_power_step_configure_start_stop', 'sweep_power_step_configure_dwell', 'sweep_power_step_reset', 'get_sweep_list_selected_list', 'set_sweep_list_selected_list', 'get_sweep_list_single_step_enabled', 'set_sweep_list_single_step_enabled', 'get_sweep_list_dwell', 'set_sweep_list_dwell', 'sweep_list_create_frequency', 'sweep_list_create_power', 'sweep_list_create_frequency_power', 'sweep_list_clear_all', 'sweep_list_configure_dwell', 'sweep_list_reset', 'memory_save', 'memory_recall', 'initialize', 'get_initialized', 'close', 'get_driver_operation_cache', 'set_driver_operation_cache', 'get_driver_operation_driver_setup', 'get_driver_operation_interchange_check', 'set_driver_operation_interchange_check', 'get_driver_operation_logical_name', 'get_driver_operation_query_instrument_status', 'set_driver_operation_query_instrument_status', 'get_driver_operation_range_check', 'set_driver_operation_range_check', 'get_driver_operation_record_coercions', 'set_driver_operation_record_coercions', 'get_driver_operation_io_resource_descriptor', 'get_driver_operation_simulate', 'driver_operation_clear_interchange_warnings', 'driver_operation_get_next_coercion_record', 'driver_operation_get_next_interchange_warning', 'driver_operation_invalidate_all_attributes', 'driver_operation_reset_interchange_check', 'get_identity_description', 'get_identity_identifier', 'get_identity_revision', 'get_identity_vendor', 'get_identity_instrument_manufacturer', 'get_identity_instrument_model', 'get_identity_instrument_firmware_revision', 'get_identity_specification_major_version', 'get_identity_specification_minor_version', 'get_identity_supported_instrument_models', 'get_identity_group_capabilities', 'identity_get_group_capabilities', 'identity_get_supported_instrument_models', 'utility_disable', 'utility_error_query', 'utility_lock_object', 'utility_reset', 'utility_reset_with_defaults', 'utility_self_test', 'utility_unlock_object'], 'action_targets': {'get_rf_frequency_multiplier': '_get_rf_frequency_multiplier', 'set_rf_frequency_multiplier': '_set_rf_frequency_multiplier', 'get_rf_frequency_offset': '_get_rf_frequency_offset', 'set_rf_frequency_offset': '_set_rf_frequency_offset', 'get_rf_frequency_reference': '_get_rf_frequency_reference', 'set_rf_frequency_reference': '_set_rf_frequency_reference', 'get_rf_frequency_reference_enabled': '_get_rf_frequency_reference_enabled', 'set_rf_frequency_reference_enabled': '_set_rf_frequency_reference_enabled', 'get_sweep_frequency_step_points': '_get_sweep_frequency_step_points', 'set_sweep_frequency_step_points': '_set_sweep_frequency_step_points', 'get_sweep_power_step_points': '_get_sweep_power_step_points', 'set_sweep_power_step_points': '_set_sweep_power_step_points', 'get_identity_instrument_serial_number': '_get_identity_instrument_serial_number', 'get_measurement_function': '_get_measurement_function', 'set_measurement_function': '_set_measurement_function', 'get_channels_name': '_get_channel_name', 'get_channels_impedance': '_get_channel_impedance', 'set_channels_impedance': '_set_channel_impedance', 'get_channels_coupling': '_get_channel_coupling', 'set_channels_coupling': '_set_channel_coupling', 'get_channels_attenuation': '_get_channel_attenuation', 'set_channels_attenuation': '_set_channel_attenuation', 'get_channels_level': '_get_channel_level', 'set_channels_level': '_set_channel_level', 'get_channels_hysteresis': '_get_channel_hysteresis', 'set_channels_hysteresis': '_set_channel_hysteresis', 'get_channels_slope': '_get_channel_slope', 'set_channels_slope': '_set_channel_slope', 'get_channels_filter_enabled': '_get_channel_filter_enabled', 'set_channels_filter_enabled': '_set_channel_filter_enabled', 'get_frequency_channel': '_get_frequency_channel', 'set_frequency_channel': '_set_frequency_channel', 'get_frequency_estimate': '_get_frequency_estimate', 'set_frequency_estimate': '_set_frequency_estimate', 'get_frequency_resolution': '_get_frequency_resolution', 'set_frequency_resolution': '_set_frequency_resolution', 'get_frequency_aperture_time': '_get_frequency_aperture_time', 'set_frequency_aperture_time': '_set_frequency_aperture_time', 'get_frequency_estimate_auto': '_get_frequency_estimate_auto', 'set_frequency_estimate_auto': '_set_frequency_estimate_auto', 'get_frequency_resolution_auto': '_get_frequency_resolution_auto', 'set_frequency_resolution_auto': '_set_frequency_resolution_auto', 'get_period_channel': '_get_period_channel', 'set_period_channel': '_set_period_channel', 'get_period_estimate': '_get_period_estimate', 'set_period_estimate': '_set_period_estimate', 'get_period_resolution': '_get_period_resolution', 'set_period_resolution': '_set_period_resolution', 'get_period_aperture_time': '_get_period_aperture_time', 'set_period_aperture_time': '_set_period_aperture_time', 'get_pulse_width_channel': '_get_pulse_width_channel', 'set_pulse_width_channel': '_set_pulse_width_channel', 'get_pulse_width_estimate': '_get_pulse_width_estimate', 'set_pulse_width_estimate': '_set_pulse_width_estimate', 'get_pulse_width_resolution': '_get_pulse_width_resolution', 'set_pulse_width_resolution': '_set_pulse_width_resolution', 'get_duty_cycle_channel': '_get_duty_cycle_channel', 'set_duty_cycle_channel': '_set_duty_cycle_channel', 'get_duty_cycle_frequency_estimate': '_get_duty_cycle_frequency_estimate', 'set_duty_cycle_frequency_estimate': '_set_duty_cycle_frequency_estimate', 'get_duty_cycle_resolution': '_get_duty_cycle_resolution', 'set_duty_cycle_resolution': '_set_duty_cycle_resolution', 'get_edge_time_channel': '_get_edge_time_channel', 'set_edge_time_channel': '_set_edge_time_channel', 'get_edge_time_reference_type': '_get_edge_time_reference_type', 'set_edge_time_reference_type': '_set_edge_time_reference_type', 'get_edge_time_estimate': '_get_edge_time_estimate', 'set_edge_time_estimate': '_set_edge_time_estimate', 'get_edge_time_resolution': '_get_edge_time_resolution', 'set_edge_time_resolution': '_set_edge_time_resolution', 'get_edge_time_high_reference': '_get_edge_time_high_reference', 'set_edge_time_high_reference': '_set_edge_time_high_reference', 'get_edge_time_low_reference': '_get_edge_time_low_reference', 'set_edge_time_low_reference': '_set_edge_time_low_reference', 'get_frequency_ratio_numerator_channel': '_get_frequency_ratio_numerator_channel', 'set_frequency_ratio_numerator_channel': '_set_frequency_ratio_numerator_channel', 'get_frequency_ratio_denominator_channel': '_get_frequency_ratio_denominator_channel', 'set_frequency_ratio_denominator_channel': '_set_frequency_ratio_denominator_channel', 'get_frequency_ratio_numerator_frequency_estimate': '_get_frequency_ratio_numerator_frequency_estimate', 'set_frequency_ratio_numerator_frequency_estimate': '_set_frequency_ratio_numerator_frequency_estimate', 'get_frequency_ratio_estimate': '_get_frequency_ratio_estimate', 'set_frequency_ratio_estimate': '_set_frequency_ratio_estimate', 'get_frequency_ratio_resolution': '_get_frequency_ratio_resolution', 'set_frequency_ratio_resolution': '_set_frequency_ratio_resolution', 'get_time_interval_start_channel': '_get_time_interval_start_channel', 'set_time_interval_start_channel': '_set_time_interval_start_channel', 'get_time_interval_stop_channel': '_get_time_interval_stop_channel', 'set_time_interval_stop_channel': '_set_time_interval_stop_channel', 'get_time_interval_estimate': '_get_time_interval_estimate', 'set_time_interval_estimate': '_set_time_interval_estimate', 'get_time_interval_resolution': '_get_time_interval_resolution', 'set_time_interval_resolution': '_set_time_interval_resolution', 'get_phase_input_channel': '_get_phase_input_channel', 'set_phase_input_channel': '_set_phase_input_channel', 'get_phase_reference_channel': '_get_phase_reference_channel', 'set_phase_reference_channel': '_set_phase_reference_channel', 'get_phase_frequency_estimate': '_get_phase_frequency_estimate', 'set_phase_frequency_estimate': '_set_phase_frequency_estimate', 'get_phase_resolution': '_get_phase_resolution', 'set_phase_resolution': '_set_phase_resolution', 'get_totalize_continuous_channel': '_get_totalize_continuous_channel', 'set_totalize_continuous_channel': '_set_totalize_continuous_channel', 'get_totalize_gated_channel': '_get_totalize_gated_channel', 'set_totalize_gated_channel': '_set_totalize_gated_channel', 'get_totalize_gated_gate_source': '_get_totalize_gated_gate_source', 'set_totalize_gated_gate_source': '_set_totalize_gated_gate_source', 'get_totalize_gated_gate_slope': '_get_totalize_gated_gate_slope', 'set_totalize_gated_gate_slope': '_set_totalize_gated_gate_slope', 'get_totalize_timed_channel': '_get_totalize_timed_channel', 'set_totalize_timed_channel': '_set_totalize_timed_channel', 'get_totalize_timed_gate_time': '_get_totalize_timed_gate_time', 'set_totalize_timed_gate_time': '_set_totalize_timed_gate_time', 'get_arm_start_type': '_get_arm_start_type', 'set_arm_start_type': '_set_arm_start_type', 'get_arm_start_external_source': '_get_arm_start_external_source', 'set_arm_start_external_source': '_set_arm_start_external_source', 'get_arm_start_external_level': '_get_arm_start_external_level', 'set_arm_start_external_level': '_set_arm_start_external_level', 'get_arm_start_external_slope': '_get_arm_start_external_slope', 'set_arm_start_external_slope': '_set_arm_start_external_slope', 'get_arm_start_external_delay': '_get_arm_start_external_delay', 'set_arm_start_external_delay': '_set_arm_start_external_delay', 'get_arm_stop_type': '_get_arm_stop_type', 'set_arm_stop_type': '_set_arm_stop_type', 'get_arm_stop_external_source': '_get_arm_stop_external_source', 'set_arm_stop_external_source': '_set_arm_stop_external_source', 'get_arm_stop_external_level': '_get_arm_stop_external_level', 'set_arm_stop_external_level': '_set_arm_stop_external_level', 'get_arm_stop_external_slope': '_get_arm_stop_external_slope', 'set_arm_stop_external_slope': '_set_arm_stop_external_slope', 'get_arm_stop_external_delay': '_get_arm_stop_external_delay', 'set_arm_stop_external_delay': '_set_arm_stop_external_delay', 'measurement_abort': '_measurement_abort', 'measurement_is_measurement_complete': '_measurement_is_measurement_complete', 'channels_configure': '_channel_configure', 'channels_configure_level': '_channel_configure_level', 'frequency_configure': '_frequency_configure', 'frequency_configure_manual': '_frequency_configure_manual', 'frequency_configure_with_aperture': '_frequency_configure_with_aperture', 'period_configure': '_period_configure', 'period_configure_with_aperture': '_period_configure_with_aperture', 'pulse_width_configure': '_pulse_width_configure', 'duty_cycle_configure': '_duty_cycle_configure', 'edge_time_configure': '_edge_time_configure_reference_levels', 'frequency_ratio_configure': '_frequency_ratio_configure', 'time_interval_configure': '_time_interval_configure', 'phase_configure': '_phase_configure', 'totalize_continuous_configure': '_totalize_continuous_configure', 'totalize_continuous_start': '_totalize_continuous_start', 'totalize_continuous_stop': '_totalize_continuous_stop', 'totalize_continuous_fetch_count': '_totalize_continuous_fetch_count', 'totalize_gated_configure': '_totalize_gated_configure', 'totalize_timed_configure': '_totalize_timed_configure', 'arm_start_external_configure': '_arm_start_external_configure', 'arm_stop_external_configure': '_arm_stop_external_configure', 'measurement_fetch': '_measurement_fetch', 'measurement_initiate': '_measurement_initiate', 'measurement_read': '_measurement_read', 'get_analog_modulation_am_enabled': '_get_analog_modulation_am_enabled', 'set_analog_modulation_am_enabled': '_set_analog_modulation_am_enabled', 'get_analog_modulation_am_source': '_get_analog_modulation_am_source', 'set_analog_modulation_am_source': '_set_analog_modulation_am_source', 'get_analog_modulation_am_scaling': '_get_analog_modulation_am_scaling', 'set_analog_modulation_am_scaling': '_set_analog_modulation_am_scaling', 'get_analog_modulation_am_external_coupling': '_get_analog_modulation_am_external_coupling', 'set_analog_modulation_am_external_coupling': '_set_analog_modulation_am_external_coupling', 'get_analog_modulation_am_nominal_voltage': '_get_analog_modulation_am_nominal_voltage', 'set_analog_modulation_am_nominal_voltage': '_set_analog_modulation_am_nominal_voltage', 'get_analog_modulation_am_depth': '_get_analog_modulation_am_depth', 'set_analog_modulation_am_depth': '_set_analog_modulation_am_depth', 'analog_modulation_am_configure': '_analog_modulation_am_configure', 'get_outputs_fm_enabled': '_get_output_fm_enabled', 'set_outputs_fm_enabled': '_set_output_fm_enabled', 'get_outputs_fm_source': '_get_output_fm_source', 'set_outputs_fm_source': '_set_output_fm_source', 'get_fm_internal_deviation': '_get_fm_internal_deviation', 'set_fm_internal_deviation': '_set_fm_internal_deviation', 'get_fm_internal_frequency': '_get_fm_internal_frequency', 'set_fm_internal_frequency': '_set_fm_internal_frequency', 'get_fm_internal_waveform': '_get_fm_internal_waveform', 'set_fm_internal_waveform': '_set_fm_internal_waveform', 'fm_configure_internal': '_fm_configure_internal', 'get_analog_modulation_pm_enabled': '_get_analog_modulation_pm_enabled', 'set_analog_modulation_pm_enabled': '_set_analog_modulation_pm_enabled', 'get_analog_modulation_pm_source': '_get_analog_modulation_pm_source', 'set_analog_modulation_pm_source': '_set_analog_modulation_pm_source', 'get_analog_modulation_pm_external_coupling': '_get_analog_modulation_pm_external_coupling', 'set_analog_modulation_pm_external_coupling': '_set_analog_modulation_pm_external_coupling', 'get_analog_modulation_pm_nominal_voltage': '_get_analog_modulation_pm_nominal_voltage', 'set_analog_modulation_pm_nominal_voltage': '_set_analog_modulation_pm_nominal_voltage', 'get_analog_modulation_pm_deviation': '_get_analog_modulation_pm_deviation', 'set_analog_modulation_pm_deviation': '_set_analog_modulation_pm_deviation', 'analog_modulation_pm_configure': '_analog_modulation_pm_configure', 'get_pulse_modulation_enabled': '_get_pulse_modulation_enabled', 'set_pulse_modulation_enabled': '_set_pulse_modulation_enabled', 'get_pulse_modulation_source': '_get_pulse_modulation_source', 'set_pulse_modulation_source': '_set_pulse_modulation_source', 'get_pulse_modulation_external_polarity': '_get_pulse_modulation_external_polarity', 'set_pulse_modulation_external_polarity': '_set_pulse_modulation_external_polarity', 'get_lf_generator_active_lf_generator': '_get_lf_generator_active_lf_generator', 'set_lf_generator_active_lf_generator': '_set_lf_generator_active_lf_generator', 'get_lf_generator_frequency': '_get_lf_generator_frequency', 'set_lf_generator_frequency': '_set_lf_generator_frequency', 'get_lf_generator_waveform': '_get_lf_generator_waveform', 'set_lf_generator_waveform': '_set_lf_generator_waveform', 'lf_generator_configure': '_lf_generator_configure', 'get_lf_generator_output_enabled': '_get_lf_generator_output_enabled', 'set_lf_generator_output_enabled': '_set_lf_generator_output_enabled', 'get_lf_generator_output_amplitude': '_get_lf_generator_output_amplitude', 'set_lf_generator_output_amplitude': '_set_lf_generator_output_amplitude', 'lf_generator_output_configure': '_lf_generator_output_configure', 'get_sweep_mode': '_get_sweep_mode', 'set_sweep_mode': '_set_sweep_mode', 'get_sweep_trigger_source': '_get_sweep_trigger_source', 'set_sweep_trigger_source': '_set_sweep_trigger_source', 'sweep_configure': '_sweep_configure', 'get_sweep_frequency_step_start': '_get_sweep_frequency_step_start', 'set_sweep_frequency_step_start': '_set_sweep_frequency_step_start', 'get_sweep_frequency_step_stop': '_get_sweep_frequency_step_stop', 'set_sweep_frequency_step_stop': '_set_sweep_frequency_step_stop', 'get_sweep_frequency_step_scaling': '_get_sweep_frequency_step_scaling', 'set_sweep_frequency_step_scaling': '_set_sweep_frequency_step_scaling', 'get_sweep_frequency_step_size': '_get_sweep_frequency_step_size', 'set_sweep_frequency_step_size': '_set_sweep_frequency_step_size', 'get_sweep_frequency_step_single_step_enabled': '_get_sweep_frequency_step_single_step_enabled', 'set_sweep_frequency_step_single_step_enabled': '_set_sweep_frequency_step_single_step_enabled', 'get_sweep_frequency_step_dwell': '_get_sweep_frequency_step_dwell', 'set_sweep_frequency_step_dwell': '_set_sweep_frequency_step_dwell', 'sweep_frequency_step_configure_start_stop': '_sweep_frequency_step_configure_start_stop', 'sweep_frequency_step_configure_dwell': '_sweep_frequency_step_configure_dwell', 'sweep_frequency_step_reset': '_sweep_frequency_step_reset', 'get_sweep_power_step_start': '_get_sweep_power_step_start', 'set_sweep_power_step_start': '_set_sweep_power_step_start', 'get_sweep_power_step_stop': '_get_sweep_power_step_stop', 'set_sweep_power_step_stop': '_set_sweep_power_step_stop', 'get_sweep_power_step_size': '_get_sweep_power_step_size', 'set_sweep_power_step_size': '_set_sweep_power_step_size', 'get_sweep_power_step_single_step_enabled': '_get_sweep_power_step_single_step_enabled', 'set_sweep_power_step_single_step_enabled': '_set_sweep_power_step_single_step_enabled', 'get_sweep_power_step_dwell': '_get_sweep_power_step_dwell', 'set_sweep_power_step_dwell': '_set_sweep_power_step_dwell', 'sweep_power_step_configure_start_stop': '_sweep_power_step_configure_start_stop', 'sweep_power_step_configure_dwell': '_sweep_power_step_configure_dwell', 'sweep_power_step_reset': '_sweep_power_step_reset', 'get_sweep_list_selected_list': '_get_sweep_list_selected_list', 'set_sweep_list_selected_list': '_set_sweep_list_selected_list', 'get_sweep_list_single_step_enabled': '_get_sweep_list_single_step_enabled', 'set_sweep_list_single_step_enabled': '_set_sweep_list_single_step_enabled', 'get_sweep_list_dwell': '_get_sweep_list_dwell', 'set_sweep_list_dwell': '_set_sweep_list_dwell', 'sweep_list_create_frequency': '_sweep_list_create_frequency', 'sweep_list_create_power': '_sweep_list_create_power', 'sweep_list_create_frequency_power': '_sweep_list_create_frequency_power', 'sweep_list_clear_all': '_sweep_list_clear_all', 'sweep_list_configure_dwell': '_sweep_list_configure_dwell', 'sweep_list_reset': '_sweep_list_reset', 'memory_save': '_memory_save', 'memory_recall': '_memory_recall', 'initialize': '_initialize', 'get_initialized': '_get_initialized', 'close': '_close', 'get_driver_operation_cache': '_get_driver_operation_cache', 'set_driver_operation_cache': '_set_driver_operation_cache', 'get_driver_operation_driver_setup': '_get_driver_operation_driver_setup', 'get_driver_operation_interchange_check': '_get_driver_operation_interchange_check', 'set_driver_operation_interchange_check': '_set_driver_operation_interchange_check', 'get_driver_operation_logical_name': '_get_driver_operation_logical_name', 'get_driver_operation_query_instrument_status': '_get_driver_operation_query_instrument_status', 'set_driver_operation_query_instrument_status': '_set_driver_operation_query_instrument_status', 'get_driver_operation_range_check': '_get_driver_operation_range_check', 'set_driver_operation_range_check': '_set_driver_operation_range_check', 'get_driver_operation_record_coercions': '_get_driver_operation_record_coercions', 'set_driver_operation_record_coercions': '_set_driver_operation_record_coercions', 'get_driver_operation_io_resource_descriptor': '_get_driver_operation_io_resource_descriptor', 'get_driver_operation_simulate': '_get_driver_operation_simulate', 'driver_operation_clear_interchange_warnings': '_driver_operation_clear_interchange_warnings', 'driver_operation_get_next_coercion_record': '_driver_operation_get_next_coercion_record', 'driver_operation_get_next_interchange_warning': '_driver_operation_get_next_interchange_warning', 'driver_operation_invalidate_all_attributes': '_driver_operation_invalidate_all_attributes', 'driver_operation_reset_interchange_check': '_driver_operation_reset_interchange_check', 'get_identity_description': '_get_identity_description', 'get_identity_identifier': '_get_identity_identifier', 'get_identity_revision': '_get_identity_revision', 'get_identity_vendor': '_get_identity_vendor', 'get_identity_instrument_manufacturer': '_get_identity_instrument_manufacturer', 'get_identity_instrument_model': '_get_identity_instrument_model', 'get_identity_instrument_firmware_revision': '_get_identity_instrument_firmware_revision', 'get_identity_specification_major_version': '_get_identity_specification_major_version', 'get_identity_specification_minor_version': '_get_identity_specification_minor_version', 'get_identity_supported_instrument_models': '_get_identity_supported_instrument_models', 'get_identity_group_capabilities': '_get_identity_group_capabilities', 'identity_get_group_capabilities': '_identity_get_group_capabilities', 'identity_get_supported_instrument_models': '_identity_get_supported_instrument_models', 'utility_disable': '_utility_disable', 'utility_error_query': '_utility_error_query', 'utility_lock_object': '_utility_lock_object', 'utility_reset': '_utility_reset', 'utility_reset_with_defaults': '_utility_reset_with_defaults', 'utility_self_test': '_utility_self_test', 'utility_unlock_object': '_utility_unlock_object'}, 'metadata': {'repo': 'python-ivi/python-ivi', 'repo_url': 'https://github.com/python-ivi/python-ivi', 'source_url': 'https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilentE4425B.py', 'confidence': 0.9, 'quality_score': 1.12, 'parse_status': 'ok', 'quality_status': 'usable', 'quality_reasons': [], 'action_targets': {'get_rf_frequency_multiplier': '_get_rf_frequency_multiplier', 'set_rf_frequency_multiplier': '_set_rf_frequency_multiplier', 'get_rf_frequency_offset': '_get_rf_frequency_offset', 'set_rf_frequency_offset': '_set_rf_frequency_offset', 'get_rf_frequency_reference': '_get_rf_frequency_reference', 'set_rf_frequency_reference': '_set_rf_frequency_reference', 'get_rf_frequency_reference_enabled': '_get_rf_frequency_reference_enabled', 'set_rf_frequency_reference_enabled': '_set_rf_frequency_reference_enabled', 'get_sweep_frequency_step_points': '_get_sweep_frequency_step_points', 'set_sweep_frequency_step_points': '_set_sweep_frequency_step_points', 'get_sweep_power_step_points': '_get_sweep_power_step_points', 'set_sweep_power_step_points': '_set_sweep_power_step_points', 'get_identity_instrument_serial_number': '_get_identity_instrument_serial_number', 'get_measurement_function': '_get_measurement_function', 'set_measurement_function': '_set_measurement_function', 'get_channels_name': '_get_channel_name', 'get_channels_impedance': '_get_channel_impedance', 'set_channels_impedance': '_set_channel_impedance', 'get_channels_coupling': '_get_channel_coupling', 'set_channels_coupling': '_set_channel_coupling', 'get_channels_attenuation': '_get_channel_attenuation', 'set_channels_attenuation': '_set_channel_attenuation', 'get_channels_level': '_get_channel_level', 'set_channels_level': '_set_channel_level', 'get_channels_hysteresis': '_get_channel_hysteresis', 'set_channels_hysteresis': '_set_channel_hysteresis', 'get_channels_slope': '_get_channel_slope', 'set_channels_slope': '_set_channel_slope', 'get_channels_filter_enabled': '_get_channel_filter_enabled', 'set_channels_filter_enabled': '_set_channel_filter_enabled', 'get_frequency_channel': '_get_frequency_channel', 'set_frequency_channel': '_set_frequency_channel', 'get_frequency_estimate': '_get_frequency_estimate', 'set_frequency_estimate': '_set_frequency_estimate', 'get_frequency_resolution': '_get_frequency_resolution', 'set_frequency_resolution': '_set_frequency_resolution', 'get_frequency_aperture_time': '_get_frequency_aperture_time', 'set_frequency_aperture_time': '_set_frequency_aperture_time', 'get_frequency_estimate_auto': '_get_frequency_estimate_auto', 'set_frequency_estimate_auto': '_set_frequency_estimate_auto', 'get_frequency_resolution_auto': '_get_frequency_resolution_auto', 'set_frequency_resolution_auto': '_set_frequency_resolution_auto', 'get_period_channel': '_get_period_channel', 'set_period_channel': '_set_period_channel', 'get_period_estimate': '_get_period_estimate', 'set_period_estimate': '_set_period_estimate', 'get_period_resolution': '_get_period_resolution', 'set_period_resolution': '_set_period_resolution', 'get_period_aperture_time': '_get_period_aperture_time', 'set_period_aperture_time': '_set_period_aperture_time', 'get_pulse_width_channel': '_get_pulse_width_channel', 'set_pulse_width_channel': '_set_pulse_width_channel', 'get_pulse_width_estimate': '_get_pulse_width_estimate', 'set_pulse_width_estimate': '_set_pulse_width_estimate', 'get_pulse_width_resolution': '_get_pulse_width_resolution', 'set_pulse_width_resolution': '_set_pulse_width_resolution', 'get_duty_cycle_channel': '_get_duty_cycle_channel', 'set_duty_cycle_channel': '_set_duty_cycle_channel', 'get_duty_cycle_frequency_estimate': '_get_duty_cycle_frequency_estimate', 'set_duty_cycle_frequency_estimate': '_set_duty_cycle_frequency_estimate', 'get_duty_cycle_resolution': '_get_duty_cycle_resolution', 'set_duty_cycle_resolution': '_set_duty_cycle_resolution', 'get_edge_time_channel': '_get_edge_time_channel', 'set_edge_time_channel': '_set_edge_time_channel', 'get_edge_time_reference_type': '_get_edge_time_reference_type', 'set_edge_time_reference_type': '_set_edge_time_reference_type', 'get_edge_time_estimate': '_get_edge_time_estimate', 'set_edge_time_estimate': '_set_edge_time_estimate', 'get_edge_time_resolution': '_get_edge_time_resolution', 'set_edge_time_resolution': '_set_edge_time_resolution', 'get_edge_time_high_reference': '_get_edge_time_high_reference', 'set_edge_time_high_reference': '_set_edge_time_high_reference', 'get_edge_time_low_reference': '_get_edge_time_low_reference', 'set_edge_time_low_reference': '_set_edge_time_low_reference', 'get_frequency_ratio_numerator_channel': '_get_frequency_ratio_numerator_channel', 'set_frequency_ratio_numerator_channel': '_set_frequency_ratio_numerator_channel', 'get_frequency_ratio_denominator_channel': '_get_frequency_ratio_denominator_channel', 'set_frequency_ratio_denominator_channel': '_set_frequency_ratio_denominator_channel', 'get_frequency_ratio_numerator_frequency_estimate': '_get_frequency_ratio_numerator_frequency_estimate', 'set_frequency_ratio_numerator_frequency_estimate': '_set_frequency_ratio_numerator_frequency_estimate', 'get_frequency_ratio_estimate': '_get_frequency_ratio_estimate', 'set_frequency_ratio_estimate': '_set_frequency_ratio_estimate', 'get_frequency_ratio_resolution': '_get_frequency_ratio_resolution', 'set_frequency_ratio_resolution': '_set_frequency_ratio_resolution', 'get_time_interval_start_channel': '_get_time_interval_start_channel', 'set_time_interval_start_channel': '_set_time_interval_start_channel', 'get_time_interval_stop_channel': '_get_time_interval_stop_channel', 'set_time_interval_stop_channel': '_set_time_interval_stop_channel', 'get_time_interval_estimate': '_get_time_interval_estimate', 'set_time_interval_estimate': '_set_time_interval_estimate', 'get_time_interval_resolution': '_get_time_interval_resolution', 'set_time_interval_resolution': '_set_time_interval_resolution', 'get_phase_input_channel': '_get_phase_input_channel', 'set_phase_input_channel': '_set_phase_input_channel', 'get_phase_reference_channel': '_get_phase_reference_channel', 'set_phase_reference_channel': '_set_phase_reference_channel', 'get_phase_frequency_estimate': '_get_phase_frequency_estimate', 'set_phase_frequency_estimate': '_set_phase_frequency_estimate', 'get_phase_resolution': '_get_phase_resolution', 'set_phase_resolution': '_set_phase_resolution', 'get_totalize_continuous_channel': '_get_totalize_continuous_channel', 'set_totalize_continuous_channel': '_set_totalize_continuous_channel', 'get_totalize_gated_channel': '_get_totalize_gated_channel', 'set_totalize_gated_channel': '_set_totalize_gated_channel', 'get_totalize_gated_gate_source': '_get_totalize_gated_gate_source', 'set_totalize_gated_gate_source': '_set_totalize_gated_gate_source', 'get_totalize_gated_gate_slope': '_get_totalize_gated_gate_slope', 'set_totalize_gated_gate_slope': '_set_totalize_gated_gate_slope', 'get_totalize_timed_channel': '_get_totalize_timed_channel', 'set_totalize_timed_channel': '_set_totalize_timed_channel', 'get_totalize_timed_gate_time': '_get_totalize_timed_gate_time', 'set_totalize_timed_gate_time': '_set_totalize_timed_gate_time', 'get_arm_start_type': '_get_arm_start_type', 'set_arm_start_type': '_set_arm_start_type', 'get_arm_start_external_source': '_get_arm_start_external_source', 'set_arm_start_external_source': '_set_arm_start_external_source', 'get_arm_start_external_level': '_get_arm_start_external_level', 'set_arm_start_external_level': '_set_arm_start_external_level', 'get_arm_start_external_slope': '_get_arm_start_external_slope', 'set_arm_start_external_slope': '_set_arm_start_external_slope', 'get_arm_start_external_delay': '_get_arm_start_external_delay', 'set_arm_start_external_delay': '_set_arm_start_external_delay', 'get_arm_stop_type': '_get_arm_stop_type', 'set_arm_stop_type': '_set_arm_stop_type', 'get_arm_stop_external_source': '_get_arm_stop_external_source', 'set_arm_stop_external_source': '_set_arm_stop_external_source', 'get_arm_stop_external_level': '_get_arm_stop_external_level', 'set_arm_stop_external_level': '_set_arm_stop_external_level', 'get_arm_stop_external_slope': '_get_arm_stop_external_slope', 'set_arm_stop_external_slope': '_set_arm_stop_external_slope', 'get_arm_stop_external_delay': '_get_arm_stop_external_delay', 'set_arm_stop_external_delay': '_set_arm_stop_external_delay', 'measurement_abort': '_measurement_abort', 'measurement_is_measurement_complete': '_measurement_is_measurement_complete', 'channels_configure': '_channel_configure', 'channels_configure_level': '_channel_configure_level', 'frequency_configure': '_frequency_configure', 'frequency_configure_manual': '_frequency_configure_manual', 'frequency_configure_with_aperture': '_frequency_configure_with_aperture', 'period_configure': '_period_configure', 'period_configure_with_aperture': '_period_configure_with_aperture', 'pulse_width_configure': '_pulse_width_configure', 'duty_cycle_configure': '_duty_cycle_configure', 'edge_time_configure': '_edge_time_configure_reference_levels', 'frequency_ratio_configure': '_frequency_ratio_configure', 'time_interval_configure': '_time_interval_configure', 'phase_configure': '_phase_configure', 'totalize_continuous_configure': '_totalize_continuous_configure', 'totalize_continuous_start': '_totalize_continuous_start', 'totalize_continuous_stop': '_totalize_continuous_stop', 'totalize_continuous_fetch_count': '_totalize_continuous_fetch_count', 'totalize_gated_configure': '_totalize_gated_configure', 'totalize_timed_configure': '_totalize_timed_configure', 'arm_start_external_configure': '_arm_start_external_configure', 'arm_stop_external_configure': '_arm_stop_external_configure', 'measurement_fetch': '_measurement_fetch', 'measurement_initiate': '_measurement_initiate', 'measurement_read': '_measurement_read', 'get_analog_modulation_am_enabled': '_get_analog_modulation_am_enabled', 'set_analog_modulation_am_enabled': '_set_analog_modulation_am_enabled', 'get_analog_modulation_am_source': '_get_analog_modulation_am_source', 'set_analog_modulation_am_source': '_set_analog_modulation_am_source', 'get_analog_modulation_am_scaling': '_get_analog_modulation_am_scaling', 'set_analog_modulation_am_scaling': '_set_analog_modulation_am_scaling', 'get_analog_modulation_am_external_coupling': '_get_analog_modulation_am_external_coupling', 'set_analog_modulation_am_external_coupling': '_set_analog_modulation_am_external_coupling', 'get_analog_modulation_am_nominal_voltage': '_get_analog_modulation_am_nominal_voltage', 'set_analog_modulation_am_nominal_voltage': '_set_analog_modulation_am_nominal_voltage', 'get_analog_modulation_am_depth': '_get_analog_modulation_am_depth', 'set_analog_modulation_am_depth': '_set_analog_modulation_am_depth', 'analog_modulation_am_configure': '_analog_modulation_am_configure', 'get_outputs_fm_enabled': '_get_output_fm_enabled', 'set_outputs_fm_enabled': '_set_output_fm_enabled', 'get_outputs_fm_source': '_get_output_fm_source', 'set_outputs_fm_source': '_set_output_fm_source', 'get_fm_internal_deviation': '_get_fm_internal_deviation', 'set_fm_internal_deviation': '_set_fm_internal_deviation', 'get_fm_internal_frequency': '_get_fm_internal_frequency', 'set_fm_internal_frequency': '_set_fm_internal_frequency', 'get_fm_internal_waveform': '_get_fm_internal_waveform', 'set_fm_internal_waveform': '_set_fm_internal_waveform', 'fm_configure_internal': '_fm_configure_internal', 'get_analog_modulation_pm_enabled': '_get_analog_modulation_pm_enabled', 'set_analog_modulation_pm_enabled': '_set_analog_modulation_pm_enabled', 'get_analog_modulation_pm_source': '_get_analog_modulation_pm_source', 'set_analog_modulation_pm_source': '_set_analog_modulation_pm_source', 'get_analog_modulation_pm_external_coupling': '_get_analog_modulation_pm_external_coupling', 'set_analog_modulation_pm_external_coupling': '_set_analog_modulation_pm_external_coupling', 'get_analog_modulation_pm_nominal_voltage': '_get_analog_modulation_pm_nominal_voltage', 'set_analog_modulation_pm_nominal_voltage': '_set_analog_modulation_pm_nominal_voltage', 'get_analog_modulation_pm_deviation': '_get_analog_modulation_pm_deviation', 'set_analog_modulation_pm_deviation': '_set_analog_modulation_pm_deviation', 'analog_modulation_pm_configure': '_analog_modulation_pm_configure', 'get_pulse_modulation_enabled': '_get_pulse_modulation_enabled', 'set_pulse_modulation_enabled': '_set_pulse_modulation_enabled', 'get_pulse_modulation_source': '_get_pulse_modulation_source', 'set_pulse_modulation_source': '_set_pulse_modulation_source', 'get_pulse_modulation_external_polarity': '_get_pulse_modulation_external_polarity', 'set_pulse_modulation_external_polarity': '_set_pulse_modulation_external_polarity', 'get_lf_generator_active_lf_generator': '_get_lf_generator_active_lf_generator', 'set_lf_generator_active_lf_generator': '_set_lf_generator_active_lf_generator', 'get_lf_generator_frequency': '_get_lf_generator_frequency', 'set_lf_generator_frequency': '_set_lf_generator_frequency', 'get_lf_generator_waveform': '_get_lf_generator_waveform', 'set_lf_generator_waveform': '_set_lf_generator_waveform', 'lf_generator_configure': '_lf_generator_configure', 'get_lf_generator_output_enabled': '_get_lf_generator_output_enabled', 'set_lf_generator_output_enabled': '_set_lf_generator_output_enabled', 'get_lf_generator_output_amplitude': '_get_lf_generator_output_amplitude', 'set_lf_generator_output_amplitude': '_set_lf_generator_output_amplitude', 'lf_generator_output_configure': '_lf_generator_output_configure', 'get_sweep_mode': '_get_sweep_mode', 'set_sweep_mode': '_set_sweep_mode', 'get_sweep_trigger_source': '_get_sweep_trigger_source', 'set_sweep_trigger_source': '_set_sweep_trigger_source', 'sweep_configure': '_sweep_configure', 'get_sweep_frequency_step_start': '_get_sweep_frequency_step_start', 'set_sweep_frequency_step_start': '_set_sweep_frequency_step_start', 'get_sweep_frequency_step_stop': '_get_sweep_frequency_step_stop', 'set_sweep_frequency_step_stop': '_set_sweep_frequency_step_stop', 'get_sweep_frequency_step_scaling': '_get_sweep_frequency_step_scaling', 'set_sweep_frequency_step_scaling': '_set_sweep_frequency_step_scaling', 'get_sweep_frequency_step_size': '_get_sweep_frequency_step_size', 'set_sweep_frequency_step_size': '_set_sweep_frequency_step_size', 'get_sweep_frequency_step_single_step_enabled': '_get_sweep_frequency_step_single_step_enabled', 'set_sweep_frequency_step_single_step_enabled': '_set_sweep_frequency_step_single_step_enabled', 'get_sweep_frequency_step_dwell': '_get_sweep_frequency_step_dwell', 'set_sweep_frequency_step_dwell': '_set_sweep_frequency_step_dwell', 'sweep_frequency_step_configure_start_stop': '_sweep_frequency_step_configure_start_stop', 'sweep_frequency_step_configure_dwell': '_sweep_frequency_step_configure_dwell', 'sweep_frequency_step_reset': '_sweep_frequency_step_reset', 'get_sweep_power_step_start': '_get_sweep_power_step_start', 'set_sweep_power_step_start': '_set_sweep_power_step_start', 'get_sweep_power_step_stop': '_get_sweep_power_step_stop', 'set_sweep_power_step_stop': '_set_sweep_power_step_stop', 'get_sweep_power_step_size': '_get_sweep_power_step_size', 'set_sweep_power_step_size': '_set_sweep_power_step_size', 'get_sweep_power_step_single_step_enabled': '_get_sweep_power_step_single_step_enabled', 'set_sweep_power_step_single_step_enabled': '_set_sweep_power_step_single_step_enabled', 'get_sweep_power_step_dwell': '_get_sweep_power_step_dwell', 'set_sweep_power_step_dwell': '_set_sweep_power_step_dwell', 'sweep_power_step_configure_start_stop': '_sweep_power_step_configure_start_stop', 'sweep_power_step_configure_dwell': '_sweep_power_step_configure_dwell', 'sweep_power_step_reset': '_sweep_power_step_reset', 'get_sweep_list_selected_list': '_get_sweep_list_selected_list', 'set_sweep_list_selected_list': '_set_sweep_list_selected_list', 'get_sweep_list_single_step_enabled': '_get_sweep_list_single_step_enabled', 'set_sweep_list_single_step_enabled': '_set_sweep_list_single_step_enabled', 'get_sweep_list_dwell': '_get_sweep_list_dwell', 'set_sweep_list_dwell': '_set_sweep_list_dwell', 'sweep_list_create_frequency': '_sweep_list_create_frequency', 'sweep_list_create_power': '_sweep_list_create_power', 'sweep_list_create_frequency_power': '_sweep_list_create_frequency_power', 'sweep_list_clear_all': '_sweep_list_clear_all', 'sweep_list_configure_dwell': '_sweep_list_configure_dwell', 'sweep_list_reset': '_sweep_list_reset', 'memory_save': '_memory_save', 'memory_recall': '_memory_recall', 'initialize': '_initialize', 'get_initialized': '_get_initialized', 'close': '_close', 'get_driver_operation_cache': '_get_driver_operation_cache', 'set_driver_operation_cache': '_set_driver_operation_cache', 'get_driver_operation_driver_setup': '_get_driver_operation_driver_setup', 'get_driver_operation_interchange_check': '_get_driver_operation_interchange_check', 'set_driver_operation_interchange_check': '_set_driver_operation_interchange_check', 'get_driver_operation_logical_name': '_get_driver_operation_logical_name', 'get_driver_operation_query_instrument_status': '_get_driver_operation_query_instrument_status', 'set_driver_operation_query_instrument_status': '_set_driver_operation_query_instrument_status', 'get_driver_operation_range_check': '_get_driver_operation_range_check', 'set_driver_operation_range_check': '_set_driver_operation_range_check', 'get_driver_operation_record_coercions': '_get_driver_operation_record_coercions', 'set_driver_operation_record_coercions': '_set_driver_operation_record_coercions', 'get_driver_operation_io_resource_descriptor': '_get_driver_operation_io_resource_descriptor', 'get_driver_operation_simulate': '_get_driver_operation_simulate', 'driver_operation_clear_interchange_warnings': '_driver_operation_clear_interchange_warnings', 'driver_operation_get_next_coercion_record': '_driver_operation_get_next_coercion_record', 'driver_operation_get_next_interchange_warning': '_driver_operation_get_next_interchange_warning', 'driver_operation_invalidate_all_attributes': '_driver_operation_invalidate_all_attributes', 'driver_operation_reset_interchange_check': '_driver_operation_reset_interchange_check', 'get_identity_description': '_get_identity_description', 'get_identity_identifier': '_get_identity_identifier', 'get_identity_revision': '_get_identity_revision', 'get_identity_vendor': '_get_identity_vendor', 'get_identity_instrument_manufacturer': '_get_identity_instrument_manufacturer', 'get_identity_instrument_model': '_get_identity_instrument_model', 'get_identity_instrument_firmware_revision': '_get_identity_instrument_firmware_revision', 'get_identity_specification_major_version': '_get_identity_specification_major_version', 'get_identity_specification_minor_version': '_get_identity_specification_minor_version', 'get_identity_supported_instrument_models': '_get_identity_supported_instrument_models', 'get_identity_group_capabilities': '_get_identity_group_capabilities', 'identity_get_group_capabilities': '_identity_get_group_capabilities', 'identity_get_supported_instrument_models': '_identity_get_supported_instrument_models', 'utility_disable': '_utility_disable', 'utility_error_query': '_utility_error_query', 'utility_lock_object': '_utility_lock_object', 'utility_reset': '_utility_reset', 'utility_reset_with_defaults': '_utility_reset_with_defaults', 'utility_self_test': '_utility_self_test', 'utility_unlock_object': '_utility_unlock_object'}}}
+
+    def __init__(self, **kwargs):
+        merged = dict(self.DEFAULT_CONFIG)
+        merged.update(kwargs)
+        super().__init__(**merged)
+
+    def get_rf_frequency_multiplier(self, **kwargs):
+        return self.call('get_rf_frequency_multiplier', kwargs=kwargs)
+
+    def set_rf_frequency_multiplier(self, **kwargs):
+        return self.call('set_rf_frequency_multiplier', kwargs=kwargs)
+
+    def get_rf_frequency_offset(self, **kwargs):
+        return self.call('get_rf_frequency_offset', kwargs=kwargs)
+
+    def set_rf_frequency_offset(self, **kwargs):
+        return self.call('set_rf_frequency_offset', kwargs=kwargs)
+
+    def get_rf_frequency_reference(self, **kwargs):
+        return self.call('get_rf_frequency_reference', kwargs=kwargs)
+
+    def set_rf_frequency_reference(self, **kwargs):
+        return self.call('set_rf_frequency_reference', kwargs=kwargs)
+
+    def get_rf_frequency_reference_enabled(self, **kwargs):
+        return self.call('get_rf_frequency_reference_enabled', kwargs=kwargs)
+
+    def set_rf_frequency_reference_enabled(self, **kwargs):
+        return self.call('set_rf_frequency_reference_enabled', kwargs=kwargs)
+
+    def get_sweep_frequency_step_points(self, **kwargs):
+        return self.call('get_sweep_frequency_step_points', kwargs=kwargs)
+
+    def set_sweep_frequency_step_points(self, **kwargs):
+        return self.call('set_sweep_frequency_step_points', kwargs=kwargs)
+
+    def get_sweep_power_step_points(self, **kwargs):
+        return self.call('get_sweep_power_step_points', kwargs=kwargs)
+
+    def set_sweep_power_step_points(self, **kwargs):
+        return self.call('set_sweep_power_step_points', kwargs=kwargs)
+
+    def get_identity_instrument_serial_number(self, **kwargs):
+        return self.call('get_identity_instrument_serial_number', kwargs=kwargs)
+
+    def get_measurement_function(self, **kwargs):
+        return self.call('get_measurement_function', kwargs=kwargs)
+
+    def set_measurement_function(self, **kwargs):
+        return self.call('set_measurement_function', kwargs=kwargs)
+
+    def get_channels_name(self, **kwargs):
+        return self.call('get_channels_name', kwargs=kwargs)
+
+    def get_channels_impedance(self, **kwargs):
+        return self.call('get_channels_impedance', kwargs=kwargs)
+
+    def set_channels_impedance(self, **kwargs):
+        return self.call('set_channels_impedance', kwargs=kwargs)
+
+    def get_channels_coupling(self, **kwargs):
+        return self.call('get_channels_coupling', kwargs=kwargs)
+
+    def set_channels_coupling(self, **kwargs):
+        return self.call('set_channels_coupling', kwargs=kwargs)
+
+    def get_channels_attenuation(self, **kwargs):
+        return self.call('get_channels_attenuation', kwargs=kwargs)
+
+    def set_channels_attenuation(self, **kwargs):
+        return self.call('set_channels_attenuation', kwargs=kwargs)
+
+    def get_channels_level(self, **kwargs):
+        return self.call('get_channels_level', kwargs=kwargs)
+
+    def set_channels_level(self, **kwargs):
+        return self.call('set_channels_level', kwargs=kwargs)
+
+    def get_channels_hysteresis(self, **kwargs):
+        return self.call('get_channels_hysteresis', kwargs=kwargs)
+
+    def set_channels_hysteresis(self, **kwargs):
+        return self.call('set_channels_hysteresis', kwargs=kwargs)
+
+    def get_channels_slope(self, **kwargs):
+        return self.call('get_channels_slope', kwargs=kwargs)
+
+    def set_channels_slope(self, **kwargs):
+        return self.call('set_channels_slope', kwargs=kwargs)
+
+    def get_channels_filter_enabled(self, **kwargs):
+        return self.call('get_channels_filter_enabled', kwargs=kwargs)
+
+    def set_channels_filter_enabled(self, **kwargs):
+        return self.call('set_channels_filter_enabled', kwargs=kwargs)
+
+    def get_frequency_channel(self, **kwargs):
+        return self.call('get_frequency_channel', kwargs=kwargs)
+
+    def set_frequency_channel(self, **kwargs):
+        return self.call('set_frequency_channel', kwargs=kwargs)
+
+    def get_frequency_estimate(self, **kwargs):
+        return self.call('get_frequency_estimate', kwargs=kwargs)
+
+    def set_frequency_estimate(self, **kwargs):
+        return self.call('set_frequency_estimate', kwargs=kwargs)
+
+    def get_frequency_resolution(self, **kwargs):
+        return self.call('get_frequency_resolution', kwargs=kwargs)
+
+    def set_frequency_resolution(self, **kwargs):
+        return self.call('set_frequency_resolution', kwargs=kwargs)
+
+    def get_frequency_aperture_time(self, **kwargs):
+        return self.call('get_frequency_aperture_time', kwargs=kwargs)
+
+    def set_frequency_aperture_time(self, **kwargs):
+        return self.call('set_frequency_aperture_time', kwargs=kwargs)
+
+    def get_frequency_estimate_auto(self, **kwargs):
+        return self.call('get_frequency_estimate_auto', kwargs=kwargs)
+
+    def set_frequency_estimate_auto(self, **kwargs):
+        return self.call('set_frequency_estimate_auto', kwargs=kwargs)
+
+    def get_frequency_resolution_auto(self, **kwargs):
+        return self.call('get_frequency_resolution_auto', kwargs=kwargs)
+
+    def set_frequency_resolution_auto(self, **kwargs):
+        return self.call('set_frequency_resolution_auto', kwargs=kwargs)
+
+    def get_period_channel(self, **kwargs):
+        return self.call('get_period_channel', kwargs=kwargs)
+
+    def set_period_channel(self, **kwargs):
+        return self.call('set_period_channel', kwargs=kwargs)
+
+    def get_period_estimate(self, **kwargs):
+        return self.call('get_period_estimate', kwargs=kwargs)
+
+    def set_period_estimate(self, **kwargs):
+        return self.call('set_period_estimate', kwargs=kwargs)
+
+    def get_period_resolution(self, **kwargs):
+        return self.call('get_period_resolution', kwargs=kwargs)
+
+    def set_period_resolution(self, **kwargs):
+        return self.call('set_period_resolution', kwargs=kwargs)
+
+    def get_period_aperture_time(self, **kwargs):
+        return self.call('get_period_aperture_time', kwargs=kwargs)
+
+    def set_period_aperture_time(self, **kwargs):
+        return self.call('set_period_aperture_time', kwargs=kwargs)
+
+    def get_pulse_width_channel(self, **kwargs):
+        return self.call('get_pulse_width_channel', kwargs=kwargs)
+
+    def set_pulse_width_channel(self, **kwargs):
+        return self.call('set_pulse_width_channel', kwargs=kwargs)
+
+    def get_pulse_width_estimate(self, **kwargs):
+        return self.call('get_pulse_width_estimate', kwargs=kwargs)
+
+    def set_pulse_width_estimate(self, **kwargs):
+        return self.call('set_pulse_width_estimate', kwargs=kwargs)
+
+    def get_pulse_width_resolution(self, **kwargs):
+        return self.call('get_pulse_width_resolution', kwargs=kwargs)
+
+    def set_pulse_width_resolution(self, **kwargs):
+        return self.call('set_pulse_width_resolution', kwargs=kwargs)
+
+    def get_duty_cycle_channel(self, **kwargs):
+        return self.call('get_duty_cycle_channel', kwargs=kwargs)
+
+    def set_duty_cycle_channel(self, **kwargs):
+        return self.call('set_duty_cycle_channel', kwargs=kwargs)
+
+    def get_duty_cycle_frequency_estimate(self, **kwargs):
+        return self.call('get_duty_cycle_frequency_estimate', kwargs=kwargs)
+
+    def set_duty_cycle_frequency_estimate(self, **kwargs):
+        return self.call('set_duty_cycle_frequency_estimate', kwargs=kwargs)
+
+    def get_duty_cycle_resolution(self, **kwargs):
+        return self.call('get_duty_cycle_resolution', kwargs=kwargs)
+
+    def set_duty_cycle_resolution(self, **kwargs):
+        return self.call('set_duty_cycle_resolution', kwargs=kwargs)
+
+    def get_edge_time_channel(self, **kwargs):
+        return self.call('get_edge_time_channel', kwargs=kwargs)
+
+    def set_edge_time_channel(self, **kwargs):
+        return self.call('set_edge_time_channel', kwargs=kwargs)
+
+    def get_edge_time_reference_type(self, **kwargs):
+        return self.call('get_edge_time_reference_type', kwargs=kwargs)
+
+    def set_edge_time_reference_type(self, **kwargs):
+        return self.call('set_edge_time_reference_type', kwargs=kwargs)
+
+    def get_edge_time_estimate(self, **kwargs):
+        return self.call('get_edge_time_estimate', kwargs=kwargs)
+
+    def set_edge_time_estimate(self, **kwargs):
+        return self.call('set_edge_time_estimate', kwargs=kwargs)
+
+    def get_edge_time_resolution(self, **kwargs):
+        return self.call('get_edge_time_resolution', kwargs=kwargs)
+
+    def set_edge_time_resolution(self, **kwargs):
+        return self.call('set_edge_time_resolution', kwargs=kwargs)
+
+    def get_edge_time_high_reference(self, **kwargs):
+        return self.call('get_edge_time_high_reference', kwargs=kwargs)
+
+    def set_edge_time_high_reference(self, **kwargs):
+        return self.call('set_edge_time_high_reference', kwargs=kwargs)
+
+    def get_edge_time_low_reference(self, **kwargs):
+        return self.call('get_edge_time_low_reference', kwargs=kwargs)
+
+    def set_edge_time_low_reference(self, **kwargs):
+        return self.call('set_edge_time_low_reference', kwargs=kwargs)
+
+    def get_frequency_ratio_numerator_channel(self, **kwargs):
+        return self.call('get_frequency_ratio_numerator_channel', kwargs=kwargs)
+
+    def set_frequency_ratio_numerator_channel(self, **kwargs):
+        return self.call('set_frequency_ratio_numerator_channel', kwargs=kwargs)
+
+    def get_frequency_ratio_denominator_channel(self, **kwargs):
+        return self.call('get_frequency_ratio_denominator_channel', kwargs=kwargs)
+
+    def set_frequency_ratio_denominator_channel(self, **kwargs):
+        return self.call('set_frequency_ratio_denominator_channel', kwargs=kwargs)
+
+    def get_frequency_ratio_numerator_frequency_estimate(self, **kwargs):
+        return self.call('get_frequency_ratio_numerator_frequency_estimate', kwargs=kwargs)
+
+    def set_frequency_ratio_numerator_frequency_estimate(self, **kwargs):
+        return self.call('set_frequency_ratio_numerator_frequency_estimate', kwargs=kwargs)
+
+    def get_frequency_ratio_estimate(self, **kwargs):
+        return self.call('get_frequency_ratio_estimate', kwargs=kwargs)
+
+    def set_frequency_ratio_estimate(self, **kwargs):
+        return self.call('set_frequency_ratio_estimate', kwargs=kwargs)
+
+    def get_frequency_ratio_resolution(self, **kwargs):
+        return self.call('get_frequency_ratio_resolution', kwargs=kwargs)
+
+    def set_frequency_ratio_resolution(self, **kwargs):
+        return self.call('set_frequency_ratio_resolution', kwargs=kwargs)
+
+    def get_time_interval_start_channel(self, **kwargs):
+        return self.call('get_time_interval_start_channel', kwargs=kwargs)
+
+    def set_time_interval_start_channel(self, **kwargs):
+        return self.call('set_time_interval_start_channel', kwargs=kwargs)
+
+    def get_time_interval_stop_channel(self, **kwargs):
+        return self.call('get_time_interval_stop_channel', kwargs=kwargs)
+
+    def set_time_interval_stop_channel(self, **kwargs):
+        return self.call('set_time_interval_stop_channel', kwargs=kwargs)
+
+    def get_time_interval_estimate(self, **kwargs):
+        return self.call('get_time_interval_estimate', kwargs=kwargs)
+
+    def set_time_interval_estimate(self, **kwargs):
+        return self.call('set_time_interval_estimate', kwargs=kwargs)
+
+    def get_time_interval_resolution(self, **kwargs):
+        return self.call('get_time_interval_resolution', kwargs=kwargs)
+
+    def set_time_interval_resolution(self, **kwargs):
+        return self.call('set_time_interval_resolution', kwargs=kwargs)
+
+    def get_phase_input_channel(self, **kwargs):
+        return self.call('get_phase_input_channel', kwargs=kwargs)
+
+    def set_phase_input_channel(self, **kwargs):
+        return self.call('set_phase_input_channel', kwargs=kwargs)
+
+    def get_phase_reference_channel(self, **kwargs):
+        return self.call('get_phase_reference_channel', kwargs=kwargs)
+
+    def set_phase_reference_channel(self, **kwargs):
+        return self.call('set_phase_reference_channel', kwargs=kwargs)
+
+    def get_phase_frequency_estimate(self, **kwargs):
+        return self.call('get_phase_frequency_estimate', kwargs=kwargs)
+
+    def set_phase_frequency_estimate(self, **kwargs):
+        return self.call('set_phase_frequency_estimate', kwargs=kwargs)
+
+    def get_phase_resolution(self, **kwargs):
+        return self.call('get_phase_resolution', kwargs=kwargs)
+
+    def set_phase_resolution(self, **kwargs):
+        return self.call('set_phase_resolution', kwargs=kwargs)
+
+    def get_totalize_continuous_channel(self, **kwargs):
+        return self.call('get_totalize_continuous_channel', kwargs=kwargs)
+
+    def set_totalize_continuous_channel(self, **kwargs):
+        return self.call('set_totalize_continuous_channel', kwargs=kwargs)
+
+    def get_totalize_gated_channel(self, **kwargs):
+        return self.call('get_totalize_gated_channel', kwargs=kwargs)
+
+    def set_totalize_gated_channel(self, **kwargs):
+        return self.call('set_totalize_gated_channel', kwargs=kwargs)
+
+    def get_totalize_gated_gate_source(self, **kwargs):
+        return self.call('get_totalize_gated_gate_source', kwargs=kwargs)
+
+    def set_totalize_gated_gate_source(self, **kwargs):
+        return self.call('set_totalize_gated_gate_source', kwargs=kwargs)
+
+    def get_totalize_gated_gate_slope(self, **kwargs):
+        return self.call('get_totalize_gated_gate_slope', kwargs=kwargs)
+
+    def set_totalize_gated_gate_slope(self, **kwargs):
+        return self.call('set_totalize_gated_gate_slope', kwargs=kwargs)
+
+    def get_totalize_timed_channel(self, **kwargs):
+        return self.call('get_totalize_timed_channel', kwargs=kwargs)
+
+    def set_totalize_timed_channel(self, **kwargs):
+        return self.call('set_totalize_timed_channel', kwargs=kwargs)
+
+    def get_totalize_timed_gate_time(self, **kwargs):
+        return self.call('get_totalize_timed_gate_time', kwargs=kwargs)
+
+    def set_totalize_timed_gate_time(self, **kwargs):
+        return self.call('set_totalize_timed_gate_time', kwargs=kwargs)
+
+    def get_arm_start_type(self, **kwargs):
+        return self.call('get_arm_start_type', kwargs=kwargs)
+
+    def set_arm_start_type(self, **kwargs):
+        return self.call('set_arm_start_type', kwargs=kwargs)
+
+    def get_arm_start_external_source(self, **kwargs):
+        return self.call('get_arm_start_external_source', kwargs=kwargs)
+
+    def set_arm_start_external_source(self, **kwargs):
+        return self.call('set_arm_start_external_source', kwargs=kwargs)
+
+    def get_arm_start_external_level(self, **kwargs):
+        return self.call('get_arm_start_external_level', kwargs=kwargs)
+
+    def set_arm_start_external_level(self, **kwargs):
+        return self.call('set_arm_start_external_level', kwargs=kwargs)
+
+    def get_arm_start_external_slope(self, **kwargs):
+        return self.call('get_arm_start_external_slope', kwargs=kwargs)
+
+    def set_arm_start_external_slope(self, **kwargs):
+        return self.call('set_arm_start_external_slope', kwargs=kwargs)
+
+    def get_arm_start_external_delay(self, **kwargs):
+        return self.call('get_arm_start_external_delay', kwargs=kwargs)
+
+    def set_arm_start_external_delay(self, **kwargs):
+        return self.call('set_arm_start_external_delay', kwargs=kwargs)
+
+    def get_arm_stop_type(self, **kwargs):
+        return self.call('get_arm_stop_type', kwargs=kwargs)
+
+    def set_arm_stop_type(self, **kwargs):
+        return self.call('set_arm_stop_type', kwargs=kwargs)
+
+    def get_arm_stop_external_source(self, **kwargs):
+        return self.call('get_arm_stop_external_source', kwargs=kwargs)
+
+    def set_arm_stop_external_source(self, **kwargs):
+        return self.call('set_arm_stop_external_source', kwargs=kwargs)
+
+    def get_arm_stop_external_level(self, **kwargs):
+        return self.call('get_arm_stop_external_level', kwargs=kwargs)
+
+    def set_arm_stop_external_level(self, **kwargs):
+        return self.call('set_arm_stop_external_level', kwargs=kwargs)
+
+    def get_arm_stop_external_slope(self, **kwargs):
+        return self.call('get_arm_stop_external_slope', kwargs=kwargs)
+
+    def set_arm_stop_external_slope(self, **kwargs):
+        return self.call('set_arm_stop_external_slope', kwargs=kwargs)
+
+    def get_arm_stop_external_delay(self, **kwargs):
+        return self.call('get_arm_stop_external_delay', kwargs=kwargs)
+
+    def set_arm_stop_external_delay(self, **kwargs):
+        return self.call('set_arm_stop_external_delay', kwargs=kwargs)
+
+    def measurement_abort(self, **kwargs):
+        return self.call('measurement_abort', kwargs=kwargs)
+
+    def measurement_is_measurement_complete(self, **kwargs):
+        return self.call('measurement_is_measurement_complete', kwargs=kwargs)
+
+    def channels_configure(self, **kwargs):
+        return self.call('channels_configure', kwargs=kwargs)
+
+    def channels_configure_level(self, **kwargs):
+        return self.call('channels_configure_level', kwargs=kwargs)
+
+    def frequency_configure(self, **kwargs):
+        return self.call('frequency_configure', kwargs=kwargs)
+
+    def frequency_configure_manual(self, **kwargs):
+        return self.call('frequency_configure_manual', kwargs=kwargs)
+
+    def frequency_configure_with_aperture(self, **kwargs):
+        return self.call('frequency_configure_with_aperture', kwargs=kwargs)
+
+    def period_configure(self, **kwargs):
+        return self.call('period_configure', kwargs=kwargs)
+
+    def period_configure_with_aperture(self, **kwargs):
+        return self.call('period_configure_with_aperture', kwargs=kwargs)
+
+    def pulse_width_configure(self, **kwargs):
+        return self.call('pulse_width_configure', kwargs=kwargs)
+
+    def duty_cycle_configure(self, **kwargs):
+        return self.call('duty_cycle_configure', kwargs=kwargs)
+
+    def edge_time_configure(self, **kwargs):
+        return self.call('edge_time_configure', kwargs=kwargs)
+
+    def frequency_ratio_configure(self, **kwargs):
+        return self.call('frequency_ratio_configure', kwargs=kwargs)
+
+    def time_interval_configure(self, **kwargs):
+        return self.call('time_interval_configure', kwargs=kwargs)
+
+    def phase_configure(self, **kwargs):
+        return self.call('phase_configure', kwargs=kwargs)
+
+    def totalize_continuous_configure(self, **kwargs):
+        return self.call('totalize_continuous_configure', kwargs=kwargs)
+
+    def totalize_continuous_start(self, **kwargs):
+        return self.call('totalize_continuous_start', kwargs=kwargs)
+
+    def totalize_continuous_stop(self, **kwargs):
+        return self.call('totalize_continuous_stop', kwargs=kwargs)
+
+    def totalize_continuous_fetch_count(self, **kwargs):
+        return self.call('totalize_continuous_fetch_count', kwargs=kwargs)
+
+    def totalize_gated_configure(self, **kwargs):
+        return self.call('totalize_gated_configure', kwargs=kwargs)
+
+    def totalize_timed_configure(self, **kwargs):
+        return self.call('totalize_timed_configure', kwargs=kwargs)
+
+    def arm_start_external_configure(self, **kwargs):
+        return self.call('arm_start_external_configure', kwargs=kwargs)
+
+    def arm_stop_external_configure(self, **kwargs):
+        return self.call('arm_stop_external_configure', kwargs=kwargs)
+
+    def measurement_fetch(self, **kwargs):
+        return self.call('measurement_fetch', kwargs=kwargs)
+
+    def measurement_initiate(self, **kwargs):
+        return self.call('measurement_initiate', kwargs=kwargs)
+
+    def measurement_read(self, **kwargs):
+        return self.call('measurement_read', kwargs=kwargs)
+
+    def get_analog_modulation_am_enabled(self, **kwargs):
+        return self.call('get_analog_modulation_am_enabled', kwargs=kwargs)
+
+    def set_analog_modulation_am_enabled(self, **kwargs):
+        return self.call('set_analog_modulation_am_enabled', kwargs=kwargs)
+
+    def get_analog_modulation_am_source(self, **kwargs):
+        return self.call('get_analog_modulation_am_source', kwargs=kwargs)
+
+    def set_analog_modulation_am_source(self, **kwargs):
+        return self.call('set_analog_modulation_am_source', kwargs=kwargs)
+
+    def get_analog_modulation_am_scaling(self, **kwargs):
+        return self.call('get_analog_modulation_am_scaling', kwargs=kwargs)
+
+    def set_analog_modulation_am_scaling(self, **kwargs):
+        return self.call('set_analog_modulation_am_scaling', kwargs=kwargs)
+
+    def get_analog_modulation_am_external_coupling(self, **kwargs):
+        return self.call('get_analog_modulation_am_external_coupling', kwargs=kwargs)
+
+    def set_analog_modulation_am_external_coupling(self, **kwargs):
+        return self.call('set_analog_modulation_am_external_coupling', kwargs=kwargs)
+
+    def get_analog_modulation_am_nominal_voltage(self, **kwargs):
+        return self.call('get_analog_modulation_am_nominal_voltage', kwargs=kwargs)
+
+    def set_analog_modulation_am_nominal_voltage(self, **kwargs):
+        return self.call('set_analog_modulation_am_nominal_voltage', kwargs=kwargs)
+
+    def get_analog_modulation_am_depth(self, **kwargs):
+        return self.call('get_analog_modulation_am_depth', kwargs=kwargs)
+
+    def set_analog_modulation_am_depth(self, **kwargs):
+        return self.call('set_analog_modulation_am_depth', kwargs=kwargs)
+
+    def analog_modulation_am_configure(self, **kwargs):
+        return self.call('analog_modulation_am_configure', kwargs=kwargs)
+
+    def get_outputs_fm_enabled(self, **kwargs):
+        return self.call('get_outputs_fm_enabled', kwargs=kwargs)
+
+    def set_outputs_fm_enabled(self, **kwargs):
+        return self.call('set_outputs_fm_enabled', kwargs=kwargs)
+
+    def get_outputs_fm_source(self, **kwargs):
+        return self.call('get_outputs_fm_source', kwargs=kwargs)
+
+    def set_outputs_fm_source(self, **kwargs):
+        return self.call('set_outputs_fm_source', kwargs=kwargs)
+
+    def get_fm_internal_deviation(self, **kwargs):
+        return self.call('get_fm_internal_deviation', kwargs=kwargs)
+
+    def set_fm_internal_deviation(self, **kwargs):
+        return self.call('set_fm_internal_deviation', kwargs=kwargs)
+
+    def get_fm_internal_frequency(self, **kwargs):
+        return self.call('get_fm_internal_frequency', kwargs=kwargs)
+
+    def set_fm_internal_frequency(self, **kwargs):
+        return self.call('set_fm_internal_frequency', kwargs=kwargs)
+
+    def get_fm_internal_waveform(self, **kwargs):
+        return self.call('get_fm_internal_waveform', kwargs=kwargs)
+
+    def set_fm_internal_waveform(self, **kwargs):
+        return self.call('set_fm_internal_waveform', kwargs=kwargs)
+
+    def fm_configure_internal(self, **kwargs):
+        return self.call('fm_configure_internal', kwargs=kwargs)
+
+    def get_analog_modulation_pm_enabled(self, **kwargs):
+        return self.call('get_analog_modulation_pm_enabled', kwargs=kwargs)
+
+    def set_analog_modulation_pm_enabled(self, **kwargs):
+        return self.call('set_analog_modulation_pm_enabled', kwargs=kwargs)
+
+    def get_analog_modulation_pm_source(self, **kwargs):
+        return self.call('get_analog_modulation_pm_source', kwargs=kwargs)
+
+    def set_analog_modulation_pm_source(self, **kwargs):
+        return self.call('set_analog_modulation_pm_source', kwargs=kwargs)
+
+    def get_analog_modulation_pm_external_coupling(self, **kwargs):
+        return self.call('get_analog_modulation_pm_external_coupling', kwargs=kwargs)
+
+    def set_analog_modulation_pm_external_coupling(self, **kwargs):
+        return self.call('set_analog_modulation_pm_external_coupling', kwargs=kwargs)
+
+    def get_analog_modulation_pm_nominal_voltage(self, **kwargs):
+        return self.call('get_analog_modulation_pm_nominal_voltage', kwargs=kwargs)
+
+    def set_analog_modulation_pm_nominal_voltage(self, **kwargs):
+        return self.call('set_analog_modulation_pm_nominal_voltage', kwargs=kwargs)
+
+    def get_analog_modulation_pm_deviation(self, **kwargs):
+        return self.call('get_analog_modulation_pm_deviation', kwargs=kwargs)
+
+    def set_analog_modulation_pm_deviation(self, **kwargs):
+        return self.call('set_analog_modulation_pm_deviation', kwargs=kwargs)
+
+    def analog_modulation_pm_configure(self, **kwargs):
+        return self.call('analog_modulation_pm_configure', kwargs=kwargs)
+
+    def get_pulse_modulation_enabled(self, **kwargs):
+        return self.call('get_pulse_modulation_enabled', kwargs=kwargs)
+
+    def set_pulse_modulation_enabled(self, **kwargs):
+        return self.call('set_pulse_modulation_enabled', kwargs=kwargs)
+
+    def get_pulse_modulation_source(self, **kwargs):
+        return self.call('get_pulse_modulation_source', kwargs=kwargs)
+
+    def set_pulse_modulation_source(self, **kwargs):
+        return self.call('set_pulse_modulation_source', kwargs=kwargs)
+
+    def get_pulse_modulation_external_polarity(self, **kwargs):
+        return self.call('get_pulse_modulation_external_polarity', kwargs=kwargs)
+
+    def set_pulse_modulation_external_polarity(self, **kwargs):
+        return self.call('set_pulse_modulation_external_polarity', kwargs=kwargs)
+
+    def get_lf_generator_active_lf_generator(self, **kwargs):
+        return self.call('get_lf_generator_active_lf_generator', kwargs=kwargs)
+
+    def set_lf_generator_active_lf_generator(self, **kwargs):
+        return self.call('set_lf_generator_active_lf_generator', kwargs=kwargs)
+
+    def get_lf_generator_frequency(self, **kwargs):
+        return self.call('get_lf_generator_frequency', kwargs=kwargs)
+
+    def set_lf_generator_frequency(self, **kwargs):
+        return self.call('set_lf_generator_frequency', kwargs=kwargs)
+
+    def get_lf_generator_waveform(self, **kwargs):
+        return self.call('get_lf_generator_waveform', kwargs=kwargs)
+
+    def set_lf_generator_waveform(self, **kwargs):
+        return self.call('set_lf_generator_waveform', kwargs=kwargs)
+
+    def lf_generator_configure(self, **kwargs):
+        return self.call('lf_generator_configure', kwargs=kwargs)
+
+    def get_lf_generator_output_enabled(self, **kwargs):
+        return self.call('get_lf_generator_output_enabled', kwargs=kwargs)
+
+    def set_lf_generator_output_enabled(self, **kwargs):
+        return self.call('set_lf_generator_output_enabled', kwargs=kwargs)
+
+    def get_lf_generator_output_amplitude(self, **kwargs):
+        return self.call('get_lf_generator_output_amplitude', kwargs=kwargs)
+
+    def set_lf_generator_output_amplitude(self, **kwargs):
+        return self.call('set_lf_generator_output_amplitude', kwargs=kwargs)
+
+    def lf_generator_output_configure(self, **kwargs):
+        return self.call('lf_generator_output_configure', kwargs=kwargs)
+
+    def get_sweep_mode(self, **kwargs):
+        return self.call('get_sweep_mode', kwargs=kwargs)
+
+    def set_sweep_mode(self, **kwargs):
+        return self.call('set_sweep_mode', kwargs=kwargs)
+
+    def get_sweep_trigger_source(self, **kwargs):
+        return self.call('get_sweep_trigger_source', kwargs=kwargs)
+
+    def set_sweep_trigger_source(self, **kwargs):
+        return self.call('set_sweep_trigger_source', kwargs=kwargs)
+
+    def sweep_configure(self, **kwargs):
+        return self.call('sweep_configure', kwargs=kwargs)
+
+    def get_sweep_frequency_step_start(self, **kwargs):
+        return self.call('get_sweep_frequency_step_start', kwargs=kwargs)
+
+    def set_sweep_frequency_step_start(self, **kwargs):
+        return self.call('set_sweep_frequency_step_start', kwargs=kwargs)
+
+    def get_sweep_frequency_step_stop(self, **kwargs):
+        return self.call('get_sweep_frequency_step_stop', kwargs=kwargs)
+
+    def set_sweep_frequency_step_stop(self, **kwargs):
+        return self.call('set_sweep_frequency_step_stop', kwargs=kwargs)
+
+    def get_sweep_frequency_step_scaling(self, **kwargs):
+        return self.call('get_sweep_frequency_step_scaling', kwargs=kwargs)
+
+    def set_sweep_frequency_step_scaling(self, **kwargs):
+        return self.call('set_sweep_frequency_step_scaling', kwargs=kwargs)
+
+    def get_sweep_frequency_step_size(self, **kwargs):
+        return self.call('get_sweep_frequency_step_size', kwargs=kwargs)
+
+    def set_sweep_frequency_step_size(self, **kwargs):
+        return self.call('set_sweep_frequency_step_size', kwargs=kwargs)
+
+    def get_sweep_frequency_step_single_step_enabled(self, **kwargs):
+        return self.call('get_sweep_frequency_step_single_step_enabled', kwargs=kwargs)
+
+    def set_sweep_frequency_step_single_step_enabled(self, **kwargs):
+        return self.call('set_sweep_frequency_step_single_step_enabled', kwargs=kwargs)
+
+    def get_sweep_frequency_step_dwell(self, **kwargs):
+        return self.call('get_sweep_frequency_step_dwell', kwargs=kwargs)
+
+    def set_sweep_frequency_step_dwell(self, **kwargs):
+        return self.call('set_sweep_frequency_step_dwell', kwargs=kwargs)
+
+    def sweep_frequency_step_configure_start_stop(self, **kwargs):
+        return self.call('sweep_frequency_step_configure_start_stop', kwargs=kwargs)
+
+    def sweep_frequency_step_configure_dwell(self, **kwargs):
+        return self.call('sweep_frequency_step_configure_dwell', kwargs=kwargs)
+
+    def sweep_frequency_step_reset(self, **kwargs):
+        return self.call('sweep_frequency_step_reset', kwargs=kwargs)
+
+    def get_sweep_power_step_start(self, **kwargs):
+        return self.call('get_sweep_power_step_start', kwargs=kwargs)
+
+    def set_sweep_power_step_start(self, **kwargs):
+        return self.call('set_sweep_power_step_start', kwargs=kwargs)
+
+    def get_sweep_power_step_stop(self, **kwargs):
+        return self.call('get_sweep_power_step_stop', kwargs=kwargs)
+
+    def set_sweep_power_step_stop(self, **kwargs):
+        return self.call('set_sweep_power_step_stop', kwargs=kwargs)
+
+    def get_sweep_power_step_size(self, **kwargs):
+        return self.call('get_sweep_power_step_size', kwargs=kwargs)
+
+    def set_sweep_power_step_size(self, **kwargs):
+        return self.call('set_sweep_power_step_size', kwargs=kwargs)
+
+    def get_sweep_power_step_single_step_enabled(self, **kwargs):
+        return self.call('get_sweep_power_step_single_step_enabled', kwargs=kwargs)
+
+    def set_sweep_power_step_single_step_enabled(self, **kwargs):
+        return self.call('set_sweep_power_step_single_step_enabled', kwargs=kwargs)
+
+    def get_sweep_power_step_dwell(self, **kwargs):
+        return self.call('get_sweep_power_step_dwell', kwargs=kwargs)
+
+    def set_sweep_power_step_dwell(self, **kwargs):
+        return self.call('set_sweep_power_step_dwell', kwargs=kwargs)
+
+    def sweep_power_step_configure_start_stop(self, **kwargs):
+        return self.call('sweep_power_step_configure_start_stop', kwargs=kwargs)
+
+    def sweep_power_step_configure_dwell(self, **kwargs):
+        return self.call('sweep_power_step_configure_dwell', kwargs=kwargs)
+
+    def sweep_power_step_reset(self, **kwargs):
+        return self.call('sweep_power_step_reset', kwargs=kwargs)
+
+    def get_sweep_list_selected_list(self, **kwargs):
+        return self.call('get_sweep_list_selected_list', kwargs=kwargs)
+
+    def set_sweep_list_selected_list(self, **kwargs):
+        return self.call('set_sweep_list_selected_list', kwargs=kwargs)
+
+    def get_sweep_list_single_step_enabled(self, **kwargs):
+        return self.call('get_sweep_list_single_step_enabled', kwargs=kwargs)
+
+    def set_sweep_list_single_step_enabled(self, **kwargs):
+        return self.call('set_sweep_list_single_step_enabled', kwargs=kwargs)
+
+    def get_sweep_list_dwell(self, **kwargs):
+        return self.call('get_sweep_list_dwell', kwargs=kwargs)
+
+    def set_sweep_list_dwell(self, **kwargs):
+        return self.call('set_sweep_list_dwell', kwargs=kwargs)
+
+    def sweep_list_create_frequency(self, **kwargs):
+        return self.call('sweep_list_create_frequency', kwargs=kwargs)
+
+    def sweep_list_create_power(self, **kwargs):
+        return self.call('sweep_list_create_power', kwargs=kwargs)
+
+    def sweep_list_create_frequency_power(self, **kwargs):
+        return self.call('sweep_list_create_frequency_power', kwargs=kwargs)
+
+    def sweep_list_clear_all(self, **kwargs):
+        return self.call('sweep_list_clear_all', kwargs=kwargs)
+
+    def sweep_list_configure_dwell(self, **kwargs):
+        return self.call('sweep_list_configure_dwell', kwargs=kwargs)
+
+    def sweep_list_reset(self, **kwargs):
+        return self.call('sweep_list_reset', kwargs=kwargs)
+
+    def memory_save(self, **kwargs):
+        return self.call('memory_save', kwargs=kwargs)
+
+    def memory_recall(self, **kwargs):
+        return self.call('memory_recall', kwargs=kwargs)
+
+    def initialize(self, **kwargs):
+        return self.call('initialize', kwargs=kwargs)
+
+    def get_initialized(self, **kwargs):
+        return self.call('get_initialized', kwargs=kwargs)
+
+    def close(self, **kwargs):
+        return self.call('close', kwargs=kwargs)
+
+    def get_driver_operation_cache(self, **kwargs):
+        return self.call('get_driver_operation_cache', kwargs=kwargs)
+
+    def set_driver_operation_cache(self, **kwargs):
+        return self.call('set_driver_operation_cache', kwargs=kwargs)
+
+    def get_driver_operation_driver_setup(self, **kwargs):
+        return self.call('get_driver_operation_driver_setup', kwargs=kwargs)
+
+    def get_driver_operation_interchange_check(self, **kwargs):
+        return self.call('get_driver_operation_interchange_check', kwargs=kwargs)
+
+    def set_driver_operation_interchange_check(self, **kwargs):
+        return self.call('set_driver_operation_interchange_check', kwargs=kwargs)
+
+    def get_driver_operation_logical_name(self, **kwargs):
+        return self.call('get_driver_operation_logical_name', kwargs=kwargs)
+
+    def get_driver_operation_query_instrument_status(self, **kwargs):
+        return self.call('get_driver_operation_query_instrument_status', kwargs=kwargs)
+
+    def set_driver_operation_query_instrument_status(self, **kwargs):
+        return self.call('set_driver_operation_query_instrument_status', kwargs=kwargs)
+
+    def get_driver_operation_range_check(self, **kwargs):
+        return self.call('get_driver_operation_range_check', kwargs=kwargs)
+
+    def set_driver_operation_range_check(self, **kwargs):
+        return self.call('set_driver_operation_range_check', kwargs=kwargs)
+
+    def get_driver_operation_record_coercions(self, **kwargs):
+        return self.call('get_driver_operation_record_coercions', kwargs=kwargs)
+
+    def set_driver_operation_record_coercions(self, **kwargs):
+        return self.call('set_driver_operation_record_coercions', kwargs=kwargs)
+
+    def get_driver_operation_io_resource_descriptor(self, **kwargs):
+        return self.call('get_driver_operation_io_resource_descriptor', kwargs=kwargs)
+
+    def get_driver_operation_simulate(self, **kwargs):
+        return self.call('get_driver_operation_simulate', kwargs=kwargs)
+
+    def driver_operation_clear_interchange_warnings(self, **kwargs):
+        return self.call('driver_operation_clear_interchange_warnings', kwargs=kwargs)
+
+    def driver_operation_get_next_coercion_record(self, **kwargs):
+        return self.call('driver_operation_get_next_coercion_record', kwargs=kwargs)
+
+    def driver_operation_get_next_interchange_warning(self, **kwargs):
+        return self.call('driver_operation_get_next_interchange_warning', kwargs=kwargs)
+
+    def driver_operation_invalidate_all_attributes(self, **kwargs):
+        return self.call('driver_operation_invalidate_all_attributes', kwargs=kwargs)
+
+    def driver_operation_reset_interchange_check(self, **kwargs):
+        return self.call('driver_operation_reset_interchange_check', kwargs=kwargs)
+
+    def get_identity_description(self, **kwargs):
+        return self.call('get_identity_description', kwargs=kwargs)
+
+    def get_identity_identifier(self, **kwargs):
+        return self.call('get_identity_identifier', kwargs=kwargs)
+
+    def get_identity_revision(self, **kwargs):
+        return self.call('get_identity_revision', kwargs=kwargs)
+
+    def get_identity_vendor(self, **kwargs):
+        return self.call('get_identity_vendor', kwargs=kwargs)
+
+    def get_identity_instrument_manufacturer(self, **kwargs):
+        return self.call('get_identity_instrument_manufacturer', kwargs=kwargs)
+
+    def get_identity_instrument_model(self, **kwargs):
+        return self.call('get_identity_instrument_model', kwargs=kwargs)
+
+    def get_identity_instrument_firmware_revision(self, **kwargs):
+        return self.call('get_identity_instrument_firmware_revision', kwargs=kwargs)
+
+    def get_identity_specification_major_version(self, **kwargs):
+        return self.call('get_identity_specification_major_version', kwargs=kwargs)
+
+    def get_identity_specification_minor_version(self, **kwargs):
+        return self.call('get_identity_specification_minor_version', kwargs=kwargs)
+
+    def get_identity_supported_instrument_models(self, **kwargs):
+        return self.call('get_identity_supported_instrument_models', kwargs=kwargs)
+
+    def get_identity_group_capabilities(self, **kwargs):
+        return self.call('get_identity_group_capabilities', kwargs=kwargs)
+
+    def identity_get_group_capabilities(self, **kwargs):
+        return self.call('identity_get_group_capabilities', kwargs=kwargs)
+
+    def identity_get_supported_instrument_models(self, **kwargs):
+        return self.call('identity_get_supported_instrument_models', kwargs=kwargs)
+
+    def utility_disable(self, **kwargs):
+        return self.call('utility_disable', kwargs=kwargs)
+
+    def utility_error_query(self, **kwargs):
+        return self.call('utility_error_query', kwargs=kwargs)
+
+    def utility_lock_object(self, **kwargs):
+        return self.call('utility_lock_object', kwargs=kwargs)
+
+    def utility_reset(self, **kwargs):
+        return self.call('utility_reset', kwargs=kwargs)
+
+    def utility_reset_with_defaults(self, **kwargs):
+        return self.call('utility_reset_with_defaults', kwargs=kwargs)
+
+    def utility_self_test(self, **kwargs):
+        return self.call('utility_self_test', kwargs=kwargs)
+
+    def utility_unlock_object(self, **kwargs):
+        return self.call('utility_unlock_object', kwargs=kwargs)
+

@@ -1,0 +1,174 @@
+community_instrument_opentrons_temperature_module:
+  class:
+    module: community_drivers.community_instrument_opentrons_temperature_module.driver:CommunityInstrumentOpentronsTemperatureModule
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/temperature_controlling/opentrons_backend.py
+          class_name:
+            type: string
+            default: OpentronsTemperatureModuleBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - deactivate
+            - get_current_temperature
+            - set_temperature
+            - setup
+            - stop
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              brand: Opentrons
+              model: Temperature Module
+              device_type_cn: 温度控制器
+              device_type_en: Temperature Controller
+              source_framework: PyLabRobot
+              source_file: pylabrobot/temperature_controlling/opentrons_backend.py
+              class_name: OpentronsTemperatureModuleBackend
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-deactivate:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+              required:
+              - temperature
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: Temperature Module 驱动（Opentrons），支持 deactivate/get_current_temperature/set_temperature/setup/stop
+    等 5 个操作。
+  category:
+  - 温度控制器
+  config_info: []
+  handles: []
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/temperature_controlling/opentrons_backend.py
+    candidate_class: OpentronsTemperatureModuleBackend
+    操作数: 5
+  manufacturer: Opentrons
+  model:
+    name: Temperature Module
+    type: device
+  name: Opentrons Temperature Module
+  tags:
+  - 温度控制器
+  resource_type: device
+  version: 0.1.0

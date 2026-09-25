@@ -157,3 +157,10 @@ class PhaseMatrixFSW0020(SingleChannelSG):
     @am_modulation.setter
     def am_modulation(self, newval):
         self.sendcmd(f"0A{1 if newval else 0:02X}.")
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(PhaseMatrixFSW0020)
+except Exception:
+    pass

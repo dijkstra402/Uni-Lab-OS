@@ -1,0 +1,304 @@
+community_instrument_mettler_toledo_quantos:
+  class:
+    module: community_drivers.community_instrument_mettler_toledo_quantos.driver:CommunityInstrumentMettlerToledoQuantos
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/autonomous-chemistry-lab__quantos
+          source_file:
+            type: string
+            default: mettler_toledo_quantos/mettler_toledo_quantos.py
+          class_name:
+            type: string
+            default: MettlerToledoDevice
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - close
+            - move_frontdoor_open
+            - move_frontdoor_close
+            - move_to
+            - unlock_dosing_pin
+            - lock_dosing_pin
+            - set_target_value_mg
+            - set_tolerance_value_pct
+            - start_dosing
+            - request_frontdoor_position
+            - request_autosampler_position
+            - quantos_test
+          metadata:
+            type: object
+            default:
+              repo: autonomous-chemistry-lab/quantos
+              repo_url: https://github.com/autonomous-chemistry-lab/quantos
+              source_file: mettler_toledo_quantos/mettler_toledo_quantos.py
+              class_name: MettlerToledoDevice
+              brand: Mettler Toledo
+              model: Quantos
+              device_type_cn: 自动称量系统
+              device_type_en: Automated Weighing System
+              source_framework: 电化学/热分析/天平
+              tag_id: '4426'
+              tag_name: 电子天平
+              tag_name_en: Electronic Balance
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 182
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_frontdoor_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_frontdoor_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_frontdoor_close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_frontdoor_close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_to:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unlock_dosing_pin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unlock_dosing_pin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-lock_dosing_pin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_dosing_pin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_target_value_mg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_target_value_mg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_tolerance_value_pct:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_tolerance_value_pct
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_dosing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_dosing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-request_frontdoor_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: request_frontdoor_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-request_autosampler_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: request_autosampler_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-quantos_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: quantos_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Quantos 驱动（Mettler Toledo），支持 close/move_frontdoor_open/move_frontdoor_close/move_to/unlock_dosing_pin
+    等 12 个操作。
+  category:
+  - 电子天平
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: autonomous-chemistry-lab/quantos
+    source_file: mettler_toledo_quantos/mettler_toledo_quantos.py
+    candidate_class: MettlerToledoDevice
+    candidate_score: 182
+    quality_status: usable
+    操作数: 12
+  manufacturer: Mettler Toledo
+  model:
+    name: Quantos
+    type: device
+  name: Mettler Toledo Quantos
+  tags:
+  - 电子天平
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

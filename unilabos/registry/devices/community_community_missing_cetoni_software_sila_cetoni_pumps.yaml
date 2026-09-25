@@ -1,0 +1,184 @@
+community_missing_cetoni_software_sila_cetoni_pumps__community_missing_cetoni_software_sila_cetoni_pumps:
+  class:
+    module: unilabos.devices.community.community_missing_cetoni_software_sila_cetoni_pumps.driver:CetoniPumpDevice
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/CETONI-Software__sila_cetoni_pumps
+          source_file:
+            type: string
+            default: sila_cetoni/pumps/__init__.py
+          class_name:
+            type: string
+            default: CetoniPumpDevice
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - is_contiflow_pump
+            - is_peristaltic_pump
+            - set_operational
+            - StopDosage
+            - SetFillLevel
+            - DoseVolume
+            - GenerateFlow
+          metadata:
+            type: object
+            default:
+              repo: CETONI-Software/sila_cetoni_pumps
+              repo_url: https://github.com/CETONI-Software/sila_cetoni_pumps
+              source_file: sila_cetoni/pumps/syringepumps/sila/syringepump_service/feature_implementations/pumpunitcontroller_impl.py
+              candidate_score: 24
+              candidate_reason: ''
+              manufacturers:
+              - Cetoni
+              models:
+              - Nemesys系列(官方SiLA2)
+              tags: &id001
+              - 柱塞泵
+              notes:
+              - CETONI官方出品
+              comm_protocols:
+              - SiLA2协议 + QmixSDK
+              review_status: good
+              review_notes:
+              - 改选 CetoniPumpDevice，覆盖 SiLA2 泵业务操作接口。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-is_contiflow_pump:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_contiflow_pump
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_peristaltic_pump:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_peristaltic_pump
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_operational:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_operational
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-StopDosage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: StopDosage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-SetFillLevel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SetFillLevel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-DoseVolume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: DoseVolume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-GenerateFlow:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GenerateFlow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: CETONI-Software/sila_cetoni_pumps
+    source_file: sila_cetoni/pumps/syringepumps/sila/syringepump_service/feature_implementations/pumpunitcontroller_impl.py
+    candidate_class: PumpUnitControllerImpl
+    communication: SiLA2协议 + QmixSDK
+  manufacturer: Cetoni
+  model:
+    name: Nemesys系列(官方SiLA2)
+    type: device
+  name: sila_cetoni_pumps
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

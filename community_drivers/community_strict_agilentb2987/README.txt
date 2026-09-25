@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/agilent/agilentB298x.py
+registry_id: community_strict_agilentb2987
+source_file: pymeasure/instruments/agilent/agilentB298x.py
+class_name: AgilentB2987
+manufacturer: keysight
+model: AgilentB2987
+tag: 电池测试柜
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilentb2987.yaml

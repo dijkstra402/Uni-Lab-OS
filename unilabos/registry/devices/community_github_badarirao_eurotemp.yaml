@@ -1,0 +1,168 @@
+community_github_badarirao_eurotemp:
+  class:
+    module: community_drivers.community_github_badarirao_eurotemp.driver:CommunityGithubBadariraoEurotemp
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/badarirao_Eurotemp
+          source_file:
+            type: string
+            default: eurotherm.py
+          class_name:
+            type: string
+            default: Eurotherm
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - send_read_param
+            - read_param
+            - write_param
+            - get_current_temperature
+            - set_temperature
+            - get_setpoint_temperature
+          metadata:
+            type: object
+            default:
+              repo: badarirao/eurotemp
+              repo_url: https://github.com/badarirao/Eurotemp
+              unit_id: gh_eurotherm_2408
+              source_file: eurotherm.py
+              candidate_score: 79
+              manufacturer: 欧陆
+              model_name: Eurotherm 2408
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-send_read_param:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_read_param
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_param:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_param
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_param:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_param
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_setpoint_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_setpoint_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: '2408/2404 Controller/Programmer Data Sheet (HA026553 Iss 4) | Eurotherm
+    Downloads GitHub驱动: https://github.com/badarirao/Eurotemp'
+  category:
+  - community
+  device_params:
+    repo: badarirao/eurotemp
+    source_file: eurotherm.py
+    candidate_class: Eurotherm
+    communication: ''
+    photo_url: https://www.eurotherm.com/wp-content/themes/eurotherm-custom/images/facebook.jpg
+    instrument_params: DIN-A-MITE® A Power Controller; FLUENT® In-Line Heater; EZ-ZONE®
+      RM Rail Mount Controller; Life Sciences – CPG; Food and Beverage – CPG; ServicesSee
+      All ServicesAccreditation servicesService level agreements (SLA)Warehouse MappingIndustrial-Cybersecurity;
+      Industrial-Cybersecurity
+    official_url: https://www.eurotherm.com/en/temperature-controllers/2408/
+  manufacturer: Eurotherm
+  model:
+    name: Eurotherm 2408
+    type: device
+  name: Eurotherm 2408
+  tags:
+  - 箱式电阻炉
+  resource_type: device
+  icon: https://www.eurotherm.com/wp-content/themes/eurotherm-custom/images/facebook.jpg
+  scene:
+    domain: Materials
+    scene_name: Temperature Control
+    step: Sintering
+  version: 0.1.0

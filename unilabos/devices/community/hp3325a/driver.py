@@ -330,3 +330,10 @@ class HP3325a(FunctionGenerator):
         # TODO - Support ERR? on HP3325B which is more specific
         err_resp = self.query("IER")
         return int(err_resp.replace("E", "").replace("R", "").strip())
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(HP3325a)
+except Exception:
+    pass

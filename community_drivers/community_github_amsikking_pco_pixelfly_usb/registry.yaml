@@ -1,0 +1,121 @@
+community_github_amsikking_pco_pixelfly_usb:
+  class:
+    module: community_drivers.community_github_amsikking_pco_pixelfly_usb.driver:CommunityGithubAmsikkingPcoPixelflyUsb
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/amsikking_pco_pixelfly_usb
+          source_file:
+            type: string
+            default: pco_pixelfly_usb.py
+          class_name:
+            type: string
+            default: Camera
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - apply_settings
+            - record_to_memory
+            - close
+          metadata:
+            type: object
+            default:
+              repo: amsikking/pco_pixelfly_usb
+              repo_url: https://github.com/amsikking/pco_pixelfly_usb
+              unit_id: gh_pco_pco_pixelfly_usb
+              source_file: pco_pixelfly_usb.py
+              candidate_score: 23
+              manufacturer: PCO
+              model_name: PCO pco.pixelfly USB
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-apply_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-record_to_memory:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: record_to_memory
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'PCO pco.pixelfly USB是科学级CCD相机，采用Sony ICX285AL传感器，14位动态范围，Peltier制冷，适用于荧光显微成像和天文观测。
+    GitHub驱动: https://github.com/amsikking/pco_pixelfly_usb'
+  category:
+  - community
+  device_params:
+    repo: amsikking/pco_pixelfly_usb
+    source_file: pco_pixelfly_usb.py
+    candidate_class: Camera
+    communication: ''
+    photo_url: https://www.excelitas.com/themes/custom/excelitas_theme/assets/images/search-cross.png
+    instrument_params: 'Sensor: CCD (Sony ICX285AL); Resolution: 1392×1040 (1.4 MP);
+      Pixel: 6.45 µm; Bit depth: 14 bit; Read noise: ~6 e⁻; Full well: ~18000 e⁻;
+      Frame rate: ~13 fps; Interface: USB 2.0; Cooling: Peltier; Peak QE: ~62%'
+    official_url: https://www.excelitas.com/product/pcopixelfly-14-usb
+  manufacturer: PCO
+  model:
+    name: PCO pco.pixelfly USB
+    type: device
+  name: PCO pco.pixelfly USB
+  tags:
+  - 普通光学显微镜
+  resource_type: device
+  icon: https://www.excelitas.com/themes/custom/excelitas_theme/assets/images/search-cross.png
+  scene:
+    domain: Biology
+    scene_name: Imaging
+    step: Microscopy
+  version: 0.1.0

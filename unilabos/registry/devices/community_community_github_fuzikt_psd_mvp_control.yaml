@@ -1,0 +1,120 @@
+community_github_fuzikt_psd_mvp_control__community_github_fuzikt_psd_mvp_control:
+  class:
+    module: unilabos.devices.community.community_github_fuzikt_psd_mvp_control.driver:Serial_communication
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/fuzikt_psd_mvp_control
+          source_file:
+            type: string
+            default: hw_classes/serial_com.py
+          class_name:
+            type: string
+            default: Serial_communication
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect
+            - disconnect
+            - send_command
+          metadata:
+            type: object
+            default:
+              repo: fuzikt/psd_mvp_control
+              repo_url: https://github.com/fuzikt/psd_mvp_control
+              unit_id: gh_hamilton_psd
+              source_file: hw_classes/serial_com.py
+              candidate_score: 127
+              manufacturer: Hamilton
+              model_name: Hamilton PSD/4
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'Hamilton MVP/4是模块化电动多位置阀定位器，支持3-8端口配置，RS-232控制，湿润部件采用PTFE和PEEK材料。
+    GitHub驱动: https://github.com/fuzikt/psd_mvp_control'
+  category:
+  - community
+  device_params:
+    repo: fuzikt/psd_mvp_control
+    source_file: hw_classes/serial_com.py
+    candidate_class: Serial_communication
+    communication: ''
+    photo_url: https://www.hamiltoncompany.com/cdn-cgi/image/format=auto,metadata=none,width=480,height=320,quality=80,fit=cover,gravity=0.5x0.5/https://assets-sensors.hamiltoncompany.com/Images-Products/glucosense-sensor-instaled.jpg?v=1763717630
+    instrument_params: 'Type: Modular Valve Positioner; Positions: 3-8 port; Communication:
+      RS-232; Daisy-Chain: Multiple units; Materials: PTFE, PEEK; Actuation: Motorized'
+    official_url: https://www.hamiltoncompany.com/valves-fittings-tubing/automated-valves/mvp-valve-positioner
+  manufacturer: Hamilton
+  model:
+    name: Hamilton PSD/4
+    type: device
+  name: Hamilton MVP/4
+  tags:
+  - 多通阀
+  resource_type: device
+  icon: https://www.hamiltoncompany.com/cdn-cgi/image/format=auto,metadata=none,width=480,height=320,quality=80,fit=cover,gravity=0.5x0.5/https://assets-sensors.hamiltoncompany.com/Images-Products/glucosense-sensor-instaled.jpg?v=1763717630
+  scene:
+    domain: Chemistry
+    scene_name: Fluidics
+    step: Valve Control
+  version: 0.1.0

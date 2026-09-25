@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes_contrib_drivers
+repo_url: https://github.com/QCoDeS/Qcodes_contrib_drivers
+source_url: https://github.com/QCoDeS/Qcodes_contrib_drivers/blob/main/src/qcodes_contrib_drivers/drivers/Cryocon/cryocon_26.py
+registry_id: community_strict_cryocon26
+source_file: src/qcodes_contrib_drivers/drivers/Cryocon/cryocon_26.py
+class_name: Cryocon_26
+manufacturer: cryocon
+model: Cryocon_26
+tag: 表征设备
+confidence: 0.8
+quality_score: 0.88
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_cryocon26.yaml

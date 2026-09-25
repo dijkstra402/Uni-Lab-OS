@@ -1,0 +1,844 @@
+community_instrument_shimadzu_gcms_qp2020_nx:
+  class:
+    module: community_drivers.community_instrument_shimadzu_gcms_qp2020_nx.driver:CommunityInstrumentShimadzuGcmsQp2020Nx
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/RBCanty__MIT_AMD_Platform
+          source_file:
+            type: string
+            default: Shell_AH/Evoware_API/evoware_api_support.py
+          class_name:
+            type: string
+            default: EVO
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - cancel_process
+            - execute_script_command
+            - get_device
+            - get_device_count
+            - get_lc_count
+            - get_lc_info
+            - get_number_of_racks
+            - get_process_status
+            - get_process_status_ex
+            - get_process_variable
+            - get_rack
+            - get_script_status
+            - get_script_status_ex
+            - get_script_variable
+            - get_status
+            - get_sub_lc_count
+            - get_sub_lc_info
+            - get_system_info
+            - get_window_handle
+            - hide_gui
+            - initialize
+            - logoff
+            - logon
+            - pause
+            - prepare_process
+            - prepare_script
+            - read_liquid_classes
+            - reset_stored_adh_info
+            - resume
+            - set_door_locks
+            - set_lamp
+            - set_process_variable
+            - set_rack
+            - set_remote_mode
+            - set_script_variable
+            - shutdown
+            - start_adh
+            - start_adh_load_process
+            - start_adh_unload_process
+            - start_script
+            - stop
+            - write_to_trace_file
+            - error_event
+          metadata:
+            type: object
+            default:
+              repo: RBCanty/MIT_AMD_Platform
+              repo_url: https://github.com/RBCanty/MIT_AMD_Platform
+              source_file: Shell_AH/Evoware_API/evoware_api_support.py
+              class_name: EVO
+              brand: Shimadzu
+              model: GCMS-QP2020 NX
+              device_type_cn: 气质联用仪
+              device_type_en: GC-MS
+              source_framework: MIT-AMD
+              tag_id: '4411'
+              tag_name: 气相色谱质谱联用仪
+              tag_name_en: GC-MS
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 374
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-cancel_process:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cancel_process
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                processID:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-execute_script_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execute_script_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_device_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_lc_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_lc_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_lc_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_lc_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lc_index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_number_of_racks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_number_of_racks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                script_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_process_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_process_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                process_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_process_status_ex:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_process_status_ex
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                process_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_process_variable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_process_variable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                process_id:
+                  type: string
+                variable_name:
+                  type: string
+                variable_scope:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_rack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_rack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                script_id:
+                  type: string
+                index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_script_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_script_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                script_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_script_status_ex:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_script_status_ex
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                script_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_script_variable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_script_variable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                script_id:
+                  type: string
+                variable_name:
+                  type: string
+                variable_scope:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_sub_lc_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sub_lc_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lc_index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_sub_lc_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sub_lc_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lc_index:
+                  type: string
+                sub_lc_index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_system_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_system_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_window_handle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_window_handle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-hide_gui:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: hide_gui
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hide_val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-logoff:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logoff
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-logon:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logon
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pause:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-prepare_process:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_process
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                process_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-prepare_script:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepare_script
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                script_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_liquid_classes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_liquid_classes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_stored_adh_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_stored_adh_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-resume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_door_locks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_door_locks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                close_val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_lamp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_lamp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lamp_status:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_process_variable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_process_variable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                process_id:
+                  type: string
+                variable_name:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_rack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_rack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                script_id:
+                  type: string
+                index:
+                  type: string
+                location:
+                  type: string
+                barcode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_remote_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_remote_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable_val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_script_variable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_script_variable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                script_id:
+                  type: string
+                variable_name:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_adh:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_adh
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_adh_load_process:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_adh_load_process
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_adh_unload_process:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_adh_unload_process
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_script:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_script
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                scriptName:
+                  type: string
+                start_line:
+                  type: string
+                  default: 0
+                end_line:
+                  type: string
+                  default: 0
+        goal_default:
+          start_line: 0
+          end_line: 0
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_to_trace_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_to_trace_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-error_event:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: error_event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: GCMS-QP2020 NX 驱动（Shimadzu），支持 cancel_process/execute_script_command/get_device/get_device_count/get_lc_count
+    等 43 个操作。
+  category:
+  - 气相色谱质谱联用仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: RBCanty/MIT_AMD_Platform
+    source_file: Shell_AH/Evoware_API/evoware_api_support.py
+    candidate_class: EVO
+    candidate_score: 374
+    quality_status: usable
+    操作数: 43
+  manufacturer: 岛津
+  model:
+    name: GCMS-QP2020 NX
+    type: device
+  name: Shimadzu GCMS-QP2020 NX
+  tags:
+  - 气相色谱质谱联用仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

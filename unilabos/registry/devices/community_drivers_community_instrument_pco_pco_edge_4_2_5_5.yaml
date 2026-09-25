@@ -1,0 +1,189 @@
+community_instrument_pco_pco_edge_4_2_5_5:
+  class:
+    module: community_drivers.community_instrument_pco_pco_edge_4_2_5_5.driver:CommunityInstrumentPcoPcoEdge4255
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/AndrewGYork__tools
+          source_file:
+            type: string
+            default: concurrency_tools.py
+          class_name:
+            type: string
+            default: TestObjectInSubprocess
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - test_create_and_close_object_in_subprocess
+            - test_passing_normal_numpy_array
+            - test_passing_modifying_and_retrieving_shared_array
+            - test_attribute_access
+            - test_printing_in_child_processes
+            - test_setting_attribute_of_object_in_subprocess
+            - test_array_values_after_passing_to_subprocess
+            - test_object_in_subprocess_overhead
+            - test_lock_with_waitlist
+            - test_incorrect_thread_management
+            - test_sending_shared_arrays
+            - run
+            - time_it
+          metadata:
+            type: object
+            default:
+              repo: AndrewGYork/tools
+              repo_url: https://github.com/AndrewGYork/tools
+              source_file: concurrency_tools.py
+              class_name: TestObjectInSubprocess
+              brand: PCO
+              model: pco.edge 4.2/5.5
+              device_type_cn: sCMOS相机
+              device_type_en: sCMOS Camera
+              source_framework: 显微镜/成像
+              tag_id: '4400'
+              tag_name: 普通光学显微镜
+              tag_name_en: Optical Microscope
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 126
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                test_prefix:
+                  type: string
+                  default: test_
+                fail:
+                  type: string
+                  default: false
+                fail_fast:
+                  type: string
+                  default: false
+        goal_default:
+          test_prefix: test_
+          fail: false
+          fail_fast: false
+        handles: {}
+      auto-time_it:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: time_it
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_loops:
+                  type: string
+                func:
+                  type: string
+                args:
+                  type: string
+                kwargs:
+                  type: string
+                fail:
+                  type: string
+                  default: true
+                timeout_us:
+                  type: string
+                name:
+                  type: string
+        goal_default:
+          fail: true
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: cleaned
+  quality_reasons: "删除 11 个 test_* 单元测试残留"
+  description: pco.edge 4.2/5.5 驱动（PCO），支持 test_create_and_close_object_in_subprocess/test_passing_normal_numpy_array/test_passing_modifying_and_retrieving_shared_array/test_attribute_access/test_printing_in_child_processes
+    等 13 个操作。
+  category:
+  - 普通光学显微镜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: AndrewGYork/tools
+    source_file: concurrency_tools.py
+    candidate_class: TestObjectInSubprocess
+    candidate_score: 126
+    quality_status: usable
+    操作数: 13
+  manufacturer: PCO
+  model:
+    name: pco.edge 4.2/5.5
+    type: device
+  name: PCO pco.edge 4.2/5.5
+  tags:
+  - 普通光学显微镜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

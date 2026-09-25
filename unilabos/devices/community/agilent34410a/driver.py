@@ -296,3 +296,10 @@ UNITS = {
     Agilent34410a.Mode.temperature: u.kelvin,
     Agilent34410a.Mode.continuity: 1,
 }
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Agilent34410a)
+except Exception:
+    pass

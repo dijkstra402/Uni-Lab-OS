@@ -1,0 +1,390 @@
+community_instrument_thermo_neslab_rte_740_rte_111:
+  class:
+    module: community_drivers.community_instrument_thermo_neslab_rte_740_rte_111.driver:CommunityInstrumentThermoNeslabRte740Rte111
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/octopode__bathtime
+          source_file:
+            type: string
+            default: neslabrte.py
+          class_name:
+            type: string
+            default: NeslabController
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - query
+            - disconnect
+            - status_set
+            - status_get
+            - 'on'
+            - probe_ext
+            - temp_set
+            - fault_lo
+            - fault_hi
+            - pid
+            - temp_get_int
+            - temp_get_ext
+            - temp_get_act
+            - ref2act
+            - act2ref
+          metadata:
+            type: object
+            default:
+              repo: octopode/bathtime
+              repo_url: https://github.com/octopode/bathtime
+              source_file: neslabrte.py
+              class_name: NeslabController
+              brand: Thermo NESLAB
+              model: RTE-740/RTE-111
+              device_type_cn: 冷热水机
+              device_type_en: Chiller / Heater Unit
+              source_framework: 专用驱动
+              tag_id: '4369'
+              tag_name: 冷热水机
+              tag_name_en: Chiller / Heater Unit
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 170
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                dat:
+                  type: string
+                  default: []
+        goal_default:
+          dat: []
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-status_set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unit_on:
+                  type: string
+                probe_ext:
+                  type: string
+                faults:
+                  type: string
+                mute:
+                  type: string
+                auto_restart:
+                  type: string
+                prec_hi:
+                  type: string
+                fullrange_cool:
+                  type: string
+                remote:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-status_get:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status_get
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: 'on'
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_ext:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_ext
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-temp_set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temp_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fault_lo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fault_lo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limit:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fault_hi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fault_hi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limit:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-pid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                drive:
+                  type: string
+                p:
+                  type: string
+                i:
+                  type: string
+                d:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-temp_get_int:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temp_get_int
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-temp_get_ext:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temp_get_ext
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-temp_get_act:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temp_get_act
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ext:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ref2act:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ref2act
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp_ref:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-act2ref:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: act2ref
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp_act:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: RTE-740/RTE-111 驱动（Thermo NESLAB），支持 query/disconnect/status_set/status_get/on
+    等 15 个操作。
+  category:
+  - 冷热水机
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: octopode/bathtime
+    source_file: neslabrte.py
+    candidate_class: NeslabController
+    candidate_score: 170
+    quality_status: usable
+    操作数: 15
+  manufacturer: 赛默飞世尔
+  model:
+    name: RTE-740/RTE-111
+    type: device
+  name: Thermo NESLAB RTE-740/RTE-111
+  tags:
+  - 冷热水机
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

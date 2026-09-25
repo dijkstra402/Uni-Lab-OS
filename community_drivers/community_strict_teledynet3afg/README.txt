@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/teledyne/teledyneT3AFG.py
+registry_id: community_strict_teledynet3afg
+source_file: pymeasure/instruments/teledyne/teledyneT3AFG.py
+class_name: TeledyneT3AFG
+manufacturer: teledyne
+model: TeledyneT3AFG
+tag: 表征设备
+confidence: 0.75
+quality_score: 0.89
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_teledynet3afg.yaml

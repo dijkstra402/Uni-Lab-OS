@@ -1,0 +1,3007 @@
+community_instrument_brooks_pf400:
+  class:
+    module: community_drivers.community_instrument_brooks_pf400.driver:CommunityInstrumentBrooksPf400
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/arms/precise_flex/precise_flex_backend.py
+          class_name:
+            type: string
+            default: PreciseFlexBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - approach
+            - are_grippers_closed
+            - attach
+            - change_config
+            - change_config2
+            - close_gripper
+            - dest_c
+            - dest_j
+            - detach
+            - drop_resource
+            - end_freedrive_mode
+            - exit
+            - freedrive_mode
+            - get_active_gripper
+            - get_base
+            - get_cartesian_position
+            - get_grasp_data
+            - get_joint_position
+            - get_location_angles
+            - get_location_config
+            - get_location_xyz
+            - get_location_z_clearance
+            - get_mode
+            - get_monitor_speed
+            - get_motion_profile_values
+            - get_pallet_index
+            - get_pallet_origin
+            - get_pallet_x
+            - get_pallet_y
+            - get_pallet_z
+            - get_parameter
+            - get_payload
+            - get_power_state
+            - get_profile_accel
+            - get_profile_accel_ramp
+            - get_profile_decel
+            - get_profile_decel_ramp
+            - get_profile_in_range
+            - get_profile_speed
+            - get_profile_speed2
+            - get_profile_straight
+            - get_rail_position
+            - get_selected_robot
+            - get_signal
+            - get_speed
+            - get_station_type
+            - get_system_state
+            - get_tool_transformation_values
+            - get_version
+            - halt
+            - here_c
+            - here_j
+            - home
+            - home_all
+            - home_all_if_no_plate
+            - is_gripper_closed
+            - move_c
+            - move_extra_axis
+            - move_j
+            - move_one_axis
+            - move_rail
+            - move_to
+            - move_to_safe
+            - move_to_stored_location
+            - move_to_stored_location_appro
+            - nop
+            - open_gripper
+            - pick_plate_from_stored_position
+            - pick_plate_station
+            - pick_up_resource
+            - place_plate_station
+            - place_plate_to_stored_position
+            - power_off_robot
+            - power_on_robot
+            - release_brake
+            - reset
+            - select_robot
+            - set_active_gripper
+            - set_base
+            - set_brake
+            - set_grasp_data
+            - set_joint_angles
+            - set_location_config
+            - set_location_xyz
+            - set_location_z_clearance
+            - set_monitor_speed
+            - set_motion_profile_values
+            - set_pallet_index
+            - set_pallet_origin
+            - set_pallet_x
+            - set_pallet_y
+            - set_pallet_z
+            - set_parameter
+            - set_payload
+            - set_power
+            - set_profile_accel
+            - set_profile_accel_ramp
+            - set_profile_decel
+            - set_profile_decel_ramp
+            - set_profile_in_range
+            - set_profile_speed
+            - set_profile_speed2
+            - set_profile_straight
+            - set_rail_position
+            - set_response_mode
+            - set_signal
+            - set_speed
+            - set_station_type
+            - set_tool_transformation_values
+            - setup
+            - state
+            - stop
+            - teach_plate_station
+            - teach_position
+            - wait_for_eom
+            - zero_torque
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              brand: Brooks Automation
+              model: PF400
+              device_type_cn: 机械臂
+              device_type_en: Robotic Arm
+              source_framework: PyLabRobot
+              source_file: pylabrobot/arms/precise_flex/precise_flex_backend.py
+              class_name: PreciseFlexBackend
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-approach:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+          access: access
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: approach
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                access:
+                  type: string
+              required:
+              - position
+              - access
+          required:
+          - goal
+        handles: {}
+      auto-are_grippers_closed:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: are_grippers_closed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-attach:
+        type: UniLabJsonCommand
+        goal:
+          attach_state: attach_state
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: attach
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                attach_state:
+                  type: string
+              required:
+              - attach_state
+          required:
+          - goal
+        handles: {}
+      auto-change_config:
+        type: UniLabJsonCommand
+        goal:
+          grip_mode: grip_mode
+        goal_default:
+          grip_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: change_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                grip_mode:
+                  type: integer
+              required:
+              - grip_mode
+          required:
+          - goal
+        handles: {}
+      auto-change_config2:
+        type: UniLabJsonCommand
+        goal:
+          grip_mode: grip_mode
+        goal_default:
+          grip_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: change_config2
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                grip_mode:
+                  type: integer
+              required:
+              - grip_mode
+          required:
+          - goal
+        handles: {}
+      auto-close_gripper:
+        type: UniLabJsonCommand
+        goal:
+          gripper_width: gripper_width
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: close_gripper
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gripper_width:
+                  type: number
+              required:
+              - gripper_width
+          required:
+          - goal
+        handles: {}
+      auto-dest_c:
+        type: UniLabJsonCommand
+        goal:
+          arg1: arg1
+        goal_default:
+          arg1: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: dest_c
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                arg1:
+                  type: integer
+              required:
+              - arg1
+          required:
+          - goal
+        handles: {}
+      auto-dest_j:
+        type: UniLabJsonCommand
+        goal:
+          arg1: arg1
+        goal_default:
+          arg1: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: dest_j
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                arg1:
+                  type: integer
+              required:
+              - arg1
+          required:
+          - goal
+        handles: {}
+      auto-detach:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: detach
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-drop_resource:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+          access: access
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: drop_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                access:
+                  type: string
+              required:
+              - position
+              - access
+          required:
+          - goal
+        handles: {}
+      auto-end_freedrive_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: end_freedrive_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-exit:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: exit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-freedrive_mode:
+        type: UniLabJsonCommand
+        goal:
+          free_axes: free_axes
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: freedrive_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                free_axes:
+                  type: string
+              required:
+              - free_axes
+          required:
+          - goal
+        handles: {}
+      auto-get_active_gripper:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_active_gripper
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_base:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_base
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_cartesian_position:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_cartesian_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_grasp_data:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_grasp_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_joint_position:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_joint_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_location_angles:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_location_angles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+              required:
+              - location_index
+          required:
+          - goal
+        handles: {}
+      auto-get_location_config:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_location_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+              required:
+              - location_index
+          required:
+          - goal
+        handles: {}
+      auto-get_location_xyz:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_location_xyz
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+              required:
+              - location_index
+          required:
+          - goal
+        handles: {}
+      auto-get_location_z_clearance:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_location_z_clearance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+              required:
+              - location_index
+          required:
+          - goal
+        handles: {}
+      auto-get_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_monitor_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_monitor_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_motion_profile_values:
+        type: UniLabJsonCommand
+        goal:
+          profile: profile
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_motion_profile_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile:
+                  type: integer
+              required:
+              - profile
+          required:
+          - goal
+        handles: {}
+      auto-get_pallet_index:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_pallet_index
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+              required:
+              - station_id
+          required:
+          - goal
+        handles: {}
+      auto-get_pallet_origin:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_pallet_origin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+              required:
+              - station_id
+          required:
+          - goal
+        handles: {}
+      auto-get_pallet_x:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_pallet_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+              required:
+              - station_id
+          required:
+          - goal
+        handles: {}
+      auto-get_pallet_y:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_pallet_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+              required:
+              - station_id
+          required:
+          - goal
+        handles: {}
+      auto-get_pallet_z:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_pallet_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+              required:
+              - station_id
+          required:
+          - goal
+        handles: {}
+      auto-get_parameter:
+        type: UniLabJsonCommand
+        goal:
+          data_id: data_id
+          unit_number: unit_number
+          sub_unit: sub_unit
+          array_index: array_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data_id:
+                  type: integer
+                unit_number:
+                  type: string
+                sub_unit:
+                  type: string
+                array_index:
+                  type: string
+              required:
+              - data_id
+              - unit_number
+              - sub_unit
+              - array_index
+          required:
+          - goal
+        handles: {}
+      auto-get_payload:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_payload
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_power_state:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_power_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_profile_accel:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_profile_accel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+              required:
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-get_profile_accel_ramp:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_profile_accel_ramp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+              required:
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-get_profile_decel:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_profile_decel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+              required:
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-get_profile_decel_ramp:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_profile_decel_ramp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+              required:
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-get_profile_in_range:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_profile_in_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+              required:
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-get_profile_speed:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_profile_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+              required:
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-get_profile_speed2:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_profile_speed2
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+              required:
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-get_profile_straight:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_profile_straight
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+              required:
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-get_rail_position:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_rail_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+              required:
+              - station_id
+          required:
+          - goal
+        handles: {}
+      auto-get_selected_robot:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_selected_robot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_signal:
+        type: UniLabJsonCommand
+        goal:
+          signal_number: signal_number
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_signal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                signal_number:
+                  type: integer
+              required:
+              - signal_number
+          required:
+          - goal
+        handles: {}
+      auto-get_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_station_type:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_station_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+              required:
+              - station_id
+          required:
+          - goal
+        handles: {}
+      auto-get_system_state:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_system_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_tool_transformation_values:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_tool_transformation_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_version:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-halt:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: halt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-here_c:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: here_c
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+              required:
+              - location_index
+          required:
+          - goal
+        handles: {}
+      auto-here_j:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: here_j
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+              required:
+              - location_index
+          required:
+          - goal
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-home_all:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: home_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-home_all_if_no_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: home_all_if_no_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-is_gripper_closed:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: is_gripper_closed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-move_c:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+          cartesian_coords: cartesian_coords
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_c
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+                cartesian_coords:
+                  type: string
+              required:
+              - profile_index
+              - cartesian_coords
+          required:
+          - goal
+        handles: {}
+      auto-move_extra_axis:
+        type: UniLabJsonCommand
+        goal:
+          axis1_position: axis1_position
+          axis2_position: axis2_position
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_extra_axis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis1_position:
+                  type: number
+                axis2_position:
+                  type: string
+              required:
+              - axis1_position
+              - axis2_position
+          required:
+          - goal
+        handles: {}
+      auto-move_j:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+          joint_coords: joint_coords
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_j
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+                joint_coords:
+                  type: string
+              required:
+              - profile_index
+              - joint_coords
+          required:
+          - goal
+        handles: {}
+      auto-move_one_axis:
+        type: UniLabJsonCommand
+        goal:
+          axis_number: axis_number
+          destination_position: destination_position
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_one_axis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis_number:
+                  type: integer
+                destination_position:
+                  type: number
+                profile_index:
+                  type: integer
+              required:
+              - axis_number
+              - destination_position
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-move_rail:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          mode: mode
+          rail_destination: rail_destination
+        goal_default:
+          mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_rail
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: string
+                mode:
+                  type: integer
+                rail_destination:
+                  type: string
+              required:
+              - station_id
+              - mode
+              - rail_destination
+          required:
+          - goal
+        handles: {}
+      auto-move_to:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+              required:
+              - position
+          required:
+          - goal
+        handles: {}
+      auto-move_to_safe:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_to_safe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-move_to_stored_location:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_to_stored_location
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+                profile_index:
+                  type: integer
+              required:
+              - location_index
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-move_to_stored_location_appro:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+          profile_index: profile_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_to_stored_location_appro
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+                profile_index:
+                  type: integer
+              required:
+              - location_index
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-nop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: nop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-open_gripper:
+        type: UniLabJsonCommand
+        goal:
+          gripper_width: gripper_width
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: open_gripper
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gripper_width:
+                  type: number
+              required:
+              - gripper_width
+          required:
+          - goal
+        handles: {}
+      auto-pick_plate_from_stored_position:
+        type: UniLabJsonCommand
+        goal:
+          position_id: position_id
+          horizontal_compliance: horizontal_compliance
+          horizontal_compliance_torque: horizontal_compliance_torque
+        goal_default:
+          horizontal_compliance: false
+          horizontal_compliance_torque: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_plate_from_stored_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position_id:
+                  type: integer
+                horizontal_compliance:
+                  type: boolean
+                horizontal_compliance_torque:
+                  type: integer
+              required:
+              - position_id
+              - horizontal_compliance
+              - horizontal_compliance_torque
+          required:
+          - goal
+        handles: {}
+      auto-pick_plate_station:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          horizontal_compliance: horizontal_compliance
+          horizontal_compliance_torque: horizontal_compliance_torque
+        goal_default:
+          horizontal_compliance: false
+          horizontal_compliance_torque: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_plate_station
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+                horizontal_compliance:
+                  type: boolean
+                horizontal_compliance_torque:
+                  type: integer
+              required:
+              - station_id
+              - horizontal_compliance
+              - horizontal_compliance_torque
+          required:
+          - goal
+        handles: {}
+      auto-pick_up_resource:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+          plate_width: plate_width
+          access: access
+          finger_speed_percent: finger_speed_percent
+          grasp_force: grasp_force
+        goal_default:
+          finger_speed_percent: 50.0
+          grasp_force: 10.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_up_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                plate_width:
+                  type: number
+                access:
+                  type: string
+                finger_speed_percent:
+                  type: number
+                grasp_force:
+                  type: number
+              required:
+              - position
+              - plate_width
+              - access
+              - finger_speed_percent
+              - grasp_force
+          required:
+          - goal
+        handles: {}
+      auto-place_plate_station:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          horizontal_compliance: horizontal_compliance
+          horizontal_compliance_torque: horizontal_compliance_torque
+        goal_default:
+          horizontal_compliance: false
+          horizontal_compliance_torque: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: place_plate_station
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+                horizontal_compliance:
+                  type: boolean
+                horizontal_compliance_torque:
+                  type: integer
+              required:
+              - station_id
+              - horizontal_compliance
+              - horizontal_compliance_torque
+          required:
+          - goal
+        handles: {}
+      auto-place_plate_to_stored_position:
+        type: UniLabJsonCommand
+        goal:
+          position_id: position_id
+          horizontal_compliance: horizontal_compliance
+          horizontal_compliance_torque: horizontal_compliance_torque
+        goal_default:
+          horizontal_compliance: false
+          horizontal_compliance_torque: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: place_plate_to_stored_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position_id:
+                  type: integer
+                horizontal_compliance:
+                  type: boolean
+                horizontal_compliance_torque:
+                  type: integer
+              required:
+              - position_id
+              - horizontal_compliance
+              - horizontal_compliance_torque
+          required:
+          - goal
+        handles: {}
+      auto-power_off_robot:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: power_off_robot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-power_on_robot:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: power_on_robot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-release_brake:
+        type: UniLabJsonCommand
+        goal:
+          axis: axis
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: release_brake
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: integer
+              required:
+              - axis
+          required:
+          - goal
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal:
+          robot_number: robot_number
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                robot_number:
+                  type: integer
+              required:
+              - robot_number
+          required:
+          - goal
+        handles: {}
+      auto-select_robot:
+        type: UniLabJsonCommand
+        goal:
+          robot_number: robot_number
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: select_robot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                robot_number:
+                  type: integer
+              required:
+              - robot_number
+          required:
+          - goal
+        handles: {}
+      auto-set_active_gripper:
+        type: UniLabJsonCommand
+        goal:
+          gripper_id: gripper_id
+          spin_mode: spin_mode
+          profile_index: profile_index
+        goal_default:
+          spin_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_active_gripper
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gripper_id:
+                  type: integer
+                spin_mode:
+                  type: integer
+                profile_index:
+                  type: string
+              required:
+              - gripper_id
+              - spin_mode
+              - profile_index
+          required:
+          - goal
+        handles: {}
+      auto-set_base:
+        type: UniLabJsonCommand
+        goal:
+          x_offset: x_offset
+          y_offset: y_offset
+          z_offset: z_offset
+          z_rotation: z_rotation
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_base
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_offset:
+                  type: number
+                y_offset:
+                  type: number
+                z_offset:
+                  type: number
+                z_rotation:
+                  type: number
+              required:
+              - x_offset
+              - y_offset
+              - z_offset
+              - z_rotation
+          required:
+          - goal
+        handles: {}
+      auto-set_brake:
+        type: UniLabJsonCommand
+        goal:
+          axis: axis
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_brake
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: integer
+              required:
+              - axis
+          required:
+          - goal
+        handles: {}
+      auto-set_grasp_data:
+        type: UniLabJsonCommand
+        goal:
+          plate_width: plate_width
+          finger_speed_percent: finger_speed_percent
+          grasp_force: grasp_force
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_grasp_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate_width:
+                  type: number
+                finger_speed_percent:
+                  type: number
+                grasp_force:
+                  type: number
+              required:
+              - plate_width
+              - finger_speed_percent
+              - grasp_force
+          required:
+          - goal
+        handles: {}
+      auto-set_joint_angles:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+          joint_position: joint_position
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_joint_angles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+                joint_position:
+                  type: string
+              required:
+              - location_index
+              - joint_position
+          required:
+          - goal
+        handles: {}
+      auto-set_location_config:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+          config_value: config_value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_location_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+                config_value:
+                  type: integer
+              required:
+              - location_index
+              - config_value
+          required:
+          - goal
+        handles: {}
+      auto-set_location_xyz:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+          cartesian_position: cartesian_position
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_location_xyz
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+                cartesian_position:
+                  type: string
+              required:
+              - location_index
+              - cartesian_position
+          required:
+          - goal
+        handles: {}
+      auto-set_location_z_clearance:
+        type: UniLabJsonCommand
+        goal:
+          location_index: location_index
+          z_clearance: z_clearance
+          z_world: z_world
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_location_z_clearance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location_index:
+                  type: integer
+                z_clearance:
+                  type: number
+                z_world:
+                  type: string
+              required:
+              - location_index
+              - z_clearance
+              - z_world
+          required:
+          - goal
+        handles: {}
+      auto-set_monitor_speed:
+        type: UniLabJsonCommand
+        goal:
+          speed_percent: speed_percent
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_monitor_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed_percent:
+                  type: integer
+              required:
+              - speed_percent
+          required:
+          - goal
+        handles: {}
+      auto-set_motion_profile_values:
+        type: UniLabJsonCommand
+        goal:
+          profile: profile
+          speed: speed
+          speed2: speed2
+          acceleration: acceleration
+          deceleration: deceleration
+          acceleration_ramp: acceleration_ramp
+          deceleration_ramp: deceleration_ramp
+          in_range: in_range
+          straight: straight
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_motion_profile_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile:
+                  type: integer
+                speed:
+                  type: number
+                speed2:
+                  type: number
+                acceleration:
+                  type: number
+                deceleration:
+                  type: number
+                acceleration_ramp:
+                  type: number
+                deceleration_ramp:
+                  type: number
+                in_range:
+                  type: number
+                straight:
+                  type: boolean
+              required:
+              - profile
+              - speed
+              - speed2
+              - acceleration
+              - deceleration
+              - acceleration_ramp
+              - deceleration_ramp
+              - in_range
+              - straight
+          required:
+          - goal
+        handles: {}
+      auto-set_pallet_index:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          pallet_index_x: pallet_index_x
+          pallet_index_y: pallet_index_y
+          pallet_index_z: pallet_index_z
+        goal_default:
+          pallet_index_x: 0
+          pallet_index_y: 0
+          pallet_index_z: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_pallet_index
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+                pallet_index_x:
+                  type: integer
+                pallet_index_y:
+                  type: integer
+                pallet_index_z:
+                  type: integer
+              required:
+              - station_id
+              - pallet_index_x
+              - pallet_index_y
+              - pallet_index_z
+          required:
+          - goal
+        handles: {}
+      auto-set_pallet_origin:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          cartesian_coords: cartesian_coords
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_pallet_origin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+                cartesian_coords:
+                  type: string
+              required:
+              - station_id
+              - cartesian_coords
+          required:
+          - goal
+        handles: {}
+      auto-set_pallet_x:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          x_position_count: x_position_count
+          world_x: world_x
+          world_y: world_y
+          world_z: world_z
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_pallet_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+                x_position_count:
+                  type: integer
+                world_x:
+                  type: number
+                world_y:
+                  type: number
+                world_z:
+                  type: number
+              required:
+              - station_id
+              - x_position_count
+              - world_x
+              - world_y
+              - world_z
+          required:
+          - goal
+        handles: {}
+      auto-set_pallet_y:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          y_position_count: y_position_count
+          world_x: world_x
+          world_y: world_y
+          world_z: world_z
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_pallet_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+                y_position_count:
+                  type: integer
+                world_x:
+                  type: number
+                world_y:
+                  type: number
+                world_z:
+                  type: number
+              required:
+              - station_id
+              - y_position_count
+              - world_x
+              - world_y
+              - world_z
+          required:
+          - goal
+        handles: {}
+      auto-set_pallet_z:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          z_position_count: z_position_count
+          world_x: world_x
+          world_y: world_y
+          world_z: world_z
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_pallet_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+                z_position_count:
+                  type: integer
+                world_x:
+                  type: number
+                world_y:
+                  type: number
+                world_z:
+                  type: number
+              required:
+              - station_id
+              - z_position_count
+              - world_x
+              - world_y
+              - world_z
+          required:
+          - goal
+        handles: {}
+      auto-set_parameter:
+        type: UniLabJsonCommand
+        goal:
+          data_id: data_id
+          value: value
+          unit_number: unit_number
+          sub_unit: sub_unit
+          array_index: array_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data_id:
+                  type: integer
+                value:
+                  type: string
+                unit_number:
+                  type: string
+                sub_unit:
+                  type: string
+                array_index:
+                  type: string
+              required:
+              - data_id
+              - value
+              - unit_number
+              - sub_unit
+              - array_index
+          required:
+          - goal
+        handles: {}
+      auto-set_payload:
+        type: UniLabJsonCommand
+        goal:
+          payload_percent: payload_percent
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_payload
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                payload_percent:
+                  type: integer
+              required:
+              - payload_percent
+          required:
+          - goal
+        handles: {}
+      auto-set_power:
+        type: UniLabJsonCommand
+        goal:
+          enable: enable
+          timeout: timeout
+        goal_default:
+          timeout: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: boolean
+                timeout:
+                  type: integer
+              required:
+              - enable
+              - timeout
+          required:
+          - goal
+        handles: {}
+      auto-set_profile_accel:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+          accel_percent: accel_percent
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_profile_accel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+                accel_percent:
+                  type: number
+              required:
+              - profile_index
+              - accel_percent
+          required:
+          - goal
+        handles: {}
+      auto-set_profile_accel_ramp:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+          accel_ramp_seconds: accel_ramp_seconds
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_profile_accel_ramp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+                accel_ramp_seconds:
+                  type: number
+              required:
+              - profile_index
+              - accel_ramp_seconds
+          required:
+          - goal
+        handles: {}
+      auto-set_profile_decel:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+          decel_percent: decel_percent
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_profile_decel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+                decel_percent:
+                  type: number
+              required:
+              - profile_index
+              - decel_percent
+          required:
+          - goal
+        handles: {}
+      auto-set_profile_decel_ramp:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+          decel_ramp_seconds: decel_ramp_seconds
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_profile_decel_ramp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+                decel_ramp_seconds:
+                  type: number
+              required:
+              - profile_index
+              - decel_ramp_seconds
+          required:
+          - goal
+        handles: {}
+      auto-set_profile_in_range:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+          in_range_value: in_range_value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_profile_in_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+                in_range_value:
+                  type: number
+              required:
+              - profile_index
+              - in_range_value
+          required:
+          - goal
+        handles: {}
+      auto-set_profile_speed:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+          speed_percent: speed_percent
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_profile_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+                speed_percent:
+                  type: number
+              required:
+              - profile_index
+              - speed_percent
+          required:
+          - goal
+        handles: {}
+      auto-set_profile_speed2:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+          speed2_percent: speed2_percent
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_profile_speed2
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+                speed2_percent:
+                  type: number
+              required:
+              - profile_index
+              - speed2_percent
+          required:
+          - goal
+        handles: {}
+      auto-set_profile_straight:
+        type: UniLabJsonCommand
+        goal:
+          profile_index: profile_index
+          straight_mode: straight_mode
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_profile_straight
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile_index:
+                  type: integer
+                straight_mode:
+                  type: boolean
+              required:
+              - profile_index
+              - straight_mode
+          required:
+          - goal
+        handles: {}
+      auto-set_rail_position:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          rail_position: rail_position
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_rail_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+                rail_position:
+                  type: number
+              required:
+              - station_id
+              - rail_position
+          required:
+          - goal
+        handles: {}
+      auto-set_response_mode:
+        type: UniLabJsonCommand
+        goal:
+          mode: mode
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_response_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+              required:
+              - mode
+          required:
+          - goal
+        handles: {}
+      auto-set_signal:
+        type: UniLabJsonCommand
+        goal:
+          signal_number: signal_number
+          value: value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_signal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                signal_number:
+                  type: integer
+                value:
+                  type: integer
+              required:
+              - signal_number
+              - value
+          required:
+          - goal
+        handles: {}
+      auto-set_speed:
+        type: UniLabJsonCommand
+        goal:
+          speed_percent: speed_percent
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed_percent:
+                  type: number
+              required:
+              - speed_percent
+          required:
+          - goal
+        handles: {}
+      auto-set_station_type:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          access_type: access_type
+          location_type: location_type
+          z_clearance: z_clearance
+          z_above: z_above
+          z_grasp_offset: z_grasp_offset
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_station_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+                access_type:
+                  type: integer
+                location_type:
+                  type: integer
+                z_clearance:
+                  type: number
+                z_above:
+                  type: number
+                z_grasp_offset:
+                  type: number
+              required:
+              - station_id
+              - access_type
+              - location_type
+              - z_clearance
+              - z_above
+              - z_grasp_offset
+          required:
+          - goal
+        handles: {}
+      auto-set_tool_transformation_values:
+        type: UniLabJsonCommand
+        goal:
+          x: x
+          y: y
+          z: z
+          yaw: yaw
+          pitch: pitch
+          roll: roll
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_tool_transformation_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: number
+                y:
+                  type: number
+                z:
+                  type: number
+                yaw:
+                  type: number
+                pitch:
+                  type: number
+                roll:
+                  type: number
+              required:
+              - x
+              - y
+              - z
+              - yaw
+              - pitch
+              - roll
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal:
+          skip_home: skip_home
+        goal_default:
+          skip_home: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                skip_home:
+                  type: boolean
+              required:
+              - skip_home
+          required:
+          - goal
+        handles: {}
+      auto-state:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-teach_plate_station:
+        type: UniLabJsonCommand
+        goal:
+          station_id: station_id
+          z_clearance: z_clearance
+        goal_default:
+          z_clearance: 50.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: teach_plate_station
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                station_id:
+                  type: integer
+                z_clearance:
+                  type: number
+              required:
+              - station_id
+              - z_clearance
+          required:
+          - goal
+        handles: {}
+      auto-teach_position:
+        type: UniLabJsonCommand
+        goal:
+          position_id: position_id
+          z_clearance: z_clearance
+        goal_default:
+          z_clearance: 50.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: teach_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position_id:
+                  type: integer
+                z_clearance:
+                  type: number
+              required:
+              - position_id
+              - z_clearance
+          required:
+          - goal
+        handles: {}
+      auto-wait_for_eom:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: wait_for_eom
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-zero_torque:
+        type: UniLabJsonCommand
+        goal:
+          enable: enable
+          axis_mask: axis_mask
+        goal_default:
+          axis_mask: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: zero_torque
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: boolean
+                axis_mask:
+                  type: integer
+              required:
+              - enable
+              - axis_mask
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: PF400 驱动（Brooks Automation），支持 approach/are_grippers_closed/attach/change_config/change_config2
+    等 116 个操作。
+  category:
+  - 机械臂
+  config_info: []
+  handles: []
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/arms/precise_flex/precise_flex_backend.py
+    candidate_class: PreciseFlexBackend
+    操作数: 116
+  manufacturer: Brooks
+  model:
+    name: PF400
+    type: device
+  name: Brooks PreciseFlex PF400
+  tags:
+  - 机械臂
+  resource_type: device
+  version: 0.1.0

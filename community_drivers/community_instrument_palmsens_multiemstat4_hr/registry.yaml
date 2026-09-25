@@ -1,0 +1,333 @@
+community_instrument_palmsens_multiemstat4_hr:
+  class:
+    module: community_drivers.community_instrument_palmsens_multiemstat4_hr.driver:CommunityInstrumentPalmsensMultiemstat4Hr
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PalmSens__MethodSCRIPT_Examples
+          source_file:
+            type: string
+            default: Example_Python/Example_Python/palmsens/instrument.py
+          class_name:
+            type: string
+            default: Instrument
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - write
+            - writelines
+            - readline
+            - readlines_until_end
+            - get_firmware_version
+            - get_device_type
+            - get_mscript_version
+            - get_serial_number
+            - get_register
+            - load_mscript_from_flash
+            - run_mscript_from_flash
+            - send_script
+            - abort_and_sync
+          metadata:
+            type: object
+            default:
+              repo: PalmSens/MethodSCRIPT_Examples
+              repo_url: https://github.com/PalmSens/MethodSCRIPT_Examples
+              source_file: Example_Python/Example_Python/palmsens/instrument.py
+              class_name: Instrument
+              brand: PalmSens
+              model: MultiEmStat4 HR
+              device_type_cn: 电化学工作站
+              device_type_en: Potentiostat
+              source_framework: MethodSCRIPT
+              tag_id: '4425'
+              tag_name: 电化学工作站
+              tag_name_en: Electrochemical Workstation
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 150
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                text:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-writelines:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writelines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lines:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-readline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                line_timeout:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-readlines_until_end:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readlines_until_end
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                line_timeout:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_firmware_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                force:
+                  type: boolean
+                  default: false
+        goal_default:
+          force: false
+        handles: {}
+      auto-get_device_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                force:
+                  type: boolean
+                  default: false
+        goal_default:
+          force: false
+        handles: {}
+      auto-get_mscript_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mscript_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_serial_number:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                register:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-load_mscript_from_flash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_mscript_from_flash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_mscript_from_flash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_mscript_from_flash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_script:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_script
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-abort_and_sync:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: abort_and_sync
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: MultiEmStat4 HR 驱动（PalmSens），支持 write/writelines/readline/readlines_until_end/get_firmware_version
+    等 13 个操作。
+  category:
+  - 电化学工作站
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: PalmSens/MethodSCRIPT_Examples
+    source_file: Example_Python/Example_Python/palmsens/instrument.py
+    candidate_class: Instrument
+    candidate_score: 150
+    quality_status: usable
+    操作数: 13
+  manufacturer: PalmSens
+  model:
+    name: MultiEmStat4 HR
+    type: device
+  name: PalmSens MultiEmStat4 HR
+  tags:
+  - 电化学工作站
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

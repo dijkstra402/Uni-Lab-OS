@@ -1,0 +1,137 @@
+community_github_bamresearch_mapz_at_bam:
+  class:
+    module: community_drivers.community_github_bamresearch_mapz_at_bam.driver:CommunityGithubBamresearchMapzAtBam
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/BAMresearch_MAPz_at_BAM
+          source_file:
+            type: string
+            default: Echem MAP/Qualification of Proxy Experiments for Accelerated
+              Electrochemical Testing in Self-Driving Labs/Software/palmsens/serial.py
+          class_name:
+            type: string
+            default: Serial
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - open
+            - close
+            - write
+            - readline
+          metadata:
+            type: object
+            default:
+              repo: bamresearch/mapz_at_bam
+              repo_url: https://github.com/BAMresearch/MAPz_at_BAM
+              unit_id: gh_herolab_robotcen
+              source_file: Echem MAP/Qualification of Proxy Experiments for Accelerated
+                Electrochemical Testing in Self-Driving Labs/Software/palmsens/serial.py
+              candidate_score: 82
+              manufacturer: Herolab
+              model_name: Herolab RobotCen
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: '离心机. GitHub驱动: https://github.com/BAMresearch/MAPz_at_BAM'
+  category:
+  - community
+  device_params:
+    repo: bamresearch/mapz_at_bam
+    source_file: Echem MAP/Qualification of Proxy Experiments for Accelerated Electrochemical
+      Testing in Self-Driving Labs/Software/palmsens/serial.py
+    candidate_class: Serial
+    communication: ''
+    photo_url: https://www.herolab.de/wp-content/uploads/2025/02/cropped-Herolab_LOGO_AKTUELL.png
+    instrument_params: UV-Products Menu Toggle UV Transilluminators UV analysis lamps
+      / UV handheld lamps UV lamps for disinfection UV Accessories
+    official_url: https://www.herolab.de/en/products/centrifuges/robotcen/
+  manufacturer: Herolab
+  model:
+    name: Herolab RobotCen
+    type: device
+  name: Herolab RobotCen
+  tags:
+  - 离心机
+  resource_type: device
+  icon: https://www.herolab.de/wp-content/uploads/2025/02/cropped-Herolab_LOGO_AKTUELL.png
+  scene:
+    domain: Biology
+    scene_name: Sample Preparation
+    step: Centrifugation
+  version: 0.1.0

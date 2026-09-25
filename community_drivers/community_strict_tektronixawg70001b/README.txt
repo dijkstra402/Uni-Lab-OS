@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/tektronix/Tektronix_70001B.py
+registry_id: community_strict_tektronixawg70001b
+source_file: src/qcodes/instrument_drivers/tektronix/Tektronix_70001B.py
+class_name: TektronixAWG70001B
+manufacturer: tektronix
+model: TektronixAWG70001B
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_tektronixawg70001b.yaml

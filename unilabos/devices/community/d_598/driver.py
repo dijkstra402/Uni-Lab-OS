@@ -180,3 +180,10 @@ class RFSpectrumAnalyzer(VisaInstrument):
         """Override close to ensure proper disconnection."""
         self.write('SYST:LOC')
         super().close()
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(RFSpectrumAnalyzer)
+except Exception:
+    pass

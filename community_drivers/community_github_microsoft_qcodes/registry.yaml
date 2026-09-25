@@ -1,0 +1,165 @@
+community_github_microsoft_qcodes:
+  class:
+    module: community_drivers.community_github_microsoft_qcodes.driver:CommunityGithubMicrosoftQcodes
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/microsoft_Qcodes
+          source_file:
+            type: string
+            default: src/qcodes/instrument_drivers/QuantumDesign/DynaCoolPPMS/DynaCool.py
+          class_name:
+            type: string
+            default: DynaCool
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - error_code
+            - get_idn
+            - ramp
+            - write
+            - ask
+            - close
+          metadata:
+            type: object
+            default:
+              repo: microsoft/qcodes
+              repo_url: https://github.com/microsoft/Qcodes
+              unit_id: gh_agilent_e4980a
+              source_file: src/qcodes/instrument_drivers/QuantumDesign/DynaCoolPPMS/DynaCool.py
+              candidate_score: 270
+              manufacturer: Agilent/Keysight
+              model_name: Agilent/Keysight E4980A/AL
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-error_code:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: error_code
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ramp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'LakeShore Model 372是高精度交流电阻电桥与温度控制器，专为极低温实验设计，激励电流低至1pA。 GitHub驱动:
+    https://github.com/microsoft/Qcodes'
+  category:
+  - community
+  device_params:
+    repo: microsoft/qcodes
+    source_file: src/qcodes/instrument_drivers/QuantumDesign/DynaCoolPPMS/DynaCool.py
+    candidate_class: DynaCool
+    communication: ''
+    instrument_params: 'Type: AC resistance bridge + controller; Range: 2mΩ-200MΩ;
+      Excitation: 1pA-31.6mA; Channels: up to 16; Control: PID; Range: <10mK to room
+      temp; Interface: USB, GPIB, Ethernet; Sensors: Cernox, RuO₂, Ge'
+    official_url: https://www.lakeshore.com/products/categories/overview/temperature-products/ac-resistance-bridges/model-372-ac-resistance-bridge-temperature-controller
+  manufacturer: LakeShore
+  model:
+    name: Agilent/Keysight E4980A/AL
+    type: device
+  name: LakeShore Model 372
+  tags:
+  - 冷热水机
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: Chemistry
+    scene_name: Temperature Control
+    step: Cooling
+  version: 0.1.0

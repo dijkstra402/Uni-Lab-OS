@@ -1,0 +1,91 @@
+{
+  "nodes": [
+    {
+      "id": "test_community_instrument_mettler_toledo_ag204",
+      "name": "AG204",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community_instrument_mettler_toledo_ag204",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "repo_root": "/Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/cyclikal__cyp-mettler-ag204",
+        "source_file": "mettler_ag204/mettler_ag204.py",
+        "class_name": "MettlerLogger",
+        "import_roots": [],
+        "candidate_methods": [
+          "communicate",
+          "get_balance_model",
+          "get_balance_serial",
+          "read"
+        ],
+        "action_targets": {},
+        "metadata": {
+          "repo": "cyclikal/cyp-mettler-ag204",
+          "repo_url": "https://github.com/cyclikal/cyp-mettler-ag204",
+          "brand": "Mettler Toledo",
+          "model": "AG204",
+          "device_type_cn": "电子天平",
+          "device_type_en": "Electronic Balance",
+          "source_framework": "专用驱动",
+          "tag_id": "4426",
+          "tag_name": "电子天平",
+          "tag_name_en": "Electronic Balance",
+          "candidate_score": 90,
+          "parse_status": "ok",
+          "quality_status": "thin",
+          "quality_reasons": [],
+          "action_targets": {}
+        }
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "communicate",
+      "description": "communicate",
+      "device": "test_community_instrument_mettler_toledo_ag204",
+      "action": "auto-communicate",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "get balance model",
+      "description": "get balance model",
+      "device": "test_community_instrument_mettler_toledo_ag204",
+      "action": "auto-get_balance_model",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "get balance serial",
+      "description": "get balance serial",
+      "device": "test_community_instrument_mettler_toledo_ag204",
+      "action": "auto-get_balance_serial",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "read",
+      "description": "read",
+      "device": "test_community_instrument_mettler_toledo_ag204",
+      "action": "auto-read",
+      "action_args": {
+        "command": "SI"
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "AG204 工作流",
+    "description": "AG204 自动生成工作流",
+    "instrument": "AG204",
+    "generated_by": "instrument-drivers-python"
+  }
+}

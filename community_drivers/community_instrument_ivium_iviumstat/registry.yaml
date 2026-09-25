@@ -1,0 +1,573 @@
+community_instrument_ivium_iviumstat:
+  class:
+    module: community_drivers.community_instrument_ivium_iviumstat.driver:CommunityInstrumentIviumIviumstat
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/Gnpd__pyvium
+          source_file:
+            type: string
+            default: pyvium/core/direct_mode_functions.py
+          class_name:
+            type: string
+            default: DirectModeFunctions
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - IV_getcellstatus
+            - IV_setconnectionmode
+            - IV_setcellon
+            - IV_setpotential
+            - IV_setpotentialWE2
+            - IV_setcurrent
+            - IV_getpotential
+            - IV_setcurrentrange
+            - IV_setcurrentrangeWE2
+            - IV_getcurrent
+            - IV_getcurrentWE2
+            - IV_setfilter
+            - IV_setstability
+            - IV_setbistatmode
+            - IV_setdac
+            - IV_getadc
+            - IV_setmuxchannel
+            - IV_setdigout
+            - IV_getdigin
+            - IV_setfrequency
+            - IV_setamplitude
+            - IV_getcurrenttrace
+            - IV_getcurrentWE2trace
+            - IV_getpotentialtrace
+            - get_lib
+            - is_driver_open
+            - set_driver_open
+          metadata:
+            type: object
+            default:
+              repo: Gnpd/pyvium
+              repo_url: https://github.com/Gnpd/pyvium
+              source_file: pyvium/core/direct_mode_functions.py
+              class_name: DirectModeFunctions
+              brand: Ivium
+              model: IviumStat
+              device_type_cn: 电化学工作站
+              device_type_en: Electrochemical Workstation
+              source_framework: pyvium
+              tag_id: '4425'
+              tag_name: 电化学工作站
+              tag_name_en: Electrochemical Workstation
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 230
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-IV_getcellstatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_getcellstatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-IV_setconnectionmode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setconnectionmode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                connection_mode_number:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-IV_setcellon:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setcellon
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cell_on_mode_number:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-IV_setpotential:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setpotential
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                potential_value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-IV_setpotentialWE2:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setpotentialWE2
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                potential_we2_value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-IV_setcurrent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setcurrent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-IV_getpotential:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_getpotential
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-IV_setcurrentrange:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setcurrentrange
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_range_number:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-IV_setcurrentrangeWE2:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setcurrentrangeWE2
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_range_number:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-IV_getcurrent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_getcurrent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-IV_getcurrentWE2:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_getcurrentWE2
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-IV_setfilter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setfilter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filter_number:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-IV_setstability:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setstability
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stability_number:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-IV_setbistatmode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setbistatmode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-IV_setdac:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setdac
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_number:
+                  type: integer
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-IV_getadc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_getadc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_number:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-IV_setmuxchannel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setmuxchannel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_number:
+                  type: string
+                  default: 0
+        goal_default:
+          channel_number: 0
+        handles: {}
+      auto-IV_setdigout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setdigout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-IV_getdigin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_getdigin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-IV_setfrequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setfrequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frequency:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-IV_setamplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_setamplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                amplitude:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-IV_getcurrenttrace:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_getcurrenttrace
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                points_quantity:
+                  type: integer
+                interval_rate:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-IV_getcurrentWE2trace:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_getcurrentWE2trace
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                points_quantity:
+                  type: integer
+                interval_rate:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-IV_getpotentialtrace:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: IV_getpotentialtrace
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                points_quantity:
+                  type: integer
+                interval_rate:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_lib:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_lib
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_driver_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_driver_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_driver_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_driver_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: IviumStat 驱动（Ivium），支持 IV_getcellstatus/IV_setconnectionmode/IV_setcellon/IV_setpotential/IV_setpotentialWE2
+    等 27 个操作。
+  category:
+  - 电化学工作站
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: Gnpd/pyvium
+    source_file: pyvium/core/direct_mode_functions.py
+    candidate_class: DirectModeFunctions
+    candidate_score: 230
+    quality_status: usable
+    操作数: 27
+  manufacturer: Ivium
+  model:
+    name: IviumStat
+    type: device
+  name: Ivium IviumStat
+  tags:
+  - 电化学工作站
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,139 @@
+community_github_psyfood_pyqmix__community_github_psyfood_pyqmix:
+  class:
+    module: unilabos.devices.community.community_github_psyfood_pyqmix.driver:QmixBus
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/psyfood_pyqmix
+          source_file:
+            type: string
+            default: pyqmix/bus.py
+          class_name:
+            type: string
+            default: QmixBus
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - open
+            - close
+            - start
+            - stop
+          metadata:
+            type: object
+            default:
+              repo: psyfood/pyqmix
+              repo_url: https://github.com/psyfood/pyqmix
+              unit_id: gh_cetoni_nemesys
+              source_file: pyqmix/bus.py
+              candidate_score: 54
+              manufacturer: Cetoni
+              model_name: Cetoni neMESYS
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'modulare Nemesys Hochdruckmodul Spritzenpumpe, pulsaionsfrei und hoch-präzise,
+    erweiterbar, softwaregesteuert, Remote-Bedienung GitHub驱动: https://github.com/psyfood/pyqmix'
+  category:
+  - community
+  device_params:
+    repo: psyfood/pyqmix
+    source_file: pyqmix/bus.py
+    candidate_class: QmixBus
+    communication: ''
+    photo_url: https://cetoni.com/wp-content/uploads/Nemesys_HDM_schraeg_oben.jpg
+    instrument_params: 'Name: Anbieter; cc_consent: CETONI GmbH; wordpress_logged_in_*:
+      WordPress; wp-settings-*: WordPress; Google Fonts Request: Google Fonts; _clck:
+      Microsoft Clarity; _clsk: Microsoft Clarity; _hjid: Hotjar; _hjSessionUser_*:
+      Hotjar; _pk_id.*: Matomo; _pk_ses.*: Matomo; _fbc: Meta Pixel; _fbp: Meta Pixel;
+      bcookie: LinkedIn; fr: Meta Pixel; lidc: LinkedIn; VISITOR_INFO1_LIVE: YouTube;
+      YSC: YouTube'
+    official_url: https://www.cetoni.com/products/nemesys/
+  manufacturer: Cetoni
+  model:
+    name: Cetoni neMESYS
+    type: device
+  name: Cetoni neMESYS
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: https://cetoni.com/wp-content/uploads/Nemesys_HDM_schraeg_oben.jpg
+  scene:
+    domain: Chemistry
+    scene_name: Sample Prep
+    step: Dosing
+  version: 0.1.0

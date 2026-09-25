@@ -1,0 +1,12 @@
+repo: AlexShkarin/pyLabLib
+repo_url: https://github.com/AlexShkarin/pyLabLib
+source_url: https://github.com/AlexShkarin/pyLabLib/blob/main/pylablib/devices/Keithley/multimeter.py
+registry_id: community_strict_keithley2110
+source_file: pylablib/devices/Keithley/multimeter.py
+class_name: Keithley2110
+manufacturer: keithley
+model: Keithley2110
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.11
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_keithley2110.yaml

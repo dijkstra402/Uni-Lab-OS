@@ -1,0 +1,182 @@
+{
+  "nodes": [
+    {
+      "id": "test_community_instrument_horiba_labram_hr_evolution",
+      "name": "LabRAM HR Evolution",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community_instrument_horiba_labram_hr_evolution",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "repo_root": "/Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/Arcadia-Science__ramanalysis",
+        "source_file": "ramanalysis/spectra.py",
+        "class_name": "RamanSpectrum",
+        "import_roots": [],
+        "candidate_methods": [
+          "from_openraman_csvfiles",
+          "from_horiba_txtfile",
+          "from_renishaw_txtfile",
+          "from_wasatch_csvfile",
+          "from_generic_csvfile",
+          "snr",
+          "between",
+          "interpolate",
+          "normalize",
+          "standardize",
+          "smooth",
+          "find_n_most_prominent_wavenumbers",
+          "find_prominent_wavenumbers"
+        ],
+        "action_targets": {},
+        "metadata": {
+          "repo": "Arcadia-Science/ramanalysis",
+          "repo_url": "https://github.com/Arcadia-Science/ramanalysis",
+          "brand": "Horiba",
+          "model": "LabRAM HR Evolution",
+          "device_type_cn": "拉曼光谱仪",
+          "device_type_en": "Raman Spectrometer",
+          "source_framework": "光谱分析",
+          "tag_id": "4392",
+          "tag_name": "拉曼光谱仪",
+          "tag_name_en": "Raman Spectrometer",
+          "candidate_score": 162,
+          "parse_status": "ok",
+          "quality_status": "usable",
+          "quality_reasons": [],
+          "action_targets": {}
+        }
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "from openraman csvfiles",
+      "description": "from openraman csvfiles",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-from_openraman_csvfiles",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "from horiba txtfile",
+      "description": "from horiba txtfile",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-from_horiba_txtfile",
+      "action_args": {
+        "num_skip_rows": 32
+      }
+    },
+    {
+      "step": 3,
+      "name": "from renishaw txtfile",
+      "description": "from renishaw txtfile",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-from_renishaw_txtfile",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "from wasatch csvfile",
+      "description": "from wasatch csvfile",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-from_wasatch_csvfile",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "from generic csvfile",
+      "description": "from generic csvfile",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-from_generic_csvfile",
+      "action_args": {
+        "wavenumber_cm1_index": 0,
+        "intensity_index": 1
+      }
+    },
+    {
+      "step": 6,
+      "name": "snr",
+      "description": "snr",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-snr",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "between",
+      "description": "between",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-between",
+      "action_args": {}
+    },
+    {
+      "step": 8,
+      "name": "interpolate",
+      "description": "interpolate",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-interpolate",
+      "action_args": {}
+    },
+    {
+      "step": 9,
+      "name": "normalize",
+      "description": "normalize",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-normalize",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "standardize",
+      "description": "standardize",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-standardize",
+      "action_args": {}
+    },
+    {
+      "step": 11,
+      "name": "smooth",
+      "description": "smooth",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-smooth",
+      "action_args": {
+        "kernel_size": 5
+      }
+    },
+    {
+      "step": 12,
+      "name": "find n most prominent wavenumbers",
+      "description": "find n most prominent wavenumbers",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-find_n_most_prominent_wavenumbers",
+      "action_args": {
+        "prominence_increment": 0.005,
+        "max_iterations": 500
+      }
+    },
+    {
+      "step": 13,
+      "name": "find prominent wavenumbers",
+      "description": "find prominent wavenumbers",
+      "device": "test_community_instrument_horiba_labram_hr_evolution",
+      "action": "auto-find_prominent_wavenumbers",
+      "action_args": {
+        "prominence": 0.01
+      }
+    }
+  ],
+  "workflow_meta": {
+    "name": "LabRAM HR Evolution 工作流",
+    "description": "LabRAM HR Evolution 自动生成工作流",
+    "instrument": "LabRAM HR Evolution",
+    "generated_by": "instrument-drivers-python"
+  }
+}

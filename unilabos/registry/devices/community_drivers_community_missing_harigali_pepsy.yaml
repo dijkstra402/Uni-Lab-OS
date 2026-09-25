@@ -1,0 +1,298 @@
+community_missing_harigali_pepsy:
+  class:
+    module: community_drivers.community_missing_harigali_pepsy.driver:CommunityMissingHarigaliPepsy
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/harigali__PepSy
+          source_file:
+            type: string
+            default: PepSy.py
+          class_name:
+            type: string
+            default: ''
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - positions
+            - pspos
+            - pumpon
+            - presyn
+            - syn
+            - washing
+            - initialization
+            - priming
+            - swelling
+            - coupling
+            - doublecoupling
+            - fmocdeprotection
+          metadata:
+            type: object
+            default:
+              repo: harigali/PepSy
+              repo_url: https://github.com/harigali/PepSy
+              source_file: PepSy.py
+              candidate_score: 0
+              candidate_reason: ''
+              manufacturers:
+              - VICI Valco + 电磁微泵
+              models:
+              - VICI端口选择器(多通阀)
+              tags: &id001
+              - 多肽合成仪
+              notes:
+              - OUHSC大学 / SPPS自动化 / 发表于SLAS Technology
+              comm_protocols:
+              - pyserial 9600波特率
+              review_status: good
+              review_notes:
+              - 多肽合成工艺方法明确。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-positions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: positions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                p:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-pspos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pspos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                p:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-pumpon:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pumpon
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                v:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-presyn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: presyn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-syn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: syn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-washing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: washing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialization:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialization
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-priming:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: priming
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-swelling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: swelling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-coupling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: coupling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-doublecoupling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: doublecoupling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fmocdeprotection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fmocdeprotection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: harigali/PepSy
+    source_file: PepSy.py
+    candidate_class: ''
+    communication: pyserial 9600波特率
+  manufacturer: VICI Valco
+  model:
+    name: VICI端口选择器(多通阀)
+    type: device
+  name: PepSy
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

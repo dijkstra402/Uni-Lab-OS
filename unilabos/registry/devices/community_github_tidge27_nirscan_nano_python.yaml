@@ -1,0 +1,165 @@
+community_github_tidge27_nirscan_nano_python:
+  class:
+    module: community_drivers.community_github_tidge27_nirscan_nano_python.driver:CommunityGithubTidge27NirscanNanoPython
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/tidge27_NIRScan_Nano_Python
+          source_file:
+            type: string
+            default: scan.py
+          class_name:
+            type: string
+            default: Spectrometer
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - reconnect_device
+            - write_command
+            - read_command
+            - perform_scan
+            - get_file
+            - check_hibernate_flag
+          metadata:
+            type: object
+            default:
+              repo: tidge27/nirscan_nano_python
+              repo_url: https://github.com/tidge27/NIRScan_Nano_Python
+              unit_id: gh_ti_dlp_nirscan_nano
+              source_file: scan.py
+              candidate_score: 71
+              manufacturer: 德州仪器
+              model_name: TI DLP NIRscan Nano
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-reconnect_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reconnect_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-perform_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: perform_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_hibernate_flag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_hibernate_flag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 'View the TI DLPNIRNANOEVM Evaluation board description, features,
+    development resources and supporting documentation and start designing. GitHub驱动:
+    https://github.com/tidge27/NIRScan_Nano_Python'
+  category:
+  - community
+  device_params:
+    repo: tidge27/nirscan_nano_python
+    source_file: scan.py
+    candidate_class: Spectrometer
+    communication: ''
+    instrument_params: 'Top documentation: Type; *: EVM User''s guide'
+    official_url: https://www.ti.com/tool/DLPNIRNANOEVM
+  manufacturer: TI
+  model:
+    name: TI DLP NIRscan Nano
+    type: device
+  name: TI DLP NIRscan Nano
+  tags:
+  - 红外光谱仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Spectroscopy
+  version: 0.1.0

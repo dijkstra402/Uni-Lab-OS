@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilent85644A.py
+registry_id: community_strict_agilent85644a
+source_file: ivi/agilent/agilent85644A.py
+class_name: agilent85644A
+manufacturer: agilent
+model: agilent85644A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilent85644a.yaml

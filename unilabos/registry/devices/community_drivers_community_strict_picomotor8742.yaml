@@ -1,0 +1,893 @@
+community_strict_picomotor8742:
+  class:
+    module: community_drivers.community_strict_picomotor8742.driver:CommunityStrictPicomotor8742
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/AlexShkarin__pyLabLib
+          source_file:
+            type: string
+            default: pylablib/devices/Newport/picomotor.py
+          class_name:
+            type: string
+            default: Picomotor8742
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - query
+            - get_id
+            - get_device_info
+            - reset
+            - save_parameters
+            - restore_parameters
+            - scan_devices
+            - get_addr_map
+            - wait_for_scan
+            - get_addr
+            - set_addr
+            - get_ethernet_parameters
+            - setup_ethernet
+            - autodetect_motors
+            - get_motor_type
+            - set_motor_type
+            - move_to
+            - move_by
+            - get_position
+            - set_position_reference
+            - jog
+            - is_moving
+            - wait_move
+            - stop
+            - get_velocity_parameters
+            - setup_velocity
+            - open
+            - close
+            - is_opened
+            - lock
+            - unlock
+            - locking
+            - get_settings
+            - get_full_status
+            - get_full_info
+            - apply_settings
+            - get_device_variable
+            - set_device_variable
+            - get_all_axes
+            - remap_axes
+          metadata:
+            type: object
+            default:
+              repo: AlexShkarin/pyLabLib
+              repo_url: https://github.com/AlexShkarin/pyLabLib
+              source_url: https://github.com/AlexShkarin/pyLabLib/blob/main/pylablib/devices/Newport/picomotor.py
+              source_file: pylablib/devices/Newport/picomotor.py
+              class_name: Picomotor8742
+              manufacturer_guess: newport
+              manufacturer_resolved: newport
+              tag: 机械臂
+              tag_rule: keyword_rule
+              confidence: 0.95
+              quality_score: 1.11
+              code_evidence: 'L25: class Picomotor8742(comm_backend.ICommBackendWrapper,stage.IMultiaxisStage):'
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001 {}
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                comm:
+                  type: string
+                axis:
+                  type: string
+                addr:
+                  type: string
+                read_reply:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_id:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_id
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_device_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-save_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-restore_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restore_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                src:
+                  type: string
+                  default: memory
+                addr:
+                  type: string
+        goal_default:
+          src: memory
+        handles: {}
+      auto-scan_devices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan_devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reassign:
+                  type: string
+                  default: conflict
+                sync:
+                  type: string
+                  default: true
+        goal_default:
+          reassign: conflict
+          sync: true
+        handles: {}
+      auto-get_addr_map:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_addr_map
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+                  default: 10.0
+        goal_default:
+          timeout: 10.0
+        handles: {}
+      auto-get_addr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_addr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_addr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_addr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_addr:
+                  type: string
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_ethernet_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ethernet_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setup_ethernet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_ethernet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hostname:
+                  type: string
+                ipmode:
+                  type: string
+                ipaddr:
+                  type: string
+                gateway:
+                  type: string
+                netmask:
+                  type: string
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-autodetect_motors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: autodetect_motors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_motor_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_motor_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                  default: all
+                addr:
+                  type: string
+        goal_default:
+          axis: all
+        handles: {}
+      auto-set_motor_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_motor_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                  default: all
+                motor_type:
+                  type: string
+                  default: standard
+                addr:
+                  type: string
+        goal_default:
+          axis: all
+          motor_type: standard
+        handles: {}
+      auto-move_to:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                position:
+                  type: string
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_by:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_by
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                steps:
+                  type: string
+                  default: 1
+                addr:
+                  type: string
+        goal_default:
+          steps: 1
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                  default: all
+                addr:
+                  type: string
+        goal_default:
+          axis: all
+        handles: {}
+      auto-set_position_reference:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_position_reference
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                position:
+                  type: string
+                  default: 0
+                addr:
+                  type: string
+        goal_default:
+          position: 0
+        handles: {}
+      auto-jog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: jog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                direction:
+                  type: string
+                addr:
+                  type: string
+                  default: 0
+        goal_default:
+          addr: 0
+        handles: {}
+      auto-is_moving:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_moving
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                  default: all
+                addr:
+                  type: string
+        goal_default:
+          axis: all
+        handles: {}
+      auto-wait_move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                  default: all
+                addr:
+                  type: string
+        goal_default:
+          axis: all
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                  default: all
+                immediate:
+                  type: string
+                  default: false
+                addr:
+                  type: string
+        goal_default:
+          axis: all
+          immediate: false
+        handles: {}
+      auto-get_velocity_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_velocity_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                  default: all
+                addr:
+                  type: string
+        goal_default:
+          axis: all
+        handles: {}
+      auto-setup_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+                  default: all
+                speed:
+                  type: string
+                accel:
+                  type: string
+                addr:
+                  type: string
+        goal_default:
+          axis: all
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_opened:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_opened
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-lock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unlock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unlock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-locking:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: locking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                include:
+                  type: string
+                  default: 0
+        goal_default:
+          include: 0
+        handles: {}
+      auto-get_full_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_full_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                include:
+                  type: string
+                  default: 0
+        goal_default:
+          include: 0
+        handles: {}
+      auto-get_full_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_full_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                include:
+                  type: string
+                  default: 0
+        goal_default:
+          include: 0
+        handles: {}
+      auto-apply_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                settings:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_device_variable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_variable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_device_variable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_device_variable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_all_axes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_all_axes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remap_axes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remap_axes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mapping:
+                  type: string
+                accept_original:
+                  type: string
+                  default: true
+        goal_default:
+          accept_original: true
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: Picomotor8742驱动（newport），支持query/get_id/get_device_info/reset/save_parameters等40个操作。
+  category:
+  - 机械臂
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: AlexShkarin/pyLabLib
+    source_file: pylablib/devices/Newport/picomotor.py
+    candidate_class: Picomotor8742
+    quality_score: 1.11
+    confidence: 0.95
+    quality_status: usable
+    操作数: 40
+  manufacturer: 纽波特
+  model:
+    name: Picomotor8742
+    type: device
+  name: newport Picomotor8742
+  tags:
+  - 机械臂
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

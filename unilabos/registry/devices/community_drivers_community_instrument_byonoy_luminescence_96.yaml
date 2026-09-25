@@ -1,0 +1,261 @@
+community_instrument_byonoy_luminescence_96:
+  class:
+    module: community_drivers.community_instrument_byonoy_luminescence_96.driver:CommunityInstrumentByonoyLuminescence96
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/plate_reading/byonoy/byonoy_backend.py
+          class_name:
+            type: string
+            default: ByonoyLuminescence96AutomateBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - close
+            - open
+            - read_absorbance
+            - read_fluorescence
+            - read_luminescence
+            - setup
+            - stop
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              brand: Byonoy
+              model: Luminescence 96
+              device_type_cn: 酶标仪
+              device_type_en: Plate Reader
+              source_framework: PyLabRobot
+              source_file: pylabrobot/plate_reading/byonoy/byonoy_backend.py
+              class_name: ByonoyLuminescence96AutomateBackend
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+              required:
+              - plate
+          required:
+          - goal
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-read_absorbance:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          wells: wells
+          wavelength: wavelength
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: read_absorbance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                wavelength:
+                  type: string
+              required:
+              - plate
+              - wells
+              - wavelength
+          required:
+          - goal
+        handles: {}
+      auto-read_fluorescence:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          wells: wells
+          excitation_wavelength: excitation_wavelength
+          emission_wavelength: emission_wavelength
+          focal_height: focal_height
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: read_fluorescence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                excitation_wavelength:
+                  type: integer
+                emission_wavelength:
+                  type: integer
+                focal_height:
+                  type: number
+              required:
+              - plate
+              - wells
+              - excitation_wavelength
+              - emission_wavelength
+              - focal_height
+          required:
+          - goal
+        handles: {}
+      auto-read_luminescence:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          wells: wells
+          focal_height: focal_height
+          integration_time: integration_time
+        goal_default:
+          integration_time: 2
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: read_luminescence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                focal_height:
+                  type: number
+                integration_time:
+                  type: number
+              required:
+              - plate
+              - wells
+              - focal_height
+              - integration_time
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: Luminescence 96 驱动（Byonoy），支持 close/open/read_absorbance/read_fluorescence/read_luminescence
+    等 7 个操作。
+  category:
+  - 酶标仪
+  config_info: []
+  handles: []
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/plate_reading/byonoy/byonoy_backend.py
+    candidate_class: ByonoyLuminescence96AutomateBackend
+    操作数: 7
+  manufacturer: Byonoy
+  model:
+    name: Luminescence 96
+    type: device
+  name: Byonoy Luminescence 96
+  tags:
+  - 酶标仪
+  resource_type: device
+  version: 0.1.0

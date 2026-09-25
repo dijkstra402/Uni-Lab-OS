@@ -282,3 +282,10 @@ if __name__ == '__main__':
 
     if args.view:
         plt.show()
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(TDS2024)
+except Exception:
+    pass

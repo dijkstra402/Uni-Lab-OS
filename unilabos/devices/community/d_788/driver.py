@@ -1030,3 +1030,10 @@ class SequenceEntry(Channel):
 
             self.voltage_low_values = [self.voltage_low_min,
                                        self.voltage_low_max]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(AWG401x_base)
+except Exception:
+    pass

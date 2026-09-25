@@ -1,0 +1,12 @@
+repo: AlexShkarin/pyLabLib
+repo_url: https://github.com/AlexShkarin/pyLabLib
+source_url: https://github.com/AlexShkarin/pyLabLib/blob/main/pylablib/devices/Rigol/power_supply.py
+registry_id: community_strict_dp1116a
+source_file: pylablib/devices/Rigol/power_supply.py
+class_name: DP1116A
+manufacturer: rigol
+model: DP1116A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.06
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_dp1116a.yaml

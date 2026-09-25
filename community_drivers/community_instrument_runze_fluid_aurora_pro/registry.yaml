@@ -1,0 +1,622 @@
+community_instrument_runze_fluid_aurora_pro:
+  class:
+    module: community_drivers.community_instrument_runze_fluid_aurora_pro.driver:CommunityInstrumentRunzeFluidAuroraPro
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/AllenNeuralDynamics__runze-control
+          source_file:
+            type: string
+            default: src/runze_control/syringe_pump.py
+          class_name:
+            type: string
+            default: SyringePump
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - reset_syringe_position
+            - get_position_steps
+            - get_position_ul
+            - get_position_percent
+            - aspirate
+            - withdraw
+            - dispense
+            - aspirate_steps
+            - withdraw_steps
+            - dispense_steps
+            - force_stop
+            - halt
+            - get_motor_status
+            - is_busy
+            - set_speed_percent
+            - get_speed_percent
+            - get_remaining_capacity_ul
+            - move_absolute_in_steps
+            - move_absolute_in_percent
+            - get_firmware_version
+            - get_protocol
+            - set_address
+            - get_address
+            - get_serial_number
+            - set_multicast_address
+            - get_rs232_baudrate
+            - get_rs485_baudrate
+            - get_can_baudrate
+            - wait_for_reply
+          metadata:
+            type: object
+            default:
+              repo: AllenNeuralDynamics/runze-control
+              repo_url: https://github.com/AllenNeuralDynamics/runze-control
+              source_file: src/runze_control/syringe_pump.py
+              class_name: SyringePump
+              brand: Runze Fluid
+              model: Aurora Pro
+              device_type_cn: 注射泵
+              device_type_en: Syringe Pump
+              source_framework: 专用驱动
+              tag_id: '4413'
+              tag_name: 注射泵
+              tag_name_en: Syringe Pump
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 246
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-reset_syringe_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_syringe_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-get_position_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_position_ul:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position_ul
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_position_percent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position_percent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-aspirate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aspirate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                microliters:
+                  type: number
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-withdraw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: withdraw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                microliters:
+                  type: number
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-dispense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                microliters:
+                  type: number
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-aspirate_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aspirate_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: integer
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-withdraw_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: withdraw_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: integer
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-dispense_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dispense_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: integer
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-force_stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: force_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-halt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: halt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_motor_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_motor_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_busy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_busy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_speed_percent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_speed_percent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                percent:
+                  type: number
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-get_speed_percent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_speed_percent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_remaining_capacity_ul:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_remaining_capacity_ul
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_absolute_in_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_absolute_in_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: integer
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-move_absolute_in_percent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_absolute_in_percent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                percent:
+                  type: number
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-get_firmware_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-get_address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_serial_number:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_multicast_address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_multicast_address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                multicast_channel:
+                  type: integer
+                address:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-get_rs232_baudrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_rs232_baudrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_rs485_baudrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_rs485_baudrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_can_baudrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_can_baudrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_reply:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_reply
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                force:
+                  type: boolean
+                  default: false
+        goal_default:
+          force: false
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Aurora Pro 驱动（Runze Fluid），支持 reset_syringe_position/get_position_steps/get_position_ul/get_position_percent/aspirate
+    等 29 个操作。
+  category:
+  - 注射泵
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: AllenNeuralDynamics/runze-control
+    source_file: src/runze_control/syringe_pump.py
+    candidate_class: SyringePump
+    candidate_score: 246
+    quality_status: usable
+    操作数: 29
+  manufacturer: Runze Fluid
+  model:
+    name: Aurora Pro
+    type: device
+  name: Runze Fluid Aurora Pro
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

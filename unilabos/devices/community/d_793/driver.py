@@ -761,3 +761,10 @@ class Agilent33500(SCPIMixin, Instrument):
         map_values=True,
         values={True: 1, False: 0},
     )
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Agilent33500)
+except Exception:
+    pass

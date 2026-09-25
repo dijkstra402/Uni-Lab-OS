@@ -520,3 +520,10 @@ UNITS = {
     SCPIMultimeter.Mode.temperature: u.kelvin,
     SCPIMultimeter.Mode.continuity: 1,
 }
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(SCPIMultimeter)
+except Exception:
+    pass

@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilent8594E.py
+registry_id: community_strict_agilent8594e
+source_file: ivi/agilent/agilent8594E.py
+class_name: agilent8594E
+manufacturer: agilent
+model: agilent8594E
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilent8594e.yaml

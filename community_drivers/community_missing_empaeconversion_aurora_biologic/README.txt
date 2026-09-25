@@ -1,0 +1,10 @@
+repo: EmpaEconversion/aurora-biologic
+repo_url: https://github.com/EmpaEconversion/aurora-biologic
+registry_id: community_missing_empaeconversion_aurora_biologic
+review_status: good
+review_notes: 业务方法干净，可直接使用。
+selected_file: aurora_biologic/biologic.py
+selected_class: BiologicAPI
+download_dir: /Users/sml/work/Uni-Lab-OS/new/EmpaEconversion__aurora-biologic
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_empaeconversion_aurora_biologic.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_empaeconversion_aurora_biologic/startup.json

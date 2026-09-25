@@ -1,0 +1,10 @@
+repo: dgretton/pyhamilton
+repo_url: https://github.com/dgretton/pyhamilton
+registry_id: community_missing_dgretton_pyhamilton
+review_status: broken
+review_notes: 动作列表混入大量内部日志/解析方法。
+selected_file: pyhamilton/interface.py
+selected_class: HamiltonInterface
+download_dir: /Users/sml/work/Uni-Lab-OS/new/dgretton__pyhamilton
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_dgretton_pyhamilton.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_dgretton_pyhamilton/startup.json

@@ -318,3 +318,10 @@ class Keithley6514(SCPIInstrument, Electrometer):
         raw = self.query("READ?")
         reading, timestamp, _ = self._parse_measurement(raw)
         return reading, timestamp
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley6514)
+except Exception:
+    pass

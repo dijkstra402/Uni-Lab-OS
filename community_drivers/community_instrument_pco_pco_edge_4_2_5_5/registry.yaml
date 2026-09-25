@@ -1,0 +1,120 @@
+community_instrument_pco_pco_edge_4_2_5_5:
+  class:
+    module: community_drivers.community_instrument_pco_pco_edge_4_2_5_5.driver:CommunityInstrumentPcoPcoEdge4255
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/pymeasure_pymeasure
+          source_file:
+            type: string
+            default: pymeasure/instruments/kepco/kepcobop.py
+          class_name:
+            type: string
+            default: KepcoBOP3612
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - beep
+            - wait_to_continue
+          metadata:
+            type: object
+            default:
+              repo: AndrewGYork/tools
+              repo_url: https://github.com/AndrewGYork/tools
+              source_file: concurrency_tools.py
+              class_name: TestObjectInSubprocess
+              brand: PCO
+              model: pco.edge 4.2/5.5
+              device_type_cn: sCMOS相机
+              device_type_en: sCMOS Camera
+              source_framework: 显微镜/成像
+              tag_id: '4400'
+              tag_name: 普通光学显微镜
+              tag_name_en: Optical Microscope
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 126
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-beep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: beep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_to_continue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_to_continue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: pco.edge 4.2/5.5 驱动（PCO），支持 test_create_and_close_object_in_subprocess/test_passing_normal_numpy_array/test_passing_modifying_and_retrieving_shared_array/test_attribute_access/test_printing_in_child_processes
+    等 13 个操作。
+  category:
+  - 普通光学显微镜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: AndrewGYork/tools
+    source_file: concurrency_tools.py
+    candidate_class: TestObjectInSubprocess
+    candidate_score: 126
+    quality_status: usable
+    操作数: 13
+  manufacturer: PCO
+  model:
+    name: pco.edge 4.2/5.5
+    type: device
+  name: PCO pco.edge 4.2/5.5
+  tags:
+  - 普通光学显微镜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

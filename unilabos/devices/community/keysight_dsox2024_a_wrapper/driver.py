@@ -383,3 +383,10 @@ class KeysightDSOX2024AWrapper(GPIBDeviceWrapper):
         return np.frombuffer(data[2 + tmc_N:], dtype=np.uint8)
 
 __all__ = ["KeysightDSOX2024AWrapper"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(KeysightDSOX2024AWrapper)
+except Exception:
+    pass

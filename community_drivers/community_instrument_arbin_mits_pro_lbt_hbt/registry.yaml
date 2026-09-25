@@ -1,0 +1,227 @@
+community_instrument_arbin_mits_pro_lbt_hbt:
+  class:
+    module: community_drivers.community_instrument_arbin_mits_pro_lbt_hbt.driver:CommunityInstrumentArbinMitsProLbtHbt
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/battery-data-alliance__pyctiarbin
+          source_file:
+            type: string
+            default: pyctiarbin/channel_interface.py
+          class_name:
+            type: string
+            default: ChannelInterface
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - read_channel_status
+            - assign_schedule
+            - start_test
+            - stop_test
+            - set_meta_variable
+            - get_num_channels
+            - get_login_feedback
+          metadata:
+            type: object
+            default:
+              repo: battery-data-alliance/pyctiarbin
+              repo_url: https://github.com/battery-data-alliance/pyctiarbin
+              source_file: pyctiarbin/channel_interface.py
+              class_name: ChannelInterface
+              brand: Arbin
+              model: MITS Pro LBT/HBT
+              device_type_cn: 电池测试柜
+              device_type_en: Battery Test Cabinet
+              source_framework: 专用驱动
+              tag_id: '4427'
+              tag_name: 电池测试柜
+              tag_name_en: Battery Test Cabinet
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 86
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-read_channel_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_channel_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-assign_schedule:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: assign_schedule
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_meta_variable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_meta_variable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mv_num:
+                  type: integer
+                mv_value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_num_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_num_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_login_feedback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_login_feedback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: MITS Pro LBT/HBT 驱动（Arbin），支持 read_channel_status/assign_schedule/start_test/stop_test/set_meta_variable
+    等 7 个操作。
+  category:
+  - 电池测试柜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: battery-data-alliance/pyctiarbin
+    source_file: pyctiarbin/channel_interface.py
+    candidate_class: ChannelInterface
+    candidate_score: 86
+    quality_status: usable
+    操作数: 7
+  manufacturer: Arbin
+  model:
+    name: MITS Pro LBT/HBT
+    type: device
+  name: Arbin MITS Pro LBT/HBT
+  tags:
+  - 电池测试柜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

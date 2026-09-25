@@ -1,0 +1,133 @@
+community_github_numat_ismatec:
+  class:
+    module: community_drivers.community_github_numat_ismatec.driver:CommunityGithubNumatIsmatec
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/numat_ismatec
+          source_file:
+            type: string
+            default: ismatec/util.py
+          class_name:
+            type: string
+            default: SerialCommunicator
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - read
+            - readline
+            - write
+            - close
+          metadata:
+            type: object
+            default:
+              repo: numat/ismatec
+              repo_url: https://github.com/numat/ismatec
+              unit_id: gh_ismatec_reglo_icc
+              source_file: ismatec/util.py
+              candidate_score: 155
+              manufacturer: Ismatec
+              model_name: Ismatec Reglo ICC
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-readline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: '404 错误页面 GitHub驱动: https://github.com/numat/ismatec'
+  category:
+  - community
+  device_params:
+    repo: numat/ismatec
+    source_file: ismatec/util.py
+    candidate_class: SerialCommunicator
+    communication: ''
+    photo_url: https://cms-resources.coleparmer.com/l/cole-parmer-antylia.png
+    instrument_params: 实验室设备 实验室用品 测试和测量产品 水质产品 校准
+    official_url: https://darwin-microfluidics.com/products/reglo-icc-independent-channel-control-pump
+  manufacturer: Ismatec
+  model:
+    name: Ismatec Reglo ICC
+    type: device
+  name: Ismatec Reglo ICC
+  tags:
+  - 蠕动泵
+  resource_type: device
+  icon: https://cms-resources.coleparmer.com/l/cole-parmer-antylia.png
+  scene:
+    domain: Chemistry
+    scene_name: Sample Prep
+    step: Dosing
+  version: 0.1.0

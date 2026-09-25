@@ -1,0 +1,465 @@
+community_instrument_gamry_pc6:
+  class:
+    module: community_drivers.community_instrument_gamry_pc6.driver:CommunityInstrumentGamryPc6
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/helgestein__helao-pub
+          source_file:
+            type: string
+            default: driver/galil_driver.py
+          class_name:
+            type: string
+            default: galil
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - motor_move
+            - motor_move_live
+            - motor_disconnect
+            - query_all_axis_positions
+            - query_axis
+            - query_moving
+            - motor_off
+            - motor_on
+            - motor_stop
+            - read_analog_in
+            - read_digital_in
+            - read_digital_out
+            - set_analog_out
+            - digital_out_on
+            - digital_out_off
+            - infinite_digital_cycles
+            - break_infinite_digital_cycles
+            - shutdown_event
+          metadata:
+            type: object
+            default:
+              repo: helgestein/helao-pub
+              repo_url: https://github.com/helgestein/helao-pub
+              source_file: driver/galil_driver.py
+              class_name: galil
+              brand: Gamry
+              model: PC6
+              device_type_cn: 电化学反应器
+              device_type_en: Electrochemical Reactor
+              source_framework: helao
+              tag_id: '4424'
+              tag_name: 电化学反应器
+              tag_name_en: Electrochemical Reactor
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 174
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-motor_move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_mm:
+                  type: string
+                axis:
+                  type: string
+                speed:
+                  type: string
+                mode:
+                  type: string
+                stopping:
+                  type: string
+                  default: true
+        goal_default:
+          stopping: true
+        handles: {}
+      auto-motor_move_live:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_move_live
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_mm:
+                  type: string
+                axis:
+                  type: string
+                speed:
+                  type: string
+                mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-motor_disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_all_axis_positions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_all_axis_positions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_axis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_axis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-query_moving:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_moving
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-motor_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-motor_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                axis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-motor_stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: motor_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_analog_in:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_analog_in
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-read_digital_in:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_digital_in
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-read_digital_out:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_digital_out
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_analog_out:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_analog_out
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                handle:
+                  type: integer
+                module:
+                  type: integer
+                bitnum:
+                  type: integer
+                value:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-digital_out_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: digital_out_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-digital_out_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: digital_out_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-infinite_digital_cycles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: infinite_digital_cycles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                on_time:
+                  type: string
+                  default: 0.2
+                off_time:
+                  type: string
+                  default: 0.2
+                port:
+                  type: string
+                  default: 0
+                init_time:
+                  type: string
+                  default: 0
+        goal_default:
+          on_time: 0.2
+          off_time: 0.2
+          port: 0
+          init_time: 0
+        handles: {}
+      auto-break_infinite_digital_cycles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: break_infinite_digital_cycles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                on_time:
+                  type: string
+                  default: 0.2
+                off_time:
+                  type: string
+                  default: 0.2
+                port:
+                  type: string
+                  default: 0
+                init_time:
+                  type: string
+                  default: 0
+        goal_default:
+          on_time: 0.2
+          off_time: 0.2
+          port: 0
+          init_time: 0
+        handles: {}
+      auto-shutdown_event:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown_event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: PC6 驱动（Gamry），支持 motor_move/motor_move_live/motor_disconnect/query_all_axis_positions/query_axis
+    等 18 个操作。
+  category:
+  - 电化学反应器
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: helgestein/helao-pub
+    source_file: driver/galil_driver.py
+    candidate_class: galil
+    candidate_score: 174
+    quality_status: usable
+    操作数: 18
+  manufacturer: Gamry
+  model:
+    name: PC6
+    type: device
+  name: Gamry PC6
+  tags:
+  - 电化学反应器
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

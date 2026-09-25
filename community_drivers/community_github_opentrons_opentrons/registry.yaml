@@ -1,0 +1,141 @@
+community_github_opentrons_opentrons:
+  class:
+    module: community_drivers.community_github_opentrons_opentrons.driver:CommunityGithubOpentronsOpentrons
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/Opentrons_opentrons
+          source_file:
+            type: string
+            default: hardware-testing/hardware_testing/drivers/mitutoyo_digimatic_indicator.py
+          class_name:
+            type: string
+            default: Mitutoyo_Digimatic_Indicator
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect
+            - disconnect
+            - read
+            - read_stable
+          metadata:
+            type: object
+            default:
+              repo: opentrons/opentrons
+              repo_url: https://github.com/Opentrons/opentrons
+              unit_id: gh_opentrons_ot_2
+              source_file: hardware-testing/hardware_testing/drivers/mitutoyo_digimatic_indicator.py
+              candidate_score: 169
+              manufacturer: Opentrons
+              model_name: Opentrons OT-2/Flex
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_stable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_stable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'The Opentrons Thermocycler Module is a fully automated on-deck thermocycler,
+    providing hands-free PCR in a 96-well plate format. GitHub驱动: https://github.com/Opentrons/opentrons'
+  category:
+  - community
+  device_params:
+    repo: opentrons/opentrons
+    source_file: hardware-testing/hardware_testing/drivers/mitutoyo_digimatic_indicator.py
+    candidate_class: Mitutoyo_Digimatic_Indicator
+    communication: ''
+    photo_url: https://cdn11.bigcommerce.com/s-zmwgbev7rb/products/241/images/849/Thermocycler-1__21867.1729268547.386.513.png?c=1
+    instrument_params: 'Dimensions (open): 244.95 mm L x 172 mm W x 310.1 mm H; Dimensions
+      (closed): 244.95 mm L x 172 mm W x 170.35 mm H; Dimensions (closed with External
+      Fan Duct): 315.32 L x 172 mm W x 170.35 H; Accommodates: Full-skirted 96-well,
+      0.2 mL PCR plates; Thermal block temperature range: 4–99 °C; Thermal block maximum
+      heating ramp rate: 4.25 °C/s between ambient and 95 °C; Thermal block maximum
+      cooling ramp rate: 2.0 °C/s between 95 °C and ambient; Lid temperature range:
+      37–110 °C; Weight: 8.4 kg; Module power input: 36 VDC 6.1 A; Power adapter input:
+      120-240 VAC, 50/60 Hz, 8.5A@115VAC, 5.0A@230VAC; Rec'
+    official_url: https://opentrons.com/products/modules/thermocycler-module/
+  manufacturer: Opentrons
+  model:
+    name: Opentrons OT-2/Flex
+    type: device
+  name: Opentrons Thermocycler Module
+  tags:
+  - 普通PCR仪
+  resource_type: device
+  icon: https://cdn11.bigcommerce.com/s-zmwgbev7rb/products/241/images/849/Thermocycler-1__21867.1729268547.386.513.png?c=1
+  scene:
+    domain: Biology
+    scene_name: Genomics
+    step: PCR
+  version: 0.1.0

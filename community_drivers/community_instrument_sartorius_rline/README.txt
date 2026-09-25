@@ -1,0 +1,14 @@
+row_index: 215
+registry_id: community_instrument_sartorius_rline
+repo: legendPerceptor/BatteryLab
+repo_url: https://github.com/legendPerceptor/BatteryLab
+brand: Sartorius
+model: rLINE
+device_type_cn: 移液器
+device_type_en: Pipette
+source_framework: 专用驱动
+tag_id: 4435
+tag_name: 移液器
+tag_name_en: Pipette
+language: Python
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_instrument_sartorius_rline.yaml

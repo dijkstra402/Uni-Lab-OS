@@ -49,6 +49,84 @@ gh_device_841:
               properties: {}
         goal_default: {}
         handles: {}
+      measure:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 读取测量值
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: measure参数
+          type: object
+      set_voltage:
+        type: UniLabJsonCommand
+        goal:
+          voltage: voltage
+        goal_default:
+          voltage: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电压
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                voltage:
+                  type: number
+                  description: voltage
+              required:
+              - voltage
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_voltage参数
+          type: object
+      set_current:
+        type: UniLabJsonCommand
+        goal:
+          current: current
+        goal_default:
+          current: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电流
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                current:
+                  type: number
+                  description: current
+              required:
+              - current
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_current参数
+          type: object
   name: Keithley 2260B系列可编程直流电源
   description: Keithley 2260B系列是高功率可编程直流电源，提供360W至1080W功率等级和12种电压/电流配置，支持可编程压摆率控制、恒流优先模式和电池模拟，三台并联可达3240W。
   manufacturer: Tektronix

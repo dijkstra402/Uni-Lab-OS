@@ -1,0 +1,128 @@
+community_github_paulscherrerinstitute_shimadzu_pump:
+  class:
+    module: community_drivers.community_github_paulscherrerinstitute_shimadzu_pump.driver:CommunityGithubPaulscherrerinstituteShimadzuPump
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/paulscherrerinstitute_shimadzu_pump
+          source_file:
+            type: string
+            default: shimadzu_pump/ioc.py
+          class_name:
+            type: string
+            default: EpicsShimadzuPumpDriver
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - try_connect
+            - poll_pump
+            - write
+          metadata:
+            type: object
+            default:
+              repo: paulscherrerinstitute/shimadzu_pump
+              repo_url: https://github.com/paulscherrerinstitute/shimadzu_pump
+              unit_id: gh_shimadzu_cbm_20a
+              source_file: shimadzu_pump/ioc.py
+              candidate_score: 78
+              manufacturer: 岛津
+              model_name: Shimadzu CBM-20A
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-try_connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: try_connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-poll_pump:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: poll_pump
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 'Since 1875, Shimadzu is pursuing leading-edge science and technologies
+    in analytical and measuring instruments including chromatographs and mass spectrometers,
+    medical devices, aeronautics, and industrial equipment. GitHub驱动: https://github.com/paulscherrerinstitute/shimadzu_pump'
+  category:
+  - community
+  device_params:
+    repo: paulscherrerinstitute/shimadzu_pump
+    source_file: shimadzu_pump/ioc.py
+    candidate_class: EpicsShimadzuPumpDriver
+    communication: ''
+    photo_url: https://www.shimadzu.com/sites/shimadzu.com/files/common/fatmenu_product_02.jpg
+    instrument_params: Featured Products & Events VIRTUAL FACILITY TOURS SHIMADZU
+      TODAY Stories of Excellence Exhibition at Milan Design Week; VIRTUAL FACILITY
+      TOURS SHIMADZU TODAY Stories of Excellence Exhibition at Milan Design Week;
+      VIRTUAL FACILITY TOURS; Stories of Excellence; Exhibition at Milan Design Week;
+      Developing Seabed Sensing Technology to Support Carbon Neutrality 100 Years
+      since the Birth of the Shimadzu Mannequin MMS Series Inline Moisture Monitor
+      System Receives Best 10 New Products Awards Winning the Junior Koshien of Science
+      Competition The Secret to “Maglev Train, Go!” Victory; 100 Years since t
+    official_url: https://www.myco-instrumentation.com/shimadzu-prominence-cbm-20a
+  manufacturer: Shimadzu
+  model:
+    name: Shimadzu CBM-20A
+    type: device
+  name: Shimadzu CBM-20A
+  tags:
+  - 液相色谱质谱联用仪
+  resource_type: device
+  icon: https://www.shimadzu.com/sites/shimadzu.com/files/common/fatmenu_product_02.jpg
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Chromatography
+  version: 0.1.0

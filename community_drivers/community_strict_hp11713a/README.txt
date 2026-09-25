@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/hp/hp11713a.py
+registry_id: community_strict_hp11713a
+source_file: pymeasure/instruments/hp/hp11713a.py
+class_name: HP11713A
+manufacturer: hewlett
+model: HP11713A
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_hp11713a.yaml

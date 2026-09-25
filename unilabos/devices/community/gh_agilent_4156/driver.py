@@ -1005,3 +1005,10 @@ def valid_compliance(channel_mode):
         raise ValueError(
             'Channel is not in V or I mode. It might be disabled.')
     return values
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Agilent4156)
+except Exception:
+    pass

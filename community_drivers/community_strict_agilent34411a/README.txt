@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/agilent/Agilent_34411A.py
+registry_id: community_strict_agilent34411a
+source_file: src/qcodes/instrument_drivers/agilent/Agilent_34411A.py
+class_name: Agilent34411A
+manufacturer: agilent
+model: Agilent34411A
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilent34411a.yaml

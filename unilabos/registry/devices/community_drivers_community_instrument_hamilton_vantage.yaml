@@ -1,0 +1,4895 @@
+community_instrument_hamilton_vantage:
+  class:
+    module: community_drivers.community_instrument_hamilton_vantage.driver:CommunityInstrumentHamiltonVantage
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/liquid_handling/backends/hamilton/vantage_backend.py
+          class_name:
+            type: string
+            default: VantageBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - arm_pre_initialize
+            - arm_request_instrument_initialization_status
+            - aspirate
+            - aspirate96
+            - calculates_check_sums_and_compares_them_with_the_value_saved_in_flash_eprom
+            - can_pick_up_tip
+            - check_fw_string_error
+            - core96_aspiration_of_liquid
+            - core96_dispensing_of_liquid
+            - core96_empty_washed_tips
+            - core96_initialize
+            - core96_move_to_defined_position
+            - core96_query_tip_presence
+            - core96_request_initialization_status
+            - core96_request_position
+            - core96_request_tadm_error_status
+            - core96_search_for_teach_in_signal_in_x_direction
+            - core96_set_any_parameter
+            - core96_tip_discard
+            - core96_tip_pick_up
+            - core96_wash_tips
+            - define_tip_needle
+            - discard_core_gripper_tool
+            - disco_mode
+            - dispense
+            - dispense96
+            - dispense_on_fly
+            - drop_resource
+            - drop_tips
+            - drop_tips96
+            - expose_channel_n
+            - get_channel_spacings
+            - get_id_from_fw_response
+            - get_or_assign_tip_type_index
+            - grip_plate
+            - ipg_expose_channel_n
+            - ipg_get_parking_status
+            - ipg_grip_plate
+            - ipg_initialize
+            - ipg_move_to_defined_position
+            - ipg_park
+            - ipg_prepare_gripper_orientation
+            - ipg_put_plate
+            - ipg_query_tip_presence
+            - ipg_release_object
+            - ipg_request_access_range
+            - ipg_request_actual_angular_dimensions
+            - ipg_request_configuration
+            - ipg_request_initialization_status
+            - ipg_request_position
+            - ipg_search_for_teach_in_signal_in_x_direction
+            - ipg_set_any_parameter_within_this_module
+            - loading_cover_initialize
+            - loading_cover_request_initialization_status
+            - move_channel_x
+            - move_channel_y
+            - move_channel_z
+            - move_picked_up_resource
+            - move_to_defined_position
+            - move_to_position
+            - nano_pulse_dispense
+            - pick_up_resource
+            - pick_up_tips
+            - pick_up_tips96
+            - pip_aspirate
+            - pip_dispense
+            - pip_initialize
+            - pip_request_initialization_status
+            - pip_tip_discard
+            - pip_tip_pick_up
+            - position_all_channels_in_y_direction
+            - position_all_channels_in_z_direction
+            - position_single_channel_in_y_direction
+            - position_single_channel_in_z_direction
+            - prepare_for_manual_channel_operation
+            - put_plate
+            - query_tip_presence
+            - release_object
+            - request_channel_dispense_on_fly_status
+            - request_height_of_last_lld
+            - request_tip_presence
+            - request_y_position_of_channel_n
+            - request_y_positions_of_all_channels
+            - request_z_position_of_channel_n
+            - request_z_positions_of_all_channels
+            - russian_roulette
+            - search_for_teach_in_signal_in_x_direction
+            - send_raw_command
+            - set_any_parameter_within_this_module
+            - set_deck
+            - set_heads
+            - set_led_color
+            - set_loading_cover
+            - set_minimum_traversal_height
+            - setup
+            - simultaneous_aspiration_dispensation_of_liquid
+            - stop
+            - teach_rack_using_channel_n
+            - wash_tips
+            - x_arm_initialize
+            - x_arm_move_arm_relatively_in_x
+            - x_arm_move_to_x_position
+            - x_arm_move_to_x_position_with_all_attached_components_in_z_safety_position
+            - x_arm_request_arm_x_position
+            - x_arm_request_error_code
+            - x_arm_request_x_drive_recorded_data
+            - x_arm_search_x_for_teach_signal
+            - x_arm_send_message_to_motion_controller
+            - x_arm_set_any_parameter_within_this_module
+            - x_arm_set_x_drive_angle_of_alignment
+            - x_arm_turn_x_drive_off
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              source_file: pylabrobot/liquid_handling/backends/hamilton/vantage_backend.py
+              class_name: VantageBackend
+              brand: Hamilton
+              model: Vantage
+              device_type_cn: 移液工作站
+              device_type_en: Liquid Handling Workstation
+              source_framework: PyLabRobot
+              tag_id: '4436'
+              tag_name: 移液工作站
+              tag_name_en: Liquid Handling Workstation
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 2342
+              action_targets: {}
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-arm_pre_initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: arm_pre_initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-arm_request_instrument_initialization_status:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: arm_request_instrument_initialization_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-aspirate:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+          jet: jet
+          blow_out: blow_out
+          hlcs: hlcs
+          type_of_aspiration: type_of_aspiration
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          lld_search_height: lld_search_height
+          clot_detection_height: clot_detection_height
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          pull_out_distance_to_take_transport_air_in_function_without_lld: pull_out_distance_to_take_transport_air_in_function_without_lld
+          tube_2nd_section_height_measured_from_zm: tube_2nd_section_height_measured_from_zm
+          tube_2nd_section_ratio: tube_2nd_section_ratio
+          minimum_height: minimum_height
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          transport_air_volume: transport_air_volume
+          pre_wetting_volume: pre_wetting_volume
+          lld_mode: lld_mode
+          lld_sensitivity: lld_sensitivity
+          pressure_lld_sensitivity: pressure_lld_sensitivity
+          aspirate_position_above_z_touch_off: aspirate_position_above_z_touch_off
+          swap_speed: swap_speed
+          settling_time: settling_time
+          mix_volume: mix_volume
+          mix_cycles: mix_cycles
+          mix_position_in_z_direction_from_liquid_surface: mix_position_in_z_direction_from_liquid_surface
+          mix_speed: mix_speed
+          surface_following_distance_during_mixing: surface_following_distance_during_mixing
+          TODO_DA_5: TODO_DA_5
+          capacitive_mad_supervision_on_off: capacitive_mad_supervision_on_off
+          pressure_mad_supervision_on_off: pressure_mad_supervision_on_off
+          tadm_algorithm_on_off: tadm_algorithm_on_off
+          limit_curve_index: limit_curve_index
+          recording_mode: recording_mode
+          disable_volume_correction: disable_volume_correction
+        goal_default:
+          tadm_algorithm_on_off: 0
+          recording_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: aspirate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: string
+                jet:
+                  type: string
+                blow_out:
+                  type: string
+                hlcs:
+                  type: string
+                type_of_aspiration:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                lld_search_height:
+                  type: string
+                clot_detection_height:
+                  type: string
+                liquid_surface_at_function_without_lld:
+                  type: string
+                pull_out_distance_to_take_transport_air_in_function_without_lld:
+                  type: string
+                tube_2nd_section_height_measured_from_zm:
+                  type: string
+                tube_2nd_section_ratio:
+                  type: string
+                minimum_height:
+                  type: string
+                immersion_depth:
+                  type: string
+                surface_following_distance:
+                  type: string
+                transport_air_volume:
+                  type: string
+                pre_wetting_volume:
+                  type: string
+                lld_mode:
+                  type: string
+                lld_sensitivity:
+                  type: string
+                pressure_lld_sensitivity:
+                  type: string
+                aspirate_position_above_z_touch_off:
+                  type: string
+                swap_speed:
+                  type: string
+                settling_time:
+                  type: string
+                mix_volume:
+                  type: string
+                mix_cycles:
+                  type: string
+                mix_position_in_z_direction_from_liquid_surface:
+                  type: string
+                mix_speed:
+                  type: string
+                surface_following_distance_during_mixing:
+                  type: string
+                TODO_DA_5:
+                  type: string
+                capacitive_mad_supervision_on_off:
+                  type: string
+                pressure_mad_supervision_on_off:
+                  type: string
+                tadm_algorithm_on_off:
+                  type: integer
+                limit_curve_index:
+                  type: string
+                recording_mode:
+                  type: integer
+                disable_volume_correction:
+                  type: string
+              required:
+              - ops
+              - use_channels
+              - jet
+              - blow_out
+              - hlcs
+              - type_of_aspiration
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - lld_search_height
+              - clot_detection_height
+              - liquid_surface_at_function_without_lld
+              - pull_out_distance_to_take_transport_air_in_function_without_lld
+              - tube_2nd_section_height_measured_from_zm
+              - tube_2nd_section_ratio
+              - minimum_height
+              - immersion_depth
+              - surface_following_distance
+              - transport_air_volume
+              - pre_wetting_volume
+              - lld_mode
+              - lld_sensitivity
+              - pressure_lld_sensitivity
+              - aspirate_position_above_z_touch_off
+              - swap_speed
+              - settling_time
+              - mix_volume
+              - mix_cycles
+              - mix_position_in_z_direction_from_liquid_surface
+              - mix_speed
+              - surface_following_distance_during_mixing
+              - TODO_DA_5
+              - capacitive_mad_supervision_on_off
+              - pressure_mad_supervision_on_off
+              - tadm_algorithm_on_off
+              - limit_curve_index
+              - recording_mode
+              - disable_volume_correction
+          required:
+          - goal
+        handles: {}
+      auto-aspirate96:
+        type: UniLabJsonCommand
+        goal:
+          aspiration: aspiration
+          jet: jet
+          blow_out: blow_out
+          hlc: hlc
+          type_of_aspiration: type_of_aspiration
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          pull_out_distance_to_take_transport_air_in_function_without_lld: pull_out_distance_to_take_transport_air_in_function_without_lld
+          tube_2nd_section_height_measured_from_zm: tube_2nd_section_height_measured_from_zm
+          tube_2nd_section_ratio: tube_2nd_section_ratio
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          transport_air_volume: transport_air_volume
+          blow_out_air_volume: blow_out_air_volume
+          pre_wetting_volume: pre_wetting_volume
+          lld_mode: lld_mode
+          lld_sensitivity: lld_sensitivity
+          swap_speed: swap_speed
+          settling_time: settling_time
+          mix_volume: mix_volume
+          mix_cycles: mix_cycles
+          mix_position_in_z_direction_from_liquid_surface: mix_position_in_z_direction_from_liquid_surface
+          surface_following_distance_during_mixing: surface_following_distance_during_mixing
+          mix_speed: mix_speed
+          limit_curve_index: limit_curve_index
+          tadm_channel_pattern: tadm_channel_pattern
+          tadm_algorithm_on_off: tadm_algorithm_on_off
+          recording_mode: recording_mode
+          disable_volume_correction: disable_volume_correction
+        goal_default:
+          jet: false
+          blow_out: false
+          type_of_aspiration: 0
+          pull_out_distance_to_take_transport_air_in_function_without_lld: 5
+          tube_2nd_section_height_measured_from_zm: 0
+          tube_2nd_section_ratio: 0
+          immersion_depth: 0
+          surface_following_distance: 0
+          pre_wetting_volume: 0
+          lld_mode: 0
+          lld_sensitivity: 4
+          mix_volume: 0
+          mix_cycles: 0
+          mix_position_in_z_direction_from_liquid_surface: 0
+          surface_following_distance_during_mixing: 0
+          mix_speed: 0
+          limit_curve_index: 0
+          tadm_algorithm_on_off: 0
+          recording_mode: 0
+          disable_volume_correction: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: aspirate96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                aspiration:
+                  type: string
+                jet:
+                  type: boolean
+                blow_out:
+                  type: boolean
+                hlc:
+                  type: string
+                type_of_aspiration:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                pull_out_distance_to_take_transport_air_in_function_without_lld:
+                  type: number
+                tube_2nd_section_height_measured_from_zm:
+                  type: number
+                tube_2nd_section_ratio:
+                  type: number
+                immersion_depth:
+                  type: number
+                surface_following_distance:
+                  type: number
+                transport_air_volume:
+                  type: string
+                blow_out_air_volume:
+                  type: string
+                pre_wetting_volume:
+                  type: number
+                lld_mode:
+                  type: integer
+                lld_sensitivity:
+                  type: integer
+                swap_speed:
+                  type: string
+                settling_time:
+                  type: string
+                mix_volume:
+                  type: number
+                mix_cycles:
+                  type: integer
+                mix_position_in_z_direction_from_liquid_surface:
+                  type: number
+                surface_following_distance_during_mixing:
+                  type: number
+                mix_speed:
+                  type: number
+                limit_curve_index:
+                  type: integer
+                tadm_channel_pattern:
+                  type: string
+                tadm_algorithm_on_off:
+                  type: integer
+                recording_mode:
+                  type: integer
+                disable_volume_correction:
+                  type: boolean
+              required:
+              - aspiration
+              - jet
+              - blow_out
+              - hlc
+              - type_of_aspiration
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - pull_out_distance_to_take_transport_air_in_function_without_lld
+              - tube_2nd_section_height_measured_from_zm
+              - tube_2nd_section_ratio
+              - immersion_depth
+              - surface_following_distance
+              - transport_air_volume
+              - blow_out_air_volume
+              - pre_wetting_volume
+              - lld_mode
+              - lld_sensitivity
+              - swap_speed
+              - settling_time
+              - mix_volume
+              - mix_cycles
+              - mix_position_in_z_direction_from_liquid_surface
+              - surface_following_distance_during_mixing
+              - mix_speed
+              - limit_curve_index
+              - tadm_channel_pattern
+              - tadm_algorithm_on_off
+              - recording_mode
+              - disable_volume_correction
+          required:
+          - goal
+        handles: {}
+      auto-calculates_check_sums_and_compares_them_with_the_value_saved_in_flash_eprom:
+        type: UniLabJsonCommand
+        goal:
+          TODO_DC_0: TODO_DC_0
+          TODO_DC_1: TODO_DC_1
+          tip_type: tip_type
+          TODO_DC_2: TODO_DC_2
+          z_deposit_position: z_deposit_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          first_pip_channel_node_no: first_pip_channel_node_no
+        goal_default:
+          TODO_DC_0: 0
+          TODO_DC_1: 3000
+          first_pip_channel_node_no: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: calculates_check_sums_and_compares_them_with_the_value_saved_in_flash_eprom
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                TODO_DC_0:
+                  type: integer
+                TODO_DC_1:
+                  type: integer
+                tip_type:
+                  type: string
+                TODO_DC_2:
+                  type: string
+                z_deposit_position:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                first_pip_channel_node_no:
+                  type: integer
+              required:
+              - TODO_DC_0
+              - TODO_DC_1
+              - tip_type
+              - TODO_DC_2
+              - z_deposit_position
+              - minimal_traverse_height_at_begin_of_command
+              - first_pip_channel_node_no
+          required:
+          - goal
+        handles: {}
+      auto-can_pick_up_tip:
+        type: UniLabJsonCommand
+        goal:
+          channel_idx: channel_idx
+          tip: tip
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: can_pick_up_tip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_idx:
+                  type: integer
+                tip:
+                  type: string
+              required:
+              - channel_idx
+              - tip
+          required:
+          - goal
+        handles: {}
+      auto-check_fw_string_error:
+        type: UniLabJsonCommand
+        goal:
+          resp: resp
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: check_fw_string_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                resp:
+                  type: string
+              required:
+              - resp
+          required:
+          - goal
+        handles: {}
+      auto-core96_aspiration_of_liquid:
+        type: UniLabJsonCommand
+        goal:
+          type_of_aspiration: type_of_aspiration
+          x_position: x_position
+          y_position: y_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          lld_search_height: lld_search_height
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          pull_out_distance_to_take_transport_air_in_function_without_lld: pull_out_distance_to_take_transport_air_in_function_without_lld
+          minimum_height: minimum_height
+          tube_2nd_section_height_measured_from_zm: tube_2nd_section_height_measured_from_zm
+          tube_2nd_section_ratio: tube_2nd_section_ratio
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          aspiration_volume: aspiration_volume
+          aspiration_speed: aspiration_speed
+          transport_air_volume: transport_air_volume
+          blow_out_air_volume: blow_out_air_volume
+          pre_wetting_volume: pre_wetting_volume
+          lld_mode: lld_mode
+          lld_sensitivity: lld_sensitivity
+          swap_speed: swap_speed
+          settling_time: settling_time
+          mix_volume: mix_volume
+          mix_cycles: mix_cycles
+          mix_position_in_z_direction_from_liquid_surface: mix_position_in_z_direction_from_liquid_surface
+          surface_following_distance_during_mixing: surface_following_distance_during_mixing
+          mix_speed: mix_speed
+          limit_curve_index: limit_curve_index
+          tadm_channel_pattern: tadm_channel_pattern
+          tadm_algorithm_on_off: tadm_algorithm_on_off
+          recording_mode: recording_mode
+        goal_default:
+          type_of_aspiration: 0
+          x_position: 5000
+          y_position: 5000
+          minimal_traverse_height_at_begin_of_command: 3900
+          minimal_height_at_command_end: 3900
+          lld_search_height: 0
+          liquid_surface_at_function_without_lld: 3900
+          pull_out_distance_to_take_transport_air_in_function_without_lld: 50
+          minimum_height: 3900
+          tube_2nd_section_height_measured_from_zm: 0
+          tube_2nd_section_ratio: 0
+          immersion_depth: 0
+          surface_following_distance: 0
+          aspiration_volume: 0
+          aspiration_speed: 2000
+          transport_air_volume: 0
+          blow_out_air_volume: 1000
+          pre_wetting_volume: 0
+          lld_mode: 1
+          lld_sensitivity: 1
+          swap_speed: 100
+          settling_time: 5
+          mix_volume: 0
+          mix_cycles: 0
+          mix_position_in_z_direction_from_liquid_surface: 0
+          surface_following_distance_during_mixing: 0
+          mix_speed: 2000
+          limit_curve_index: 0
+          tadm_algorithm_on_off: 0
+          recording_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_aspiration_of_liquid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                type_of_aspiration:
+                  type: integer
+                x_position:
+                  type: integer
+                y_position:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: integer
+                lld_search_height:
+                  type: integer
+                liquid_surface_at_function_without_lld:
+                  type: integer
+                pull_out_distance_to_take_transport_air_in_function_without_lld:
+                  type: integer
+                minimum_height:
+                  type: integer
+                tube_2nd_section_height_measured_from_zm:
+                  type: integer
+                tube_2nd_section_ratio:
+                  type: integer
+                immersion_depth:
+                  type: integer
+                surface_following_distance:
+                  type: integer
+                aspiration_volume:
+                  type: integer
+                aspiration_speed:
+                  type: integer
+                transport_air_volume:
+                  type: integer
+                blow_out_air_volume:
+                  type: integer
+                pre_wetting_volume:
+                  type: integer
+                lld_mode:
+                  type: integer
+                lld_sensitivity:
+                  type: integer
+                swap_speed:
+                  type: integer
+                settling_time:
+                  type: integer
+                mix_volume:
+                  type: integer
+                mix_cycles:
+                  type: integer
+                mix_position_in_z_direction_from_liquid_surface:
+                  type: integer
+                surface_following_distance_during_mixing:
+                  type: integer
+                mix_speed:
+                  type: integer
+                limit_curve_index:
+                  type: integer
+                tadm_channel_pattern:
+                  type: string
+                tadm_algorithm_on_off:
+                  type: integer
+                recording_mode:
+                  type: integer
+              required:
+              - type_of_aspiration
+              - x_position
+              - y_position
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - lld_search_height
+              - liquid_surface_at_function_without_lld
+              - pull_out_distance_to_take_transport_air_in_function_without_lld
+              - minimum_height
+              - tube_2nd_section_height_measured_from_zm
+              - tube_2nd_section_ratio
+              - immersion_depth
+              - surface_following_distance
+              - aspiration_volume
+              - aspiration_speed
+              - transport_air_volume
+              - blow_out_air_volume
+              - pre_wetting_volume
+              - lld_mode
+              - lld_sensitivity
+              - swap_speed
+              - settling_time
+              - mix_volume
+              - mix_cycles
+              - mix_position_in_z_direction_from_liquid_surface
+              - surface_following_distance_during_mixing
+              - mix_speed
+              - limit_curve_index
+              - tadm_channel_pattern
+              - tadm_algorithm_on_off
+              - recording_mode
+          required:
+          - goal
+        handles: {}
+      auto-core96_dispensing_of_liquid:
+        type: UniLabJsonCommand
+        goal:
+          type_of_dispensing_mode: type_of_dispensing_mode
+          x_position: x_position
+          y_position: y_position
+          minimum_height: minimum_height
+          tube_2nd_section_height_measured_from_zm: tube_2nd_section_height_measured_from_zm
+          tube_2nd_section_ratio: tube_2nd_section_ratio
+          lld_search_height: lld_search_height
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          pull_out_distance_to_take_transport_air_in_function_without_lld: pull_out_distance_to_take_transport_air_in_function_without_lld
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          dispense_volume: dispense_volume
+          dispense_speed: dispense_speed
+          cut_off_speed: cut_off_speed
+          stop_back_volume: stop_back_volume
+          transport_air_volume: transport_air_volume
+          blow_out_air_volume: blow_out_air_volume
+          lld_mode: lld_mode
+          lld_sensitivity: lld_sensitivity
+          side_touch_off_distance: side_touch_off_distance
+          swap_speed: swap_speed
+          settling_time: settling_time
+          mix_volume: mix_volume
+          mix_cycles: mix_cycles
+          mix_position_in_z_direction_from_liquid_surface: mix_position_in_z_direction_from_liquid_surface
+          surface_following_distance_during_mixing: surface_following_distance_during_mixing
+          mix_speed: mix_speed
+          limit_curve_index: limit_curve_index
+          tadm_channel_pattern: tadm_channel_pattern
+          tadm_algorithm_on_off: tadm_algorithm_on_off
+          recording_mode: recording_mode
+        goal_default:
+          type_of_dispensing_mode: 0
+          x_position: 5000
+          y_position: 5000
+          minimum_height: 3900
+          tube_2nd_section_height_measured_from_zm: 0
+          tube_2nd_section_ratio: 0
+          lld_search_height: 0
+          liquid_surface_at_function_without_lld: 3900
+          pull_out_distance_to_take_transport_air_in_function_without_lld: 50
+          immersion_depth: 0
+          surface_following_distance: 0
+          minimal_traverse_height_at_begin_of_command: 3900
+          minimal_height_at_command_end: 3900
+          dispense_volume: 0
+          dispense_speed: 2000
+          cut_off_speed: 1500
+          stop_back_volume: 0
+          transport_air_volume: 0
+          blow_out_air_volume: 1000
+          lld_mode: 1
+          lld_sensitivity: 1
+          side_touch_off_distance: 0
+          swap_speed: 100
+          settling_time: 5
+          mix_volume: 0
+          mix_cycles: 0
+          mix_position_in_z_direction_from_liquid_surface: 0
+          surface_following_distance_during_mixing: 0
+          mix_speed: 2000
+          limit_curve_index: 0
+          tadm_algorithm_on_off: 0
+          recording_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_dispensing_of_liquid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                type_of_dispensing_mode:
+                  type: integer
+                x_position:
+                  type: integer
+                y_position:
+                  type: integer
+                minimum_height:
+                  type: integer
+                tube_2nd_section_height_measured_from_zm:
+                  type: integer
+                tube_2nd_section_ratio:
+                  type: integer
+                lld_search_height:
+                  type: integer
+                liquid_surface_at_function_without_lld:
+                  type: integer
+                pull_out_distance_to_take_transport_air_in_function_without_lld:
+                  type: integer
+                immersion_depth:
+                  type: integer
+                surface_following_distance:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: integer
+                dispense_volume:
+                  type: integer
+                dispense_speed:
+                  type: integer
+                cut_off_speed:
+                  type: integer
+                stop_back_volume:
+                  type: integer
+                transport_air_volume:
+                  type: integer
+                blow_out_air_volume:
+                  type: integer
+                lld_mode:
+                  type: integer
+                lld_sensitivity:
+                  type: integer
+                side_touch_off_distance:
+                  type: integer
+                swap_speed:
+                  type: integer
+                settling_time:
+                  type: integer
+                mix_volume:
+                  type: integer
+                mix_cycles:
+                  type: integer
+                mix_position_in_z_direction_from_liquid_surface:
+                  type: integer
+                surface_following_distance_during_mixing:
+                  type: integer
+                mix_speed:
+                  type: integer
+                limit_curve_index:
+                  type: integer
+                tadm_channel_pattern:
+                  type: string
+                tadm_algorithm_on_off:
+                  type: integer
+                recording_mode:
+                  type: integer
+              required:
+              - type_of_dispensing_mode
+              - x_position
+              - y_position
+              - minimum_height
+              - tube_2nd_section_height_measured_from_zm
+              - tube_2nd_section_ratio
+              - lld_search_height
+              - liquid_surface_at_function_without_lld
+              - pull_out_distance_to_take_transport_air_in_function_without_lld
+              - immersion_depth
+              - surface_following_distance
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - dispense_volume
+              - dispense_speed
+              - cut_off_speed
+              - stop_back_volume
+              - transport_air_volume
+              - blow_out_air_volume
+              - lld_mode
+              - lld_sensitivity
+              - side_touch_off_distance
+              - swap_speed
+              - settling_time
+              - mix_volume
+              - mix_cycles
+              - mix_position_in_z_direction_from_liquid_surface
+              - surface_following_distance_during_mixing
+              - mix_speed
+              - limit_curve_index
+              - tadm_channel_pattern
+              - tadm_algorithm_on_off
+              - recording_mode
+          required:
+          - goal
+        handles: {}
+      auto-core96_empty_washed_tips:
+        type: UniLabJsonCommand
+        goal:
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          liquid_surface_at_function_without_lld: 3900
+          minimal_height_at_command_end: 3900
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_empty_washed_tips
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                liquid_surface_at_function_without_lld:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: integer
+              required:
+              - liquid_surface_at_function_without_lld
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-core96_initialize:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          z_position: z_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          end_z_deposit_position: end_z_deposit_position
+          tip_type: tip_type
+        goal_default:
+          x_position: 5000
+          y_position: 5000
+          z_position: 0
+          minimal_traverse_height_at_begin_of_command: 3900
+          minimal_height_at_command_end: 3900
+          end_z_deposit_position: 0
+          tip_type: 4
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: integer
+                y_position:
+                  type: integer
+                z_position:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: integer
+                end_z_deposit_position:
+                  type: integer
+                tip_type:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - z_position
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - end_z_deposit_position
+              - tip_type
+          required:
+          - goal
+        handles: {}
+      auto-core96_move_to_defined_position:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          z_position: z_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+        goal_default:
+          x_position: 5000
+          y_position: 5000
+          z_position: 0
+          minimal_traverse_height_at_begin_of_command: 3900
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_move_to_defined_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: integer
+                y_position:
+                  type: integer
+                z_position:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - z_position
+              - minimal_traverse_height_at_begin_of_command
+          required:
+          - goal
+        handles: {}
+      auto-core96_query_tip_presence:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_query_tip_presence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-core96_request_initialization_status:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_request_initialization_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-core96_request_position:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_request_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-core96_request_tadm_error_status:
+        type: UniLabJsonCommand
+        goal:
+          tadm_channel_pattern: tadm_channel_pattern
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_request_tadm_error_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tadm_channel_pattern:
+                  type: string
+              required:
+              - tadm_channel_pattern
+          required:
+          - goal
+        handles: {}
+      auto-core96_search_for_teach_in_signal_in_x_direction:
+        type: UniLabJsonCommand
+        goal:
+          x_search_distance: x_search_distance
+          x_speed: x_speed
+        goal_default:
+          x_search_distance: 0
+          x_speed: 50
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_search_for_teach_in_signal_in_x_direction
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_search_distance:
+                  type: integer
+                x_speed:
+                  type: integer
+              required:
+              - x_search_distance
+              - x_speed
+          required:
+          - goal
+        handles: {}
+      auto-core96_set_any_parameter:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_set_any_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-core96_tip_discard:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          z_deposit_position: z_deposit_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          x_position: 5000
+          y_position: 5000
+          z_deposit_position: 0
+          minimal_traverse_height_at_begin_of_command: 3900
+          minimal_height_at_command_end: 3900
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_tip_discard
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: integer
+                y_position:
+                  type: integer
+                z_deposit_position:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - z_deposit_position
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-core96_tip_pick_up:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          tip_type: tip_type
+          tip_handling_method: tip_handling_method
+          z_deposit_position: z_deposit_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          x_position: 5000
+          y_position: 5000
+          tip_type: 4
+          tip_handling_method: 0
+          z_deposit_position: 0
+          minimal_traverse_height_at_begin_of_command: 3900
+          minimal_height_at_command_end: 3900
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_tip_pick_up
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: integer
+                y_position:
+                  type: integer
+                tip_type:
+                  type: integer
+                tip_handling_method:
+                  type: integer
+                z_deposit_position:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - tip_type
+              - tip_handling_method
+              - z_deposit_position
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-core96_wash_tips:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          minimum_height: minimum_height
+          surface_following_distance_during_mixing: surface_following_distance_during_mixing
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          mix_volume: mix_volume
+          mix_cycles: mix_cycles
+          mix_speed: mix_speed
+        goal_default:
+          x_position: 5000
+          y_position: 5000
+          liquid_surface_at_function_without_lld: 3900
+          minimum_height: 3900
+          surface_following_distance_during_mixing: 0
+          minimal_traverse_height_at_begin_of_command: 3900
+          mix_volume: 0
+          mix_cycles: 0
+          mix_speed: 2000
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: core96_wash_tips
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: integer
+                y_position:
+                  type: integer
+                liquid_surface_at_function_without_lld:
+                  type: integer
+                minimum_height:
+                  type: integer
+                surface_following_distance_during_mixing:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: integer
+                mix_volume:
+                  type: integer
+                mix_cycles:
+                  type: integer
+                mix_speed:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - liquid_surface_at_function_without_lld
+              - minimum_height
+              - surface_following_distance_during_mixing
+              - minimal_traverse_height_at_begin_of_command
+              - mix_volume
+              - mix_cycles
+              - mix_speed
+          required:
+          - goal
+        handles: {}
+      auto-define_tip_needle:
+        type: UniLabJsonCommand
+        goal:
+          tip_type_table_index: tip_type_table_index
+          has_filter: has_filter
+          tip_length: tip_length
+          maximum_tip_volume: maximum_tip_volume
+          tip_size: tip_size
+          pickup_method: pickup_method
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: define_tip_needle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tip_type_table_index:
+                  type: integer
+                has_filter:
+                  type: boolean
+                tip_length:
+                  type: integer
+                maximum_tip_volume:
+                  type: integer
+                tip_size:
+                  type: string
+                pickup_method:
+                  type: string
+              required:
+              - tip_type_table_index
+              - has_filter
+              - tip_length
+              - maximum_tip_volume
+              - tip_size
+              - pickup_method
+          required:
+          - goal
+        handles: {}
+      auto-discard_core_gripper_tool:
+        type: UniLabJsonCommand
+        goal:
+          gripper_tool_x_position: gripper_tool_x_position
+          first_gripper_tool_y_pos: first_gripper_tool_y_pos
+          tip_type: tip_type
+          begin_z_deposit_position: begin_z_deposit_position
+          end_z_deposit_position: end_z_deposit_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          first_pip_channel_node_no: first_pip_channel_node_no
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          gripper_tool_x_position: 0
+          first_gripper_tool_y_pos: 3000
+          first_pip_channel_node_no: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: discard_core_gripper_tool
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gripper_tool_x_position:
+                  type: integer
+                first_gripper_tool_y_pos:
+                  type: integer
+                tip_type:
+                  type: string
+                begin_z_deposit_position:
+                  type: string
+                end_z_deposit_position:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                first_pip_channel_node_no:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: string
+              required:
+              - gripper_tool_x_position
+              - first_gripper_tool_y_pos
+              - tip_type
+              - begin_z_deposit_position
+              - end_z_deposit_position
+              - minimal_traverse_height_at_begin_of_command
+              - first_pip_channel_node_no
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-disco_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: disco_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-dispense:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+          jet: jet
+          blow_out: blow_out
+          empty: empty
+          hlcs: hlcs
+          type_of_dispensing_mode: type_of_dispensing_mode
+          minimum_height: minimum_height
+          pull_out_distance_to_take_transport_air_in_function_without_lld: pull_out_distance_to_take_transport_air_in_function_without_lld
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          tube_2nd_section_height_measured_from_zm: tube_2nd_section_height_measured_from_zm
+          tube_2nd_section_ratio: tube_2nd_section_ratio
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          lld_search_height: lld_search_height
+          cut_off_speed: cut_off_speed
+          stop_back_volume: stop_back_volume
+          transport_air_volume: transport_air_volume
+          lld_mode: lld_mode
+          side_touch_off_distance: side_touch_off_distance
+          dispense_position_above_z_touch_off: dispense_position_above_z_touch_off
+          lld_sensitivity: lld_sensitivity
+          pressure_lld_sensitivity: pressure_lld_sensitivity
+          swap_speed: swap_speed
+          settling_time: settling_time
+          mix_volume: mix_volume
+          mix_cycles: mix_cycles
+          mix_position_in_z_direction_from_liquid_surface: mix_position_in_z_direction_from_liquid_surface
+          mix_speed: mix_speed
+          surface_following_distance_during_mixing: surface_following_distance_during_mixing
+          TODO_DD_2: TODO_DD_2
+          tadm_algorithm_on_off: tadm_algorithm_on_off
+          limit_curve_index: limit_curve_index
+          recording_mode: recording_mode
+          disable_volume_correction: disable_volume_correction
+        goal_default:
+          side_touch_off_distance: 0
+          tadm_algorithm_on_off: 0
+          recording_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: string
+                jet:
+                  type: string
+                blow_out:
+                  type: string
+                empty:
+                  type: string
+                hlcs:
+                  type: string
+                type_of_dispensing_mode:
+                  type: string
+                minimum_height:
+                  type: string
+                pull_out_distance_to_take_transport_air_in_function_without_lld:
+                  type: string
+                immersion_depth:
+                  type: string
+                surface_following_distance:
+                  type: string
+                tube_2nd_section_height_measured_from_zm:
+                  type: string
+                tube_2nd_section_ratio:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                lld_search_height:
+                  type: string
+                cut_off_speed:
+                  type: string
+                stop_back_volume:
+                  type: string
+                transport_air_volume:
+                  type: string
+                lld_mode:
+                  type: string
+                side_touch_off_distance:
+                  type: number
+                dispense_position_above_z_touch_off:
+                  type: string
+                lld_sensitivity:
+                  type: string
+                pressure_lld_sensitivity:
+                  type: string
+                swap_speed:
+                  type: string
+                settling_time:
+                  type: string
+                mix_volume:
+                  type: string
+                mix_cycles:
+                  type: string
+                mix_position_in_z_direction_from_liquid_surface:
+                  type: string
+                mix_speed:
+                  type: string
+                surface_following_distance_during_mixing:
+                  type: string
+                TODO_DD_2:
+                  type: string
+                tadm_algorithm_on_off:
+                  type: integer
+                limit_curve_index:
+                  type: string
+                recording_mode:
+                  type: integer
+                disable_volume_correction:
+                  type: string
+              required:
+              - ops
+              - use_channels
+              - jet
+              - blow_out
+              - empty
+              - hlcs
+              - type_of_dispensing_mode
+              - minimum_height
+              - pull_out_distance_to_take_transport_air_in_function_without_lld
+              - immersion_depth
+              - surface_following_distance
+              - tube_2nd_section_height_measured_from_zm
+              - tube_2nd_section_ratio
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - lld_search_height
+              - cut_off_speed
+              - stop_back_volume
+              - transport_air_volume
+              - lld_mode
+              - side_touch_off_distance
+              - dispense_position_above_z_touch_off
+              - lld_sensitivity
+              - pressure_lld_sensitivity
+              - swap_speed
+              - settling_time
+              - mix_volume
+              - mix_cycles
+              - mix_position_in_z_direction_from_liquid_surface
+              - mix_speed
+              - surface_following_distance_during_mixing
+              - TODO_DD_2
+              - tadm_algorithm_on_off
+              - limit_curve_index
+              - recording_mode
+              - disable_volume_correction
+          required:
+          - goal
+        handles: {}
+      auto-dispense96:
+        type: UniLabJsonCommand
+        goal:
+          dispense: dispense
+          jet: jet
+          blow_out: blow_out
+          empty: empty
+          hlc: hlc
+          type_of_dispensing_mode: type_of_dispensing_mode
+          tube_2nd_section_height_measured_from_zm: tube_2nd_section_height_measured_from_zm
+          tube_2nd_section_ratio: tube_2nd_section_ratio
+          pull_out_distance_to_take_transport_air_in_function_without_lld: pull_out_distance_to_take_transport_air_in_function_without_lld
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          cut_off_speed: cut_off_speed
+          stop_back_volume: stop_back_volume
+          transport_air_volume: transport_air_volume
+          blow_out_air_volume: blow_out_air_volume
+          lld_mode: lld_mode
+          lld_sensitivity: lld_sensitivity
+          side_touch_off_distance: side_touch_off_distance
+          swap_speed: swap_speed
+          settling_time: settling_time
+          mix_volume: mix_volume
+          mix_cycles: mix_cycles
+          mix_position_in_z_direction_from_liquid_surface: mix_position_in_z_direction_from_liquid_surface
+          surface_following_distance_during_mixing: surface_following_distance_during_mixing
+          mix_speed: mix_speed
+          limit_curve_index: limit_curve_index
+          tadm_channel_pattern: tadm_channel_pattern
+          tadm_algorithm_on_off: tadm_algorithm_on_off
+          recording_mode: recording_mode
+          disable_volume_correction: disable_volume_correction
+        goal_default:
+          jet: false
+          blow_out: false
+          empty: false
+          tube_2nd_section_height_measured_from_zm: 0
+          tube_2nd_section_ratio: 0
+          pull_out_distance_to_take_transport_air_in_function_without_lld: 5.0
+          immersion_depth: 0
+          surface_following_distance: 2.9
+          cut_off_speed: 250.0
+          stop_back_volume: 0
+          lld_mode: 0
+          lld_sensitivity: 4
+          side_touch_off_distance: 0
+          mix_volume: 0
+          mix_cycles: 0
+          mix_position_in_z_direction_from_liquid_surface: 0
+          surface_following_distance_during_mixing: 0
+          limit_curve_index: 0
+          tadm_algorithm_on_off: 0
+          recording_mode: 0
+          disable_volume_correction: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: dispense96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dispense:
+                  type: string
+                jet:
+                  type: boolean
+                blow_out:
+                  type: boolean
+                empty:
+                  type: boolean
+                hlc:
+                  type: string
+                type_of_dispensing_mode:
+                  type: string
+                tube_2nd_section_height_measured_from_zm:
+                  type: number
+                tube_2nd_section_ratio:
+                  type: number
+                pull_out_distance_to_take_transport_air_in_function_without_lld:
+                  type: number
+                immersion_depth:
+                  type: number
+                surface_following_distance:
+                  type: number
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                cut_off_speed:
+                  type: number
+                stop_back_volume:
+                  type: number
+                transport_air_volume:
+                  type: string
+                blow_out_air_volume:
+                  type: string
+                lld_mode:
+                  type: integer
+                lld_sensitivity:
+                  type: integer
+                side_touch_off_distance:
+                  type: number
+                swap_speed:
+                  type: string
+                settling_time:
+                  type: string
+                mix_volume:
+                  type: number
+                mix_cycles:
+                  type: integer
+                mix_position_in_z_direction_from_liquid_surface:
+                  type: number
+                surface_following_distance_during_mixing:
+                  type: number
+                mix_speed:
+                  type: string
+                limit_curve_index:
+                  type: integer
+                tadm_channel_pattern:
+                  type: string
+                tadm_algorithm_on_off:
+                  type: integer
+                recording_mode:
+                  type: integer
+                disable_volume_correction:
+                  type: boolean
+              required:
+              - dispense
+              - jet
+              - blow_out
+              - empty
+              - hlc
+              - type_of_dispensing_mode
+              - tube_2nd_section_height_measured_from_zm
+              - tube_2nd_section_ratio
+              - pull_out_distance_to_take_transport_air_in_function_without_lld
+              - immersion_depth
+              - surface_following_distance
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - cut_off_speed
+              - stop_back_volume
+              - transport_air_volume
+              - blow_out_air_volume
+              - lld_mode
+              - lld_sensitivity
+              - side_touch_off_distance
+              - swap_speed
+              - settling_time
+              - mix_volume
+              - mix_cycles
+              - mix_position_in_z_direction_from_liquid_surface
+              - surface_following_distance_during_mixing
+              - mix_speed
+              - limit_curve_index
+              - tadm_channel_pattern
+              - tadm_algorithm_on_off
+              - recording_mode
+              - disable_volume_correction
+          required:
+          - goal
+        handles: {}
+      auto-dispense_on_fly:
+        type: UniLabJsonCommand
+        goal:
+          y_position: y_position
+          tip_pattern: tip_pattern
+          first_shoot_x_pos: first_shoot_x_pos
+          dispense_on_fly_pos_command_end: dispense_on_fly_pos_command_end
+          x_acceleration_distance_before_first_shoot: x_acceleration_distance_before_first_shoot
+          space_between_shoots: space_between_shoots
+          x_speed: x_speed
+          number_of_shoots: number_of_shoots
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          dispense_volume: dispense_volume
+          dispense_speed: dispense_speed
+          cut_off_speed: cut_off_speed
+          stop_back_volume: stop_back_volume
+          transport_air_volume: transport_air_volume
+          tadm_algorithm_on_off: tadm_algorithm_on_off
+          limit_curve_index: limit_curve_index
+          recording_mode: recording_mode
+        goal_default:
+          first_shoot_x_pos: 0
+          dispense_on_fly_pos_command_end: 0
+          x_acceleration_distance_before_first_shoot: 100
+          space_between_shoots: 900
+          x_speed: 270
+          number_of_shoots: 1
+          tadm_algorithm_on_off: 0
+          recording_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: dispense_on_fly
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                y_position:
+                  type: string
+                tip_pattern:
+                  type: string
+                first_shoot_x_pos:
+                  type: integer
+                dispense_on_fly_pos_command_end:
+                  type: integer
+                x_acceleration_distance_before_first_shoot:
+                  type: integer
+                space_between_shoots:
+                  type: integer
+                x_speed:
+                  type: integer
+                number_of_shoots:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                liquid_surface_at_function_without_lld:
+                  type: string
+                dispense_volume:
+                  type: string
+                dispense_speed:
+                  type: string
+                cut_off_speed:
+                  type: string
+                stop_back_volume:
+                  type: string
+                transport_air_volume:
+                  type: string
+                tadm_algorithm_on_off:
+                  type: integer
+                limit_curve_index:
+                  type: string
+                recording_mode:
+                  type: integer
+              required:
+              - y_position
+              - tip_pattern
+              - first_shoot_x_pos
+              - dispense_on_fly_pos_command_end
+              - x_acceleration_distance_before_first_shoot
+              - space_between_shoots
+              - x_speed
+              - number_of_shoots
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - liquid_surface_at_function_without_lld
+              - dispense_volume
+              - dispense_speed
+              - cut_off_speed
+              - stop_back_volume
+              - transport_air_volume
+              - tadm_algorithm_on_off
+              - limit_curve_index
+              - recording_mode
+          required:
+          - goal
+        handles: {}
+      auto-drop_resource:
+        type: UniLabJsonCommand
+        goal:
+          drop: drop
+          z_clearance_height: z_clearance_height
+          press_on_distance: press_on_distance
+          hotel_depth: hotel_depth
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          z_clearance_height: 0
+          press_on_distance: 5
+          hotel_depth: 0
+          minimal_height_at_command_end: 284.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: drop_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                drop:
+                  type: string
+                z_clearance_height:
+                  type: number
+                press_on_distance:
+                  type: integer
+                hotel_depth:
+                  type: number
+                minimal_height_at_command_end:
+                  type: number
+              required:
+              - drop
+              - z_clearance_height
+              - press_on_distance
+              - hotel_depth
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-drop_tips:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: drop_tips
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+              required:
+              - ops
+              - use_channels
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-drop_tips96:
+        type: UniLabJsonCommand
+        goal:
+          drop: drop
+          z_deposit_position: z_deposit_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          z_deposit_position: 216.4
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: drop_tips96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                drop:
+                  type: string
+                z_deposit_position:
+                  type: number
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+              required:
+              - drop
+              - z_deposit_position
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-expose_channel_n:
+        type: UniLabJsonCommand
+        goal:
+          channel_index: channel_index
+        goal_default:
+          channel_index: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: expose_channel_n
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_index:
+                  type: integer
+              required:
+              - channel_index
+          required:
+          - goal
+        handles: {}
+      auto-get_channel_spacings:
+        type: UniLabJsonCommand
+        goal:
+          use_channels: use_channels
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_channel_spacings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                use_channels:
+                  type: integer
+              required:
+              - use_channels
+          required:
+          - goal
+        handles: {}
+      auto-get_id_from_fw_response:
+        type: UniLabJsonCommand
+        goal:
+          resp: resp
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_id_from_fw_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                resp:
+                  type: string
+              required:
+              - resp
+          required:
+          - goal
+        handles: {}
+      auto-get_or_assign_tip_type_index:
+        type: UniLabJsonCommand
+        goal:
+          tip: tip
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_or_assign_tip_type_index
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tip:
+                  type: string
+              required:
+              - tip
+          required:
+          - goal
+        handles: {}
+      auto-grip_plate:
+        type: UniLabJsonCommand
+        goal:
+          plate_center_x_direction: plate_center_x_direction
+          plate_center_y_direction: plate_center_y_direction
+          plate_center_z_direction: plate_center_z_direction
+          z_speed: z_speed
+          open_gripper_position: open_gripper_position
+          plate_width: plate_width
+          acceleration_index: acceleration_index
+          grip_strength: grip_strength
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          plate_center_x_direction: 0
+          plate_center_y_direction: 3000
+          plate_center_z_direction: 0
+          z_speed: 1287
+          open_gripper_position: 860
+          plate_width: 800
+          acceleration_index: 4
+          grip_strength: 30
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: grip_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate_center_x_direction:
+                  type: integer
+                plate_center_y_direction:
+                  type: integer
+                plate_center_z_direction:
+                  type: integer
+                z_speed:
+                  type: integer
+                open_gripper_position:
+                  type: integer
+                plate_width:
+                  type: integer
+                acceleration_index:
+                  type: integer
+                grip_strength:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+              required:
+              - plate_center_x_direction
+              - plate_center_y_direction
+              - plate_center_z_direction
+              - z_speed
+              - open_gripper_position
+              - plate_width
+              - acceleration_index
+              - grip_strength
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-ipg_expose_channel_n:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_expose_channel_n
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-ipg_get_parking_status:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_get_parking_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-ipg_grip_plate:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          z_position: z_position
+          grip_strength: grip_strength
+          open_gripper_position: open_gripper_position
+          plate_width: plate_width
+          plate_width_tolerance: plate_width_tolerance
+          acceleration_index: acceleration_index
+          z_clearance_height: z_clearance_height
+          hotel_depth: hotel_depth
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          x_position: 5000
+          y_position: 5600
+          z_position: 3600
+          grip_strength: 100
+          open_gripper_position: 860
+          plate_width: 800
+          plate_width_tolerance: 20
+          acceleration_index: 4
+          z_clearance_height: 50
+          hotel_depth: 0
+          minimal_height_at_command_end: 3600
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_grip_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: integer
+                y_position:
+                  type: integer
+                z_position:
+                  type: integer
+                grip_strength:
+                  type: integer
+                open_gripper_position:
+                  type: integer
+                plate_width:
+                  type: integer
+                plate_width_tolerance:
+                  type: integer
+                acceleration_index:
+                  type: integer
+                z_clearance_height:
+                  type: integer
+                hotel_depth:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - z_position
+              - grip_strength
+              - open_gripper_position
+              - plate_width
+              - plate_width_tolerance
+              - acceleration_index
+              - z_clearance_height
+              - hotel_depth
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-ipg_initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-ipg_move_to_defined_position:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          z_position: z_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+        goal_default:
+          x_position: 5000
+          y_position: 5600
+          z_position: 3600
+          minimal_traverse_height_at_begin_of_command: 3600
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_move_to_defined_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: integer
+                y_position:
+                  type: integer
+                z_position:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - z_position
+              - minimal_traverse_height_at_begin_of_command
+          required:
+          - goal
+        handles: {}
+      auto-ipg_park:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_park
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-ipg_prepare_gripper_orientation:
+        type: UniLabJsonCommand
+        goal:
+          grip_orientation: grip_orientation
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+        goal_default:
+          grip_orientation: 32
+          minimal_traverse_height_at_begin_of_command: 3600
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_prepare_gripper_orientation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                grip_orientation:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: integer
+              required:
+              - grip_orientation
+              - minimal_traverse_height_at_begin_of_command
+          required:
+          - goal
+        handles: {}
+      auto-ipg_put_plate:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          z_position: z_position
+          open_gripper_position: open_gripper_position
+          z_clearance_height: z_clearance_height
+          press_on_distance: press_on_distance
+          hotel_depth: hotel_depth
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          x_position: 5000
+          y_position: 5600
+          z_position: 3600
+          open_gripper_position: 860
+          z_clearance_height: 50
+          press_on_distance: 5
+          hotel_depth: 0
+          minimal_height_at_command_end: 3600
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_put_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: integer
+                y_position:
+                  type: integer
+                z_position:
+                  type: integer
+                open_gripper_position:
+                  type: integer
+                z_clearance_height:
+                  type: integer
+                press_on_distance:
+                  type: integer
+                hotel_depth:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - z_position
+              - open_gripper_position
+              - z_clearance_height
+              - press_on_distance
+              - hotel_depth
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-ipg_query_tip_presence:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_query_tip_presence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-ipg_release_object:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_release_object
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-ipg_request_access_range:
+        type: UniLabJsonCommand
+        goal:
+          grip_orientation: grip_orientation
+        goal_default:
+          grip_orientation: 32
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_request_access_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                grip_orientation:
+                  type: integer
+              required:
+              - grip_orientation
+          required:
+          - goal
+        handles: {}
+      auto-ipg_request_actual_angular_dimensions:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_request_actual_angular_dimensions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-ipg_request_configuration:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_request_configuration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-ipg_request_initialization_status:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_request_initialization_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-ipg_request_position:
+        type: UniLabJsonCommand
+        goal:
+          grip_orientation: grip_orientation
+        goal_default:
+          grip_orientation: 32
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_request_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                grip_orientation:
+                  type: integer
+              required:
+              - grip_orientation
+          required:
+          - goal
+        handles: {}
+      auto-ipg_search_for_teach_in_signal_in_x_direction:
+        type: UniLabJsonCommand
+        goal:
+          x_search_distance: x_search_distance
+          x_speed: x_speed
+        goal_default:
+          x_search_distance: 0
+          x_speed: 50
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_search_for_teach_in_signal_in_x_direction
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_search_distance:
+                  type: integer
+                x_speed:
+                  type: integer
+              required:
+              - x_search_distance
+              - x_speed
+          required:
+          - goal
+        handles: {}
+      auto-ipg_set_any_parameter_within_this_module:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: ipg_set_any_parameter_within_this_module
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-loading_cover_initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: loading_cover_initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-loading_cover_request_initialization_status:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: loading_cover_request_initialization_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-move_channel_x:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          x: x
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_channel_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                x:
+                  type: number
+              required:
+              - channel
+              - x
+          required:
+          - goal
+        handles: {}
+      auto-move_channel_y:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          y: y
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_channel_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                y:
+                  type: number
+              required:
+              - channel
+              - y
+          required:
+          - goal
+        handles: {}
+      auto-move_channel_z:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          z: z
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_channel_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                z:
+                  type: number
+              required:
+              - channel
+              - z
+          required:
+          - goal
+        handles: {}
+      auto-move_picked_up_resource:
+        type: UniLabJsonCommand
+        goal:
+          move: move
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_picked_up_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                move:
+                  type: string
+              required:
+              - move
+          required:
+          - goal
+        handles: {}
+      auto-move_to_defined_position:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          tip_pattern: tip_pattern
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          z_position: z_position
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_to_defined_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: string
+                y_position:
+                  type: string
+                tip_pattern:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                z_position:
+                  type: string
+              required:
+              - x_position
+              - y_position
+              - tip_pattern
+              - minimal_traverse_height_at_begin_of_command
+              - z_position
+          required:
+          - goal
+        handles: {}
+      auto-move_to_position:
+        type: UniLabJsonCommand
+        goal:
+          plate_center_x_direction: plate_center_x_direction
+          plate_center_y_direction: plate_center_y_direction
+          plate_center_z_direction: plate_center_z_direction
+          z_speed: z_speed
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+        goal_default:
+          plate_center_x_direction: 0
+          plate_center_y_direction: 3000
+          plate_center_z_direction: 0
+          z_speed: 1287
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_to_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate_center_x_direction:
+                  type: integer
+                plate_center_y_direction:
+                  type: integer
+                plate_center_z_direction:
+                  type: integer
+                z_speed:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+              required:
+              - plate_center_x_direction
+              - plate_center_y_direction
+              - plate_center_z_direction
+              - z_speed
+              - minimal_traverse_height_at_begin_of_command
+          required:
+          - goal
+        handles: {}
+      auto-nano_pulse_dispense:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          TODO_DB_0: TODO_DB_0
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          TODO_DB_1: TODO_DB_1
+          TODO_DB_2: TODO_DB_2
+          TODO_DB_3: TODO_DB_3
+          TODO_DB_4: TODO_DB_4
+          TODO_DB_5: TODO_DB_5
+          TODO_DB_6: TODO_DB_6
+          TODO_DB_7: TODO_DB_7
+          TODO_DB_8: TODO_DB_8
+          TODO_DB_9: TODO_DB_9
+          TODO_DB_10: TODO_DB_10
+          TODO_DB_11: TODO_DB_11
+          TODO_DB_12: TODO_DB_12
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: nano_pulse_dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: string
+                y_position:
+                  type: string
+                TODO_DB_0:
+                  type: string
+                liquid_surface_at_function_without_lld:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                TODO_DB_1:
+                  type: string
+                TODO_DB_2:
+                  type: string
+                TODO_DB_3:
+                  type: string
+                TODO_DB_4:
+                  type: string
+                TODO_DB_5:
+                  type: string
+                TODO_DB_6:
+                  type: string
+                TODO_DB_7:
+                  type: string
+                TODO_DB_8:
+                  type: string
+                TODO_DB_9:
+                  type: string
+                TODO_DB_10:
+                  type: string
+                TODO_DB_11:
+                  type: string
+                TODO_DB_12:
+                  type: string
+              required:
+              - x_position
+              - y_position
+              - TODO_DB_0
+              - liquid_surface_at_function_without_lld
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - TODO_DB_1
+              - TODO_DB_2
+              - TODO_DB_3
+              - TODO_DB_4
+              - TODO_DB_5
+              - TODO_DB_6
+              - TODO_DB_7
+              - TODO_DB_8
+              - TODO_DB_9
+              - TODO_DB_10
+              - TODO_DB_11
+              - TODO_DB_12
+          required:
+          - goal
+        handles: {}
+      auto-pick_up_resource:
+        type: UniLabJsonCommand
+        goal:
+          pickup: pickup
+          grip_strength: grip_strength
+          plate_width_tolerance: plate_width_tolerance
+          acceleration_index: acceleration_index
+          z_clearance_height: z_clearance_height
+          hotel_depth: hotel_depth
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          grip_strength: 81
+          plate_width_tolerance: 2.0
+          acceleration_index: 4
+          z_clearance_height: 0
+          hotel_depth: 0
+          minimal_height_at_command_end: 284.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_up_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pickup:
+                  type: string
+                grip_strength:
+                  type: integer
+                plate_width_tolerance:
+                  type: number
+                acceleration_index:
+                  type: integer
+                z_clearance_height:
+                  type: number
+                hotel_depth:
+                  type: number
+                minimal_height_at_command_end:
+                  type: number
+              required:
+              - pickup
+              - grip_strength
+              - plate_width_tolerance
+              - acceleration_index
+              - z_clearance_height
+              - hotel_depth
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-pick_up_tips:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_up_tips
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+              required:
+              - ops
+              - use_channels
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-pick_up_tips96:
+        type: UniLabJsonCommand
+        goal:
+          pickup: pickup
+          tip_handling_method: tip_handling_method
+          z_deposit_position: z_deposit_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          tip_handling_method: 0
+          z_deposit_position: 216.4
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_up_tips96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pickup:
+                  type: string
+                tip_handling_method:
+                  type: integer
+                z_deposit_position:
+                  type: number
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+              required:
+              - pickup
+              - tip_handling_method
+              - z_deposit_position
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-pip_aspirate:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          type_of_aspiration: type_of_aspiration
+          tip_pattern: tip_pattern
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          lld_search_height: lld_search_height
+          clot_detection_height: clot_detection_height
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          pull_out_distance_to_take_transport_air_in_function_without_lld: pull_out_distance_to_take_transport_air_in_function_without_lld
+          tube_2nd_section_height_measured_from_zm: tube_2nd_section_height_measured_from_zm
+          tube_2nd_section_ratio: tube_2nd_section_ratio
+          minimum_height: minimum_height
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          aspiration_volume: aspiration_volume
+          TODO_DA_2: TODO_DA_2
+          aspiration_speed: aspiration_speed
+          transport_air_volume: transport_air_volume
+          blow_out_air_volume: blow_out_air_volume
+          pre_wetting_volume: pre_wetting_volume
+          lld_mode: lld_mode
+          lld_sensitivity: lld_sensitivity
+          pressure_lld_sensitivity: pressure_lld_sensitivity
+          aspirate_position_above_z_touch_off: aspirate_position_above_z_touch_off
+          TODO_DA_4: TODO_DA_4
+          swap_speed: swap_speed
+          settling_time: settling_time
+          mix_volume: mix_volume
+          mix_cycles: mix_cycles
+          mix_position_in_z_direction_from_liquid_surface: mix_position_in_z_direction_from_liquid_surface
+          mix_speed: mix_speed
+          surface_following_distance_during_mixing: surface_following_distance_during_mixing
+          TODO_DA_5: TODO_DA_5
+          capacitive_mad_supervision_on_off: capacitive_mad_supervision_on_off
+          pressure_mad_supervision_on_off: pressure_mad_supervision_on_off
+          tadm_algorithm_on_off: tadm_algorithm_on_off
+          limit_curve_index: limit_curve_index
+          recording_mode: recording_mode
+        goal_default:
+          tadm_algorithm_on_off: 0
+          recording_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pip_aspirate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: string
+                y_position:
+                  type: string
+                type_of_aspiration:
+                  type: string
+                tip_pattern:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                lld_search_height:
+                  type: string
+                clot_detection_height:
+                  type: string
+                liquid_surface_at_function_without_lld:
+                  type: string
+                pull_out_distance_to_take_transport_air_in_function_without_lld:
+                  type: string
+                tube_2nd_section_height_measured_from_zm:
+                  type: string
+                tube_2nd_section_ratio:
+                  type: string
+                minimum_height:
+                  type: string
+                immersion_depth:
+                  type: string
+                surface_following_distance:
+                  type: string
+                aspiration_volume:
+                  type: string
+                TODO_DA_2:
+                  type: string
+                aspiration_speed:
+                  type: string
+                transport_air_volume:
+                  type: string
+                blow_out_air_volume:
+                  type: string
+                pre_wetting_volume:
+                  type: string
+                lld_mode:
+                  type: string
+                lld_sensitivity:
+                  type: string
+                pressure_lld_sensitivity:
+                  type: string
+                aspirate_position_above_z_touch_off:
+                  type: string
+                TODO_DA_4:
+                  type: string
+                swap_speed:
+                  type: string
+                settling_time:
+                  type: string
+                mix_volume:
+                  type: string
+                mix_cycles:
+                  type: string
+                mix_position_in_z_direction_from_liquid_surface:
+                  type: string
+                mix_speed:
+                  type: string
+                surface_following_distance_during_mixing:
+                  type: string
+                TODO_DA_5:
+                  type: string
+                capacitive_mad_supervision_on_off:
+                  type: string
+                pressure_mad_supervision_on_off:
+                  type: string
+                tadm_algorithm_on_off:
+                  type: integer
+                limit_curve_index:
+                  type: string
+                recording_mode:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - type_of_aspiration
+              - tip_pattern
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - lld_search_height
+              - clot_detection_height
+              - liquid_surface_at_function_without_lld
+              - pull_out_distance_to_take_transport_air_in_function_without_lld
+              - tube_2nd_section_height_measured_from_zm
+              - tube_2nd_section_ratio
+              - minimum_height
+              - immersion_depth
+              - surface_following_distance
+              - aspiration_volume
+              - TODO_DA_2
+              - aspiration_speed
+              - transport_air_volume
+              - blow_out_air_volume
+              - pre_wetting_volume
+              - lld_mode
+              - lld_sensitivity
+              - pressure_lld_sensitivity
+              - aspirate_position_above_z_touch_off
+              - TODO_DA_4
+              - swap_speed
+              - settling_time
+              - mix_volume
+              - mix_cycles
+              - mix_position_in_z_direction_from_liquid_surface
+              - mix_speed
+              - surface_following_distance_during_mixing
+              - TODO_DA_5
+              - capacitive_mad_supervision_on_off
+              - pressure_mad_supervision_on_off
+              - tadm_algorithm_on_off
+              - limit_curve_index
+              - recording_mode
+          required:
+          - goal
+        handles: {}
+      auto-pip_dispense:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          type_of_dispensing_mode: type_of_dispensing_mode
+          tip_pattern: tip_pattern
+          minimum_height: minimum_height
+          lld_search_height: lld_search_height
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          pull_out_distance_to_take_transport_air_in_function_without_lld: pull_out_distance_to_take_transport_air_in_function_without_lld
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          tube_2nd_section_height_measured_from_zm: tube_2nd_section_height_measured_from_zm
+          tube_2nd_section_ratio: tube_2nd_section_ratio
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          dispense_volume: dispense_volume
+          dispense_speed: dispense_speed
+          cut_off_speed: cut_off_speed
+          stop_back_volume: stop_back_volume
+          transport_air_volume: transport_air_volume
+          blow_out_air_volume: blow_out_air_volume
+          lld_mode: lld_mode
+          side_touch_off_distance: side_touch_off_distance
+          dispense_position_above_z_touch_off: dispense_position_above_z_touch_off
+          lld_sensitivity: lld_sensitivity
+          pressure_lld_sensitivity: pressure_lld_sensitivity
+          swap_speed: swap_speed
+          settling_time: settling_time
+          mix_volume: mix_volume
+          mix_cycles: mix_cycles
+          mix_position_in_z_direction_from_liquid_surface: mix_position_in_z_direction_from_liquid_surface
+          mix_speed: mix_speed
+          surface_following_distance_during_mixing: surface_following_distance_during_mixing
+          TODO_DD_2: TODO_DD_2
+          tadm_algorithm_on_off: tadm_algorithm_on_off
+          limit_curve_index: limit_curve_index
+          recording_mode: recording_mode
+        goal_default:
+          side_touch_off_distance: 0
+          tadm_algorithm_on_off: 0
+          recording_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pip_dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: string
+                y_position:
+                  type: string
+                type_of_dispensing_mode:
+                  type: string
+                tip_pattern:
+                  type: string
+                minimum_height:
+                  type: string
+                lld_search_height:
+                  type: string
+                liquid_surface_at_function_without_lld:
+                  type: string
+                pull_out_distance_to_take_transport_air_in_function_without_lld:
+                  type: string
+                immersion_depth:
+                  type: string
+                surface_following_distance:
+                  type: string
+                tube_2nd_section_height_measured_from_zm:
+                  type: string
+                tube_2nd_section_ratio:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                dispense_volume:
+                  type: string
+                dispense_speed:
+                  type: string
+                cut_off_speed:
+                  type: string
+                stop_back_volume:
+                  type: string
+                transport_air_volume:
+                  type: string
+                blow_out_air_volume:
+                  type: string
+                lld_mode:
+                  type: string
+                side_touch_off_distance:
+                  type: integer
+                dispense_position_above_z_touch_off:
+                  type: string
+                lld_sensitivity:
+                  type: string
+                pressure_lld_sensitivity:
+                  type: string
+                swap_speed:
+                  type: string
+                settling_time:
+                  type: string
+                mix_volume:
+                  type: string
+                mix_cycles:
+                  type: string
+                mix_position_in_z_direction_from_liquid_surface:
+                  type: string
+                mix_speed:
+                  type: string
+                surface_following_distance_during_mixing:
+                  type: string
+                TODO_DD_2:
+                  type: string
+                tadm_algorithm_on_off:
+                  type: integer
+                limit_curve_index:
+                  type: string
+                recording_mode:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - type_of_dispensing_mode
+              - tip_pattern
+              - minimum_height
+              - lld_search_height
+              - liquid_surface_at_function_without_lld
+              - pull_out_distance_to_take_transport_air_in_function_without_lld
+              - immersion_depth
+              - surface_following_distance
+              - tube_2nd_section_height_measured_from_zm
+              - tube_2nd_section_ratio
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - dispense_volume
+              - dispense_speed
+              - cut_off_speed
+              - stop_back_volume
+              - transport_air_volume
+              - blow_out_air_volume
+              - lld_mode
+              - side_touch_off_distance
+              - dispense_position_above_z_touch_off
+              - lld_sensitivity
+              - pressure_lld_sensitivity
+              - swap_speed
+              - settling_time
+              - mix_volume
+              - mix_cycles
+              - mix_position_in_z_direction_from_liquid_surface
+              - mix_speed
+              - surface_following_distance_during_mixing
+              - TODO_DD_2
+              - tadm_algorithm_on_off
+              - limit_curve_index
+              - recording_mode
+          required:
+          - goal
+        handles: {}
+      auto-pip_initialize:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          begin_z_deposit_position: begin_z_deposit_position
+          end_z_deposit_position: end_z_deposit_position
+          minimal_height_at_command_end: minimal_height_at_command_end
+          tip_pattern: tip_pattern
+          tip_type: tip_type
+          TODO_DI_2: TODO_DI_2
+        goal_default:
+          TODO_DI_2: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pip_initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: string
+                y_position:
+                  type: string
+                begin_z_deposit_position:
+                  type: string
+                end_z_deposit_position:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                tip_pattern:
+                  type: string
+                tip_type:
+                  type: string
+                TODO_DI_2:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - begin_z_deposit_position
+              - end_z_deposit_position
+              - minimal_height_at_command_end
+              - tip_pattern
+              - tip_type
+              - TODO_DI_2
+          required:
+          - goal
+        handles: {}
+      auto-pip_request_initialization_status:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pip_request_initialization_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-pip_tip_discard:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          begin_z_deposit_position: begin_z_deposit_position
+          end_z_deposit_position: end_z_deposit_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          tip_pattern: tip_pattern
+          TODO_TR_2: TODO_TR_2
+          tip_handling_method: tip_handling_method
+        goal_default:
+          TODO_TR_2: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pip_tip_discard
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: string
+                y_position:
+                  type: string
+                begin_z_deposit_position:
+                  type: string
+                end_z_deposit_position:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                tip_pattern:
+                  type: string
+                TODO_TR_2:
+                  type: integer
+                tip_handling_method:
+                  type: string
+              required:
+              - x_position
+              - y_position
+              - begin_z_deposit_position
+              - end_z_deposit_position
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - tip_pattern
+              - TODO_TR_2
+              - tip_handling_method
+          required:
+          - goal
+        handles: {}
+      auto-pip_tip_pick_up:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          tip_pattern: tip_pattern
+          tip_type: tip_type
+          begin_z_deposit_position: begin_z_deposit_position
+          end_z_deposit_position: end_z_deposit_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          blow_out_air_volume: blow_out_air_volume
+          tip_handling_method: tip_handling_method
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pip_tip_pick_up
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: string
+                y_position:
+                  type: string
+                tip_pattern:
+                  type: string
+                tip_type:
+                  type: string
+                begin_z_deposit_position:
+                  type: string
+                end_z_deposit_position:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                blow_out_air_volume:
+                  type: string
+                tip_handling_method:
+                  type: string
+              required:
+              - x_position
+              - y_position
+              - tip_pattern
+              - tip_type
+              - begin_z_deposit_position
+              - end_z_deposit_position
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - blow_out_air_volume
+              - tip_handling_method
+          required:
+          - goal
+        handles: {}
+      auto-position_all_channels_in_y_direction:
+        type: UniLabJsonCommand
+        goal:
+          y_position: y_position
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: position_all_channels_in_y_direction
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                y_position:
+                  type: string
+              required:
+              - y_position
+          required:
+          - goal
+        handles: {}
+      auto-position_all_channels_in_z_direction:
+        type: UniLabJsonCommand
+        goal:
+          z_position: z_position
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: position_all_channels_in_z_direction
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                z_position:
+                  type: string
+              required:
+              - z_position
+          required:
+          - goal
+        handles: {}
+      auto-position_single_channel_in_y_direction:
+        type: UniLabJsonCommand
+        goal:
+          channel_index: channel_index
+          y_position: y_position
+        goal_default:
+          channel_index: 1
+          y_position: 3000
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: position_single_channel_in_y_direction
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_index:
+                  type: integer
+                y_position:
+                  type: integer
+              required:
+              - channel_index
+              - y_position
+          required:
+          - goal
+        handles: {}
+      auto-position_single_channel_in_z_direction:
+        type: UniLabJsonCommand
+        goal:
+          channel_index: channel_index
+          z_position: z_position
+        goal_default:
+          channel_index: 1
+          z_position: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: position_single_channel_in_z_direction
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_index:
+                  type: integer
+                z_position:
+                  type: integer
+              required:
+              - channel_index
+              - z_position
+          required:
+          - goal
+        handles: {}
+      auto-prepare_for_manual_channel_operation:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: prepare_for_manual_channel_operation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+              required:
+              - channel
+          required:
+          - goal
+        handles: {}
+      auto-put_plate:
+        type: UniLabJsonCommand
+        goal:
+          plate_center_x_direction: plate_center_x_direction
+          plate_center_y_direction: plate_center_y_direction
+          plate_center_z_direction: plate_center_z_direction
+          press_on_distance: press_on_distance
+          z_speed: z_speed
+          open_gripper_position: open_gripper_position
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          plate_center_x_direction: 0
+          plate_center_y_direction: 3000
+          plate_center_z_direction: 0
+          press_on_distance: 5
+          z_speed: 1287
+          open_gripper_position: 860
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: put_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate_center_x_direction:
+                  type: integer
+                plate_center_y_direction:
+                  type: integer
+                plate_center_z_direction:
+                  type: integer
+                press_on_distance:
+                  type: integer
+                z_speed:
+                  type: integer
+                open_gripper_position:
+                  type: integer
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+              required:
+              - plate_center_x_direction
+              - plate_center_y_direction
+              - plate_center_z_direction
+              - press_on_distance
+              - z_speed
+              - open_gripper_position
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-query_tip_presence:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: query_tip_presence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-release_object:
+        type: UniLabJsonCommand
+        goal:
+          first_pip_channel_node_no: first_pip_channel_node_no
+        goal_default:
+          first_pip_channel_node_no: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: release_object
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                first_pip_channel_node_no:
+                  type: integer
+              required:
+              - first_pip_channel_node_no
+          required:
+          - goal
+        handles: {}
+      auto-request_channel_dispense_on_fly_status:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_channel_dispense_on_fly_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_height_of_last_lld:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_height_of_last_lld
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_tip_presence:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_tip_presence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_y_position_of_channel_n:
+        type: UniLabJsonCommand
+        goal:
+          channel_index: channel_index
+        goal_default:
+          channel_index: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_y_position_of_channel_n
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_index:
+                  type: integer
+              required:
+              - channel_index
+          required:
+          - goal
+        handles: {}
+      auto-request_y_positions_of_all_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_y_positions_of_all_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_z_position_of_channel_n:
+        type: UniLabJsonCommand
+        goal:
+          channel_index: channel_index
+        goal_default:
+          channel_index: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_z_position_of_channel_n
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_index:
+                  type: integer
+              required:
+              - channel_index
+          required:
+          - goal
+        handles: {}
+      auto-request_z_positions_of_all_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_z_positions_of_all_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-russian_roulette:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: russian_roulette
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-search_for_teach_in_signal_in_x_direction:
+        type: UniLabJsonCommand
+        goal:
+          channel_index: channel_index
+          x_search_distance: x_search_distance
+          x_speed: x_speed
+        goal_default:
+          channel_index: 1
+          x_search_distance: 0
+          x_speed: 270
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: search_for_teach_in_signal_in_x_direction
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_index:
+                  type: integer
+                x_search_distance:
+                  type: integer
+                x_speed:
+                  type: integer
+              required:
+              - channel_index
+              - x_search_distance
+              - x_speed
+          required:
+          - goal
+        handles: {}
+      auto-send_raw_command:
+        type: UniLabJsonCommand
+        goal:
+          command: command
+          write_timeout: write_timeout
+          read_timeout: read_timeout
+          wait: wait
+        goal_default:
+          wait: true
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: send_raw_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                write_timeout:
+                  type: string
+                read_timeout:
+                  type: string
+                wait:
+                  type: boolean
+              required:
+              - command
+              - write_timeout
+              - read_timeout
+              - wait
+          required:
+          - goal
+        handles: {}
+      auto-set_any_parameter_within_this_module:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_any_parameter_within_this_module
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-set_deck:
+        type: UniLabJsonCommand
+        goal:
+          deck: deck
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_deck
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                deck:
+                  type: string
+              required:
+              - deck
+          required:
+          - goal
+        handles: {}
+      auto-set_heads:
+        type: UniLabJsonCommand
+        goal:
+          head: head
+          head96: head96
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_heads
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                head:
+                  type: integer
+                head96:
+                  type: integer
+              required:
+              - head
+              - head96
+          required:
+          - goal
+        handles: {}
+      auto-set_led_color:
+        type: UniLabJsonCommand
+        goal:
+          mode: mode
+          intensity: intensity
+          white: white
+          red: red
+          green: green
+          blue: blue
+          uv: uv
+          blink_interval: blink_interval
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_led_color
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                intensity:
+                  type: integer
+                white:
+                  type: integer
+                red:
+                  type: integer
+                green:
+                  type: integer
+                blue:
+                  type: integer
+                uv:
+                  type: integer
+                blink_interval:
+                  type: string
+              required:
+              - mode
+              - intensity
+              - white
+              - red
+              - green
+              - blue
+              - uv
+              - blink_interval
+          required:
+          - goal
+        handles: {}
+      auto-set_loading_cover:
+        type: UniLabJsonCommand
+        goal:
+          cover_open: cover_open
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_loading_cover
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cover_open:
+                  type: boolean
+              required:
+              - cover_open
+          required:
+          - goal
+        handles: {}
+      auto-set_minimum_traversal_height:
+        type: UniLabJsonCommand
+        goal:
+          traversal_height: traversal_height
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_minimum_traversal_height
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                traversal_height:
+                  type: number
+              required:
+              - traversal_height
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal:
+          skip_loading_cover: skip_loading_cover
+          skip_core96: skip_core96
+          skip_ipg: skip_ipg
+        goal_default:
+          skip_loading_cover: false
+          skip_core96: false
+          skip_ipg: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                skip_loading_cover:
+                  type: boolean
+                skip_core96:
+                  type: boolean
+                skip_ipg:
+                  type: boolean
+              required:
+              - skip_loading_cover
+              - skip_core96
+              - skip_ipg
+          required:
+          - goal
+        handles: {}
+      auto-simultaneous_aspiration_dispensation_of_liquid:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          type_of_aspiration: type_of_aspiration
+          type_of_dispensing_mode: type_of_dispensing_mode
+          tip_pattern: tip_pattern
+          TODO_DM_1: TODO_DM_1
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          minimal_height_at_command_end: minimal_height_at_command_end
+          lld_search_height: lld_search_height
+          clot_detection_height: clot_detection_height
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          pull_out_distance_to_take_transport_air_in_function_without_lld: pull_out_distance_to_take_transport_air_in_function_without_lld
+          minimum_height: minimum_height
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          tube_2nd_section_height_measured_from_zm: tube_2nd_section_height_measured_from_zm
+          tube_2nd_section_ratio: tube_2nd_section_ratio
+          aspiration_volume: aspiration_volume
+          TODO_DM_3: TODO_DM_3
+          aspiration_speed: aspiration_speed
+          dispense_volume: dispense_volume
+          dispense_speed: dispense_speed
+          cut_off_speed: cut_off_speed
+          stop_back_volume: stop_back_volume
+          transport_air_volume: transport_air_volume
+          blow_out_air_volume: blow_out_air_volume
+          pre_wetting_volume: pre_wetting_volume
+          lld_mode: lld_mode
+          aspirate_position_above_z_touch_off: aspirate_position_above_z_touch_off
+          lld_sensitivity: lld_sensitivity
+          pressure_lld_sensitivity: pressure_lld_sensitivity
+          swap_speed: swap_speed
+          settling_time: settling_time
+          mix_volume: mix_volume
+          mix_cycles: mix_cycles
+          mix_position_in_z_direction_from_liquid_surface: mix_position_in_z_direction_from_liquid_surface
+          mix_speed: mix_speed
+          surface_following_distance_during_mixing: surface_following_distance_during_mixing
+          TODO_DM_5: TODO_DM_5
+          capacitive_mad_supervision_on_off: capacitive_mad_supervision_on_off
+          pressure_mad_supervision_on_off: pressure_mad_supervision_on_off
+          tadm_algorithm_on_off: tadm_algorithm_on_off
+          limit_curve_index: limit_curve_index
+          recording_mode: recording_mode
+        goal_default:
+          tadm_algorithm_on_off: 0
+          recording_mode: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: simultaneous_aspiration_dispensation_of_liquid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: string
+                y_position:
+                  type: string
+                type_of_aspiration:
+                  type: string
+                type_of_dispensing_mode:
+                  type: string
+                tip_pattern:
+                  type: string
+                TODO_DM_1:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                minimal_height_at_command_end:
+                  type: string
+                lld_search_height:
+                  type: string
+                clot_detection_height:
+                  type: string
+                liquid_surface_at_function_without_lld:
+                  type: string
+                pull_out_distance_to_take_transport_air_in_function_without_lld:
+                  type: string
+                minimum_height:
+                  type: string
+                immersion_depth:
+                  type: string
+                surface_following_distance:
+                  type: string
+                tube_2nd_section_height_measured_from_zm:
+                  type: string
+                tube_2nd_section_ratio:
+                  type: string
+                aspiration_volume:
+                  type: string
+                TODO_DM_3:
+                  type: string
+                aspiration_speed:
+                  type: string
+                dispense_volume:
+                  type: string
+                dispense_speed:
+                  type: string
+                cut_off_speed:
+                  type: string
+                stop_back_volume:
+                  type: string
+                transport_air_volume:
+                  type: string
+                blow_out_air_volume:
+                  type: string
+                pre_wetting_volume:
+                  type: string
+                lld_mode:
+                  type: string
+                aspirate_position_above_z_touch_off:
+                  type: string
+                lld_sensitivity:
+                  type: string
+                pressure_lld_sensitivity:
+                  type: string
+                swap_speed:
+                  type: string
+                settling_time:
+                  type: string
+                mix_volume:
+                  type: string
+                mix_cycles:
+                  type: string
+                mix_position_in_z_direction_from_liquid_surface:
+                  type: string
+                mix_speed:
+                  type: string
+                surface_following_distance_during_mixing:
+                  type: string
+                TODO_DM_5:
+                  type: string
+                capacitive_mad_supervision_on_off:
+                  type: string
+                pressure_mad_supervision_on_off:
+                  type: string
+                tadm_algorithm_on_off:
+                  type: integer
+                limit_curve_index:
+                  type: string
+                recording_mode:
+                  type: integer
+              required:
+              - x_position
+              - y_position
+              - type_of_aspiration
+              - type_of_dispensing_mode
+              - tip_pattern
+              - TODO_DM_1
+              - minimal_traverse_height_at_begin_of_command
+              - minimal_height_at_command_end
+              - lld_search_height
+              - clot_detection_height
+              - liquid_surface_at_function_without_lld
+              - pull_out_distance_to_take_transport_air_in_function_without_lld
+              - minimum_height
+              - immersion_depth
+              - surface_following_distance
+              - tube_2nd_section_height_measured_from_zm
+              - tube_2nd_section_ratio
+              - aspiration_volume
+              - TODO_DM_3
+              - aspiration_speed
+              - dispense_volume
+              - dispense_speed
+              - cut_off_speed
+              - stop_back_volume
+              - transport_air_volume
+              - blow_out_air_volume
+              - pre_wetting_volume
+              - lld_mode
+              - aspirate_position_above_z_touch_off
+              - lld_sensitivity
+              - pressure_lld_sensitivity
+              - swap_speed
+              - settling_time
+              - mix_volume
+              - mix_cycles
+              - mix_position_in_z_direction_from_liquid_surface
+              - mix_speed
+              - surface_following_distance_during_mixing
+              - TODO_DM_5
+              - capacitive_mad_supervision_on_off
+              - pressure_mad_supervision_on_off
+              - tadm_algorithm_on_off
+              - limit_curve_index
+              - recording_mode
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-teach_rack_using_channel_n:
+        type: UniLabJsonCommand
+        goal:
+          channel_index: channel_index
+          gap_center_x_direction: gap_center_x_direction
+          gap_center_y_direction: gap_center_y_direction
+          gap_center_z_direction: gap_center_z_direction
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          channel_index: 1
+          gap_center_x_direction: 0
+          gap_center_y_direction: 3000
+          gap_center_z_direction: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: teach_rack_using_channel_n
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_index:
+                  type: integer
+                gap_center_x_direction:
+                  type: integer
+                gap_center_y_direction:
+                  type: integer
+                gap_center_z_direction:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: string
+              required:
+              - channel_index
+              - gap_center_x_direction
+              - gap_center_y_direction
+              - gap_center_z_direction
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-wash_tips:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          y_position: y_position
+          tip_pattern: tip_pattern
+          minimal_traverse_height_at_begin_of_command: minimal_traverse_height_at_begin_of_command
+          liquid_surface_at_function_without_lld: liquid_surface_at_function_without_lld
+          aspiration_volume: aspiration_volume
+          aspiration_speed: aspiration_speed
+          dispense_speed: dispense_speed
+          swap_speed: swap_speed
+          soak_time: soak_time
+          wash_cycles: wash_cycles
+          minimal_height_at_command_end: minimal_height_at_command_end
+        goal_default:
+          soak_time: 0
+          wash_cycles: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: wash_tips
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: string
+                y_position:
+                  type: string
+                tip_pattern:
+                  type: string
+                minimal_traverse_height_at_begin_of_command:
+                  type: string
+                liquid_surface_at_function_without_lld:
+                  type: string
+                aspiration_volume:
+                  type: string
+                aspiration_speed:
+                  type: string
+                dispense_speed:
+                  type: string
+                swap_speed:
+                  type: string
+                soak_time:
+                  type: integer
+                wash_cycles:
+                  type: integer
+                minimal_height_at_command_end:
+                  type: string
+              required:
+              - x_position
+              - y_position
+              - tip_pattern
+              - minimal_traverse_height_at_begin_of_command
+              - liquid_surface_at_function_without_lld
+              - aspiration_volume
+              - aspiration_speed
+              - dispense_speed
+              - swap_speed
+              - soak_time
+              - wash_cycles
+              - minimal_height_at_command_end
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_move_arm_relatively_in_x:
+        type: UniLabJsonCommand
+        goal:
+          x_search_distance: x_search_distance
+          x_speed: x_speed
+          TODO_XS_1: TODO_XS_1
+        goal_default:
+          x_search_distance: 0
+          x_speed: 25000
+          TODO_XS_1: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_move_arm_relatively_in_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_search_distance:
+                  type: integer
+                x_speed:
+                  type: integer
+                TODO_XS_1:
+                  type: integer
+              required:
+              - x_search_distance
+              - x_speed
+              - TODO_XS_1
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_move_to_x_position:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          x_speed: x_speed
+          TODO_XI_1: TODO_XI_1
+        goal_default:
+          x_position: 5000
+          x_speed: 25000
+          TODO_XI_1: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_move_to_x_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: integer
+                x_speed:
+                  type: integer
+                TODO_XI_1:
+                  type: integer
+              required:
+              - x_position
+              - x_speed
+              - TODO_XI_1
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_move_to_x_position_with_all_attached_components_in_z_safety_position:
+        type: UniLabJsonCommand
+        goal:
+          x_position: x_position
+          x_speed: x_speed
+          TODO_XA_1: TODO_XA_1
+        goal_default:
+          x_position: 5000
+          x_speed: 25000
+          TODO_XA_1: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_move_to_x_position_with_all_attached_components_in_z_safety_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_position:
+                  type: integer
+                x_speed:
+                  type: integer
+                TODO_XA_1:
+                  type: integer
+              required:
+              - x_position
+              - x_speed
+              - TODO_XA_1
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_request_arm_x_position:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_request_arm_x_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_request_error_code:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_request_error_code
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_request_x_drive_recorded_data:
+        type: UniLabJsonCommand
+        goal:
+          TODO_QL_1: TODO_QL_1
+          TODO_QL_2: TODO_QL_2
+        goal_default:
+          TODO_QL_1: 0
+          TODO_QL_2: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_request_x_drive_recorded_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                TODO_QL_1:
+                  type: integer
+                TODO_QL_2:
+                  type: integer
+              required:
+              - TODO_QL_1
+              - TODO_QL_2
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_search_x_for_teach_signal:
+        type: UniLabJsonCommand
+        goal:
+          x_search_distance: x_search_distance
+          x_speed: x_speed
+          TODO_XT_1: TODO_XT_1
+        goal_default:
+          x_search_distance: 0
+          x_speed: 25000
+          TODO_XT_1: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_search_x_for_teach_signal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_search_distance:
+                  type: integer
+                x_speed:
+                  type: integer
+                TODO_XT_1:
+                  type: integer
+              required:
+              - x_search_distance
+              - x_speed
+              - TODO_XT_1
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_send_message_to_motion_controller:
+        type: UniLabJsonCommand
+        goal:
+          TODO_BD_1: TODO_BD_1
+        goal_default:
+          TODO_BD_1: ''
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_send_message_to_motion_controller
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                TODO_BD_1:
+                  type: string
+              required:
+              - TODO_BD_1
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_set_any_parameter_within_this_module:
+        type: UniLabJsonCommand
+        goal:
+          TODO_AA_1: TODO_AA_1
+          TODO_AA_2: TODO_AA_2
+        goal_default:
+          TODO_AA_1: 0
+          TODO_AA_2: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_set_any_parameter_within_this_module
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                TODO_AA_1:
+                  type: integer
+                TODO_AA_2:
+                  type: integer
+              required:
+              - TODO_AA_1
+              - TODO_AA_2
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_set_x_drive_angle_of_alignment:
+        type: UniLabJsonCommand
+        goal:
+          TODO_XL_1: TODO_XL_1
+        goal_default:
+          TODO_XL_1: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_set_x_drive_angle_of_alignment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                TODO_XL_1:
+                  type: integer
+              required:
+              - TODO_XL_1
+          required:
+          - goal
+        handles: {}
+      auto-x_arm_turn_x_drive_off:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: x_arm_turn_x_drive_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: Vantage 驱动（哈美顿），支持 arm_pre_initialize/arm_request_instrument_initialization_status/aspirate/aspirate96/calculates_check_sums_and_compares_them_with_the_value_saved_in_flash_eprom
+    等 111 个操作。
+  category:
+  - 移液工作站
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/liquid_handling/backends/hamilton/vantage_backend.py
+    candidate_class: VantageBackend
+    candidate_score: 2342
+    quality_status: usable
+    操作数: 111
+  manufacturer: 哈美顿
+  model:
+    name: Vantage
+    type: device
+  name: Hamilton Vantage
+  tags:
+  - 移液工作站
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,508 @@
+community_instrument_agilent_xpeel:
+  class:
+    module: community_drivers.community_instrument_agilent_xpeel.driver:CommunityInstrumentAgilentXpeel
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/peeling/xpeel_backend.py
+          class_name:
+            type: string
+            default: XPeelBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - advance_tape
+            - describe_error
+            - enable_plate_check
+            - get_seal_sensor_status
+            - get_status
+            - get_tape_remaining
+            - get_version
+            - move_conveyor_in
+            - move_conveyor_out
+            - move_elevator_down
+            - move_elevator_up
+            - parse_ready_line
+            - peel
+            - reset
+            - restart
+            - seal_check
+            - set_seal_threshold_lower
+            - set_seal_threshold_upper
+            - setup
+            - stop
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              source_file: pylabrobot/peeling/xpeel_backend.py
+              class_name: XPeelBackend
+              brand: Agilent
+              model: XPeel
+              device_type_cn: 撕膜仪
+              device_type_en: Plate Desealer
+              source_framework: PyLabRobot
+              tag_id: '4396'
+              tag_name: 撕膜仪
+              tag_name_en: Plate Desealer
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 2318
+              action_targets: {}
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-advance_tape:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: advance_tape
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-describe_error:
+        type: UniLabJsonCommand
+        goal:
+          code: code
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: describe_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                code:
+                  type: integer
+              required:
+              - code
+          required:
+          - goal
+        handles: {}
+      auto-enable_plate_check:
+        type: UniLabJsonCommand
+        goal:
+          enabled: enabled
+        goal_default:
+          enabled: true
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: enable_plate_check
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enabled:
+                  type: boolean
+              required:
+              - enabled
+          required:
+          - goal
+        handles: {}
+      auto-get_seal_sensor_status:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_seal_sensor_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_tape_remaining:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_tape_remaining
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_version:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-move_conveyor_in:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_conveyor_in
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-move_conveyor_out:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_conveyor_out
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-move_elevator_down:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_elevator_down
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-move_elevator_up:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_elevator_up
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-parse_ready_line:
+        type: UniLabJsonCommand
+        goal:
+          line: line
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: parse_ready_line
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                line:
+                  type: string
+              required:
+              - line
+          required:
+          - goal
+        handles: {}
+      auto-peel:
+        type: UniLabJsonCommand
+        goal:
+          begin_location: begin_location
+          fast: fast
+          adhere_time: adhere_time
+        goal_default:
+          begin_location: 0
+          fast: false
+          adhere_time: 2.5
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: peel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                begin_location:
+                  type: integer
+                fast:
+                  type: boolean
+                adhere_time:
+                  type: number
+              required:
+              - begin_location
+              - fast
+              - adhere_time
+          required:
+          - goal
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-restart:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: restart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-seal_check:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: seal_check
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-set_seal_threshold_lower:
+        type: UniLabJsonCommand
+        goal:
+          value: value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_seal_threshold_lower
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+              required:
+              - value
+          required:
+          - goal
+        handles: {}
+      auto-set_seal_threshold_upper:
+        type: UniLabJsonCommand
+        goal:
+          value: value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_seal_threshold_upper
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+              required:
+              - value
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: XPeel 驱动（安捷伦），支持 advance_tape/describe_error/enable_plate_check/get_seal_sensor_status/get_status
+    等 20 个操作。
+  category:
+  - 撕膜仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/peeling/xpeel_backend.py
+    candidate_class: XPeelBackend
+    candidate_score: 2318
+    quality_status: usable
+    操作数: 20
+  manufacturer: 安捷伦
+  model:
+    name: XPeel
+    type: device
+  name: Agilent XPeel
+  tags:
+  - 撕膜仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

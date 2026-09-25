@@ -1,0 +1,156 @@
+community_instrument_nanosurf_easyscan_2:
+  class:
+    module: community_drivers.community_instrument_nanosurf_easyscan_2.driver:CommunityInstrumentNanosurfEasyscan2
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/levylabpitt__NanosurfES2Py
+          source_file:
+            type: string
+            default: nid_analyze/nid_analyze.py
+          class_name:
+            type: string
+            default: ''
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - load_nid_image
+            - plane_level_image
+          metadata:
+            type: object
+            default:
+              repo: levylabpitt/NanosurfES2Py
+              repo_url: https://github.com/levylabpitt/NanosurfES2Py
+              source_file: nid_analyze/nid_analyze.py
+              class_name: ''
+              brand: Nanosurf
+              model: EasyScan 2
+              device_type_cn: AFM
+              device_type_en: Atomic Force Microscope
+              source_framework: 显微镜/成像
+              tag_id: '4400'
+              tag_name: 普通光学显微镜
+              tag_name_en: Optical Microscope
+              language: Python
+              parse_status: module_selected
+              quality_status: thin
+              quality_reasons: []
+              candidate_score: 14
+              action_targets:
+                load_nid_image: load_nid_image
+                plane_level_image: plane_level_image
+          action_targets:
+            type: object
+            default:
+              load_nid_image: load_nid_image
+              plane_level_image: plane_level_image
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-load_nid_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_nid_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-plane_level_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: plane_level_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                image:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: EasyScan 2 驱动（Nanosurf），支持 load_nid_image/plane_level_image 等 2 个操作。
+  category:
+  - 普通光学显微镜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: levylabpitt/NanosurfES2Py
+    source_file: nid_analyze/nid_analyze.py
+    candidate_class: ''
+    candidate_score: 14
+    quality_status: thin
+    操作数: 2
+  manufacturer: Nanosurf
+  model:
+    name: EasyScan 2
+    type: device
+  name: Nanosurf EasyScan 2
+  tags:
+  - 普通光学显微镜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

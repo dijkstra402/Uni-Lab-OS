@@ -1,0 +1,10 @@
+repo: bicarlsen/easy-biologic
+repo_url: https://github.com/bicarlsen/easy-biologic
+registry_id: community_missing_bicarlsen_easy_biologic
+review_status: pending_review
+review_notes: 尚未完成人工仪器级复核。
+selected_file: src/easy_biologic/device.py
+selected_class: BiologicDevice
+download_dir: /Users/sml/work/Uni-Lab-OS/new/bicarlsen__easy-biologic
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_bicarlsen_easy_biologic.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_bicarlsen_easy_biologic/startup.json

@@ -1,0 +1,435 @@
+community_instrument_leica_dmi8_2:
+  class:
+    module: community_drivers.community_instrument_leica_dmi8_2.driver:CommunityInstrumentLeicaDmi82
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/MartinHjelmare__leicacam
+          source_file:
+            type: string
+            default: src/leicacam/cam.py
+          class_name:
+            type: string
+            default: CAM
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect
+            - flush
+            - send
+            - receive
+            - wait_for
+            - close
+            - start_scan
+            - stop_scan
+            - autofocus_scan
+            - pause_scan
+            - enable
+            - disable
+            - enable_all
+            - disable_all
+            - save_template
+            - load_template
+            - get_information
+          metadata:
+            type: object
+            default:
+              repo: MartinHjelmare/leicacam
+              repo_url: https://github.com/MartinHjelmare/leicacam
+              source_file: src/leicacam/cam.py
+              class_name: CAM
+              brand: Leica
+              model: DMi8
+              device_type_cn: 荧光显微镜
+              device_type_en: Fluorescence Microscope
+              source_framework: leicacam
+              tag_id: '4447'
+              tag_name: 荧光显微镜
+              tag_name_en: Fluorescence Microscope
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 182
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                commands:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                value:
+                  type: string
+                timeout:
+                  type: number
+                  default: 60
+        goal_default:
+          timeout: 60
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-autofocus_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: autofocus_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pause_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pause_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slide:
+                  type: integer
+                  default: 0
+                wellx:
+                  type: integer
+                  default: 1
+                welly:
+                  type: integer
+                  default: 1
+                fieldx:
+                  type: integer
+                  default: 1
+                fieldy:
+                  type: integer
+                  default: 1
+        goal_default:
+          slide: 0
+          wellx: 1
+          welly: 1
+          fieldx: 1
+          fieldy: 1
+        handles: {}
+      auto-disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slide:
+                  type: integer
+                  default: 0
+                wellx:
+                  type: integer
+                  default: 1
+                welly:
+                  type: integer
+                  default: 1
+                fieldx:
+                  type: integer
+                  default: 1
+                fieldy:
+                  type: integer
+                  default: 1
+        goal_default:
+          slide: 0
+          wellx: 1
+          welly: 1
+          fieldx: 1
+          fieldy: 1
+        handles: {}
+      auto-enable_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_template:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_template
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+                  default: '{ScanningTemplate}leicacam.xml'
+        goal_default:
+          filename: '{ScanningTemplate}leicacam.xml'
+        handles: {}
+      auto-load_template:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_template
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+                  default: '{ScanningTemplate}leicacam.xml'
+        goal_default:
+          filename: '{ScanningTemplate}leicacam.xml'
+        handles: {}
+      auto-get_information:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_information
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                about:
+                  type: string
+                  default: stage
+        goal_default:
+          about: stage
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: DMi8 驱动（Leica），支持 connect/flush/send/receive/wait_for 等 17 个操作。
+  category:
+  - 荧光显微镜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: MartinHjelmare/leicacam
+    source_file: src/leicacam/cam.py
+    candidate_class: CAM
+    candidate_score: 182
+    quality_status: usable
+    操作数: 17
+  manufacturer: Leica
+  model:
+    name: DMi8
+    type: device
+  name: Leica DMi8
+  tags:
+  - 荧光显微镜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

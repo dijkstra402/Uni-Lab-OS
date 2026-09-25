@@ -191,3 +191,10 @@ class julaboFP50(HardwareLayer):
         self.write(f"{self.CMDS['set_power']}={variable}")
 
 __all__ = ["julaboFP50"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(julaboFP50)
+except Exception:
+    pass

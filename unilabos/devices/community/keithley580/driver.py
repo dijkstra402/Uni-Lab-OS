@@ -589,3 +589,10 @@ class Keithley580(Instrument):
     def query(self, cmd, size=-1):
         _unilab_logger.debug("[UNILAB] Keithley580.query() called")
         return super().query(cmd + ":", size)[:-1]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley580)
+except Exception:
+    pass

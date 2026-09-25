@@ -1,0 +1,292 @@
+community_instrument_hamilton_psd__community_instrument_hamilton_psd:
+  class:
+    module: unilabos.devices.community.community_instrument_hamilton_psd.driver:PSD8
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/uwmisl__hamiltonPSD
+          source_file:
+            type: string
+            default: PSD8.py
+          class_name:
+            type: string
+            default: PSD8
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - home
+            - abs_position
+            - dispense
+            - pickup
+            - set_valve
+            - set_speed
+            - mix
+            - set_aux
+          metadata:
+            type: object
+            default:
+              repo: uwmisl/hamiltonPSD
+              repo_url: https://github.com/uwmisl/hamiltonPSD
+              source_file: PSD8.py
+              class_name: PSD8
+              brand: Hamilton
+              model: PSD
+              device_type_cn: 柱塞泵
+              device_type_en: Plunger Pump
+              source_framework: 专用驱动
+              tag_id: '4403'
+              tag_name: 柱塞泵
+              tag_name_en: Plunger Pump
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 144
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                  default: 1
+        goal_default:
+          address: 1
+        handles: {}
+      auto-abs_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: abs_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                address:
+                  type: string
+                  default: 1
+        goal_default:
+          address: 1
+        handles: {}
+      auto-dispense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: string
+                address:
+                  type: string
+                  default: 1
+        goal_default:
+          address: 1
+        handles: {}
+      auto-pickup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pickup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: string
+                address:
+                  type: string
+                  default: 1
+        goal_default:
+          address: 1
+        handles: {}
+      auto-set_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: string
+                address:
+                  type: string
+                  default: 1
+        goal_default:
+          address: 1
+        handles: {}
+      auto-set_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+                address:
+                  type: string
+                  default: 1
+        goal_default:
+          address: 1
+        handles: {}
+      auto-mix:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mix
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vol:
+                  type: string
+                n:
+                  type: string
+                  default: 3
+                speed:
+                  type: string
+                  default: 10
+                address:
+                  type: string
+                  default: 1
+        goal_default:
+          n: 3
+          speed: 10
+          address: 1
+        handles: {}
+      auto-set_aux:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_aux
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                aux_val:
+                  type: string
+                address:
+                  type: string
+                  default: 1
+        goal_default:
+          address: 1
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: PSD 驱动（Hamilton），支持 home/abs_position/dispense/pickup/set_valve 等 8
+    个操作。
+  category:
+  - 柱塞泵
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: uwmisl/hamiltonPSD
+    source_file: PSD8.py
+    candidate_class: PSD8
+    candidate_score: 144
+    quality_status: usable
+    操作数: 8
+  manufacturer: Hamilton
+  model:
+    name: PSD
+    type: device
+  name: Hamilton PSD
+  tags:
+  - 柱塞泵
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -559,3 +559,10 @@ class KeysightDSOX1102G(SCPIUnknownMixin, Instrument):
                 vals_dict[key] = float(vals_dict[key])
 
         return vals_dict
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(KeysightDSOX1102G)
+except Exception:
+    pass

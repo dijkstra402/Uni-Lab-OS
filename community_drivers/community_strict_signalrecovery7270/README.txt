@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes_contrib_drivers
+repo_url: https://github.com/QCoDeS/Qcodes_contrib_drivers
+source_url: https://github.com/QCoDeS/Qcodes_contrib_drivers/blob/main/src/qcodes_contrib_drivers/drivers/Ametek/SR_7270.py
+registry_id: community_strict_signalrecovery7270
+source_file: src/qcodes_contrib_drivers/drivers/Ametek/SR_7270.py
+class_name: Signalrecovery7270
+manufacturer: ametek
+model: Signalrecovery7270
+tag: 表征设备
+confidence: 0.8
+quality_score: 0.88
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_signalrecovery7270.yaml

@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/yokogawa/aq6370series.py
+registry_id: community_strict_aq6375b
+source_file: pymeasure/instruments/yokogawa/aq6370series.py
+class_name: AQ6375B
+manufacturer: yokogawa
+model: AQ6375B
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_aq6375b.yaml

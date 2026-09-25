@@ -1,0 +1,656 @@
+community_instrument_jeol_cryoarm_300:
+  class:
+    module: community_drivers.community_instrument_jeol_cryoarm_300.driver:CommunityInstrumentJeolCryoarm300
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/eisfabian__PACEtomo
+          source_file:
+            type: string
+            default: untested/PACEtomo.py
+          class_name:
+            type: string
+            default: ''
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - checkFilling
+            - checkColdFEG
+            - checkSlit
+            - checkValves
+            - retryOpen
+            - openOldFile
+            - parseTargets
+            - updateTargets
+            - writeAutodoc
+            - geoPlane
+            - geoPara
+            - parseMdoc
+            - writeMdoc
+            - getExtendedHeader
+            - writeExtendedHeader
+            - sortTS
+            - bin2d
+            - binStack
+            - checkFrames
+            - alignTo
+            - realignTo
+            - log
+            - breakpoint
+            - Tilt
+            - dumpVars
+          metadata:
+            type: object
+            default:
+              repo: eisfabian/PACEtomo
+              repo_url: https://github.com/eisfabian/PACEtomo
+              source_file: untested/PACEtomo.py
+              class_name: ''
+              brand: JEOL
+              model: cryoARM 300
+              device_type_cn: Cryo-TEM
+              device_type_en: Cryo Transmission Electron Microscope
+              source_framework: 显微镜/成像
+              tag_id: '4456'
+              tag_name: 透射电子显微镜
+              tag_name_en: Transmission Electron Microscope
+              language: Python
+              parse_status: module_reselected
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 195
+              action_targets:
+                checkFilling: checkFilling
+                checkColdFEG: checkColdFEG
+                checkSlit: checkSlit
+                checkValves: checkValves
+                retryOpen: retryOpen
+                openOldFile: openOldFile
+                parseTargets: parseTargets
+                updateTargets: updateTargets
+                writeAutodoc: writeAutodoc
+                geoPlane: geoPlane
+                geoPara: geoPara
+                parseMdoc: parseMdoc
+                writeMdoc: writeMdoc
+                getExtendedHeader: getExtendedHeader
+                writeExtendedHeader: writeExtendedHeader
+                sortTS: sortTS
+                bin2d: bin2d
+                binStack: binStack
+                checkFrames: checkFrames
+                alignTo: alignTo
+                realignTo: realignTo
+                log: log
+                breakpoint: breakpoint
+                Tilt: Tilt
+                dumpVars: dumpVars
+          action_targets:
+            type: object
+            default:
+              checkFilling: checkFilling
+              checkColdFEG: checkColdFEG
+              checkSlit: checkSlit
+              checkValves: checkValves
+              retryOpen: retryOpen
+              openOldFile: openOldFile
+              parseTargets: parseTargets
+              updateTargets: updateTargets
+              writeAutodoc: writeAutodoc
+              geoPlane: geoPlane
+              geoPara: geoPara
+              parseMdoc: parseMdoc
+              writeMdoc: writeMdoc
+              getExtendedHeader: getExtendedHeader
+              writeExtendedHeader: writeExtendedHeader
+              sortTS: sortTS
+              bin2d: bin2d
+              binStack: binStack
+              checkFrames: checkFrames
+              alignTo: alignTo
+              realignTo: realignTo
+              log: log
+              breakpoint: breakpoint
+              Tilt: Tilt
+              dumpVars: dumpVars
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-checkFilling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: checkFilling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-checkColdFEG:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: checkColdFEG
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-checkSlit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: checkSlit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vec:
+                  type: string
+                size:
+                  type: string
+                tilt:
+                  type: string
+                pn:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-checkValves:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: checkValves
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-retryOpen:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: retryOpen
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_attempts:
+                  type: string
+                  default: 5
+                delay:
+                  type: string
+                  default: 5
+        goal_default:
+          max_attempts: 5
+          delay: 5
+        handles: {}
+      auto-openOldFile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: openOldFile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file_path:
+                  type: string
+                max_attempts:
+                  type: string
+                  default: 5
+                delay:
+                  type: string
+                  default: 5
+        goal_default:
+          max_attempts: 5
+          delay: 5
+        handles: {}
+      auto-parseTargets:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parseTargets
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-updateTargets:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: updateTargets
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fileName:
+                  type: string
+                targets:
+                  type: string
+                position:
+                  type: string
+                  default: []
+                sec:
+                  type: string
+                  default: 0
+                pos:
+                  type: string
+                  default: 0
+        goal_default:
+          position: []
+          sec: 0
+          pos: 0
+        handles: {}
+      auto-writeAutodoc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writeAutodoc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-geoPlane:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: geoPlane
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                a:
+                  type: string
+                b:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-geoPara:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: geoPara
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                a:
+                  type: string
+                b:
+                  type: string
+                c:
+                  type: string
+                d:
+                  type: string
+                e:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-parseMdoc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parseMdoc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mdocFile:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-writeMdoc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writeMdoc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                header:
+                  type: string
+                items:
+                  type: string
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getExtendedHeader:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getExtendedHeader
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-writeExtendedHeader:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writeExtendedHeader
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+                section_data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sortTS:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sortTS
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ts_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-bin2d:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bin2d
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                img:
+                  type: string
+                factor:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-binStack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: binStack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ts_name:
+                  type: string
+                factor:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-checkFrames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: checkFrames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ts_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-alignTo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: alignTo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                buffer:
+                  type: string
+                debug:
+                  type: string
+                  default: false
+        goal_default:
+          debug: false
+        handles: {}
+      auto-realignTo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: realignTo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nav_id:
+                  type: string
+                target:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-log:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: log
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                text:
+                  type: string
+                color:
+                  type: string
+                  default: 0
+                style:
+                  type: string
+                  default: 0
+        goal_default:
+          color: 0
+          style: 0
+        handles: {}
+      auto-breakpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: breakpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-Tilt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Tilt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                tilt:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-dumpVars:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dumpVars
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: cryoARM 300 驱动（JEOL），支持 checkFilling/checkColdFEG/checkSlit/checkValves/retryOpen
+    等 25 个操作。
+  category:
+  - 透射电子显微镜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: eisfabian/PACEtomo
+    source_file: untested/PACEtomo.py
+    candidate_class: ''
+    candidate_score: 195
+    quality_status: usable
+    操作数: 25
+  manufacturer: 日本电子
+  model:
+    name: cryoARM 300
+    type: device
+  name: JEOL cryoARM 300
+  tags:
+  - 透射电子显微镜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,10 @@
+repo: nusikgedik/ohaus-balance
+repo_url: https://github.com/nusikgedik/ohaus-balance
+registry_id: community_missing_nusikgedik_ohaus_balance
+review_status: good
+review_notes: 天平核心动作清晰。
+selected_file: ohaus.py
+selected_class: Balance
+download_dir: /Users/sml/work/Uni-Lab-OS/new/nusikgedik__ohaus-balance
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_nusikgedik_ohaus_balance.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_nusikgedik_ohaus_balance/startup.json

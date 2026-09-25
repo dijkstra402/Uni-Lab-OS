@@ -1,0 +1,237 @@
+community_instrument_shimadzu_cbm_20a:
+  class:
+    module: community_drivers.community_instrument_shimadzu_cbm_20a.driver:CommunityInstrumentShimadzuCbm20a
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/paulscherrerinstitute__shimadzu_pump
+          source_file:
+            type: string
+            default: shimadzu_pump/shimadzu_driver.py
+          class_name:
+            type: string
+            default: ShimadzuCbm20
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - login
+            - logout
+            - start
+            - stop
+            - set
+            - get
+            - get_all
+          metadata:
+            type: object
+            default:
+              repo: paulscherrerinstitute/shimadzu_pump
+              repo_url: https://github.com/paulscherrerinstitute/shimadzu_pump
+              source_file: shimadzu_pump/shimadzu_driver.py
+              class_name: ShimadzuCbm20
+              brand: Shimadzu
+              model: CBM-20A
+              device_type_cn: HPLC控制器/泵
+              device_type_en: HPLC Controller/Pump
+              source_framework: 泵阀/液体处理
+              tag_id: '4418'
+              tag_name: 液相色谱质谱联用仪
+              tag_name_en: LC-MS
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 126
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-login:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: login
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                user:
+                  type: string
+                  default: Admin
+                password:
+                  type: string
+                  default: Admin
+        goal_default:
+          user: Admin
+          password: Admin
+        handles: {}
+      auto-logout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: CBM-20A 驱动（Shimadzu），支持 login/logout/start/stop/set 等 7 个操作。
+  category:
+  - 液相色谱质谱联用仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: paulscherrerinstitute/shimadzu_pump
+    source_file: shimadzu_pump/shimadzu_driver.py
+    candidate_class: ShimadzuCbm20
+    candidate_score: 126
+    quality_status: usable
+    操作数: 7
+  manufacturer: 岛津
+  model:
+    name: CBM-20A
+    type: device
+  name: Shimadzu CBM-20A
+  tags:
+  - 液相色谱质谱联用仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

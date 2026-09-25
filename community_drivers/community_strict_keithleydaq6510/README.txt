@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/keithley/keithleyDAQ6510.py
+registry_id: community_strict_keithleydaq6510
+source_file: pymeasure/instruments/keithley/keithleyDAQ6510.py
+class_name: KeithleyDAQ6510
+manufacturer: keithley
+model: KeithleyDAQ6510
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_keithleydaq6510.yaml

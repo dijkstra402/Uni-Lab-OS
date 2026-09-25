@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/agilent/agilent34450A.py
+registry_id: community_strict_agilent34450a
+source_file: pymeasure/instruments/agilent/agilent34450A.py
+class_name: Agilent34450A
+manufacturer: keysight
+model: Agilent34450A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilent34450a.yaml

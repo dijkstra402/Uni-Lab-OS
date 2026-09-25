@@ -1,0 +1,151 @@
+community_github_groundup_gmbh_scale_hub:
+  class:
+    module: community_drivers.community_github_groundup_gmbh_scale_hub.driver:CommunityGithubGroundupGmbhScaleHub
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/GROUNDUP-GmbH_scale-hub
+          source_file:
+            type: string
+            default: hub/core/serial_port.py
+          class_name:
+            type: string
+            default: SerialPort
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - is_open
+            - open
+            - start_reader
+            - write
+            - close
+          metadata:
+            type: object
+            default:
+              repo: groundup-gmbh/scale-hub
+              repo_url: https://github.com/GROUNDUP-GmbH/scale-hub
+              unit_id: gh_mettler_toledo_tiger
+              source_file: hub/core/serial_port.py
+              candidate_score: 147
+              manufacturer: Mettler Toledo
+              model_name: Mettler Toledo Tiger系列
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-is_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_reader:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_reader
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: '梅特勒电子天平,作为电子天平品牌服务商之一,拥有多种实验室电子天平类型.更多梅特勒电子天平品牌详情,欢迎登陆梅特勒托利多METTLER
+    TOLEDO官网. GitHub驱动: https://github.com/GROUNDUP-GmbH/scale-hub'
+  category:
+  - community
+  device_params:
+    repo: groundup-gmbh/scale-hub
+    source_file: hub/core/serial_port.py
+    candidate_class: SerialPort
+    communication: ''
+    photo_url: https://www.mt.com/dam/P5/labtec/01_eSBU_Home/panda/1920x1080/lab-balances.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg
+    instrument_params: 'Type: Bench scale; Capacity: 600-30000 g; Readability: 0.1-5
+      g; Interface: RS-232/USB; Display: LCD; Weighing modes: basic, counting; Housing:
+      ABS/steel'
+    official_url: https://www.mt.com/global/en/home/products/Laboratory_Weighing_Solutions.html
+  manufacturer: Mettler Toledo
+  model:
+    name: Mettler Toledo Tiger系列
+    type: device
+  name: Mettler Toledo Tiger系列
+  tags:
+  - 电子天平
+  resource_type: device
+  icon: https://www.mt.com/dam/P5/labtec/01_eSBU_Home/panda/1920x1080/lab-balances.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 0.1.0

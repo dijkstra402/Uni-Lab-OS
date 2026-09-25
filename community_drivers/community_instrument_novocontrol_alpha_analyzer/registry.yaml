@@ -1,0 +1,384 @@
+community_instrument_novocontrol_alpha_analyzer:
+  class:
+    module: community_drivers.community_instrument_novocontrol_alpha_analyzer.driver:CommunityInstrumentNovocontrolAlphaAnalyzer
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/JMoVS__JUMP
+          source_file:
+            type: string
+            default: DataStorage.py
+          class_name:
+            type: string
+            default: Database
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - change_to_passed_db
+            - start_fresh
+            - measurement_finished
+            - pickle_database
+            - new_pickle_path
+            - start_post_processing
+            - tasks
+            - add_point
+            - make_storage
+            - calculate_all_values
+            - merge_same_level_datapoints
+            - merge_diff_level_datapoints
+            - insert_sub_datapoints_into_parent_datapoint
+            - get_transposed_parent_child_datapoints
+          metadata:
+            type: object
+            default:
+              repo: JMoVS/JUMP
+              repo_url: https://github.com/JMoVS/JUMP
+              source_file: DataStorage.py
+              class_name: Database
+              brand: Novocontrol
+              model: Alpha Analyzer
+              device_type_cn: 介电/阻抗分析仪
+              device_type_en: Dielectric/Impedance Analyzer
+              source_framework: 电化学/热分析/天平
+              tag_id: '4365'
+              tag_name: 介电常数测定仪
+              tag_name_en: Dielectric Constant Meter
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 117
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-change_to_passed_db:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_to_passed_db
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unpickled_db:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_fresh:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_fresh
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                  default: Run1
+                pickle_path:
+                  type: string
+                experimenter:
+                  type: string
+                  default: Tron
+                room:
+                  type: string
+                  default: Dream World
+                comment:
+                  type: string
+                  default: I fight for the User!
+                creation_time:
+                  type: string
+        goal_default:
+          name: Run1
+          experimenter: Tron
+          room: Dream World
+          comment: I fight for the User!
+        handles: {}
+      auto-measurement_finished:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measurement_finished
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pickle_database:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pickle_database
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                suffix:
+                  type: string
+                  default: ''
+        goal_default:
+          suffix: ''
+        handles: {}
+      auto-new_pickle_path:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: new_pickle_path
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_pickle_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_post_processing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_post_processing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path_to_opened_db:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-tasks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tasks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_point:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_point
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: string
+                Datapoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-make_storage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: make_storage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: string
+                data_source:
+                  type: string
+                human_readable_taskname:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-calculate_all_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calculate_all_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                geometry:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-merge_same_level_datapoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: merge_same_level_datapoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier1:
+                  type: string
+                identifier2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-merge_diff_level_datapoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: merge_diff_level_datapoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier1:
+                  type: string
+                identifier2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-insert_sub_datapoints_into_parent_datapoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: insert_sub_datapoints_into_parent_datapoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                parent_identifier:
+                  type: string
+                sub_identifier:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_transposed_parent_child_datapoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_transposed_parent_child_datapoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Alpha Analyzer 驱动（Novocontrol），支持 change_to_passed_db/start_fresh/measurement_finished/pickle_database/new_pickle_path
+    等 14 个操作。
+  category:
+  - 介电常数测定仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: JMoVS/JUMP
+    source_file: DataStorage.py
+    candidate_class: Database
+    candidate_score: 117
+    quality_status: usable
+    操作数: 14
+  manufacturer: Novocontrol
+  model:
+    name: Alpha Analyzer
+    type: device
+  name: Novocontrol Alpha Analyzer
+  tags:
+  - 介电常数测定仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

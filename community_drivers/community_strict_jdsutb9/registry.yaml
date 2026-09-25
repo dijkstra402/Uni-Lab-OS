@@ -1,0 +1,876 @@
+community_strict_jdsutb9:
+  class:
+    module: community_drivers.community_strict_jdsutb9.driver:CommunityStrictJdsutb9
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/python-ivi__python-ivi
+          source_file:
+            type: string
+            default: ivi/jdsu/jdsuTB9.py
+          class_name:
+            type: string
+            default: jdsuTB9
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - get_wavelength
+            - set_wavelength
+            - get_driver_enable
+            - set_driver_enable
+            - initialize
+            - get_initialized
+            - close
+            - get_driver_operation_cache
+            - set_driver_operation_cache
+            - get_driver_operation_driver_setup
+            - get_driver_operation_interchange_check
+            - set_driver_operation_interchange_check
+            - get_driver_operation_logical_name
+            - get_driver_operation_query_instrument_status
+            - set_driver_operation_query_instrument_status
+            - get_driver_operation_range_check
+            - set_driver_operation_range_check
+            - get_driver_operation_record_coercions
+            - set_driver_operation_record_coercions
+            - get_driver_operation_io_resource_descriptor
+            - get_driver_operation_simulate
+            - driver_operation_clear_interchange_warnings
+            - driver_operation_get_next_coercion_record
+            - driver_operation_get_next_interchange_warning
+            - driver_operation_invalidate_all_attributes
+            - driver_operation_reset_interchange_check
+            - get_identity_description
+            - get_identity_identifier
+            - get_identity_revision
+            - get_identity_vendor
+            - get_identity_instrument_manufacturer
+            - get_identity_instrument_model
+            - get_identity_instrument_firmware_revision
+            - get_identity_specification_major_version
+            - get_identity_specification_minor_version
+            - get_identity_supported_instrument_models
+            - get_identity_group_capabilities
+            - identity_get_group_capabilities
+            - identity_get_supported_instrument_models
+            - utility_disable
+            - utility_error_query
+            - utility_lock_object
+            - utility_reset
+            - utility_reset_with_defaults
+            - utility_self_test
+            - utility_unlock_object
+          metadata:
+            type: object
+            default:
+              repo: python-ivi/python-ivi
+              repo_url: https://github.com/python-ivi/python-ivi
+              source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/jdsu/jdsuTB9.py
+              source_file: ivi/jdsu/jdsuTB9.py
+              class_name: jdsuTB9
+              manufacturer_guess: ''
+              manufacturer_resolved: jdsu
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.8
+              quality_score: 0.94
+              code_evidence: 'L29: class jdsuTB9(ivi.Driver):'
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001
+                get_wavelength: _get_wavelength
+                set_wavelength: _set_wavelength
+                get_driver_enable: _get_driver_enable
+                set_driver_enable: _set_driver_enable
+                initialize: _initialize
+                get_initialized: _get_initialized
+                close: _close
+                get_driver_operation_cache: _get_driver_operation_cache
+                set_driver_operation_cache: _set_driver_operation_cache
+                get_driver_operation_driver_setup: _get_driver_operation_driver_setup
+                get_driver_operation_interchange_check: _get_driver_operation_interchange_check
+                set_driver_operation_interchange_check: _set_driver_operation_interchange_check
+                get_driver_operation_logical_name: _get_driver_operation_logical_name
+                get_driver_operation_query_instrument_status: _get_driver_operation_query_instrument_status
+                set_driver_operation_query_instrument_status: _set_driver_operation_query_instrument_status
+                get_driver_operation_range_check: _get_driver_operation_range_check
+                set_driver_operation_range_check: _set_driver_operation_range_check
+                get_driver_operation_record_coercions: _get_driver_operation_record_coercions
+                set_driver_operation_record_coercions: _set_driver_operation_record_coercions
+                get_driver_operation_io_resource_descriptor: _get_driver_operation_io_resource_descriptor
+                get_driver_operation_simulate: _get_driver_operation_simulate
+                driver_operation_clear_interchange_warnings: _driver_operation_clear_interchange_warnings
+                driver_operation_get_next_coercion_record: _driver_operation_get_next_coercion_record
+                driver_operation_get_next_interchange_warning: _driver_operation_get_next_interchange_warning
+                driver_operation_invalidate_all_attributes: _driver_operation_invalidate_all_attributes
+                driver_operation_reset_interchange_check: _driver_operation_reset_interchange_check
+                get_identity_description: _get_identity_description
+                get_identity_identifier: _get_identity_identifier
+                get_identity_revision: _get_identity_revision
+                get_identity_vendor: _get_identity_vendor
+                get_identity_instrument_manufacturer: _get_identity_instrument_manufacturer
+                get_identity_instrument_model: _get_identity_instrument_model
+                get_identity_instrument_firmware_revision: _get_identity_instrument_firmware_revision
+                get_identity_specification_major_version: _get_identity_specification_major_version
+                get_identity_specification_minor_version: _get_identity_specification_minor_version
+                get_identity_supported_instrument_models: _get_identity_supported_instrument_models
+                get_identity_group_capabilities: _get_identity_group_capabilities
+                identity_get_group_capabilities: _identity_get_group_capabilities
+                identity_get_supported_instrument_models: _identity_get_supported_instrument_models
+                utility_disable: _utility_disable
+                utility_error_query: _utility_error_query
+                utility_lock_object: _utility_lock_object
+                utility_reset: _utility_reset
+                utility_reset_with_defaults: _utility_reset_with_defaults
+                utility_self_test: _utility_self_test
+                utility_unlock_object: _utility_unlock_object
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-get_wavelength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_wavelength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_wavelength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_wavelength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_driver_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_driver_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_driver_enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_driver_enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                resource:
+                  type: string
+                id_query:
+                  type: string
+                  default: false
+                reset:
+                  type: string
+                  default: false
+        goal_default:
+          id_query: false
+          reset: false
+        handles: {}
+      auto-get_initialized:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_initialized
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_driver_operation_cache:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_driver_operation_cache
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_driver_operation_cache:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_driver_operation_cache
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_driver_operation_driver_setup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_driver_operation_driver_setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_driver_operation_interchange_check:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_driver_operation_interchange_check
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_driver_operation_interchange_check:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_driver_operation_interchange_check
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_driver_operation_logical_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_driver_operation_logical_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_driver_operation_query_instrument_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_driver_operation_query_instrument_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_driver_operation_query_instrument_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_driver_operation_query_instrument_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_driver_operation_range_check:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_driver_operation_range_check
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_driver_operation_range_check:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_driver_operation_range_check
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_driver_operation_record_coercions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_driver_operation_record_coercions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_driver_operation_record_coercions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_driver_operation_record_coercions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_driver_operation_io_resource_descriptor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_driver_operation_io_resource_descriptor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_driver_operation_simulate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_driver_operation_simulate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-driver_operation_clear_interchange_warnings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: driver_operation_clear_interchange_warnings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-driver_operation_get_next_coercion_record:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: driver_operation_get_next_coercion_record
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-driver_operation_get_next_interchange_warning:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: driver_operation_get_next_interchange_warning
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-driver_operation_invalidate_all_attributes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: driver_operation_invalidate_all_attributes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-driver_operation_reset_interchange_check:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: driver_operation_reset_interchange_check
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_description:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_description
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_identifier:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_identifier
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_revision:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_revision
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_vendor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_vendor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_instrument_manufacturer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_instrument_manufacturer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_instrument_model:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_instrument_model
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_instrument_firmware_revision:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_instrument_firmware_revision
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_specification_major_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_specification_major_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_specification_minor_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_specification_minor_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_supported_instrument_models:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_supported_instrument_models
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_identity_group_capabilities:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_identity_group_capabilities
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-identity_get_group_capabilities:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: identity_get_group_capabilities
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-identity_get_supported_instrument_models:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: identity_get_supported_instrument_models
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-utility_disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: utility_disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-utility_error_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: utility_error_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-utility_lock_object:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: utility_lock_object
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-utility_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: utility_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-utility_reset_with_defaults:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: utility_reset_with_defaults
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-utility_self_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: utility_self_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-utility_unlock_object:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: utility_unlock_object
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: jdsuTB9驱动（jdsu），支持get_wavelength/set_wavelength/get_driver_enable/set_driver_enable/initialize等46个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: python-ivi/python-ivi
+    source_file: ivi/jdsu/jdsuTB9.py
+    candidate_class: jdsuTB9
+    quality_score: 0.94
+    confidence: 0.8
+    quality_status: usable
+    操作数: 46
+  manufacturer: jdsu
+  model:
+    name: jdsuTB9
+    type: device
+  name: jdsu jdsuTB9
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

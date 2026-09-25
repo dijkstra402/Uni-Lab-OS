@@ -118,3 +118,10 @@ class AH2700A(AH2500A):
         """
         self.write("*TRG")
         self._triggered = True
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(AH2700A)
+except Exception:
+    pass

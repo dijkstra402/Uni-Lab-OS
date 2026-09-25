@@ -1,0 +1,2421 @@
+community_instrument_jeol_jsm_7800f_it500:
+  class:
+    module: community_drivers.community_instrument_jeol_jsm_7800f_it500.driver:CommunityInstrumentJeolJsm7800fIt500
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/SBEMimage__SBEMimage
+          source_file:
+            type: string
+            default: src/MainControls.py
+          class_name:
+            type: string
+            default: MainControls
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - initialize_main_controls_gui
+            - tab_changed
+            - try_to_create_directory
+            - update_main_controls_grid_selector
+            - update_main_controls_ov_selector
+            - change_grid_settings_display
+            - change_ov_settings_display
+            - show_current_settings
+            - show_stack_acq_estimates
+            - update_acq_options
+            - set_active_user_flag
+            - clear_activate_user_flag
+            - update_acq_notes
+            - acq_notes_text_changed
+            - save_acq_notes
+            - initialize_array_gui
+            - find_array_from_model_index
+            - find_model_from_array_index
+            - find_grid_from_model_index
+            - array_select_all
+            - array_deselect_all
+            - array_check_selected
+            - array_uncheck_selected
+            - array_invert_selection
+            - array_toggle_selection
+            - array_select_checked
+            - array_select_string_sections
+            - array_set_check_items
+            - array_select_items
+            - array_actions_selected_sections_changed
+            - array_activate_checked_sections
+            - array_activate_checked_item
+            - array_checked_section
+            - array_double_clicked_section
+            - array_set_section_state_in_table
+            - array_reset_dialog
+            - array_trigger_landmark_uncalibrated
+            - array_reset
+            - array_trigger_landmark_calibrated
+            - array_trigger_landmark_calibratable
+            - array_trigger_landmark_uncalibratable
+            - array_open_import_dlg
+            - array_init_gui
+            - array_open_import_image
+            - array_set_import_image
+            - array_create_grids
+            - array_open_landmark_calibration_dlg
+            - open_mag_calibration_dlg
+            - open_save_settings_new_file_dlg
+            - open_sem_dlg
+            - open_microtome_dlg
+            - open_calibration_dlg
+            - open_cut_duration_dlg
+            - open_ov_dlg
+            - update_from_ov_dlg
+            - get_open_grid_dlg
+            - open_grid_dlg
+            - update_from_grid_dlg
+            - open_acq_settings_dlg
+            - open_pre_stack_dlg
+            - open_export_dlg
+            - open_update_dlg
+            - open_email_monitoring_dlg
+            - open_debris_dlg
+            - open_ask_user_dlg
+            - open_tcp_settings_dlg
+            - open_mirror_drive_dlg
+            - open_image_monitoring_dlg
+            - open_autofocus_settings_dlg
+            - open_run_autofocus_dlg
+            - open_plasma_cleaner_dlg
+            - open_approach_dlg
+            - open_grab_frame_dlg
+            - open_variable_pressure_dlg
+            - open_charge_compensator_dlg
+            - open_eht_dlg
+            - open_motor_test_dlg
+            - open_motor_status_dlg
+            - open_send_command_dlg
+            - open_about_box
+            - show_stack_progress
+            - show_current_stage_xy
+            - show_current_stage_z
+            - set_statusbar
+            - set_status
+            - event
+            - process_signal
+            - ask_debris_first_ov
+            - ask_debris_confirmation
+            - restrict_gui
+            - restrict_focus_tool_gui
+            - restrict_tests_gui
+            - restrict_gui_for_simulation_mode
+            - restrict_gui_for_sem_stage
+            - restrict_gui_wo_gcib
+            - write_current_log_to_file
+            - manual_sweep
+            - manual_sweep_success
+            - save_viewport_screenshot
+            - test_get_mag
+            - test_set_mag
+            - test_get_wd
+            - test_set_wd
+            - test_autofocus
+            - test_zeiss_api_version
+            - test_get_stage
+            - test_set_stage
+            - test_near_knife
+            - test_clear_knife
+            - test_run_maintenance_moves
+            - test_run_maintenance_moves_finished
+            - test_get_mill_pos
+            - test_set_mill_pos
+            - test_set_pos_prior_mill_mov
+            - test_mill_mov
+            - test_milling
+            - test_stop_dm_script
+            - test_send_email
+            - test_plasma_cleaner
+            - test_server_request
+            - debris_detection_test
+            - custom_test
+            - initialize_plasma_cleaner
+            - start_acquisition
+            - pause_acquisition
+            - reset_acquisition
+            - completion_stop
+            - remote_stop
+            - error_pause
+            - acq_not_in_progress_update_gui
+            - leave_simulation_mode
+            - save_settings
+            - save_config_to_disk
+            - closeEvent
+            - ft_initialize
+            - ft_clear_display
+            - ft_start
+            - ft_ask_user_save
+            - ft_open_set_params_dlg
+            - ft_use_autofocus
+            - ft_set_new_wd_stig
+            - ft_show_updated_stage_position
+            - ft_open_move_dlg
+            - ft_run_cycle
+            - ft_move_and_acq_thread
+            - ft_reset
+            - ft_series_complete
+            - ft_acquire_focus_series
+            - ft_acquire_stig_series
+            - ft_display_during_cycle
+            - ft_move_up
+            - ft_move_down
+            - ft_update_stig_display
+            - ft_update_wd_display
+            - ft_clear_wd_stig_display
+            - ft_update_grid_selector
+            - ft_update_tile_selector
+            - ft_update_ov_selector
+            - ft_change_grid_selection
+            - ft_load_selected_tile
+            - ft_load_selected_ov
+            - ft_set_selection_from_viewport
+            - ft_toggle_zoom
+            - ft_toggle_use_current_position
+            - keyPressEvent
+            - wheelEvent
+          metadata:
+            type: object
+            default:
+              repo: SBEMimage/SBEMimage
+              repo_url: https://github.com/SBEMimage/SBEMimage
+              source_file: src/MainControls.py
+              class_name: MainControls
+              brand: JEOL
+              model: JSM-7800F/IT500
+              device_type_cn: 扫描电子显微镜
+              device_type_en: Scanning Electron Microscope
+              source_framework: SBEMimage
+              tag_id: '4390'
+              tag_name: 扫描电子显微镜
+              tag_name_en: Scanning Electron Microscope
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 1358
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-initialize_main_controls_gui:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_main_controls_gui
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-tab_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tab_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-try_to_create_directory:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: try_to_create_directory
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                new_directory:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update_main_controls_grid_selector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_main_controls_grid_selector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                grid_index:
+                  type: string
+                  default: 0
+        goal_default:
+          grid_index: 0
+        handles: {}
+      auto-update_main_controls_ov_selector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_main_controls_ov_selector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ov_index:
+                  type: string
+                  default: 0
+        goal_default:
+          ov_index: 0
+        handles: {}
+      auto-change_grid_settings_display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_grid_settings_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-change_ov_settings_display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: change_ov_settings_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-show_current_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: show_current_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-show_stack_acq_estimates:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: show_stack_acq_estimates
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_acq_options:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_acq_options
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_active_user_flag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_active_user_flag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_activate_user_flag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_activate_user_flag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_acq_notes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_acq_notes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acq_notes_text_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acq_notes_text_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_acq_notes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_acq_notes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialize_array_gui:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_array_gui
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-find_array_from_model_index:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_array_from_model_index
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                modelindex:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-find_model_from_array_index:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_model_from_array_index
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                array_index:
+                  type: string
+                roi_index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-find_grid_from_model_index:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_grid_from_model_index
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                modelindex:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_select_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_select_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_deselect_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_deselect_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_check_selected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_check_selected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_uncheck_selected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_uncheck_selected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_invert_selection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_invert_selection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_toggle_selection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_toggle_selection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                indices:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_select_checked:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_select_checked
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_select_string_sections:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_select_string_sections
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_set_check_items:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_set_check_items
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                selection:
+                  type: string
+                check_state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_select_items:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_select_items
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                indices:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_actions_selected_sections_changed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_actions_selected_sections_changed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                changed_selected:
+                  type: string
+                changed_deselected:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_activate_checked_sections:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_activate_checked_sections
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_activate_checked_item:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_activate_checked_item
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                item:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_checked_section:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_checked_section
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                item:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_double_clicked_section:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_double_clicked_section
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                selection:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_set_section_state_in_table:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_set_section_state_in_table
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                action:
+                  type: string
+                grid_indices:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_reset_dialog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_reset_dialog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_trigger_landmark_uncalibrated:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_trigger_landmark_uncalibrated
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_trigger_landmark_calibrated:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_trigger_landmark_calibrated
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_trigger_landmark_calibratable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_trigger_landmark_calibratable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_trigger_landmark_uncalibratable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_trigger_landmark_uncalibratable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_open_import_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_open_import_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_init_gui:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_init_gui
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                array_filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_open_import_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_open_import_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_set_import_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_set_import_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                array_image:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-array_create_grids:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_create_grids
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-array_open_landmark_calibration_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: array_open_landmark_calibration_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_mag_calibration_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_mag_calibration_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_save_settings_new_file_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_save_settings_new_file_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_sem_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_sem_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_microtome_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_microtome_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_calibration_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_calibration_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_cut_duration_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_cut_duration_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_ov_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_ov_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_from_ov_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_from_ov_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_open_grid_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_open_grid_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                roi_index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-open_grid_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_grid_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                selected_grid:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update_from_grid_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_from_grid_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_acq_settings_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_acq_settings_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_pre_stack_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_pre_stack_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_export_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_export_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_update_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_update_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_email_monitoring_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_email_monitoring_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_debris_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_debris_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_ask_user_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_ask_user_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_tcp_settings_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_tcp_settings_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_mirror_drive_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_mirror_drive_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_image_monitoring_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_image_monitoring_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_autofocus_settings_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_autofocus_settings_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_run_autofocus_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_run_autofocus_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_plasma_cleaner_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_plasma_cleaner_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_approach_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_approach_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_grab_frame_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_grab_frame_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_variable_pressure_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_variable_pressure_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_charge_compensator_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_charge_compensator_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_eht_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_eht_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_motor_test_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_motor_test_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_motor_status_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_motor_status_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_send_command_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_send_command_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_about_box:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_about_box
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-show_stack_progress:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: show_stack_progress
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-show_current_stage_xy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: show_current_stage_xy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-show_current_stage_z:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: show_current_stage_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_statusbar:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_statusbar
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label_text:
+                  type: string
+                statusbar_text:
+                  type: string
+                busy_state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-event:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: event
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                e:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-process_signal:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_signal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ask_debris_first_ov:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask_debris_first_ov
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ov_index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ask_debris_confirmation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask_debris_confirmation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ov_index:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-restrict_gui:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restrict_gui
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                busy:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-restrict_focus_tool_gui:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restrict_focus_tool_gui
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                busy:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-restrict_tests_gui:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restrict_tests_gui
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                busy:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-restrict_gui_for_simulation_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restrict_gui_for_simulation_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-restrict_gui_for_sem_stage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restrict_gui_for_sem_stage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-restrict_gui_wo_gcib:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: restrict_gui_wo_gcib
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_current_log_to_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_current_log_to_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-manual_sweep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: manual_sweep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-manual_sweep_success:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: manual_sweep_success
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                success:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-save_viewport_screenshot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_viewport_screenshot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-debris_detection_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: debris_detection_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-custom_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: custom_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialize_plasma_cleaner:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_plasma_cleaner
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pause_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pause_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_acquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_acquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-completion_stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: completion_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remote_stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-error_pause:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: error_pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acq_not_in_progress_update_gui:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acq_not_in_progress_update_gui
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-leave_simulation_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: leave_simulation_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_config_to_disk:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_config_to_disk
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                show_msg:
+                  type: string
+                  default: false
+        goal_default:
+          show_msg: false
+        handles: {}
+      auto-closeEvent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: closeEvent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ft_initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_clear_display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_clear_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_ask_user_save:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_ask_user_save
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_open_set_params_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_open_set_params_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_use_autofocus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_use_autofocus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_set_new_wd_stig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_set_new_wd_stig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wd:
+                  type: string
+                stig_x:
+                  type: string
+                stig_y:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ft_show_updated_stage_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_show_updated_stage_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_open_move_dlg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_open_move_dlg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_run_cycle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_run_cycle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_move_and_acq_thread:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_move_and_acq_thread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_series_complete:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_series_complete
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_acquire_focus_series:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_acquire_focus_series
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_acquire_stig_series:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_acquire_stig_series
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xy_choice:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ft_display_during_cycle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_display_during_cycle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_move_up:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_move_up
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_move_down:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_move_down
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_update_stig_display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_update_stig_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_update_wd_display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_update_wd_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_clear_wd_stig_display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_clear_wd_stig_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_update_grid_selector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_update_grid_selector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                grid_index:
+                  type: string
+                  default: 0
+        goal_default:
+          grid_index: 0
+        handles: {}
+      auto-ft_update_tile_selector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_update_tile_selector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_tile:
+                  type: string
+                  default: -1
+        goal_default:
+          current_tile: -1
+        handles: {}
+      auto-ft_update_ov_selector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_update_ov_selector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ov_index:
+                  type: string
+                  default: -1
+        goal_default:
+          ov_index: -1
+        handles: {}
+      auto-ft_change_grid_selection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_change_grid_selection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_load_selected_tile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_load_selected_tile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_load_selected_ov:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_load_selected_ov
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_set_selection_from_viewport:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_set_selection_from_viewport
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_toggle_zoom:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_toggle_zoom
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ft_toggle_use_current_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ft_toggle_use_current_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-keyPressEvent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: keyPressEvent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wheelEvent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wheelEvent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                event:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: cleaned
+  quality_reasons: "删除 21 个 test_* 单元测试残留"
+  description: JSM-7800F/IT500 驱动（JEOL），支持 initialize_main_controls_gui/tab_changed/try_to_create_directory/update_main_controls_grid_selector/update_main_controls_ov_selector
+    等 166 个操作。
+  category:
+  - 扫描电子显微镜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: SBEMimage/SBEMimage
+    source_file: src/MainControls.py
+    candidate_class: MainControls
+    candidate_score: 1358
+    quality_status: usable
+    操作数: 166
+  manufacturer: 日本电子
+  model:
+    name: JSM-7800F/IT500
+    type: device
+  name: JEOL JSM-7800F/IT500
+  tags:
+  - 扫描电子显微镜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

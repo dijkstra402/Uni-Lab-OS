@@ -1,0 +1,546 @@
+community_instrument_hamilton_tilt_module:
+  class:
+    module: community_drivers.community_instrument_hamilton_tilt_module.driver:CommunityInstrumentHamiltonTiltModule
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/tilting/hamilton_backend.py
+          class_name:
+            type: string
+            default: HamiltonTiltModuleBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - set_angle
+            - setup
+            - stop
+            - tilt_go_to_position
+            - tilt_initial_offset
+            - tilt_initialize
+            - tilt_move_to_absolute_step_position
+            - tilt_move_to_relative_step_position
+            - tilt_port_clear_open_collector
+            - tilt_port_set_open_collector
+            - tilt_power_off
+            - tilt_request_error
+            - tilt_request_offset_between_light_barrier_and_init_position
+            - tilt_request_sensor
+            - tilt_set_drain_time
+            - tilt_set_name
+            - tilt_set_speed
+            - tilt_set_temperature
+            - tilt_set_waste_pump_off
+            - tilt_set_waste_pump_on
+            - tilt_switch_encoder
+            - tilt_switch_off_temperature_controller
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              brand: Hamilton
+              model: Tilt Module
+              device_type_cn: 倾斜模块
+              device_type_en: Tilt Module
+              source_framework: PyLabRobot
+              source_file: pylabrobot/tilting/hamilton_backend.py
+              class_name: HamiltonTiltModuleBackend
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-set_angle:
+        type: UniLabJsonCommand
+        goal:
+          angle: angle
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_angle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                angle:
+                  type: number
+              required:
+              - angle
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal:
+          initial_offset: initial_offset
+        goal_default:
+          initial_offset: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                initial_offset:
+                  type: integer
+              required:
+              - initial_offset
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-tilt_go_to_position:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_go_to_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: integer
+              required:
+              - position
+          required:
+          - goal
+        handles: {}
+      auto-tilt_initial_offset:
+        type: UniLabJsonCommand
+        goal:
+          offset: offset
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_initial_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                offset:
+                  type: integer
+              required:
+              - offset
+          required:
+          - goal
+        handles: {}
+      auto-tilt_initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-tilt_move_to_absolute_step_position:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_move_to_absolute_step_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: number
+              required:
+              - position
+          required:
+          - goal
+        handles: {}
+      auto-tilt_move_to_relative_step_position:
+        type: UniLabJsonCommand
+        goal:
+          steps: steps
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_move_to_relative_step_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: number
+              required:
+              - steps
+          required:
+          - goal
+        handles: {}
+      auto-tilt_port_clear_open_collector:
+        type: UniLabJsonCommand
+        goal:
+          open_collector: open_collector
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_port_clear_open_collector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                open_collector:
+                  type: integer
+              required:
+              - open_collector
+          required:
+          - goal
+        handles: {}
+      auto-tilt_port_set_open_collector:
+        type: UniLabJsonCommand
+        goal:
+          open_collector: open_collector
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_port_set_open_collector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                open_collector:
+                  type: integer
+              required:
+              - open_collector
+          required:
+          - goal
+        handles: {}
+      auto-tilt_power_off:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_power_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-tilt_request_error:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_request_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-tilt_request_offset_between_light_barrier_and_init_position:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_request_offset_between_light_barrier_and_init_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-tilt_request_sensor:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_request_sensor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-tilt_set_drain_time:
+        type: UniLabJsonCommand
+        goal:
+          drain_time: drain_time
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_set_drain_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                drain_time:
+                  type: number
+              required:
+              - drain_time
+          required:
+          - goal
+        handles: {}
+      auto-tilt_set_name:
+        type: UniLabJsonCommand
+        goal:
+          name: name
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_set_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
+          required:
+          - goal
+        handles: {}
+      auto-tilt_set_speed:
+        type: UniLabJsonCommand
+        goal:
+          speed: speed
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_set_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: integer
+              required:
+              - speed
+          required:
+          - goal
+        handles: {}
+      auto-tilt_set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+              required:
+              - temperature
+          required:
+          - goal
+        handles: {}
+      auto-tilt_set_waste_pump_off:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_set_waste_pump_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-tilt_set_waste_pump_on:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_set_waste_pump_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-tilt_switch_encoder:
+        type: UniLabJsonCommand
+        goal:
+          'on': 'on'
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_switch_encoder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                'on':
+                  type: boolean
+              required:
+              - 'on'
+          required:
+          - goal
+        handles: {}
+      auto-tilt_switch_off_temperature_controller:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: tilt_switch_off_temperature_controller
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: Tilt Module 驱动（Hamilton），支持 set_angle/setup/stop/tilt_go_to_position/tilt_initial_offset
+    等 22 个操作。
+  category:
+  - 倾斜模块
+  config_info: []
+  handles: []
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/tilting/hamilton_backend.py
+    candidate_class: HamiltonTiltModuleBackend
+    操作数: 22
+  manufacturer: 哈美顿
+  model:
+    name: Tilt Module
+    type: device
+  name: Hamilton Tilt Module
+  tags:
+  - 倾斜模块
+  resource_type: device
+  version: 0.1.0

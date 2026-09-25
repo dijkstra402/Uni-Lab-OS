@@ -391,3 +391,10 @@ class AgilentN9010AWrapper(GPIBDeviceWrapper):
         return processed_data
 
 __all__ = ["AgilentN9010AWrapper"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(AgilentN9010AWrapper)
+except Exception:
+    pass

@@ -642,3 +642,10 @@ class BioTekPlateReaderBackend(PlateReaderBackend):
         # Task cancellation is expected here; safe to ignore this exception.
         pass
       self._shaking_task = None
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(BioTekPlateReaderBackend)
+except Exception:
+    pass

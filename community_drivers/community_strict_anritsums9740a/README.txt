@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/anritsu/anritsuMS9740A.py
+registry_id: community_strict_anritsums9740a
+source_file: pymeasure/instruments/anritsu/anritsuMS9740A.py
+class_name: AnritsuMS9740A
+manufacturer: anritsu
+model: AnritsuMS9740A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_anritsums9740a.yaml

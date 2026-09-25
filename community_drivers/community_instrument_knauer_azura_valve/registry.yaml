@@ -1,0 +1,656 @@
+community_instrument_knauer_azura_valve:
+  class:
+    module: community_drivers.community_instrument_knauer_azura_valve.driver:CommunityInstrumentKnauerAzuraValve
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/cambiegroup__flowchem
+          source_file:
+            type: string
+            default: src/flowchem/devices/knauer/azura_compact.py
+          class_name:
+            type: string
+            default: AzuraCompact
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - initialize
+            - error_present
+            - create_and_send_command
+            - get_headtype
+            - set_headtype
+            - get_flow_rate
+            - set_flow_rate
+            - get_minimum_pressure
+            - set_minimum_pressure
+            - get_maximum_pressure
+            - set_maximum_pressure
+            - set_minimum_motor_current
+            - is_start_in_required
+            - require_start_in
+            - is_autostart_enabled
+            - enable_autostart
+            - get_adjusting_factor
+            - set_adjusting_factor
+            - get_correction_factor
+            - set_correction_factor
+            - read_pressure
+            - read_extflow
+            - read_errors
+            - read_motor_current
+            - infuse
+            - stop
+            - is_running
+            - set_local
+            - remote_control
+            - is_analog_control_enabled
+            - enable_analog_control
+            - repeated_task
+            - get_device_info
+          metadata:
+            type: object
+            default:
+              repo: cambiegroup/flowchem
+              repo_url: https://github.com/cambiegroup/flowchem
+              source_file: src/flowchem/devices/knauer/azura_compact.py
+              class_name: AzuraCompact
+              brand: Knauer
+              model: Azura Valve
+              device_type_cn: 多通阀
+              device_type_en: Multi-Port Valve
+              source_framework: flowchem
+              tag_id: '4382'
+              tag_name: 多通阀
+              tag_name_en: Multi-Port Valve
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 314
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-error_present:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: error_present
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reply:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create_and_send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_and_send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+                setpoint:
+                  type: integer
+                setpoint_range:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-get_headtype:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_headtype
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_headtype:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_headtype
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                head_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_flow_rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_flow_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_flow_rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_flow_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rate:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-get_minimum_pressure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_minimum_pressure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_minimum_pressure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_minimum_pressure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                  default: 0 bar
+        goal_default:
+          value: 0 bar
+        handles: {}
+      auto-get_maximum_pressure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_maximum_pressure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_maximum_pressure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_maximum_pressure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_minimum_motor_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_minimum_motor_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                setpoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_start_in_required:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_start_in_required
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-require_start_in:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: require_start_in
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: boolean
+                  default: true
+        goal_default:
+          value: true
+        handles: {}
+      auto-is_autostart_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_autostart_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enable_autostart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_autostart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: boolean
+                  default: true
+        goal_default:
+          value: true
+        handles: {}
+      auto-get_adjusting_factor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_adjusting_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_adjusting_factor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_adjusting_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                setpoint:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-get_correction_factor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_correction_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_correction_factor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_correction_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                setpoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_pressure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_pressure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_extflow:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_extflow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_motor_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_motor_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-infuse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: infuse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_running:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_running
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_local:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_local
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                  default: true
+        goal_default:
+          state: true
+        handles: {}
+      auto-remote_control:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                  default: true
+        goal_default:
+          state: true
+        handles: {}
+      auto-is_analog_control_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_analog_control_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enable_analog_control:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_analog_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-repeated_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: repeated_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_device_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Azura Valve 驱动（Knauer），支持 initialize/error_present/create_and_send_command/get_headtype/set_headtype
+    等 33 个操作。
+  category:
+  - 多通阀
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: cambiegroup/flowchem
+    source_file: src/flowchem/devices/knauer/azura_compact.py
+    candidate_class: AzuraCompact
+    candidate_score: 314
+    quality_status: usable
+    操作数: 33
+  manufacturer: Knauer
+  model:
+    name: Azura Valve
+    type: device
+  name: Knauer Azura Valve
+  tags:
+  - 多通阀
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

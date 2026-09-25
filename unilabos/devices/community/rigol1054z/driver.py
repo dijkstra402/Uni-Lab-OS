@@ -469,3 +469,10 @@ class Rigol1054z(_Usbtmc):
         return raw_img
 
 __all__ = ["Rigol1054z"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Rigol1054z)
+except Exception:
+    pass

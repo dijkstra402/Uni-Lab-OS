@@ -1,0 +1,432 @@
+community_strict_ats525:
+  class:
+    module: community_drivers.community_strict_ats525.driver:CommunityStrictAts525
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/pymeasure__pymeasure
+          source_file:
+            type: string
+            default: pymeasure/instruments/temptronic/temptronic_ats525.py
+          class_name:
+            type: string
+            default: ATS525
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - enter_cycle
+            - enter_ramp
+            - next_setpoint
+            - configure
+            - set_temperature
+            - wait_for_settling
+            - start
+            - error_status
+            - cycling_stopped
+            - end_of_all_cycles
+            - end_of_one_cycle
+            - end_of_test
+            - not_at_temperature
+            - at_temperature
+            - check_errors
+            - next_error
+            - write_binary_values
+            - read_binary_values
+          metadata:
+            type: object
+            default:
+              repo: pymeasure/pymeasure
+              repo_url: https://github.com/pymeasure/pymeasure
+              source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/temptronic/temptronic_ats525.py
+              source_file: pymeasure/instruments/temptronic/temptronic_ats525.py
+              class_name: ATS525
+              manufacturer_guess: thermo
+              manufacturer_resolved: thermo
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.95
+              quality_score: 1.17
+              code_evidence: 'L38: class ATS525(ATSBase):'
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001 {}
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-enter_cycle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enter_cycle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enter_ramp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enter_ramp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-next_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: next_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-configure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp_window:
+                  type: string
+                  default: 1
+                dut_type:
+                  type: string
+                  default: T
+                soak_time:
+                  type: string
+                  default: 30
+                dut_constant:
+                  type: string
+                  default: 100
+                temp_limit_air_low:
+                  type: string
+                  default: -60
+                temp_limit_air_high:
+                  type: string
+                  default: 220
+                temp_limit_air_dut:
+                  type: string
+                  default: 50
+                maximum_test_time:
+                  type: string
+                  default: 1000
+        goal_default:
+          temp_window: 1
+          dut_type: T
+          soak_time: 30
+          dut_constant: 100
+          temp_limit_air_low: -60
+          temp_limit_air_high: 220
+          temp_limit_air_dut: 50
+          maximum_test_time: 1000
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                set_temp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wait_for_settling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_settling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                time_limit:
+                  type: string
+                  default: 300
+        goal_default:
+          time_limit: 300
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable_air_flow:
+                  type: string
+                  default: true
+        goal_default:
+          enable_air_flow: true
+        handles: {}
+      auto-error_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: error_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-cycling_stopped:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cycling_stopped
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-end_of_all_cycles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: end_of_all_cycles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-end_of_one_cycle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: end_of_one_cycle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-end_of_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: end_of_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-not_at_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: not_at_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-at_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: at_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-next_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: next_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                values:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: ATS525驱动（thermo），支持enter_cycle/enter_ramp/next_setpoint/configure/set_temperature等18个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: pymeasure/pymeasure
+    source_file: pymeasure/instruments/temptronic/temptronic_ats525.py
+    candidate_class: ATS525
+    quality_score: 1.17
+    confidence: 0.95
+    quality_status: usable
+    操作数: 18
+  manufacturer: thermo
+  model:
+    name: ATS525
+    type: device
+  name: thermo ATS525
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

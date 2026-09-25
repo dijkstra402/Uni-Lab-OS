@@ -1,0 +1,92 @@
+community.ba.qick_instrument:
+  name: InstruDriver QickInstrument
+  category:
+  - 振荡器（非恒温）
+  class:
+    module: unilabos.devices.quantum_control.qick_instrument:QickInstrument
+    type: python
+    status_types:
+      idn: String
+    action_value_mappings:
+      auto-cycles2sec_tproc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cycles2sec_tproc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reg:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-sec2cycles_tproc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sec2cycles_tproc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sec:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: InstruDriver QickInstrument 设备驱动，社区驱动 - 自动集成自 qick_instrument
+  device_params:
+    品牌: InstruDriver
+    型号: QickInstrument
+    设备类型: 振荡器（非恒温）
+    来源仓库: qick_instrument
+    驱动类: QickInstrument
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ns_host:
+          type: string
+          default: null
+        ns_port:
+          type: string
+          default: 8888
+        name:
+          type: string
+          default: QickInstrument
+  manufacturer: WattRex
+  model:
+    name: QickInstrument
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

@@ -323,6 +323,78 @@ gh_agilent_vspin:
               properties: {}
         goal_default: {}
         handles: {}
+      initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 初始化 / 复位仪器
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: initialize参数
+          type: object
+      stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 关闭输出 / 停止
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: stop参数
+          type: object
+      set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default:
+          temperature: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置温度
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                temperature:
+                  type: number
+                  description: temperature
+              required:
+              - temperature
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_temperature参数
+          type: object
     source: https://github.com/PyLabRobot/pylabrobot
   name: Agilent V-Spin Microplate Centrifuge
   description: 是德科技为创新者提供以软件为中心的设计、仿真和测试解决方案，以快速实现未来的突破并降低风险。

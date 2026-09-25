@@ -1,0 +1,12 @@
+repo: AlexShkarin/pyLabLib
+repo_url: https://github.com/AlexShkarin/pyLabLib
+source_url: https://github.com/AlexShkarin/pyLabLib/blob/main/pylablib/devices/Arcus/performax.py
+registry_id: community_strict_performax4exstage
+source_file: pylablib/devices/Arcus/performax.py
+class_name: Performax4EXStage
+manufacturer: arcus
+model: Performax4EXStage
+tag: 机械臂
+confidence: 0.8
+quality_score: 0.88
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_performax4exstage.yaml

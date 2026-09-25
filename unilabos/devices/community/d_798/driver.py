@@ -341,3 +341,10 @@ class Agilent8257D(SCPIUnknownMixin, Instrument):
         self.disable_modulation()
         self.disable()
         super().shutdown()
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Agilent8257D)
+except Exception:
+    pass

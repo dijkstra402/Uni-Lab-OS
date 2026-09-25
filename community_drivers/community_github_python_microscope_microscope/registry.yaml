@@ -1,0 +1,93 @@
+community_github_python_microscope_microscope:
+  class:
+    module: community_drivers.community_github_python_microscope_microscope.driver:CommunityGithubPythonMicroscopeMicroscope
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/python-microscope_microscope
+          source_file:
+            type: string
+            default: microscope/controllers/zaber.py
+          class_name:
+            type: string
+            default: ZaberDaisyChain
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - devices
+          metadata:
+            type: object
+            default:
+              repo: python-microscope/microscope
+              repo_url: https://github.com/python-microscope/microscope
+              unit_id: gh_ximea_mc023mg_sy_ub
+              source_file: microscope/controllers/zaber.py
+              candidate_score: 83
+              manufacturer: Ximea
+              model_name: Ximea MC023MG-SY-UB
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-devices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'Deformable mirrors ultra-intense lasers Bio-imaging Ophthalmology
+    Microscopy Beam shaping Particle acceleration Focal spot correction GitHub驱动:
+    https://github.com/python-microscope/microscope'
+  category:
+  - community
+  device_params:
+    repo: python-microscope/microscope
+    source_file: microscope/controllers/zaber.py
+    candidate_class: ZaberDaisyChain
+    communication: ''
+    instrument_params: 'Wavefront sensors Ultra High Resolution VIS NIR Spectrum SWIR
+      Spectrum Custom Sensors UV & Hard X-Ray Spectrum Spectrally Resolved; UV & Hard
+      X-Ray Spectrum; Applications Laser metrology VIS NIR metrology SWIR metrology
+      X-EUV metrology AO for microscopy; X-EUV metrology; <img style="margin-bottom:
+      -6px; width: 25px;" src="https://www.imagine-optic.com/wp-content/uploads/2024/07/Untitled-design-17.png">'
+    official_url: https://www.imagine-optic.com/products/adaptive-optics/deformable-mirrors/
+  manufacturer: Imagine Optic
+  model:
+    name: Ximea MC023MG-SY-UB
+    type: device
+  name: Imagine Optic Mirao 52e
+  tags:
+  - 普通光学显微镜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: Biology
+    scene_name: Imaging
+    step: Microscopy
+  version: 0.1.0

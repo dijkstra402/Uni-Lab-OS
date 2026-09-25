@@ -1,0 +1,671 @@
+community_instrument_illumina_hiseq_2500:
+  class:
+    module: community_drivers.community_instrument_illumina_hiseq_2500.driver:CommunityInstrumentIlluminaHiseq2500
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/nygctech__PySeq2500
+          source_file:
+            type: string
+            default: pyseq/dcam.py
+          class_name:
+            type: string
+            default: HamamatsuCamera
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - message
+            - captureSetup
+            - checkStatus
+            - getCameraProperties
+            - getFrames
+            - saveImage
+            - getFocusStack
+            - getModelInfo
+            - getProperties
+            - getPropertyAttribute
+            - getPropertyText
+            - getPropertyRange
+            - getPropertyRW
+            - getPropertyValue
+            - isCameraProperty
+            - newFrames
+            - setPropertyValue
+            - setTriggerMode
+            - setLineBundleHeight
+            - setSubArrayMode
+            - allocFrame
+            - startAcquisition
+            - stopAcquisition
+            - freeFrames
+            - shutdown
+            - getFrameCount
+            - getFrameInterval
+            - get_status
+            - startSequence
+            - setTriggerModeProperty
+            - wait
+            - getCapability
+            - setTDI
+            - setAREA
+          metadata:
+            type: object
+            default:
+              repo: nygctech/PySeq2500
+              repo_url: https://github.com/nygctech/PySeq2500
+              source_file: pyseq/dcam.py
+              class_name: HamamatsuCamera
+              brand: Illumina
+              model: HiSeq 2500
+              device_type_cn: DNA测序仪
+              device_type_en: DNA Sequencer
+              source_framework: 生命科学
+              tag_id: '4361'
+              tag_name: DNA测序仪
+              tag_name_en: DNA Sequencer
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 302
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                text:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-captureSetup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: captureSetup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-checkStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: checkStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fn_return:
+                  type: string
+                fn_name:
+                  type: string
+                  default: unknown
+        goal_default:
+          fn_name: unknown
+        handles: {}
+      auto-getCameraProperties:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCameraProperties
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getFrames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getFrames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-saveImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: saveImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                image_name:
+                  type: string
+                image_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getFocusStack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getFocusStack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getModelInfo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getModelInfo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                camera_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getProperties:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getProperties
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getPropertyAttribute:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertyAttribute
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                property_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPropertyText:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertyText
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                property_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPropertyRange:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertyRange
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                property_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPropertyRW:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertyRW
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                property_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPropertyValue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertyValue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                property_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-isCameraProperty:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isCameraProperty
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                property_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-newFrames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: newFrames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setPropertyValue:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setPropertyValue
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                property_name:
+                  type: string
+                property_value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setTriggerMode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setTriggerMode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trigger:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setLineBundleHeight:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setLineBundleHeight
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                height:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setSubArrayMode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSubArrayMode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-allocFrame:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: allocFrame
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_frames:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-startAcquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startAcquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stopAcquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopAcquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-freeFrames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: freeFrames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getFrameCount:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getFrameCount
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getFrameInterval:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getFrameInterval
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-startSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n_frames:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setTriggerModeProperty:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setTriggerModeProperty
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wait:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getCapability:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCapability
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                c:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setTDI:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setTDI
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setAREA:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setAREA
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: HiSeq 2500 驱动（Illumina），支持 message/captureSetup/checkStatus/getCameraProperties/getFrames
+    等 34 个操作。
+  category:
+  - DNA测序仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: nygctech/PySeq2500
+    source_file: pyseq/dcam.py
+    candidate_class: HamamatsuCamera
+    candidate_score: 302
+    quality_status: usable
+    操作数: 34
+  manufacturer: 因美纳
+  model:
+    name: HiSeq 2500
+    type: device
+  name: Illumina HiSeq 2500
+  tags:
+  - DNA测序仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

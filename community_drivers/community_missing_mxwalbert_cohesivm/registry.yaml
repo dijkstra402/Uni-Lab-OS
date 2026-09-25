@@ -1,0 +1,184 @@
+community_missing_mxwalbert_cohesivm:
+  class:
+    module: community_drivers.community_missing_mxwalbert_cohesivm.driver:CommunityMissingMxwalbertCohesivm
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/mxwalbert__cohesivm
+          source_file:
+            type: string
+            default: cohesivm/devices/agilent/Agilent4284A.py
+          class_name:
+            type: string
+            default: Agilent4284A
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - enable
+            - disable
+            - set_oscillator_frequency
+            - set_oscillator_voltage
+            - set_oscillator_current
+            - measure_impedance
+            - channels
+          metadata:
+            type: object
+            default:
+              repo: mxwalbert/cohesivm
+              repo_url: https://github.com/mxwalbert/cohesivm
+              source_file: cohesivm/devices/agilent/Agilent4156C.py
+              candidate_score: 159
+              candidate_reason: ''
+              manufacturers:
+              - Agilent/HP
+              models:
+              - 4284A精密LCR表
+              tags: &id001
+              - 介电常数测定仪
+              notes:
+              - COHESIVM测量框架的一部分
+              comm_protocols:
+              - GPIB via pyvisa
+              review_status: good
+              review_notes:
+              - 改选 Agilent4284A（HP 4284A LCR 表），与元数据标注仪器一致。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_oscillator_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_oscillator_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_oscillator_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_oscillator_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_oscillator_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_oscillator_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_impedance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_impedance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-channels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: mxwalbert/cohesivm
+    source_file: cohesivm/devices/agilent/Agilent4156C.py
+    candidate_class: Agilent4156C
+    communication: GPIB via pyvisa
+  manufacturer: Agilent/HP
+  model:
+    name: 4284A精密LCR表
+    type: device
+  name: cohesivm
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

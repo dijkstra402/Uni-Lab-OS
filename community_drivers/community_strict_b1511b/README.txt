@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/Keysight/keysightb1500/KeysightB1511B.py
+registry_id: community_strict_b1511b
+source_file: src/qcodes/instrument_drivers/Keysight/keysightb1500/KeysightB1511B.py
+class_name: KeysightB1511B
+manufacturer: keysight
+model: B1511B
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_b1511b.yaml

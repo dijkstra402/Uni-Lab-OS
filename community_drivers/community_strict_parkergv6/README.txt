@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/parker/parkerGV6.py
+registry_id: community_strict_parkergv6
+source_file: pymeasure/instruments/parker/parkerGV6.py
+class_name: ParkerGV6
+manufacturer: parker
+model: ParkerGV6
+tag: 表征设备
+confidence: 0.75
+quality_score: 0.89
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_parkergv6.yaml

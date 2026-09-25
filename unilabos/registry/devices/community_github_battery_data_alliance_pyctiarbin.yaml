@@ -1,0 +1,129 @@
+community_github_battery_data_alliance_pyctiarbin:
+  class:
+    module: community_drivers.community_github_battery_data_alliance_pyctiarbin.driver:CommunityGithubBatteryDataAlliancePyctiarbin
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/battery-data-alliance_pyctiarbin
+          source_file:
+            type: string
+            default: pyctiarbin/cycler_interface.py
+          class_name:
+            type: string
+            default: CyclerInterface
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - get_num_channels
+            - get_login_feedback
+            - read_channel_status
+          metadata:
+            type: object
+            default:
+              repo: battery-data-alliance/pyctiarbin
+              repo_url: https://github.com/battery-data-alliance/pyctiarbin
+              unit_id: gh_arbin_mits_pro
+              source_file: pyctiarbin/cycler_interface.py
+              candidate_score: 112
+              manufacturer: Arbin
+              model_name: Arbin MITS Pro系列
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-get_num_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_num_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_login_feedback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_login_feedback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_channel_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_channel_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 'Arbin products delivers fast, accurate Self-Discharge Current measurement
+    while maintaining battery electrochemical balance. Our technology allows the applied
+    small current to be constant and unaffected by temperature changes, ensuring precision
+    throughout the process. GitHub驱动: https://github.com/battery-data-alliance/pyctiarbin'
+  category:
+  - community
+  device_params:
+    repo: battery-data-alliance/pyctiarbin
+    source_file: pyctiarbin/cycler_interface.py
+    candidate_class: CyclerInterface
+    communication: ''
+    photo_url: https://www.arbin.com/wp-content/uploads/2025/04/Arbin-navbar-products-v2.png
+    instrument_params: 'With Integrated Chamber High-Precision Battery Tester Laboratory
+      Battery Tester Parallel Differential Battery Tester; High-Precision Battery
+      Tester; Without Integrated Chamber High-Precision Battery Tester Laboratory
+      Battery Tester; RBT-Cell LBTS-Cell LBTS-Cell High Volume LBTS-MZTC; LBTS-Cell
+      High Volume; LBTS-Module RBT-Module RBT-High Power​; LBTS-Module; RBT-High Power​;
+      <img decoding="async" style="width: 74px; margin: 6px 40px" src="/wp-content/uploads/2024/12/ARBIN-Cell-Finishing-i2.png"
+      />; Multi Zone Temperature Chamber Auxiliary System Battery Holders and Racks
+      Multi-Zone Open Rack S'
+    official_url: https://www.arbin.com/products/battery-test-equipment/
+  manufacturer: Arbin
+  model:
+    name: Arbin MITS Pro系列
+    type: device
+  name: Arbin MITS Pro系列
+  tags:
+  - 电池测试柜
+  resource_type: device
+  icon: https://www.arbin.com/wp-content/uploads/2025/04/Arbin-navbar-products-v2.png
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Battery Testing
+  version: 0.1.0

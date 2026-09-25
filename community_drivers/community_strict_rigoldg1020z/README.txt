@@ -1,0 +1,12 @@
+repo: AlexShkarin/pyLabLib
+repo_url: https://github.com/AlexShkarin/pyLabLib
+source_url: https://github.com/AlexShkarin/pyLabLib/blob/main/pylablib/devices/AWG/specific.py
+registry_id: community_strict_rigoldg1020z
+source_file: pylablib/devices/AWG/specific.py
+class_name: RigolDG1020Z
+manufacturer: agilent
+model: RigolDG1020Z
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.06
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_rigoldg1020z.yaml

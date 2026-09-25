@@ -96,3 +96,10 @@ class KeysightE36312A(SCPIMixin, Instrument):
         )
         self.channels[1].voltage_setpoint_values = [0, 6]
         self.channels[1].current_limit_values = [0, 5]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(KeysightE36312A)
+except Exception:
+    pass

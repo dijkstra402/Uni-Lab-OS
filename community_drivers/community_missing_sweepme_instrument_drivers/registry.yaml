@@ -1,0 +1,260 @@
+community_missing_sweepme_instrument_drivers:
+  class:
+    module: community_drivers.community_missing_sweepme_instrument_drivers.driver:CommunityMissingSweepmeInstrumentDrivers
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/SweepMe__instrument-drivers
+          source_file:
+            type: string
+            default: src/LCRmeter-HP_4284A/main.py
+          class_name:
+            type: string
+            default: Device
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src/LCRmeter-HP_4284A
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - initialize
+            - deinitialize
+            - configure
+            - measure
+            - read_result
+            - set_frequency
+            - set_voltage
+            - set_bias_voltage
+            - set_bias_current
+            - set_integration
+            - poweron
+            - poweroff
+          metadata:
+            type: object
+            default:
+              repo: SweepMe/instrument-drivers
+              repo_url: https://github.com/SweepMe/instrument-drivers
+              source_file: src/Logger-DeviceClass_template/main.py
+              candidate_score: 131
+              candidate_reason: ''
+              manufacturers:
+              - MBraun
+              models:
+              - SCU101手套箱控制单元
+              tags: &id001
+              - 气体保护干燥箱
+              notes:
+              - '文件: src/Switch-MBRAUN_SCU101/main.py'
+              comm_protocols:
+              - pysweepme框架(串口)
+              review_status: good
+              review_notes:
+              - 改选 HP 4284A LCR 表具体驱动（从模板基类改为具体仪器）。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-deinitialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deinitialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-configure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: configure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_result:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_result
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_bias_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_bias_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_bias_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_bias_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_integration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_integration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-poweron:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: poweron
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-poweroff:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: poweroff
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: SweepMe/instrument-drivers
+    source_file: src/Logger-DeviceClass_template/main.py
+    candidate_class: Device
+    communication: pysweepme框架(串口)
+  manufacturer: MBraun
+  model:
+    name: SCU101手套箱控制单元
+    type: device
+  name: instrument-drivers
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

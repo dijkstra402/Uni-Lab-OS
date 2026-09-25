@@ -1,0 +1,323 @@
+community_instrument_azenta_a4s:
+  class:
+    module: community_drivers.community_instrument_azenta_a4s.driver:CommunityInstrumentAzentaA4s
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/sealing/a4s_backend.py
+          class_name:
+            type: string
+            default: A4SBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - close
+            - get_remaining_time
+            - get_status
+            - get_temperature
+            - open
+            - seal
+            - set_heater
+            - set_temperature
+            - set_time
+            - setup
+            - stop
+            - system_reset
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              brand: Azenta
+              model: a4S
+              device_type_cn: 封膜机
+              device_type_en: Plate Sealer
+              source_framework: PyLabRobot
+              source_file: pylabrobot/sealing/a4s_backend.py
+              class_name: A4SBackend
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_remaining_time:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_remaining_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-seal:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+          duration: duration
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: seal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: integer
+                duration:
+                  type: number
+              required:
+              - temperature
+              - duration
+          required:
+          - goal
+        handles: {}
+      auto-set_heater:
+        type: UniLabJsonCommand
+        goal:
+          'on': 'on'
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_heater
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                'on':
+                  type: boolean
+              required:
+              - 'on'
+          required:
+          - goal
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+              required:
+              - temperature
+          required:
+          - goal
+        handles: {}
+      auto-set_time:
+        type: UniLabJsonCommand
+        goal:
+          seconds: seconds
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                seconds:
+                  type: number
+              required:
+              - seconds
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-system_reset:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: system_reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: a4S 驱动（Azenta），支持 close/get_remaining_time/get_status/get_temperature/open
+    等 12 个操作。
+  category:
+  - 封膜机
+  config_info: []
+  handles: []
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/sealing/a4s_backend.py
+    candidate_class: A4SBackend
+    操作数: 12
+  manufacturer: Azenta
+  model:
+    name: a4S
+    type: device
+  name: Azenta a4S
+  tags:
+  - 封膜机
+  resource_type: device
+  version: 0.1.0

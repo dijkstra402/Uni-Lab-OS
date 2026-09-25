@@ -1,0 +1,1018 @@
+community_instrument_tricontinent_c3000_c24000__community_instrument_tricontinent_c3000_c24000:
+  class:
+    module: unilabos.devices.community.community_instrument_tricontinent_c3000_c24000.driver:C3000Controller
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/croningp__pycont
+          source_file:
+            type: string
+            default: pycont/controller.py
+          class_name:
+            type: string
+            default: C3000Controller
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - from_config
+            - write_and_read_from_pump
+            - volume_to_step
+            - step_to_volume
+            - is_idle
+            - is_busy
+            - wait_until_idle
+            - is_initialized
+            - smart_initialize
+            - initialize
+            - initialize_valve_right
+            - initialize_valve_left
+            - initialize_no_valve
+            - initialize_valve_only
+            - init_all_pump_parameters
+            - set_microstep_mode
+            - check_top_velocity_within_range
+            - set_default_top_velocity
+            - get_default_top_velocity
+            - ensure_default_top_velocity
+            - set_top_velocity
+            - get_top_velocity
+            - get_plunger_position
+            - current_steps
+            - remaining_steps
+            - get_volume
+            - current_volume
+            - remaining_volume
+            - is_volume_pumpable
+            - pump
+            - is_volume_deliverable
+            - deliver
+            - transfer
+            - is_volume_valid
+            - go_to_volume
+            - go_to_max_volume
+            - get_raw_valve_position
+            - get_valve_position
+            - set_valve_position
+            - set_eeprom_config
+            - set_eeprom_lowlevel_config
+            - flash_eeprom_3_way_y_valve
+            - flash_eeprom_3_way_t_valve
+            - flash_eeprom_4_way_nondist_valve
+            - flash_eeprom_4_way_dist_valve
+            - get_eeprom_config
+            - get_current_valve_config
+            - terminate
+          metadata:
+            type: object
+            default:
+              repo: croningp/pycont
+              repo_url: https://github.com/croningp/pycont
+              source_file: pycont/controller.py
+              class_name: C3000Controller
+              brand: Tricontinent
+              model: C3000/C24000
+              device_type_cn: 柱塞泵
+              device_type_en: Plunger Pump
+              source_framework: pycont
+              tag_id: '4403'
+              tag_name: 柱塞泵
+              tag_name_en: Plunger Pump
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 442
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-from_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump_io:
+                  type: string
+                pump_name:
+                  type: string
+                pump_config:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-write_and_read_from_pump:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_and_read_from_pump
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                packet:
+                  type: string
+                max_repeat:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-volume_to_step:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: volume_to_step
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume_in_ml:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-step_to_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: step_to_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                step:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-is_idle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_idle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_busy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_busy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_until_idle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_until_idle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_initialized:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_initialized
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-smart_initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: smart_initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve_position:
+                  type: string
+                secure:
+                  type: boolean
+                  default: true
+        goal_default:
+          secure: true
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve_position:
+                  type: string
+                max_repeat:
+                  type: integer
+                secure:
+                  type: boolean
+                  default: true
+        goal_default:
+          secure: true
+        handles: {}
+      auto-initialize_valve_right:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_valve_right
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                operand_value:
+                  type: integer
+                  default: 0
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          operand_value: 0
+          wait: true
+        handles: {}
+      auto-initialize_valve_left:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_valve_left
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                operand_value:
+                  type: integer
+                  default: 0
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          operand_value: 0
+          wait: true
+        handles: {}
+      auto-initialize_no_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_no_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                operand_value:
+                  type: integer
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-initialize_valve_only:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_valve_only
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                operand_string:
+                  type: string
+                  default: 0,0
+                wait:
+                  type: boolean
+                  default: true
+        goal_default:
+          operand_string: 0,0
+          wait: true
+        handles: {}
+      auto-init_all_pump_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init_all_pump_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                secure:
+                  type: boolean
+                  default: true
+        goal_default:
+          secure: true
+        handles: {}
+      auto-set_microstep_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_microstep_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                micro_step_mode:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-check_top_velocity_within_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_top_velocity_within_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                top_velocity:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_default_top_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_default_top_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                top_velocity:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-get_default_top_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_default_top_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ensure_default_top_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ensure_default_top_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                secure:
+                  type: boolean
+                  default: true
+        goal_default:
+          secure: true
+        handles: {}
+      auto-set_top_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_top_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                top_velocity:
+                  type: integer
+                max_repeat:
+                  type: integer
+                secure:
+                  type: boolean
+                  default: true
+        goal_default:
+          secure: true
+        handles: {}
+      auto-get_top_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_top_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_plunger_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_plunger_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remaining_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remaining_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remaining_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remaining_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_volume_pumpable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_volume_pumpable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume_in_ml:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-pump:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pump
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume_in_ml:
+                  type: number
+                from_valve:
+                  type: string
+                speed_in:
+                  type: integer
+                wait:
+                  type: boolean
+                  default: false
+                secure:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: false
+          secure: true
+        handles: {}
+      auto-is_volume_deliverable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_volume_deliverable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume_in_ml:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-deliver:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deliver
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume_in_ml:
+                  type: number
+                to_valve:
+                  type: string
+                speed_out:
+                  type: integer
+                wait:
+                  type: boolean
+                  default: false
+                secure:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: false
+          secure: true
+        handles: {}
+      auto-transfer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transfer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume_in_ml:
+                  type: number
+                from_valve:
+                  type: string
+                to_valve:
+                  type: string
+                speed_in:
+                  type: integer
+                speed_out:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-is_volume_valid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_volume_valid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume_in_ml:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-go_to_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: go_to_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume_in_ml:
+                  type: number
+                speed:
+                  type: integer
+                wait:
+                  type: boolean
+                  default: false
+                secure:
+                  type: boolean
+                  default: true
+        goal_default:
+          wait: false
+          secure: true
+        handles: {}
+      auto-go_to_max_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: go_to_max_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: integer
+                wait:
+                  type: boolean
+                  default: false
+        goal_default:
+          wait: false
+        handles: {}
+      auto-get_raw_valve_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_raw_valve_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_valve_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_valve_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_repeat:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_valve_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_valve_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve_position:
+                  type: string
+                max_repeat:
+                  type: integer
+                secure:
+                  type: boolean
+                  default: true
+        goal_default:
+          secure: true
+        handles: {}
+      auto-set_eeprom_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_eeprom_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                operand_value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_eeprom_lowlevel_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_eeprom_lowlevel_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: integer
+                operand:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-flash_eeprom_3_way_y_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flash_eeprom_3_way_y_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-flash_eeprom_3_way_t_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flash_eeprom_3_way_t_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-flash_eeprom_4_way_nondist_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flash_eeprom_4_way_nondist_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-flash_eeprom_4_way_dist_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flash_eeprom_4_way_dist_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_eeprom_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_eeprom_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_valve_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_valve_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-terminate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: terminate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 初始化 / 复位仪器
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: initialize参数
+          type: object
+  description: C3000/C24000 驱动（Tricontinent），支持 from_config/write_and_read_from_pump/volume_to_step/step_to_volume/is_idle
+    等 48 个操作。
+  category:
+  - 柱塞泵
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: croningp/pycont
+    source_file: pycont/controller.py
+    candidate_class: C3000Controller
+    candidate_score: 442
+    quality_status: usable
+    操作数: 48
+  manufacturer: Tricontinent
+  model:
+    name: C3000/C24000
+    type: device
+  name: Tricontinent C3000/C24000
+  tags:
+  - 柱塞泵
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

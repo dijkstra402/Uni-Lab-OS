@@ -1,0 +1,434 @@
+community_instrument_inheco_thermoshake_2:
+  class:
+    module: community_drivers.community_instrument_inheco_thermoshake_2.driver:CommunityInstrumentInhecoThermoshake2
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/heating_shaking/inheco/thermoshake_backend.py
+          class_name:
+            type: string
+            default: InhecoThermoshakeBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - deactivate
+            - get_current_temperature
+            - get_device_info
+            - lock_plate
+            - set_shaker_shape
+            - set_shaker_speed
+            - set_target_temperature
+            - set_temperature
+            - setup
+            - shake
+            - start_shaking
+            - start_temperature_control
+            - stop
+            - stop_shaking
+            - stop_temperature_control
+            - unlock_plate
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              source_file: pylabrobot/heating_shaking/inheco/thermoshake_backend.py
+              class_name: InhecoThermoshakeBackend
+              brand: Inheco
+              model: ThermoShake
+              device_type_cn: 热混匀仪
+              device_type_en: Thermomixer
+              source_framework: PyLabRobot
+              tag_id: '4421'
+              tag_name: 热混匀仪
+              tag_name_en: Thermomixer
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 2318
+              action_targets: {}
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-deactivate:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_device_info:
+        type: UniLabJsonCommand
+        goal:
+          info_type: info_type
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_device_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                info_type:
+                  type: integer
+              required:
+              - info_type
+          required:
+          - goal
+        handles: {}
+      auto-lock_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: lock_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-set_shaker_shape:
+        type: UniLabJsonCommand
+        goal:
+          shape: shape
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_shaker_shape
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shape:
+                  type: integer
+              required:
+              - shape
+          required:
+          - goal
+        handles: {}
+      auto-set_shaker_speed:
+        type: UniLabJsonCommand
+        goal:
+          speed: speed
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_shaker_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: number
+              required:
+              - speed
+          required:
+          - goal
+        handles: {}
+      auto-set_target_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_target_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+              required:
+              - temperature
+          required:
+          - goal
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+              required:
+              - temperature
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-shake:
+        type: UniLabJsonCommand
+        goal:
+          speed: speed
+          shape: shape
+        goal_default:
+          shape: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: shake
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: number
+                shape:
+                  type: integer
+              required:
+              - speed
+              - shape
+          required:
+          - goal
+        handles: {}
+      auto-start_shaking:
+        type: UniLabJsonCommand
+        goal:
+          speed: speed
+          shape: shape
+        goal_default:
+          shape: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: start_shaking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: number
+                shape:
+                  type: integer
+              required:
+              - speed
+              - shape
+          required:
+          - goal
+        handles: {}
+      auto-start_temperature_control:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: start_temperature_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop_shaking:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop_shaking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop_temperature_control:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop_temperature_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-unlock_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: unlock_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: ThermoShake 驱动（Inheco），支持 deactivate/get_current_temperature/get_device_info/lock_plate/set_shaker_shape
+    等 16 个操作。
+  category:
+  - 热混匀仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/heating_shaking/inheco/thermoshake_backend.py
+    candidate_class: InhecoThermoshakeBackend
+    candidate_score: 2318
+    quality_status: usable
+    操作数: 16
+  manufacturer: Inheco
+  model:
+    name: ThermoShake
+    type: device
+  name: Inheco ThermoShake
+  tags:
+  - 热混匀仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

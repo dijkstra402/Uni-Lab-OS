@@ -339,6 +339,150 @@ gh_keithley_2450:
               properties: {}
         goal_default: {}
         handles: {}
+      initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 初始化 / 复位仪器
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: initialize参数
+          type: object
+      start:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 打开输出 / 开始运行
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: start参数
+          type: object
+      stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 关闭输出 / 停止
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: stop参数
+          type: object
+      measure:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 读取测量值
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: measure参数
+          type: object
+      set_voltage:
+        type: UniLabJsonCommand
+        goal:
+          voltage: voltage
+        goal_default:
+          voltage: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电压
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                voltage:
+                  type: number
+                  description: voltage
+              required:
+              - voltage
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_voltage参数
+          type: object
+      set_current:
+        type: UniLabJsonCommand
+        goal:
+          current: current
+        goal_default:
+          current: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电流
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                current:
+                  type: number
+                  description: current
+              required:
+              - current
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_current参数
+          type: object
     source: https://github.com/pymeasure/pymeasure
   name: Keithley 2450
   description: 使用 Keithley 4200A-SCS 半导体参数分析仪加速研究和故障分析。集成 I-V、C-V 和脉冲 I-V，设置速度加快 50%。

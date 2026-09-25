@@ -557,3 +557,10 @@ class Agilent34450A(SCPIUnknownMixin, Instrument):
                 log.error(e)
 
         return list_without_empty_elements
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Agilent34450A)
+except Exception:
+    pass

@@ -259,3 +259,10 @@ def StreamOpen(stream_type,
         return None
 
 __all__ = ["StreamSocket"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(StreamSocket)
+except Exception:
+    pass

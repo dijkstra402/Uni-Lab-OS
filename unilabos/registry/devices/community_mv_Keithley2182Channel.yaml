@@ -1,0 +1,180 @@
+mv_Keithley2182Channel:
+  class:
+    module: unilabos.devices.community.mv_Keithley2182Channel.driver:Keithley2182Channel
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-setup_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setup_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acquire_temperature_reference:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_temperature_reference
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acquire_voltage_reference:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquire_voltage_reference
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      measure:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 读取测量值
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: measure参数
+          type: object
+      set_voltage:
+        type: UniLabJsonCommand
+        goal:
+          voltage: voltage
+        goal_default:
+          voltage: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电压
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                voltage:
+                  type: number
+                  description: voltage
+              required:
+              - voltage
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_voltage参数
+          type: object
+      set_current:
+        type: UniLabJsonCommand
+        goal:
+          current: current
+        goal_default:
+          current: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电流
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                current:
+                  type: number
+                  description: current
+              required:
+              - current
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_current参数
+          type: object
+      set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default:
+          temperature: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置温度
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                temperature:
+                  type: number
+                  description: temperature
+              required:
+              - temperature
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_temperature参数
+          type: object
+  name: Keithley2182Channel
+  description: Keithley2182Channel (from pymeasure__pymeasure)
+  manufacturer: ''
+  version: 1.0.0
+  registry_type: device
+  tags:
+  - community
+  - model_variant
+  model:
+    name: Keithley2182Channel
+    type: device
+  source_repo: pymeasure__pymeasure

@@ -176,3 +176,10 @@ class AFG3152C(SCPIUnknownMixin, Instrument):
 
     def opc(self):
         return int(self.ask("*OPC?"))
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(AFG3152CChannel)
+except Exception:
+    pass

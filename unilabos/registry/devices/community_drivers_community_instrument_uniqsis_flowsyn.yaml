@@ -1,0 +1,152 @@
+community_instrument_uniqsis_flowsyn:
+  class:
+    module: community_drivers.community_instrument_uniqsis_flowsyn.driver:CommunityInstrumentUniqsisFlowsyn
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/JohanvdWesthuizen__FlowChem-ClosedLoopOpt
+          source_file:
+            type: string
+            default: Python_code/Allylation_code.py
+          class_name:
+            type: string
+            default: Allylation1
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - grab_data
+            - to_dict
+          metadata:
+            type: object
+            default:
+              repo: JohanvdWesthuizen/FlowChem-ClosedLoopOpt
+              repo_url: https://github.com/JohanvdWesthuizen/FlowChem-ClosedLoopOpt
+              source_file: Python_code/Allylation_code.py
+              class_name: Allylation1
+              brand: Uniqsis
+              model: FlowSyn
+              device_type_cn: 微通道反应器
+              device_type_en: Microreactor
+              source_framework: 专用驱动
+              tag_id: '4388'
+              tag_name: 微通道反应器
+              tag_name_en: Microreactor
+              language: Python
+              parse_status: ok
+              quality_status: thin
+              quality_reasons: []
+              candidate_score: 46
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-grab_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: grab_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                IP:
+                  type: string
+                prod_theoritical_conc:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-to_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: FlowSyn 驱动（Uniqsis），支持 grab_data/to_dict 等 2 个操作。
+  category:
+  - 微通道反应器
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: JohanvdWesthuizen/FlowChem-ClosedLoopOpt
+    source_file: Python_code/Allylation_code.py
+    candidate_class: Allylation1
+    candidate_score: 46
+    quality_status: thin
+    操作数: 2
+  manufacturer: Uniqsis
+  model:
+    name: FlowSyn
+    type: device
+  name: Uniqsis FlowSyn
+  tags:
+  - 微通道反应器
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

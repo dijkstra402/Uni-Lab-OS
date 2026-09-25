@@ -162,3 +162,10 @@ class E3631A(PowerSupplyDevice):
             self.inst.close()
         except (AttributeError, pyvisa.errors.InvalidSession):
             pass
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(E3631A)
+except Exception:
+    pass

@@ -162,6 +162,106 @@ dp800:
               properties: {}
         goal_default: {}
         handles: {}
+      initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 初始化 / 复位仪器
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: initialize参数
+          type: object
+      measure:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 读取测量值
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: measure参数
+          type: object
+      set_voltage:
+        type: UniLabJsonCommand
+        goal:
+          voltage: voltage
+        goal_default:
+          voltage: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电压
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                voltage:
+                  type: number
+                  description: voltage
+              required:
+              - voltage
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_voltage参数
+          type: object
+      set_current:
+        type: UniLabJsonCommand
+        goal:
+          current: current
+        goal_default:
+          current: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电流
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                current:
+                  type: number
+                  description: current
+              required:
+              - current
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_current参数
+          type: object
   name: DP800
   description: RIGOL DP800系列低纹波线性可编程直流电源，提供单/双/三通道配置，纹波低至350μVrms，内建丰富的测量分析和定时输出功能。
   manufacturer: Rigol

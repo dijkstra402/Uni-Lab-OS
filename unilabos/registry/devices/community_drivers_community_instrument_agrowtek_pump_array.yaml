@@ -1,0 +1,205 @@
+community_instrument_agrowtek_pump_array:
+  class:
+    module: community_drivers.community_instrument_agrowtek_pump_array.driver:CommunityInstrumentAgrowtekPumpArray
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/pumps/agrowpumps/agrowdosepump_backend.py
+          class_name:
+            type: string
+            default: AgrowPumpArrayBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - halt
+            - run_continuously
+            - run_revolutions
+            - setup
+            - start_keep_alive_thread
+            - stop
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              brand: Agrowtek
+              model: Pump Array
+              device_type_cn: 泵
+              device_type_en: Pump
+              source_framework: PyLabRobot
+              source_file: pylabrobot/pumps/agrowpumps/agrowdosepump_backend.py
+              class_name: AgrowPumpArrayBackend
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-halt:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: halt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-run_continuously:
+        type: UniLabJsonCommand
+        goal:
+          speed: speed
+          use_channels: use_channels
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: run_continuously
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+                use_channels:
+                  type: string
+              required:
+              - speed
+              - use_channels
+          required:
+          - goal
+        handles: {}
+      auto-run_revolutions:
+        type: UniLabJsonCommand
+        goal:
+          num_revolutions: num_revolutions
+          use_channels: use_channels
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: run_revolutions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_revolutions:
+                  type: string
+                use_channels:
+                  type: string
+              required:
+              - num_revolutions
+              - use_channels
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-start_keep_alive_thread:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: start_keep_alive_thread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: Pump Array 驱动（Agrowtek），支持 halt/run_continuously/run_revolutions/setup/start_keep_alive_thread
+    等 6 个操作。
+  category:
+  - 泵
+  config_info: []
+  handles: []
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/pumps/agrowpumps/agrowdosepump_backend.py
+    candidate_class: AgrowPumpArrayBackend
+    操作数: 6
+  manufacturer: Agrowtek
+  model:
+    name: Pump Array
+    type: device
+  name: Agrowtek Pump Array
+  tags:
+  - 泵
+  resource_type: device
+  version: 0.1.0

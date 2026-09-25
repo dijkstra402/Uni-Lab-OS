@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilentMSO6052A.py
+registry_id: community_strict_agilentmso6052a
+source_file: ivi/agilent/agilentMSO6052A.py
+class_name: agilentMSO6052A
+manufacturer: agilent
+model: agilentMSO6052A
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilentmso6052a.yaml

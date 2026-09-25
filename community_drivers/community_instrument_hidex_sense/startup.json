@@ -1,0 +1,114 @@
+{
+  "nodes": [
+    {
+      "id": "test_community_instrument_hidex_sense",
+      "name": "Sense",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community_instrument_hidex_sense",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "repo_root": "/Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/AD-SDL__hidex_module",
+        "source_file": "src/hidex_rest_node.py",
+        "class_name": "",
+        "import_roots": [
+          "src"
+        ],
+        "candidate_methods": [
+          "test_node_startup",
+          "state_handler",
+          "run_assay",
+          "cancel",
+          "shutdown"
+        ],
+        "action_targets": {
+          "test_node_startup": "test_node_startup",
+          "state_handler": "state_handler",
+          "run_assay": "run_assay",
+          "cancel": "cancel",
+          "shutdown": "shutdown"
+        },
+        "metadata": {
+          "repo": "AD-SDL/hidex_module",
+          "repo_url": "https://github.com/AD-SDL/hidex_module",
+          "brand": "Hidex",
+          "model": "Sense",
+          "device_type_cn": "酶标仪",
+          "device_type_en": "Plate Reader",
+          "source_framework": "生命科学",
+          "tag_id": "4457",
+          "tag_name": "酶标仪",
+          "tag_name_en": "Microplate Reader",
+          "candidate_score": 55,
+          "parse_status": "module_selected",
+          "quality_status": "usable",
+          "quality_reasons": [],
+          "action_targets": {
+            "test_node_startup": "test_node_startup",
+            "state_handler": "state_handler",
+            "run_assay": "run_assay",
+            "cancel": "cancel",
+            "shutdown": "shutdown"
+          }
+        }
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "test node startup",
+      "description": "test node startup",
+      "device": "test_community_instrument_hidex_sense",
+      "action": "auto-test_node_startup",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "state handler",
+      "description": "state handler",
+      "device": "test_community_instrument_hidex_sense",
+      "action": "auto-state_handler",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "run assay",
+      "description": "run assay",
+      "device": "test_community_instrument_hidex_sense",
+      "action": "auto-run_assay",
+      "action_args": {
+        "wait_for_result": true
+      }
+    },
+    {
+      "step": 4,
+      "name": "cancel",
+      "description": "cancel",
+      "device": "test_community_instrument_hidex_sense",
+      "action": "auto-cancel",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "shutdown",
+      "description": "shutdown",
+      "device": "test_community_instrument_hidex_sense",
+      "action": "auto-shutdown",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Sense 工作流",
+    "description": "Sense 自动生成工作流",
+    "instrument": "Sense",
+    "generated_by": "instrument-drivers-python"
+  }
+}

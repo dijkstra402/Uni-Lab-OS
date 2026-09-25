@@ -1,0 +1,105 @@
+community_github_teslafly_hioki_im3536_lcr_meter_python_ivi_driver:
+  class:
+    module: community_drivers.community_github_teslafly_hioki_im3536_lcr_meter_python_ivi_driver.driver:CommunityGithubTeslaflyHiokiIm3536LcrMeterPythonIviDriver
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/Teslafly_Hioki-IM3536-Lcr-meter-python-IVI-driver
+          source_file:
+            type: string
+            default: hioki/hiokiIM3536.py
+          class_name:
+            type: string
+            default: hiokiIM3536
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - do_lcr_measurement
+            - set_display_items
+          metadata:
+            type: object
+            default:
+              repo: teslafly/hioki-im3536-lcr-meter-python-ivi-driver
+              repo_url: https://github.com/Teslafly/Hioki-IM3536-Lcr-meter-python-IVI-driver
+              unit_id: gh_hioki_im3536
+              source_file: hioki/hiokiIM3536.py
+              candidate_score: 137
+              manufacturer: Hioki
+              model_name: Hioki IM3536
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-do_lcr_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: do_lcr_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_display_items:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_display_items
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'Hioki IM3536是高精度LCR表/阻抗分析仪，频率4 Hz至8 MHz，基本精度±0.05%，阻抗范围0.1 mΩ至100
+    MΩ。 GitHub驱动: https://github.com/Teslafly/Hioki-IM3536-Lcr-meter-python-IVI-driver'
+  category:
+  - community
+  device_params:
+    repo: teslafly/hioki-im3536-lcr-meter-python-ivi-driver
+    source_file: hioki/hiokiIM3536.py
+    candidate_class: hiokiIM3536
+    communication: ''
+    instrument_params: 'Type: LCR Meter; Frequency: 4 Hz-8 MHz; Accuracy: ±0.05%;
+      Impedance: 0.1 mΩ-100 MΩ; Signal: 10 mV-5 V AC; Parameters: Z, Y, θ, Cs, Cp,
+      Ls, Lp, Rs, Rp, G, B, X, D, Q; Interfaces: USB, GP-IB, RS-232C, LAN'
+    official_url: https://www.hioki.com/global/products/lcr-meters-impedance-analyzers/impedance/id_6606
+  manufacturer: Hioki
+  model:
+    name: Hioki IM3536
+    type: device
+  name: Hioki IM3536
+  tags:
+  - 介电常数测定仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Electrical
+  version: 0.1.0

@@ -479,3 +479,10 @@ class LakeShore421(Instrument):
     def write(self, command):
         self.delay_write()
         super().write(command)
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(LakeShore421)
+except Exception:
+    pass

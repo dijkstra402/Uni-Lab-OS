@@ -1,0 +1,1062 @@
+community_instrument_ika_rv10_digital_chemputer:
+  class:
+    module: community_drivers.community_instrument_ika_rv10_digital_chemputer.driver:CommunityInstrumentIkaRv10DigitalChemputer
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/croningp__ChemputerConvergence
+          source_file:
+            type: string
+            default: libraries/Chempiler/chempiler/tools/module_execution/pump_execution.py
+          class_name:
+            type: string
+            default: PumpExecutioner
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - default_discriminant
+            - attached_conductivity_sensor
+            - separate_phases
+            - connect_valve
+            - connect_nodes
+            - get_pump_from_valve_name
+            - get_max_syringe_volume
+            - routing_nodes
+            - connect_routing_valve_cmds
+            - prune_steps
+            - remove_full_routing_steps
+            - combine_steps_with_routes
+            - move_duration
+            - cmd_duration
+            - move_locks
+            - validate_port
+            - check_move_args
+            - assign_default_ports
+            - move
+            - split_movement_path
+            - insert_steps
+            - move_log_message
+            - print_pipelined_steps
+            - pipeline_path
+            - expected_n_pump_step_groups
+            - validate_len_pipeline
+            - validate_src_dest_volumes
+            - validate_one_command_per_group_per_node
+            - validate_pump_moves
+            - validate_valve_switches
+            - print_pipelined_step_list
+            - validate_pipelined_step_list
+            - pipeline_step_list
+            - execute_pipelined_steps
+            - execute_cmd
+            - execute_step
+            - connect_valve_cmd
+            - single_pump_valve_combo
+            - dual_pump_valve_combo
+          metadata:
+            type: object
+            default:
+              repo: croningp/ChemputerConvergence
+              repo_url: https://github.com/croningp/ChemputerConvergence
+              source_file: libraries/Chempiler/chempiler/tools/module_execution/pump_execution.py
+              class_name: PumpExecutioner
+              brand: IKA
+              model: RV10 Digital (Chemputer)
+              device_type_cn: 旋转蒸发器
+              device_type_en: Rotary Evaporator
+              source_framework: SerialLabware
+              tag_id: '4397'
+              tag_name: 旋转蒸发器
+              tag_name_en: Rotary Evaporator
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 350
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-default_discriminant:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: default_discriminant
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                positive_edge:
+                  type: string
+                  default: false
+                negative_edge:
+                  type: string
+                  default: false
+                sensitivity:
+                  type: string
+                  default: 5
+                min_points:
+                  type: string
+                  default: 6
+        goal_default:
+          positive_edge: false
+          negative_edge: false
+          sensitivity: 5
+          min_points: 6
+        handles: {}
+      auto-attached_conductivity_sensor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: attached_conductivity_sensor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                node_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-separate_phases:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: separate_phases
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                separator_flask:
+                  type: string
+                lower_phase_target:
+                  type: string
+                upper_phase_target:
+                  type: string
+                dead_volume_target:
+                  type: string
+                step_size_milliliters:
+                  type: number
+                  default: 1
+                discriminant:
+                  type: number
+                lower_phase_port:
+                  type: string
+                upper_phase_port:
+                  type: string
+                dead_volume_port:
+                  type: string
+                lower_phase_through:
+                  type: string
+                upper_phase_through:
+                  type: string
+                dead_volume_through:
+                  type: string
+        goal_default:
+          step_size_milliliters: 1
+        handles: {}
+      auto-connect_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve:
+                  type: string
+                src_port:
+                  type: integer
+                dest_port:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-connect_nodes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_nodes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                src:
+                  type: string
+                dest:
+                  type: string
+                src_port:
+                  type: integer
+                  default: ''
+                dest_port:
+                  type: integer
+                  default: ''
+        goal_default:
+          src_port: ''
+          dest_port: ''
+        handles: {}
+      auto-get_pump_from_valve_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pump_from_valve_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_max_syringe_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_max_syringe_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-routing_nodes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: routing_nodes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                full_path:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-connect_routing_valve_cmds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_routing_valve_cmds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valves:
+                  type: array
+                full_path:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-prune_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prune_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: array
+                routing_nodes:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-remove_full_routing_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_full_routing_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: array
+                routing_nodes:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-combine_steps_with_routes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: combine_steps_with_routes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: array
+                routing_nodes:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-move_duration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_duration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                src:
+                  type: string
+                dest:
+                  type: string
+                volume:
+                  type: number
+                src_port:
+                  type: string
+                  default: ''
+                dest_port:
+                  type: string
+                  default: ''
+                speed:
+                  type: string
+                initial_pump_speed:
+                  type: number
+                mid_pump_speed:
+                  type: number
+                end_pump_speed:
+                  type: number
+                through_nodes:
+                  type: array
+                  default: ''
+                use_backbone:
+                  type: boolean
+                  default: true
+        goal_default:
+          src_port: ''
+          dest_port: ''
+          through_nodes: ''
+          use_backbone: true
+        handles: {}
+      auto-cmd_duration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cmd_duration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-move_locks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_locks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                src:
+                  type: string
+                dest:
+                  type: string
+                volume:
+                  type: number
+                src_port:
+                  type: string
+                  default: ''
+                dest_port:
+                  type: string
+                  default: ''
+                through_nodes:
+                  type: array
+                  default: []
+                use_backbone:
+                  type: boolean
+                  default: true
+        goal_default:
+          src_port: ''
+          dest_port: ''
+          through_nodes: []
+          use_backbone: true
+        handles: {}
+      auto-validate_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                node:
+                  type: string
+                port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_move_args:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_move_args
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                src:
+                  type: string
+                dest:
+                  type: string
+                volume:
+                  type: number
+                src_port:
+                  type: string
+                  default: ''
+                dest_port:
+                  type: string
+                  default: ''
+                speed:
+                  type: string
+                initial_pump_speed:
+                  type: number
+                mid_pump_speed:
+                  type: number
+                end_pump_speed:
+                  type: number
+                through_nodes:
+                  type: array
+                  default: ''
+                use_backbone:
+                  type: boolean
+                  default: true
+        goal_default:
+          src_port: ''
+          dest_port: ''
+          through_nodes: ''
+          use_backbone: true
+        handles: {}
+      auto-assign_default_ports:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: assign_default_ports
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                src:
+                  type: string
+                dest:
+                  type: string
+                src_port:
+                  type: string
+                dest_port:
+                  type: string
+                connect:
+                  type: string
+                  default: false
+        goal_default:
+          connect: false
+        handles: {}
+      auto-move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                src:
+                  type: string
+                dest:
+                  type: string
+                volume:
+                  type: number
+                src_port:
+                  type: string
+                  default: ''
+                dest_port:
+                  type: string
+                  default: ''
+                speed:
+                  type: string
+                initial_pump_speed:
+                  type: number
+                mid_pump_speed:
+                  type: number
+                end_pump_speed:
+                  type: number
+                through_nodes:
+                  type: array
+                  default: ''
+                use_backbone:
+                  type: boolean
+                  default: true
+        goal_default:
+          src_port: ''
+          dest_port: ''
+          through_nodes: ''
+          use_backbone: true
+        handles: {}
+      auto-split_movement_path:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: split_movement_path
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                movement_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-insert_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: insert_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipelined_steps:
+                  type: string
+                steps_to_add:
+                  type: string
+                offset:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_log_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_log_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume:
+                  type: string
+                src:
+                  type: string
+                dest:
+                  type: string
+                src_port:
+                  type: string
+                dest_port:
+                  type: string
+                initial_pump_speed:
+                  type: string
+                mid_pump_speed:
+                  type: string
+                end_pump_speed:
+                  type: string
+                through_nodes:
+                  type: string
+                use_backbone:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-print_pipelined_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_pipelined_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipelined_steps:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-pipeline_path:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pipeline_path
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+                volume:
+                  type: string
+                initial_pump_speed:
+                  type: string
+                mid_pump_speed:
+                  type: string
+                end_pump_speed:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-expected_n_pump_step_groups:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: expected_n_pump_step_groups
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                backbone_valves:
+                  type: string
+                n_pump_volumes:
+                  type: string
+                src:
+                  type: string
+                dest:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-validate_len_pipeline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_len_pipeline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                step_list:
+                  type: string
+                pipelined_step_list:
+                  type: string
+                volume:
+                  type: string
+                pump_max_volume:
+                  type: string
+                src:
+                  type: string
+                dest:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-validate_src_dest_volumes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_src_dest_volumes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                src:
+                  type: string
+                dest:
+                  type: string
+                pipelined_step_list:
+                  type: string
+                volume:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-validate_one_command_per_group_per_node:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_one_command_per_group_per_node
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipelined_step_list:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-validate_pump_moves:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_pump_moves
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipelined_step_list:
+                  type: string
+                src:
+                  type: string
+                dest:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-validate_valve_switches:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_valve_switches
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipelined_step_list:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-print_pipelined_step_list:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_pipelined_step_list
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipelined_step_list:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-validate_pipelined_step_list:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_pipelined_step_list
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                step_list:
+                  type: string
+                pipelined_step_list:
+                  type: string
+                volume:
+                  type: string
+                pump_max_volume:
+                  type: string
+                src:
+                  type: string
+                dest:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-pipeline_step_list:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pipeline_step_list
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                src:
+                  type: string
+                dest:
+                  type: string
+                step_list:
+                  type: string
+                volume:
+                  type: string
+                initial_pump_speed:
+                  type: string
+                mid_pump_speed:
+                  type: string
+                end_pump_speed:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-execute_pipelined_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execute_pipelined_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pipelined_steps:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-execute_cmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execute_cmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device:
+                  type: string
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-execute_step:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execute_step
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                step:
+                  type: array
+                volume:
+                  type: number
+                speed:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-connect_valve_cmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_valve_cmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve:
+                  type: string
+                src_port:
+                  type: string
+                dest_port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-single_pump_valve_combo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: single_pump_valve_combo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve_name:
+                  type: string
+                cmd_type:
+                  type: string
+                port:
+                  type: integer
+                volume:
+                  type: number
+                speed:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-dual_pump_valve_combo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dual_pump_valve_combo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                src:
+                  type: string
+                dest:
+                  type: string
+                from_port:
+                  type: integer
+                to_port:
+                  type: integer
+                volume:
+                  type: number
+                mid_pump_speed:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: RV10 Digital (Chemputer) 驱动（IKA），支持 default_discriminant/attached_conductivity_sensor/separate_phases/connect_valve/connect_nodes
+    等 39 个操作。
+  category:
+  - 旋转蒸发器
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: croningp/ChemputerConvergence
+    source_file: libraries/Chempiler/chempiler/tools/module_execution/pump_execution.py
+    candidate_class: PumpExecutioner
+    candidate_score: 350
+    quality_status: usable
+    操作数: 39
+  manufacturer: 艾卡
+  model:
+    name: RV10 Digital (Chemputer)
+    type: device
+  name: IKA RV10 Digital (Chemputer)
+  tags:
+  - 旋转蒸发器
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

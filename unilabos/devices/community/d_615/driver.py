@@ -664,3 +664,10 @@ class Tektronix_AWG520(VisaInstrument):
         """
         self.send_sequence(wfs,rep,wait,goto,logic_jump,filename)
         self.set_sequence(filename)
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Tektronix_AWG520)
+except Exception:
+    pass

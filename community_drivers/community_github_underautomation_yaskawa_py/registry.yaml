@@ -1,0 +1,166 @@
+community_github_underautomation_yaskawa_py:
+  class:
+    module: community_drivers.community_github_underautomation_yaskawa_py.driver:CommunityGithubUnderautomationYaskawaPy
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/underautomation_Yaskawa.py
+          source_file:
+            type: string
+            default: underautomation/yaskawa/yaskawa_robot.py
+          class_name:
+            type: string
+            default: YaskawaRobot
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect
+            - disconnect
+            - register_license
+            - connected
+            - high_speed_e_server
+            - license_info
+          metadata:
+            type: object
+            default:
+              repo: underautomation/yaskawa.py
+              repo_url: https://github.com/underautomation/Yaskawa.py
+              unit_id: gh_yaskawa_motoman_yrc1000
+              source_file: underautomation/yaskawa/yaskawa_robot.py
+              candidate_score: 48
+              manufacturer: Yaskawa
+              model_name: Yaskawa Motoman YRC1000
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-register_license:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: register_license
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-high_speed_e_server:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: high_speed_e_server
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-license_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: license_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'Yaskawa YRC1000是高性能机器人控制器，支持最多72轴协调运动，采用高速处理器，支持以太网通信协议，可选功能安全单元。
+    GitHub驱动: https://github.com/underautomation/Yaskawa.py'
+  category:
+  - community
+  device_params:
+    repo: underautomation/yaskawa.py
+    source_file: underautomation/yaskawa/yaskawa_robot.py
+    candidate_class: YaskawaRobot
+    communication: ''
+    photo_url: https://www.yaskawa.com/html/portal/404_files/8cf7a3dd-bb4e-4aa1-87a3-52cdae9d4185.jpg
+    instrument_params: 'Dimensions: 598×490×427 mm; Weight: ~55 kg; Coordinated axes:
+      Up to 72; Communication: EtherNet/IP, PROFINET; Power: 200-230 VAC / 380-480
+      VAC; Safety: FSU option; Pendant: Smart Pendant'
+    official_url: https://www.motoman.com/en-us/products/programming/controllers/yrc1000
+  manufacturer: Yaskawa
+  model:
+    name: Yaskawa Motoman YRC1000
+    type: device
+  name: Yaskawa Motoman YRC1000
+  tags:
+  - 机械臂
+  resource_type: device
+  icon: https://www.yaskawa.com/html/portal/404_files/8cf7a3dd-bb4e-4aa1-87a3-52cdae9d4185.jpg
+  scene:
+    domain: General
+    scene_name: Automation
+    step: Transfer
+  version: 0.1.0

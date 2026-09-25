@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/Keithley/Keithley_2602B.py
+registry_id: community_strict_keithley2602b
+source_file: src/qcodes/instrument_drivers/Keithley/Keithley_2602B.py
+class_name: Keithley2602B
+manufacturer: keithley
+model: Keithley2602B
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_keithley2602b.yaml

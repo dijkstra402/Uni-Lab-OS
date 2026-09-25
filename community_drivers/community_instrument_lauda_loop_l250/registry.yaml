@@ -1,0 +1,348 @@
+community_instrument_lauda_loop_l250:
+  class:
+    module: community_drivers.community_instrument_lauda_loop_l250.driver:CommunityInstrumentLaudaLoopL250
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/turbocasino__LOOP-L250-Chiller
+          source_file:
+            type: string
+            default: chiller.py
+          class_name:
+            type: string
+            default: ''
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - write_cmd
+            - check_dec
+            - power
+            - temperature
+            - read_cmd
+            - read_set_temp
+            - read_inside_temp
+            - read_set_temp_hi
+            - read_set_temp_lo
+            - naming
+            - logging
+            - sampling
+          metadata:
+            type: object
+            default:
+              repo: turbocasino/LOOP-L250-Chiller
+              repo_url: https://github.com/turbocasino/LOOP-L250-Chiller
+              source_file: chiller.py
+              class_name: ''
+              brand: Lauda
+              model: LOOP L250
+              device_type_cn: 冷热水机
+              device_type_en: Chiller / Heater Unit
+              source_framework: 专用驱动
+              tag_id: '4369'
+              tag_name: 冷热水机
+              tag_name_en: Chiller / Heater Unit
+              language: Python
+              parse_status: module_selected
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 104
+              action_targets:
+                write_cmd: write_cmd
+                check_dec: check_dec
+                power: power
+                temperature: temperature
+                read_cmd: read_cmd
+                read_set_temp: read_set_temp
+                read_inside_temp: read_inside_temp
+                read_set_temp_hi: read_set_temp_hi
+                read_set_temp_lo: read_set_temp_lo
+                naming: naming
+                logging: logging
+                sampling: sampling
+          action_targets:
+            type: object
+            default:
+              write_cmd: write_cmd
+              check_dec: check_dec
+              power: power
+              temperature: temperature
+              read_cmd: read_cmd
+              read_set_temp: read_set_temp
+              read_inside_temp: read_inside_temp
+              read_set_temp_hi: read_set_temp_hi
+              read_set_temp_lo: read_set_temp_lo
+              naming: naming
+              logging: logging
+              sampling: sampling
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-write_cmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_cmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_dec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_dec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                number:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                'on':
+                  type: string
+                  default: true
+        goal_default:
+          'on': true
+        handles: {}
+      auto-temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_cmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_cmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+                d_fmts:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_set_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_set_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_inside_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_inside_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_set_temp_hi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_set_temp_hi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_set_temp_lo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_set_temp_lo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-naming:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: naming
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cartella:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-logging:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: logging
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file_name:
+                  type: string
+                time:
+                  type: string
+                t_res:
+                  type: string
+                t_set:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sampling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sampling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                arg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: LOOP L250 驱动（Lauda），支持 write_cmd/check_dec/power/temperature/read_cmd
+    等 12 个操作。
+  category:
+  - 冷热水机
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: turbocasino/LOOP-L250-Chiller
+    source_file: chiller.py
+    candidate_class: ''
+    candidate_score: 104
+    quality_status: usable
+    操作数: 12
+  manufacturer: Lauda
+  model:
+    name: LOOP L250
+    type: device
+  name: Lauda LOOP L250
+  tags:
+  - 冷热水机
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

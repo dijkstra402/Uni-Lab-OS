@@ -1,0 +1,1946 @@
+community_instrument_eurotherm_3216:
+  class:
+    module: community_drivers.community_instrument_eurotherm_3216.driver:CommunityInstrumentEurotherm3216
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/hailegroup__nupylab
+          source_file:
+            type: string
+            default: nupylab/drivers/labjack_u12.py
+          class_name:
+            type: string
+            default: U12
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - open
+            - close
+            - write
+            - read
+            - rawReadSerial
+            - rawReadLocalId
+            - rawAISample
+            - rawDIO
+            - rawCounter
+            - rawCounterPWMDIO
+            - rawAIBurst
+            - rawAIContinuous
+            - rawPulseout
+            - rawReset
+            - rawReenumerate
+            - rawWatchdog
+            - rawReadRAM
+            - rawWriteRAM
+            - rawAsynch
+            - rawSPI
+            - rawSHT1X
+            - eAnalogIn
+            - eAnalogOut
+            - eCount
+            - eDigitalIn
+            - eDigitalOut
+            - aiSample
+            - aiBurst
+            - aiStreamStart
+            - aiStreamRead
+            - aiStreamClear
+            - aoUpdate
+            - asynchConfig
+            - asynch
+            - bitsToVolts
+            - voltsToBits
+            - counter
+            - digitalIO
+            - getDriverVersion
+            - getFirmwareVersion
+            - getWinVersion
+            - listAll
+            - localID
+            - noThread
+            - pulseOut
+            - pulseOutStart
+            - pulseOutFinish
+            - pulseOutCalc
+            - reEnum
+            - reset
+            - resetLJ
+            - sht1X
+            - shtComm
+            - shtCRC
+            - synch
+            - watchdog
+            - readMem
+            - writeMem
+            - LJHash
+            - getErrorString
+          metadata:
+            type: object
+            default:
+              repo: hailegroup/nupylab
+              repo_url: https://github.com/hailegroup/nupylab
+              source_file: nupylab/drivers/labjack_u12.py
+              class_name: U12
+              brand: Eurotherm
+              model: '3216'
+              device_type_cn: 箱式电阻炉
+              device_type_en: Box Resistance Furnace
+              source_framework: nupylab
+              tag_id: '4438'
+              tag_name: 箱式电阻炉
+              tag_name_en: Box Resistance Furnace
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 518
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  default: -1
+                serialNumber:
+                  type: integer
+        goal_default:
+          id: -1
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                writeBuffer:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                numBytes:
+                  type: string
+                  default: 8
+                timeout:
+                  type: string
+                  default: 1000
+        goal_default:
+          numBytes: 8
+          timeout: 1000
+        handles: {}
+      auto-rawReadSerial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawReadSerial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-rawReadLocalId:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawReadLocalId
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-rawAISample:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawAISample
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel0PGAMUX:
+                  type: integer
+                  default: 8
+                channel1PGAMUX:
+                  type: integer
+                  default: 9
+                channel2PGAMUX:
+                  type: integer
+                  default: 10
+                channel3PGAMUX:
+                  type: integer
+                  default: 11
+                UpdateIO:
+                  type: boolean
+                  default: false
+                LEDState:
+                  type: boolean
+                  default: true
+                IO3toIO0States:
+                  type: integer
+                  default: 0
+                EchoValue:
+                  type: string
+                  default: 0
+        goal_default:
+          channel0PGAMUX: 8
+          channel1PGAMUX: 9
+          channel2PGAMUX: 10
+          channel3PGAMUX: 11
+          UpdateIO: false
+          LEDState: true
+          IO3toIO0States: 0
+          EchoValue: 0
+        handles: {}
+      auto-rawDIO:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawDIO
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                D15toD8Directions:
+                  type: string
+                  default: 0
+                D7toD0Directions:
+                  type: string
+                  default: 0
+                D15toD8States:
+                  type: string
+                  default: 0
+                D7toD0States:
+                  type: string
+                  default: 0
+                IO3toIO0DirectionsAndStates:
+                  type: string
+                  default: 0
+                UpdateDigital:
+                  type: string
+                  default: false
+        goal_default:
+          D15toD8Directions: 0
+          D7toD0Directions: 0
+          D15toD8States: 0
+          D7toD0States: 0
+          IO3toIO0DirectionsAndStates: 0
+          UpdateDigital: false
+        handles: {}
+      auto-rawCounter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawCounter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                StrobeEnabled:
+                  type: string
+                  default: false
+                ResetCounter:
+                  type: string
+                  default: false
+        goal_default:
+          StrobeEnabled: false
+          ResetCounter: false
+        handles: {}
+      auto-rawCounterPWMDIO:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawCounterPWMDIO
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                D15toD8Directions:
+                  type: string
+                  default: 0
+                D7toD0Directions:
+                  type: string
+                  default: 0
+                D15toD8States:
+                  type: string
+                  default: 0
+                D7toD0States:
+                  type: string
+                  default: 0
+                IO3toIO0DirectionsAndStates:
+                  type: string
+                  default: 0
+                ResetCounter:
+                  type: string
+                  default: false
+                UpdateDigital:
+                  type: string
+                  default: 0
+                PWMA:
+                  type: string
+                  default: 0
+                PWMB:
+                  type: string
+                  default: 0
+        goal_default:
+          D15toD8Directions: 0
+          D7toD0Directions: 0
+          D15toD8States: 0
+          D7toD0States: 0
+          IO3toIO0DirectionsAndStates: 0
+          ResetCounter: false
+          UpdateDigital: 0
+          PWMA: 0
+          PWMB: 0
+        handles: {}
+      auto-rawAIBurst:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawAIBurst
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel0PGAMUX:
+                  type: string
+                  default: 8
+                channel1PGAMUX:
+                  type: string
+                  default: 9
+                channel2PGAMUX:
+                  type: string
+                  default: 10
+                channel3PGAMUX:
+                  type: string
+                  default: 11
+                NumberOfScans:
+                  type: string
+                  default: 8
+                UpdateIO:
+                  type: string
+                  default: false
+                LEDState:
+                  type: string
+                  default: true
+                IO3ToIO0States:
+                  type: string
+                  default: 0
+                FeatureReports:
+                  type: string
+                  default: false
+                TriggerOn:
+                  type: string
+                  default: false
+                SampleInterval:
+                  type: string
+                  default: 15000
+        goal_default:
+          channel0PGAMUX: 8
+          channel1PGAMUX: 9
+          channel2PGAMUX: 10
+          channel3PGAMUX: 11
+          NumberOfScans: 8
+          UpdateIO: false
+          LEDState: true
+          IO3ToIO0States: 0
+          FeatureReports: false
+          TriggerOn: false
+          SampleInterval: 15000
+        handles: {}
+      auto-rawAIContinuous:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawAIContinuous
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel0PGAMUX:
+                  type: string
+                  default: 8
+                channel1PGAMUX:
+                  type: string
+                  default: 9
+                channel2PGAMUX:
+                  type: string
+                  default: 10
+                channel3PGAMUX:
+                  type: string
+                  default: 11
+                FeatureReports:
+                  type: string
+                  default: false
+                CounterRead:
+                  type: string
+                  default: false
+                UpdateIO:
+                  type: string
+                  default: false
+                LEDState:
+                  type: string
+                  default: true
+                IO3ToIO0States:
+                  type: string
+                  default: 0
+                SampleInterval:
+                  type: string
+                  default: 15000
+        goal_default:
+          channel0PGAMUX: 8
+          channel1PGAMUX: 9
+          channel2PGAMUX: 10
+          channel3PGAMUX: 11
+          FeatureReports: false
+          CounterRead: false
+          UpdateIO: false
+          LEDState: true
+          IO3ToIO0States: 0
+          SampleInterval: 15000
+        handles: {}
+      auto-rawPulseout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawPulseout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                B1:
+                  type: string
+                  default: 10
+                C1:
+                  type: string
+                  default: 2
+                B2:
+                  type: string
+                  default: 10
+                C2:
+                  type: string
+                  default: 2
+                D7ToD0PulseSelection:
+                  type: string
+                  default: 1
+                ClearFirst:
+                  type: string
+                  default: false
+                NumberOfPulses:
+                  type: string
+                  default: 5
+        goal_default:
+          B1: 10
+          C1: 2
+          B2: 10
+          C2: 2
+          D7ToD0PulseSelection: 1
+          ClearFirst: false
+          NumberOfPulses: 5
+        handles: {}
+      auto-rawReset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawReset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-rawReenumerate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawReenumerate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-rawWatchdog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawWatchdog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                IgnoreCommands:
+                  type: string
+                  default: false
+                D0Active:
+                  type: string
+                  default: false
+                D0State:
+                  type: string
+                  default: false
+                D1Active:
+                  type: string
+                  default: false
+                D1State:
+                  type: string
+                  default: false
+                D8Active:
+                  type: string
+                  default: false
+                D8State:
+                  type: string
+                  default: false
+                ResetOnTimeout:
+                  type: string
+                  default: false
+                WatchdogActive:
+                  type: string
+                  default: false
+                Timeout:
+                  type: string
+                  default: 60
+        goal_default:
+          IgnoreCommands: false
+          D0Active: false
+          D0State: false
+          D1Active: false
+          D1State: false
+          D8Active: false
+          D8State: false
+          ResetOnTimeout: false
+          WatchdogActive: false
+          Timeout: 60
+        handles: {}
+      auto-rawReadRAM:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawReadRAM
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Address:
+                  type: string
+                  default: 0
+        goal_default:
+          Address: 0
+        handles: {}
+      auto-rawWriteRAM:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawWriteRAM
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Data:
+                  type: string
+                Address:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-rawAsynch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawAsynch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Data:
+                  type: string
+                AddDelay:
+                  type: string
+                  default: false
+                TimeoutActive:
+                  type: string
+                  default: false
+                SetTransmitEnable:
+                  type: string
+                  default: false
+                PortB:
+                  type: string
+                  default: false
+                NumberOfBytesToWrite:
+                  type: string
+                  default: 0
+                NumberOfBytesToRead:
+                  type: string
+                  default: 0
+        goal_default:
+          AddDelay: false
+          TimeoutActive: false
+          SetTransmitEnable: false
+          PortB: false
+          NumberOfBytesToWrite: 0
+          NumberOfBytesToRead: 0
+        handles: {}
+      auto-rawSPI:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawSPI
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Data:
+                  type: string
+                AddMsDelay:
+                  type: string
+                  default: false
+                AddHundredUsDelay:
+                  type: string
+                  default: false
+                SPIMode:
+                  type: string
+                  default: A
+                NumberOfBytesToWriteRead:
+                  type: string
+                  default: 0
+                ControlCS:
+                  type: string
+                  default: false
+                StateOfActiveCS:
+                  type: string
+                  default: false
+                CSLineNumber:
+                  type: string
+                  default: 0
+        goal_default:
+          AddMsDelay: false
+          AddHundredUsDelay: false
+          SPIMode: A
+          NumberOfBytesToWriteRead: 0
+          ControlCS: false
+          StateOfActiveCS: false
+          CSLineNumber: 0
+        handles: {}
+      auto-rawSHT1X:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rawSHT1X
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                Data:
+                  type: string
+                  default:
+                  - 3
+                  - 0
+                  - 0
+                  - 0
+                WaitForMeasurementReady:
+                  type: string
+                  default: true
+                IssueSerialReset:
+                  type: string
+                  default: false
+                Add1MsDelay:
+                  type: string
+                  default: false
+                Add300UsDelay:
+                  type: string
+                  default: false
+                IO3State:
+                  type: string
+                  default: 1
+                IO2State:
+                  type: string
+                  default: 1
+                IO3Direction:
+                  type: string
+                  default: 1
+                IO2Direction:
+                  type: string
+                  default: 1
+                NumberOfBytesToWrite:
+                  type: string
+                  default: 1
+                NumberOfBytesToRead:
+                  type: string
+                  default: 3
+        goal_default:
+          Data:
+          - 3
+          - 0
+          - 0
+          - 0
+          WaitForMeasurementReady: true
+          IssueSerialReset: false
+          Add1MsDelay: false
+          Add300UsDelay: false
+          IO3State: 1
+          IO2State: 1
+          IO3Direction: 1
+          IO2Direction: 1
+          NumberOfBytesToWrite: 1
+          NumberOfBytesToRead: 3
+        handles: {}
+      auto-eAnalogIn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: eAnalogIn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                gain:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          gain: 0
+        handles: {}
+      auto-eAnalogOut:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: eAnalogOut
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analogOut0:
+                  type: string
+                analogOut1:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+        handles: {}
+      auto-eCount:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: eCount
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                resetCounter:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          resetCounter: 0
+        handles: {}
+      auto-eDigitalIn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: eDigitalIn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                readD:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          readD: 0
+        handles: {}
+      auto-eDigitalOut:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: eDigitalOut
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+                state:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                writeD:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          writeD: 0
+        handles: {}
+      auto-aiSample:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aiSample
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                numChannels:
+                  type: string
+                channels:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                stateIOin:
+                  type: string
+                  default: 0
+                updateIO:
+                  type: string
+                  default: 0
+                ledOn:
+                  type: string
+                  default: 0
+                gains:
+                  type: string
+                  default:
+                  - 0
+                  - 0
+                  - 0
+                  - 0
+                disableCal:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          stateIOin: 0
+          updateIO: 0
+          ledOn: 0
+          gains:
+          - 0
+          - 0
+          - 0
+          - 0
+          disableCal: 0
+        handles: {}
+      auto-aiBurst:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aiBurst
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                numChannels:
+                  type: string
+                channels:
+                  type: string
+                scanRate:
+                  type: string
+                numScans:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                stateIOin:
+                  type: string
+                  default: 0
+                updateIO:
+                  type: string
+                  default: 0
+                ledOn:
+                  type: string
+                  default: 0
+                gains:
+                  type: string
+                  default:
+                  - 0
+                  - 0
+                  - 0
+                  - 0
+                disableCal:
+                  type: string
+                  default: 0
+                triggerIO:
+                  type: string
+                  default: 0
+                triggerState:
+                  type: string
+                  default: 0
+                timeout:
+                  type: string
+                  default: 1
+                transferMode:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          stateIOin: 0
+          updateIO: 0
+          ledOn: 0
+          gains:
+          - 0
+          - 0
+          - 0
+          - 0
+          disableCal: 0
+          triggerIO: 0
+          triggerState: 0
+          timeout: 1
+          transferMode: 0
+        handles: {}
+      auto-aiStreamStart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aiStreamStart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                numChannels:
+                  type: string
+                channels:
+                  type: string
+                scanRate:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                stateIOin:
+                  type: string
+                  default: 0
+                updateIO:
+                  type: string
+                  default: 0
+                ledOn:
+                  type: string
+                  default: 0
+                gains:
+                  type: string
+                  default:
+                  - 0
+                  - 0
+                  - 0
+                  - 0
+                disableCal:
+                  type: string
+                  default: 0
+                readCount:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          stateIOin: 0
+          updateIO: 0
+          ledOn: 0
+          gains:
+          - 0
+          - 0
+          - 0
+          - 0
+          disableCal: 0
+          readCount: 0
+        handles: {}
+      auto-aiStreamRead:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aiStreamRead
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                numScans:
+                  type: string
+                localID:
+                  type: string
+                timeout:
+                  type: string
+                  default: 1
+        goal_default:
+          timeout: 1
+        handles: {}
+      auto-aiStreamClear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aiStreamClear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                localID:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-aoUpdate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aoUpdate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                trisD:
+                  type: string
+                trisIO:
+                  type: string
+                stateD:
+                  type: string
+                stateIO:
+                  type: string
+                updateDigital:
+                  type: string
+                  default: 0
+                resetCounter:
+                  type: string
+                  default: 0
+                analogOut0:
+                  type: string
+                  default: 0
+                analogOut1:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          updateDigital: 0
+          resetCounter: 0
+          analogOut0: 0
+          analogOut1: 0
+        handles: {}
+      auto-asynchConfig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: asynchConfig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fullA:
+                  type: string
+                fullB:
+                  type: string
+                fullC:
+                  type: string
+                halfA:
+                  type: string
+                halfB:
+                  type: string
+                halfC:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                timeoutMult:
+                  type: string
+                  default: 1
+                configA:
+                  type: string
+                  default: 0
+                configB:
+                  type: string
+                  default: 0
+                configTE:
+                  type: string
+                  default: 0
+        goal_default:
+          timeoutMult: 1
+          configA: 0
+          configB: 0
+          configTE: 0
+        handles: {}
+      auto-asynch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: asynch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                baudrate:
+                  type: string
+                data:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                portB:
+                  type: string
+                  default: 0
+                enableTE:
+                  type: string
+                  default: 0
+                enableTO:
+                  type: string
+                  default: 0
+                enableDel:
+                  type: string
+                  default: 0
+                numWrite:
+                  type: string
+                  default: 0
+                numRead:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          portB: 0
+          enableTE: 0
+          enableTO: 0
+          enableDel: 0
+          numWrite: 0
+          numRead: 0
+        handles: {}
+      auto-bitsToVolts:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bitsToVolts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chnum:
+                  type: string
+                chgain:
+                  type: string
+                bits:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-voltsToBits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: voltsToBits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chnum:
+                  type: string
+                chgain:
+                  type: string
+                volts:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-counter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: counter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                resetCounter:
+                  type: string
+                  default: 0
+                enableSTB:
+                  type: string
+                  default: 1
+        goal_default:
+          demo: 0
+          resetCounter: 0
+          enableSTB: 1
+        handles: {}
+      auto-digitalIO:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: digitalIO
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idNum:
+                  type: integer
+                demo:
+                  type: boolean
+                  default: false
+                trisD:
+                  type: integer
+                trisIO:
+                  type: integer
+                stateD:
+                  type: integer
+                stateIO:
+                  type: integer
+                updateDigital:
+                  type: boolean
+                  default: false
+        goal_default:
+          demo: false
+          updateDigital: false
+        handles: {}
+      auto-getDriverVersion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDriverVersion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getFirmwareVersion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getFirmwareVersion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idNum:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getWinVersion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getWinVersion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-listAll:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: listAll
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-localID:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: localID
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                localID:
+                  type: string
+                idNum:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-noThread:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: noThread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                noThread:
+                  type: string
+                idNum:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-pulseOut:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pulseOut
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bitSelect:
+                  type: string
+                numPulses:
+                  type: string
+                timeB1:
+                  type: string
+                timeC1:
+                  type: string
+                timeB2:
+                  type: string
+                timeC2:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                lowFirst:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          lowFirst: 0
+        handles: {}
+      auto-pulseOutStart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pulseOutStart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bitSelect:
+                  type: string
+                numPulses:
+                  type: string
+                timeB1:
+                  type: string
+                timeC1:
+                  type: string
+                timeB2:
+                  type: string
+                timeC2:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                lowFirst:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          lowFirst: 0
+        handles: {}
+      auto-pulseOutFinish:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pulseOutFinish
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeoutMS:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+        handles: {}
+      auto-pulseOutCalc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pulseOutCalc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frequency:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reEnum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reEnum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idNum:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idNum:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-resetLJ:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resetLJ
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idNum:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-sht1X:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sht1X
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                softComm:
+                  type: string
+                  default: 0
+                mode:
+                  type: string
+                  default: 0
+                statusReg:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          softComm: 0
+          mode: 0
+          statusReg: 0
+        handles: {}
+      auto-shtComm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shtComm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                numWrite:
+                  type: string
+                numRead:
+                  type: string
+                datatx:
+                  type: string
+                idNum:
+                  type: string
+                softComm:
+                  type: string
+                  default: 0
+                waitMeas:
+                  type: string
+                  default: 0
+                serialReset:
+                  type: string
+                  default: 0
+                dataRate:
+                  type: string
+                  default: 0
+        goal_default:
+          softComm: 0
+          waitMeas: 0
+          serialReset: 0
+          dataRate: 0
+        handles: {}
+      auto-shtCRC:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: shtCRC
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                numWrite:
+                  type: string
+                numRead:
+                  type: string
+                datatx:
+                  type: string
+                datarx:
+                  type: string
+                statusReg:
+                  type: string
+                  default: 0
+        goal_default:
+          statusReg: 0
+        handles: {}
+      auto-synch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: synch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                numWriteRead:
+                  type: string
+                data:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                msDelay:
+                  type: string
+                  default: 0
+                husDelay:
+                  type: string
+                  default: 0
+                controlCS:
+                  type: string
+                  default: 0
+                csLine:
+                  type: string
+                csState:
+                  type: string
+                  default: 0
+                configD:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          msDelay: 0
+          husDelay: 0
+          controlCS: 0
+          csState: 0
+          configD: 0
+        handles: {}
+      auto-watchdog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: watchdog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                active:
+                  type: string
+                timeout:
+                  type: string
+                activeDn:
+                  type: string
+                stateDn:
+                  type: string
+                idNum:
+                  type: string
+                demo:
+                  type: string
+                  default: 0
+                reset:
+                  type: string
+                  default: 0
+        goal_default:
+          demo: 0
+          reset: 0
+        handles: {}
+      auto-readMem:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readMem
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                idnum:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-writeMem:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writeMem
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                data:
+                  type: string
+                idnum:
+                  type: string
+                unlocked:
+                  type: string
+                  default: false
+        goal_default:
+          unlocked: false
+        handles: {}
+      auto-LJHash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: LJHash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hashStr:
+                  type: string
+                size:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getErrorString:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getErrorString
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                error_code:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 3216 驱动（Eurotherm），支持 open/close/write/read/rawReadSerial 等 60 个操作。
+  category:
+  - 箱式电阻炉
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: hailegroup/nupylab
+    source_file: nupylab/drivers/labjack_u12.py
+    candidate_class: U12
+    candidate_score: 518
+    quality_status: usable
+    操作数: 60
+  manufacturer: 欧陆
+  model:
+    name: '3216'
+    type: device
+  name: Eurotherm 3216
+  tags:
+  - 箱式电阻炉
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

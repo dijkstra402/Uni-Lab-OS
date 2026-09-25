@@ -1,0 +1,875 @@
+community_strict_bcs10:
+  class:
+    module: community_drivers.community_strict_bcs10.driver:CommunityStrictBcs10
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/QCoDeS__Qcodes_contrib_drivers
+          source_file:
+            type: string
+            default: src/qcodes_contrib_drivers/drivers/Lakeshore/modules/bcs10.py
+          class_name:
+            type: string
+            default: bcs10
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - get_coupling
+            - set_coupling
+            - get_coupling_auto_enabled
+            - set_coupling_auto_enabled
+            - get_guard_state
+            - set_guard_state
+            - get_current_autorange_enabled
+            - set_current_autorange_enabled
+            - get_current_range
+            - set_current_range
+            - get_cmf_enabled
+            - set_cmf_enabled
+            - get_cmf_node
+            - set_cmf_node
+            - get_current_low_limit
+            - set_current_low_limit
+            - get_current_high_limit
+            - set_current_high_limit
+            - get_disable_on_compliance
+            - set_disable_on_compliance
+            - get_current_offset
+            - set_current_offset
+            - get_current_peak_amplitude
+            - set_current_peak_amplitude
+            - get_current_rms_amplitude
+            - set_current_rms_amplitude
+            - output_on
+            - output_off
+            - get_shape
+            - set_shape
+            - get_output_enabled
+            - set_output_enabled
+            - get_frequency
+            - set_frequency
+            - get_synchronize_enabled
+            - set_synchronize_enabled
+            - get_synchronize_phase
+            - set_synchronize_phase
+            - get_synchronize_source
+            - set_synchronize_source
+            - get_duty_cycle
+            - set_duty_cycle
+            - reset_to_default
+            - get_model
+            - get_serial
+          metadata:
+            type: object
+            default:
+              repo: QCoDeS/Qcodes_contrib_drivers
+              repo_url: https://github.com/QCoDeS/Qcodes_contrib_drivers
+              source_url: https://github.com/QCoDeS/Qcodes_contrib_drivers/blob/main/src/qcodes_contrib_drivers/drivers/Lakeshore/modules/bcs10.py
+              source_file: src/qcodes_contrib_drivers/drivers/Lakeshore/modules/bcs10.py
+              class_name: bcs10
+              manufacturer_guess: ''
+              manufacturer_resolved: lakeshore
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.75
+              quality_score: 0.83
+              code_evidence: 'L29: class bcs10(sourceBase):'
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001
+                get_coupling: __qcodes_param_get__coupling
+                set_coupling: __qcodes_param_set__coupling
+                get_coupling_auto_enabled: __qcodes_param_get__coupling_auto_enabled
+                set_coupling_auto_enabled: __qcodes_param_set__coupling_auto_enabled
+                get_guard_state: __qcodes_param_get__guard_state
+                set_guard_state: __qcodes_param_set__guard_state
+                get_current_autorange_enabled: __qcodes_param_get__current_autorange_enabled
+                set_current_autorange_enabled: __qcodes_param_set__current_autorange_enabled
+                get_current_range: __qcodes_param_get__current_range
+                set_current_range: __qcodes_param_set__current_range
+                get_cmf_enabled: __qcodes_param_get__cmf_enabled
+                set_cmf_enabled: __qcodes_param_set__cmf_enabled
+                get_cmf_node: __qcodes_param_get__cmf_node
+                set_cmf_node: __qcodes_param_set__cmf_node
+                get_current_low_limit: __qcodes_param_get__current_low_limit
+                set_current_low_limit: __qcodes_param_set__current_low_limit
+                get_current_high_limit: __qcodes_param_get__current_high_limit
+                set_current_high_limit: __qcodes_param_set__current_high_limit
+                get_disable_on_compliance: __qcodes_param_get__disable_on_compliance
+                set_disable_on_compliance: __qcodes_param_set__disable_on_compliance
+                get_current_offset: __qcodes_param_get__current_offset
+                set_current_offset: __qcodes_param_set__current_offset
+                get_current_peak_amplitude: __qcodes_param_get__current_peak_amplitude
+                set_current_peak_amplitude: __qcodes_param_set__current_peak_amplitude
+                get_current_rms_amplitude: __qcodes_param_get__current_rms_amplitude
+                set_current_rms_amplitude: __qcodes_param_set__current_rms_amplitude
+                get_shape: __qcodes_param_get__shape
+                set_shape: __qcodes_param_set__shape
+                get_output_enabled: __qcodes_param_get__output_enabled
+                set_output_enabled: __qcodes_param_set__output_enabled
+                get_frequency: __qcodes_param_get__frequency
+                set_frequency: __qcodes_param_set__frequency
+                get_synchronize_enabled: __qcodes_param_get__synchronize_enabled
+                set_synchronize_enabled: __qcodes_param_set__synchronize_enabled
+                get_synchronize_phase: __qcodes_param_get__synchronize_phase
+                set_synchronize_phase: __qcodes_param_set__synchronize_phase
+                get_synchronize_source: __qcodes_param_get__synchronize_source
+                set_synchronize_source: __qcodes_param_set__synchronize_source
+                get_duty_cycle: __qcodes_param_get__duty_cycle
+                set_duty_cycle: __qcodes_param_set__duty_cycle
+                get_model: __qcodes_param_get__model
+                get_serial: __qcodes_param_get__serial
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-get_coupling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_coupling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_coupling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_coupling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_coupling_auto_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_coupling_auto_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_coupling_auto_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_coupling_auto_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_guard_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_guard_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_guard_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_guard_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_current_autorange_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_autorange_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current_autorange_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_autorange_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_current_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_cmf_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cmf_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_cmf_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cmf_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_cmf_node:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cmf_node
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_cmf_node:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cmf_node
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_current_low_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_low_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current_low_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_low_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_current_high_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_high_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current_high_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_high_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_disable_on_compliance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_disable_on_compliance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_disable_on_compliance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_disable_on_compliance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_current_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current_offset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_current_peak_amplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_peak_amplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current_peak_amplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_peak_amplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_current_rms_amplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_rms_amplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_current_rms_amplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_rms_amplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-output_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: output_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-output_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: output_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_shape:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_shape
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_shape:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_shape
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_output_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_output_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_output_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_output_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_synchronize_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_synchronize_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_synchronize_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_synchronize_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_synchronize_phase:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_synchronize_phase
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_synchronize_phase:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_synchronize_phase
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_synchronize_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_synchronize_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_synchronize_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_synchronize_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_duty_cycle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_duty_cycle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_duty_cycle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_duty_cycle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset_to_default:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_to_default
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_model:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_model
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_serial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_serial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: bcs10驱动（lakeshore），支持get_coupling/set_coupling/get_coupling_auto_enabled/set_coupling_auto_enabled/get_guard_state等45个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: QCoDeS/Qcodes_contrib_drivers
+    source_file: src/qcodes_contrib_drivers/drivers/Lakeshore/modules/bcs10.py
+    candidate_class: bcs10
+    quality_score: 0.83
+    confidence: 0.75
+    quality_status: usable
+    操作数: 45
+  manufacturer: Lake Shore
+  model:
+    name: bcs10
+    type: device
+  name: lakeshore bcs10
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

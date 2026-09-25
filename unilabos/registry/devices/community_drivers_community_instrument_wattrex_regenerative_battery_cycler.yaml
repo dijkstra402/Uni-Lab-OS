@@ -1,0 +1,589 @@
+community_instrument_wattrex_regenerative_battery_cycler:
+  class:
+    module: community_drivers.community_instrument_wattrex_regenerative_battery_cycler.driver:CommunityInstrumentWattrexRegenerativeBatteryCycler
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/WattRex__Battery-Cycler-Drivers
+          source_file:
+            type: string
+            default: code/drv_epc/src/wattrex_driver_epc/drv_epc_device.py
+          class_name:
+            type: string
+            default: DrvEpcDeviceC
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - read_can_buffer
+            - set_cv_mode
+            - set_cc_mode
+            - set_cp_mode
+            - set_wait_mode
+            - disable
+            - set_periodic
+            - set_ls_volt_limit
+            - set_ls_curr_limit
+            - set_hs_volt_limit
+            - set_ls_pwr_limit
+            - set_temp_limit
+            - get_data
+            - get_properties
+            - get_info
+            - get_mode
+            - get_status
+            - get_elec_meas
+            - get_temp_meas
+            - get_ls_volt_limits
+            - get_ls_curr_limits
+            - get_hs_volt_limits
+            - get_ls_pwr_limits
+            - get_temp_limits
+            - open
+            - close
+          metadata:
+            type: object
+            default:
+              repo: WattRex/Battery-Cycler-Drivers
+              repo_url: https://github.com/WattRex/Battery-Cycler-Drivers
+              source_file: code/drv_epc/src/wattrex_driver_epc/drv_epc_device.py
+              class_name: DrvEpcDeviceC
+              brand: WattRex
+              model: Regenerative Battery Cycler
+              device_type_cn: 电池测试柜
+              device_type_en: Battery Test Cabinet
+              source_framework: 专用驱动
+              tag_id: '4427'
+              tag_name: 电池测试柜
+              tag_name_en: Battery Test Cabinet
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 254
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-read_can_buffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_can_buffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_cv_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cv_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ref:
+                  type: integer
+                limit_type:
+                  type: string
+                limit_ref:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_cc_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cc_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ref:
+                  type: integer
+                limit_type:
+                  type: string
+                limit_ref:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_cp_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cp_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ref:
+                  type: integer
+                limit_type:
+                  type: string
+                limit_ref:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_wait_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_wait_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limit_ref:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_periodic:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_periodic
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ack_en:
+                  type: boolean
+                  default: false
+                ack_period:
+                  type: integer
+                  default: 10
+                elect_en:
+                  type: boolean
+                  default: false
+                elect_period:
+                  type: integer
+                  default: 10
+                temp_en:
+                  type: boolean
+                  default: false
+                temp_period:
+                  type: integer
+                  default: 10
+        goal_default:
+          ack_en: false
+          ack_period: 10
+          elect_en: false
+          elect_period: 10
+          temp_en: false
+          temp_period: 10
+        handles: {}
+      auto-set_ls_volt_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ls_volt_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_lim:
+                  type: integer
+                min_lim:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_ls_curr_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ls_curr_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_lim:
+                  type: integer
+                min_lim:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_hs_volt_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_hs_volt_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_lim:
+                  type: integer
+                min_lim:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_ls_pwr_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ls_pwr_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_lim:
+                  type: integer
+                min_lim:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_temp_limit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temp_limit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_lim:
+                  type: integer
+                min_lim:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-get_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: boolean
+                  default: false
+        goal_default:
+          update: false
+        handles: {}
+      auto-get_properties:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_properties
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: boolean
+                  default: false
+        goal_default:
+          update: false
+        handles: {}
+      auto-get_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_elec_meas:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_elec_meas
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                periodic_flag:
+                  type: boolean
+                  default: false
+        goal_default:
+          periodic_flag: false
+        handles: {}
+      auto-get_temp_meas:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temp_meas
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                periodic_flag:
+                  type: boolean
+                  default: false
+        goal_default:
+          periodic_flag: false
+        handles: {}
+      auto-get_ls_volt_limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ls_volt_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_ls_curr_limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ls_curr_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_hs_volt_limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_hs_volt_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_ls_pwr_limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ls_pwr_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_temp_limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temp_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: Regenerative Battery Cycler 驱动（WattRex），支持 read_can_buffer/set_cv_mode/set_cc_mode/set_cp_mode/set_wait_mode
+    等 26 个操作。
+  category:
+  - 电池测试柜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: WattRex/Battery-Cycler-Drivers
+    source_file: code/drv_epc/src/wattrex_driver_epc/drv_epc_device.py
+    candidate_class: DrvEpcDeviceC
+    candidate_score: 254
+    quality_status: usable
+    操作数: 26
+  manufacturer: WattRex
+  model:
+    name: Regenerative Battery Cycler
+    type: device
+  name: WattRex Regenerative Battery Cycler
+  tags:
+  - 电池测试柜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

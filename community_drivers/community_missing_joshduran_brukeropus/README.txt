@@ -1,0 +1,10 @@
+repo: joshduran/brukeropus
+repo_url: https://github.com/joshduran/brukeropus
+registry_id: community_missing_joshduran_brukeropus
+review_status: good
+review_notes: 测量流程方法完整。
+selected_file: brukeropus/control/opus.py
+selected_class: Opus
+download_dir: /Users/sml/work/Uni-Lab-OS/new/joshduran__brukeropus
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_joshduran_brukeropus.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_joshduran_brukeropus/startup.json

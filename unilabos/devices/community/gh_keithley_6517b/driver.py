@@ -384,3 +384,10 @@ class Keithley6517B(KeithleyBuffer, SCPIMixin, Instrument):
         self.stop_buffer()
         self.disable_source()
         super().shutdown()
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley6517B)
+except Exception:
+    pass

@@ -116,3 +116,10 @@ class AgilentE4408B(SCPIUnknownMixin, Instrument):
             'Frequency (GHz)': self.frequencies * 1e-9,
             'Peak (dB)': self.trace(number)
         })
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(AgilentE4408B)
+except Exception:
+    pass

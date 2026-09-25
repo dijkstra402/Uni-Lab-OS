@@ -1,0 +1,241 @@
+community_instrument_lauda_rp845:
+  class:
+    module: community_drivers.community_instrument_lauda_rp845.driver:CommunityInstrumentLaudaRp845
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/geocryology__GeoCryoLabPy
+          source_file:
+            type: string
+            default: equipment/Monitor.py
+          class_name:
+            type: string
+            default: monitorFile
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - setFile
+            - set_xcol
+            - set_ycol
+            - set_xmax
+            - readdata
+            - simpleXY
+            - execute
+          metadata:
+            type: object
+            default:
+              repo: geocryology/GeoCryoLabPy
+              repo_url: https://github.com/geocryology/GeoCryoLabPy
+              source_file: equipment/Monitor.py
+              class_name: monitorFile
+              brand: Lauda
+              model: RP845
+              device_type_cn: 冷热水机
+              device_type_en: Chiller / Heater Unit
+              source_framework: 专用驱动
+              tag_id: '4369'
+              tag_name: 冷热水机
+              tag_name_en: Chiller / Heater Unit
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 86
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-setFile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setFile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_xcol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_xcol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_ycol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ycol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                y:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_xmax:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_xmax
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xmax:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-readdata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readdata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-simpleXY:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: simpleXY
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-execute:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execute
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                refresh:
+                  type: string
+                  default: 5
+                runfor:
+                  type: string
+                  default: 15
+        goal_default:
+          refresh: 5
+          runfor: 15
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: RP845 驱动（Lauda），支持 setFile/set_xcol/set_ycol/set_xmax/readdata 等 7
+    个操作。
+  category:
+  - 冷热水机
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: geocryology/GeoCryoLabPy
+    source_file: equipment/Monitor.py
+    candidate_class: monitorFile
+    candidate_score: 86
+    quality_status: usable
+    操作数: 7
+  manufacturer: Lauda
+  model:
+    name: RP845
+    type: device
+  name: Lauda RP845
+  tags:
+  - 冷热水机
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

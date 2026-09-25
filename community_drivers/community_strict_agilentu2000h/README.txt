@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilentU2000H.py
+registry_id: community_strict_agilentu2000h
+source_file: ivi/agilent/agilentU2000H.py
+class_name: agilentU2000H
+manufacturer: agilent
+model: agilentU2000H
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilentu2000h.yaml

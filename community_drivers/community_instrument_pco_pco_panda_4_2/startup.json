@@ -1,0 +1,84 @@
+{
+  "nodes": [
+    {
+      "id": "test_community_instrument_pco_pco_panda_4_2",
+      "name": "pco.panda 4.2",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community_instrument_pco_pco_panda_4_2",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "repo_root": "/Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/amsikking__pco_panda42",
+        "source_file": "pco_panda42.py",
+        "class_name": "Camera",
+        "import_roots": [],
+        "candidate_methods": [
+          "apply_settings",
+          "record_to_memory",
+          "close"
+        ],
+        "action_targets": {},
+        "metadata": {
+          "repo": "amsikking/pco_panda42",
+          "repo_url": "https://github.com/amsikking/pco_panda42",
+          "brand": "PCO",
+          "model": "pco.panda 4.2",
+          "device_type_cn": "sCMOS相机",
+          "device_type_en": "sCMOS Camera",
+          "source_framework": "显微镜/成像",
+          "tag_id": "4400",
+          "tag_name": "普通光学显微镜",
+          "tag_name_en": "Optical Microscope",
+          "candidate_score": 90,
+          "parse_status": "ok",
+          "quality_status": "thin",
+          "quality_reasons": [],
+          "action_targets": {}
+        }
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "apply settings",
+      "description": "apply settings",
+      "device": "test_community_instrument_pco_pco_panda_4_2",
+      "action": "auto-apply_settings",
+      "action_args": {
+        "check_health": true
+      }
+    },
+    {
+      "step": 2,
+      "name": "record to memory",
+      "description": "record to memory",
+      "device": "test_community_instrument_pco_pco_panda_4_2",
+      "action": "auto-record_to_memory",
+      "action_args": {
+        "software_trigger": true
+      }
+    },
+    {
+      "step": 3,
+      "name": "close",
+      "description": "close",
+      "device": "test_community_instrument_pco_pco_panda_4_2",
+      "action": "auto-close",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "pco.panda 4.2 工作流",
+    "description": "pco.panda 4.2 自动生成工作流",
+    "instrument": "pco.panda 4.2",
+    "generated_by": "instrument-drivers-python"
+  }
+}

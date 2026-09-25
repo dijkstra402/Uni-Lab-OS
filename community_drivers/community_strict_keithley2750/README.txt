@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/keithley/keithley2750.py
+registry_id: community_strict_keithley2750
+source_file: pymeasure/instruments/keithley/keithley2750.py
+class_name: Keithley2750
+manufacturer: keithley
+model: Keithley2750
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_keithley2750.yaml

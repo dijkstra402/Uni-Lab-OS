@@ -167,6 +167,78 @@ julabo_fp50:
         goal_default:
           variable: null
         handles: {}
+      initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 初始化 / 复位仪器
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: initialize参数
+          type: object
+      measure:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 读取测量值
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: measure参数
+          type: object
+      set_power:
+        type: UniLabJsonCommand
+        goal:
+          power: power
+        goal_default:
+          power: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置功率
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                power:
+                  type: number
+                  description: power
+              required:
+              - power
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_power参数
+          type: object
   name: Discontinued products FP50-HL
   description: JULABO FP50高性能制冷加热循环器，温度范围宽达-50°C至+200°C，温度稳定性±0.01°C，制冷能力强劲，适用于反应釜温控和材料测试等精密应用。该型号已停产。
   manufacturer: Julabo

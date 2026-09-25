@@ -1,0 +1,12 @@
+repo: mabuchilab/Instrumental
+repo_url: https://github.com/mabuchilab/Instrumental
+source_url: https://github.com/mabuchilab/Instrumental/blob/main/src/instrumental/drivers/spectrumanalyzers/rohde_schwarz.py
+registry_id: community_strict_fsea20
+source_file: src/instrumental/drivers/spectrumanalyzers/rohde_schwarz.py
+class_name: FSEA20
+manufacturer: rohde
+model: FSEA20
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.11
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_fsea20.yaml

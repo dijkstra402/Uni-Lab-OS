@@ -1,0 +1,260 @@
+community_instrument_watlow_ez_zone_pm:
+  class:
+    module: community_drivers.community_instrument_watlow_ez_zone_pm.driver:CommunityInstrumentWatlowEzZonePm
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/numat__watlow
+          source_file:
+            type: string
+            default: watlow/util.py
+          class_name:
+            type: string
+            default: AsyncioModbusClient
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - read_coils
+            - read_registers
+            - read_holding_registers
+            - write_coil
+            - write_coils
+            - write_register
+            - write_registers
+          metadata:
+            type: object
+            default:
+              repo: numat/watlow
+              repo_url: https://github.com/numat/watlow
+              source_file: watlow/util.py
+              class_name: AsyncioModbusClient
+              brand: Watlow
+              model: EZ-Zone PM
+              device_type_cn: 箱式电阻炉
+              device_type_en: Box Resistance Furnace
+              source_framework: numat
+              tag_id: '4438'
+              tag_name: 箱式电阻炉
+              tag_name_en: Box Resistance Furnace
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 94
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-read_coils:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_coils
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_holding_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_holding_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                count:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_coil:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_coil
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_coils:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_coils
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                values:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_register:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_register
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                value:
+                  type: string
+                skip_encode:
+                  type: string
+                  default: false
+        goal_default:
+          skip_encode: false
+        handles: {}
+      auto-write_registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                values:
+                  type: string
+                skip_encode:
+                  type: string
+                  default: false
+        goal_default:
+          skip_encode: false
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: EZ-Zone PM 驱动（Watlow），支持 read_coils/read_registers/read_holding_registers/write_coil/write_coils
+    等 7 个操作。
+  category:
+  - 箱式电阻炉
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: numat/watlow
+    source_file: watlow/util.py
+    candidate_class: AsyncioModbusClient
+    candidate_score: 94
+    quality_status: usable
+    操作数: 7
+  manufacturer: 瓦特隆
+  model:
+    name: EZ-Zone PM
+    type: device
+  name: Watlow EZ-Zone PM
+  tags:
+  - 箱式电阻炉
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

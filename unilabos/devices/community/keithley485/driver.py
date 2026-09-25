@@ -541,3 +541,10 @@ class Keithley485(Instrument):
             raise Exception(f"Cannot parse measurement: {measurement}")
 
         return current
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley485)
+except Exception:
+    pass

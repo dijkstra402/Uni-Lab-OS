@@ -1,0 +1,12 @@
+repo: AlexShkarin/pyLabLib
+repo_url: https://github.com/AlexShkarin/pyLabLib
+source_url: https://github.com/AlexShkarin/pyLabLib/blob/main/pylablib/devices/Andor/AndorSDK3.py
+registry_id: community_strict_andorsdk3attribute
+source_file: pylablib/devices/Andor/AndorSDK3.py
+class_name: AndorSDK3Attribute
+manufacturer: andor
+model: AndorSDK3Attribute
+tag: 表征设备
+confidence: 0.75
+quality_score: 0.83
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_andorsdk3attribute.yaml

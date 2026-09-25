@@ -103,6 +103,34 @@ gh_eurotherm_2408:
               properties: {}
         goal_default: {}
         handles: {}
+      set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default:
+          temperature: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置温度
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                temperature:
+                  type: number
+                  description: temperature
+              required:
+              - temperature
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_temperature参数
+          type: object
     source: https://github.com/badarirao/Eurotemp
   name: Eurotherm 2408
   description: Eurotherm 2408 1/8 DIN紧凑型温度控制器/编程器（96×48mm），支持热电偶、RTD/Pt100及线性mA/V输入，精度±0.1%。提供继电器、SSR驱动、直流线性及可控硅最多3路输出。PID自整定，最多20个升温/保温程序，RS-232/RS-485

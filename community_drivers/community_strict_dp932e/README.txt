@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes_contrib_drivers
+repo_url: https://github.com/QCoDeS/Qcodes_contrib_drivers
+source_url: https://github.com/QCoDeS/Qcodes_contrib_drivers/blob/main/src/qcodes_contrib_drivers/drivers/Rigol/Rigol_DP932.py
+registry_id: community_strict_dp932e
+source_file: src/qcodes_contrib_drivers/drivers/Rigol/Rigol_DP932.py
+class_name: RigolDP932E
+manufacturer: rigol
+model: DP932E
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.11
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_dp932e.yaml

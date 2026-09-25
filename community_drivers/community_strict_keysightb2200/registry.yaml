@@ -1,0 +1,1506 @@
+community_strict_keysightb2200:
+  class:
+    module: community_drivers.community_strict_keysightb2200.driver:CommunityStrictKeysightb2200
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/QCoDeS__Qcodes
+          source_file:
+            type: string
+            default: src/qcodes/instrument_drivers/Keysight/keysight_b220x.py
+          class_name:
+            type: string
+            default: KeysightB220X
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect
+            - connect_paths
+            - disconnect_paths
+            - disconnect
+            - disconnect_all
+            - bias_disable_all_outputs
+            - bias_enable_all_outputs
+            - bias_enable_output
+            - bias_disable_output
+            - gnd_enable_output
+            - gnd_disable_output
+            - gnd_enable_all_outputs
+            - gnd_disable_all_outputs
+            - couple_port_autodetect
+            - clear_status
+            - reset
+            - parse_channel_list
+            - to_channel_list
+            - get_get_status
+            - get_get_error
+            - get_connections
+            - get_connection_rule
+            - set_connection_rule
+            - get_connection_sequence
+            - set_connection_sequence
+            - get_bias_input_port
+            - set_bias_input_port
+            - get_bias_mode
+            - set_bias_mode
+            - get_gnd_input_port
+            - set_gnd_input_port
+            - get_gnd_mode
+            - set_gnd_mode
+            - get_unused_inputs
+            - set_unused_inputs
+            - get_couple_ports
+            - set_couple_ports
+            - get_couple_mode
+            - set_couple_mode
+            - address
+            - resource_manager
+            - visa_handle
+            - visabackend
+            - visalib
+            - set_address
+            - device_clear
+            - set_terminator
+            - close
+            - write_raw
+            - ask_raw
+            - snapshot_base
+            - get_timeout
+            - set_timeout
+            - get_idn
+            - connect_message
+            - close_all
+            - record_instance
+            - instances
+            - remove_instance
+            - find_instrument
+            - exist
+            - is_valid
+            - label
+            - add_parameter
+            - remove_parameter
+            - add_function
+            - add_submodule
+            - get_component
+            - print_readable_snapshot
+            - invalidate_cache
+            - parent
+            - ancestors
+            - root_instrument
+            - name_parts
+            - full_name
+            - name
+            - short_name
+            - set
+            - get
+            - call
+            - validate_status
+            - load_metadata
+            - snapshot
+          metadata:
+            type: object
+            default:
+              repo: QCoDeS/Qcodes
+              repo_url: https://github.com/QCoDeS/Qcodes
+              source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/Keysight/keysight_b220x.py
+              source_file: src/qcodes/instrument_drivers/Keysight/keysight_b220x.py
+              class_name: KeysightB220X
+              manufacturer_guess: keysight
+              manufacturer_resolved: keysight
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.95
+              quality_score: 1.17
+              code_evidence: 'L442: class KeysightB2200(KeysightB220X):'
+              parse_status: class_reselected
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001
+                get_get_status: __qcodes_param_get__get_status
+                get_get_error: __qcodes_param_get__get_error
+                get_connections: __qcodes_param_get__connections
+                get_connection_rule: __qcodes_param_get__connection_rule
+                set_connection_rule: __qcodes_param_set__connection_rule
+                get_connection_sequence: __qcodes_param_get__connection_sequence
+                set_connection_sequence: __qcodes_param_set__connection_sequence
+                get_bias_input_port: __qcodes_param_get__bias_input_port
+                set_bias_input_port: __qcodes_param_set__bias_input_port
+                get_bias_mode: __qcodes_param_get__bias_mode
+                set_bias_mode: __qcodes_param_set__bias_mode
+                get_gnd_input_port: __qcodes_param_get__gnd_input_port
+                set_gnd_input_port: __qcodes_param_set__gnd_input_port
+                get_gnd_mode: __qcodes_param_get__gnd_mode
+                set_gnd_mode: __qcodes_param_set__gnd_mode
+                get_unused_inputs: __qcodes_param_get__unused_inputs
+                set_unused_inputs: __qcodes_param_set__unused_inputs
+                get_couple_ports: __qcodes_param_get__couple_ports
+                set_couple_ports: __qcodes_param_set__couple_ports
+                get_couple_mode: __qcodes_param_get__couple_mode
+                set_couple_mode: __qcodes_param_set__couple_mode
+                get_timeout: __qcodes_param_get__timeout
+                set_timeout: __qcodes_param_set__timeout
+                get_idn: __qcodes_param_get__idn
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                input_ch:
+                  type: integer
+                output_ch:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-connect_paths:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_paths
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                paths:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-disconnect_paths:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect_paths
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                paths:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                input_ch:
+                  type: integer
+                output_ch:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-disconnect_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-bias_disable_all_outputs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bias_disable_all_outputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-bias_enable_all_outputs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bias_enable_all_outputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-bias_enable_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bias_enable_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-bias_disable_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: bias_disable_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-gnd_enable_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gnd_enable_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-gnd_disable_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gnd_disable_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-gnd_enable_all_outputs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gnd_enable_all_outputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gnd_disable_all_outputs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gnd_disable_all_outputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-couple_port_autodetect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: couple_port_autodetect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-parse_channel_list:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_channel_list
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_list:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-to_channel_list:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_channel_list
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                paths:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-get_get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_get_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_get_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_connections:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_connections
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_connection_rule:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_connection_rule
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_connection_rule:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_connection_rule
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_connection_sequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_connection_sequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_connection_sequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_connection_sequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_bias_input_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_bias_input_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_bias_input_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_bias_input_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_bias_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_bias_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_bias_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_bias_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_gnd_input_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_gnd_input_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_gnd_input_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_gnd_input_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_gnd_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_gnd_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_gnd_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_gnd_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_unused_inputs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_unused_inputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_unused_inputs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_unused_inputs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_couple_ports:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_couple_ports
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_couple_ports:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_couple_ports
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_couple_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_couple_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_couple_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_couple_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-resource_manager:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resource_manager
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-visa_handle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: visa_handle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-visabackend:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: visabackend
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-visalib:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: visalib
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_address:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_address
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                address:
+                  type: string
+                visalib:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-device_clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: device_clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_terminator:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_terminator
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                terminator:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ask_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-snapshot_base:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: snapshot_base
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: boolean
+                  default: true
+                params_to_skip_update:
+                  type: array
+        goal_default:
+          update: true
+        handles: {}
+      auto-get_timeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_timeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_timeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idn_param:
+                  type: string
+                  default: IDN
+                begin_time:
+                  type: number
+        goal_default:
+          idn_param: IDN
+        handles: {}
+      auto-close_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-record_instance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: record_instance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                instance:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-instances:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: instances
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remove_instance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_instance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                instance:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-find_instrument:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_instrument
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                instrument_class:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-exist:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: exist
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                instrument_class:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_valid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_valid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                instr_instance:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-label:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: label
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_parameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                parameter_class:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_parameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_function:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_function
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_submodule:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_submodule
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                submodule:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_component:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_component
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                full_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-print_readable_snapshot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_readable_snapshot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: boolean
+                  default: false
+                max_chars:
+                  type: integer
+                  default: 80
+        goal_default:
+          update: false
+          max_chars: 80
+        handles: {}
+      auto-invalidate_cache:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: invalidate_cache
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-parent:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parent
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ancestors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ancestors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-root_instrument:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: root_instrument
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-name_parts:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: name_parts
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-full_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: full_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-short_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: short_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param_name:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-call:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: call
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                func_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-validate_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: validate_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                verbose:
+                  type: boolean
+                  default: false
+        goal_default:
+          verbose: false
+        handles: {}
+      auto-load_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                metadata:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-snapshot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: snapshot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                update:
+                  type: boolean
+                  default: false
+        goal_default:
+          update: false
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: KeysightB2200驱动（keysight），支持connect/connect_paths/disconnect_paths/disconnect/disconnect_all等83个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: QCoDeS/Qcodes
+    source_file: src/qcodes/instrument_drivers/Keysight/keysight_b220x.py
+    candidate_class: KeysightB220X
+    quality_score: 1.17
+    confidence: 0.95
+    quality_status: usable
+    操作数: 83
+  manufacturer: keysight
+  model:
+    name: KeysightB2200
+    type: device
+  name: keysight KeysightB2200
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

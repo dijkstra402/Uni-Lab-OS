@@ -1,0 +1,336 @@
+community_instrument_mobile_industrial_robots_mir100_200_250:
+  class:
+    module: community_drivers.community_instrument_mobile_industrial_robots_mir100_200_250.driver:CommunityInstrumentMobileIndustrialRobotsMir100200250
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/DFKI-NI__mir_robot
+          source_file:
+            type: string
+            default: mir_driver/src/mir_driver/rosbridge.py
+          class_name:
+            type: string
+            default: RosbridgeSetup
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - publish
+            - subscribe
+            - unhook
+            - unsubscribe
+            - callService
+            - send
+            - generate_id
+            - addServiceCallback
+            - addCallback
+            - is_connected
+            - is_errored
+            - onMessageReceived
+          metadata:
+            type: object
+            default:
+              repo: DFKI-NI/mir_robot
+              repo_url: https://github.com/DFKI-NI/mir_robot
+              source_file: mir_driver/src/mir_driver/rosbridge.py
+              class_name: RosbridgeSetup
+              brand: Mobile Industrial Robots
+              model: MiR100/200/250
+              device_type_cn: AGV自动导引车
+              device_type_en: AGV
+              source_framework: ROS
+              tag_id: '4360'
+              tag_name: AGV
+              tag_name_en: AGV
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 154
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-publish:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: publish
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                topic:
+                  type: string
+                obj:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-subscribe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: subscribe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                topic:
+                  type: string
+                callback:
+                  type: string
+                throttle_rate:
+                  type: string
+                  default: -1
+        goal_default:
+          throttle_rate: -1
+        handles: {}
+      auto-unhook:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unhook
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                callback:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unsubscribe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unsubscribe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                topic:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-callService:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: callService
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                serviceName:
+                  type: string
+                callback:
+                  type: string
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                obj:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-generate_id:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: generate_id
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chars:
+                  type: string
+                  default: 16
+        goal_default:
+          chars: 16
+        handles: {}
+      auto-addServiceCallback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: addServiceCallback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                id:
+                  type: string
+                callback:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-addCallback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: addCallback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                topic:
+                  type: string
+                callback:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_errored:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_errored
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-onMessageReceived:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: onMessageReceived
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: MiR100/200/250 驱动（Mobile Industrial Robots），支持 publish/subscribe/unhook/unsubscribe/callService
+    等 12 个操作。
+  category:
+  - AGV
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: DFKI-NI/mir_robot
+    source_file: mir_driver/src/mir_driver/rosbridge.py
+    candidate_class: RosbridgeSetup
+    candidate_score: 154
+    quality_status: usable
+    操作数: 12
+  manufacturer: Mobile Industrial Robots
+  model:
+    name: MiR100/200/250
+    type: device
+  name: Mobile Industrial Robots MiR100/200/250
+  tags:
+  - AGV
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

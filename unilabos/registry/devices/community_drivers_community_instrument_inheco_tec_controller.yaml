@@ -1,0 +1,275 @@
+community_instrument_inheco_tec_controller:
+  class:
+    module: community_drivers.community_instrument_inheco_tec_controller.driver:CommunityInstrumentInhecoTecController
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/temperature_controlling/inheco/temperature_controller.py
+          class_name:
+            type: string
+            default: InhecoTemperatureControllerBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - deactivate
+            - get_current_temperature
+            - get_device_info
+            - set_target_temperature
+            - set_temperature
+            - setup
+            - start_temperature_control
+            - stop
+            - stop_temperature_control
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              source_file: pylabrobot/temperature_controlling/inheco/temperature_controller.py
+              class_name: InhecoTemperatureControllerBackend
+              brand: Inheco
+              model: TEC Controller
+              device_type_cn: 高低温金属浴
+              device_type_en: Temperature Controller
+              source_framework: PyLabRobot
+              tag_id: '4459'
+              tag_name: 高低温金属浴
+              tag_name_en: High/Low Temperature Metal Bath
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 2318
+              action_targets: {}
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-deactivate:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_device_info:
+        type: UniLabJsonCommand
+        goal:
+          info_type: info_type
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_device_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                info_type:
+                  type: integer
+              required:
+              - info_type
+          required:
+          - goal
+        handles: {}
+      auto-set_target_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_target_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+              required:
+              - temperature
+          required:
+          - goal
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+              required:
+              - temperature
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-start_temperature_control:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: start_temperature_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop_temperature_control:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop_temperature_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: TEC Controller 驱动（Inheco），支持 deactivate/get_current_temperature/get_device_info/set_target_temperature/set_temperature
+    等 9 个操作。
+  category:
+  - 高低温金属浴
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/temperature_controlling/inheco/temperature_controller.py
+    candidate_class: InhecoTemperatureControllerBackend
+    candidate_score: 2318
+    quality_status: usable
+    操作数: 9
+  manufacturer: Inheco
+  model:
+    name: TEC Controller
+    type: device
+  name: Inheco TEC Controller
+  tags:
+  - 高低温金属浴
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

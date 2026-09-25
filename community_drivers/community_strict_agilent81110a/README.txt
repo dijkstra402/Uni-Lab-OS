@@ -1,0 +1,12 @@
+repo: mabuchilab/Instrumental
+repo_url: https://github.com/mabuchilab/Instrumental
+source_url: https://github.com/mabuchilab/Instrumental/blob/main/src/instrumental/drivers/funcgenerators/agilent.py
+registry_id: community_strict_agilent81110a
+source_file: src/instrumental/drivers/funcgenerators/agilent.py
+class_name: Agilent81110A
+manufacturer: agilent
+model: Agilent81110A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.06
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilent81110a.yaml

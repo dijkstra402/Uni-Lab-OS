@@ -832,3 +832,10 @@ class Eurotherm(EmptyDevice):
             checksum ^= ord(x)
 
         return chr(checksum)
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Eurotherm)
+except Exception:
+    pass

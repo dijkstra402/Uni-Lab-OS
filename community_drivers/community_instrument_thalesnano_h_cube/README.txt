@@ -1,0 +1,14 @@
+row_index: 379
+registry_id: community_instrument_thalesnano_h_cube
+repo: richardingham/octopus
+repo_url: https://github.com/richardingham/octopus
+brand: ThalesNano
+model: H-Cube
+device_type_cn: 微通道反应器
+device_type_en: Microreactor
+source_framework: octopus
+tag_id: 4388
+tag_name: 微通道反应器
+tag_name_en: Microreactor
+language: Python
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_instrument_thalesnano_h_cube.yaml

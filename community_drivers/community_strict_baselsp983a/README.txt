@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/basel/BaselSP983a.py
+registry_id: community_strict_baselsp983a
+source_file: src/qcodes/instrument_drivers/basel/BaselSP983a.py
+class_name: BaselSP983a
+manufacturer: basel
+model: BaselSP983a
+tag: 表征设备
+confidence: 0.8
+quality_score: 0.94
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_baselsp983a.yaml

@@ -378,3 +378,10 @@ class RigolDSA800Wrapper(GPIBDeviceWrapper):
         return processed_data
 
 __all__ = ["RigolDSA800Wrapper"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(RigolDSA800Wrapper)
+except Exception:
+    pass

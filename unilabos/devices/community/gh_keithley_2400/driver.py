@@ -1310,3 +1310,10 @@ class Keithley2400(KeithleyBuffer, SCPIMixin, Instrument):
         """
         warn("Deprecated to use `error`, use `next_error` instead.", FutureWarning)
         return self.next_error
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley2400)
+except Exception:
+    pass

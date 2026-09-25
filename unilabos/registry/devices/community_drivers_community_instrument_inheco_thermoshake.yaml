@@ -1,0 +1,518 @@
+community_instrument_inheco_thermoshake:
+  class:
+    module: community_drivers.community_instrument_inheco_thermoshake.driver:CommunityInstrumentInhecoThermoshake
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/AD-SDL__inheco_incubator_module
+          source_file:
+            type: string
+            default: src/inheco_incubator_interface.py
+          class_name:
+            type: string
+            default: Interface
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - open_connection
+            - close_connection
+            - initialize_device
+            - reset_device
+            - report_error_flags
+            - get_actual_temperature
+            - get_target_temperature
+            - set_target_temperature
+            - start_heater
+            - stop_heater
+            - is_heater_active
+            - open_door
+            - close_door
+            - report_door_status
+            - report_labware
+            - start_shaker
+            - stop_shaker
+            - is_shaker_active
+            - set_shaker_parameters
+            - send_message
+            - format_response
+            - is_busy
+          metadata:
+            type: object
+            default:
+              repo: AD-SDL/inheco_incubator_module
+              repo_url: https://github.com/AD-SDL/inheco_incubator_module
+              source_file: src/inheco_incubator_interface.py
+              class_name: Interface
+              brand: Inheco
+              model: ThermoShake
+              device_type_cn: 培养振荡器
+              device_type_en: Thermo Shaker
+              source_framework: 生命科学
+              tag_id: '4389'
+              tag_name: 恒温摇床
+              tag_name_en: Constant Temperature Shaker
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 222
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-open_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialize_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-reset_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-report_error_flags:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: report_error_flags
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-get_actual_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_actual_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-get_target_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_target_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_target_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_target_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+                temperature:
+                  type: number
+                  default: 22.0
+        goal_default:
+          temperature: 22.0
+        handles: {}
+      auto-start_heater:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_heater
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-stop_heater:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_heater
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-is_heater_active:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_heater_active
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-open_door:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_door
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-close_door:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_door
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-report_door_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: report_door_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-report_labware:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: report_labware
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-start_shaker:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_shaker
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+                status:
+                  type: string
+                  default: ND
+        goal_default:
+          status: ND
+        handles: {}
+      auto-stop_shaker:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_shaker
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-is_shaker_active:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_shaker_active
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_shaker_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_shaker_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_floor:
+                  type: integer
+                amplitude:
+                  type: number
+                  default: 2.0
+                frequency:
+                  type: number
+                  default: 14.2
+        goal_default:
+          amplitude: 2.0
+          frequency: 14.2
+        handles: {}
+      auto-send_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message_string:
+                  type: string
+                device_id:
+                  type: string
+                  default: 2
+                stack_floor:
+                  type: string
+                  default: 0
+                read_delay:
+                  type: string
+                  default: 0.5
+        goal_default:
+          device_id: 2
+          stack_floor: 0
+          read_delay: 0.5
+        handles: {}
+      auto-format_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: format_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                response:
+                  type: string
+                device_id:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-is_busy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_busy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: ThermoShake 驱动（Inheco），支持 open_connection/close_connection/initialize_device/reset_device/report_error_flags
+    等 22 个操作。
+  category:
+  - 恒温摇床
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: AD-SDL/inheco_incubator_module
+    source_file: src/inheco_incubator_interface.py
+    candidate_class: Interface
+    candidate_score: 222
+    quality_status: usable
+    操作数: 22
+  manufacturer: Inheco
+  model:
+    name: ThermoShake
+    type: device
+  name: Inheco ThermoShake
+  tags:
+  - 恒温摇床
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,120 @@
+community_instrument_jeol_2010f:
+  class:
+    module: community_drivers.community_instrument_jeol_2010f.driver:CommunityInstrumentJeol2010f
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/qun-liu__jeol2010f
+          source_file:
+            type: string
+            default: ''
+          class_name:
+            type: string
+            default: ''
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: []
+          metadata:
+            type: object
+            default:
+              repo: qun-liu/jeol2010f
+              repo_url: https://github.com/qun-liu/jeol2010f
+              source_file: ''
+              class_name: ''
+              brand: JEOL
+              model: 2010F
+              device_type_cn: TEM
+              device_type_en: Transmission Electron Microscope
+              source_framework: 显微镜/成像
+              tag_id: '4456'
+              tag_name: 透射电子显微镜
+              tag_name_en: Transmission Electron Microscope
+              language: Python
+              parse_status: class_not_found
+              quality_status: broken
+              quality_reasons:
+              - no_class_found
+              candidate_score: -999
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: stub
+  quality_reasons: "仅含 probe_import/get_metadata 占位"
+  description: 2010F 驱动（JEOL），支持 probe_import/get_metadata 等 0 个操作。
+  category:
+  - 透射电子显微镜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: qun-liu/jeol2010f
+    source_file: ''
+    candidate_class: ''
+    candidate_score: -999
+    quality_status: broken
+    操作数: 0
+  manufacturer: 日本电子
+  model:
+    name: 2010F
+    type: device
+  name: JEOL 2010F
+  tags:
+  - 透射电子显微镜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

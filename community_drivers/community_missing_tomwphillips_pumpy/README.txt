@@ -1,0 +1,10 @@
+repo: tomwphillips/pumpy
+repo_url: https://github.com/tomwphillips/pumpy
+registry_id: community_missing_tomwphillips_pumpy
+review_status: good
+review_notes: 泵送动作完整。
+selected_file: pumpy.py
+selected_class: Pump
+download_dir: /Users/sml/work/Uni-Lab-OS/new/tomwphillips__pumpy
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_tomwphillips_pumpy.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_tomwphillips_pumpy/startup.json

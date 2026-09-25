@@ -1,0 +1,217 @@
+community_missing_nanoporetech_minknow_api__community_missing_nanoporetech_minknow_api:
+  class:
+    module: unilabos.devices.community.community_missing_nanoporetech_minknow_api.driver:ProtocolService
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/nanoporetech__minknow_api
+          source_file:
+            type: string
+            default: python/minknow_api/protocol_service.py
+          class_name:
+            type: string
+            default: ProtocolService
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - python
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - start_protocol
+            - stop_protocol
+            - pause_protocol
+            - resume_protocol
+            - get_run_info
+            - list_protocol_runs
+            - get_current_protocol_run
+            - list_protocols
+            - begin_protocol
+          metadata:
+            type: object
+            default:
+              repo: nanoporetech/minknow_api
+              repo_url: https://github.com/nanoporetech/minknow_api
+              source_file: python/minknow_api/__init__.py
+              candidate_score: 54
+              candidate_reason: ''
+              manufacturers:
+              - Oxford Nanopore Technologies
+              models:
+              - MinION Mk1B, MinION Mk1D, GridION, PromethION P24, PromethION P2 Solo,
+                PromethION P2 Integrated
+              tags: &id001
+              - DNA测序仪
+              notes:
+              - 官方API-控制测序运行/数据采集/设备监控
+              comm_protocols:
+              - gRPC protobuf
+              review_status: good
+              review_notes:
+              - 改选 ProtocolService，覆盖 MinKNOW 测序协议核心控制接口。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-start_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pause_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pause_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-resume_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resume_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_run_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_run_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-list_protocol_runs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: list_protocol_runs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_protocol_run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_protocol_run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-list_protocols:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: list_protocols
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-begin_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: begin_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: nanoporetech/minknow_api
+    source_file: python/minknow_api/__init__.py
+    candidate_class: Connection
+    communication: gRPC protobuf
+  manufacturer: Oxford Nanopore Technologies
+  model:
+    name: MinION Mk1B, MinION Mk1D, GridION, PromethION P24, PromethION P2 Solo, PromethION
+      P2 Integrated
+    type: device
+  name: minknow_api
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

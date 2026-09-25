@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilent8594Q.py
+registry_id: community_strict_agilent8594q
+source_file: ivi/agilent/agilent8594Q.py
+class_name: agilent8594Q
+manufacturer: agilent
+model: agilent8594Q
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilent8594q.yaml

@@ -1,0 +1,173 @@
+community.ba.watlow:
+  name: Watlow
+  category:
+  - 控温磁力搅拌器
+  class:
+    module: unilabos.devices.generic.watlow_driver:Watlow
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                instance:
+                  type: string
+        goal_default:
+          instance: '01'
+        handles: {}
+      auto-readSetpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readSetpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                instance:
+                  type: string
+        goal_default:
+          instance: '01'
+        handles: {}
+      auto-readParam:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readParam
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+                data_type:
+                  type: string
+                instance:
+                  type: string
+        goal_default:
+          instance: '01'
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                instance:
+                  type: string
+        goal_default:
+          instance: '01'
+        handles: {}
+      auto-writeParam:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writeParam
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                param:
+                  type: string
+                value:
+                  type: string
+                data_type:
+                  type: string
+                instance:
+                  type: string
+        goal_default:
+          instance: '01'
+        handles: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: Watlow 设备驱动，社区驱动 - 自动集成自 watlow
+  device_params:
+    品牌: Watlow
+    型号: Watlow
+    设备类型: 控温磁力搅拌器
+    来源仓库: watlow
+    驱动类: Watlow
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        serial:
+          type: string
+          default: null
+        port:
+          type: string
+          default: null
+        timeout:
+          type: string
+          default: 0.5
+        address:
+          type: string
+          default: 1
+  manufacturer: 瓦特隆
+  model:
+    name: Watlow
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

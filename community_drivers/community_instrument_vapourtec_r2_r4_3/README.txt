@@ -1,0 +1,14 @@
+row_index: 378
+registry_id: community_instrument_vapourtec_r2_r4_3
+repo: cambridge-cares/TheWorldAvatar
+repo_url: https://github.com/cambridge-cares/TheWorldAvatar
+brand: Vapourtec
+model: R2/R4
+device_type_cn: 微通道反应器
+device_type_en: Microreactor
+source_framework: 专用驱动
+tag_id: 4388
+tag_name: 微通道反应器
+tag_name_en: Microreactor
+language: Python
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_instrument_vapourtec_r2_r4_3.yaml

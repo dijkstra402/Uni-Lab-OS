@@ -1,0 +1,826 @@
+community_instrument_cetoni_nemesys:
+  class:
+    module: community_drivers.community_instrument_cetoni_nemesys.driver:CommunityInstrumentCetoniNemesys
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/psyfood__pyqmix
+          source_file:
+            type: string
+            default: pyqmix/pump.py
+          class_name:
+            type: string
+            default: QmixPump
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - name
+            - is_enabled
+            - enable
+            - disable
+            - is_in_fault_state
+            - clear_fault_state
+            - is_calibration_finished
+            - calibrate
+            - n_pumps
+            - set_volume_unit
+            - get_volume_unit
+            - volume_unit
+            - volume_max
+            - set_flow_unit
+            - get_flow_unit
+            - flow_unit
+            - set_syringe_params
+            - set_syringe_params_by_type
+            - get_syringe_params
+            - syringe_params
+            - max_flow_rate
+            - aspirate
+            - dispense
+            - set_fill_level
+            - generate_flow
+            - fill
+            - empty
+            - stop
+            - stop_all_pumps
+            - dosed_volume
+            - get_fill_level
+            - fill_level
+            - current_flow_rate
+            - is_pumping
+            - has_valve
+            - valve_handle
+            - add_external_valve
+            - remove_external_valve
+            - drive_pos_counter
+            - save_drive_pos_counter
+          metadata:
+            type: object
+            default:
+              repo: psyfood/pyqmix
+              repo_url: https://github.com/psyfood/pyqmix
+              source_file: pyqmix/pump.py
+              class_name: QmixPump
+              brand: Cetoni
+              model: neMESYS
+              device_type_cn: 注射泵
+              device_type_en: Syringe Pump
+              source_framework: 泵阀/液体处理
+              tag_id: '4413'
+              tag_name: 注射泵
+              tag_name_en: Syringe Pump
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 386
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_in_fault_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_in_fault_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_fault_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_fault_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_calibration_finished:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_calibration_finished
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-calibrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait_until_done:
+                  type: string
+                  default: false
+        goal_default:
+          wait_until_done: false
+        handles: {}
+      auto-n_pumps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: n_pumps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_volume_unit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_volume_unit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                prefix:
+                  type: string
+                  default: milli
+                unit:
+                  type: string
+                  default: litres
+        goal_default:
+          prefix: milli
+          unit: litres
+        handles: {}
+      auto-get_volume_unit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_volume_unit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-volume_unit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: volume_unit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-volume_max:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: volume_max
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_flow_unit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_flow_unit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                prefix:
+                  type: string
+                  default: milli
+                volume_unit:
+                  type: string
+                  default: litres
+                time_unit:
+                  type: string
+                  default: per_second
+        goal_default:
+          prefix: milli
+          volume_unit: litres
+          time_unit: per_second
+        handles: {}
+      auto-get_flow_unit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_flow_unit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-flow_unit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flow_unit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_syringe_params:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_syringe_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                inner_diameter_mm:
+                  type: string
+                  default: 32.5735
+                max_piston_stroke_mm:
+                  type: string
+                  default: 60
+        goal_default:
+          inner_diameter_mm: 32.5735
+          max_piston_stroke_mm: 60
+        handles: {}
+      auto-set_syringe_params_by_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_syringe_params_by_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                syringe_type:
+                  type: string
+                  default: 50 mL glass
+        goal_default:
+          syringe_type: 50 mL glass
+        handles: {}
+      auto-get_syringe_params:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_syringe_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-syringe_params:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: syringe_params
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-max_flow_rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: max_flow_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-aspirate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: aspirate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume:
+                  type: string
+                flow_rate:
+                  type: string
+                wait_until_done:
+                  type: string
+                  default: false
+                switch_valve_when_done:
+                  type: string
+                  default: false
+        goal_default:
+          wait_until_done: false
+          switch_valve_when_done: false
+        handles: {}
+      auto-dispense:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume:
+                  type: string
+                flow_rate:
+                  type: string
+                wait_until_done:
+                  type: string
+                  default: false
+                switch_valve_when_done:
+                  type: string
+                  default: false
+        goal_default:
+          wait_until_done: false
+          switch_valve_when_done: false
+        handles: {}
+      auto-set_fill_level:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_fill_level
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                level:
+                  type: string
+                flow_rate:
+                  type: string
+                wait_until_done:
+                  type: string
+                  default: false
+                switch_valve_when_done:
+                  type: string
+                  default: false
+        goal_default:
+          wait_until_done: false
+          switch_valve_when_done: false
+        handles: {}
+      auto-generate_flow:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: generate_flow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flow_rate:
+                  type: string
+                wait_until_done:
+                  type: string
+                  default: false
+                switch_valve_when_done:
+                  type: string
+                  default: false
+        goal_default:
+          wait_until_done: false
+          switch_valve_when_done: false
+        handles: {}
+      auto-fill:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fill
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flow_rate:
+                  type: string
+                wait_until_done:
+                  type: string
+                  default: false
+                switch_valve_when_done:
+                  type: string
+                  default: false
+        goal_default:
+          wait_until_done: false
+          switch_valve_when_done: false
+        handles: {}
+      auto-empty:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: empty
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flow_rate:
+                  type: string
+                wait_until_done:
+                  type: string
+                  default: false
+                switch_valve_when_done:
+                  type: string
+                  default: false
+        goal_default:
+          wait_until_done: false
+          switch_valve_when_done: false
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop_all_pumps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_all_pumps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-dosed_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dosed_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_fill_level:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_fill_level
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-fill_level:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fill_level
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current_flow_rate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_flow_rate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_pumping:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_pumping
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-has_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: has_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-valve_handle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: valve_handle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_external_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_external_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve:
+                  type: string
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_external_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_external_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-drive_pos_counter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: drive_pos_counter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_drive_pos_counter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_drive_pos_counter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: neMESYS 驱动（Cetoni），支持 name/is_enabled/enable/disable/is_in_fault_state
+    等 40 个操作。
+  category:
+  - 注射泵
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: psyfood/pyqmix
+    source_file: pyqmix/pump.py
+    candidate_class: QmixPump
+    candidate_score: 386
+    quality_status: usable
+    操作数: 40
+  manufacturer: Cetoni
+  model:
+    name: neMESYS
+    type: device
+  name: Cetoni neMESYS
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

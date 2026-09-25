@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilentBase8590E.py
+registry_id: community_strict_agilentbase8590e
+source_file: ivi/agilent/agilentBase8590E.py
+class_name: agilentBase8590E
+manufacturer: agilent
+model: agilentBase8590E
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilentbase8590e.yaml

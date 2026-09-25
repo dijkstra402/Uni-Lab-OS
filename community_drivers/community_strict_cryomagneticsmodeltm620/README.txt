@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/cryomagnetics/_TM620.py
+registry_id: community_strict_cryomagneticsmodeltm620
+source_file: src/qcodes/instrument_drivers/cryomagnetics/_TM620.py
+class_name: CryomagneticsModelTM620
+manufacturer: cryomagnetics
+model: CryomagneticsModelTM620
+tag: 表征设备
+confidence: 0.8
+quality_score: 0.94
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_cryomagneticsmodeltm620.yaml

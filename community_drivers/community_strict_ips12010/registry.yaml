@@ -1,0 +1,352 @@
+community_strict_ips12010:
+  class:
+    module: community_drivers.community_strict_ips12010.driver:CommunityStrictIps12010
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/pymeasure__pymeasure
+          source_file:
+            type: string
+            default: pymeasure/instruments/oxfordinstruments/ips120_10.py
+          class_name:
+            type: string
+            default: IPS120_10
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - switch_heater_enabled
+            - field
+            - enable_control
+            - disable_control
+            - enable_persistent_mode
+            - disable_persistent_mode
+            - wait_for_idle
+            - set_field
+            - train_magnet
+            - is_valid_response
+            - next_error
+            - write_binary_values
+            - read_binary_values
+            - check_errors
+          metadata:
+            type: object
+            default:
+              repo: pymeasure/pymeasure
+              repo_url: https://github.com/pymeasure/pymeasure
+              source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/oxfordinstruments/ips120_10.py
+              source_file: pymeasure/instruments/oxfordinstruments/ips120_10.py
+              class_name: IPS120_10
+              manufacturer_guess: ''
+              manufacturer_resolved: oxford instruments
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.8
+              quality_score: 0.94
+              code_evidence: 'L50: class IPS120_10(OxfordInstrumentsBase):'
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001 {}
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-switch_heater_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: switch_heater_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-field:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: field
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enable_control:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable_control:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enable_persistent_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_persistent_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable_persistent_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_persistent_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_idle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_idle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                delay:
+                  type: string
+                  default: 1
+                max_wait_time:
+                  type: string
+                should_stop:
+                  type: string
+        goal_default:
+          delay: 1
+        handles: {}
+      auto-set_field:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_field
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                field:
+                  type: string
+                sweep_rate:
+                  type: string
+                persistent_mode_control:
+                  type: string
+                  default: true
+        goal_default:
+          persistent_mode_control: true
+        handles: {}
+      auto-train_magnet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: train_magnet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                training_scheme:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_valid_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_valid_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                response:
+                  type: string
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-next_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: next_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                values:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: IPS120_10驱动（oxford instruments），支持switch_heater_enabled/field/enable_control/disable_control/enable_persistent_mode等14个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: pymeasure/pymeasure
+    source_file: pymeasure/instruments/oxfordinstruments/ips120_10.py
+    candidate_class: IPS120_10
+    quality_score: 0.94
+    confidence: 0.8
+    quality_status: usable
+    操作数: 14
+  manufacturer: oxford instruments
+  model:
+    name: IPS120_10
+    type: device
+  name: oxford instruments IPS120_10
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

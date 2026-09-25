@@ -1,0 +1,1874 @@
+community_instrument_inheco_incubator_shaker:
+  class:
+    module: community_drivers.community_instrument_inheco_incubator_shaker.driver:CommunityInstrumentInhecoIncubatorShaker
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/storage/inheco/incubator_shaker_backend.py
+          class_name:
+            type: string
+            default: InhecoIncubatorShakerStackBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - close
+            - delete_counter
+            - get_temperature
+            - initialize
+            - is_shaking_enabled
+            - is_temperature_control_enabled
+            - open
+            - perform_self_test
+            - read_whole_shaker_calibration_data
+            - request_calibration_high
+            - request_calibration_low
+            - request_delta_temperature
+            - request_drawer_cycles_performed
+            - request_drawer_status
+            - request_firmware_version
+            - request_incubator_type
+            - request_is_initialized
+            - request_labware_detection_threshold
+            - request_last_calibration_date
+            - request_machine_allocation
+            - request_maximum_allowed_temperature
+            - request_motor_current_limit_anticlockwise
+            - request_motor_current_limit_clockwise
+            - request_motor_power_anticlockwise
+            - request_motor_power_clockwise
+            - request_number_of_connected_machines
+            - request_operation_time_in_hours
+            - request_pid_controller_coefficients
+            - request_plate_in_incubator
+            - request_plate_status_known
+            - request_proportionality_factor
+            - request_serial_number
+            - request_shaker_amplitude_x
+            - request_shaker_amplitude_y
+            - request_shaker_calibration_value
+            - request_shaker_frequency_x
+            - request_shaker_frequency_y
+            - request_shaker_phase_shift
+            - request_target_temperature
+            - request_thermal_calibration_date
+            - request_whole_calibration_data
+            - reset_calibration_data
+            - set_boost_offset
+            - set_boost_time
+            - set_calibration_high
+            - set_calibration_low
+            - set_cooldown_time_factor
+            - set_heatup_offset
+            - set_heatup_time_factor
+            - set_max_allowed_device_temperature
+            - set_motor_current_limit_anticlockwise
+            - set_motor_current_limit_clockwise
+            - set_motor_power_anticlockwise
+            - set_motor_power_clockwise
+            - set_pid_integration_value
+            - set_pid_proportional_gain
+            - set_proportionality_factor
+            - set_shaker_calibration_value
+            - set_shaker_parameters
+            - set_shaker_pattern
+            - set_shaker_status
+            - setup
+            - shake
+            - start_temperature_control
+            - stop
+            - stop_shaking
+            - stop_temperature_control
+            - wait_for_temperature
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              source_file: pylabrobot/storage/inheco/incubator_shaker_backend.py
+              class_name: InhecoIncubatorShakerStackBackend
+              brand: Inheco
+              model: Incubator Shaker
+              device_type_cn: 组织培养试验箱
+              device_type_en: Tissue Culture Chamber
+              source_framework: PyLabRobot
+              tag_id: '4442'
+              tag_name: 组织培养试验箱
+              tag_name_en: Tissue Culture Chamber
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 2318
+              action_targets: {}
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-delete_counter:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          selector: selector
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: delete_counter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                selector:
+                  type: integer
+              required:
+              - key
+              - selector
+          required:
+          - goal
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+          sensor: sensor
+          read_timeout: read_timeout
+        goal_default:
+          sensor: main
+          read_timeout: 60.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+                sensor:
+                  type: string
+                read_timeout:
+                  type: number
+              required:
+              - stack_index
+              - sensor
+              - read_timeout
+          required:
+          - goal
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-is_shaking_enabled:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: is_shaking_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-is_temperature_control_enabled:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: is_temperature_control_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-perform_self_test:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+          read_timeout: read_timeout
+        goal_default:
+          read_timeout: 500
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: perform_self_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+                read_timeout:
+                  type: integer
+              required:
+              - stack_index
+              - read_timeout
+          required:
+          - goal
+        handles: {}
+      auto-read_whole_shaker_calibration_data:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: read_whole_shaker_calibration_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+              required:
+              - key
+          required:
+          - goal
+        handles: {}
+      auto-request_calibration_high:
+        type: UniLabJsonCommand
+        goal:
+          sensor: sensor
+          format: format
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_calibration_high
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sensor:
+                  type: integer
+                format:
+                  type: integer
+              required:
+              - sensor
+              - format
+          required:
+          - goal
+        handles: {}
+      auto-request_calibration_low:
+        type: UniLabJsonCommand
+        goal:
+          sensor: sensor
+          format: format
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_calibration_low
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sensor:
+                  type: integer
+                format:
+                  type: integer
+              required:
+              - sensor
+              - format
+          required:
+          - goal
+        handles: {}
+      auto-request_delta_temperature:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_delta_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_drawer_cycles_performed:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_drawer_cycles_performed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_drawer_status:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_drawer_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_firmware_version:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_incubator_type:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_incubator_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_is_initialized:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_is_initialized
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_labware_detection_threshold:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_labware_detection_threshold
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_last_calibration_date:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_last_calibration_date
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_machine_allocation:
+        type: UniLabJsonCommand
+        goal:
+          layer: layer
+          stack_index: stack_index
+        goal_default:
+          layer: 0
+          stack_index: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_machine_allocation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                layer:
+                  type: integer
+                stack_index:
+                  type: integer
+              required:
+              - layer
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_maximum_allowed_temperature:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+          measured: measured
+        goal_default:
+          measured: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_maximum_allowed_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+                measured:
+                  type: boolean
+              required:
+              - stack_index
+              - measured
+          required:
+          - goal
+        handles: {}
+      auto-request_motor_current_limit_anticlockwise:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_motor_current_limit_anticlockwise
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_motor_current_limit_clockwise:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_motor_current_limit_clockwise
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_motor_power_anticlockwise:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_motor_power_anticlockwise
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_motor_power_clockwise:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_motor_power_clockwise
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_number_of_connected_machines:
+        type: UniLabJsonCommand
+        goal:
+          layer: layer
+          stack_index: stack_index
+        goal_default:
+          layer: 0
+          stack_index: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_number_of_connected_machines
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                layer:
+                  type: integer
+                stack_index:
+                  type: integer
+              required:
+              - layer
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_operation_time_in_hours:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_operation_time_in_hours
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_pid_controller_coefficients:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_pid_controller_coefficients
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_plate_in_incubator:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_plate_in_incubator
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_plate_status_known:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_plate_status_known
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_proportionality_factor:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_proportionality_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_serial_number:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_shaker_amplitude_x:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+          selector: selector
+        goal_default:
+          selector: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_shaker_amplitude_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+                selector:
+                  type: integer
+              required:
+              - stack_index
+              - selector
+          required:
+          - goal
+        handles: {}
+      auto-request_shaker_amplitude_y:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+          selector: selector
+        goal_default:
+          selector: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_shaker_amplitude_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+                selector:
+                  type: integer
+              required:
+              - stack_index
+              - selector
+          required:
+          - goal
+        handles: {}
+      auto-request_shaker_calibration_value:
+        type: UniLabJsonCommand
+        goal:
+          position: position
+          selector: selector
+        goal_default:
+          selector: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_shaker_calibration_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: integer
+                selector:
+                  type: integer
+              required:
+              - position
+              - selector
+          required:
+          - goal
+        handles: {}
+      auto-request_shaker_frequency_x:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+          selector: selector
+        goal_default:
+          selector: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_shaker_frequency_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+                selector:
+                  type: integer
+              required:
+              - stack_index
+              - selector
+          required:
+          - goal
+        handles: {}
+      auto-request_shaker_frequency_y:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+          selector: selector
+        goal_default:
+          selector: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_shaker_frequency_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+                selector:
+                  type: integer
+              required:
+              - stack_index
+              - selector
+          required:
+          - goal
+        handles: {}
+      auto-request_shaker_phase_shift:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+          selector: selector
+        goal_default:
+          selector: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_shaker_phase_shift
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+                selector:
+                  type: integer
+              required:
+              - stack_index
+              - selector
+          required:
+          - goal
+        handles: {}
+      auto-request_target_temperature:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_target_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_thermal_calibration_date:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_thermal_calibration_date
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-request_whole_calibration_data:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_whole_calibration_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+              required:
+              - key
+          required:
+          - goal
+        handles: {}
+      auto-reset_calibration_data:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: reset_calibration_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+              required:
+              - key
+          required:
+          - goal
+        handles: {}
+      auto-set_boost_offset:
+        type: UniLabJsonCommand
+        goal:
+          offset: offset
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_boost_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                offset:
+                  type: integer
+              required:
+              - offset
+          required:
+          - goal
+        handles: {}
+      auto-set_boost_time:
+        type: UniLabJsonCommand
+        goal:
+          time_s: time_s
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_boost_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                time_s:
+                  type: integer
+              required:
+              - time_s
+          required:
+          - goal
+        handles: {}
+      auto-set_calibration_high:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          sensor1: sensor1
+          sensor2: sensor2
+          sensor3: sensor3
+          date: date
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_calibration_high
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                sensor1:
+                  type: integer
+                sensor2:
+                  type: integer
+                sensor3:
+                  type: integer
+                date:
+                  type: string
+              required:
+              - key
+              - sensor1
+              - sensor2
+              - sensor3
+              - date
+          required:
+          - goal
+        handles: {}
+      auto-set_calibration_low:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          sensor1: sensor1
+          sensor2: sensor2
+          sensor3: sensor3
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_calibration_low
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                sensor1:
+                  type: integer
+                sensor2:
+                  type: integer
+                sensor3:
+                  type: integer
+              required:
+              - key
+              - sensor1
+              - sensor2
+              - sensor3
+          required:
+          - goal
+        handles: {}
+      auto-set_cooldown_time_factor:
+        type: UniLabJsonCommand
+        goal:
+          value: value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_cooldown_time_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+              required:
+              - value
+          required:
+          - goal
+        handles: {}
+      auto-set_heatup_offset:
+        type: UniLabJsonCommand
+        goal:
+          offset: offset
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_heatup_offset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                offset:
+                  type: integer
+              required:
+              - offset
+          required:
+          - goal
+        handles: {}
+      auto-set_heatup_time_factor:
+        type: UniLabJsonCommand
+        goal:
+          value: value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_heatup_time_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+              required:
+              - value
+          required:
+          - goal
+        handles: {}
+      auto-set_max_allowed_device_temperature:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          temperature: temperature
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_max_allowed_device_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                temperature:
+                  type: integer
+              required:
+              - key
+              - temperature
+          required:
+          - goal
+        handles: {}
+      auto-set_motor_current_limit_anticlockwise:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          current: current
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_motor_current_limit_anticlockwise
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                current:
+                  type: integer
+              required:
+              - key
+              - current
+          required:
+          - goal
+        handles: {}
+      auto-set_motor_current_limit_clockwise:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          current: current
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_motor_current_limit_clockwise
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                current:
+                  type: integer
+              required:
+              - key
+              - current
+          required:
+          - goal
+        handles: {}
+      auto-set_motor_power_anticlockwise:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          power: power
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_motor_power_anticlockwise
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                power:
+                  type: integer
+              required:
+              - key
+              - power
+          required:
+          - goal
+        handles: {}
+      auto-set_motor_power_clockwise:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          power: power
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_motor_power_clockwise
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                power:
+                  type: integer
+              required:
+              - key
+              - power
+          required:
+          - goal
+        handles: {}
+      auto-set_pid_integration_value:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          value: value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_pid_integration_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                value:
+                  type: integer
+              required:
+              - key
+              - value
+          required:
+          - goal
+        handles: {}
+      auto-set_pid_proportional_gain:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          value: value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_pid_proportional_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                value:
+                  type: integer
+              required:
+              - key
+              - value
+          required:
+          - goal
+        handles: {}
+      auto-set_proportionality_factor:
+        type: UniLabJsonCommand
+        goal:
+          value: value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_proportionality_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: integer
+              required:
+              - value
+          required:
+          - goal
+        handles: {}
+      auto-set_shaker_calibration_value:
+        type: UniLabJsonCommand
+        goal:
+          key: key
+          position: position
+          value: value
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_shaker_calibration_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                key:
+                  type: string
+                position:
+                  type: integer
+                value:
+                  type: integer
+              required:
+              - key
+              - position
+              - value
+          required:
+          - goal
+        handles: {}
+      auto-set_shaker_parameters:
+        type: UniLabJsonCommand
+        goal:
+          amplitude_x: amplitude_x
+          amplitude_y: amplitude_y
+          frequency_x: frequency_x
+          frequency_y: frequency_y
+          phase_shift: phase_shift
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_shaker_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                amplitude_x:
+                  type: number
+                amplitude_y:
+                  type: number
+                frequency_x:
+                  type: number
+                frequency_y:
+                  type: number
+                phase_shift:
+                  type: number
+                stack_index:
+                  type: integer
+              required:
+              - amplitude_x
+              - amplitude_y
+              - frequency_x
+              - frequency_y
+              - phase_shift
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-set_shaker_pattern:
+        type: UniLabJsonCommand
+        goal:
+          pattern: pattern
+          stack_index: stack_index
+          frequency_hz: frequency_hz
+          rpm: rpm
+          amplitude_x_mm: amplitude_x_mm
+          amplitude_y_mm: amplitude_y_mm
+          phase_deg: phase_deg
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_shaker_pattern
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pattern:
+                  type: string
+                stack_index:
+                  type: integer
+                frequency_hz:
+                  type: string
+                rpm:
+                  type: string
+                amplitude_x_mm:
+                  type: string
+                amplitude_y_mm:
+                  type: string
+                phase_deg:
+                  type: string
+              required:
+              - pattern
+              - stack_index
+              - frequency_hz
+              - rpm
+              - amplitude_x_mm
+              - amplitude_y_mm
+              - phase_deg
+          required:
+          - goal
+        handles: {}
+      auto-set_shaker_status:
+        type: UniLabJsonCommand
+        goal:
+          enabled: enabled
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_shaker_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enabled:
+                  type: boolean
+                stack_index:
+                  type: integer
+              required:
+              - enabled
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal:
+          port: port
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+              required:
+              - port
+          required:
+          - goal
+        handles: {}
+      auto-shake:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+          pattern: pattern
+          rpm: rpm
+          frequency_hz: frequency_hz
+          amplitude_x_mm: amplitude_x_mm
+          amplitude_y_mm: amplitude_y_mm
+          phase_deg: phase_deg
+        goal_default:
+          pattern: orbital
+          amplitude_x_mm: 3.0
+          amplitude_y_mm: 3.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: shake
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+                pattern:
+                  type: string
+                rpm:
+                  type: string
+                frequency_hz:
+                  type: string
+                amplitude_x_mm:
+                  type: number
+                amplitude_y_mm:
+                  type: number
+                phase_deg:
+                  type: string
+              required:
+              - stack_index
+              - pattern
+              - rpm
+              - frequency_hz
+              - amplitude_x_mm
+              - amplitude_y_mm
+              - phase_deg
+          required:
+          - goal
+        handles: {}
+      auto-start_temperature_control:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: start_temperature_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+                stack_index:
+                  type: integer
+              required:
+              - temperature
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop_shaking:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop_shaking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-stop_temperature_control:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop_temperature_control
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+              required:
+              - stack_index
+          required:
+          - goal
+        handles: {}
+      auto-wait_for_temperature:
+        type: UniLabJsonCommand
+        goal:
+          stack_index: stack_index
+          sensor: sensor
+          tolerance: tolerance
+          interval_s: interval_s
+          timeout_s: timeout_s
+          show_progress_bar: show_progress_bar
+        goal_default:
+          sensor: main
+          tolerance: 0.2
+          interval_s: 0.5
+          timeout_s: 600.0
+          show_progress_bar: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: wait_for_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stack_index:
+                  type: integer
+                sensor:
+                  type: string
+                tolerance:
+                  type: number
+                interval_s:
+                  type: number
+                timeout_s:
+                  type: number
+                show_progress_bar:
+                  type: boolean
+              required:
+              - stack_index
+              - sensor
+              - tolerance
+              - interval_s
+              - timeout_s
+              - show_progress_bar
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: Incubator Shaker 驱动（Inheco），支持 close/delete_counter/get_temperature/initialize/is_shaking_enabled
+    等 68 个操作。
+  category:
+  - 组织培养试验箱
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/storage/inheco/incubator_shaker_backend.py
+    candidate_class: InhecoIncubatorShakerStackBackend
+    candidate_score: 2318
+    quality_status: usable
+    操作数: 68
+  manufacturer: Inheco
+  model:
+    name: Incubator Shaker
+    type: device
+  name: Inheco Incubator Shaker
+  tags:
+  - 组织培养试验箱
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

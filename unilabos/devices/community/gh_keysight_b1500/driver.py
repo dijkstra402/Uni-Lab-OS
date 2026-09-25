@@ -497,3 +497,10 @@ class KeysightB2201(KeysightB220X):
     """
     QCodes driver for B2201
     """
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(KeysightB220X)
+except Exception:
+    pass

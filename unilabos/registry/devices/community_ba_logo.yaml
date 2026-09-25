@@ -1,0 +1,94 @@
+community.ba.logo:
+  name: Logo
+  category:
+  - 实验执行&合成设备
+  class:
+    module: unilabos.devices.generic.siemens_logo.siemens_logo:Logo
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ip_address:
+                  type: string
+                tsap_snap7:
+                  type: integer
+                tsap_logo:
+                  type: integer
+                tcp_port:
+                  type: integer
+        goal_default:
+          tcp_port: 102
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vm_address:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                vm_address:
+                  type: string
+                value:
+                  type: integer
+        goal_default: {}
+        handles: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: Logo 设备驱动，社区驱动 - 自动集成自 logo
+  device_params:
+    品牌: 社区开源
+    型号: Logo
+    设备类型: 实验执行&合成设备
+    来源仓库: logo
+    驱动类: Logo
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      type: object
+      properties: {}
+      required: []
+  manufacturer: ''
+  model:
+    name: Logo
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

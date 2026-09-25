@@ -1,0 +1,200 @@
+community_instrument_hioki_im3536:
+  class:
+    module: community_drivers.community_instrument_hioki_im3536.driver:CommunityInstrumentHiokiIm3536
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/Teslafly__Hioki-IM3536-Lcr-meter-python-IVI-driver
+          source_file:
+            type: string
+            default: hioki/hiokiIM3536.py
+          class_name:
+            type: string
+            default: hiokiIM3536
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - do_lcr_measurement
+            - set_display_items
+            - get_measurement_frequency
+            - set_measurement_frequency
+          metadata:
+            type: object
+            default:
+              repo: Teslafly/Hioki-IM3536-Lcr-meter-python-IVI-driver
+              repo_url: https://github.com/Teslafly/Hioki-IM3536-Lcr-meter-python-IVI-driver
+              source_file: hioki/hiokiIM3536.py
+              class_name: hiokiIM3536
+              brand: Hioki
+              model: IM3536
+              device_type_cn: LCR表
+              device_type_en: LCR Meter
+              source_framework: 电化学/热分析/天平
+              tag_id: '4365'
+              tag_name: 介电常数测定仪
+              tag_name_en: Dielectric Constant Meter
+              language: Python
+              parse_status: ok
+              quality_status: thin
+              quality_reasons: []
+              candidate_score: 132
+              action_targets:
+                get_measurement_frequency: _get_measurement_frequency
+                set_measurement_frequency: _set_measurement_frequency
+          action_targets:
+            type: object
+            default:
+              get_measurement_frequency: _get_measurement_frequency
+              set_measurement_frequency: _set_measurement_frequency
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-do_lcr_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: do_lcr_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frequency:
+                  type: string
+                parameters:
+                  type: string
+                voltage:
+                  type: string
+                  default: 1
+                current:
+                  type: string
+                  default: 0.01
+                averaging:
+                  type: string
+        goal_default:
+          voltage: 1
+          current: 0.01
+        handles: {}
+      auto-set_display_items:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_display_items
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                items:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_measurement_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_measurement_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_measurement_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_measurement_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: IM3536 驱动（Hioki），支持 do_lcr_measurement/set_display_items/get_measurement_frequency/set_measurement_frequency
+    等 4 个操作。
+  category:
+  - 介电常数测定仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: Teslafly/Hioki-IM3536-Lcr-meter-python-IVI-driver
+    source_file: hioki/hiokiIM3536.py
+    candidate_class: hiokiIM3536
+    candidate_score: 132
+    quality_status: thin
+    操作数: 4
+  manufacturer: Hioki
+  model:
+    name: IM3536
+    type: device
+  name: Hioki IM3536
+  tags:
+  - 介电常数测定仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

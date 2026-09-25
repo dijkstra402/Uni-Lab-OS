@@ -582,3 +582,10 @@ PREFIXES = {
     5: 1e-6,  # micro
     6: 1e-9,  # nano
 }
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Fluke3000)
+except Exception:
+    pass

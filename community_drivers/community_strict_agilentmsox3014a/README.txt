@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilentMSOX3014A.py
+registry_id: community_strict_agilentmsox3014a
+source_file: ivi/agilent/agilentMSOX3014A.py
+class_name: agilentMSOX3014A
+manufacturer: agilent
+model: agilentMSOX3014A
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilentmsox3014a.yaml

@@ -1,0 +1,166 @@
+community_github_jmarini_nanoscope:
+  class:
+    module: community_drivers.community_github_jmarini_nanoscope.driver:CommunityGithubJmariniNanoscope
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/jmarini_nanoscope
+          source_file:
+            type: string
+            default: nanoscope/nanoscope.py
+          class_name:
+            type: string
+            default: NanoscopeFile
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - height
+            - amplitude
+            - phase
+            - image
+            - image_types
+            - describe_images
+          metadata:
+            type: object
+            default:
+              repo: jmarini/nanoscope
+              repo_url: https://github.com/jmarini/nanoscope
+              unit_id: gh_bruker_dimension_nanoscope
+              source_file: nanoscope/nanoscope.py
+              candidate_score: 56
+              manufacturer: Bruker/Veeco
+              model_name: Bruker/Veeco Dimension (NanoScope)
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-height:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: height
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-amplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: amplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-phase:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: phase
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-image_types:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: image_types
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-describe_images:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: describe_images
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'Bruker Dimension Icon是高性能原子力显微镜(AFM)，具备亚纳米级横向分辨率和约30pm的垂直噪声水平，可实现原子级成像，支持210mm全尺寸晶圆。
+    GitHub驱动: https://github.com/jmarini/nanoscope'
+  category:
+  - community
+  device_params:
+    repo: jmarini/nanoscope
+    source_file: nanoscope/nanoscope.py
+    candidate_class: NanoscopeFile
+    communication: ''
+    photo_url: https://id.rlcdn.com/464526.gif
+    instrument_params: 'XY Scan range: up to 90 µm × 90 µm; Z range: up to 10 µm;
+      XY Resolution: < 1 nm; Z Noise: < 0.035 nm; Sample size: up to 210 mm; Modes:
+      Tapping, Contact, PeakForce Tapping, ScanAsyst'
+    official_url: https://www.bruker.com/en/products-and-solutions/microscopes/materials-afm/dimension-icon-afm.html
+  manufacturer: Bruker/Veeco
+  model:
+    name: Bruker/Veeco Dimension (NanoScope)
+    type: device
+  name: Bruker/Veeco Dimension (NanoScope)
+  tags:
+  - 普通光学显微镜
+  resource_type: device
+  icon: https://id.rlcdn.com/464526.gif
+  scene:
+    domain: Biology
+    scene_name: Imaging
+    step: Microscopy
+  version: 0.1.0

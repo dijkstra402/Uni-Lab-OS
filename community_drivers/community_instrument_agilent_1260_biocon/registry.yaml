@@ -1,0 +1,4754 @@
+community_instrument_agilent_1260_biocon:
+  class:
+    module: community_drivers.community_instrument_agilent_1260_biocon.driver:CommunityInstrumentAgilent1260Biocon
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/biocatiit__beamline-control-user
+          source_file:
+            type: string
+            default: biocon/XPS_C8_drivers.py
+          class_name:
+            type: string
+            default: XPS
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - withValidSocket
+            - Send
+            - TCP_ConnectToServer
+            - TCP_SetTimeout
+            - TCP_CloseSocket
+            - GetLibraryVersion
+            - ControllerMotionKernelTimeLoadGet
+            - ControllerStatusGet
+            - ControllerStatusStringGet
+            - ElapsedTimeGet
+            - ErrorStringGet
+            - FirmwareVersionGet
+            - TCLScriptExecute
+            - TCLScriptExecuteAndWait
+            - TCLScriptExecuteWithPriority
+            - TCLScriptKill
+            - TimerGet
+            - TimerSet
+            - Reboot
+            - Login
+            - CloseAllOtherSockets
+            - HardwareDateAndTimeGet
+            - HardwareDateAndTimeSet
+            - EventAdd
+            - EventGet
+            - EventRemove
+            - EventWait
+            - EventExtendedConfigurationTriggerSet
+            - EventExtendedConfigurationTriggerGet
+            - EventExtendedConfigurationActionSet
+            - EventExtendedConfigurationActionGet
+            - EventExtendedStart
+            - EventExtendedAllGet
+            - EventExtendedGet
+            - EventExtendedRemove
+            - EventExtendedWait
+            - GatheringConfigurationGet
+            - GatheringConfigurationSet
+            - GatheringCurrentNumberGet
+            - GatheringStopAndSave
+            - GatheringDataAcquire
+            - GatheringDataGet
+            - GatheringDataMultipleLinesGet
+            - GatheringReset
+            - GatheringRun
+            - GatheringRunAppend
+            - GatheringStop
+            - GatheringExternalConfigurationSet
+            - GatheringExternalConfigurationGet
+            - GatheringExternalCurrentNumberGet
+            - GatheringExternalDataGet
+            - GatheringExternalStopAndSave
+            - GlobalArrayGet
+            - GlobalArraySet
+            - DoubleGlobalArrayGet
+            - DoubleGlobalArraySet
+            - GPIOAnalogGet
+            - GPIOAnalogSet
+            - GPIOAnalogGainGet
+            - GPIOAnalogGainSet
+            - GPIODigitalGet
+            - GPIODigitalSet
+            - GroupAccelerationSetpointGet
+            - GroupAnalogTrackingModeEnable
+            - GroupAnalogTrackingModeDisable
+            - GroupCorrectorOutputGet
+            - GroupCurrentFollowingErrorGet
+            - GroupHomeSearch
+            - GroupHomeSearchAndRelativeMove
+            - GroupInitialize
+            - GroupInitializeWithEncoderCalibration
+            - GroupJogParametersSet
+            - GroupJogParametersGet
+            - GroupJogCurrentGet
+            - GroupJogModeEnable
+            - GroupJogModeDisable
+            - GroupKill
+            - GroupMoveAbort
+            - GroupMoveAbsolute
+            - GroupMoveRelative
+            - GroupMotionDisable
+            - GroupMotionEnable
+            - GroupPositionCorrectedProfilerGet
+            - GroupPositionCurrentGet
+            - GroupPositionPCORawEncoderGet
+            - GroupPositionSetpointGet
+            - GroupPositionTargetGet
+            - GroupReferencingActionExecute
+            - GroupReferencingStart
+            - GroupReferencingStop
+            - GroupStatusGet
+            - GroupStatusStringGet
+            - GroupVelocityCurrentGet
+            - HexapodMoveAbsolute
+            - HexapodMoveRelative
+            - HexapodPositionCurrentGet
+            - KillAll
+            - PositionerAnalogTrackingPositionParametersGet
+            - PositionerAnalogTrackingPositionParametersSet
+            - PositionerAnalogTrackingVelocityParametersGet
+            - PositionerAnalogTrackingVelocityParametersSet
+            - PositionerBacklashGet
+            - PositionerBacklashSet
+            - PositionerBacklashEnable
+            - PositionerBacklashDisable
+            - PositionerCorrectorNotchFiltersSet
+            - PositionerCorrectorNotchFiltersGet
+            - PositionerCorrectorPIDFFAccelerationSet
+            - PositionerCorrectorPIDFFAccelerationGet
+            - PositionerCorrectorPIDFFVelocitySet
+            - PositionerCorrectorPIDFFVelocityGet
+            - PositionerCorrectorPIDDualFFVoltageSet
+            - PositionerCorrectorPIDDualFFVoltageGet
+            - PositionerCorrectorPIPositionSet
+            - PositionerCorrectorPIPositionGet
+            - PositionerCorrectorTypeGet
+            - PositionerCurrentVelocityAccelerationFiltersGet
+            - PositionerCurrentVelocityAccelerationFiltersSet
+            - PositionerDriverFiltersGet
+            - PositionerDriverFiltersSet
+            - PositionerDriverPositionOffsetsGet
+            - PositionerDriverStatusGet
+            - PositionerDriverStatusStringGet
+            - PositionerEncoderAmplitudeValuesGet
+            - PositionerEncoderCalibrationParametersGet
+            - PositionerErrorGet
+            - PositionerErrorRead
+            - PositionerErrorStringGet
+            - PositionerExcitationSignalGet
+            - PositionerExcitationSignalSet
+            - PositionerExternalLatchPositionGet
+            - PositionerHardwareStatusGet
+            - PositionerHardwareStatusStringGet
+            - PositionerHardInterpolatorFactorGet
+            - PositionerHardInterpolatorFactorSet
+            - PositionerMaximumVelocityAndAccelerationGet
+            - PositionerMotionDoneGet
+            - PositionerMotionDoneSet
+            - PositionerPositionCompareAquadBAlwaysEnable
+            - PositionerPositionCompareAquadBWindowedGet
+            - PositionerPositionCompareAquadBWindowedSet
+            - PositionerPositionCompareGet
+            - PositionerPositionCompareSet
+            - PositionerPositionCompareEnable
+            - PositionerPositionCompareDisable
+            - PositionerPositionComparePulseParametersGet
+            - PositionerPositionComparePulseParametersSet
+            - PositionerRawEncoderPositionGet
+            - PositionersEncoderIndexDifferenceGet
+            - PositionerSGammaExactVelocityAjustedDisplacementGet
+            - PositionerSGammaParametersGet
+            - PositionerSGammaParametersSet
+            - PositionerSGammaPreviousMotionTimesGet
+            - PositionerStageParameterGet
+            - PositionerStageParameterSet
+            - PositionerTimeFlasherGet
+            - PositionerTimeFlasherSet
+            - PositionerTimeFlasherEnable
+            - PositionerTimeFlasherDisable
+            - PositionerUserTravelLimitsGet
+            - PositionerUserTravelLimitsSet
+            - PositionerDACOffsetGet
+            - PositionerDACOffsetSet
+            - PositionerDACOffsetDualGet
+            - PositionerDACOffsetDualSet
+            - PositionerCorrectorAutoTuning
+            - PositionerAccelerationAutoScaling
+            - MultipleAxesPVTVerification
+            - MultipleAxesPVTVerificationResultGet
+            - MultipleAxesPVTExecution
+            - MultipleAxesPVTParametersGet
+            - MultipleAxesPVTPulseOutputSet
+            - MultipleAxesPVTPulseOutputGet
+            - SingleAxisSlaveModeEnable
+            - SingleAxisSlaveModeDisable
+            - SingleAxisSlaveParametersSet
+            - SingleAxisSlaveParametersGet
+            - SpindleSlaveModeEnable
+            - SpindleSlaveModeDisable
+            - SpindleSlaveParametersSet
+            - SpindleSlaveParametersGet
+            - GroupSpinParametersSet
+            - GroupSpinParametersGet
+            - GroupSpinCurrentGet
+            - GroupSpinModeStop
+            - XYLineArcVerification
+            - XYLineArcVerificationResultGet
+            - XYLineArcExecution
+            - XYLineArcParametersGet
+            - XYLineArcPulseOutputSet
+            - XYLineArcPulseOutputGet
+            - XYZGroupPositionCorrectedProfilerGet
+            - XYZSplineVerification
+            - XYZSplineVerificationResultGet
+            - XYZSplineExecution
+            - XYZSplineParametersGet
+            - OptionalModuleExecute
+            - OptionalModuleKill
+            - EEPROMCIESet
+            - EEPROMDACOffsetCIESet
+            - EEPROMDriverSet
+            - EEPROMINTSet
+            - CPUCoreAndBoardSupplyVoltagesGet
+            - CPUTemperatureAndFanSpeedGet
+            - ActionListGet
+            - ActionExtendedListGet
+            - APIExtendedListGet
+            - APIListGet
+            - ControllerStatusListGet
+            - ErrorListGet
+            - EventListGet
+            - GatheringListGet
+            - GatheringExtendedListGet
+            - GatheringExternalListGet
+            - GroupStatusListGet
+            - HardwareInternalListGet
+            - HardwareDriverAndStageGet
+            - ObjectsListGet
+            - PositionerErrorListGet
+            - PositionerHardwareStatusListGet
+            - PositionerDriverStatusListGet
+            - ReferencingActionListGet
+            - ReferencingSensorListGet
+            - GatheringUserDatasGet
+            - ControllerMotionKernelPeriodMinMaxGet
+            - ControllerMotionKernelPeriodMinMaxReset
+            - SocketsStatusGet
+            - TestTCP
+          metadata:
+            type: object
+            default:
+              repo: biocatiit/beamline-control-user
+              repo_url: https://github.com/biocatiit/beamline-control-user
+              source_file: biocon/XPS_C8_drivers.py
+              class_name: XPS
+              brand: Agilent
+              model: 1260 (BioCon)
+              device_type_cn: 液相色谱仪
+              device_type_en: HPLC
+              source_framework: BioCon
+              tag_id: '4418'
+              tag_name: 液相色谱质谱联用仪
+              tag_name_en: LC-MS
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 1862
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-withValidSocket:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: withValidSocket
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fcn:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                cmd:
+                  type: string
+                check:
+                  type: string
+                  default: false
+        goal_default:
+          check: false
+        handles: {}
+      auto-TCP_ConnectToServer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TCP_ConnectToServer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                IP:
+                  type: string
+                port:
+                  type: string
+                timeOut:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-TCP_SetTimeout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TCP_SetTimeout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                timeOut:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-TCP_CloseSocket:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TCP_CloseSocket
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetLibraryVersion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetLibraryVersion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ControllerMotionKernelTimeLoadGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ControllerMotionKernelTimeLoadGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ControllerStatusGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ControllerStatusGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ControllerStatusStringGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ControllerStatusStringGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                ControllerStatusCode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ElapsedTimeGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ElapsedTimeGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ErrorStringGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ErrorStringGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                ErrorCode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-FirmwareVersionGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: FirmwareVersionGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-TCLScriptExecute:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TCLScriptExecute
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                TCLFileName:
+                  type: string
+                TaskName:
+                  type: string
+                ParametersList:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-TCLScriptExecuteAndWait:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TCLScriptExecuteAndWait
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                TCLFileName:
+                  type: string
+                TaskName:
+                  type: string
+                InputParametersList:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-TCLScriptExecuteWithPriority:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TCLScriptExecuteWithPriority
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                TCLFileName:
+                  type: string
+                TaskName:
+                  type: string
+                TaskPriorityLevel:
+                  type: string
+                ParametersList:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-TCLScriptKill:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TCLScriptKill
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                TaskName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-TimerGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TimerGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                TimerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-TimerSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TimerSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                TimerName:
+                  type: string
+                FrequencyTicks:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Reboot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Reboot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Login:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Login
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                Name:
+                  type: string
+                Password:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-CloseAllOtherSockets:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: CloseAllOtherSockets
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-HardwareDateAndTimeGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: HardwareDateAndTimeGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-HardwareDateAndTimeSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: HardwareDateAndTimeSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                DateAndTime:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventAdd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventAdd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                EventName:
+                  type: string
+                EventParameter:
+                  type: string
+                ActionName:
+                  type: string
+                ActionParameter1:
+                  type: string
+                ActionParameter2:
+                  type: string
+                ActionParameter3:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventRemove:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventRemove
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                EventName:
+                  type: string
+                EventParameter:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventWait:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventWait
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                EventName:
+                  type: string
+                EventParameter:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventExtendedConfigurationTriggerSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventExtendedConfigurationTriggerSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                ExtendedEventName:
+                  type: string
+                EventParameter1:
+                  type: string
+                EventParameter2:
+                  type: string
+                EventParameter3:
+                  type: string
+                EventParameter4:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventExtendedConfigurationTriggerGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventExtendedConfigurationTriggerGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventExtendedConfigurationActionSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventExtendedConfigurationActionSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                ExtendedActionName:
+                  type: string
+                ActionParameter1:
+                  type: string
+                ActionParameter2:
+                  type: string
+                ActionParameter3:
+                  type: string
+                ActionParameter4:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventExtendedConfigurationActionGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventExtendedConfigurationActionGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventExtendedStart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventExtendedStart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventExtendedAllGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventExtendedAllGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventExtendedGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventExtendedGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                ID:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventExtendedRemove:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventExtendedRemove
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                ID:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventExtendedWait:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventExtendedWait
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringConfigurationGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringConfigurationGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringConfigurationSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringConfigurationSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                Type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringCurrentNumberGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringCurrentNumberGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringStopAndSave:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringStopAndSave
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringDataAcquire:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringDataAcquire
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringDataGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringDataGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                IndexPoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringDataMultipleLinesGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringDataMultipleLinesGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                IndexPoint:
+                  type: string
+                NumberOfLines:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringReset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringReset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringRun:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringRun
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                DataNumber:
+                  type: string
+                Divisor:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringRunAppend:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringRunAppend
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringStop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringStop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringExternalConfigurationSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringExternalConfigurationSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                Type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringExternalConfigurationGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringExternalConfigurationGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringExternalCurrentNumberGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringExternalCurrentNumberGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringExternalDataGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringExternalDataGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                IndexPoint:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringExternalStopAndSave:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringExternalStopAndSave
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GlobalArrayGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GlobalArrayGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                Number:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GlobalArraySet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GlobalArraySet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                Number:
+                  type: string
+                ValueString:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-DoubleGlobalArrayGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: DoubleGlobalArrayGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                Number:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-DoubleGlobalArraySet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: DoubleGlobalArraySet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                Number:
+                  type: string
+                DoubleValue:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GPIOAnalogGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GPIOAnalogGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GPIOName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GPIOAnalogSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GPIOAnalogSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GPIOName:
+                  type: string
+                AnalogOutputValue:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GPIOAnalogGainGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GPIOAnalogGainGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GPIOName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GPIOAnalogGainSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GPIOAnalogGainSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GPIOName:
+                  type: string
+                AnalogInputGainValue:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GPIODigitalGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GPIODigitalGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GPIOName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GPIODigitalSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GPIODigitalSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GPIOName:
+                  type: string
+                Mask:
+                  type: string
+                DigitalOutputValue:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupAccelerationSetpointGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupAccelerationSetpointGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                nbElement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupAnalogTrackingModeEnable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupAnalogTrackingModeEnable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                Type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupAnalogTrackingModeDisable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupAnalogTrackingModeDisable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupCorrectorOutputGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupCorrectorOutputGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                nbElement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupCurrentFollowingErrorGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupCurrentFollowingErrorGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                nbElement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupHomeSearch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupHomeSearch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupHomeSearchAndRelativeMove:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupHomeSearchAndRelativeMove
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TargetDisplacement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupInitialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupInitialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupInitializeWithEncoderCalibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupInitializeWithEncoderCalibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupJogParametersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupJogParametersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                Velocity:
+                  type: string
+                Acceleration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupJogParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupJogParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                nbElement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupJogCurrentGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupJogCurrentGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                nbElement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupJogModeEnable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupJogModeEnable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupJogModeDisable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupJogModeDisable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupKill:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupKill
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupMoveAbort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupMoveAbort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupMoveAbsolute:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupMoveAbsolute
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TargetPosition:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupMoveRelative:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupMoveRelative
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TargetDisplacement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupMotionDisable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupMotionDisable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupMotionEnable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupMotionEnable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupPositionCorrectedProfilerGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupPositionCorrectedProfilerGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                PositionX:
+                  type: string
+                PositionY:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupPositionCurrentGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupPositionCurrentGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                nbElement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupPositionPCORawEncoderGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupPositionPCORawEncoderGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                PositionX:
+                  type: string
+                PositionY:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupPositionSetpointGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupPositionSetpointGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                nbElement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupPositionTargetGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupPositionTargetGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                nbElement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupReferencingActionExecute:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupReferencingActionExecute
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                ReferencingAction:
+                  type: string
+                ReferencingSensor:
+                  type: string
+                ReferencingParameter:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupReferencingStart:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupReferencingStart
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupReferencingStop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupReferencingStop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupStatusGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupStatusGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupStatusStringGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupStatusStringGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupStatusCode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupVelocityCurrentGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupVelocityCurrentGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                nbElement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-HexapodMoveAbsolute:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: HexapodMoveAbsolute
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TargetPosition:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-HexapodMoveRelative:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: HexapodMoveRelative
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TargetDisplacement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-HexapodPositionCurrentGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: HexapodPositionCurrentGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                nbElement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-KillAll:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: KillAll
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerAnalogTrackingPositionParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerAnalogTrackingPositionParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerAnalogTrackingPositionParametersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerAnalogTrackingPositionParametersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                GPIOName:
+                  type: string
+                Offset:
+                  type: string
+                Scale:
+                  type: string
+                Velocity:
+                  type: string
+                Acceleration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerAnalogTrackingVelocityParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerAnalogTrackingVelocityParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerAnalogTrackingVelocityParametersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerAnalogTrackingVelocityParametersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                GPIOName:
+                  type: string
+                Offset:
+                  type: string
+                Scale:
+                  type: string
+                DeadBandThreshold:
+                  type: string
+                Order:
+                  type: string
+                Velocity:
+                  type: string
+                Acceleration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerBacklashGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerBacklashGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerBacklashSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerBacklashSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                BacklashValue:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerBacklashEnable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerBacklashEnable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerBacklashDisable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerBacklashDisable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorNotchFiltersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorNotchFiltersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                NotchFrequency1:
+                  type: string
+                NotchBandwith1:
+                  type: string
+                NotchGain1:
+                  type: string
+                NotchFrequency2:
+                  type: string
+                NotchBandwith2:
+                  type: string
+                NotchGain2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorNotchFiltersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorNotchFiltersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorPIDFFAccelerationSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorPIDFFAccelerationSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                ClosedLoopStatus:
+                  type: string
+                KP:
+                  type: string
+                KI:
+                  type: string
+                KD:
+                  type: string
+                KS:
+                  type: string
+                IntegrationTime:
+                  type: string
+                DerivativeFilterCutOffFrequency:
+                  type: string
+                GKP:
+                  type: string
+                GKI:
+                  type: string
+                GKD:
+                  type: string
+                KForm:
+                  type: string
+                FeedForwardGainAcceleration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorPIDFFAccelerationGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorPIDFFAccelerationGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorPIDFFVelocitySet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorPIDFFVelocitySet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                ClosedLoopStatus:
+                  type: string
+                KP:
+                  type: string
+                KI:
+                  type: string
+                KD:
+                  type: string
+                KS:
+                  type: string
+                IntegrationTime:
+                  type: string
+                DerivativeFilterCutOffFrequency:
+                  type: string
+                GKP:
+                  type: string
+                GKI:
+                  type: string
+                GKD:
+                  type: string
+                KForm:
+                  type: string
+                FeedForwardGainVelocity:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorPIDFFVelocityGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorPIDFFVelocityGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorPIDDualFFVoltageSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorPIDDualFFVoltageSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                ClosedLoopStatus:
+                  type: string
+                KP:
+                  type: string
+                KI:
+                  type: string
+                KD:
+                  type: string
+                KS:
+                  type: string
+                IntegrationTime:
+                  type: string
+                DerivativeFilterCutOffFrequency:
+                  type: string
+                GKP:
+                  type: string
+                GKI:
+                  type: string
+                GKD:
+                  type: string
+                KForm:
+                  type: string
+                FeedForwardGainVelocity:
+                  type: string
+                FeedForwardGainAcceleration:
+                  type: string
+                Friction:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorPIDDualFFVoltageGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorPIDDualFFVoltageGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorPIPositionSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorPIPositionSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                ClosedLoopStatus:
+                  type: string
+                KP:
+                  type: string
+                KI:
+                  type: string
+                IntegrationTime:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorPIPositionGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorPIPositionGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorTypeGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorTypeGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCurrentVelocityAccelerationFiltersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCurrentVelocityAccelerationFiltersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCurrentVelocityAccelerationFiltersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCurrentVelocityAccelerationFiltersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                CurrentVelocityCutOffFrequency:
+                  type: string
+                CurrentAccelerationCutOffFrequency:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerDriverFiltersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerDriverFiltersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerDriverFiltersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerDriverFiltersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                KI:
+                  type: string
+                NotchFrequency:
+                  type: string
+                NotchBandwidth:
+                  type: string
+                NotchGain:
+                  type: string
+                LowpassFrequency:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerDriverPositionOffsetsGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerDriverPositionOffsetsGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerDriverStatusGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerDriverStatusGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerDriverStatusStringGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerDriverStatusStringGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerDriverStatus:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerEncoderAmplitudeValuesGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerEncoderAmplitudeValuesGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerEncoderCalibrationParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerEncoderCalibrationParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerErrorGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerErrorGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerErrorRead:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerErrorRead
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerErrorStringGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerErrorStringGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerErrorCode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerExcitationSignalGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerExcitationSignalGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerExcitationSignalSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerExcitationSignalSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                Mode:
+                  type: string
+                Frequency:
+                  type: string
+                Amplitude:
+                  type: string
+                Time:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerExternalLatchPositionGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerExternalLatchPositionGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerHardwareStatusGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerHardwareStatusGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerHardwareStatusStringGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerHardwareStatusStringGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerHardwareStatus:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerHardInterpolatorFactorGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerHardInterpolatorFactorGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerHardInterpolatorFactorSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerHardInterpolatorFactorSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                InterpolationFactor:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerMaximumVelocityAndAccelerationGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerMaximumVelocityAndAccelerationGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerMotionDoneGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerMotionDoneGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerMotionDoneSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerMotionDoneSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                PositionWindow:
+                  type: string
+                VelocityWindow:
+                  type: string
+                CheckingTime:
+                  type: string
+                MeanPeriod:
+                  type: string
+                TimeOut:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerPositionCompareAquadBAlwaysEnable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerPositionCompareAquadBAlwaysEnable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerPositionCompareAquadBWindowedGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerPositionCompareAquadBWindowedGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerPositionCompareAquadBWindowedSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerPositionCompareAquadBWindowedSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                MinimumPosition:
+                  type: string
+                MaximumPosition:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerPositionCompareGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerPositionCompareGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerPositionCompareSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerPositionCompareSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                MinimumPosition:
+                  type: string
+                MaximumPosition:
+                  type: string
+                PositionStep:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerPositionCompareEnable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerPositionCompareEnable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerPositionCompareDisable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerPositionCompareDisable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerPositionComparePulseParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerPositionComparePulseParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerPositionComparePulseParametersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerPositionComparePulseParametersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                PCOPulseWidth:
+                  type: string
+                EncoderSettlingTime:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerRawEncoderPositionGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerRawEncoderPositionGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                UserEncoderPosition:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionersEncoderIndexDifferenceGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionersEncoderIndexDifferenceGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerSGammaExactVelocityAjustedDisplacementGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerSGammaExactVelocityAjustedDisplacementGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                DesiredDisplacement:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerSGammaParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerSGammaParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerSGammaParametersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerSGammaParametersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                Velocity:
+                  type: string
+                Acceleration:
+                  type: string
+                MinimumTjerkTime:
+                  type: string
+                MaximumTjerkTime:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerSGammaPreviousMotionTimesGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerSGammaPreviousMotionTimesGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerStageParameterGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerStageParameterGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                ParameterName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerStageParameterSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerStageParameterSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                ParameterName:
+                  type: string
+                ParameterValue:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerTimeFlasherGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerTimeFlasherGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerTimeFlasherSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerTimeFlasherSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                MinimumPosition:
+                  type: string
+                MaximumPosition:
+                  type: string
+                TimeInterval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerTimeFlasherEnable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerTimeFlasherEnable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerTimeFlasherDisable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerTimeFlasherDisable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerUserTravelLimitsGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerUserTravelLimitsGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerUserTravelLimitsSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerUserTravelLimitsSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                UserMinimumTarget:
+                  type: string
+                UserMaximumTarget:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerDACOffsetGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerDACOffsetGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerDACOffsetSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerDACOffsetSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                DACOffset1:
+                  type: string
+                DACOffset2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerDACOffsetDualGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerDACOffsetDualGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerDACOffsetDualSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerDACOffsetDualSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                PrimaryDACOffset1:
+                  type: string
+                PrimaryDACOffset2:
+                  type: string
+                SecondaryDACOffset1:
+                  type: string
+                SecondaryDACOffset2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerCorrectorAutoTuning:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerCorrectorAutoTuning
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+                TuningMode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerAccelerationAutoScaling:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerAccelerationAutoScaling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-MultipleAxesPVTVerification:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MultipleAxesPVTVerification
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TrajectoryFileName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-MultipleAxesPVTVerificationResultGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MultipleAxesPVTVerificationResultGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-MultipleAxesPVTExecution:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MultipleAxesPVTExecution
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TrajectoryFileName:
+                  type: string
+                ExecutionNumber:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-MultipleAxesPVTParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MultipleAxesPVTParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-MultipleAxesPVTPulseOutputSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MultipleAxesPVTPulseOutputSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                StartElement:
+                  type: string
+                EndElement:
+                  type: string
+                TimeInterval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-MultipleAxesPVTPulseOutputGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: MultipleAxesPVTPulseOutputGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SingleAxisSlaveModeEnable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SingleAxisSlaveModeEnable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SingleAxisSlaveModeDisable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SingleAxisSlaveModeDisable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SingleAxisSlaveParametersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SingleAxisSlaveParametersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                PositionerName:
+                  type: string
+                Ratio:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SingleAxisSlaveParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SingleAxisSlaveParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SpindleSlaveModeEnable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SpindleSlaveModeEnable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SpindleSlaveModeDisable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SpindleSlaveModeDisable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SpindleSlaveParametersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SpindleSlaveParametersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                PositionerName:
+                  type: string
+                Ratio:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SpindleSlaveParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SpindleSlaveParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupSpinParametersSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupSpinParametersSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                Velocity:
+                  type: string
+                Acceleration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupSpinParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupSpinParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupSpinCurrentGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupSpinCurrentGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupSpinModeStop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupSpinModeStop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                Acceleration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYLineArcVerification:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYLineArcVerification
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TrajectoryFileName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYLineArcVerificationResultGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYLineArcVerificationResultGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYLineArcExecution:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYLineArcExecution
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TrajectoryFileName:
+                  type: string
+                Velocity:
+                  type: string
+                Acceleration:
+                  type: string
+                ExecutionNumber:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYLineArcParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYLineArcParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYLineArcPulseOutputSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYLineArcPulseOutputSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                StartLength:
+                  type: string
+                EndLength:
+                  type: string
+                PathLengthInterval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYLineArcPulseOutputGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYLineArcPulseOutputGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYZGroupPositionCorrectedProfilerGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYZGroupPositionCorrectedProfilerGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                PositionX:
+                  type: string
+                PositionY:
+                  type: string
+                PositionZ:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYZSplineVerification:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYZSplineVerification
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TrajectoryFileName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYZSplineVerificationResultGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYZSplineVerificationResultGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PositionerName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYZSplineExecution:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYZSplineExecution
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+                TrajectoryFileName:
+                  type: string
+                Velocity:
+                  type: string
+                Acceleration:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-XYZSplineParametersGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: XYZSplineParametersGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                GroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-OptionalModuleExecute:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: OptionalModuleExecute
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                ModuleFileName:
+                  type: string
+                TaskName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-OptionalModuleKill:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: OptionalModuleKill
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                TaskName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EEPROMCIESet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EEPROMCIESet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                CardNumber:
+                  type: string
+                ReferenceString:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EEPROMDACOffsetCIESet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EEPROMDACOffsetCIESet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PlugNumber:
+                  type: string
+                DAC1Offset:
+                  type: string
+                DAC2Offset:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EEPROMDriverSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EEPROMDriverSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PlugNumber:
+                  type: string
+                ReferenceString:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EEPROMINTSet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EEPROMINTSet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                CardNumber:
+                  type: string
+                ReferenceString:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-CPUCoreAndBoardSupplyVoltagesGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: CPUCoreAndBoardSupplyVoltagesGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-CPUTemperatureAndFanSpeedGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: CPUTemperatureAndFanSpeedGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ActionListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ActionListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ActionExtendedListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ActionExtendedListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-APIExtendedListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: APIExtendedListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-APIListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: APIListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ControllerStatusListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ControllerStatusListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ErrorListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ErrorListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EventListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EventListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringExtendedListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringExtendedListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringExternalListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringExternalListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GroupStatusListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GroupStatusListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-HardwareInternalListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: HardwareInternalListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-HardwareDriverAndStageGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: HardwareDriverAndStageGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                PlugNumber:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ObjectsListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ObjectsListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerErrorListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerErrorListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerHardwareStatusListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerHardwareStatusListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PositionerDriverStatusListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PositionerDriverStatusListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ReferencingActionListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ReferencingActionListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ReferencingSensorListGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ReferencingSensorListGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GatheringUserDatasGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GatheringUserDatasGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ControllerMotionKernelPeriodMinMaxGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ControllerMotionKernelPeriodMinMaxGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ControllerMotionKernelPeriodMinMaxReset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ControllerMotionKernelPeriodMinMaxReset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-SocketsStatusGet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: SocketsStatusGet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-TestTCP:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: TestTCP
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                socketId:
+                  type: string
+                InputString:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 1260 (BioCon) 驱动（Agilent），支持 withValidSocket/Send/TCP_ConnectToServer/TCP_SetTimeout/TCP_CloseSocket
+    等 228 个操作。
+  category:
+  - 液相色谱质谱联用仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: biocatiit/beamline-control-user
+    source_file: biocon/XPS_C8_drivers.py
+    candidate_class: XPS
+    candidate_score: 1862
+    quality_status: usable
+    操作数: 228
+  manufacturer: Agilent
+  model:
+    name: 1260 (BioCon)
+    type: device
+  name: Agilent 1260 (BioCon)
+  tags:
+  - 液相色谱质谱联用仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

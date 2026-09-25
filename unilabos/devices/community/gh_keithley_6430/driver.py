@@ -462,3 +462,10 @@ class Keithley_6430(VisaInstrument):
         reply1 = bool(int(self.ask('SENS:VOLT:RANG:AUTO?')))
         reply2 = bool(int(self.ask('SENS:RES:RANG:AUTO?')))
         return reply0 and reply1 and reply2
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley_6430)
+except Exception:
+    pass

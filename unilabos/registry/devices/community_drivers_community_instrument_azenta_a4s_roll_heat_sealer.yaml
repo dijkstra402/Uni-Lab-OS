@@ -1,0 +1,300 @@
+community_instrument_azenta_a4s_roll_heat_sealer:
+  class:
+    module: community_drivers.community_instrument_azenta_a4s_roll_heat_sealer.driver:CommunityInstrumentAzentaA4sRollHeatSealer
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/AD-SDL__a4s_sealer_module
+          source_file:
+            type: string
+            default: src/a4s_sealer_driver.py
+          class_name:
+            type: string
+            default: A4S_SEALER_DRIVER
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect_sealer
+            - get_status
+            - send_command
+            - reset
+            - open_gate
+            - close_gate
+            - set_temp
+            - set_time
+            - seal
+            - config_robot
+          metadata:
+            type: object
+            default:
+              repo: AD-SDL/a4s_sealer_module
+              repo_url: https://github.com/AD-SDL/a4s_sealer_module
+              source_file: src/a4s_sealer_driver.py
+              class_name: A4S_SEALER_DRIVER
+              brand: Azenta
+              model: A4S Roll Heat Sealer
+              device_type_cn: 封膜仪
+              device_type_en: Plate Sealer
+              source_framework: AD-SDL
+              tag_id: '4384'
+              tag_name: 封膜仪
+              tag_name_en: Plate Sealer
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 158
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect_sealer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_sealer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                time_wait:
+                  type: string
+                  default: 500
+        goal_default:
+          time_wait: 500
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                success_msg:
+                  type: string
+                  default: ''
+                err_msg:
+                  type: string
+                  default: ''
+                timeout:
+                  type: string
+                  default: 10
+        goal_default:
+          success_msg: ''
+          err_msg: ''
+          timeout: 10
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_gate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_gate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_gate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_gate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: string
+                  default: 175
+        goal_default:
+          temp: 175
+        handles: {}
+      auto-set_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                time:
+                  type: string
+                  default: 3.0
+        goal_default:
+          time: 3.0
+        handles: {}
+      auto-seal:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: seal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-config_robot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: config_robot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: string
+                time:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: A4S Roll Heat Sealer 驱动（Azenta），支持 connect_sealer/get_status/send_command/reset/open_gate
+    等 10 个操作。
+  category:
+  - 封膜仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: AD-SDL/a4s_sealer_module
+    source_file: src/a4s_sealer_driver.py
+    candidate_class: A4S_SEALER_DRIVER
+    candidate_score: 158
+    quality_status: usable
+    操作数: 10
+  manufacturer: 阿赞达
+  model:
+    name: A4S Roll Heat Sealer
+    type: device
+  name: Azenta A4S Roll Heat Sealer
+  tags:
+  - 封膜仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

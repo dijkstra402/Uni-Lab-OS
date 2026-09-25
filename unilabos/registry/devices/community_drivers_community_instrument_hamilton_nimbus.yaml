@@ -1,0 +1,967 @@
+community_instrument_hamilton_nimbus:
+  class:
+    module: community_drivers.community_instrument_hamilton_nimbus.driver:CommunityInstrumentHamiltonNimbus
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/liquid_handling/backends/hamilton/nimbus_backend.py
+          class_name:
+            type: string
+            default: NimbusBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - aspirate
+            - aspirate96
+            - can_pick_up_tip
+            - dispense
+            - dispense96
+            - drop_resource
+            - drop_tips
+            - drop_tips96
+            - get_channel_spacings
+            - is_door_locked
+            - lock_door
+            - move_channel_x
+            - move_channel_y
+            - move_channel_z
+            - move_picked_up_resource
+            - park
+            - pick_up_resource
+            - pick_up_tips
+            - pick_up_tips96
+            - prepare_for_manual_channel_operation
+            - read
+            - read_exact
+            - request_tip_presence
+            - set_deck
+            - set_heads
+            - set_minimum_channel_traversal_height
+            - setup
+            - stop
+            - unlock_door
+            - write
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              source_file: pylabrobot/liquid_handling/backends/hamilton/nimbus_backend.py
+              class_name: NimbusBackend
+              brand: Hamilton
+              model: Nimbus
+              device_type_cn: 移液工作站
+              device_type_en: Liquid Handling Workstation
+              source_framework: PyLabRobot
+              tag_id: '4436'
+              tag_name: 移液工作站
+              tag_name_en: Liquid Handling Workstation
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 2342
+              action_targets: {}
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-aspirate:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+          minimum_traverse_height_at_beginning_of_a_command: minimum_traverse_height_at_beginning_of_a_command
+          adc_enabled: adc_enabled
+          lld_mode: lld_mode
+          lld_search_height: lld_search_height
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          gamma_lld_sensitivity: gamma_lld_sensitivity
+          dp_lld_sensitivity: dp_lld_sensitivity
+          settling_time: settling_time
+          transport_air_volume: transport_air_volume
+          pre_wetting_volume: pre_wetting_volume
+          swap_speed: swap_speed
+          mix_position_from_liquid_surface: mix_position_from_liquid_surface
+          limit_curve_index: limit_curve_index
+          tadm_enabled: tadm_enabled
+        goal_default:
+          adc_enabled: false
+          tadm_enabled: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: aspirate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: integer
+                minimum_traverse_height_at_beginning_of_a_command:
+                  type: number
+                adc_enabled:
+                  type: boolean
+                lld_mode:
+                  type: integer
+                lld_search_height:
+                  type: number
+                immersion_depth:
+                  type: number
+                surface_following_distance:
+                  type: number
+                gamma_lld_sensitivity:
+                  type: integer
+                dp_lld_sensitivity:
+                  type: integer
+                settling_time:
+                  type: number
+                transport_air_volume:
+                  type: number
+                pre_wetting_volume:
+                  type: number
+                swap_speed:
+                  type: number
+                mix_position_from_liquid_surface:
+                  type: number
+                limit_curve_index:
+                  type: integer
+                tadm_enabled:
+                  type: boolean
+              required:
+              - ops
+              - use_channels
+              - minimum_traverse_height_at_beginning_of_a_command
+              - adc_enabled
+              - lld_mode
+              - lld_search_height
+              - immersion_depth
+              - surface_following_distance
+              - gamma_lld_sensitivity
+              - dp_lld_sensitivity
+              - settling_time
+              - transport_air_volume
+              - pre_wetting_volume
+              - swap_speed
+              - mix_position_from_liquid_surface
+              - limit_curve_index
+              - tadm_enabled
+          required:
+          - goal
+        handles: {}
+      auto-aspirate96:
+        type: UniLabJsonCommand
+        goal:
+          aspiration: aspiration
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: aspirate96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                aspiration:
+                  type: string
+              required:
+              - aspiration
+          required:
+          - goal
+        handles: {}
+      auto-can_pick_up_tip:
+        type: UniLabJsonCommand
+        goal:
+          channel_idx: channel_idx
+          tip: tip
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: can_pick_up_tip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_idx:
+                  type: integer
+                tip:
+                  type: string
+              required:
+              - channel_idx
+              - tip
+          required:
+          - goal
+        handles: {}
+      auto-dispense:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+          minimum_traverse_height_at_beginning_of_a_command: minimum_traverse_height_at_beginning_of_a_command
+          adc_enabled: adc_enabled
+          lld_mode: lld_mode
+          lld_search_height: lld_search_height
+          immersion_depth: immersion_depth
+          surface_following_distance: surface_following_distance
+          gamma_lld_sensitivity: gamma_lld_sensitivity
+          settling_time: settling_time
+          transport_air_volume: transport_air_volume
+          swap_speed: swap_speed
+          mix_position_from_liquid_surface: mix_position_from_liquid_surface
+          limit_curve_index: limit_curve_index
+          tadm_enabled: tadm_enabled
+          cut_off_speed: cut_off_speed
+          stop_back_volume: stop_back_volume
+          side_touch_off_distance: side_touch_off_distance
+          dispense_offset: dispense_offset
+        goal_default:
+          adc_enabled: false
+          tadm_enabled: false
+          side_touch_off_distance: 0.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: integer
+                minimum_traverse_height_at_beginning_of_a_command:
+                  type: number
+                adc_enabled:
+                  type: boolean
+                lld_mode:
+                  type: integer
+                lld_search_height:
+                  type: number
+                immersion_depth:
+                  type: number
+                surface_following_distance:
+                  type: number
+                gamma_lld_sensitivity:
+                  type: integer
+                settling_time:
+                  type: number
+                transport_air_volume:
+                  type: number
+                swap_speed:
+                  type: number
+                mix_position_from_liquid_surface:
+                  type: number
+                limit_curve_index:
+                  type: integer
+                tadm_enabled:
+                  type: boolean
+                cut_off_speed:
+                  type: number
+                stop_back_volume:
+                  type: number
+                side_touch_off_distance:
+                  type: number
+                dispense_offset:
+                  type: number
+              required:
+              - ops
+              - use_channels
+              - minimum_traverse_height_at_beginning_of_a_command
+              - adc_enabled
+              - lld_mode
+              - lld_search_height
+              - immersion_depth
+              - surface_following_distance
+              - gamma_lld_sensitivity
+              - settling_time
+              - transport_air_volume
+              - swap_speed
+              - mix_position_from_liquid_surface
+              - limit_curve_index
+              - tadm_enabled
+              - cut_off_speed
+              - stop_back_volume
+              - side_touch_off_distance
+              - dispense_offset
+          required:
+          - goal
+        handles: {}
+      auto-dispense96:
+        type: UniLabJsonCommand
+        goal:
+          dispense: dispense
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: dispense96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dispense:
+                  type: string
+              required:
+              - dispense
+          required:
+          - goal
+        handles: {}
+      auto-drop_resource:
+        type: UniLabJsonCommand
+        goal:
+          drop: drop
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: drop_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                drop:
+                  type: string
+              required:
+              - drop
+          required:
+          - goal
+        handles: {}
+      auto-drop_tips:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+          default_waste: default_waste
+          minimum_traverse_height_at_beginning_of_a_command: minimum_traverse_height_at_beginning_of_a_command
+          z_position_at_end_of_a_command: z_position_at_end_of_a_command
+          roll_distance: roll_distance
+        goal_default:
+          default_waste: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: drop_tips
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: integer
+                default_waste:
+                  type: boolean
+                minimum_traverse_height_at_beginning_of_a_command:
+                  type: number
+                z_position_at_end_of_a_command:
+                  type: number
+                roll_distance:
+                  type: number
+              required:
+              - ops
+              - use_channels
+              - default_waste
+              - minimum_traverse_height_at_beginning_of_a_command
+              - z_position_at_end_of_a_command
+              - roll_distance
+          required:
+          - goal
+        handles: {}
+      auto-drop_tips96:
+        type: UniLabJsonCommand
+        goal:
+          drop: drop
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: drop_tips96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                drop:
+                  type: string
+              required:
+              - drop
+          required:
+          - goal
+        handles: {}
+      auto-get_channel_spacings:
+        type: UniLabJsonCommand
+        goal:
+          use_channels: use_channels
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_channel_spacings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                use_channels:
+                  type: integer
+              required:
+              - use_channels
+          required:
+          - goal
+        handles: {}
+      auto-is_door_locked:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: is_door_locked
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-lock_door:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: lock_door
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-move_channel_x:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          x: x
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_channel_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                x:
+                  type: number
+              required:
+              - channel
+              - x
+          required:
+          - goal
+        handles: {}
+      auto-move_channel_y:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          y: y
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_channel_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                y:
+                  type: number
+              required:
+              - channel
+              - y
+          required:
+          - goal
+        handles: {}
+      auto-move_channel_z:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          z: z
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_channel_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                z:
+                  type: number
+              required:
+              - channel
+              - z
+          required:
+          - goal
+        handles: {}
+      auto-move_picked_up_resource:
+        type: UniLabJsonCommand
+        goal:
+          move: move
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_picked_up_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                move:
+                  type: string
+              required:
+              - move
+          required:
+          - goal
+        handles: {}
+      auto-park:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: park
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-pick_up_resource:
+        type: UniLabJsonCommand
+        goal:
+          pickup: pickup
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_up_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pickup:
+                  type: string
+              required:
+              - pickup
+          required:
+          - goal
+        handles: {}
+      auto-pick_up_tips:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+          minimum_traverse_height_at_beginning_of_a_command: minimum_traverse_height_at_beginning_of_a_command
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_up_tips
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: integer
+                minimum_traverse_height_at_beginning_of_a_command:
+                  type: number
+              required:
+              - ops
+              - use_channels
+              - minimum_traverse_height_at_beginning_of_a_command
+          required:
+          - goal
+        handles: {}
+      auto-pick_up_tips96:
+        type: UniLabJsonCommand
+        goal:
+          pickup: pickup
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_up_tips96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pickup:
+                  type: string
+              required:
+              - pickup
+          required:
+          - goal
+        handles: {}
+      auto-prepare_for_manual_channel_operation:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: prepare_for_manual_channel_operation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+              required:
+              - channel
+          required:
+          - goal
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal:
+          num_bytes: num_bytes
+          timeout: timeout
+        goal_default:
+          num_bytes: 128
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_bytes:
+                  type: integer
+                timeout:
+                  type: number
+              required:
+              - num_bytes
+              - timeout
+          required:
+          - goal
+        handles: {}
+      auto-read_exact:
+        type: UniLabJsonCommand
+        goal:
+          num_bytes: num_bytes
+          timeout: timeout
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: read_exact
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_bytes:
+                  type: integer
+                timeout:
+                  type: number
+              required:
+              - num_bytes
+              - timeout
+          required:
+          - goal
+        handles: {}
+      auto-request_tip_presence:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_tip_presence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-set_deck:
+        type: UniLabJsonCommand
+        goal:
+          deck: deck
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_deck
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                deck:
+                  type: string
+              required:
+              - deck
+          required:
+          - goal
+        handles: {}
+      auto-set_heads:
+        type: UniLabJsonCommand
+        goal:
+          head: head
+          head96: head96
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_heads
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                head:
+                  type: integer
+                head96:
+                  type: integer
+              required:
+              - head
+              - head96
+          required:
+          - goal
+        handles: {}
+      auto-set_minimum_channel_traversal_height:
+        type: UniLabJsonCommand
+        goal:
+          traversal_height: traversal_height
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_minimum_channel_traversal_height
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                traversal_height:
+                  type: number
+              required:
+              - traversal_height
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal:
+          unlock_door: unlock_door
+          force_initialize: force_initialize
+        goal_default:
+          unlock_door: false
+          force_initialize: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                unlock_door:
+                  type: boolean
+                force_initialize:
+                  type: boolean
+              required:
+              - unlock_door
+              - force_initialize
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-unlock_door:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: unlock_door
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal:
+          data: data
+          timeout: timeout
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+                timeout:
+                  type: number
+              required:
+              - data
+              - timeout
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: Nimbus 驱动（哈美顿），支持 aspirate/aspirate96/can_pick_up_tip/dispense/dispense96
+    等 30 个操作。
+  category:
+  - 移液工作站
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/liquid_handling/backends/hamilton/nimbus_backend.py
+    candidate_class: NimbusBackend
+    candidate_score: 2342
+    quality_status: usable
+    操作数: 30
+  manufacturer: 哈美顿
+  model:
+    name: Nimbus
+    type: device
+  name: Hamilton Nimbus
+  tags:
+  - 移液工作站
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

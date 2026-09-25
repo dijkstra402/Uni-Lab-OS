@@ -1,0 +1,381 @@
+community_instrument_ocean_optics_qe_pro:
+  class:
+    module: community_drivers.community_instrument_ocean_optics_qe_pro.driver:CommunityInstrumentOceanOpticsQePro
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/ap--__python-seabreeze
+          source_file:
+            type: string
+            default: src/seabreeze/spectrometers.py
+          class_name:
+            type: string
+            default: Spectrometer
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - from_first_available
+            - from_serial_number
+            - wavelengths
+            - intensities
+            - max_intensity
+            - spectrum
+            - integration_time_micros
+            - integration_time_micros_limits
+            - trigger_mode
+            - serial_number
+            - model
+            - pixels
+            - features
+            - f
+            - open
+            - close
+          metadata:
+            type: object
+            default:
+              repo: ap--/python-seabreeze
+              repo_url: https://github.com/ap--/python-seabreeze
+              source_file: src/seabreeze/spectrometers.py
+              class_name: Spectrometer
+              brand: Ocean Optics
+              model: QE Pro
+              device_type_cn: 拉曼光谱仪
+              device_type_en: Raman Spectrometer
+              source_framework: python-seabreeze
+              tag_id: '4392'
+              tag_name: 拉曼光谱仪
+              tag_name_en: Raman Spectrometer
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 186
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-from_first_available:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_first_available
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-from_serial_number:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                serial:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-wavelengths:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wavelengths
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-intensities:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: intensities
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                correct_dark_counts:
+                  type: boolean
+                  default: false
+                correct_nonlinearity:
+                  type: boolean
+                  default: false
+        goal_default:
+          correct_dark_counts: false
+          correct_nonlinearity: false
+        handles: {}
+      auto-max_intensity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: max_intensity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-spectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: spectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                correct_dark_counts:
+                  type: boolean
+                  default: false
+                correct_nonlinearity:
+                  type: boolean
+                  default: false
+        goal_default:
+          correct_dark_counts: false
+          correct_nonlinearity: false
+        handles: {}
+      auto-integration_time_micros:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: integration_time_micros
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                integration_time_micros:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-integration_time_micros_limits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: integration_time_micros_limits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-trigger_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-serial_number:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-model:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: model
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-pixels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pixels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-features:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: features
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-f:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: f
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: QE Pro 驱动（Ocean Optics），支持 from_first_available/from_serial_number/wavelengths/intensities/max_intensity
+    等 16 个操作。
+  category:
+  - 拉曼光谱仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: ap--/python-seabreeze
+    source_file: src/seabreeze/spectrometers.py
+    candidate_class: Spectrometer
+    candidate_score: 186
+    quality_status: usable
+    操作数: 16
+  manufacturer: Ocean Optics
+  model:
+    name: QE Pro
+    type: device
+  name: Ocean Optics QE Pro
+  tags:
+  - 拉曼光谱仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

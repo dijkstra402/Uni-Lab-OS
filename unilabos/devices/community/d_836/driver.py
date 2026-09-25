@@ -367,3 +367,10 @@ class HP34401A(SCPIUnknownMixin, Instrument):
         if function_prefix in ["FREQ", "PER"]:
             function_prefix += ":VOLT"
         return function_prefix
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(HP34401A)
+except Exception:
+    pass

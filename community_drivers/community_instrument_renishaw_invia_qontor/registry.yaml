@@ -1,0 +1,259 @@
+community_instrument_renishaw_invia_qontor:
+  class:
+    module: community_drivers.community_instrument_renishaw_invia_qontor.driver:CommunityInstrumentRenishawInviaQontor
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/alchem0x2A__py-wdf-reader
+          source_file:
+            type: string
+            default: renishawWiRE/export.py
+          class_name:
+            type: string
+            default: ''
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - test_version
+            - try_attr
+            - get_pos
+            - get_unit
+            - main
+            - handle_spectra
+            - extract_img
+          metadata:
+            type: object
+            default:
+              repo: alchem0x2A/py-wdf-reader
+              repo_url: https://github.com/alchem0x2A/py-wdf-reader
+              source_file: renishawWiRE/export.py
+              class_name: ''
+              brand: Renishaw
+              model: inVia Qontor
+              device_type_cn: 拉曼光谱仪
+              device_type_en: Raman Spectrometer
+              source_framework: 光谱分析
+              tag_id: '4392'
+              tag_name: 拉曼光谱仪
+              tag_name_en: Raman Spectrometer
+              language: Python
+              parse_status: module_reselected
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 94
+              action_targets:
+                test_version: test_version
+                try_attr: try_attr
+                get_pos: get_pos
+                get_unit: get_unit
+                main: main
+                handle_spectra: handle_spectra
+                extract_img: extract_img
+          action_targets:
+            type: object
+            default:
+              test_version: test_version
+              try_attr: try_attr
+              get_pos: get_pos
+              get_unit: get_unit
+              main: main
+              handle_spectra: handle_spectra
+              extract_img: extract_img
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-test_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: test_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-try_attr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: try_attr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                obj:
+                  type: string
+                attr:
+                  type: string
+                type:
+                  type: string
+                  default: str
+        goal_default:
+          type: str
+        handles: {}
+      auto-get_pos:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pos
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reader:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_unit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_unit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reader:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-main:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: main
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-handle_spectra:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: handle_spectra
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reader:
+                  type: string
+                delimiter:
+                  type: string
+                  default: ','
+        goal_default:
+          delimiter: ','
+        handles: {}
+      auto-extract_img:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: extract_img
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                reader:
+                  type: string
+                output_filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: inVia Qontor 驱动（Renishaw），支持 test_version/try_attr/get_pos/get_unit/main
+    等 7 个操作。
+  category:
+  - 拉曼光谱仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: alchem0x2A/py-wdf-reader
+    source_file: renishawWiRE/export.py
+    candidate_class: ''
+    candidate_score: 94
+    quality_status: usable
+    操作数: 7
+  manufacturer: Renishaw
+  model:
+    name: inVia Qontor
+    type: device
+  name: Renishaw inVia Qontor
+  tags:
+  - 拉曼光谱仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

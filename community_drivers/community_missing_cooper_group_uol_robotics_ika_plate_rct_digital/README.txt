@@ -1,0 +1,10 @@
+repo: cooper-group-uol-robotics/ika_plate_rct_digital
+repo_url: https://github.com/cooper-group-uol-robotics/ika_plate_rct_digital
+registry_id: community_missing_cooper_group_uol_robotics_ika_plate_rct_digital
+review_status: good
+review_notes: 加热/搅拌/温度读取覆盖完整。
+selected_file: ika_plate_rct_digital_driver/src/ika_plate_rct_digital_driver/ika_serial_driver.py
+selected_class: IKADriver
+download_dir: /Users/sml/work/Uni-Lab-OS/new/cooper-group-uol-robotics__ika_plate_rct_digital
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_cooper_group_uol_robotics_ika_plate_rct_digital.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_cooper_group_uol_robotics_ika_plate_rct_digital/startup.json

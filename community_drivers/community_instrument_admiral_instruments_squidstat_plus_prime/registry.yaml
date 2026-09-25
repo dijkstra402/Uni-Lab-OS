@@ -1,0 +1,166 @@
+community_instrument_admiral_instruments_squidstat_plus_prime:
+  class:
+    module: community_drivers.community_instrument_admiral_instruments_squidstat_plus_prime.driver:CommunityInstrumentAdmiralInstrumentsSquidstatPlusPrime
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/Admiral-Instruments__AdmiralSquidstatAPI
+          source_file:
+            type: string
+            default: SquidstatLibrary/examples/Python/writeInCsv.py
+          class_name:
+            type: string
+            default: SerialPortReader
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - run
+            - writeData
+            - closePort
+          metadata:
+            type: object
+            default:
+              repo: Admiral-Instruments/AdmiralSquidstatAPI
+              repo_url: https://github.com/Admiral-Instruments/AdmiralSquidstatAPI
+              source_file: SquidstatLibrary/examples/Python/writeInCsv.py
+              class_name: SerialPortReader
+              brand: Admiral Instruments
+              model: Squidstat Plus/Prime
+              device_type_cn: 电化学工作站
+              device_type_en: Electrochemical Workstation
+              source_framework: 官方SDK
+              tag_id: '4425'
+              tag_name: 电化学工作站
+              tag_name_en: Electrochemical Workstation
+              language: Python
+              parse_status: ok
+              quality_status: thin
+              quality_reasons:
+              - test_or_example_path
+              candidate_score: 22
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-writeData:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: writeData
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-closePort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: closePort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Squidstat Plus/Prime 驱动（Admiral Instruments），支持 run/writeData/closePort
+    等 3 个操作。
+  category:
+  - 电化学工作站
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: Admiral-Instruments/AdmiralSquidstatAPI
+    source_file: SquidstatLibrary/examples/Python/writeInCsv.py
+    candidate_class: SerialPortReader
+    candidate_score: 22
+    quality_status: thin
+    操作数: 3
+  manufacturer: Admiral Instruments
+  model:
+    name: Squidstat Plus/Prime
+    type: device
+  name: Admiral Instruments Squidstat Plus/Prime
+  tags:
+  - 电化学工作站
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/rigol/Rigol_DP821.py
+registry_id: community_strict_rigoldp821
+source_file: src/qcodes/instrument_drivers/rigol/Rigol_DP821.py
+class_name: RigolDP821
+manufacturer: rigol
+model: RigolDP821
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_rigoldp821.yaml

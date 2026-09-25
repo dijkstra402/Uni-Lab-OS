@@ -1048,3 +1048,10 @@ class TekDPO70000(SCPIInstrument, Oscilloscope):
         Disables the trigger for the oscilloscope.
         """
         self.sendcmd(":STOP")
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(TekDPO70000)
+except Exception:
+    pass

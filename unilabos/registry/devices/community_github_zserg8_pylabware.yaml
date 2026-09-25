@@ -1,0 +1,166 @@
+community_github_zserg8_pylabware:
+  class:
+    module: community_drivers.community_github_zserg8_pylabware.driver:CommunityGithubZserg8Pylabware
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/zserg8_pylabware
+          source_file:
+            type: string
+            default: PyLabware/connections.py
+          class_name:
+            type: string
+            default: TCPIPConnection
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - open_connection
+            - connection_listener
+            - close_connection
+            - is_connection_open
+            - transmit
+            - receive
+          metadata:
+            type: object
+            default:
+              repo: zserg8/pylabware
+              repo_url: https://github.com/zserg8/pylabware
+              unit_id: gh_tecan_cavro_xlp_6000
+              source_file: PyLabware/connections.py
+              candidate_score: 145
+              manufacturer: 帝肯Cavro
+              model_name: Tecan Cavro XLP 6000
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-open_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connection_listener:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connection_listener
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_connection_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connection_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-transmit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transmit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 'Tecan Cavro XLP 6000是模块化精密注射泵，6000步分辨率，支持0.5 µL至12.5 mL注射器，模块化设计支持多种阀门配置。
+    GitHub驱动: https://github.com/zserg8/pylabware'
+  category:
+  - community
+  device_params:
+    repo: zserg8/pylabware
+    source_file: PyLabware/connections.py
+    candidate_class: TCPIPConnection
+    communication: ''
+    instrument_params: 'Type: Modular syringe pump; Resolution: 6000 steps/stroke;
+      Syringe: 0.5 µL-12.5 mL; Communication: RS-232/RS-485; Valve: 3-port/4-port/T-port;
+      Accuracy: ±1%; Precision CV: ≤0.5%'
+    official_url: https://www.tecan.com/products/liquid-handling-components/xlp-6000-syringe-pump
+  manufacturer: Tecan Cavro
+  model:
+    name: Tecan Cavro XLP 6000
+    type: device
+  name: Tecan Cavro XLP 6000
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: Chemistry
+    scene_name: Sample Prep
+    step: Dosing
+  version: 0.1.0

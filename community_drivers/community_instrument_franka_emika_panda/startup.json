@@ -1,0 +1,648 @@
+{
+  "nodes": [
+    {
+      "id": "test_community_instrument_franka_emika_panda",
+      "name": "Panda",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community_instrument_franka_emika_panda",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "repo_root": "/Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/iamlab-cmu__frankapy",
+        "source_file": "frankapy/franka_arm.py",
+        "class_name": "FrankaArm",
+        "import_roots": [],
+        "candidate_methods": [
+          "wait_for_franka_interface",
+          "wait_for_skill",
+          "wait_for_gripper",
+          "is_skill_done",
+          "stop_skill",
+          "goto_pose",
+          "goto_pose_delta",
+          "goto_joints",
+          "execute_cartesian_velocities",
+          "execute_joint_velocities",
+          "execute_joint_torques",
+          "execute_joint_dmp",
+          "execute_pose_dmp",
+          "execute_quaternion_pose_dmp",
+          "apply_effector_forces_torques",
+          "apply_effector_forces_along_axis",
+          "goto_gripper",
+          "selective_guidance_mode",
+          "open_gripper",
+          "close_gripper",
+          "home_gripper",
+          "stop_gripper",
+          "run_guide_mode",
+          "run_dynamic_force_position",
+          "get_robot_state",
+          "get_pose",
+          "get_joints",
+          "get_joint_torques",
+          "get_joint_velocities",
+          "get_gripper_width",
+          "get_gripper_is_grasped",
+          "get_tool_base_pose",
+          "get_ee_force_torque",
+          "get_finger_poses",
+          "set_tool_delta_pose",
+          "get_links_transforms",
+          "get_jacobian",
+          "get_collision_boxes_poses",
+          "publish_sensor_values",
+          "publish_joints",
+          "publish_collision_boxes",
+          "check_box_collision",
+          "is_joints_in_collision_with_boxes",
+          "reset_joints",
+          "reset_pose",
+          "is_joints_reachable",
+          "apply_joint_torques",
+          "set_speed",
+          "get_speed"
+        ],
+        "action_targets": {},
+        "metadata": {
+          "repo": "iamlab-cmu/frankapy",
+          "repo_url": "https://github.com/iamlab-cmu/frankapy",
+          "brand": "Franka Emika",
+          "model": "Panda",
+          "device_type_cn": "协作机械臂",
+          "device_type_en": "Collaborative Robot",
+          "source_framework": "机器人/运动控制",
+          "tag_id": "4402",
+          "tag_name": "机械臂",
+          "tag_name_en": "Robotic Arm",
+          "candidate_score": 470,
+          "parse_status": "ok",
+          "quality_status": "usable",
+          "quality_reasons": [],
+          "action_targets": {}
+        }
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "wait for franka interface",
+      "description": "wait for franka interface",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-wait_for_franka_interface",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "wait for skill",
+      "description": "wait for skill",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-wait_for_skill",
+      "action_args": {}
+    },
+    {
+      "step": 3,
+      "name": "wait for gripper",
+      "description": "wait for gripper",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-wait_for_gripper",
+      "action_args": {}
+    },
+    {
+      "step": 4,
+      "name": "is skill done",
+      "description": "is skill done",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-is_skill_done",
+      "action_args": {
+        "ignore_errors": true
+      }
+    },
+    {
+      "step": 5,
+      "name": "stop skill",
+      "description": "stop skill",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-stop_skill",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "goto pose",
+      "description": "goto pose",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-goto_pose",
+      "action_args": {
+        "duration": 3,
+        "use_impedance": true,
+        "dynamic": false,
+        "block": true,
+        "ignore_errors": true,
+        "ignore_virtual_walls": false,
+        "skill_desc": "GoToPose"
+      }
+    },
+    {
+      "step": 7,
+      "name": "goto pose delta",
+      "description": "goto pose delta",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-goto_pose_delta",
+      "action_args": {
+        "duration": 3,
+        "use_impedance": true,
+        "block": true,
+        "ignore_errors": true,
+        "ignore_virtual_walls": false,
+        "skill_desc": "GoToPoseDelta"
+      }
+    },
+    {
+      "step": 8,
+      "name": "goto joints",
+      "description": "goto joints",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-goto_joints",
+      "action_args": {
+        "duration": 5,
+        "use_impedance": false,
+        "dynamic": false,
+        "block": true,
+        "ignore_errors": true,
+        "ignore_virtual_walls": false,
+        "skill_desc": "GoToJoints"
+      }
+    },
+    {
+      "step": 9,
+      "name": "execute cartesian velocities",
+      "description": "execute cartesian velocities",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-execute_cartesian_velocities",
+      "action_args": {
+        "duration": 5,
+        "dynamic": false,
+        "block": true,
+        "ignore_errors": true,
+        "ignore_virtual_walls": false,
+        "skill_desc": "ExecutecartesianVelocities"
+      }
+    },
+    {
+      "step": 10,
+      "name": "execute joint velocities",
+      "description": "execute joint velocities",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-execute_joint_velocities",
+      "action_args": {
+        "duration": 5,
+        "dynamic": false,
+        "block": true,
+        "ignore_errors": true,
+        "ignore_virtual_walls": false,
+        "skill_desc": "ExecuteJointVelocities"
+      }
+    },
+    {
+      "step": 11,
+      "name": "execute joint torques",
+      "description": "execute joint torques",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-execute_joint_torques",
+      "action_args": {
+        "selection": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "remove_gravity": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "duration": 5,
+        "dynamic": false,
+        "block": true,
+        "ignore_errors": true,
+        "ignore_virtual_walls": false,
+        "skill_desc": "ExecuteJointTorques"
+      }
+    },
+    {
+      "step": 12,
+      "name": "execute joint dmp",
+      "description": "execute joint dmp",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-execute_joint_dmp",
+      "action_args": {
+        "use_impedance": false,
+        "block": true,
+        "ignore_errors": true,
+        "skill_desc": "JointDmp"
+      }
+    },
+    {
+      "step": 13,
+      "name": "execute pose dmp",
+      "description": "execute pose dmp",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-execute_pose_dmp",
+      "action_args": {
+        "use_goal_formulation": false,
+        "orientation_only": false,
+        "position_only": false,
+        "ee_frame": false,
+        "use_impedance": true,
+        "block": true,
+        "ignore_errors": true,
+        "skill_desc": "PoseDmp"
+      }
+    },
+    {
+      "step": 14,
+      "name": "execute quaternion pose dmp",
+      "description": "execute quaternion pose dmp",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-execute_quaternion_pose_dmp",
+      "action_args": {
+        "use_goal_formulation": false,
+        "ee_frame": false,
+        "use_impedance": true,
+        "block": true,
+        "ignore_errors": true,
+        "skill_desc": "QuaternionPoseDmp"
+      }
+    },
+    {
+      "step": 15,
+      "name": "apply effector forces torques",
+      "description": "apply effector forces torques",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-apply_effector_forces_torques",
+      "action_args": {
+        "block": true,
+        "ignore_errors": true,
+        "skill_desc": "ForceTorque"
+      }
+    },
+    {
+      "step": 16,
+      "name": "apply effector forces along axis",
+      "description": "apply effector forces along axis",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-apply_effector_forces_along_axis",
+      "action_args": {
+        "block": true,
+        "ignore_errors": true,
+        "skill_desc": "ForcesAlongAxis"
+      }
+    },
+    {
+      "step": 17,
+      "name": "goto gripper",
+      "description": "goto gripper",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-goto_gripper",
+      "action_args": {
+        "grasp": false,
+        "speed": 0.04,
+        "force": 0.0,
+        "epsilon_inner": 0.08,
+        "epsilon_outer": 0.08,
+        "block": true,
+        "ignore_errors": true,
+        "skill_desc": "GoToGripper"
+      }
+    },
+    {
+      "step": 18,
+      "name": "selective guidance mode",
+      "description": "selective guidance mode",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-selective_guidance_mode",
+      "action_args": {
+        "duration": 5,
+        "use_joints": false,
+        "use_impedance": false,
+        "use_ee_frame": false,
+        "block": true,
+        "ignore_errors": true,
+        "ignore_virtual_walls": false,
+        "skill_desc": "SelectiveGuidance"
+      }
+    },
+    {
+      "step": 19,
+      "name": "open gripper",
+      "description": "open gripper",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-open_gripper",
+      "action_args": {
+        "block": true,
+        "skill_desc": "OpenGripper"
+      }
+    },
+    {
+      "step": 20,
+      "name": "close gripper",
+      "description": "close gripper",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-close_gripper",
+      "action_args": {
+        "grasp": true,
+        "block": true,
+        "skill_desc": "CloseGripper"
+      }
+    },
+    {
+      "step": 21,
+      "name": "home gripper",
+      "description": "home gripper",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-home_gripper",
+      "action_args": {
+        "block": true,
+        "skill_desc": "HomeGripper"
+      }
+    },
+    {
+      "step": 22,
+      "name": "stop gripper",
+      "description": "stop gripper",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-stop_gripper",
+      "action_args": {
+        "block": true,
+        "skill_desc": "StopGripper"
+      }
+    },
+    {
+      "step": 23,
+      "name": "run guide mode",
+      "description": "run guide mode",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-run_guide_mode",
+      "action_args": {
+        "duration": 10,
+        "block": true,
+        "skill_desc": "GuideMode"
+      }
+    },
+    {
+      "step": 24,
+      "name": "run dynamic force position",
+      "description": "run dynamic force position",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-run_dynamic_force_position",
+      "action_args": {
+        "duration": 3,
+        "interpolate": false,
+        "use_cartesian_gains": true,
+        "ignore_errors": true,
+        "ignore_virtual_walls": false,
+        "skill_desc": ""
+      }
+    },
+    {
+      "step": 25,
+      "name": "get robot state",
+      "description": "get robot state",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_robot_state",
+      "action_args": {}
+    },
+    {
+      "step": 26,
+      "name": "get pose",
+      "description": "get pose",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_pose",
+      "action_args": {
+        "include_tool_offset": true
+      }
+    },
+    {
+      "step": 27,
+      "name": "get joints",
+      "description": "get joints",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_joints",
+      "action_args": {}
+    },
+    {
+      "step": 28,
+      "name": "get joint torques",
+      "description": "get joint torques",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_joint_torques",
+      "action_args": {}
+    },
+    {
+      "step": 29,
+      "name": "get joint velocities",
+      "description": "get joint velocities",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_joint_velocities",
+      "action_args": {}
+    },
+    {
+      "step": 30,
+      "name": "get gripper width",
+      "description": "get gripper width",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_gripper_width",
+      "action_args": {}
+    },
+    {
+      "step": 31,
+      "name": "get gripper is grasped",
+      "description": "get gripper is grasped",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_gripper_is_grasped",
+      "action_args": {}
+    },
+    {
+      "step": 32,
+      "name": "get tool base pose",
+      "description": "get tool base pose",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_tool_base_pose",
+      "action_args": {}
+    },
+    {
+      "step": 33,
+      "name": "get ee force torque",
+      "description": "get ee force torque",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_ee_force_torque",
+      "action_args": {}
+    },
+    {
+      "step": 34,
+      "name": "get finger poses",
+      "description": "get finger poses",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_finger_poses",
+      "action_args": {}
+    },
+    {
+      "step": 35,
+      "name": "set tool delta pose",
+      "description": "set tool delta pose",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-set_tool_delta_pose",
+      "action_args": {}
+    },
+    {
+      "step": 36,
+      "name": "get links transforms",
+      "description": "get links transforms",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_links_transforms",
+      "action_args": {
+        "use_rigid_transforms": false
+      }
+    },
+    {
+      "step": 37,
+      "name": "get jacobian",
+      "description": "get jacobian",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_jacobian",
+      "action_args": {}
+    },
+    {
+      "step": 38,
+      "name": "get collision boxes poses",
+      "description": "get collision boxes poses",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_collision_boxes_poses",
+      "action_args": {
+        "use_rigid_transforms": false
+      }
+    },
+    {
+      "step": 39,
+      "name": "publish sensor values",
+      "description": "publish sensor values",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-publish_sensor_values",
+      "action_args": {}
+    },
+    {
+      "step": 40,
+      "name": "publish joints",
+      "description": "publish joints",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-publish_joints",
+      "action_args": {}
+    },
+    {
+      "step": 41,
+      "name": "publish collision boxes",
+      "description": "publish collision boxes",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-publish_collision_boxes",
+      "action_args": {}
+    },
+    {
+      "step": 42,
+      "name": "check box collision",
+      "description": "check box collision",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-check_box_collision",
+      "action_args": {}
+    },
+    {
+      "step": 43,
+      "name": "is joints in collision with boxes",
+      "description": "is joints in collision with boxes",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-is_joints_in_collision_with_boxes",
+      "action_args": {}
+    },
+    {
+      "step": 44,
+      "name": "reset joints",
+      "description": "reset joints",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-reset_joints",
+      "action_args": {
+        "duration": 5,
+        "block": true,
+        "ignore_errors": true,
+        "skill_desc": ""
+      }
+    },
+    {
+      "step": 45,
+      "name": "reset pose",
+      "description": "reset pose",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-reset_pose",
+      "action_args": {
+        "duration": 5,
+        "block": true,
+        "ignore_errors": true,
+        "skill_desc": ""
+      }
+    },
+    {
+      "step": 46,
+      "name": "is joints reachable",
+      "description": "is joints reachable",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-is_joints_reachable",
+      "action_args": {}
+    },
+    {
+      "step": 47,
+      "name": "apply joint torques",
+      "description": "apply joint torques",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-apply_joint_torques",
+      "action_args": {
+        "ignore_errors": true,
+        "skill_desc": ""
+      }
+    },
+    {
+      "step": 48,
+      "name": "set speed",
+      "description": "set speed",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-set_speed",
+      "action_args": {}
+    },
+    {
+      "step": 49,
+      "name": "get speed",
+      "description": "get speed",
+      "device": "test_community_instrument_franka_emika_panda",
+      "action": "auto-get_speed",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "Panda 工作流",
+    "description": "Panda 自动生成工作流",
+    "instrument": "Panda",
+    "generated_by": "instrument-drivers-python"
+  }
+}

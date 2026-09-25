@@ -1,0 +1,104 @@
+community.ba.stopper:
+  name: Stopper
+  category:
+  - 表征设备
+  class:
+    module: unilabos.devices.stopper.stopper:Stopper
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-close:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: close
+          type: object
+        type: UniLabJsonCommand
+      auto-open:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: open
+          type: object
+        type: UniLabJsonCommand
+      auto-check_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-calc_lightpath_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calc_lightpath_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                in_signal:
+                  type: number
+                out_signal:
+                  type: number
+        goal_default: {}
+        handles: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: Stopper 设备驱动，社区驱动 - 自动集成自 stopper
+  device_params:
+    品牌: 社区开源
+    型号: Stopper
+    设备类型: 表征设备
+    来源仓库: stopper
+    驱动类: Stopper
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        name:
+          default: null
+          type: string
+        prefix:
+          default: null
+          type: string
+      type: object
+  manufacturer: ''
+  model:
+    name: Stopper
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

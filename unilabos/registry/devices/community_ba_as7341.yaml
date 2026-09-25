@@ -1,0 +1,156 @@
+community.ba.as7341:
+  name: AS7341
+  category:
+  - 紫外-可见分光光谱仪
+  class:
+    module: unilabos.devices.spectral_sensor.as7341:AS7341
+    type: python
+    status_types:
+      raw_spectrum: String
+    action_value_mappings:
+      auto-load_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                config:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-find_seeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_seeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect_seeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_seeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ser_port_index:
+                  type: integer
+        goal_default:
+          ser_port_index: 0
+        handles: {}
+      auto-disconnect_seeed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect_seeed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-blink:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: blink
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-measure_spectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_spectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                duty_cycle:
+                  type: integer
+        goal_default:
+          duty_cycle: 100
+        handles: {}
+      auto-get_raw_spectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_raw_spectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                duty_cycle:
+                  type: string
+        goal_default: {}
+        handles: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: AS7341 设备驱动，社区驱动 - 自动集成自 as7341
+  device_params:
+    品牌: 社区开源
+    型号: AS7341
+    设备类型: 紫外-可见分光光谱仪
+    来源仓库: as7341
+    驱动类: AS7341
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        index:
+          type: string
+          default: null
+        name:
+          type: string
+          default: null
+        config:
+          type: string
+          default: null
+  manufacturer: 艾迈斯欧司朗
+  model:
+    name: AS7341
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

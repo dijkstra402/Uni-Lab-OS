@@ -1,0 +1,189 @@
+mv_LeCroyT3DSO1204:
+  class:
+    module: unilabos.devices.community.mv_LeCroyT3DSO1204.driver:LeCroyT3DSO1204
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-timebase:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timebase
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-timebase_setup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timebase_setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-acquisition_sample_size:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: acquisition_sample_size
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-waveform_preamble:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waveform_preamble
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      set_timebase:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result: {}
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          title: set_timebase参数
+          type: object
+          description: set_timebase -> timebase()
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+        _maps_to: timebase
+      read_waveform:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result: {}
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          title: read_waveform参数
+          type: object
+          description: read_waveform -> waveform_preamble()
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+        _maps_to: waveform_preamble
+      measure:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 读取测量值
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: measure参数
+          type: object
+      set_voltage:
+        type: UniLabJsonCommand
+        goal:
+          voltage: voltage
+        goal_default:
+          voltage: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电压
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                voltage:
+                  type: number
+                  description: voltage
+              required:
+              - voltage
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_voltage参数
+          type: object
+      set_current:
+        type: UniLabJsonCommand
+        goal:
+          current: current
+        goal_default:
+          current: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电流
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                current:
+                  type: number
+                  description: current
+              required:
+              - current
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_current参数
+          type: object
+  name: LeCroyT3DSO1204
+  description: LeCroyT3DSO1204 (from pymeasure__pymeasure)
+  manufacturer: ''
+  version: 1.0.0
+  registry_type: device
+  tags:
+  - community
+  - model_variant
+  - semantic
+  model:
+    name: LeCroyT3DSO1204
+    type: device
+  source_repo: pymeasure__pymeasure

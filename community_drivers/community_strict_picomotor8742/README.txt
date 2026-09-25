@@ -1,0 +1,12 @@
+repo: AlexShkarin/pyLabLib
+repo_url: https://github.com/AlexShkarin/pyLabLib
+source_url: https://github.com/AlexShkarin/pyLabLib/blob/main/pylablib/devices/Newport/picomotor.py
+registry_id: community_strict_picomotor8742
+source_file: pylablib/devices/Newport/picomotor.py
+class_name: Picomotor8742
+manufacturer: newport
+model: Picomotor8742
+tag: 机械臂
+confidence: 0.95
+quality_score: 1.11
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_picomotor8742.yaml

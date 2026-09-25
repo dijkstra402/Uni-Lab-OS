@@ -1,0 +1,198 @@
+community_github_richardingham_octopus:
+  class:
+    module: community_drivers.community_github_richardingham_octopus.driver:CommunityGithubRichardinghamOctopus
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/richardingham_octopus
+          source_file:
+            type: string
+            default: octopus/protocol/basic.py
+          class_name:
+            type: string
+            default: QueuedLineReceiver
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connectionMade
+            - connectionLost
+            - write
+            - sendLine
+            - dataReceived
+            - lineReceived
+            - processLine
+            - unexpectedMessage
+          metadata:
+            type: object
+            default:
+              repo: richardingham/octopus
+              repo_url: https://github.com/richardingham/octopus
+              unit_id: gh_gilson_402
+              source_file: octopus/protocol/basic.py
+              candidate_score: 96
+              manufacturer: 吉尔森
+              model_name: Gilson 402/233XL/506C
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connectionMade:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connectionMade
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connectionLost:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connectionLost
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sendLine:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendLine
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-dataReceived:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dataReceived
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-lineReceived:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lineReceived
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-processLine:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: processLine
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unexpectedMessage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unexpectedMessage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 'KNAUER develops and manufactures scientific instruments and components
+    for liquid chromatography, dosing, and lipid nanoparticle production. GitHub驱动:
+    https://github.com/richardingham/octopus'
+  category:
+  - community
+  device_params:
+    repo: richardingham/octopus
+    source_file: octopus/protocol/basic.py
+    candidate_class: QueuedLineReceiver
+    communication: ''
+    photo_url: https://www.knauer.net/base/static/img/country_flags/us.png?height=25
+    instrument_params: 'Type: Isocratic HPLC pump; Flow: 0.001-10 mL/min; Pressure:
+      up to 400 bar; Piston: Sapphire; Communication: RS-232; Platform: KNAUER HPLC
+      system'
+    official_url: https://www.knauer.net/en/products/hplc-pumps
+  manufacturer: Knauer
+  model:
+    name: Gilson 402/233XL/506C
+    type: device
+  name: Knauer K-120
+  tags:
+  - 柱塞泵
+  resource_type: device
+  icon: https://www.knauer.net/base/static/img/country_flags/us.png?height=25
+  scene:
+    domain: Chemistry
+    scene_name: Sample Prep
+    step: Dosing
+  version: 0.1.0

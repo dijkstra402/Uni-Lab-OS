@@ -1,0 +1,131 @@
+community.ba.leoni_switch:
+  name: LeoniSwitch 开关矩阵
+  category:
+  - 多通阀
+  class:
+    module: unilabos.devices.generic.leoni_switch:LeoniSwitch
+    type: python
+    status_types:
+      num_channels: String
+      active_channel: String
+      firmware_rev: String
+    action_value_mappings:
+      auto-set_active_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_active_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ping:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ping
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_num_channels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_num_channels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_active_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_active_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_firmware_rev:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_firmware_rev
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: LeoniSwitch 设备驱动，社区驱动 - 自动集成自 leoni_switch
+  device_params:
+    品牌: 社区开源
+    型号: LeoniSwitch
+    设备类型: 多通阀
+    来源仓库: leoni_switch
+    驱动类: LeoniSwitch
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        ip_addr:
+          type: string
+          default: null
+        simulation:
+          type: string
+          default: false
+  manufacturer: ''
+  model:
+    name: LeoniSwitch
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

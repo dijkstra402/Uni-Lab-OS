@@ -1,0 +1,300 @@
+community_strict_agilent33521a:
+  class:
+    module: community_drivers.community_strict_agilent33521a.driver:CommunityStrictAgilent33521a
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/pymeasure__pymeasure
+          source_file:
+            type: string
+            default: pymeasure/instruments/agilent/agilent33521A.py
+          class_name:
+            type: string
+            default: Agilent33521A
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - beep
+            - data_volatile_clear
+            - phase_sync
+            - data_arb
+            - clear_display
+            - trigger
+            - wait_for_trigger
+            - check_errors
+            - next_error
+            - write_binary_values
+            - read_binary_values
+          metadata:
+            type: object
+            default:
+              repo: pymeasure/pymeasure
+              repo_url: https://github.com/pymeasure/pymeasure
+              source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/agilent/agilent33521A.py
+              source_file: pymeasure/instruments/agilent/agilent33521A.py
+              class_name: Agilent33521A
+              manufacturer_guess: agilent
+              manufacturer_resolved: agilent
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.9
+              quality_score: 1.12
+              code_evidence: 'L35: class Agilent33521A(Agilent33500):'
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001 {}
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-beep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: beep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-data_volatile_clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_volatile_clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-phase_sync:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: phase_sync
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-data_arb:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_arb
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                arb_name:
+                  type: string
+                data_points:
+                  type: string
+                data_format:
+                  type: string
+                  default: DAC
+        goal_default:
+          data_format: DAC
+        handles: {}
+      auto-clear_display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: string
+                  default: 3600
+                should_stop:
+                  type: string
+        goal_default:
+          timeout: 3600
+        handles: {}
+      auto-check_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-next_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: next_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                values:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: Agilent33521A驱动（agilent），支持beep/data_volatile_clear/phase_sync/data_arb/clear_display等11个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: pymeasure/pymeasure
+    source_file: pymeasure/instruments/agilent/agilent33521A.py
+    candidate_class: Agilent33521A
+    quality_score: 1.12
+    confidence: 0.9
+    quality_status: usable
+    操作数: 11
+  manufacturer: 安捷伦
+  model:
+    name: Agilent33521A
+    type: device
+  name: agilent Agilent33521A
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

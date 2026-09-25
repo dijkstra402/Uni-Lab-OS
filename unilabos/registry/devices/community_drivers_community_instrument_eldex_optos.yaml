@@ -1,0 +1,607 @@
+community_instrument_eldex_optos:
+  class:
+    module: community_drivers.community_instrument_eldex_optos.driver:CommunityInstrumentEldexOptos
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/Waldvogel-Group__LABS-Backend
+          source_file:
+            type: string
+            default: backend/setup/setup.py
+          class_name:
+            type: string
+            default: Setup
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - current_experiment
+            - current_experiment_index
+            - remote_start
+            - remote_stop
+            - remote_pause
+            - remote_shutdown
+            - remote_insert_experiment_after
+            - remote_add_experiment
+            - remote_station_overview
+            - remote_get_experiment_types
+            - remote_station_run_tables
+            - remote_get_updates
+            - remote_station_components
+            - get_device_or_channel
+            - insert_experiment_after
+            - add_experiment
+            - start
+            - execute_experiment
+            - update
+            - set_state
+            - state
+            - stateobject
+            - subscribe
+            - unsubscribe
+            - reset_observables
+            - update_subscribers
+            - update_observables
+            - get_updates
+            - get_latest_update
+          metadata:
+            type: object
+            default:
+              repo: Waldvogel-Group/LABS-Backend
+              repo_url: https://github.com/Waldvogel-Group/LABS-Backend
+              source_file: backend/setup/setup.py
+              class_name: Setup
+              brand: Eldex
+              model: Optos
+              device_type_cn: 反应釜
+              device_type_en: Reactor Vessel
+              source_framework: LABS-Backend
+              tag_id: '4375'
+              tag_name: 反应釜
+              tag_name_en: Reactor Vessel
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 190
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-current_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-current_experiment_index:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_experiment_index
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remote_start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remote_stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remote_pause:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remote_shutdown:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_shutdown
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remote_insert_experiment_after:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_insert_experiment_after
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                existing_id:
+                  type: string
+                experiment_id:
+                  type: string
+                experiment_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remote_add_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_add_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                experiment_id:
+                  type: string
+                experiment_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remote_station_overview:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_station_overview
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remote_get_experiment_types:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_get_experiment_types
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remote_station_run_tables:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_station_run_tables
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-remote_get_updates:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_get_updates
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                component_observable_pairs:
+                  type: object
+                from_timestamp:
+                  type: string
+                to_timestamp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remote_station_components:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remote_station_components
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_device_or_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_or_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                parameters:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-insert_experiment_after:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: insert_experiment_after
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                existing_id:
+                  type: string
+                experiment_id:
+                  type: string
+                experiment_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                experiment_id:
+                  type: string
+                experiment_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-execute_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execute_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                experiment:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                observable:
+                  type: string
+                observable_key:
+                  type: string
+                updated_value:
+                  type: string
+                timestamp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                result:
+                  type: string
+                state:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stateobject:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stateobject
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-subscribe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: subscribe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                observer:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unsubscribe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unsubscribe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                observer:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-reset_observables:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_observables
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_subscribers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_subscribers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                observable_key:
+                  type: string
+                updated_value:
+                  type: string
+                timestamp:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update_observables:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_observables
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                observables:
+                  type: object
+                timestamp:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_updates:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_updates
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                variable_name:
+                  type: string
+                from_timestamp:
+                  type: number
+                to_timestamp:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_latest_update:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_latest_update
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                variable_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: cleaned
+  quality_reasons: "删除 1 个框架内部回调"
+  description: Optos 驱动（Eldex），支持 current_experiment/current_experiment_index/remote_start/remote_stop/remote_pause
+    等 29 个操作。
+  category:
+  - 反应釜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: Waldvogel-Group/LABS-Backend
+    source_file: backend/setup/setup.py
+    candidate_class: Setup
+    candidate_score: 190
+    quality_status: usable
+    操作数: 29
+  manufacturer: Eldex
+  model:
+    name: Optos
+    type: device
+  name: Eldex Optos
+  tags:
+  - 反应釜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

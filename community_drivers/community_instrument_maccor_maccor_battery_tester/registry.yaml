@@ -1,0 +1,310 @@
+community_instrument_maccor_maccor_battery_tester:
+  class:
+    module: community_drivers.community_instrument_maccor_maccor_battery_tester.driver:CommunityInstrumentMaccorMaccorBatteryTester
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/OpenBattTools__maccor-utility
+          source_file:
+            type: string
+            default: src/maccor_utility/read.py
+          class_name:
+            type: string
+            default: ''
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - read_maccor_data_file
+            - rename_columns
+            - datetime_fromdelphi
+            - get_bool_array_from_bit_field
+            - get_top_lvl_procedure
+            - get_procedure_and_subroutine
+            - import_maccor_cycling_data
+            - import_maccor_cycling_stats
+            - process_exists
+          metadata:
+            type: object
+            default:
+              repo: OpenBattTools/maccor-utility
+              repo_url: https://github.com/OpenBattTools/maccor-utility
+              source_file: src/maccor_utility/read.py
+              class_name: ''
+              brand: Maccor
+              model: Maccor Battery Tester
+              device_type_cn: 电池测试柜
+              device_type_en: Battery Test Cabinet
+              source_framework: 专用驱动
+              tag_id: '4427'
+              tag_name: 电池测试柜
+              tag_name_en: Battery Test Cabinet
+              language: Python
+              parse_status: module_reselected
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 79
+              action_targets:
+                read_maccor_data_file: read_maccor_data_file
+                rename_columns: rename_columns
+                datetime_fromdelphi: datetime_fromdelphi
+                get_bool_array_from_bit_field: get_bool_array_from_bit_field
+                get_top_lvl_procedure: get_top_lvl_procedure
+                get_procedure_and_subroutine: get_procedure_and_subroutine
+                import_maccor_cycling_data: import_maccor_cycling_data
+                import_maccor_cycling_stats: import_maccor_cycling_stats
+                process_exists: process_exists
+          action_targets:
+            type: object
+            default:
+              read_maccor_data_file: read_maccor_data_file
+              rename_columns: rename_columns
+              datetime_fromdelphi: datetime_fromdelphi
+              get_bool_array_from_bit_field: get_bool_array_from_bit_field
+              get_top_lvl_procedure: get_top_lvl_procedure
+              get_procedure_and_subroutine: get_procedure_and_subroutine
+              import_maccor_cycling_data: import_maccor_cycling_data
+              import_maccor_cycling_stats: import_maccor_cycling_stats
+              process_exists: process_exists
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-read_maccor_data_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_maccor_data_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file_path:
+                  type: string
+                frmt:
+                  type: string
+                dll_path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-rename_columns:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rename_columns
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                df:
+                  type: string
+                input_format:
+                  type: string
+                target_format:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-datetime_fromdelphi:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: datetime_fromdelphi
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dvalue:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_bool_array_from_bit_field:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_bool_array_from_bit_field
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ctype_bitfield:
+                  type: string
+                opts:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-get_top_lvl_procedure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_top_lvl_procedure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path_to_file:
+                  type: string
+                save_procedure_to:
+                  type: string
+                loaded_dll:
+                  type: string
+                path_to_dll:
+                  type: string
+                dll_architecture:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_procedure_and_subroutine:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_procedure_and_subroutine
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path_to_file:
+                  type: string
+                save_procedure_to:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-import_maccor_cycling_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: import_maccor_cycling_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-import_maccor_cycling_stats:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: import_maccor_cycling_stats
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                file:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-process_exists:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: process_exists
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                process_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Maccor Battery Tester 驱动（Maccor），支持 read_maccor_data_file/rename_columns/datetime_fromdelphi/get_bool_array_from_bit_field/get_top_lvl_procedure
+    等 9 个操作。
+  category:
+  - 电池测试柜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: OpenBattTools/maccor-utility
+    source_file: src/maccor_utility/read.py
+    candidate_class: ''
+    candidate_score: 79
+    quality_status: usable
+    操作数: 9
+  manufacturer: Maccor
+  model:
+    name: Maccor Battery Tester
+    type: device
+  name: Maccor Maccor Battery Tester
+  tags:
+  - 电池测试柜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

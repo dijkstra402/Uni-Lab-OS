@@ -1,0 +1,291 @@
+community_instrument_prior_scientific_proscan:
+  class:
+    module: community_drivers.community_instrument_prior_scientific_proscan.driver:CommunityInstrumentPriorScientificProscan
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/kleinlabphys__autoflakedet
+          source_file:
+            type: string
+            default: nikon_automation/PlatformOperator.py
+          class_name:
+            type: string
+            default: PlatformOperator
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - get_stage_xy
+            - get_stage_x
+            - get_stage_y
+            - get_stage_z
+            - get_stage_xyz
+            - wait_for_platform
+            - synch_go_to_xyz
+            - send_prior_cmd
+            - connect_to_device
+            - disconnect_and_close_session
+          metadata:
+            type: object
+            default:
+              repo: kleinlabphys/autoflakedet
+              repo_url: https://github.com/kleinlabphys/autoflakedet
+              source_file: nikon_automation/PlatformOperator.py
+              class_name: PlatformOperator
+              brand: Prior Scientific
+              model: ProScan
+              device_type_cn: 普通光学显微镜
+              device_type_en: Optical Microscope
+              source_framework: 专用驱动
+              tag_id: '4400'
+              tag_name: 普通光学显微镜
+              tag_name_en: Optical Microscope
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 86
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-get_stage_xy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_stage_xy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_stage_x:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_stage_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_stage_y:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_stage_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_stage_z:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_stage_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_stage_xyz:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_stage_xyz
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_platform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_platform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                targetPosition:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-synch_go_to_xyz:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: synch_go_to_xyz
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                targetPosition:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_prior_cmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_prior_cmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cmd_str:
+                  type: string
+                flush_immediately:
+                  type: string
+                  default: false
+                log_level:
+                  type: string
+                expected_status:
+                  type: string
+                  default: 0
+        goal_default:
+          flush_immediately: false
+          expected_status: 0
+        handles: {}
+      auto-connect_to_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_to_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port_number:
+                  type: string
+                  default: '4'
+        goal_default:
+          port_number: '4'
+        handles: {}
+      auto-disconnect_and_close_session:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect_and_close_session
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port_num:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: ProScan 驱动（Prior Scientific），支持 get_stage_xy/get_stage_x/get_stage_y/get_stage_z/get_stage_xyz
+    等 10 个操作。
+  category:
+  - 普通光学显微镜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: kleinlabphys/autoflakedet
+    source_file: nikon_automation/PlatformOperator.py
+    candidate_class: PlatformOperator
+    candidate_score: 86
+    quality_status: usable
+    操作数: 10
+  manufacturer: Prior Scientific
+  model:
+    name: ProScan
+    type: device
+  name: Prior Scientific ProScan
+  tags:
+  - 普通光学显微镜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

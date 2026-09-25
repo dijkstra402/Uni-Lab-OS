@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilentDSOX93204A.py
+registry_id: community_strict_agilentdsox93204a
+source_file: ivi/agilent/agilentDSOX93204A.py
+class_name: agilentDSOX93204A
+manufacturer: agilent
+model: agilentDSOX93204A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilentdsox93204a.yaml

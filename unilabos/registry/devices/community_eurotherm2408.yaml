@@ -376,6 +376,34 @@ eurotherm2408:
                   type: string
         goal_default: {}
         handles: {}
+      set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default:
+          temperature: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置温度
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                temperature:
+                  type: number
+                  description: temperature
+              required:
+              - temperature
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_temperature参数
+          type: object
   description: eurotherm 2408
   category:
   - devices

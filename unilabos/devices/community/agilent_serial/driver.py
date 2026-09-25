@@ -427,3 +427,10 @@ def IonPump(prefix, *, name, **kwargs):
         return IonPumpBase(prefix, name=name, **kwargs)
 
     return IonPumpWithController(prefix, name=name, **kwargs)
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(AgilentSerial)
+except Exception:
+    pass

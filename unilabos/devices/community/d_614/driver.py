@@ -358,3 +358,10 @@ class Keithley_2700(VisaInstrument):
         logging.debug('Resetting instrument')
         self._visainstrument.write('*RST')
         self.get_all()
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley_2700)
+except Exception:
+    pass

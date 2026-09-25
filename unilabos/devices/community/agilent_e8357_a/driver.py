@@ -325,3 +325,10 @@ class AgilentE8357A(IEEE488, SCPI):
     '''
 
 __all__ = ["AgilentE8357A"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(AgilentE8357A)
+except Exception:
+    pass

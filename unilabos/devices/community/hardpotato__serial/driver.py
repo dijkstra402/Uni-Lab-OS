@@ -200,3 +200,10 @@ class Serial():
         return self.connection.readline()
 
 __all__ = ["Serial"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Serial)
+except Exception:
+    pass

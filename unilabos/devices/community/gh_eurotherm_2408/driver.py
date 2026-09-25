@@ -131,3 +131,10 @@ class Eurotherm(object):
 
     def get_setpoint_temperature(self):
         return self.read_param('SL')
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Eurotherm)
+except Exception:
+    pass

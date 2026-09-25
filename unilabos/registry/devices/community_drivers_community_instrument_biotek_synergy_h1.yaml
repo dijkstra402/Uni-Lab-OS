@@ -1,0 +1,458 @@
+community_instrument_biotek_synergy_h1:
+  class:
+    module: community_drivers.community_instrument_biotek_synergy_h1.driver:CommunityInstrumentBiotekSynergyH1
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/plate_reading/agilent/biotek_synergyh1_backend.py
+          class_name:
+            type: string
+            default: SynergyH1Backend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - close
+            - get_current_temperature
+            - get_firmware_version
+            - get_serial_number
+            - home
+            - open
+            - read_absorbance
+            - read_fluorescence
+            - read_luminescence
+            - set_plate
+            - set_temperature
+            - setup
+            - shake
+            - stop
+            - stop_heating_or_cooling
+            - stop_shaking
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              brand: Agilent (BioTek)
+              model: Synergy H1
+              device_type_cn: 酶标仪
+              device_type_en: Plate Reader
+              source_framework: PyLabRobot
+              source_file: pylabrobot/plate_reading/agilent/biotek_synergyh1_backend.py
+              class_name: SynergyH1Backend
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          slow: slow
+        goal_default:
+          slow: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                slow:
+                  type: boolean
+              required:
+              - plate
+              - slow
+          required:
+          - goal
+        handles: {}
+      auto-get_current_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_current_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_firmware_version:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_firmware_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-get_serial_number:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommand
+        goal:
+          slow: slow
+        goal_default:
+          slow: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slow:
+                  type: boolean
+              required:
+              - slow
+          required:
+          - goal
+        handles: {}
+      auto-read_absorbance:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          wells: wells
+          wavelength: wavelength
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: read_absorbance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                wavelength:
+                  type: integer
+              required:
+              - plate
+              - wells
+              - wavelength
+          required:
+          - goal
+        handles: {}
+      auto-read_fluorescence:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          wells: wells
+          excitation_wavelength: excitation_wavelength
+          emission_wavelength: emission_wavelength
+          focal_height: focal_height
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: read_fluorescence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                excitation_wavelength:
+                  type: integer
+                emission_wavelength:
+                  type: integer
+                focal_height:
+                  type: number
+              required:
+              - plate
+              - wells
+              - excitation_wavelength
+              - emission_wavelength
+              - focal_height
+          required:
+          - goal
+        handles: {}
+      auto-read_luminescence:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          wells: wells
+          focal_height: focal_height
+          integration_time: integration_time
+        goal_default:
+          integration_time: 1
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: read_luminescence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                wells:
+                  type: string
+                focal_height:
+                  type: number
+                integration_time:
+                  type: number
+              required:
+              - plate
+              - wells
+              - focal_height
+              - integration_time
+          required:
+          - goal
+        handles: {}
+      auto-set_plate:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+              required:
+              - plate
+          required:
+          - goal
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          temperature: temperature
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+              required:
+              - temperature
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-shake:
+        type: UniLabJsonCommand
+        goal:
+          shake_type: shake_type
+          frequency: frequency
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: shake
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shake_type:
+                  type: string
+                frequency:
+                  type: integer
+              required:
+              - shake_type
+              - frequency
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop_heating_or_cooling:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop_heating_or_cooling
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-stop_shaking:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop_shaking
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: Synergy H1 驱动（Agilent (BioTek)），支持 close/get_current_temperature/get_firmware_version/get_serial_number/home
+    等 16 个操作。
+  category:
+  - 酶标仪
+  config_info: []
+  handles: []
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/plate_reading/agilent/biotek_synergyh1_backend.py
+    candidate_class: SynergyH1Backend
+    操作数: 16
+  manufacturer: 安捷伦
+  model:
+    name: Synergy H1
+    type: device
+  name: BioTek Synergy H1
+  tags:
+  - 酶标仪
+  resource_type: device
+  version: 0.1.0

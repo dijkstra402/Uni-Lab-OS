@@ -1,0 +1,137 @@
+community_missing_sweepme_instrument_drivers:
+  class:
+    module: community_drivers.community_missing_sweepme_instrument_drivers.driver:CommunityMissingSweepmeInstrumentDrivers
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/SweepMe__instrument-drivers
+          source_file:
+            type: string
+            default: src/Logger-DeviceClass_template/main.py
+          class_name:
+            type: string
+            default: Device
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - __init__
+            - set_GUIparameter
+            - get_GUIparameter
+            - find_ports
+            - connect
+            - disconnect
+            - initialize
+            - deinitialize
+            - configure
+            - unconfigure
+            - signin
+            - signout
+            - reconfigure
+            - poweron
+            - poweroff
+            - start
+            - apply
+            - reach
+            - adapt
+            - adapt_ready
+            - trigger_ready
+            - measure
+            - request_result
+            - read_result
+            - process_data
+            - call
+            - finish
+          metadata:
+            type: object
+            default:
+              repo: SweepMe/instrument-drivers
+              repo_url: https://github.com/SweepMe/instrument-drivers
+              source_file: src/Logger-DeviceClass_template/main.py
+              candidate_score: 131
+              candidate_reason: ''
+              manufacturers:
+              - MBraun
+              models:
+              - SCU101手套箱控制单元
+              tags: &id001
+              - 气体保护干燥箱
+              notes:
+              - '文件: src/Switch-MBRAUN_SCU101/main.py'
+              comm_protocols:
+              - pysweepme框架(串口)
+              review_status: needs_reselect
+              review_notes:
+              - 当前入口是模板基类，不是实际仪器驱动。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: stub
+  quality_reasons: "仅含 probe_import/get_metadata 占位"
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: SweepMe/instrument-drivers
+    source_file: src/Logger-DeviceClass_template/main.py
+    candidate_class: Device
+    communication: pysweepme框架(串口)
+  manufacturer: MBRAUN
+  model:
+    name: SCU101手套箱控制单元
+    type: device
+  name: instrument-drivers
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

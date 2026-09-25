@@ -1,0 +1,14 @@
+from __future__ import annotations
+
+from unilabos.devices.generic.community_repo_loader import CommunityRepoLoader
+
+
+class CommunityInstrumentBinderMk53(CommunityRepoLoader):
+    DEFAULT_CONFIG = {'repo_root': '/Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/ecree-solarflare__ovenctl', 'source_file': '', 'class_name': '', 'import_roots': [], 'candidate_methods': [], 'action_targets': {}, 'metadata': {'repo': 'ecree-solarflare/ovenctl', 'repo_url': 'https://github.com/ecree-solarflare/ovenctl', 'brand': 'Binder', 'model': 'MK 53', 'device_type_cn': '真空干燥箱', 'device_type_en': 'Vacuum Drying Oven', 'source_framework': '专用驱动', 'tag_id': '4430', 'tag_name': '真空干燥箱', 'tag_name_en': 'Vacuum Drying Oven', 'candidate_score': -999, 'parse_status': 'class_not_found', 'quality_status': 'broken', 'quality_reasons': ['no_class_found'], 'action_targets': {}}}
+
+    def __init__(self, **kwargs):
+        merged = dict(self.DEFAULT_CONFIG)
+        merged.update(kwargs)
+        super().__init__(**merged)
+
+

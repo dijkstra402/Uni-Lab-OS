@@ -1,0 +1,793 @@
+community_instrument_thermo_fisher_thermoflex:
+  class:
+    module: community_drivers.community_instrument_thermo_fisher_thermoflex.driver:CommunityInstrumentThermoFisherThermoflex
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/Dennis-van-Gils__python-dvg-devices
+          source_file:
+            type: string
+            default: src/dvg_devices/ThermoFlex_chiller_protocol_RS232.py
+          class_name:
+            type: string
+            default: ThermoFlex_chiller
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - query
+            - ID_validation_query
+            - begin
+            - query_data_as_float_and_uom
+            - parse_data_bytes
+            - parse_status_bits
+            - parse_ASCII_bytes
+            - turn_off
+            - turn_on
+            - query_is_on
+            - query_Ack
+            - query_alarm_values_and_units
+            - query_alarm_LO_flow
+            - query_alarm_LO_temp
+            - query_alarm_LO_pres
+            - query_alarm_HI_flow
+            - query_alarm_HI_temp
+            - query_alarm_HI_pres
+            - query_PID_values
+            - query_PID_P
+            - query_PID_I
+            - query_PID_D
+            - query_status_bits
+            - query_state
+            - query_setpoint
+            - query_temp
+            - query_flow
+            - query_supply_pres
+            - query_suction_pres
+            - query_display_msg
+            - send_setpoint
+            - set_read_termination
+            - set_write_termination
+            - set_ID_validation_query
+            - readline
+            - query_bytes
+            - query_ascii_values
+            - connect_at_port
+            - scan_ports
+            - auto_connect
+          metadata:
+            type: object
+            default:
+              repo: Dennis-van-Gils/python-dvg-devices
+              repo_url: https://github.com/Dennis-van-Gils/python-dvg-devices
+              source_file: src/dvg_devices/ThermoFlex_chiller_protocol_RS232.py
+              class_name: ThermoFlex_chiller
+              brand: Thermo Fisher
+              model: ThermoFlex
+              device_type_cn: 冷水机
+              device_type_en: Chiller
+              source_framework: 独立仓库
+              tag_id: '4369'
+              tag_name: 冷热水机
+              tag_name_en: Chiller / Heater Unit
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 384
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                raises_on_timeout:
+                  type: boolean
+                  default: false
+                returns_ascii:
+                  type: boolean
+                  default: false
+        goal_default:
+          raises_on_timeout: false
+          returns_ascii: false
+        handles: {}
+      auto-ID_validation_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ID_validation_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-begin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: begin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_data_as_float_and_uom:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_data_as_float_and_uom
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg_bytes:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-parse_data_bytes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_data_bytes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ans_bytes:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-parse_status_bits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_status_bits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ans_bytes:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-parse_ASCII_bytes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_ASCII_bytes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ans_bytes:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-turn_off:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: turn_off
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-turn_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: turn_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_is_on:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_is_on
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_Ack:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_Ack
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_alarm_values_and_units:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_alarm_values_and_units
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_alarm_LO_flow:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_alarm_LO_flow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_alarm_LO_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_alarm_LO_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_alarm_LO_pres:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_alarm_LO_pres
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_alarm_HI_flow:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_alarm_HI_flow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_alarm_HI_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_alarm_HI_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_alarm_HI_pres:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_alarm_HI_pres
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_PID_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_PID_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_PID_P:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_PID_P
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_PID_I:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_PID_I
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_PID_D:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_PID_D
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_status_bits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_status_bits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_flow:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_flow
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_supply_pres:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_supply_pres
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_suction_pres:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_suction_pres
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-query_display_msg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_display_msg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp_deg_C:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_read_termination:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_read_termination
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                termination:
+                  type: string
+                query_wait_time:
+                  type: number
+                  default: 0.1
+        goal_default:
+          query_wait_time: 0.1
+        handles: {}
+      auto-set_write_termination:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_write_termination
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                termination:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_ID_validation_query:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ID_validation_query
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ID_validation_query:
+                  type: array
+                valid_ID_broad:
+                  type: object
+                valid_ID_specific:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-readline:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: readline
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                raises_on_timeout:
+                  type: boolean
+                  default: false
+                returns_ascii:
+                  type: boolean
+                  default: true
+        goal_default:
+          raises_on_timeout: false
+          returns_ascii: true
+        handles: {}
+      auto-query_bytes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_bytes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                N_bytes_to_read:
+                  type: integer
+                raises_on_timeout:
+                  type: boolean
+                  default: false
+        goal_default:
+          raises_on_timeout: false
+        handles: {}
+      auto-query_ascii_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: query_ascii_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                delimiter:
+                  type: string
+                  default: "\t"
+                raises_on_timeout:
+                  type: boolean
+                  default: false
+        goal_default:
+          delimiter: "\t"
+          raises_on_timeout: false
+        handles: {}
+      auto-connect_at_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_at_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+                verbose:
+                  type: boolean
+                  default: true
+        goal_default:
+          verbose: true
+        handles: {}
+      auto-scan_ports:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan_ports
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                verbose:
+                  type: boolean
+                  default: true
+        goal_default:
+          verbose: true
+        handles: {}
+      auto-auto_connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filepath_last_known_port:
+                  type: string
+                  default: config/port.txt
+        goal_default:
+          filepath_last_known_port: config/port.txt
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: ThermoFlex 驱动（Thermo Fisher），支持 query/ID_validation_query/begin/query_data_as_float_and_uom/parse_data_bytes
+    等 40 个操作。
+  category:
+  - 冷热水机
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: Dennis-van-Gils/python-dvg-devices
+    source_file: src/dvg_devices/ThermoFlex_chiller_protocol_RS232.py
+    candidate_class: ThermoFlex_chiller
+    candidate_score: 384
+    quality_status: usable
+    操作数: 40
+  manufacturer: Thermo Fisher
+  model:
+    name: ThermoFlex
+    type: device
+  name: Thermo Fisher ThermoFlex
+  tags:
+  - 冷热水机
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

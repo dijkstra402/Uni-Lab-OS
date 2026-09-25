@@ -1,0 +1,96 @@
+mv_AgilentE4400B:
+  class:
+    module: unilabos.devices.community.mv_AgilentE4400B.driver:AgilentE4400B
+    type: python
+    status_types: {}
+    action_value_mappings:
+      measure:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 读取测量值
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: measure参数
+          type: object
+      set_voltage:
+        type: UniLabJsonCommand
+        goal:
+          voltage: voltage
+        goal_default:
+          voltage: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电压
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                voltage:
+                  type: number
+                  description: voltage
+              required:
+              - voltage
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_voltage参数
+          type: object
+      set_frequency:
+        type: UniLabJsonCommand
+        goal:
+          frequency: frequency
+        goal_default:
+          frequency: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置频率
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                frequency:
+                  type: number
+                  description: frequency
+              required:
+              - frequency
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_frequency参数
+          type: object
+  name: AgilentE4400B
+  description: AgilentE4400B (from mabuchilab__Instrumental)
+  manufacturer: ''
+  version: 1.0.0
+  registry_type: device
+  tags:
+  - community
+  - model_variant
+  model:
+    name: AgilentE4400B
+    type: device
+  source_repo: mabuchilab__Instrumental

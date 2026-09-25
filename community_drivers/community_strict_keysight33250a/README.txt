@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/Keysight/Keysight_33250a.py
+registry_id: community_strict_keysight33250a
+source_file: src/qcodes/instrument_drivers/Keysight/Keysight_33250a.py
+class_name: Keysight33250A
+manufacturer: keysight
+model: Keysight33250A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_keysight33250a.yaml

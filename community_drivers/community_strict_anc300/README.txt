@@ -1,0 +1,12 @@
+repo: AlexShkarin/pyLabLib
+repo_url: https://github.com/AlexShkarin/pyLabLib
+source_url: https://github.com/AlexShkarin/pyLabLib/blob/main/pylablib/devices/Attocube/anc300.py
+registry_id: community_strict_anc300
+source_file: pylablib/devices/Attocube/anc300.py
+class_name: ANC300
+manufacturer: prior
+model: ANC300
+tag: 机械臂
+confidence: 0.95
+quality_score: 1.11
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_anc300.yaml

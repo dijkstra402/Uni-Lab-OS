@@ -1,0 +1,358 @@
+community_strict_teledynet3afg__community_strict_teledynet3afg:
+  class:
+    module: unilabos.devices.community.community_strict_teledynet3afg.driver:TeledyneT3AFG
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/pymeasure__pymeasure
+          source_file:
+            type: string
+            default: pymeasure/instruments/teledyne/teledyneT3AFG.py
+          class_name:
+            type: string
+            default: TeledyneT3AFG
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - check_errors
+            - next_error
+            - write_binary_values
+            - read_binary_values
+          metadata:
+            type: object
+            default:
+              repo: pymeasure/pymeasure
+              repo_url: https://github.com/pymeasure/pymeasure
+              source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/teledyne/teledyneT3AFG.py
+              source_file: pymeasure/instruments/teledyne/teledyneT3AFG.py
+              class_name: TeledyneT3AFG
+              manufacturer_guess: ''
+              manufacturer_resolved: teledyne
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.75
+              quality_score: 0.89
+              code_evidence: 'L125: class TeledyneT3AFG(SCPIMixin, Instrument):'
+              parse_status: ok
+              quality_status: thin
+              quality_reasons: []
+              action_targets: &id001 {}
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-check_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-next_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: next_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                values:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      start:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 打开输出 / 开始运行
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: start参数
+          type: object
+      stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 关闭输出 / 停止
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: stop参数
+          type: object
+      measure:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 读取测量值
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: measure参数
+          type: object
+      set_voltage:
+        type: UniLabJsonCommand
+        goal:
+          voltage: voltage
+        goal_default:
+          voltage: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电压
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                voltage:
+                  type: number
+                  description: voltage
+              required:
+              - voltage
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_voltage参数
+          type: object
+      set_current:
+        type: UniLabJsonCommand
+        goal:
+          current: current
+        goal_default:
+          current: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置电流
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                current:
+                  type: number
+                  description: current
+              required:
+              - current
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_current参数
+          type: object
+      set_frequency:
+        type: UniLabJsonCommand
+        goal:
+          frequency: frequency
+        goal_default:
+          frequency: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置频率
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                frequency:
+                  type: number
+                  description: frequency
+              required:
+              - frequency
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_frequency参数
+          type: object
+      set_amplitude:
+        type: UniLabJsonCommand
+        goal:
+          amplitude: amplitude
+        goal_default:
+          amplitude: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置幅度
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                amplitude:
+                  type: number
+                  description: amplitude
+              required:
+              - amplitude
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_amplitude参数
+          type: object
+  description: TeledyneT3AFG驱动（teledyne），支持check_errors/next_error/write_binary_values/read_binary_values等4个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: pymeasure/pymeasure
+    source_file: pymeasure/instruments/teledyne/teledyneT3AFG.py
+    candidate_class: TeledyneT3AFG
+    quality_score: 0.89
+    confidence: 0.75
+    quality_status: thin
+    操作数: 4
+  manufacturer: teledyne
+  model:
+    name: TeledyneT3AFG
+    type: device
+  name: teledyne TeledyneT3AFG
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

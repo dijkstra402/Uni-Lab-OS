@@ -214,3 +214,10 @@ class Yokogawa7651(SCPIUnknownMixin, Instrument):
         self.source_current = 0.0
         self.disable_source()
         super().shutdown()
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Yokogawa7651)
+except Exception:
+    pass

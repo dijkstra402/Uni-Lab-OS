@@ -438,3 +438,10 @@ def busses():
             lambda d: d.bus))
 
 __all__ = ["DeviceHandle"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(DeviceHandle)
+except Exception:
+    pass

@@ -1,0 +1,121 @@
+community_github_zplab_rpc_scope:
+  class:
+    module: community_drivers.community_github_zplab_rpc_scope.driver:CommunityGithubZplabRpcScope
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/zplab_rpc-scope
+          source_file:
+            type: string
+            default: scope/simple_rpc/rpc_client.py
+          class_name:
+            type: string
+            default: ZMQClient
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - reconnect
+            - timeout_sec
+            - send_interrupt
+          metadata:
+            type: object
+            default:
+              repo: zplab/rpc-scope
+              repo_url: https://github.com/zplab/rpc-scope
+              unit_id: gh_leica_dmi8
+              source_file: scope/simple_rpc/rpc_client.py
+              candidate_score: 107
+              manufacturer: 徕卡显微系统
+              model_name: Leica DMi8
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-reconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-timeout_sec:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: timeout_sec
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_interrupt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_interrupt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 'Fully Automated Upright Microscope System for Cutting-edge Life Science
+    Research GitHub驱动: https://github.com/zplab/rpc-scope'
+  category:
+  - community
+  device_params:
+    repo: zplab/rpc-scope
+    source_file: scope/simple_rpc/rpc_client.py
+    candidate_class: ZMQClient
+    communication: ''
+    photo_url: https://www.leica-microsystems.com/fileadmin/_processed_/5/e/csm_lms-home-medical-microscopy-flx_b6c7ac61dc.jpg
+    instrument_params: Technical Support/Repair I need help, because my system is
+      not/partly operational.
+    official_url: https://www.leica-microsystems.com/products/light-microscopes/p/leica-dm6000-b/
+  manufacturer: Leica
+  model:
+    name: Leica DMi8
+    type: device
+  name: Leica DM6000
+  tags:
+  - 普通光学显微镜
+  resource_type: device
+  icon: https://www.leica-microsystems.com/fileadmin/_processed_/5/e/csm_lms-home-medical-microscopy-flx_b6c7ac61dc.jpg
+  scene:
+    domain: Biology
+    scene_name: Imaging
+    step: Microscopy
+  version: 0.1.0

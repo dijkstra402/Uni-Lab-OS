@@ -1,0 +1,10 @@
+repo: xg590/Learn_dPettePlus
+repo_url: https://github.com/xg590/Learn_dPettePlus
+registry_id: community_missing_xg590_learn_dpetteplus
+review_status: good
+review_notes: 电子移液核心动作准确。
+selected_file: dPettePlus.py
+selected_class: DPETTE
+download_dir: /Users/sml/work/Uni-Lab-OS/new/xg590__Learn_dPettePlus
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_xg590_learn_dpetteplus.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_xg590_learn_dpetteplus/startup.json

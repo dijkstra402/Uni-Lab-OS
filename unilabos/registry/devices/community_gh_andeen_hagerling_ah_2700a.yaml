@@ -32,6 +32,56 @@ gh_andeen_hagerling_ah_2700a:
               properties: {}
         goal_default: {}
         handles: {}
+      initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 初始化 / 复位仪器
+          properties:
+            feedback: {}
+            goal:
+              properties: {}
+              required: []
+              type: object
+            result: {}
+          required:
+          - goal
+          title: initialize参数
+          type: object
+      set_frequency:
+        type: UniLabJsonCommand
+        goal:
+          frequency: frequency
+        goal_default:
+          frequency: 0.0
+        feedback: {}
+        result:
+          success: success
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          description: 设置频率
+          properties:
+            feedback: {}
+            goal:
+              properties:
+                frequency:
+                  type: number
+                  description: frequency
+              required:
+              - frequency
+              type: object
+            result: {}
+          required:
+          - goal
+          title: set_frequency参数
+          type: object
     source: https://github.com/pymeasure/pymeasure
   name: Andeen-Hagerling AH 2700A Capacitance Bridge
   description: Andeen-Hagerling AH 2700A超精密电容电桥，具有50 Hz至20 kHz可编程测试频率，分辨率0.5 aF。支持自动量程和频率扫描，适用于材料表征、传感器校准和计量标准实验室。

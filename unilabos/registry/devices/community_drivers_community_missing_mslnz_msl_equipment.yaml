@@ -1,0 +1,157 @@
+community_missing_mslnz_msl_equipment:
+  class:
+    module: community_drivers.community_missing_mslnz_msl_equipment.driver:CommunityMissingMslnzMslEquipment
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/MSLNZ__msl-equipment
+          source_file:
+            type: string
+            default: src/msl/equipment/interfaces/prologix.py
+          class_name:
+            type: string
+            default: Prologix
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - __init__
+            - _ensure_gpib_address_selected
+            - _read
+            - _set_interface_max_read_size
+            - _set_interface_timeout
+            - _write
+            - clear
+            - controller
+            - disconnect
+            - encoding
+            - encoding
+            - escape_characters
+            - escape_characters
+            - group_execute_trigger
+            - interface_clear
+            - local
+            - max_read_size
+            - max_read_size
+            - pad
+            - prologix_help
+            - query
+            - query
+            - query
+            - query
+            - read
+            - read
+            - read
+            - read
+            - read_termination
+            - read_termination
+            - remote_enable
+            - reset_controller
+            - rstrip
+            - rstrip
+            - sad
+            - serial_poll
+            - set_eot_char
+            - set_eot_enable
+            - set_plus_plus_read_char
+            - timeout
+            - timeout
+            - trigger
+            - wait
+            - wait_for_srq
+            - write
+            - write_termination
+            - write_termination
+          metadata:
+            type: object
+            default:
+              repo: MSLNZ/msl-equipment
+              repo_url: https://github.com/MSLNZ/msl-equipment
+              source_file: src/msl/equipment/interfaces/prologix.py
+              candidate_score: 157
+              candidate_reason: ''
+              manufacturers:
+              - 多品牌
+              models:
+              - Sartorius, Mettler Toledo, 等ISO/IEC 17025兼容设备
+              tags: &id001
+              - 固体称量工作站
+              notes:
+              - 新西兰计量标准实验室(MSL)出品
+              comm_protocols:
+              - 串口/GPIB等多接口
+              review_status: needs_reselect
+              review_notes:
+              - 当前入口是通信适配器，不是具体仪器。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: stub
+  quality_reasons: "仅含 probe_import/get_metadata 占位"
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: MSLNZ/msl-equipment
+    source_file: src/msl/equipment/interfaces/prologix.py
+    candidate_class: Prologix
+    communication: 串口/GPIB等多接口
+  manufacturer: 多品牌
+  model:
+    name: Sartorius, Mettler Toledo, 等ISO/IEC 17025兼容设备
+    type: device
+  name: msl-equipment
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

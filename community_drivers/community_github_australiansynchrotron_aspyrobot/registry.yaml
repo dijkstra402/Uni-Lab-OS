@@ -1,0 +1,119 @@
+community_github_australiansynchrotron_aspyrobot:
+  class:
+    module: community_drivers.community_github_australiansynchrotron_aspyrobot.driver:CommunityGithubAustraliansynchrotronAspyrobot
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/AustralianSynchrotron_aspyrobot
+          source_file:
+            type: string
+            default: aspyrobot/robot.py
+          class_name:
+            type: string
+            default: Robot
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - snapshot
+            - run_task
+            - run_background_task
+          metadata:
+            type: object
+            default:
+              repo: australiansynchrotron/aspyrobot
+              repo_url: https://github.com/AustralianSynchrotron/aspyrobot
+              unit_id: gh_epson_scara_rc90
+              source_file: aspyrobot/robot.py
+              candidate_score: 43
+              manufacturer: Epson
+              model_name: Epson SCARA (RC90/RC700)
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-snapshot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: snapshot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_background_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_background_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'SCARA机械臂. GitHub驱动: https://github.com/AustralianSynchrotron/aspyrobot'
+  category:
+  - community
+  device_params:
+    repo: australiansynchrotron/aspyrobot
+    source_file: aspyrobot/robot.py
+    candidate_class: Robot
+    communication: ''
+    photo_url: https://mediaserver.goepson.com/adaptivemedia/rendition?id=1ae80106e441774e1fac9165dcac7159299a9cd2&vid=1ae80106e441774e1fac9165dcac7159299a9cd2&prid=original&clid=SAPDAM&prclid=productpictures&assetDescr=ET-4950_wht_headon-output_690x460%402x
+    instrument_params: Ultra Short-Throw Projectors; Voice-activated Printing; Heat-Free
+      Technology; Receipt Paper-savings Technology
+    official_url: https://epson.com/For-Work/Robots/SCARA/c/rs
+  manufacturer: Epson
+  model:
+    name: Epson SCARA (RC90/RC700)
+    type: device
+  name: Epson SCARA (RC90/RC700)
+  tags:
+  - 机械臂
+  resource_type: device
+  icon: https://mediaserver.goepson.com/adaptivemedia/rendition?id=1ae80106e441774e1fac9165dcac7159299a9cd2&vid=1ae80106e441774e1fac9165dcac7159299a9cd2&prid=original&clid=SAPDAM&prclid=productpictures&assetDescr=ET-4950_wht_headon-output_690x460%402x
+  scene:
+    domain: General
+    scene_name: Automation
+    step: Transfer
+  version: 0.1.0

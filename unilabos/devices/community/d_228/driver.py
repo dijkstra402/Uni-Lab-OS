@@ -197,3 +197,10 @@ class Device(EmptyDevice):
         # here we read the response from the "READ?" request in 'measure'
         answer = self.port.read()
         return [float(answer)]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Device)
+except Exception:
+    pass

@@ -2298,3 +2298,10 @@ class RohdeSchwarz_SMW200A(VisaInstrument):
                     retval.update({m + "." + p: val})
 
         return retval
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(RohdeSchwarz_SMW200A)
+except Exception:
+    pass

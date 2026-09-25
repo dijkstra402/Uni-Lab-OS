@@ -450,3 +450,10 @@ def select_port_cli() -> str:
     if selection < 0 or selection > i:
         raise ValueError("Invalid selection")
     return ports[selection].device
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(BaseGcodeRobot)
+except Exception:
+    pass

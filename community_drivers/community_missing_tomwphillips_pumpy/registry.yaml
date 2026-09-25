@@ -1,0 +1,294 @@
+community_missing_tomwphillips_pumpy:
+  class:
+    module: community_drivers.community_missing_tomwphillips_pumpy.driver:CommunityMissingTomwphillipsPumpy
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/tomwphillips__pumpy
+          source_file:
+            type: string
+            default: pumpy.py
+          class_name:
+            type: string
+            default: Pump
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - __init__
+            - __repr__
+            - write
+            - read
+            - setdiameter
+            - setflowrate
+            - infuse
+            - withdraw
+            - stop
+            - settargetvolume
+            - waituntiltarget
+          metadata:
+            type: object
+            default:
+              repo: tomwphillips/pumpy
+              repo_url: https://github.com/tomwphillips/pumpy
+              source_file: pumpy.py
+              candidate_score: 93
+              candidate_reason: ''
+              manufacturers:
+              - Harvard Apparatus
+              models:
+              - Pump 11, Pump 11 Plus, PHD2000
+              tags: &id001
+              - 柱塞泵
+              notes:
+              - 'PyPI: pumpy / 同时支持Mighty Mini活塞泵'
+              comm_protocols:
+              - RS-232 pyserial
+              review_status: good
+              review_notes:
+              - 泵送动作完整。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-__init__:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: __init__
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chain:
+                  type: string
+                address:
+                  type: string
+                  default: 0
+                name:
+                  type: string
+                  default: Pump 11
+        goal_default:
+          address: 0
+          name: Pump 11
+        handles: {}
+      auto-__repr__:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: __repr__
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bytes:
+                  type: string
+                  default: 5
+        goal_default:
+          bytes: 5
+        handles: {}
+      auto-setdiameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setdiameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                diameter:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setflowrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setflowrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                flowrate:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-infuse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: infuse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-withdraw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: withdraw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-settargetvolume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: settargetvolume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                targetvolume:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-waituntiltarget:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waituntiltarget
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: tomwphillips/pumpy
+    source_file: pumpy.py
+    candidate_class: Pump
+    communication: RS-232 pyserial
+  manufacturer: Harvard Apparatus
+  model:
+    name: Pump 11, Pump 11 Plus, PHD2000
+    type: device
+  name: pumpy
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

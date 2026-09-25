@@ -1,0 +1,10 @@
+repo: jdhuang-csm/pygamry
+repo_url: https://github.com/jdhuang-csm/pygamry
+registry_id: community_missing_jdhuang_csm_pygamry
+review_status: pending_review
+review_notes: 尚未完成人工仪器级复核。
+selected_file: pygamry/dtaq/readz.py
+selected_class: DtaqReadZ
+download_dir: /Users/sml/work/Uni-Lab-OS/new/jdhuang-csm__pygamry
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_jdhuang_csm_pygamry.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_jdhuang_csm_pygamry/startup.json

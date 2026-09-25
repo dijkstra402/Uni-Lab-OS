@@ -1321,3 +1321,10 @@ class Mock_QWG(QuTech_AWG_Module):
 
     def close(self):  # prevent calling IPInstrument:close()
         pass
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(QuTech_AWG_Module)
+except Exception:
+    pass

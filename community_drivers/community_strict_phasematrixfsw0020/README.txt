@@ -1,0 +1,12 @@
+repo: instrumentkit/InstrumentKit
+repo_url: https://github.com/instrumentkit/InstrumentKit
+source_url: https://github.com/instrumentkit/InstrumentKit/blob/main/src/instruments/phasematrix/phasematrix_fsw0020.py
+registry_id: community_strict_phasematrixfsw0020
+source_file: src/instruments/phasematrix/phasematrix_fsw0020.py
+class_name: PhaseMatrixFSW0020
+manufacturer: phasematrix
+model: PhaseMatrixFSW0020
+tag: 表征设备
+confidence: 0.8
+quality_score: 0.94
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_phasematrixfsw0020.yaml

@@ -1,0 +1,278 @@
+community.ba.mp285:
+  name: MP285
+  category:
+  - 机械臂
+  class:
+    module: unilabos.devices.custom.mp285:MP285
+    type: python
+    status_types:
+      current_position: String
+      controller_status: String
+    action_value_mappings:
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                response_num:
+                  type: string
+        goal_default:
+          response_num: 1
+        handles: {}
+      auto-read_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                idx:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-connect_to_serial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect_to_serial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect_from_serial:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect_from_serial
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_to_specified_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to_specified_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x_pos:
+                  type: number
+                y_pos:
+                  type: number
+                z_pos:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-set_resolution_and_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_resolution_and_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: integer
+                resolution:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-interrupt_move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: interrupt_move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_absolute_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_absolute_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-refresh_display:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: refresh_display
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_controller:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_controller
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-convert_microsteps_to_microns:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: convert_microsteps_to_microns
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                microsteps:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-convert_microns_to_microsteps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: convert_microns_to_microsteps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                microns:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_current_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_controller_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_controller_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: MP285 设备驱动，社区驱动 - 自动集成自 mp285
+  device_params:
+    品牌: 社区开源
+    型号: MP285
+    设备类型: 机械臂
+    来源仓库: mp285
+    驱动类: MP285
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        com_port:
+          type: string
+          default: null
+        baud_rate:
+          type: integer
+          default: null
+        timeout:
+          type: string
+          default: 0.25
+  manufacturer: Sutter Instrument
+  model:
+    name: MP285
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

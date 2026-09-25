@@ -1,0 +1,14 @@
+row_index: 420
+registry_id: community_instrument_mir_mir100
+repo: dfki-ric/mir_robot
+repo_url: https://github.com/dfki-ric/mir_robot
+brand: MiR
+model: MiR100
+device_type_cn: 自主移动机器人
+device_type_en: AGV
+source_framework: mir_robot
+tag_id: 4360
+tag_name: AGV
+tag_name_en: AGV
+language: Python
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_instrument_mir_mir100.yaml

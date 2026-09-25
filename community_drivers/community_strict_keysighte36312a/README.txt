@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/keysight/keysightE36312A.py
+registry_id: community_strict_keysighte36312a
+source_file: pymeasure/instruments/keysight/keysightE36312A.py
+class_name: KeysightE36312A
+manufacturer: keysight
+model: KeysightE36312A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_keysighte36312a.yaml

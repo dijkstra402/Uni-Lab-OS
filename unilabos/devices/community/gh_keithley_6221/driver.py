@@ -676,3 +676,10 @@ class Keithley6221(KeithleyBuffer, SCPIMixin, Instrument):
         """,
         cast=int,
     )
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley6221)
+except Exception:
+    pass

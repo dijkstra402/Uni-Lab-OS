@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/cryomagnetics/_cryomagnetics4g.py
+registry_id: community_strict_cryomagneticsmodel4g
+source_file: src/qcodes/instrument_drivers/cryomagnetics/_cryomagnetics4g.py
+class_name: CryomagneticsModel4G
+manufacturer: cryomagnetics
+model: CryomagneticsModel4G
+tag: 表征设备
+confidence: 0.75
+quality_score: 0.89
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_cryomagneticsmodel4g.yaml

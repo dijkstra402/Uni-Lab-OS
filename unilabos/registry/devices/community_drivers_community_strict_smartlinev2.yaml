@@ -1,0 +1,401 @@
+community_strict_smartlinev2:
+  class:
+    module: community_drivers.community_strict_smartlinev2.driver:CommunityStrictSmartlinev2
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/pymeasure__pymeasure
+          source_file:
+            type: string
+            default: pymeasure/instruments/thyracont/smartline_v2.py
+          class_name:
+            type: string
+            default: SmartlineV2
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - write
+            - write_composition
+            - ask
+            - ask_manually
+            - read
+            - check_set_errors
+            - set_high
+            - set_low
+            - get_sensor_transition
+            - set_default_sensor_transition
+            - set_continuous_sensor_transition
+            - set_direct_sensor_transition
+            - next_error
+            - write_binary_values
+            - read_binary_values
+            - check_errors
+          metadata:
+            type: object
+            default:
+              repo: pymeasure/pymeasure
+              repo_url: https://github.com/pymeasure/pymeasure
+              source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/thyracont/smartline_v2.py
+              source_file: pymeasure/instruments/thyracont/smartline_v2.py
+              class_name: SmartlineV2
+              manufacturer_guess: ''
+              manufacturer_resolved: thyracont
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.75
+              quality_score: 0.89
+              code_evidence: 'L194: class SmartlineV2(Instrument):'
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001 {}
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-write:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-write_composition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_composition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                accessCode:
+                  type: string
+                command:
+                  type: string
+                data:
+                  type: string
+                  default: ''
+        goal_default:
+          data: ''
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command_message:
+                  type: string
+                query_delay:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ask_manually:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask_manually
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                accessCode:
+                  type: string
+                command:
+                  type: string
+                data:
+                  type: string
+                  default: ''
+                query_delay:
+                  type: string
+        goal_default:
+          data: ''
+        handles: {}
+      auto-read:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_set_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_set_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_high:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_high
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                high:
+                  type: string
+                  default: ''
+        goal_default:
+          high: ''
+        handles: {}
+      auto-set_low:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_low
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                low:
+                  type: string
+                  default: ''
+        goal_default:
+          low: ''
+        handles: {}
+      auto-get_sensor_transition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sensor_transition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_default_sensor_transition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_default_sensor_transition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_continuous_sensor_transition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_continuous_sensor_transition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                low:
+                  type: string
+                high:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_direct_sensor_transition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_direct_sensor_transition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                transition_point:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-next_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: next_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                values:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: SmartlineV2驱动（thyracont），支持write/write_composition/ask/ask_manually/read等16个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: pymeasure/pymeasure
+    source_file: pymeasure/instruments/thyracont/smartline_v2.py
+    candidate_class: SmartlineV2
+    quality_score: 0.89
+    confidence: 0.75
+    quality_status: usable
+    操作数: 16
+  manufacturer: Thyracont
+  model:
+    name: SmartlineV2
+    type: device
+  name: thyracont SmartlineV2
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,228 @@
+community_instrument_chemspeed_cst_api_chemspeed_agent__community_instrument_chemspeed_cst_api_chemspeed_agent:
+  class:
+    module: unilabos.devices.community.community_instrument_chemspeed_cst_api_chemspeed_agent.driver:TanimotoKernel
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/ignaczgerg__chemspeed-agent
+          source_file:
+            type: string
+            default: gp_api.py
+          class_name:
+            type: string
+            default: TanimotoKernel
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - K
+            - Kdiag
+            - update_gradients_full
+            - gradients_X
+            - to_dict
+            - from_dict
+          metadata:
+            type: object
+            default:
+              repo: ignaczgerg/chemspeed-agent
+              repo_url: https://github.com/ignaczgerg/chemspeed-agent
+              source_file: gp_api.py
+              class_name: TanimotoKernel
+              brand: Chemspeed
+              model: CST-API (chemspeed-agent)
+              device_type_cn: 并行反应仪
+              device_type_en: Parallel Synthesizer
+              source_framework: 独立驱动
+              tag_id: '4385'
+              tag_name: 并行反应仪
+              tag_name_en: Parallel Reactor
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 86
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-K:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: K
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                X:
+                  type: string
+                X2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Kdiag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Kdiag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                X:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-update_gradients_full:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_gradients_full
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dL_dK:
+                  type: string
+                X:
+                  type: string
+                X2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-gradients_X:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gradients_X
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dL_dK:
+                  type: string
+                X:
+                  type: string
+                X2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-to_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: to_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-from_dict:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_dict
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                d:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: CST-API (chemspeed-agent) 驱动（Chemspeed），支持 K/Kdiag/update_gradients_full/gradients_X/to_dict
+    等 6 个操作。
+  category:
+  - 并行反应仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: ignaczgerg/chemspeed-agent
+    source_file: gp_api.py
+    candidate_class: TanimotoKernel
+    candidate_score: 86
+    quality_status: usable
+    操作数: 6
+  manufacturer: Chemspeed
+  model:
+    name: CST-API (chemspeed-agent)
+    type: device
+  name: Chemspeed CST-API (chemspeed-agent)
+  tags:
+  - 并行反应仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

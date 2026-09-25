@@ -1,0 +1,10 @@
+repo: cukelarter/Chemyx-Syringe-Pump
+repo_url: https://github.com/cukelarter/Chemyx-Syringe-Pump
+registry_id: community_missing_cukelarter_chemyx_syringe_pump
+review_status: good
+review_notes: 泵操作覆盖完整。
+selected_file: python_dist/core/connect.py
+selected_class: Connection
+download_dir: /Users/sml/work/Uni-Lab-OS/new/cukelarter__Chemyx-Syringe-Pump
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_cukelarter_chemyx_syringe_pump.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_cukelarter_chemyx_syringe_pump/startup.json

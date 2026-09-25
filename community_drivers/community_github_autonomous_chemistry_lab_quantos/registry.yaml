@@ -1,0 +1,256 @@
+community_github_autonomous_chemistry_lab_quantos:
+  class:
+    module: community_drivers.community_github_autonomous_chemistry_lab_quantos.driver:CommunityGithubAutonomousChemistryLabQuantos
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/autonomous-chemistry-lab_quantos
+          source_file:
+            type: string
+            default: mettler_toledo_quantos/mettler_toledo_quantos.py
+          class_name:
+            type: string
+            default: MettlerToledoDevice
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - close
+            - move_frontdoor_open
+            - move_frontdoor_close
+            - move_to
+            - unlock_dosing_pin
+            - lock_dosing_pin
+            - set_target_value_mg
+            - set_tolerance_value_pct
+            - start_dosing
+            - request_frontdoor_position
+            - request_autosampler_position
+            - quantos_test
+          metadata:
+            type: object
+            default:
+              repo: autonomous-chemistry-lab/quantos
+              repo_url: https://github.com/autonomous-chemistry-lab/quantos
+              unit_id: gh_mettler_toledo_quantos
+              source_file: mettler_toledo_quantos/mettler_toledo_quantos.py
+              candidate_score: 96
+              manufacturer: Mettler Toledo
+              model_name: Mettler Toledo Quantos
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_frontdoor_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_frontdoor_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_frontdoor_close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_frontdoor_close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_to:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unlock_dosing_pin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unlock_dosing_pin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-lock_dosing_pin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: lock_dosing_pin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_target_value_mg:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_target_value_mg
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_tolerance_value_pct:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_tolerance_value_pct
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_dosing:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_dosing
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-request_frontdoor_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: request_frontdoor_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-request_autosampler_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: request_autosampler_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-quantos_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: quantos_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'Mettler Toledo Quantos是自动化粉末分配系统，最低可分配1 mg粉末，支持LabX软件进行数据管理和法规合规。
+    GitHub驱动: https://github.com/autonomous-chemistry-lab/quantos'
+  category:
+  - community
+  device_params:
+    repo: autonomous-chemistry-lab/quantos
+    source_file: mettler_toledo_quantos/mettler_toledo_quantos.py
+    candidate_class: MettlerToledoDevice
+    communication: ''
+    photo_url: https://www.mt.com/dam/homepage2024/cn/cn-2026-usp-41-1251-mobile.png/_jcr_content/renditions/cq5dam.web.1280.1280.png
+    instrument_params: 'Min dispensing: 1 mg; Readability: 0.001-0.01 mg; Dosing accuracy:
+      ±2-5%; Range: 1 mg-5 g; Platform: XPR/XPE series; Software: LabX (21 CFR Part
+      11); Dosing heads: multiple types'
+    official_url: https://www.mt.com/dam/P5/labtec/Product_Brochures/Quantos_HPD/BR_Quantos_Powder_EN.pdf
+  manufacturer: Mettler Toledo
+  model:
+    name: Mettler Toledo Quantos
+    type: device
+  name: Mettler Toledo Quantos
+  tags:
+  - 电子天平
+  resource_type: device
+  icon: https://www.mt.com/dam/homepage2024/cn/cn-2026-usp-41-1251-mobile.png/_jcr_content/renditions/cq5dam.web.1280.1280.png
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Weighing
+  version: 0.1.0

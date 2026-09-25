@@ -1,0 +1,448 @@
+community_missing_cambiegroup_flowchem:
+  class:
+    module: community_drivers.community_missing_cambiegroup_flowchem.driver:CommunityMissingCambiegroupFlowchem
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/cambiegroup__flowchem
+          source_file:
+            type: string
+            default: src/flowchem/devices/mettlertoledo/icir.py
+          class_name:
+            type: string
+            default: IcIR
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - __init__
+            - initialize
+            - is_local
+            - ensure_version_is_supported
+            - is_iCIR_connected
+            - probe_info
+            - probe_status
+            - last_sample_time
+            - sample_count
+            - _normalize_template_name
+            - is_template_name_valid
+            - parse_probe_info
+            - _wavenumber_from_spectrum_node
+            - spectrum_from_node
+            - last_spectrum_treated
+            - last_spectrum_raw
+            - last_spectrum_background
+            - start_experiment
+            - stop_experiment
+            - wait_until_idle
+          metadata:
+            type: object
+            default:
+              repo: cambiegroup/flowchem
+              repo_url: https://github.com/cambiegroup/flowchem
+              source_file: src/flowchem/devices/mettlertoledo/icir.py
+              candidate_score: 104
+              candidate_reason: ''
+              manufacturers:
+              - Knauer
+              - Hamilton
+              - Huber
+              - Mettler Toledo
+              models:
+              - P2.1 HPLC泵, Knauer阀门
+              - ML600注射泵
+              - Huber恒温循环器
+              - FlowIR在线红外
+              tags: &id001
+              - 凝胶渗透色谱仪
+              notes:
+              - 'PyPI: flowchem / 同时支持Hamilton ML600/Huber恒温器/Mettler Toledo FlowIR'
+              - (同上仓库-另一设备)
+              - (同上仓库-恒温器驱动)
+              - (同上仓库-在线分析)
+              comm_protocols:
+              - pyserial + TCP/IP
+              - pyserial
+              - pyserial/TCP
+              review_status: pending_review
+              review_notes:
+              - 尚未完成人工仪器级复核。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-__init__:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: __init__
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                template:
+                  type: string
+                  default: ''
+                url:
+                  type: string
+                  default: ''
+                name:
+                  type: string
+                  default: ''
+        goal_default:
+          template: ''
+          url: ''
+          name: ''
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_local:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_local
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ensure_version_is_supported:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ensure_version_is_supported
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_iCIR_connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_iCIR_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-last_sample_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: last_sample_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sample_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sample_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-_normalize_template_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: _normalize_template_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                template_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-is_template_name_valid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_template_name_valid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                template_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-parse_probe_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse_probe_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                probe_info_reply:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-_wavenumber_from_spectrum_node:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: _wavenumber_from_spectrum_node
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                node:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-spectrum_from_node:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: spectrum_from_node
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                node:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-last_spectrum_treated:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: last_spectrum_treated
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-last_spectrum_raw:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: last_spectrum_raw
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-last_spectrum_background:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: last_spectrum_background
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                template:
+                  type: string
+                name:
+                  type: string
+                  default: Unnamed flowchem exp.
+        goal_default:
+          name: Unnamed flowchem exp.
+        handles: {}
+      auto-stop_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_until_idle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_until_idle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: cambiegroup/flowchem
+    source_file: src/flowchem/devices/mettlertoledo/icir.py
+    candidate_class: IcIR
+    communication: pyserial + TCP/IP / pyserial / pyserial/TCP
+  manufacturer: 多品牌
+  model:
+    name: P2.1 HPLC泵, Knauer阀门 / ML600注射泵 / Huber恒温循环器 / FlowIR在线红外
+    type: device
+  name: flowchem
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,120 @@
+community_missing_ente504_sartorius_balance:
+  class:
+    module: community_drivers.community_missing_ente504_sartorius_balance.driver:CommunityMissingEnte504SartoriusBalance
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/ente504__Sartorius_Balance
+          source_file:
+            type: string
+            default: t_publishData.py
+          class_name:
+            type: string
+            default: MqttPublisher
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - __init__
+            - return_Client_name
+            - return_mqtt_broker
+            - return_mqtt_port
+            - return_mqtt_username
+            - return_mqtt_passkey
+            - on_connect
+            - on_publish
+            - publish
+            - reinit
+            - __del__
+          metadata:
+            type: object
+            default:
+              repo: ente504/Sartorius_Balance
+              repo_url: https://github.com/ente504/Sartorius_Balance
+              source_file: t_publishData.py
+              candidate_score: 54
+              candidate_reason: ''
+              manufacturers:
+              - Sartorius
+              models:
+              - Sartorius天平(具体型号未明确)
+              tags: &id001
+              - 固体称量工作站
+              notes:
+              - 配合Detact系统使用
+              comm_protocols:
+              - 串口
+              review_status: broken
+              review_notes:
+              - 当前识别到的是 MQTT 发布辅助代码，不是天平驱动。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: stub
+  quality_reasons: "仅含 probe_import/get_metadata 占位"
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: ente504/Sartorius_Balance
+    source_file: t_publishData.py
+    candidate_class: MqttPublisher
+    communication: 串口
+  manufacturer: 赛多利斯
+  model:
+    name: Sartorius天平(具体型号未明确)
+    type: device
+  name: Sartorius_Balance
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

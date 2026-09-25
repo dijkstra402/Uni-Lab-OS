@@ -398,3 +398,10 @@ class DAQ_1DViewer_LecroyWaverunner(DAQ_Viewer_base):
 
 if __name__ == '__main__':
     main(__file__)
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(DAQ_1DViewer_LecroyWaverunner)
+except Exception:
+    pass

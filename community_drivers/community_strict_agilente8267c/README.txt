@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/agilent/Agilent_E8267C.py
+registry_id: community_strict_agilente8267c
+source_file: src/qcodes/instrument_drivers/agilent/Agilent_E8267C.py
+class_name: AgilentE8267C
+manufacturer: agilent
+model: AgilentE8267C
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilente8267c.yaml

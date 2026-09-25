@@ -1,0 +1,372 @@
+community_instrument_syrris_asia_pump:
+  class:
+    module: community_drivers.community_instrument_syrris_asia_pump.driver:CommunityInstrumentSyrrisAsiaPump
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/fungos34__auto_condition_screening
+          source_file:
+            type: string
+            default: protocol_power_supply.py
+          class_name:
+            type: string
+            default: BKPrecisionRS232
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - initialize_connection
+            - close_port
+            - send_encoded_command
+            - receive_one_byte
+            - verify_connected
+            - verify_device_active
+            - encode_command
+            - collect_response
+            - format_response
+            - verify_response
+            - interpret_response
+            - send_command
+            - send_commands
+            - start_monitoring
+            - stop_monitoring
+          metadata:
+            type: object
+            default:
+              repo: fungos34/auto_condition_screening
+              repo_url: https://github.com/fungos34/auto_condition_screening
+              source_file: protocol_power_supply.py
+              class_name: BKPrecisionRS232
+              brand: Syrris
+              model: Asia Pump
+              device_type_cn: 注射泵
+              device_type_en: Syringe Pump
+              source_framework: 独立驱动
+              tag_id: '4413'
+              tag_name: 注射泵
+              tag_name_en: Syringe Pump
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 150
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-initialize_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close_port:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_port
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_encoded_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_encoded_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                encoded_command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-receive_one_byte:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive_one_byte
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-verify_connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: verify_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-verify_device_active:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: verify_device_active
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-encode_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: encode_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                uncoded_command:
+                  type: string
+                _encoding:
+                  type: string
+                  default: ascii
+        goal_default:
+          _encoding: ascii
+        handles: {}
+      auto-collect_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: collect_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-format_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: format_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                response:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-verify_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: verify_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                initial_command:
+                  type: string
+                formatted_response:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-interpret_response:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: interpret_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                single_command:
+                  type: string
+                verified_response:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                single_command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_commands:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_commands
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_monitoring:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_monitoring
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                time_interval:
+                  type: integer
+                  default: 0.0
+        goal_default:
+          time_interval: 0.0
+        handles: {}
+      auto-stop_monitoring:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop_monitoring
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                delay:
+                  type: integer
+                  default: 0.0
+        goal_default:
+          delay: 0.0
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: Asia Pump 驱动（Syrris），支持 initialize_connection/close_port/send_encoded_command/receive_one_byte/verify_connected
+    等 15 个操作。
+  category:
+  - 注射泵
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: fungos34/auto_condition_screening
+    source_file: protocol_power_supply.py
+    candidate_class: BKPrecisionRS232
+    candidate_score: 150
+    quality_status: usable
+    操作数: 15
+  manufacturer: Syrris
+  model:
+    name: Asia Pump
+    type: device
+  name: Syrris Asia Pump
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes_contrib_drivers
+repo_url: https://github.com/QCoDeS/Qcodes_contrib_drivers
+source_url: https://github.com/QCoDeS/Qcodes_contrib_drivers/blob/main/src/qcodes_contrib_drivers/drivers/AimTTi/EL320P.py
+registry_id: community_strict_el320p
+source_file: src/qcodes_contrib_drivers/drivers/AimTTi/EL320P.py
+class_name: EL320P
+manufacturer: aimtti
+model: EL320P
+tag: 表征设备
+confidence: 0.8
+quality_score: 0.88
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_el320p.yaml

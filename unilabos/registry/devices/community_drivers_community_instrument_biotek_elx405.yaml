@@ -1,0 +1,230 @@
+community_instrument_biotek_elx405:
+  class:
+    module: community_drivers.community_instrument_biotek_elx405.driver:CommunityInstrumentBiotekElx405
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/stefangolas__Equipment_Integrations
+          source_file:
+            type: string
+            default: ELx405_Washer.py
+          class_name:
+            type: string
+            default: ELx405_Washer
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - initialize
+            - run_protocol
+            - load_protocol_from_file
+            - load_protocol_from_flash
+            - pause_protocol
+            - run_verify_manifold_test
+            - get_verify_manifold_status
+          metadata:
+            type: object
+            default:
+              repo: stefangolas/Equipment_Integrations
+              repo_url: https://github.com/stefangolas/Equipment_Integrations
+              source_file: ELx405_Washer.py
+              class_name: ELx405_Washer
+              brand: BioTek
+              model: ELx405
+              device_type_cn: 洗板机
+              device_type_en: Microplate Washer
+              source_framework: 专用驱动
+              tag_id: '4414'
+              tag_name: 洗板机
+              tag_name_en: Microplate Washer
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 156
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-run_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-load_protocol_from_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_protocol_from_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-load_protocol_from_flash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: load_protocol_from_flash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                protocol:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-pause_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pause_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_verify_manifold_test:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_verify_manifold_test
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_verify_manifold_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_verify_manifold_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: ELx405 驱动（BioTek），支持 initialize/run_protocol/load_protocol_from_file/load_protocol_from_flash/pause_protocol
+    等 7 个操作。
+  category:
+  - 洗板机
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: stefangolas/Equipment_Integrations
+    source_file: ELx405_Washer.py
+    candidate_class: ELx405_Washer
+    candidate_score: 156
+    quality_status: usable
+    操作数: 7
+  manufacturer: 安捷伦
+  model:
+    name: ELx405
+    type: device
+  name: BioTek ELx405
+  tags:
+  - 洗板机
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,730 @@
+community_instrument_bk_precision_891:
+  class:
+    module: community_drivers.community_instrument_bk_precision_891.driver:CommunityInstrumentBkPrecision891
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/mcimech__bk891
+          source_file:
+            type: string
+            default: bkp891/scpi891.py
+          class_name:
+            type: string
+            default: ScpiConnection
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - close
+            - sendcmd
+            - calibrate
+            - get_calibrate
+            - set_displayfont
+            - get_displayfont
+            - set_displaymode
+            - get_displaymode
+            - set_displaypage
+            - get_displaypage
+            - fetch
+            - set_format
+            - get_format
+            - set_frequency
+            - get_frequency
+            - set_aclevel
+            - get_aclevel
+            - set_function
+            - get_function
+            - set_speed
+            - get_speed
+            - set_measrange
+            - get_measrange
+            - set_brightness
+            - get_brightness
+            - set_beeper
+            - get_beeper
+            - set_date
+            - get_date
+            - set_time
+            - get_time
+            - get_error
+            - get_instrument
+            - clear_instrument
+            - reset
+            - save_configuration
+            - recall_configuration
+          metadata:
+            type: object
+            default:
+              repo: mcimech/bk891
+              repo_url: https://github.com/mcimech/bk891
+              source_file: bkp891/scpi891.py
+              class_name: ScpiConnection
+              brand: BK Precision
+              model: '891'
+              device_type_cn: LCR表
+              device_type_en: LCR Meter
+              source_framework: 电化学/热分析/天平
+              tag_id: '4365'
+              tag_name: 介电常数测定仪
+              tag_name_en: Dielectric Constant Meter
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 334
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sendcmd:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sendcmd
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-calibrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                open_cal:
+                  type: string
+                  default: true
+        goal_default:
+          open_cal: true
+        handles: {}
+      auto-get_calibrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_calibrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_displayfont:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_displayfont
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                large:
+                  type: string
+                  default: false
+        goal_default:
+          large: false
+        handles: {}
+      auto-get_displayfont:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_displayfont
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_displaymode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_displaymode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                scientific:
+                  type: string
+                  default: false
+        goal_default:
+          scientific: false
+        handles: {}
+      auto-get_displaymode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_displaymode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_displaypage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_displaypage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                page:
+                  type: string
+                  default: 0
+        goal_default:
+          page: 0
+        handles: {}
+      auto-get_displaypage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_displaypage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-fetch:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fetch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_format:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_format
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                binary:
+                  type: string
+                  default: true
+        goal_default:
+          binary: true
+        handles: {}
+      auto-get_format:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_format
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frequency:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_aclevel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_aclevel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                level:
+                  type: string
+                  default: 1.0
+        goal_default:
+          level: 1.0
+        handles: {}
+      auto-get_aclevel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_aclevel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_function:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_function
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                funct:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_function:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_function
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_measrange:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_measrange
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                range:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_measrange:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_measrange
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_brightness:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_brightness
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                level:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_brightness:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_brightness
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_beeper:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_beeper
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                'on':
+                  type: string
+                  default: true
+        goal_default:
+          'on': true
+        handles: {}
+      auto-get_beeper:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_beeper
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_date:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_date
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                isodate:
+                  type: string
+                  default: ''
+        goal_default:
+          isodate: ''
+        handles: {}
+      auto-get_date:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_date
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                isotime:
+                  type: string
+                  default: ''
+        goal_default:
+          isotime: ''
+        handles: {}
+      auto-get_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_instrument:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_instrument
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear_instrument:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear_instrument
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_configuration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_configuration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                number:
+                  type: string
+                  default: 1
+        goal_default:
+          number: 1
+        handles: {}
+      auto-recall_configuration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: recall_configuration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                number:
+                  type: string
+                  default: 1
+        goal_default:
+          number: 1
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 891 驱动（BK Precision），支持 close/sendcmd/calibrate/get_calibrate/set_displayfont
+    等 37 个操作。
+  category:
+  - 介电常数测定仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: mcimech/bk891
+    source_file: bkp891/scpi891.py
+    candidate_class: ScpiConnection
+    candidate_score: 334
+    quality_status: usable
+    操作数: 37
+  manufacturer: BK Precision
+  model:
+    name: '891'
+    type: device
+  name: BK Precision 891
+  tags:
+  - 介电常数测定仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

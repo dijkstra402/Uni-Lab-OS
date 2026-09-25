@@ -1,0 +1,380 @@
+community_instrument_universal_robots_ur5e:
+  class:
+    module: community_drivers.community_instrument_universal_robots_ur5e.driver:CommunityInstrumentUniversalRobotsUr5e
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/UniversalRobots__RTDE_Python_Client_Library
+          source_file:
+            type: string
+            default: rtde/rtde.py
+          class_name:
+            type: string
+            default: RTDE
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect
+            - disconnect
+            - is_connected
+            - get_controller_version
+            - negotiate_protocol_version
+            - send_input_setup
+            - send_output_setup
+            - send_start
+            - send_pause
+            - send
+            - receive
+            - receive_buffered
+            - send_message
+            - has_data
+            - skipped_package_count
+          metadata:
+            type: object
+            default:
+              repo: UniversalRobots/RTDE_Python_Client_Library
+              repo_url: https://github.com/UniversalRobots/RTDE_Python_Client_Library
+              source_file: rtde/rtde.py
+              class_name: RTDE
+              brand: Universal Robots
+              model: UR5e
+              device_type_cn: 协作机械臂
+              device_type_en: Collaborative Robot
+              source_framework: ur_rtde
+              tag_id: '4402'
+              tag_name: 机械臂
+              tag_name_en: Robotic Arm
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 170
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-is_connected:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_connected
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_controller_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_controller_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-negotiate_protocol_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: negotiate_protocol_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_input_setup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_input_setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                variables:
+                  type: string
+                types:
+                  type: string
+                  default: []
+        goal_default:
+          types: []
+        handles: {}
+      auto-send_output_setup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_output_setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                variables:
+                  type: string
+                types:
+                  type: string
+                  default: []
+                frequency:
+                  type: string
+                  default: 125
+        goal_default:
+          types: []
+          frequency: 125
+        handles: {}
+      auto-send_start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_pause:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                input_data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                binary:
+                  type: string
+                  default: false
+        goal_default:
+          binary: false
+        handles: {}
+      auto-receive_buffered:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive_buffered
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                binary:
+                  type: string
+                  default: false
+                buffer_limit:
+                  type: string
+        goal_default:
+          binary: false
+        handles: {}
+      auto-send_message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+                source:
+                  type: string
+                  default: Python Client
+                type:
+                  type: string
+        goal_default:
+          source: Python Client
+        handles: {}
+      auto-has_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: has_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-skipped_package_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: skipped_package_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: UR5e 驱动（Universal Robots），支持 connect/disconnect/is_connected/get_controller_version/negotiate_protocol_version
+    等 15 个操作。
+  category:
+  - 机械臂
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: UniversalRobots/RTDE_Python_Client_Library
+    source_file: rtde/rtde.py
+    candidate_class: RTDE
+    candidate_score: 170
+    quality_status: usable
+    操作数: 15
+  manufacturer: 优傲机器人
+  model:
+    name: UR5e
+    type: device
+  name: Universal Robots UR5e
+  tags:
+  - 机械臂
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/AimTTi/Aim_TTi_QL355_TP.py
+registry_id: community_strict_aimttiql355tp
+source_file: src/qcodes/instrument_drivers/AimTTi/Aim_TTi_QL355_TP.py
+class_name: AimTTiQL355TP
+manufacturer: aimtti
+model: AimTTiQL355TP
+tag: 表征设备
+confidence: 0.75
+quality_score: 0.89
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_aimttiql355tp.yaml

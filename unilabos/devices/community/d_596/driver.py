@@ -72,3 +72,10 @@ class RigolDP932E(VisaInstrument):
     def measure_power(self, channel: int) -> float:
         """Measures the power at the output terminal of the specified channel."""
         return float(self.ask(f':MEASure:POWEr? CH{channel}'))
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(RigolDP932E)
+except Exception:
+    pass

@@ -1,0 +1,116 @@
+community.ba.sealer:
+  name: Sealer
+  category:
+  - 封膜仪
+  class:
+    module: unilabos.devices.sealer.sealer:Sealer
+    type: python
+    status_types:
+      temperature: String
+    action_value_mappings:
+      auto-seal:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: seal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: integer
+                duration:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-open:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_temperature:
+        type: UniLabJsonCommandAsync
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temperature:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_temperature:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temperature
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: Sealer 设备驱动，社区驱动 - 自动集成自 sealer
+  device_params:
+    品牌: 社区开源
+    型号: Sealer
+    设备类型: 封膜仪
+    来源仓库: sealer
+    驱动类: Sealer
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        backend:
+          type: string
+          default: null
+  manufacturer: ''
+  model:
+    name: Sealer
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

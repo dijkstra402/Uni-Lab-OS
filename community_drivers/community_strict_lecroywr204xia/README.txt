@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/lecroy/lecroyWR204XIA.py
+registry_id: community_strict_lecroywr204xia
+source_file: ivi/lecroy/lecroyWR204XIA.py
+class_name: lecroyWR204XIA
+manufacturer: lecroy
+model: lecroyWR204XIA
+tag: 表征设备
+confidence: 0.75
+quality_score: 0.89
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_lecroywr204xia.yaml

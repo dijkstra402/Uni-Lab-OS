@@ -1,0 +1,409 @@
+community_strict_aq6375:
+  class:
+    module: community_drivers.community_strict_aq6375.driver:CommunityStrictAq6375
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/pymeasure__pymeasure
+          source_file:
+            type: string
+            default: pymeasure/instruments/yokogawa/aq6370series.py
+          class_name:
+            type: string
+            default: AQ6370Series
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - authenticate_ethernet
+            - trigger
+            - abort
+            - initiate_sweep
+            - wait_for_sweep_complete
+            - set_level_position_to_max
+            - copy_trace
+            - delete_trace
+            - get_xdata
+            - get_ydata
+            - execute_analysis
+            - get_analysis
+            - get_binary_data
+            - check_errors
+            - next_error
+            - write_binary_values
+            - read_binary_values
+          metadata:
+            type: object
+            default:
+              repo: pymeasure/pymeasure
+              repo_url: https://github.com/pymeasure/pymeasure
+              source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/yokogawa/aq6370series.py
+              source_file: pymeasure/instruments/yokogawa/aq6370series.py
+              class_name: AQ6370Series
+              manufacturer_guess: yokogawa
+              manufacturer_resolved: yokogawa
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.95
+              quality_score: 1.17
+              code_evidence: 'L457: class AQ6375(AQ6370Series):'
+              parse_status: class_reselected
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001 {}
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-authenticate_ethernet:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: authenticate_ethernet
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+                  default: ''
+        goal_default:
+          password: ''
+        handles: {}
+      auto-trigger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: trigger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-abort:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: abort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initiate_sweep:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initiate_sweep
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-wait_for_sweep_complete:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_sweep_complete
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                should_stop:
+                  type: string
+                timeout:
+                  type: string
+                  default: 3600
+                delay:
+                  type: string
+                  default: 0
+        goal_default:
+          timeout: 3600
+          delay: 0
+        handles: {}
+      auto-set_level_position_to_max:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_level_position_to_max
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-copy_trace:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: copy_trace
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                source:
+                  type: string
+                destination:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-delete_trace:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete_trace
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trace:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_xdata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_xdata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trace:
+                  type: string
+                  default: TRA
+        goal_default:
+          trace: TRA
+        handles: {}
+      auto-get_ydata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_ydata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trace:
+                  type: string
+                  default: TRA
+        goal_default:
+          trace: TRA
+        handles: {}
+      auto-execute_analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: execute_analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_binary_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_binary_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                bitness:
+                  type: string
+                  default: 64
+        goal_default:
+          bitness: 64
+        handles: {}
+      auto-check_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-next_error:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: next_error
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-write_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: write_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                values:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-read_binary_values:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_binary_values
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: AQ6375驱动（yokogawa），支持authenticate_ethernet/trigger/abort/initiate_sweep/wait_for_sweep_complete等17个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: pymeasure/pymeasure
+    source_file: pymeasure/instruments/yokogawa/aq6370series.py
+    candidate_class: AQ6370Series
+    quality_score: 1.17
+    confidence: 0.95
+    quality_status: usable
+    操作数: 17
+  manufacturer: yokogawa
+  model:
+    name: AQ6375
+    type: device
+  name: yokogawa AQ6375
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,43 @@
+from __future__ import annotations
+
+from unilabos.devices.generic.community_repo_loader import CommunityRepoLoader
+
+
+class CommunityStrictSqm160(CommunityRepoLoader):
+    DEFAULT_CONFIG = {'repo_root': '/Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/pymeasure__pymeasure', 'source_file': 'pymeasure/instruments/inficon/sqm160.py', 'class_name': 'SQM160', 'import_roots': [], 'candidate_methods': ['read', 'write', 'check_set_errors', 'reset_system_parameters', 'reset_thickness_rate', 'reset_time', 'next_error', 'write_binary_values', 'read_binary_values', 'check_errors'], 'action_targets': {}, 'metadata': {'repo': 'pymeasure/pymeasure', 'repo_url': 'https://github.com/pymeasure/pymeasure', 'source_url': 'https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/inficon/sqm160.py', 'confidence': 0.75, 'quality_score': 0.89, 'parse_status': 'ok', 'quality_status': 'usable', 'quality_reasons': [], 'action_targets': {}}}
+
+    def __init__(self, **kwargs):
+        merged = dict(self.DEFAULT_CONFIG)
+        merged.update(kwargs)
+        super().__init__(**merged)
+
+    def read(self, **kwargs):
+        return self.call('read', kwargs=kwargs)
+
+    def write(self, **kwargs):
+        return self.call('write', kwargs=kwargs)
+
+    def check_set_errors(self, **kwargs):
+        return self.call('check_set_errors', kwargs=kwargs)
+
+    def reset_system_parameters(self, **kwargs):
+        return self.call('reset_system_parameters', kwargs=kwargs)
+
+    def reset_thickness_rate(self, **kwargs):
+        return self.call('reset_thickness_rate', kwargs=kwargs)
+
+    def reset_time(self, **kwargs):
+        return self.call('reset_time', kwargs=kwargs)
+
+    def next_error(self, **kwargs):
+        return self.call('next_error', kwargs=kwargs)
+
+    def write_binary_values(self, **kwargs):
+        return self.call('write_binary_values', kwargs=kwargs)
+
+    def read_binary_values(self, **kwargs):
+        return self.call('read_binary_values', kwargs=kwargs)
+
+    def check_errors(self, **kwargs):
+        return self.call('check_errors', kwargs=kwargs)
+

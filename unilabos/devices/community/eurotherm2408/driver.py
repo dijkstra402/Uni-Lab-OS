@@ -1389,3 +1389,10 @@ if __name__ == "__main__":
     #{k:v for k,v in dumped.iteritems() if v!=dumped2[k]}
 
 __all__ = ["eurotherm2408"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(eurotherm2408)
+except Exception:
+    pass

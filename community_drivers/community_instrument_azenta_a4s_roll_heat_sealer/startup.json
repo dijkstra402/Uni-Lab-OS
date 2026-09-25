@@ -1,0 +1,155 @@
+{
+  "nodes": [
+    {
+      "id": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "name": "A4S Roll Heat Sealer",
+      "parent": null,
+      "children": [],
+      "type": "device",
+      "class": "community_instrument_azenta_a4s_roll_heat_sealer",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "repo_root": "/Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/AD-SDL__a4s_sealer_module",
+        "source_file": "src/a4s_sealer_driver.py",
+        "class_name": "A4S_SEALER_DRIVER",
+        "import_roots": [
+          "src"
+        ],
+        "candidate_methods": [
+          "connect_sealer",
+          "get_status",
+          "send_command",
+          "reset",
+          "open_gate",
+          "close_gate",
+          "set_temp",
+          "set_time",
+          "seal",
+          "config_robot"
+        ],
+        "action_targets": {},
+        "metadata": {
+          "repo": "AD-SDL/a4s_sealer_module",
+          "repo_url": "https://github.com/AD-SDL/a4s_sealer_module",
+          "brand": "Azenta",
+          "model": "A4S Roll Heat Sealer",
+          "device_type_cn": "封膜仪",
+          "device_type_en": "Plate Sealer",
+          "source_framework": "AD-SDL",
+          "tag_id": "4384",
+          "tag_name": "封膜仪",
+          "tag_name_en": "Plate Sealer",
+          "candidate_score": 158,
+          "parse_status": "ok",
+          "quality_status": "usable",
+          "quality_reasons": [],
+          "action_targets": {}
+        }
+      },
+      "data": {}
+    }
+  ],
+  "links": [],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "connect sealer",
+      "description": "connect sealer",
+      "device": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "action": "auto-connect_sealer",
+      "action_args": {}
+    },
+    {
+      "step": 2,
+      "name": "get status",
+      "description": "get status",
+      "device": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "action": "auto-get_status",
+      "action_args": {
+        "time_wait": 500
+      }
+    },
+    {
+      "step": 3,
+      "name": "send command",
+      "description": "send command",
+      "device": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "action": "auto-send_command",
+      "action_args": {
+        "success_msg": "",
+        "err_msg": "",
+        "timeout": 10
+      }
+    },
+    {
+      "step": 4,
+      "name": "reset",
+      "description": "reset",
+      "device": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "action": "auto-reset",
+      "action_args": {}
+    },
+    {
+      "step": 5,
+      "name": "open gate",
+      "description": "open gate",
+      "device": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "action": "auto-open_gate",
+      "action_args": {}
+    },
+    {
+      "step": 6,
+      "name": "close gate",
+      "description": "close gate",
+      "device": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "action": "auto-close_gate",
+      "action_args": {}
+    },
+    {
+      "step": 7,
+      "name": "set temp",
+      "description": "set temp",
+      "device": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "action": "auto-set_temp",
+      "action_args": {
+        "temp": 175
+      }
+    },
+    {
+      "step": 8,
+      "name": "set time",
+      "description": "set time",
+      "device": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "action": "auto-set_time",
+      "action_args": {
+        "time": 3.0
+      }
+    },
+    {
+      "step": 9,
+      "name": "seal",
+      "description": "seal",
+      "device": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "action": "auto-seal",
+      "action_args": {}
+    },
+    {
+      "step": 10,
+      "name": "config robot",
+      "description": "config robot",
+      "device": "test_community_instrument_azenta_a4s_roll_heat_sealer",
+      "action": "auto-config_robot",
+      "action_args": {}
+    }
+  ],
+  "workflow_meta": {
+    "name": "A4S Roll Heat Sealer 工作流",
+    "description": "A4S Roll Heat Sealer 自动生成工作流",
+    "instrument": "A4S Roll Heat Sealer",
+    "generated_by": "instrument-drivers-python"
+  }
+}

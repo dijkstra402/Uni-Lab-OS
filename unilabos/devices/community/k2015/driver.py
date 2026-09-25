@@ -115,3 +115,10 @@ class K2015:
     
 
 __all__ = ["K2015"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(K2015)
+except Exception:
+    pass

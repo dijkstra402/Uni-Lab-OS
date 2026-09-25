@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilentE4432B.py
+registry_id: community_strict_agilente4432b
+source_file: ivi/agilent/agilentE4432B.py
+class_name: agilentE4432B
+manufacturer: agilent
+model: agilentE4432B
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilente4432b.yaml

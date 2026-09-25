@@ -1,0 +1,126 @@
+community.ba.isotcp_connection:
+  name: ISOTCPConnection
+  category:
+  - 实验执行&合成设备
+  class:
+    module: unilabos.devices.universal.network.iso_tcp_connection:ISOTCPConnection
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timeout:
+                  type: number
+        goal_default:
+          timeout: 5.0
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-receive_data:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive_data
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: ISOTCPConnection 设备驱动，社区驱动 - 自动集成自 isotcp_connection
+  device_params:
+    品牌: 社区开源
+    型号: ISOTCPConnection
+    设备类型: 实验执行&合成设备
+    来源仓库: isotcp_connection
+    驱动类: ISOTCPConnection
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: null
+        port:
+          type: integer
+          default: 102
+        local_tsap:
+          type: integer
+          default: 256
+        remote_tsap:
+          type: integer
+          default: 258
+        tpdu_size:
+          type: string
+          default: 10
+  manufacturer: ''
+  model:
+    name: ISOTCPConnection
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

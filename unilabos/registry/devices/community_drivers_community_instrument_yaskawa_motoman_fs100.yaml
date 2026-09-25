@@ -1,0 +1,209 @@
+community_instrument_yaskawa_motoman_fs100:
+  class:
+    module: community_drivers.community_instrument_yaskawa_motoman_fs100.driver:CommunityInstrumentYaskawaMotomanFs100
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/hsinkoyu__fs100
+          source_file:
+            type: string
+            default: tests/test_fs100.py
+          class_name:
+            type: string
+            default: TestFS100Functions
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - setUpClass
+            - tearDownClass
+            - print_dict_result
+            - print_list_result
+            - test_0x00_file_control
+            - test_0x70_get_last_alarm
+            - test_0x71_read_alarm_info
+            - test_0x72_get_status
+            - test_0x73_read_executing_job_info
+            - test_0x74_read_axis_name
+            - test_0x75_read_position
+            - test_0x76_read_position_error
+            - test_0x77_read_torque
+            - test_0x78_io_data_rw
+            - test_0x79_register_data_rw
+            - test_0x7a_byte_variable_rw
+            - test_0x7b_integer_variable_rw
+            - test_0x7c_double_variable_rw
+            - test_0x7d_real_variable_rw
+            - test_0x7e_string_variable_rw
+            - test_0x7f_robot_position_variable_rw
+            - test_0x80_base_position_variable_rw
+            - test_0x81_external_axis_variable_rw
+            - test_0x82_reset_alarm
+            - test_0x85_show_text_on_pendant
+            - test_0x88_acquire_management_time
+            - test_0x89_acquire_system_info
+            - test_0x8a_mov
+            - test_0x8b_pmov
+          metadata:
+            type: object
+            default:
+              repo: hsinkoyu/fs100
+              repo_url: https://github.com/hsinkoyu/fs100
+              source_file: tests/test_fs100.py
+              class_name: TestFS100Functions
+              brand: Yaskawa
+              model: Motoman FS100
+              device_type_cn: 工业机械臂
+              device_type_en: Industrial Robot Arm
+              source_framework: 机器人/运动控制
+              tag_id: '4402'
+              tag_name: 机械臂
+              tag_name_en: Robotic Arm
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 282
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-setUpClass:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setUpClass
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-tearDownClass:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: tearDownClass
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_dict_result:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_dict_result
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                result:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-print_list_result:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_list_result
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                result:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: cleaned
+  quality_reasons: "删除 25 个 test_* 单元测试残留"
+  description: Motoman FS100 驱动（Yaskawa），支持 setUpClass/tearDownClass/print_dict_result/print_list_result/test_0x00_file_control
+    等 29 个操作。
+  category:
+  - 机械臂
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: hsinkoyu/fs100
+    source_file: tests/test_fs100.py
+    candidate_class: TestFS100Functions
+    candidate_score: 282
+    quality_status: usable
+    操作数: 29
+  manufacturer: 安川
+  model:
+    name: Motoman FS100
+    type: device
+  name: Yaskawa Motoman FS100
+  tags:
+  - 机械臂
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -201,3 +201,10 @@ class Keithley4200(Instrument):
         """Get the installed options (list of str).""",
         cast=str,
         )
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley4200)
+except Exception:
+    pass

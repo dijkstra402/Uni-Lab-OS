@@ -1,0 +1,96 @@
+community_github_traecp_rigaku_smartlab:
+  class:
+    module: community_drivers.community_github_traecp_rigaku_smartlab.driver:CommunityGithubTraecpRigakuSmartlab
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/Traecp_Rigaku-SmartLab
+          source_file:
+            type: string
+            default: SmartLab.py
+          class_name:
+            type: string
+            default: RasFile
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - parse
+          metadata:
+            type: object
+            default:
+              repo: traecp/rigaku-smartlab
+              repo_url: https://github.com/Traecp/Rigaku-SmartLab
+              unit_id: gh_rigaku_smartlab__ras
+              source_file: SmartLab.py
+              candidate_score: 16
+              manufacturer: Rigaku
+              model_name: Rigaku SmartLab (.RAS)
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-parse:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parse
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 'SmartLab Automated Multipurpose X‑ray Diffractometer (XRD) With Guidance
+    Software GitHub驱动: https://github.com/Traecp/Rigaku-SmartLab'
+  category:
+  - community
+  device_params:
+    repo: traecp/rigaku-smartlab
+    source_file: SmartLab.py
+    candidate_class: RasFile
+    communication: ''
+    photo_url: https://rigaku.com/hs-fs/hubfs/2024%20Rigaku%20Global%20Site/Products/X-ray%20diffraction%20and%20Scattering/XRD/SmartLab/SmartLab%20product%20photo%20with%20operator.jpg?width=800&height=610&name=SmartLab%20product%20photo%20with%20operator.jpg
+    instrument_params: 'Technique: X-ray diffraction (XRD); Benefit: Powder diffraction,
+      thin film, SAXS, in-plane scattering, operando measurements; Technology: Automated
+      high-resolution θ-θ multipurpose X-ray diffractometer (XRD) with expert system
+      Guidance software; Attributes: 3 kW sealed X-ray tubeCBO opticsD/teX Ultra 250
+      silicon strip detector; Options: PhotonMax high-flux 9 kW rotating anode X-ray
+      sourceIn-plane arm (5-axis goniometer)HyPix-3000 high energy resolution 2D HPAD
+      detectorJohansson Kα₁ optics; Computer: External PC, MS Windows OS, SmartLab
+      Studio II software; Dimensions: 1300 (W) x 1880 (H) x 1300'
+    official_url: https://www.rigaku.com/products/xrd/smartlab
+  manufacturer: Rigaku
+  model:
+    name: Rigaku SmartLab (.RAS)
+    type: device
+  name: Rigaku SmartLab (.RAS)
+  tags:
+  - X射线衍射仪
+  resource_type: device
+  icon: https://rigaku.com/hs-fs/hubfs/2024%20Rigaku%20Global%20Site/Products/X-ray%20diffraction%20and%20Scattering/XRD/SmartLab/SmartLab%20product%20photo%20with%20operator.jpg?width=800&height=610&name=SmartLab%20product%20photo%20with%20operator.jpg
+  scene:
+    domain: Materials
+    scene_name: Characterization
+    step: XRD
+  version: 0.1.0

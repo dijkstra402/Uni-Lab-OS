@@ -1,0 +1,140 @@
+community_instrument_pfeiffer_tpg_256a_261_262:
+  class:
+    module: community_drivers.community_instrument_pfeiffer_tpg_256a_261_262.driver:CommunityInstrumentPfeifferTpg256a261262
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/electronsandstuff__py-pfeiffer-vacuum-protocol
+          source_file:
+            type: string
+            default: tests/test_mock.py
+          class_name:
+            type: string
+            default: TestPPT100
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - test_nonascii
+            - test_no_cr
+            - test_no_def
+            - test_no_device
+            - test_bad_cs
+            - test_actual_err_none
+            - test_actual_err_trans
+            - test_actual_err_mem
+            - test_software_vers
+            - test_component_name
+            - test_pressure_in
+            - test_pressure_setpoint
+            - test_pressure_setpoint_range
+            - test_pirani_correction_write
+            - test_pirani_correction_read
+            - test_wrong_datalen_read
+            - test_wrong_datalen_write
+            - test_wrong_data_read
+            - test_wrong_data_write
+          metadata:
+            type: object
+            default:
+              repo: electronsandstuff/py-pfeiffer-vacuum-protocol
+              repo_url: https://github.com/electronsandstuff/py-pfeiffer-vacuum-protocol
+              source_file: tests/test_mock.py
+              class_name: TestPPT100
+              brand: Pfeiffer
+              model: TPG 256A/261/262
+              device_type_cn: 蒸镀仪
+              device_type_en: Evaporation Coater
+              source_framework: 专用驱动
+              tag_id: '4449'
+              tag_name: 蒸镀仪
+              tag_name_en: Evaporation Coater
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 182
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: cleaned
+  quality_reasons: "删除 19 个 test_* 单元测试残留"
+  description: TPG 256A/261/262 驱动（Pfeiffer），支持 test_nonascii/test_no_cr/test_no_def/test_no_device/test_bad_cs
+    等 19 个操作。
+  category:
+  - 蒸镀仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: electronsandstuff/py-pfeiffer-vacuum-protocol
+    source_file: tests/test_mock.py
+    candidate_class: TestPPT100
+    candidate_score: 182
+    quality_status: usable
+    操作数: 19
+  manufacturer: Pfeiffer
+  model:
+    name: TPG 256A/261/262
+    type: device
+  name: Pfeiffer TPG 256A/261/262
+  tags:
+  - 蒸镀仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

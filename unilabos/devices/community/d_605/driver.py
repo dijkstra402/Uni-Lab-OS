@@ -372,3 +372,10 @@ class RohdeSchwarz_SMR40(VisaInstrument):
         """
         log.debug(__name__ + ' : setting to the external trigger mode')
         self.write('TRIG:PULS:SOUR EXT_TRIG')
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(RohdeSchwarz_SMR40)
+except Exception:
+    pass

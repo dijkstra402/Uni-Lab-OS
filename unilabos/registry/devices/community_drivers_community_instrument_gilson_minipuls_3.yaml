@@ -1,0 +1,283 @@
+community_instrument_gilson_minipuls_3:
+  class:
+    module: community_drivers.community_instrument_gilson_minipuls_3.driver:CommunityInstrumentGilsonMinipuls3
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/qiyaolin__Minipuls3
+          source_file:
+            type: string
+            default: debugv2.py
+          class_name:
+            type: string
+            default: MinipulsController
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect
+            - disconnect
+            - send_buffered_command
+            - set_command_interval
+            - set_remote_mode
+            - set_keypad_mode
+            - start_forward
+            - start_backward
+            - stop
+            - set_speed
+          metadata:
+            type: object
+            default:
+              repo: qiyaolin/Minipuls3
+              repo_url: https://github.com/qiyaolin/Minipuls3
+              source_file: debugv2.py
+              class_name: MinipulsController
+              brand: Gilson
+              model: Minipuls 3
+              device_type_cn: 蠕动泵
+              device_type_en: Peristaltic Pump
+              source_framework: 专用驱动
+              tag_id: '4451'
+              tag_name: 蠕动泵
+              tag_name_en: Peristaltic Pump
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 130
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_buffered_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_buffered_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+                wait:
+                  type: string
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-set_command_interval:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_command_interval
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                interval:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_remote_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_remote_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_keypad_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_keypad_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_forward:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_forward
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start_backward:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_backward
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rpm:
+                  type: string
+                wait:
+                  type: string
+                  default: true
+        goal_default:
+          wait: true
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: Minipuls 3 驱动（Gilson），支持 connect/disconnect/send_buffered_command/set_command_interval/set_remote_mode
+    等 10 个操作。
+  category:
+  - 蠕动泵
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: qiyaolin/Minipuls3
+    source_file: debugv2.py
+    candidate_class: MinipulsController
+    candidate_score: 130
+    quality_status: usable
+    操作数: 10
+  manufacturer: 吉尔森
+  model:
+    name: Minipuls 3
+    type: device
+  name: Gilson Minipuls 3
+  tags:
+  - 蠕动泵
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

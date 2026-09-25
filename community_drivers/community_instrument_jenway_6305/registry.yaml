@@ -1,0 +1,349 @@
+community_instrument_jenway_6305:
+  class:
+    module: community_drivers.community_instrument_jenway_6305.driver:CommunityInstrumentJenway6305
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/davidmam__UvSpec
+          source_file:
+            type: string
+            default: J6305.py
+          class_name:
+            type: string
+            default: Spectrometer
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - pause
+            - set_shutter
+            - printout
+            - transmission
+            - absorbance
+            - concentration
+            - voltage
+            - calibrate
+            - set_wavelength
+            - set_conc_factor
+            - scan
+            - luminosity
+            - scan_to_file
+          metadata:
+            type: object
+            default:
+              repo: davidmam/UvSpec
+              repo_url: https://github.com/davidmam/UvSpec
+              source_file: J6305.py
+              class_name: Spectrometer
+              brand: Jenway
+              model: '6305'
+              device_type_cn: UV-Vis分光光度计
+              device_type_en: UV-Vis Spectrophotometer
+              source_framework: 光谱分析
+              tag_id: '4439'
+              tag_name: 紫外-可见分光光谱仪
+              tag_name_en: UV-Vis Spectrophotometer
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 142
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-pause:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pausetime:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_shutter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_shutter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                isopen:
+                  type: string
+                  default: true
+        goal_default:
+          isopen: true
+        handles: {}
+      auto-printout:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: printout
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-transmission:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transmission
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-absorbance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: absorbance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-concentration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: concentration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                luminosity:
+                  type: string
+                  default: false
+        goal_default:
+          luminosity: false
+        handles: {}
+      auto-calibrate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: calibrate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                trans:
+                  type: string
+                  default: false
+        goal_default:
+          trans: false
+        handles: {}
+      auto-set_wavelength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_wavelength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wavelen:
+                  type: string
+                  default: 540
+        goal_default:
+          wavelen: 540
+        handles: {}
+      auto-set_conc_factor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_conc_factor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                factor:
+                  type: string
+                  default: 1
+        goal_default:
+          factor: 1
+        handles: {}
+      auto-scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                  default: 198
+                end:
+                  type: string
+                  default: 1000
+                interval:
+                  type: string
+                  default: 10
+        goal_default:
+          start: 198
+          end: 1000
+          interval: 10
+        handles: {}
+      auto-luminosity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: luminosity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-scan_to_file:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: scan_to_file
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 6305 驱动（Jenway），支持 pause/set_shutter/printout/transmission/absorbance
+    等 13 个操作。
+  category:
+  - 紫外-可见分光光谱仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: davidmam/UvSpec
+    source_file: J6305.py
+    candidate_class: Spectrometer
+    candidate_score: 142
+    quality_status: usable
+    操作数: 13
+  manufacturer: Jenway
+  model:
+    name: '6305'
+    type: device
+  name: Jenway 6305
+  tags:
+  - 紫外-可见分光光谱仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

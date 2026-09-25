@@ -201,3 +201,10 @@ class KeysightFieldFox(IEEE488, SCPI):
     # botfreq = freq - span/2
 
 __all__ = ["KeysightFieldFox"]
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(KeysightFieldFox)
+except Exception:
+    pass

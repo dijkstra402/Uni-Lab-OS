@@ -1,0 +1,87 @@
+mv_Model330TemperatureController:
+  class:
+    module: unilabos.devices.community.mv_Model330TemperatureController.driver:Model330TemperatureController
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-set_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_setpoint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_setpoint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_control_group:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_control_group
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      set_temperature:
+        type: UniLabJsonCommand
+        goal:
+          output: output
+          verbose: verbose
+        goal_default: {}
+        feedback: {}
+        result: {}
+        handles: {}
+        placeholder_keys: {}
+        schema:
+          title: set_temperature参数
+          type: object
+          description: set_temperature -> read_setpoint()
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: string
+                verbose:
+                  type: string
+              required:
+              - output
+              - verbose
+        _maps_to: read_setpoint
+  name: Model330TemperatureController
+  description: Model330TemperatureController (from NMGRL__pychron)
+  manufacturer: ''
+  version: 1.0.0
+  registry_type: device
+  tags:
+  - community
+  - model_variant
+  - semantic
+  model:
+    name: Model330TemperatureController
+    type: device
+  source_repo: NMGRL__pychron

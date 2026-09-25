@@ -1,0 +1,10 @@
+repo: cambiegroup/flowchem
+repo_url: https://github.com/cambiegroup/flowchem
+registry_id: community_missing_cambiegroup_flowchem
+review_status: pending_review
+review_notes: 尚未完成人工仪器级复核。
+selected_file: src/flowchem/devices/mettlertoledo/icir.py
+selected_class: IcIR
+download_dir: /Users/sml/work/Uni-Lab-OS/new/cambiegroup__flowchem
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_missing_cambiegroup_flowchem.yaml
+startup_json: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/community_drivers/community_missing_cambiegroup_flowchem/startup.json

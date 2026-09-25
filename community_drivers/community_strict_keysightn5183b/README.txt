@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes
+repo_url: https://github.com/QCoDeS/Qcodes
+source_url: https://github.com/QCoDeS/Qcodes/blob/main/src/qcodes/instrument_drivers/Keysight/Keysight_N5183B.py
+registry_id: community_strict_keysightn5183b
+source_file: src/qcodes/instrument_drivers/Keysight/Keysight_N5183B.py
+class_name: KeysightN5183B
+manufacturer: keysight
+model: KeysightN5183B
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_keysightn5183b.yaml

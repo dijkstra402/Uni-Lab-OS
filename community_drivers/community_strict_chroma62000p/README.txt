@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/chroma/chroma62000p.py
+registry_id: community_strict_chroma62000p
+source_file: ivi/chroma/chroma62000p.py
+class_name: chroma62000p
+manufacturer: chroma
+model: chroma62000p
+tag: 表征设备
+confidence: 0.8
+quality_score: 0.94
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_chroma62000p.yaml

@@ -1,0 +1,12 @@
+repo: QCoDeS/Qcodes_contrib_drivers
+repo_url: https://github.com/QCoDeS/Qcodes_contrib_drivers
+source_url: https://github.com/QCoDeS/Qcodes_contrib_drivers/blob/main/src/qcodes_contrib_drivers/drivers/Keysight/Keysight_M3201A.py
+registry_id: community_strict_keysightm3201a
+source_file: src/qcodes_contrib_drivers/drivers/Keysight/Keysight_M3201A.py
+class_name: Keysight_M3201A
+manufacturer: keysight
+model: Keysight_M3201A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.06
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_keysightm3201a.yaml

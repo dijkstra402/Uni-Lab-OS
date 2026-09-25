@@ -1,0 +1,668 @@
+community_instrument_tecan_evo:
+  class:
+    module: community_drivers.community_instrument_tecan_evo.driver:CommunityInstrumentTecanEvo
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/liquid_handling/backends/tecan/EVO_backend.py
+          class_name:
+            type: string
+            default: EVOBackend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - aspirate
+            - aspirate96
+            - can_pick_up_tip
+            - dispense
+            - dispense96
+            - drop_resource
+            - drop_tips
+            - drop_tips96
+            - get_channel_spacings
+            - move_channel_x
+            - move_channel_y
+            - move_channel_z
+            - move_picked_up_resource
+            - parse_response
+            - pick_up_resource
+            - pick_up_tips
+            - pick_up_tips96
+            - prepare_for_manual_channel_operation
+            - request_tip_presence
+            - set_deck
+            - set_heads
+            - setup
+            - setup_arm
+            - stop
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              source_file: pylabrobot/liquid_handling/backends/tecan/EVO_backend.py
+              class_name: EVOBackend
+              brand: Tecan
+              model: EVO
+              device_type_cn: 移液工作站
+              device_type_en: Liquid Handling Workstation
+              source_framework: PyLabRobot
+              tag_id: '4436'
+              tag_name: 移液工作站
+              tag_name_en: Liquid Handling Workstation
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 2334
+              action_targets: {}
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-aspirate:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: aspirate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: string
+              required:
+              - ops
+              - use_channels
+          required:
+          - goal
+        handles: {}
+      auto-aspirate96:
+        type: UniLabJsonCommand
+        goal:
+          aspiration: aspiration
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: aspirate96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                aspiration:
+                  type: string
+              required:
+              - aspiration
+          required:
+          - goal
+        handles: {}
+      auto-can_pick_up_tip:
+        type: UniLabJsonCommand
+        goal:
+          channel_idx: channel_idx
+          tip: tip
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: can_pick_up_tip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_idx:
+                  type: integer
+                tip:
+                  type: string
+              required:
+              - channel_idx
+              - tip
+          required:
+          - goal
+        handles: {}
+      auto-dispense:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: string
+              required:
+              - ops
+              - use_channels
+          required:
+          - goal
+        handles: {}
+      auto-dispense96:
+        type: UniLabJsonCommand
+        goal:
+          dispense: dispense
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: dispense96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dispense:
+                  type: string
+              required:
+              - dispense
+          required:
+          - goal
+        handles: {}
+      auto-drop_resource:
+        type: UniLabJsonCommand
+        goal:
+          drop: drop
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: drop_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                drop:
+                  type: string
+              required:
+              - drop
+          required:
+          - goal
+        handles: {}
+      auto-drop_tips:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: drop_tips
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: string
+              required:
+              - ops
+              - use_channels
+          required:
+          - goal
+        handles: {}
+      auto-drop_tips96:
+        type: UniLabJsonCommand
+        goal:
+          drop: drop
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: drop_tips96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                drop:
+                  type: string
+              required:
+              - drop
+          required:
+          - goal
+        handles: {}
+      auto-get_channel_spacings:
+        type: UniLabJsonCommand
+        goal:
+          use_channels: use_channels
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: get_channel_spacings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                use_channels:
+                  type: integer
+              required:
+              - use_channels
+          required:
+          - goal
+        handles: {}
+      auto-move_channel_x:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          x: x
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_channel_x
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                x:
+                  type: number
+              required:
+              - channel
+              - x
+          required:
+          - goal
+        handles: {}
+      auto-move_channel_y:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          y: y
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_channel_y
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                y:
+                  type: number
+              required:
+              - channel
+              - y
+          required:
+          - goal
+        handles: {}
+      auto-move_channel_z:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+          z: z
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_channel_z
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                z:
+                  type: number
+              required:
+              - channel
+              - z
+          required:
+          - goal
+        handles: {}
+      auto-move_picked_up_resource:
+        type: UniLabJsonCommand
+        goal:
+          move: move
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: move_picked_up_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                move:
+                  type: string
+              required:
+              - move
+          required:
+          - goal
+        handles: {}
+      auto-parse_response:
+        type: UniLabJsonCommand
+        goal:
+          resp: resp
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: parse_response
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                resp:
+                  type: string
+              required:
+              - resp
+          required:
+          - goal
+        handles: {}
+      auto-pick_up_resource:
+        type: UniLabJsonCommand
+        goal:
+          pickup: pickup
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_up_resource
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pickup:
+                  type: string
+              required:
+              - pickup
+          required:
+          - goal
+        handles: {}
+      auto-pick_up_tips:
+        type: UniLabJsonCommand
+        goal:
+          ops: ops
+          use_channels: use_channels
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_up_tips
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ops:
+                  type: string
+                use_channels:
+                  type: string
+              required:
+              - ops
+              - use_channels
+          required:
+          - goal
+        handles: {}
+      auto-pick_up_tips96:
+        type: UniLabJsonCommand
+        goal:
+          pickup: pickup
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pick_up_tips96
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pickup:
+                  type: string
+              required:
+              - pickup
+          required:
+          - goal
+        handles: {}
+      auto-prepare_for_manual_channel_operation:
+        type: UniLabJsonCommand
+        goal:
+          channel: channel
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: prepare_for_manual_channel_operation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+              required:
+              - channel
+          required:
+          - goal
+        handles: {}
+      auto-request_tip_presence:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_tip_presence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-set_deck:
+        type: UniLabJsonCommand
+        goal:
+          deck: deck
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_deck
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                deck:
+                  type: string
+              required:
+              - deck
+          required:
+          - goal
+        handles: {}
+      auto-set_heads:
+        type: UniLabJsonCommand
+        goal:
+          head: head
+          head96: head96
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_heads
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                head:
+                  type: integer
+                head96:
+                  type: integer
+              required:
+              - head
+              - head96
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-setup_arm:
+        type: UniLabJsonCommand
+        goal:
+          module: module
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup_arm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                module:
+                  type: string
+              required:
+              - module
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: EVO 驱动（帝肯），支持 aspirate/aspirate96/can_pick_up_tip/dispense/dispense96
+    等 24 个操作。
+  category:
+  - 移液工作站
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/liquid_handling/backends/tecan/EVO_backend.py
+    candidate_class: EVOBackend
+    candidate_score: 2334
+    quality_status: usable
+    操作数: 24
+  manufacturer: 帝肯
+  model:
+    name: EVO
+    type: device
+  name: Tecan EVO
+  tags:
+  - 移液工作站
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

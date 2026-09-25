@@ -1,0 +1,1234 @@
+community_instrument_biotek_el406:
+  class:
+    module: community_drivers.community_instrument_biotek_el406.driver:CommunityInstrumentBiotekEl406
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/PyLabRobot__pylabrobot
+          source_file:
+            type: string
+            default: pylabrobot/plate_washing/biotek/el406/backend.py
+          class_name:
+            type: string
+            default: ExperimentalBioTekEL406Backend
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default: &id001
+            - abort
+            - batch
+            - cleanup_after_protocol
+            - home_motors
+            - manifold_aspirate
+            - manifold_auto_clean
+            - manifold_dispense
+            - manifold_prime
+            - manifold_wash
+            - pause
+            - peristaltic_dispense
+            - peristaltic_prime
+            - peristaltic_purge
+            - request_instrument_settings
+            - request_peristaltic_installed
+            - request_sensor_enabled
+            - request_serial_number
+            - request_syringe_box_info
+            - request_syringe_manifold
+            - request_washer_manifold
+            - reset
+            - resume
+            - run_self_check
+            - set_washer_manifold
+            - setup
+            - shake
+            - start_batch
+            - stop
+            - syringe_dispense
+            - syringe_prime
+          metadata:
+            type: object
+            default:
+              repo: PyLabRobot/pylabrobot
+              repo_url: https://github.com/PyLabRobot/pylabrobot
+              brand: Agilent (BioTek)
+              model: EL406
+              device_type_cn: 板清洗机
+              device_type_en: Plate Washer
+              source_framework: PyLabRobot
+              source_file: pylabrobot/plate_washing/biotek/el406/backend.py
+              class_name: ExperimentalBioTekEL406Backend
+              candidate_methods: *id001
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-abort:
+        type: UniLabJsonCommand
+        goal:
+          step_type: step_type
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: abort
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                step_type:
+                  type: string
+              required:
+              - step_type
+          required:
+          - goal
+        handles: {}
+      auto-batch:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: batch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+              required:
+              - plate
+          required:
+          - goal
+        handles: {}
+      auto-cleanup_after_protocol:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: cleanup_after_protocol
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-home_motors:
+        type: UniLabJsonCommand
+        goal:
+          home_type: home_type
+          motor: motor
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: home_motors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                home_type:
+                  type: string
+                motor:
+                  type: string
+              required:
+              - home_type
+              - motor
+          required:
+          - goal
+        handles: {}
+      auto-manifold_aspirate:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          vacuum_filtration: vacuum_filtration
+          travel_rate: travel_rate
+          delay: delay
+          vacuum_time: vacuum_time
+          offset_x: offset_x
+          offset_y: offset_y
+          offset_z: offset_z
+          secondary_aspirate: secondary_aspirate
+          secondary_x: secondary_x
+          secondary_y: secondary_y
+          secondary_z: secondary_z
+        goal_default:
+          vacuum_filtration: false
+          travel_rate: '3'
+          delay: 0.0
+          vacuum_time: 30.0
+          offset_x: 0
+          offset_y: 0
+          secondary_aspirate: false
+          secondary_x: 0
+          secondary_y: 0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: manifold_aspirate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                vacuum_filtration:
+                  type: boolean
+                travel_rate:
+                  type: string
+                delay:
+                  type: number
+                vacuum_time:
+                  type: number
+                offset_x:
+                  type: integer
+                offset_y:
+                  type: integer
+                offset_z:
+                  type: integer
+                secondary_aspirate:
+                  type: boolean
+                secondary_x:
+                  type: integer
+                secondary_y:
+                  type: integer
+                secondary_z:
+                  type: integer
+              required:
+              - plate
+              - vacuum_filtration
+              - travel_rate
+              - delay
+              - vacuum_time
+              - offset_x
+              - offset_y
+              - offset_z
+              - secondary_aspirate
+              - secondary_x
+              - secondary_y
+              - secondary_z
+          required:
+          - goal
+        handles: {}
+      auto-manifold_auto_clean:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          buffer: buffer
+          duration: duration
+        goal_default:
+          buffer: A
+          duration: 60.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: manifold_auto_clean
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                buffer:
+                  type: string
+                duration:
+                  type: number
+              required:
+              - plate
+              - buffer
+              - duration
+          required:
+          - goal
+        handles: {}
+      auto-manifold_dispense:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          volume: volume
+          buffer: buffer
+          flow_rate: flow_rate
+          offset_x: offset_x
+          offset_y: offset_y
+          offset_z: offset_z
+          pre_dispense_volume: pre_dispense_volume
+          pre_dispense_flow_rate: pre_dispense_flow_rate
+          vacuum_delay_volume: vacuum_delay_volume
+        goal_default:
+          buffer: A
+          flow_rate: 7
+          offset_x: 0
+          offset_y: 0
+          pre_dispense_volume: 0.0
+          pre_dispense_flow_rate: 9
+          vacuum_delay_volume: 0.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: manifold_dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                volume:
+                  type: number
+                buffer:
+                  type: string
+                flow_rate:
+                  type: integer
+                offset_x:
+                  type: integer
+                offset_y:
+                  type: integer
+                offset_z:
+                  type: integer
+                pre_dispense_volume:
+                  type: number
+                pre_dispense_flow_rate:
+                  type: integer
+                vacuum_delay_volume:
+                  type: number
+              required:
+              - plate
+              - volume
+              - buffer
+              - flow_rate
+              - offset_x
+              - offset_y
+              - offset_z
+              - pre_dispense_volume
+              - pre_dispense_flow_rate
+              - vacuum_delay_volume
+          required:
+          - goal
+        handles: {}
+      auto-manifold_prime:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          volume: volume
+          buffer: buffer
+          flow_rate: flow_rate
+          low_flow_volume: low_flow_volume
+          submerge_duration: submerge_duration
+        goal_default:
+          buffer: A
+          flow_rate: 9
+          low_flow_volume: 5000.0
+          submerge_duration: 0.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: manifold_prime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                volume:
+                  type: number
+                buffer:
+                  type: string
+                flow_rate:
+                  type: integer
+                low_flow_volume:
+                  type: number
+                submerge_duration:
+                  type: number
+              required:
+              - plate
+              - volume
+              - buffer
+              - flow_rate
+              - low_flow_volume
+              - submerge_duration
+          required:
+          - goal
+        handles: {}
+      auto-manifold_wash:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          cycles: cycles
+          buffer: buffer
+          dispense_volume: dispense_volume
+          dispense_flow_rate: dispense_flow_rate
+          dispense_x: dispense_x
+          dispense_y: dispense_y
+          dispense_z: dispense_z
+          aspirate_travel_rate: aspirate_travel_rate
+          aspirate_z: aspirate_z
+          pre_dispense_flow_rate: pre_dispense_flow_rate
+          aspirate_delay: aspirate_delay
+          aspirate_x: aspirate_x
+          aspirate_y: aspirate_y
+          final_aspirate: final_aspirate
+          final_aspirate_z: final_aspirate_z
+          final_aspirate_x: final_aspirate_x
+          final_aspirate_y: final_aspirate_y
+          final_aspirate_delay: final_aspirate_delay
+          pre_dispense_volume: pre_dispense_volume
+          vacuum_delay_volume: vacuum_delay_volume
+          soak_duration: soak_duration
+          shake_duration: shake_duration
+          shake_intensity: shake_intensity
+          secondary_aspirate: secondary_aspirate
+          secondary_z: secondary_z
+          secondary_x: secondary_x
+          secondary_y: secondary_y
+          final_secondary_aspirate: final_secondary_aspirate
+          final_secondary_z: final_secondary_z
+          final_secondary_x: final_secondary_x
+          final_secondary_y: final_secondary_y
+          bottom_wash: bottom_wash
+          bottom_wash_volume: bottom_wash_volume
+          bottom_wash_flow_rate: bottom_wash_flow_rate
+          pre_dispense_between_cycles_volume: pre_dispense_between_cycles_volume
+          pre_dispense_between_cycles_flow_rate: pre_dispense_between_cycles_flow_rate
+          wash_format: wash_format
+          sectors: sectors
+          move_home_first: move_home_first
+        goal_default:
+          cycles: 3
+          buffer: A
+          dispense_flow_rate: 7
+          dispense_x: 0
+          dispense_y: 0
+          aspirate_travel_rate: 3
+          pre_dispense_flow_rate: 9
+          aspirate_delay: 0.0
+          aspirate_x: 0
+          aspirate_y: 0
+          final_aspirate: true
+          final_aspirate_x: 0
+          final_aspirate_y: 0
+          final_aspirate_delay: 0.0
+          pre_dispense_volume: 0.0
+          vacuum_delay_volume: 0.0
+          soak_duration: 0
+          shake_duration: 0
+          shake_intensity: Medium
+          secondary_aspirate: false
+          secondary_x: 0
+          secondary_y: 0
+          final_secondary_aspirate: false
+          final_secondary_x: 0
+          final_secondary_y: 0
+          bottom_wash: false
+          bottom_wash_volume: 0.0
+          bottom_wash_flow_rate: 5
+          pre_dispense_between_cycles_volume: 0.0
+          pre_dispense_between_cycles_flow_rate: 9
+          wash_format: Plate
+          move_home_first: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: manifold_wash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                cycles:
+                  type: integer
+                buffer:
+                  type: string
+                dispense_volume:
+                  type: number
+                dispense_flow_rate:
+                  type: integer
+                dispense_x:
+                  type: integer
+                dispense_y:
+                  type: integer
+                dispense_z:
+                  type: integer
+                aspirate_travel_rate:
+                  type: integer
+                aspirate_z:
+                  type: integer
+                pre_dispense_flow_rate:
+                  type: integer
+                aspirate_delay:
+                  type: number
+                aspirate_x:
+                  type: integer
+                aspirate_y:
+                  type: integer
+                final_aspirate:
+                  type: boolean
+                final_aspirate_z:
+                  type: integer
+                final_aspirate_x:
+                  type: integer
+                final_aspirate_y:
+                  type: integer
+                final_aspirate_delay:
+                  type: number
+                pre_dispense_volume:
+                  type: number
+                vacuum_delay_volume:
+                  type: number
+                soak_duration:
+                  type: integer
+                shake_duration:
+                  type: integer
+                shake_intensity:
+                  type: integer
+                secondary_aspirate:
+                  type: boolean
+                secondary_z:
+                  type: integer
+                secondary_x:
+                  type: integer
+                secondary_y:
+                  type: integer
+                final_secondary_aspirate:
+                  type: boolean
+                final_secondary_z:
+                  type: integer
+                final_secondary_x:
+                  type: integer
+                final_secondary_y:
+                  type: integer
+                bottom_wash:
+                  type: boolean
+                bottom_wash_volume:
+                  type: number
+                bottom_wash_flow_rate:
+                  type: integer
+                pre_dispense_between_cycles_volume:
+                  type: number
+                pre_dispense_between_cycles_flow_rate:
+                  type: integer
+                wash_format:
+                  type: string
+                sectors:
+                  type: integer
+                move_home_first:
+                  type: boolean
+              required:
+              - plate
+              - cycles
+              - buffer
+              - dispense_volume
+              - dispense_flow_rate
+              - dispense_x
+              - dispense_y
+              - dispense_z
+              - aspirate_travel_rate
+              - aspirate_z
+              - pre_dispense_flow_rate
+              - aspirate_delay
+              - aspirate_x
+              - aspirate_y
+              - final_aspirate
+              - final_aspirate_z
+              - final_aspirate_x
+              - final_aspirate_y
+              - final_aspirate_delay
+              - pre_dispense_volume
+              - vacuum_delay_volume
+              - soak_duration
+              - shake_duration
+              - shake_intensity
+              - secondary_aspirate
+              - secondary_z
+              - secondary_x
+              - secondary_y
+              - final_secondary_aspirate
+              - final_secondary_z
+              - final_secondary_x
+              - final_secondary_y
+              - bottom_wash
+              - bottom_wash_volume
+              - bottom_wash_flow_rate
+              - pre_dispense_between_cycles_volume
+              - pre_dispense_between_cycles_flow_rate
+              - wash_format
+              - sectors
+              - move_home_first
+          required:
+          - goal
+        handles: {}
+      auto-pause:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-peristaltic_dispense:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          volume: volume
+          flow_rate: flow_rate
+          offset_x: offset_x
+          offset_y: offset_y
+          offset_z: offset_z
+          pre_dispense_volume: pre_dispense_volume
+          num_pre_dispenses: num_pre_dispenses
+          cassette: cassette
+          columns: columns
+          rows: rows
+        goal_default:
+          flow_rate: High
+          offset_x: 0
+          offset_y: 0
+          pre_dispense_volume: 10.0
+          num_pre_dispenses: 2
+          cassette: Any
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: peristaltic_dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                volume:
+                  type: number
+                flow_rate:
+                  type: string
+                offset_x:
+                  type: integer
+                offset_y:
+                  type: integer
+                offset_z:
+                  type: integer
+                pre_dispense_volume:
+                  type: number
+                num_pre_dispenses:
+                  type: integer
+                cassette:
+                  type: string
+                columns:
+                  type: integer
+                rows:
+                  type: integer
+              required:
+              - plate
+              - volume
+              - flow_rate
+              - offset_x
+              - offset_y
+              - offset_z
+              - pre_dispense_volume
+              - num_pre_dispenses
+              - cassette
+              - columns
+              - rows
+          required:
+          - goal
+        handles: {}
+      auto-peristaltic_prime:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          volume: volume
+          duration: duration
+          flow_rate: flow_rate
+          cassette: cassette
+        goal_default:
+          flow_rate: High
+          cassette: Any
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: peristaltic_prime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                volume:
+                  type: number
+                duration:
+                  type: integer
+                flow_rate:
+                  type: string
+                cassette:
+                  type: string
+              required:
+              - plate
+              - volume
+              - duration
+              - flow_rate
+              - cassette
+          required:
+          - goal
+        handles: {}
+      auto-peristaltic_purge:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          volume: volume
+          duration: duration
+          flow_rate: flow_rate
+          cassette: cassette
+        goal_default:
+          flow_rate: High
+          cassette: Any
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: peristaltic_purge
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                volume:
+                  type: number
+                duration:
+                  type: integer
+                flow_rate:
+                  type: string
+                cassette:
+                  type: string
+              required:
+              - plate
+              - volume
+              - duration
+              - flow_rate
+              - cassette
+          required:
+          - goal
+        handles: {}
+      auto-request_instrument_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_instrument_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_peristaltic_installed:
+        type: UniLabJsonCommand
+        goal:
+          selector: selector
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_peristaltic_installed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                selector:
+                  type: integer
+              required:
+              - selector
+          required:
+          - goal
+        handles: {}
+      auto-request_sensor_enabled:
+        type: UniLabJsonCommand
+        goal:
+          sensor: sensor
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_sensor_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sensor:
+                  type: string
+              required:
+              - sensor
+          required:
+          - goal
+        handles: {}
+      auto-request_serial_number:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_serial_number
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_syringe_box_info:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_syringe_box_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_syringe_manifold:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_syringe_manifold
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-request_washer_manifold:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: request_washer_manifold
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-resume:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: resume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-run_self_check:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: run_self_check
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-set_washer_manifold:
+        type: UniLabJsonCommand
+        goal:
+          manifold: manifold
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: set_washer_manifold
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                manifold:
+                  type: string
+              required:
+              - manifold
+          required:
+          - goal
+        handles: {}
+      auto-setup:
+        type: UniLabJsonCommand
+        goal:
+          skip_reset: skip_reset
+        goal_default:
+          skip_reset: false
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: setup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                skip_reset:
+                  type: boolean
+              required:
+              - skip_reset
+          required:
+          - goal
+        handles: {}
+      auto-shake:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          duration: duration
+          intensity: intensity
+          soak_duration: soak_duration
+          move_home_first: move_home_first
+        goal_default:
+          duration: 0
+          intensity: Medium
+          soak_duration: 0
+          move_home_first: true
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: shake
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                duration:
+                  type: integer
+                intensity:
+                  type: integer
+                soak_duration:
+                  type: integer
+                move_home_first:
+                  type: boolean
+              required:
+              - plate
+              - duration
+              - intensity
+              - soak_duration
+              - move_home_first
+          required:
+          - goal
+        handles: {}
+      auto-start_batch:
+        type: UniLabJsonCommand
+        goal:
+          wire_byte: wire_byte
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: start_batch
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wire_byte:
+                  type: integer
+              required:
+              - wire_byte
+          required:
+          - goal
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        goal_default: {}
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+              required: []
+          required:
+          - goal
+        handles: {}
+      auto-syringe_dispense:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          volume: volume
+          syringe: syringe
+          flow_rate: flow_rate
+          offset_x: offset_x
+          offset_y: offset_y
+          offset_z: offset_z
+          pump_delay: pump_delay
+          pre_dispense: pre_dispense
+          pre_dispense_volume: pre_dispense_volume
+          num_pre_dispenses: num_pre_dispenses
+          columns: columns
+        goal_default:
+          syringe: A
+          flow_rate: 2
+          offset_x: 0
+          offset_y: 0
+          offset_z: 336
+          pump_delay: 0.0
+          pre_dispense: false
+          pre_dispense_volume: 0.0
+          num_pre_dispenses: 2
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: syringe_dispense
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                volume:
+                  type: number
+                syringe:
+                  type: string
+                flow_rate:
+                  type: integer
+                offset_x:
+                  type: integer
+                offset_y:
+                  type: integer
+                offset_z:
+                  type: integer
+                pump_delay:
+                  type: number
+                pre_dispense:
+                  type: boolean
+                pre_dispense_volume:
+                  type: number
+                num_pre_dispenses:
+                  type: integer
+                columns:
+                  type: integer
+              required:
+              - plate
+              - volume
+              - syringe
+              - flow_rate
+              - offset_x
+              - offset_y
+              - offset_z
+              - pump_delay
+              - pre_dispense
+              - pre_dispense_volume
+              - num_pre_dispenses
+              - columns
+          required:
+          - goal
+        handles: {}
+      auto-syringe_prime:
+        type: UniLabJsonCommand
+        goal:
+          plate: plate
+          syringe: syringe
+          volume: volume
+          flow_rate: flow_rate
+          refills: refills
+          pump_delay: pump_delay
+          submerge_tips: submerge_tips
+          submerge_duration: submerge_duration
+        goal_default:
+          syringe: A
+          volume: 5000.0
+          flow_rate: 5
+          refills: 2
+          pump_delay: 0.0
+          submerge_tips: true
+          submerge_duration: 0.0
+        feedback: {}
+        result:
+          success: success
+        schema:
+          title: syringe_prime
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                plate:
+                  type: string
+                syringe:
+                  type: string
+                volume:
+                  type: number
+                flow_rate:
+                  type: integer
+                refills:
+                  type: integer
+                pump_delay:
+                  type: number
+                submerge_tips:
+                  type: boolean
+                submerge_duration:
+                  type: number
+              required:
+              - plate
+              - syringe
+              - volume
+              - flow_rate
+              - refills
+              - pump_delay
+              - submerge_tips
+              - submerge_duration
+          required:
+          - goal
+        handles: {}
+  quality_status: clean
+  description: EL406 驱动（Agilent (BioTek)），支持 abort/batch/cleanup_after_protocol/home_motors/manifold_aspirate
+    等 30 个操作。
+  category:
+  - 板清洗机
+  config_info: []
+  handles: []
+  device_params:
+    repo: PyLabRobot/pylabrobot
+    source_file: pylabrobot/plate_washing/biotek/el406/backend.py
+    candidate_class: ExperimentalBioTekEL406Backend
+    操作数: 30
+  manufacturer: 安捷伦
+  model:
+    name: EL406
+    type: device
+  name: BioTek EL406
+  tags:
+  - 板清洗机
+  resource_type: device
+  version: 0.1.0

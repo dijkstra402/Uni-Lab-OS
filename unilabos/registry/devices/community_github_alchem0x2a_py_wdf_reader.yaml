@@ -1,0 +1,113 @@
+community_github_alchem0x2a_py_wdf_reader:
+  class:
+    module: community_drivers.community_github_alchem0x2a_py_wdf_reader.driver:CommunityGithubAlchem0x2aPyWdfReader
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /private/tmp/github_drivers_clone/alchem0x2A_py-wdf-reader
+          source_file:
+            type: string
+            default: renishawWiRE/wdfReader.py
+          class_name:
+            type: string
+            default: WDFReader
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - close
+            - print_info
+          metadata:
+            type: object
+            default:
+              repo: alchem0x2a/py-wdf-reader
+              repo_url: https://github.com/alchem0x2A/py-wdf-reader
+              unit_id: gh_renishaw_invia_qontor
+              source_file: renishawWiRE/wdfReader.py
+              candidate_score: 57
+              manufacturer: 雷尼绍
+              model_name: Renishaw inVia Qontor
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-print_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: print_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 'inVia provides flexibility and capability, without complexity. With
+    outstanding performance and reliability it is the ultimate research-grade confocal
+    Raman microscope GitHub驱动: https://github.com/alchem0x2A/py-wdf-reader'
+  category:
+  - community
+  device_params:
+    repo: alchem0x2a/py-wdf-reader
+    source_file: renishawWiRE/wdfReader.py
+    candidate_class: WDFReader
+    communication: ''
+    photo_url: https://www.renishaw.com/media/img/gen/c65adf82da034ad1b7c5c50be04f8ba9.jpg
+    instrument_params: 'Parameter: Value; Wavelength range: 200 nm to 2200 nm; Lasers
+      supported: From 229 nm to 1064 nm; Spectral resolution: 0.3 cm-1 (FWHM); Stability:
+      < ±0.01 cm-1; Low wavenumber cut-off: 5 cm-1; High wavenumber cut-off: 30,000
+      cm-1; Spatial resolution (lateral): 0.25 µm; Spatial resolution (axial): < 1
+      µm; Detector size (standard): 1024 pixel × 256 pixel; Detector operating temperature:
+      -70 °C; Rayleigh filters supported: Unlimited; Number of lasers supported: Unlimited;
+      Windows PC controlled: Latest specification Windows® PC; Supply voltage: 110
+      V AC to 240 V AC +10% -15%; Supply frequency: 50 H'
+    official_url: https://www.renishaw.com/en/invia-confocal-raman-microscope--6260
+  manufacturer: Renishaw
+  model:
+    name: Renishaw inVia Qontor
+    type: device
+  name: Renishaw inVia Qontor
+  tags:
+  - 拉曼光谱仪
+  resource_type: device
+  icon: https://www.renishaw.com/media/img/gen/c65adf82da034ad1b7c5c50be04f8ba9.jpg
+  scene:
+    domain: Chemistry
+    scene_name: Measurement
+    step: Spectroscopy
+  version: 0.1.0

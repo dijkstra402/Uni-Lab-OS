@@ -1,0 +1,862 @@
+community_instrument_ametek_versastat:
+  class:
+    module: community_drivers.community_instrument_ametek_versastat.driver:CommunityInstrumentAmetekVersastat
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/usnistgov__autoSDC-JOM
+          source_file:
+            type: string
+            default: autoSDC/asdc/sdc/potentiostat.py
+          class_name:
+            type: string
+            default: Potentiostat
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - check_overload
+            - read_buffers
+            - run
+            - connect
+            - disconnect
+            - set_cell
+            - choose_cell
+            - set_mode
+            - set_current_range
+            - set_dc_potential
+            - set_dc_current
+            - set_ac_frequency
+            - set_ac_amplitude
+            - set_ac_waveform
+            - update_status
+            - latest_potential
+            - latest_current
+            - overload_status
+            - booster_enabled
+            - cell_enabled
+            - autorange_current
+            - actions
+            - clear
+            - start
+            - stop
+            - skip
+            - sequence_running
+            - points_available
+            - last_open_circuit
+            - potential
+            - current
+            - elapsed_time
+            - applied_potential
+            - segment
+            - current_range_history
+            - frequency
+            - impedance_real
+            - impedance_imag
+            - hardcoded_open_circuit
+            - measure_open_circuit
+          metadata:
+            type: object
+            default:
+              repo: usnistgov/autoSDC-JOM
+              repo_url: https://github.com/usnistgov/autoSDC-JOM
+              source_file: autoSDC/asdc/sdc/potentiostat.py
+              class_name: Potentiostat
+              brand: Ametek
+              model: VersaSTAT
+              device_type_cn: 电化学工作站
+              device_type_en: Potentiostat
+              source_framework: 独立驱动
+              tag_id: '4425'
+              tag_name: 电化学工作站
+              tag_name_en: Electrochemical Workstation
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 378
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-check_overload:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_overload
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_buffers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_buffers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: integer
+                  default: 0
+                eis_mode:
+                  type: boolean
+                  default: false
+        goal_default:
+          start: 0
+          eis_mode: false
+        handles: {}
+      auto-run:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                experiment:
+                  type: string
+                clear:
+                  type: string
+                  default: true
+        goal_default:
+          clear: true
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_cell:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_cell
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+                  default: 'on'
+        goal_default:
+          status: 'on'
+        handles: {}
+      auto-choose_cell:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: choose_cell
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                choice:
+                  type: string
+                  default: external
+        goal_default:
+          choice: external
+        handles: {}
+      auto-set_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_current_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_current_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_range:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_dc_potential:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_dc_potential
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                potential:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_dc_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_dc_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_ac_frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ac_frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                frequency:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_ac_amplitude:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ac_amplitude
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                amplitude:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_ac_waveform:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_ac_waveform
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                  default: 'on'
+        goal_default:
+          mode: 'on'
+        handles: {}
+      auto-update_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-latest_potential:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: latest_potential
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-latest_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: latest_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-overload_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: overload_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                raise_exception:
+                  type: string
+                  default: false
+        goal_default:
+          raise_exception: false
+        handles: {}
+      auto-booster_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: booster_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-cell_enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: cell_enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-autorange_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: autorange_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                auto:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-actions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: actions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clear:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clear
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                max_wait_time:
+                  type: string
+                  default: 30
+                poll_interval:
+                  type: string
+                  default: 2
+        goal_default:
+          max_wait_time: 30
+          poll_interval: 2
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-skip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: skip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-sequence_running:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: sequence_running
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-points_available:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: points_available
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-last_open_circuit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: last_open_circuit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-potential:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: potential
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                  default: 0
+                num_points:
+                  type: string
+                as_list:
+                  type: string
+                  default: true
+        goal_default:
+          start: 0
+          as_list: true
+        handles: {}
+      auto-current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                  default: 0
+                num_points:
+                  type: string
+                as_list:
+                  type: string
+                  default: true
+        goal_default:
+          start: 0
+          as_list: true
+        handles: {}
+      auto-elapsed_time:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: elapsed_time
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                  default: 0
+                num_points:
+                  type: string
+                as_list:
+                  type: string
+                  default: true
+        goal_default:
+          start: 0
+          as_list: true
+        handles: {}
+      auto-applied_potential:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: applied_potential
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                  default: 0
+                num_points:
+                  type: string
+                as_list:
+                  type: string
+                  default: true
+        goal_default:
+          start: 0
+          as_list: true
+        handles: {}
+      auto-segment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: segment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                  default: 0
+                num_points:
+                  type: string
+                as_list:
+                  type: string
+                  default: true
+        goal_default:
+          start: 0
+          as_list: true
+        handles: {}
+      auto-current_range_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: current_range_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                  default: 0
+                num_points:
+                  type: string
+                as_list:
+                  type: string
+                  default: true
+        goal_default:
+          start: 0
+          as_list: true
+        handles: {}
+      auto-frequency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: frequency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                  default: 0
+                num_points:
+                  type: string
+                as_list:
+                  type: string
+                  default: true
+        goal_default:
+          start: 0
+          as_list: true
+        handles: {}
+      auto-impedance_real:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: impedance_real
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                  default: 0
+                num_points:
+                  type: string
+                as_list:
+                  type: string
+                  default: true
+        goal_default:
+          start: 0
+          as_list: true
+        handles: {}
+      auto-impedance_imag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: impedance_imag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start:
+                  type: string
+                  default: 0
+                num_points:
+                  type: string
+                as_list:
+                  type: string
+                  default: true
+        goal_default:
+          start: 0
+          as_list: true
+        handles: {}
+      auto-hardcoded_open_circuit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: hardcoded_open_circuit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-measure_open_circuit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_open_circuit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: VersaSTAT 驱动（Ametek），支持 check_overload/read_buffers/run/connect/disconnect
+    等 40 个操作。
+  category:
+  - 电化学工作站
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: usnistgov/autoSDC-JOM
+    source_file: autoSDC/asdc/sdc/potentiostat.py
+    candidate_class: Potentiostat
+    candidate_score: 378
+    quality_status: usable
+    操作数: 40
+  manufacturer: Ametek
+  model:
+    name: VersaSTAT
+    type: device
+  name: Ametek VersaSTAT
+  tags:
+  - 电化学工作站
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

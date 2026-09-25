@@ -1,0 +1,309 @@
+community_instrument_shimadzu_uvmini_1240:
+  class:
+    module: community_drivers.community_instrument_shimadzu_uvmini_1240.driver:CommunityInstrumentShimadzuUvmini1240
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/paulbnjl__PySerSpec
+          source_file:
+            type: string
+            default: PySerSpec/data_proc.py
+          class_name:
+            type: string
+            default: DataProcessing
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - data_spectrum
+            - data_time_range1
+            - data_time_range2
+            - data_time_range3
+            - data_time_range4
+            - data_value
+            - data_plot
+            - data_save_csv
+            - data_save_csv_mono
+          metadata:
+            type: object
+            default:
+              repo: paulbnjl/PySerSpec
+              repo_url: https://github.com/paulbnjl/PySerSpec
+              source_file: PySerSpec/data_proc.py
+              class_name: DataProcessing
+              brand: Shimadzu
+              model: UVmini-1240
+              device_type_cn: UV分光光度计
+              device_type_en: UV Spectrophotometer
+              source_framework: 色谱/质谱
+              tag_id: '4439'
+              tag_name: 紫外-可见分光光谱仪
+              tag_name_en: UV-Vis Spectrophotometer
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 110
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-data_spectrum:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_spectrum
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                DATA_output:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_time_range1:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_time_range1
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                DATA_output:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_time_range2:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_time_range2
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                DATA_output:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_time_range3:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_time_range3
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                DATA_output:
+                  type: string
+                TIME_VAL:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_time_range4:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_time_range4
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                DATA_output:
+                  type: string
+                TIME_VAL:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                DATA_output:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_plot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_plot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                title_x_axis:
+                  type: string
+                title_y_axis:
+                  type: string
+                val_ax:
+                  type: string
+                val_or:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_save_csv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_save_csv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                title_column1:
+                  type: string
+                title_column2:
+                  type: string
+                wv_or_time_val:
+                  type: string
+                abs_or_tr_or_en_val:
+                  type: string
+                gain_set:
+                  type: string
+                light_set:
+                  type: string
+                mode_set:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-data_save_csv_mono:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: data_save_csv_mono
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                title_column1:
+                  type: string
+                title_column2:
+                  type: string
+                wv_or_time_val:
+                  type: string
+                abs_or_tr_or_en_val:
+                  type: string
+                gain_set:
+                  type: string
+                light_set:
+                  type: string
+                mode_set:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: UVmini-1240 驱动（Shimadzu），支持 data_spectrum/data_time_range1/data_time_range2/data_time_range3/data_time_range4
+    等 9 个操作。
+  category:
+  - 紫外-可见分光光谱仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: paulbnjl/PySerSpec
+    source_file: PySerSpec/data_proc.py
+    candidate_class: DataProcessing
+    candidate_score: 110
+    quality_status: usable
+    操作数: 9
+  manufacturer: Shimadzu
+  model:
+    name: UVmini-1240
+    type: device
+  name: Shimadzu UVmini-1240
+  tags:
+  - 紫外-可见分光光谱仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,12 @@
+repo: mabuchilab/Instrumental
+repo_url: https://github.com/mabuchilab/Instrumental
+source_url: https://github.com/mabuchilab/Instrumental/blob/main/src/instrumental/drivers/motion/_kinesis/isc.py
+registry_id: community_strict_k10cr1
+source_file: src/instrumental/drivers/motion/_kinesis/isc.py
+class_name: K10CR1
+manufacturer: thorlabs
+model: K10CR1
+tag: 机械臂
+confidence: 0.95
+quality_score: 1.11
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_k10cr1.yaml

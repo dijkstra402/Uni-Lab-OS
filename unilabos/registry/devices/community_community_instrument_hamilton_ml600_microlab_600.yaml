@@ -1,0 +1,706 @@
+community_instrument_hamilton_ml600_microlab_600__community_instrument_hamilton_ml600_microlab_600:
+  class:
+    module: unilabos.devices.community.community_instrument_hamilton_ml600_microlab_600.driver:ML600
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/cambiegroup__flowchem
+          source_file:
+            type: string
+            default: src/flowchem/devices/hamilton/ml600.py
+          class_name:
+            type: string
+            default: ML600
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - inspect_valve_argument
+            - from_config
+            - get_return_steps
+            - set_return_steps
+            - initialize
+            - send_command_and_read_reply
+            - initialize_valve
+            - initialize_syringe
+            - get_current_volume
+            - set_to_volume
+            - pause
+            - resume
+            - stop
+            - get_pump_status
+            - get_valve_status
+            - system_status
+            - general_status_info
+            - wait_until_idle
+            - is_idle
+            - is_single_syringe
+            - version
+            - get_valve_angle
+            - set_valve_angle
+            - get_valve_position_by_name
+            - set_valve_position_by_name
+            - get_raw_position
+            - set_raw_position
+            - send_multiple_commands
+            - set_to_volume_dual_syringes
+            - repeated_task
+            - get_device_info
+          metadata:
+            type: object
+            default:
+              repo: cambiegroup/flowchem
+              repo_url: https://github.com/cambiegroup/flowchem
+              source_file: src/flowchem/devices/hamilton/ml600.py
+              class_name: ML600
+              brand: Hamilton
+              model: ML600 (Microlab 600)
+              device_type_cn: 注射泵
+              device_type_en: Syringe Pump
+              source_framework: 泵阀/液体处理
+              tag_id: '4413'
+              tag_name: 注射泵
+              tag_name_en: Syringe Pump
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 318
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-inspect_valve_argument:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: inspect_valve_argument
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                config:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-from_config:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_config
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_return_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_return_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_return_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_return_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                steps:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-initialize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                init_speed:
+                  type: string
+                  default: 200 sec / stroke
+        goal_default:
+          init_speed: 200 sec / stroke
+        handles: {}
+      auto-send_command_and_read_reply:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command_and_read_reply
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-initialize_valve:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_valve
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initialize_syringe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_syringe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                speed:
+                  type: string
+                pump:
+                  type: string
+                  default: ''
+        goal_default:
+          pump: ''
+        handles: {}
+      auto-get_current_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump:
+                  type: string
+                  default: ''
+        goal_default:
+          pump: ''
+        handles: {}
+      auto-set_to_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_to_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_volume:
+                  type: string
+                rate:
+                  type: string
+                pump:
+                  type: string
+                  default: ''
+        goal_default:
+          pump: ''
+        handles: {}
+      auto-pause:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pause
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump:
+                  type: string
+                  default: ''
+        goal_default:
+          pump: ''
+        handles: {}
+      auto-resume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: resume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump:
+                  type: string
+                  default: ''
+        goal_default:
+          pump: ''
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump:
+                  type: string
+                  default: ''
+        goal_default:
+          pump: ''
+        handles: {}
+      auto-get_pump_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pump_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump:
+                  type: string
+                  default: ''
+        goal_default:
+          pump: ''
+        handles: {}
+      auto-get_valve_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_valve_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve:
+                  type: string
+                  default: ''
+        goal_default:
+          valve: ''
+        handles: {}
+      auto-system_status:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: system_status
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                component:
+                  type: integer
+                  default: -1
+        goal_default:
+          component: -1
+        handles: {}
+      auto-general_status_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: general_status_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                component:
+                  type: integer
+                  default: -1
+        goal_default:
+          component: -1
+        handles: {}
+      auto-wait_until_idle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_until_idle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump:
+                  type: string
+                  default: ''
+        goal_default:
+          pump: ''
+        handles: {}
+      auto-is_idle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_idle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pump:
+                  type: string
+                  default: ''
+        goal_default:
+          pump: ''
+        handles: {}
+      auto-is_single_syringe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_single_syringe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_valve_angle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_valve_angle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve_code:
+                  type: string
+                  default: ''
+        goal_default:
+          valve_code: ''
+        handles: {}
+      auto-set_valve_angle:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_valve_angle
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_angle:
+                  type: integer
+                valve_code:
+                  type: string
+                  default: ''
+                wait_for_movement_end:
+                  type: boolean
+                  default: true
+        goal_default:
+          valve_code: ''
+          wait_for_movement_end: true
+        handles: {}
+      auto-get_valve_position_by_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_valve_position_by_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve:
+                  type: string
+                  default: ''
+        goal_default:
+          valve: ''
+        handles: {}
+      auto-set_valve_position_by_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_valve_position_by_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                valve:
+                  type: string
+                  default: ''
+                target_position:
+                  type: string
+                  default: ''
+                wait_for_movement_end:
+                  type: boolean
+                  default: true
+        goal_default:
+          valve: ''
+          target_position: ''
+          wait_for_movement_end: true
+        handles: {}
+      auto-get_raw_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_raw_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_component:
+                  type: string
+                  default: ''
+        goal_default:
+          target_component: ''
+        handles: {}
+      auto-set_raw_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_raw_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_position:
+                  type: string
+                wait_for_movement_end:
+                  type: boolean
+                  default: true
+                counter_clockwise:
+                  type: string
+                  default: false
+                target_component:
+                  type: string
+                  default: ''
+        goal_default:
+          wait_for_movement_end: true
+          counter_clockwise: false
+          target_component: ''
+        handles: {}
+      auto-send_multiple_commands:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_multiple_commands
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                list_of_commands:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_to_volume_dual_syringes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_to_volume_dual_syringes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_volume:
+                  type: string
+                rate_left:
+                  type: string
+                rate_right:
+                  type: string
+                valve_angles:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-repeated_task:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: repeated_task
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_device_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_device_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: ML600 (Microlab 600) 驱动（Hamilton），支持 inspect_valve_argument/from_config/get_return_steps/set_return_steps/initialize
+    等 31 个操作。
+  category:
+  - 注射泵
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: cambiegroup/flowchem
+    source_file: src/flowchem/devices/hamilton/ml600.py
+    candidate_class: ML600
+    candidate_score: 318
+    quality_status: usable
+    操作数: 31
+  manufacturer: Hamilton
+  model:
+    name: ML600 (Microlab 600)
+    type: device
+  name: Hamilton ML600 (Microlab 600)
+  tags:
+  - 注射泵
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

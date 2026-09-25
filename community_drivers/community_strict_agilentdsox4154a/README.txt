@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilentDSOX4154A.py
+registry_id: community_strict_agilentdsox4154a
+source_file: ivi/agilent/agilentDSOX4154A.py
+class_name: agilentDSOX4154A
+manufacturer: agilent
+model: agilentDSOX4154A
+tag: 表征设备
+confidence: 0.95
+quality_score: 1.17
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilentdsox4154a.yaml

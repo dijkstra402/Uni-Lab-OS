@@ -1,0 +1,634 @@
+community_instrument_palmsens_emstat_pico_asab:
+  class:
+    module: community_drivers.community_instrument_palmsens_emstat_pico_asab.driver:CommunityInstrumentPalmsensEmstatPicoAsab
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/Helge-Stein-Group__ASAB
+          source_file:
+            type: string
+            default: src/ASAB/utility/graph.py
+          class_name:
+            type: string
+            default: ''
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - generateGraph
+            - loadGraph
+            - getGraph
+            - findClosest
+            - improvePath
+            - findPathAB
+            - findPath
+            - checkConsistency
+            - appendEdge
+            - drawGraph
+            - getValveFromName
+            - getEdgedictFromNodelist
+            - getTotalQuantity
+            - getValveSettings
+            - pathIsValid
+            - getSystemStatus
+            - updateSystemStatus
+            - findCandidate
+            - getOpenEnds
+            - getDirectionality
+            - pathsCompatible
+          metadata:
+            type: object
+            default:
+              repo: Helge-Stein-Group/ASAB
+              repo_url: https://github.com/Helge-Stein-Group/ASAB
+              source_file: src/ASAB/utility/graph.py
+              class_name: ''
+              brand: PalmSens
+              model: EmStat Pico (ASAB)
+              device_type_cn: 电化学工作站
+              device_type_en: Potentiostat
+              source_framework: ASAB
+              tag_id: '4425'
+              tag_name: 电化学工作站
+              tag_name_en: Electrochemical Workstation
+              language: Python
+              parse_status: module_reselected
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 155
+              action_targets:
+                generateGraph: generateGraph
+                loadGraph: loadGraph
+                getGraph: getGraph
+                findClosest: findClosest
+                improvePath: improvePath
+                findPathAB: findPathAB
+                findPath: findPath
+                checkConsistency: checkConsistency
+                appendEdge: appendEdge
+                drawGraph: drawGraph
+                getValveFromName: getValveFromName
+                getEdgedictFromNodelist: getEdgedictFromNodelist
+                getTotalQuantity: getTotalQuantity
+                getValveSettings: getValveSettings
+                pathIsValid: pathIsValid
+                getSystemStatus: getSystemStatus
+                updateSystemStatus: updateSystemStatus
+                findCandidate: findCandidate
+                getOpenEnds: getOpenEnds
+                getDirectionality: getDirectionality
+                pathsCompatible: pathsCompatible
+          action_targets:
+            type: object
+            default:
+              generateGraph: generateGraph
+              loadGraph: loadGraph
+              getGraph: getGraph
+              findClosest: findClosest
+              improvePath: improvePath
+              findPathAB: findPathAB
+              findPath: findPath
+              checkConsistency: checkConsistency
+              appendEdge: appendEdge
+              drawGraph: drawGraph
+              getValveFromName: getValveFromName
+              getEdgedictFromNodelist: getEdgedictFromNodelist
+              getTotalQuantity: getTotalQuantity
+              getValveSettings: getValveSettings
+              pathIsValid: pathIsValid
+              getSystemStatus: getSystemStatus
+              updateSystemStatus: updateSystemStatus
+              findCandidate: findCandidate
+              getOpenEnds: getOpenEnds
+              getDirectionality: getDirectionality
+              pathsCompatible: pathsCompatible
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-generateGraph:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: generateGraph
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                show:
+                  type: boolean
+                  default: false
+                save:
+                  type: boolean
+                  default: true
+                path_nodes:
+                  type: string
+                path_edges:
+                  type: string
+                path_tubing:
+                  type: string
+                save_path:
+                  type: string
+        goal_default:
+          show: false
+          save: true
+        handles: {}
+      auto-loadGraph:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadGraph
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path_to_graphDict:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getGraph:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getGraph
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                graph:
+                  type: object
+                positions:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-findClosest:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: findClosest
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                node:
+                  type: string
+                candidates:
+                  type: array
+                graph:
+                  type: string
+                valvePositionDict:
+                  type: object
+                weight:
+                  type: string
+                  default: dead_volume
+                direction:
+                  type: string
+                  default: out
+        goal_default:
+          weight: dead_volume
+          direction: out
+        handles: {}
+      auto-improvePath:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: improvePath
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start_node:
+                  type: string
+                end_node:
+                  type: string
+                initial_path:
+                  type: array
+                valvePositionDict:
+                  type: object
+                graph:
+                  type: object
+                weight:
+                  type: string
+                  default: dead_volume
+        goal_default:
+          weight: dead_volume
+        handles: {}
+      auto-findPathAB:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: findPathAB
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start_node:
+                  type: string
+                end_node:
+                  type: string
+                valvePositionDict:
+                  type: object
+                graph:
+                  type: object
+                weight:
+                  type: string
+                  default: dead_volume
+        goal_default:
+          weight: dead_volume
+        handles: {}
+      auto-findPath:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: findPath
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                start_node:
+                  type: string
+                end_node:
+                  type: string
+                via:
+                  type: array
+                  default: []
+                valvePositionDict:
+                  type: object
+                graph:
+                  type: string
+                weight:
+                  type: string
+                  default: dead_volume
+        goal_default:
+          via: []
+          weight: dead_volume
+        handles: {}
+      auto-checkConsistency:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: checkConsistency
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path_nodes:
+                  type: string
+                path_edges:
+                  type: string
+                path_tubing:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-appendEdge:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: appendEdge
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                edgeLst:
+                  type: array
+                edgeName:
+                  type: string
+                edgeNodes:
+                  type: string
+                edgeProps:
+                  type: string
+                reverse:
+                  type: boolean
+                  default: false
+        goal_default:
+          reverse: false
+        handles: {}
+      auto-drawGraph:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: drawGraph
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                graph:
+                  type: object
+                positions:
+                  type: object
+                wlabels:
+                  type: boolean
+                  default: true
+                save:
+                  type: boolean
+                  default: true
+                show:
+                  type: boolean
+                  default: false
+        goal_default:
+          wlabels: true
+          save: true
+          show: false
+        handles: {}
+      auto-getValveFromName:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getValveFromName
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                node_name:
+                  type: string
+                valvePositionDict:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-getEdgedictFromNodelist:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getEdgedictFromNodelist
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nodelist:
+                  type: array
+                graph:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-getTotalQuantity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getTotalQuantity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nodelist:
+                  type: array
+                quantity:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getValveSettings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getValveSettings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nodelist:
+                  type: array
+                valvePositionDict:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-pathIsValid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pathIsValid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: array
+                valvePositionDict:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-getSystemStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSystemStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: array
+                  default: []
+                full:
+                  type: boolean
+                  default: true
+                graph:
+                  type: object
+        goal_default:
+          path: []
+          full: true
+        handles: {}
+      auto-updateSystemStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: updateSystemStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: array
+                graph:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-findCandidate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: findCandidate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                candidates:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-getOpenEnds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getOpenEnds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                graph:
+                  type: object
+        goal_default: {}
+        handles: {}
+      auto-getDirectionality:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDirectionality
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: array
+                node:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-pathsCompatible:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pathsCompatible
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pathsList:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: EmStat Pico (ASAB) 驱动（PalmSens），支持 generateGraph/loadGraph/getGraph/findClosest/improvePath
+    等 21 个操作。
+  category:
+  - 电化学工作站
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: Helge-Stein-Group/ASAB
+    source_file: src/ASAB/utility/graph.py
+    candidate_class: ''
+    candidate_score: 155
+    quality_status: usable
+    操作数: 21
+  manufacturer: PalmSens
+  model:
+    name: EmStat Pico (ASAB)
+    type: device
+  name: PalmSens EmStat Pico (ASAB)
+  tags:
+  - 电化学工作站
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

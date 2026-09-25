@@ -1,0 +1,1029 @@
+community_instrument_precise_automation_pf400:
+  class:
+    module: community_drivers.community_instrument_precise_automation_pf400.driver:CommunityInstrumentPreciseAutomationPf400
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/AD-SDL__pf400_module_ros
+          source_file:
+            type: string
+            default: pf400_driver/pf400_driver/pf400_driver.py
+          class_name:
+            type: string
+            default: PF400
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect
+            - disconnect
+            - send_command
+            - init_connection_mode
+            - handle_error_output
+            - check_robot_state
+            - enable_power
+            - disable_power
+            - attach_robot
+            - home_robot
+            - initialize_robot
+            - force_initialize_robot
+            - status_port_initilization
+            - refresh_joint_state
+            - get_robot_movement_state
+            - get_overall_state
+            - get_joint_states
+            - get_cartesian_coordinates
+            - get_gripper_lenght
+            - get_gripper_state
+            - set_profile
+            - set_gripper_open
+            - set_gripper_close
+            - set_plate_rotation
+            - check_incorrect_plate_orientation
+            - move_joint
+            - move_cartesian
+            - move_in_one_axis_from_target
+            - move_in_one_axis
+            - grab_plate
+            - release_plate
+            - gripper_open
+            - gripper_close
+            - move_one_joint
+            - move_multiple_joint
+            - move_gripper_safe_zone
+            - move_gripper_neutral
+            - move_arm_neutral
+            - move_rails_neutral
+            - move_all_joints_neutral
+            - remove_lid
+            - replace_lid
+            - rotate_plate_on_deck
+            - pick_plate
+            - place_plate
+            - transfer
+            - forward_kinematics
+            - inverse_kinematics
+          metadata:
+            type: object
+            default:
+              repo: AD-SDL/pf400_module_ros
+              repo_url: https://github.com/AD-SDL/pf400_module_ros
+              source_file: pf400_driver/pf400_driver/pf400_driver.py
+              class_name: PF400
+              brand: Precise Automation
+              model: PF400
+              device_type_cn: 协作机器人臂
+              device_type_en: Collaborative Robot Arm
+              source_framework: 生命科学
+              tag_id: '4402'
+              tag_name: 机械臂
+              tag_name_en: Robotic Arm
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 448
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-init_connection_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init_connection_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-handle_error_output:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: handle_error_output
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                output:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-check_robot_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_robot_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: integer
+                  default: 0.1
+        goal_default:
+          wait: 0.1
+        handles: {}
+      auto-enable_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: integer
+                  default: 0.1
+        goal_default:
+          wait: 0.1
+        handles: {}
+      auto-disable_power:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_power
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: integer
+                  default: 0.1
+        goal_default:
+          wait: 0.1
+        handles: {}
+      auto-attach_robot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: attach_robot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                robot_id:
+                  type: string
+                  default: '1'
+                wait:
+                  type: integer
+                  default: 0.1
+        goal_default:
+          robot_id: '1'
+          wait: 0.1
+        handles: {}
+      auto-home_robot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home_robot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: integer
+                  default: 0.1
+        goal_default:
+          wait: 0.1
+        handles: {}
+      auto-initialize_robot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initialize_robot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-force_initialize_robot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: force_initialize_robot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-status_port_initilization:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: status_port_initilization
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-refresh_joint_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: refresh_joint_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_robot_movement_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_robot_movement_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_overall_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_overall_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_joint_states:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_joint_states
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_cartesian_coordinates:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_cartesian_coordinates
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_gripper_lenght:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_gripper_lenght
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_gripper_state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_gripper_state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_profile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_profile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                wait:
+                  type: integer
+                  default: 0.1
+                profile_dict:
+                  type: object
+                  default:
+                    '0': 0
+        goal_default:
+          wait: 0.1
+          profile_dict:
+            '0': 0
+        handles: {}
+      auto-set_gripper_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_gripper_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_gripper_close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_gripper_close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_plate_rotation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_plate_rotation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                joint_states:
+                  type: string
+                rotation_degree:
+                  type: string
+                  default: 0
+        goal_default:
+          rotation_degree: 0
+        handles: {}
+      auto-check_incorrect_plate_orientation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_incorrect_plate_orientation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                goal_location:
+                  type: string
+                goal_rotation:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_joint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_joint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_joint_angles:
+                  type: string
+                profile:
+                  type: integer
+                  default: 1
+                gripper_close:
+                  type: boolean
+                  default: false
+                gripper_open:
+                  type: boolean
+                  default: false
+        goal_default:
+          profile: 1
+          gripper_close: false
+          gripper_open: false
+        handles: {}
+      auto-move_cartesian:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_cartesian
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_cartesian_coordinates:
+                  type: string
+                profile:
+                  type: integer
+                  default: 2
+        goal_default:
+          profile: 2
+        handles: {}
+      auto-move_in_one_axis_from_target:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_in_one_axis_from_target
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_location:
+                  type: string
+                profile:
+                  type: integer
+                  default: 1
+                axis_x:
+                  type: integer
+                  default: 0
+                axis_y:
+                  type: integer
+                  default: 0
+                axis_z:
+                  type: integer
+                  default: 0
+        goal_default:
+          profile: 1
+          axis_x: 0
+          axis_y: 0
+          axis_z: 0
+        handles: {}
+      auto-move_in_one_axis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_in_one_axis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                profile:
+                  type: integer
+                  default: 1
+                axis_x:
+                  type: integer
+                  default: 0
+                axis_y:
+                  type: integer
+                  default: 0
+                axis_z:
+                  type: integer
+                  default: 0
+        goal_default:
+          profile: 1
+          axis_x: 0
+          axis_y: 0
+          axis_z: 0
+        handles: {}
+      auto-grab_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: grab_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                width:
+                  type: integer
+                  default: 123
+                speed:
+                  type: integer
+                  default: 100
+                force:
+                  type: integer
+                  default: 10
+        goal_default:
+          width: 123
+          speed: 100
+          force: 10
+        handles: {}
+      auto-release_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: release_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                width:
+                  type: integer
+                  default: 130
+                speed:
+                  type: integer
+                  default: 100
+        goal_default:
+          width: 130
+          speed: 100
+        handles: {}
+      auto-gripper_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gripper_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-gripper_close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: gripper_close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_one_joint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_one_joint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                joint_num:
+                  type: string
+                target:
+                  type: string
+                move_pofile:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_multiple_joint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_multiple_joint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target1:
+                  type: string
+                target2:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-move_gripper_safe_zone:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_gripper_safe_zone
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_gripper_neutral:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_gripper_neutral
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_arm_neutral:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_arm_neutral
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_rails_neutral:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_rails_neutral
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                v_rail:
+                  type: number
+                h_rail:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-move_all_joints_neutral:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_all_joints_neutral
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_location:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-remove_lid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: remove_lid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_loc:
+                  type: string
+                lid_height:
+                  type: number
+                  default: 7.0
+                target_plate_rotation:
+                  type: string
+                  default: ''
+        goal_default:
+          lid_height: 7.0
+          target_plate_rotation: ''
+        handles: {}
+      auto-replace_lid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: replace_lid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_loc:
+                  type: string
+                lid_height:
+                  type: number
+                  default: 7.0
+                target_plate_rotation:
+                  type: string
+                  default: ''
+        goal_default:
+          lid_height: 7.0
+          target_plate_rotation: ''
+        handles: {}
+      auto-rotate_plate_on_deck:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rotate_plate_on_deck
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                rotation_degree:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-pick_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pick_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                source_location:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-place_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: place_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_location:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-transfer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: transfer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                source_loc:
+                  type: array
+                target_loc:
+                  type: array
+                source_plate_rotation:
+                  type: string
+                  default: ''
+                target_plate_rotation:
+                  type: string
+                  default: ''
+        goal_default:
+          source_plate_rotation: ''
+          target_plate_rotation: ''
+        handles: {}
+      auto-forward_kinematics:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: forward_kinematics
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                joint_states:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-inverse_kinematics:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: inverse_kinematics
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cartesian_coordinates:
+                  type: array
+                phi:
+                  type: number
+                rail:
+                  type: number
+                  default: 0.0
+                get_gripper_length:
+                  type: number
+                  default: 123.0
+        goal_default:
+          rail: 0.0
+          get_gripper_length: 123.0
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: PF400 驱动（Precise Automation），支持 connect/disconnect/send_command/init_connection_mode/handle_error_output
+    等 48 个操作。
+  category:
+  - 机械臂
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: AD-SDL/pf400_module_ros
+    source_file: pf400_driver/pf400_driver/pf400_driver.py
+    candidate_class: PF400
+    candidate_score: 448
+    quality_status: usable
+    操作数: 48
+  manufacturer: Precise Automation
+  model:
+    name: PF400
+    type: device
+  name: Precise Automation PF400
+  tags:
+  - 机械臂
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

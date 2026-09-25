@@ -1,0 +1,896 @@
+community_instrument_precise_automation_pf400_galago:
+  class:
+    module: community_drivers.community_instrument_precise_automation_pf400_galago.driver:CommunityInstrumentPreciseAutomationPf400Galago
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/sciencecorp__galago-tools
+          source_file:
+            type: string
+            default: tools/pf400/server.py
+          class_name:
+            type: string
+            default: Pf400Server
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - LoadWaypoints
+            - LoadLabware
+            - Unwind
+            - Release
+            - Engage
+            - moveTo
+            - Move
+            - GraspPlate
+            - ReleasePlate
+            - retrieve_plate
+            - dropoff_plate
+            - RetrievePlate
+            - DropOffPlate
+            - Jog
+            - Transfer
+            - PickLid
+            - PlaceLid
+            - GetCurrentLocation
+            - command_instance_from_name
+            - RunSequence
+            - estimateRelease
+            - estimateEngage
+            - estimateUnwind
+            - estimateGraspPlate
+            - estimateReleasePlate
+            - estimateRunSequence
+            - EstimateGetCurrentLocation
+            - EstimateMove
+            - EstimateTransfer
+            - EstimateJog
+            - EstimatePickLid
+            - EstimatePlaceLid
+            - EstimateLoadWaypoints
+            - EstimateLoadLabware
+            - GetStatus
+            - setSimulated
+            - setStatus
+            - Configure
+            - runSequence
+            - isReady
+            - parseCommand
+            - ExecuteCommand
+            - EstimateDuration
+          metadata:
+            type: object
+            default:
+              repo: sciencecorp/galago-tools
+              repo_url: https://github.com/sciencecorp/galago-tools
+              source_file: tools/pf400/server.py
+              class_name: Pf400Server
+              brand: Precise Automation
+              model: PF400 (galago)
+              device_type_cn: 实验室机械臂
+              device_type_en: Lab Robot
+              source_framework: galago-tools
+              tag_id: '4402'
+              tag_name: 机械臂
+              tag_name_en: Robotic Arm
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 330
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-LoadWaypoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: LoadWaypoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-LoadLabware:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: LoadLabware
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Unwind:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Unwind
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Release:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Release
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Engage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Engage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-moveTo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: moveTo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                loc:
+                  type: string
+                approach_height:
+                  type: number
+                  default: 0
+                motion_profile_id:
+                  type: integer
+                  default: 1
+        goal_default:
+          approach_height: 0
+          motion_profile_id: 1
+        handles: {}
+      auto-Move:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Move
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GraspPlate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GraspPlate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ReleasePlate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ReleasePlate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-retrieve_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: retrieve_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                source_nest:
+                  type: string
+                grasp_params:
+                  type: string
+                approach_height:
+                  type: number
+                  default: 0
+                motion_profile:
+                  type: string
+                  default: default
+                grip_width:
+                  type: integer
+                  default: 0
+                labware_name:
+                  type: string
+                  default: ''
+        goal_default:
+          approach_height: 0
+          motion_profile: default
+          grip_width: 0
+          labware_name: ''
+        handles: {}
+      auto-dropoff_plate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: dropoff_plate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                destination_nest:
+                  type: string
+                release_params:
+                  type: string
+                approach_height:
+                  type: number
+                  default: 0
+                motion_profile:
+                  type: string
+                  default: default
+                labware_name:
+                  type: string
+                  default: ''
+        goal_default:
+          approach_height: 0
+          motion_profile: default
+          labware_name: ''
+        handles: {}
+      auto-RetrievePlate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: RetrievePlate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-DropOffPlate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: DropOffPlate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Jog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Jog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Transfer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Transfer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PickLid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PickLid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-PlaceLid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: PlaceLid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetCurrentLocation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetCurrentLocation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-command_instance_from_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: command_instance_from_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                command_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-RunSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: RunSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-estimateRelease:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estimateRelease
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-estimateEngage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estimateEngage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-estimateUnwind:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estimateUnwind
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-estimateGraspPlate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estimateGraspPlate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-estimateReleasePlate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estimateReleasePlate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-estimateRunSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: estimateRunSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sequence:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-EstimateGetCurrentLocation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EstimateGetCurrentLocation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EstimateMove:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EstimateMove
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EstimateTransfer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EstimateTransfer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EstimateJog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EstimateJog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EstimatePickLid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EstimatePickLid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EstimatePlaceLid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EstimatePlaceLid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EstimateLoadWaypoints:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EstimateLoadWaypoints
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-EstimateLoadLabware:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EstimateLoadLabware
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-GetStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: GetStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+                context:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setSimulated:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSimulated
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                simulated:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-setStatus:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setStatus
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-Configure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: Configure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+                context:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-runSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: runSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sequence:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-isReady:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isReady
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-parseCommand:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: parseCommand
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-ExecuteCommand:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ExecuteCommand
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+                context:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-EstimateDuration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: EstimateDuration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                request:
+                  type: string
+                context:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: PF400 (galago) 驱动（Precise Automation），支持 LoadWaypoints/LoadLabware/Unwind/Release/Engage
+    等 43 个操作。
+  category:
+  - 机械臂
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: sciencecorp/galago-tools
+    source_file: tools/pf400/server.py
+    candidate_class: Pf400Server
+    candidate_score: 330
+    quality_status: usable
+    操作数: 43
+  manufacturer: Precise Automation
+  model:
+    name: PF400 (galago)
+    type: device
+  name: Precise Automation PF400 (galago)
+  tags:
+  - 机械臂
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

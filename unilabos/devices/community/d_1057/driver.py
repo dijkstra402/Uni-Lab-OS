@@ -1439,3 +1439,10 @@ class KeithleyDMM6500(SCPIMixin, Instrument):
             super().write(command.format(function=KeithleyDMM6500.MODES[self.mode]))
         else:
             super().write(command)
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(KeithleyDMM6500)
+except Exception:
+    pass

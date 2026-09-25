@@ -90,3 +90,10 @@ if __name__ == "__main__":
 
     except Exception as e:
         print("Exception ({}): {}".format(type(e), str(e)))
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley2110VISADriver)
+except Exception:
+    pass

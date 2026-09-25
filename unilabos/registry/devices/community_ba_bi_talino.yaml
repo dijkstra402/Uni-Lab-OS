@@ -1,0 +1,126 @@
+community.ba.bi_talino:
+  name: BITalino
+  category:
+  - 细胞分析仪
+  class:
+    module: unilabos.devices.generic.bitalino:BITalino
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        feedback: {}
+        goal: {}
+        goal_default:
+          timeout: 10.0
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                timeout:
+                  type: number
+              type: object
+          title: connect
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-disconnect:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: disconnect
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-set_callback:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                callback:
+                  type: string
+              type: object
+          title: set_callback
+          type: object
+        type: UniLabJsonCommand
+      auto-start:
+        feedback: {}
+        goal: {}
+        goal_default:
+          channels:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          sampling_rate: 1000
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties:
+                channels:
+                  type: string
+                sampling_rate:
+                  type: integer
+              type: object
+          title: start
+          type: object
+        type: UniLabJsonCommandAsync
+      auto-stop:
+        feedback: {}
+        goal: {}
+        goal_default: {}
+        handles: {}
+        result: {}
+        schema:
+          properties:
+            goal:
+              properties: {}
+              type: object
+          title: stop
+          type: object
+        type: UniLabJsonCommandAsync
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: BITalino 设备驱动，社区驱动 - 自动集成自 bi_talino
+  device_params:
+    品牌: 社区开源
+    型号: BITalino
+    设备类型: 细胞分析仪
+    来源仓库: bi_talino
+    驱动类: BITalino
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      properties:
+        address:
+          default: null
+          type: string
+      type: object
+  manufacturer: PLUX Biosignals
+  model:
+    name: BITalino
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

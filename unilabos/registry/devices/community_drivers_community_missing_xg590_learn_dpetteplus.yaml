@@ -1,0 +1,263 @@
+community_missing_xg590_learn_dpetteplus:
+  class:
+    module: community_drivers.community_missing_xg590_learn_dpetteplus.driver:CommunityMissingXg590LearnDpetteplus
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/xg590__Learn_dPettePlus
+          source_file:
+            type: string
+            default: dPettePlus.py
+          class_name:
+            type: string
+            default: DPETTE
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - __init__
+            - send
+            - receive
+            - hello
+            - get_pipette_info
+            - set_mode
+            - set_speed
+            - set_pipette_volume
+            - action
+          metadata:
+            type: object
+            default:
+              repo: xg590/Learn_dPettePlus
+              repo_url: https://github.com/xg590/Learn_dPettePlus
+              source_file: dPettePlus.py
+              candidate_score: 87
+              candidate_reason: ''
+              manufacturers:
+              - DLAB/北京大龙
+              models:
+              - dPette+电子移液管
+              tags: &id001
+              - 移液管
+              notes:
+              - 含通信协议文档(中文) + Python驱动
+              comm_protocols:
+              - 逆向工程协议
+              review_status: good
+              review_notes:
+              - 电子移液核心动作准确。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-__init__:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: __init__
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                port:
+                  type: string
+                  default: /dev/ttyUSB0
+        goal_default:
+          port: /dev/ttyUSB0
+        handles: {}
+      auto-send:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                CMD:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-receive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: receive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                debug:
+                  type: string
+                  default: false
+        goal_default:
+          debug: false
+        handles: {}
+      auto-hello:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: hello
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_pipette_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_pipette_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                direction:
+                  type: string
+                speed:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_pipette_volume:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_pipette_volume
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                volume:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-action:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: action
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                direction:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: xg590/Learn_dPettePlus
+    source_file: dPettePlus.py
+    candidate_class: DPETTE
+    communication: 逆向工程协议
+  manufacturer: 大龙
+  model:
+    name: dPette+电子移液管
+    type: device
+  name: Learn_dPettePlus
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

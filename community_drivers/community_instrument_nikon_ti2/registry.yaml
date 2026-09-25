@@ -1,0 +1,3813 @@
+community_instrument_nikon_ti2:
+  class:
+    module: community_drivers.community_instrument_nikon_ti2.driver:CommunityInstrumentNikonTi2
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/pymmcore-plus__pymmcore-plus
+          source_file:
+            type: string
+            default: src/pymmcore_plus/experimental/unicore/core/_unicore.py
+          class_name:
+            type: string
+            default: UniMMCore
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - loadSystemConfiguration
+            - saveSystemConfiguration
+            - loadDevice
+            - loadPyDevice
+            - isPyDevice
+            - unloadDevice
+            - unloadAllDevices
+            - reset
+            - initializeDevice
+            - initializeAllDevices
+            - getDeviceInitializationState
+            - getLoadedDevices
+            - getLoadedDevicesOfType
+            - getDeviceType
+            - getDeviceLibrary
+            - getDeviceName
+            - getDeviceDescription
+            - getParentLabel
+            - setParentLabel
+            - getInstalledDevices
+            - getLoadedPeripheralDevices
+            - getInstalledDeviceDescription
+            - getDevicePropertyNames
+            - hasProperty
+            - getProperty
+            - getPropertyFromCache
+            - setProperty
+            - getPropertyType
+            - hasPropertyLimits
+            - getPropertyLowerLimit
+            - getPropertyUpperLimit
+            - getAllowedPropertyValues
+            - isPropertyPreInit
+            - isPropertyReadOnly
+            - isPropertySequenceable
+            - getPropertySequenceMaxLength
+            - loadPropertySequence
+            - startPropertySequence
+            - stopPropertySequence
+            - deviceBusy
+            - waitForDevice
+            - waitForConfig
+            - systemBusy
+            - waitForSystem
+            - waitForDeviceType
+            - deviceTypeBusy
+            - getDeviceDelayMs
+            - setDeviceDelayMs
+            - usesDeviceDelay
+            - setXYStageDevice
+            - getXYStageDevice
+            - setXYPosition
+            - getXYPosition
+            - getXPosition
+            - getYPosition
+            - getXYStageSequenceMaxLength
+            - isXYStageSequenceable
+            - loadXYStageSequence
+            - setOriginX
+            - setOriginY
+            - setOriginXY
+            - setAdapterOriginXY
+            - setRelativeXYPosition
+            - startXYStageSequence
+            - stopXYStageSequence
+            - getFocusDevice
+            - setFocusDevice
+            - getPosition
+            - setPosition
+            - setFocusDirection
+            - getFocusDirection
+            - setOrigin
+            - setRelativePosition
+            - setAdapterOrigin
+            - isStageSequenceable
+            - isStageLinearSequenceable
+            - getStageSequenceMaxLength
+            - loadStageSequence
+            - startStageSequence
+            - stopStageSequence
+            - setStageLinearSequence
+            - isContinuousFocusDrive
+            - home
+            - stop
+            - setCameraDevice
+            - getCameraDevice
+            - getImage
+            - isSequenceRunning
+            - getRemainingImageCount
+            - getLastImage
+            - getLastImageMD
+            - getNBeforeLastImageMD
+            - popNextImage
+            - popNextImageMD
+            - setCircularBufferMemoryFootprint
+            - initializeCircularBuffer
+            - getBufferFreeCapacity
+            - getBufferTotalCapacity
+            - getCircularBufferMemoryFootprint
+            - clearCircularBuffer
+            - isBufferOverflowed
+            - getImageBitDepth
+            - getBytesPerPixel
+            - getImageBufferSize
+            - getImageHeight
+            - getImageWidth
+            - getNumberOfComponents
+            - getNumberOfCameraChannels
+            - getCameraChannelName
+            - getExposure
+            - setExposure
+            - getROI
+            - clearROI
+            - isExposureSequenceable
+            - loadExposureSequence
+            - getExposureSequenceMaxLength
+            - startExposureSequence
+            - stopExposureSequence
+            - prepareSequenceAcquisition
+            - getPixelSizeAffine
+            - getPixelSizeUm
+            - setSLMDevice
+            - getSLMDevice
+            - setSLMImage
+            - getSLMImage
+            - setSLMPixelsTo
+            - displaySLMImage
+            - setSLMExposure
+            - getSLMExposure
+            - getSLMWidth
+            - getSLMHeight
+            - getSLMNumberOfComponents
+            - getSLMBytesPerPixel
+            - getSLMSequenceMaxLength
+            - loadSLMSequence
+            - startSLMSequence
+            - stopSLMSequence
+            - setState
+            - getState
+            - getNumberOfStates
+            - setStateLabel
+            - getStateLabel
+            - defineStateLabel
+            - getStateLabels
+            - getStateFromLabel
+            - setShutterDevice
+            - getShutterDevice
+            - getShutterOpen
+            - defineConfigGroup
+            - deleteConfigGroup
+            - renameConfigGroup
+            - defineConfig
+            - deleteConfig
+            - renameConfig
+            - getConfigData
+            - setConfig
+            - getCurrentConfig
+            - getCurrentConfigFromCache
+            - getConfigState
+            - getConfigGroupState
+            - getConfigGroupStateFromCache
+            - getSystemState
+            - getSystemStateCache
+            - updateSystemStateCache
+            - instance
+            - registerCallback
+            - events
+            - setDeviceAdapterSearchPaths
+            - systemConfigurationFile
+            - detectDevice
+            - getPixelSizeConfigData
+            - getLastImageAndMD
+            - popNextImageAndMD
+            - getNBeforeLastImageAndMD
+            - iterDeviceAdapters
+            - iterDevices
+            - iterProperties
+            - getPropertyObject
+            - getAdapterObject
+            - getDeviceObject
+            - getConfigGroupObject
+            - iterConfigGroups
+            - getCurrentDeviceOfType
+            - getDeviceSchema
+            - objective_device_pattern
+            - channelGroup_pattern
+            - guessObjectiveDevices
+            - getOrGuessChannelGroup
+            - setRelativeXYZPosition
+            - getZPosition
+            - setZPosition
+            - getCameraChannelNames
+            - snapImage
+            - mda
+            - run_mda
+            - register_mda_engine
+            - fixImage
+            - getPhysicalCameraDevice
+            - getTaggedImage
+            - popNextTaggedImage
+            - getTags
+            - snap
+            - startContinuousSequenceAcquisition
+            - startSequenceAcquisition
+            - stopSequenceAcquisition
+            - setAutoFocusOffset
+            - getAutoFocusOffset
+            - setAutoShutter
+            - setShutterOpen
+            - setPixelSizeUm
+            - deletePixelSizeConfig
+            - definePixelSizeConfig
+            - setROI
+            - setChannelGroup
+            - describe
+            - state
+            - setContext
+            - canSequenceEvents
+          metadata:
+            type: object
+            default:
+              repo: pymmcore-plus/pymmcore-plus
+              repo_url: https://github.com/pymmcore-plus/pymmcore-plus
+              source_file: src/pymmcore_plus/experimental/unicore/core/_unicore.py
+              class_name: UniMMCore
+              brand: Nikon
+              model: Ti2
+              device_type_cn: 普通光学显微镜
+              device_type_en: Optical Microscope
+              source_framework: pymmcore-plus
+              tag_id: '4400'
+              tag_name: 普通光学显微镜
+              tag_name_en: Optical Microscope
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 1358
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-loadSystemConfiguration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadSystemConfiguration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                fileName:
+                  type: string
+                  default: MMConfig_demo.cfg
+        goal_default:
+          fileName: MMConfig_demo.cfg
+        handles: {}
+      auto-saveSystemConfiguration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: saveSystemConfiguration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                filename:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-loadDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                moduleName:
+                  type: string
+                deviceName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-loadPyDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadPyDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                device:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-isPyDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isPyDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unloadDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unloadDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-unloadAllDevices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unloadAllDevices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-initializeDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initializeDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-initializeAllDevices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initializeAllDevices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getDeviceInitializationState:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDeviceInitializationState
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getLoadedDevices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getLoadedDevices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getLoadedDevicesOfType:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getLoadedDevicesOfType
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                devType:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-getDeviceType:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDeviceType
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getDeviceLibrary:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDeviceLibrary
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getDeviceName:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDeviceName
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getDeviceDescription:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDeviceDescription
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getParentLabel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getParentLabel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                peripheralLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setParentLabel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setParentLabel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                deviceLabel:
+                  type: string
+                parentHubLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getInstalledDevices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getInstalledDevices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hubLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getLoadedPeripheralDevices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getLoadedPeripheralDevices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hubLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getInstalledDeviceDescription:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getInstalledDeviceDescription
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hubLabel:
+                  type: string
+                peripheralLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getDevicePropertyNames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDevicePropertyNames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-hasProperty:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: hasProperty
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getProperty:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getProperty
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPropertyFromCache:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertyFromCache
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                deviceLabel:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setProperty:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setProperty
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+                propValue:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-getPropertyType:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertyType
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-hasPropertyLimits:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: hasPropertyLimits
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPropertyLowerLimit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertyLowerLimit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPropertyUpperLimit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertyUpperLimit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getAllowedPropertyValues:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getAllowedPropertyValues
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-isPropertyPreInit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isPropertyPreInit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-isPropertyReadOnly:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isPropertyReadOnly
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-isPropertySequenceable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isPropertySequenceable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPropertySequenceMaxLength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertySequenceMaxLength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-loadPropertySequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadPropertySequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+                eventSequence:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-startPropertySequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startPropertySequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stopPropertySequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopPropertySequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                propName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-deviceBusy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deviceBusy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-waitForDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waitForDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-waitForConfig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waitForConfig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                group:
+                  type: string
+                configName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-systemBusy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: systemBusy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-waitForSystem:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waitForSystem
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-waitForDeviceType:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: waitForDeviceType
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                devType:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-deviceTypeBusy:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deviceTypeBusy
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                devType:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-getDeviceDelayMs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDeviceDelayMs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setDeviceDelayMs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setDeviceDelayMs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+                delayMs:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-usesDeviceDelay:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: usesDeviceDelay
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setXYStageDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setXYStageDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xyStageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getXYStageDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getXYStageDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setXYPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setXYPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getXYPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getXYPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getXPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getXPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getYPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getYPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getXYStageSequenceMaxLength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getXYStageSequenceMaxLength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xyStageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-isXYStageSequenceable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isXYStageSequenceable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xyStageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-loadXYStageSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadXYStageSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setOriginX:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setOriginX
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setOriginY:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setOriginY
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setOriginXY:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setOriginXY
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setAdapterOriginXY:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setAdapterOriginXY
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setRelativeXYPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setRelativeXYPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-startXYStageSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startXYStageSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xyStageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stopXYStageSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopXYStageSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xyStageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getFocusDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getFocusDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setFocusDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setFocusDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                focusLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setFocusDirection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setFocusDirection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stageLabel:
+                  type: string
+                sign:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-getFocusDirection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getFocusDirection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setOrigin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setOrigin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setRelativePosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setRelativePosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setAdapterOrigin:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setAdapterOrigin
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-isStageSequenceable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isStageSequenceable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-isStageLinearSequenceable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isStageLinearSequenceable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getStageSequenceMaxLength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getStageSequenceMaxLength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-loadStageSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadStageSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stageLabel:
+                  type: string
+                positionSequence:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-startStageSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startStageSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stopStageSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopStageSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setStageLinearSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setStageLinearSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stageLabel:
+                  type: string
+                dZ_um:
+                  type: number
+                nSlices:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-isContinuousFocusDrive:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isContinuousFocusDrive
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xyOrZStageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                xyOrZStageLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setCameraDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setCameraDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cameraLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getCameraDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCameraDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-isSequenceRunning:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isSequenceRunning
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getRemainingImageCount:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getRemainingImageCount
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getLastImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getLastImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getLastImageMD:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getLastImageMD
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getNBeforeLastImageMD:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getNBeforeLastImageMD
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-popNextImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: popNextImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-popNextImageMD:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: popNextImageMD
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setCircularBufferMemoryFootprint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setCircularBufferMemoryFootprint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sizeMB:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-initializeCircularBuffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: initializeCircularBuffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getBufferFreeCapacity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getBufferFreeCapacity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getBufferTotalCapacity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getBufferTotalCapacity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getCircularBufferMemoryFootprint:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCircularBufferMemoryFootprint
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clearCircularBuffer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clearCircularBuffer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-isBufferOverflowed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isBufferOverflowed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getImageBitDepth:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getImageBitDepth
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getBytesPerPixel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getBytesPerPixel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getImageBufferSize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getImageBufferSize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getImageHeight:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getImageHeight
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getImageWidth:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getImageWidth
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getNumberOfComponents:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getNumberOfComponents
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getNumberOfCameraChannels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getNumberOfCameraChannels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getCameraChannelName:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCameraChannelName
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channelNr:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-getExposure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getExposure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setExposure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setExposure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getROI:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getROI
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clearROI:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clearROI
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-isExposureSequenceable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: isExposureSequenceable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cameraLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-loadExposureSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadExposureSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cameraLabel:
+                  type: string
+                exposureSequence_ms:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-getExposureSequenceMaxLength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getExposureSequenceMaxLength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cameraLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-startExposureSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startExposureSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cameraLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stopExposureSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopExposureSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cameraLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-prepareSequenceAcquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: prepareSequenceAcquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cameraLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPixelSizeAffine:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPixelSizeAffine
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getPixelSizeUm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPixelSizeUm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setSLMDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSLMDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slmLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getSLMDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSLMDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setSLMImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSLMImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getSLMImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSLMImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slmLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setSLMPixelsTo:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSLMPixelsTo
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-displaySLMImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: displaySLMImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setSLMExposure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setSLMExposure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getSLMExposure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSLMExposure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getSLMWidth:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSLMWidth
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getSLMHeight:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSLMHeight
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getSLMNumberOfComponents:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSLMNumberOfComponents
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getSLMBytesPerPixel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSLMBytesPerPixel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getSLMSequenceMaxLength:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSLMSequenceMaxLength
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slmLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-loadSLMSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: loadSLMSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slmLabel:
+                  type: string
+                imageSequence:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-startSLMSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startSLMSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slmLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-stopSLMSequence:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopSLMSequence
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                slmLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setState:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setState
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stateDeviceLabel:
+                  type: string
+                state:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-getState:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getState
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stateDeviceLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getNumberOfStates:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getNumberOfStates
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stateDeviceLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setStateLabel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setStateLabel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stateDeviceLabel:
+                  type: string
+                stateLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getStateLabel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getStateLabel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stateDeviceLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-defineStateLabel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: defineStateLabel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stateDeviceLabel:
+                  type: string
+                state:
+                  type: integer
+                label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getStateLabels:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getStateLabels
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stateDeviceLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getStateFromLabel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getStateFromLabel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                stateDeviceLabel:
+                  type: string
+                stateLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setShutterDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setShutterDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                shutterLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getShutterDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getShutterDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getShutterOpen:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getShutterOpen
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-defineConfigGroup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: defineConfigGroup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                groupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-deleteConfigGroup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deleteConfigGroup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                groupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-renameConfigGroup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: renameConfigGroup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                oldGroupName:
+                  type: string
+                newGroupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-defineConfig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: defineConfig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                groupName:
+                  type: string
+                configName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-deleteConfig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deleteConfig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                groupName:
+                  type: string
+                configName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-renameConfig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: renameConfig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                groupName:
+                  type: string
+                oldConfigName:
+                  type: string
+                newConfigName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getConfigData:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getConfigData
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                configGroup:
+                  type: string
+                configName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setConfig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setConfig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                groupName:
+                  type: string
+                configName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getCurrentConfig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCurrentConfig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                groupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getCurrentConfigFromCache:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCurrentConfigFromCache
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                groupName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getConfigState:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getConfigState
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                group:
+                  type: string
+                config:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getConfigGroupState:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getConfigGroupState
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                group:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getConfigGroupStateFromCache:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getConfigGroupStateFromCache
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                group:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getSystemState:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSystemState
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getSystemStateCache:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getSystemStateCache
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-updateSystemStateCache:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: updateSystemStateCache
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-instance:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: instance
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-registerCallback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: registerCallback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-events:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: events
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setDeviceAdapterSearchPaths:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setDeviceAdapterSearchPaths
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                paths:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-systemConfigurationFile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: systemConfigurationFile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-detectDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: detectDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                deviceLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getPixelSizeConfigData:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPixelSizeConfigData
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                configName:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getLastImageAndMD:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getLastImageAndMD
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                slice:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-popNextImageAndMD:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: popNextImageAndMD
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: integer
+                slice:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-getNBeforeLastImageAndMD:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getNBeforeLastImageAndMD
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                n:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-iterDeviceAdapters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: iterDeviceAdapters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                adapter_pattern:
+                  type: string
+                  default: Ellipsis
+        goal_default:
+          adapter_pattern: Ellipsis
+        handles: {}
+      auto-iterDevices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: iterDevices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_type:
+                  type: integer
+                  default: Ellipsis
+                device_label:
+                  type: string
+                  default: Ellipsis
+                device_adapter:
+                  type: string
+                  default: Ellipsis
+        goal_default:
+          device_type: Ellipsis
+          device_label: Ellipsis
+          device_adapter: Ellipsis
+        handles: {}
+      auto-iterProperties:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: iterProperties
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                property_type:
+                  type: integer
+                  default: Ellipsis
+                property_name_pattern:
+                  type: string
+                  default: Ellipsis
+        goal_default:
+          property_type: Ellipsis
+          property_name_pattern: Ellipsis
+        handles: {}
+      auto-getPropertyObject:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPropertyObject
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_label:
+                  type: string
+                property_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getAdapterObject:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getAdapterObject
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                library_name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getDeviceObject:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDeviceObject
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_label:
+                  type: string
+                device_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getConfigGroupObject:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getConfigGroupObject
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                group_name:
+                  type: string
+                allow_missing:
+                  type: boolean
+                  default: false
+        goal_default:
+          allow_missing: false
+        handles: {}
+      auto-iterConfigGroups:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: iterConfigGroups
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getCurrentDeviceOfType:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCurrentDeviceOfType
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-getDeviceSchema:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getDeviceSchema
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                device_label:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-objective_device_pattern:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: objective_device_pattern
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-channelGroup_pattern:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: channelGroup_pattern
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-guessObjectiveDevices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: guessObjectiveDevices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-getOrGuessChannelGroup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getOrGuessChannelGroup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setRelativeXYZPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setRelativeXYZPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dx:
+                  type: number
+                  default: 0
+                dy:
+                  type: number
+                  default: 0
+                dz:
+                  type: number
+                  default: 0
+        goal_default:
+          dx: 0
+          dy: 0
+          dz: 0
+        handles: {}
+      auto-getZPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getZPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setZPosition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setZPosition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                val:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-getCameraChannelNames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getCameraChannelNames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-snapImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: snapImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-mda:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: mda
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-run_mda:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: run_mda
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                events:
+                  type: array
+        goal_default: {}
+        handles: {}
+      auto-register_mda_engine:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: register_mda_engine
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                engine:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-fixImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fixImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                img:
+                  type: string
+                ncomponents:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-getPhysicalCameraDevice:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getPhysicalCameraDevice
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_index:
+                  type: integer
+                  default: 0
+        goal_default:
+          channel_index: 0
+        handles: {}
+      auto-getTaggedImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getTaggedImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_index:
+                  type: integer
+                  default: 0
+        goal_default:
+          channel_index: 0
+        handles: {}
+      auto-popNextTaggedImage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: popNextTaggedImage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel_index:
+                  type: integer
+                  default: 0
+        goal_default:
+          channel_index: 0
+        handles: {}
+      auto-getTags:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getTags
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                meta:
+                  type: string
+                channel_index:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-snap:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: snap
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                numChannel:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-startContinuousSequenceAcquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startContinuousSequenceAcquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                intervalMs:
+                  type: number
+                  default: 0
+        goal_default:
+          intervalMs: 0
+        handles: {}
+      auto-startSequenceAcquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: startSequenceAcquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-stopSequenceAcquisition:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stopSequenceAcquisition
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                cameraLabel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setAutoFocusOffset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setAutoFocusOffset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                offset:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-getAutoFocusOffset:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: getAutoFocusOffset
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setAutoShutter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setAutoShutter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                state:
+                  type: boolean
+        goal_default: {}
+        handles: {}
+      auto-setShutterOpen:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setShutterOpen
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setPixelSizeUm:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setPixelSizeUm
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                resolutionID:
+                  type: string
+                pixSize:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-deletePixelSizeConfig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deletePixelSizeConfig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                resolutionID:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-definePixelSizeConfig:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: definePixelSizeConfig
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                resolutionID:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-setROI:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setROI
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setChannelGroup:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setChannelGroup
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channelGroup:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-describe:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: describe
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sort:
+                  type: string
+                show_config_groups:
+                  type: boolean
+                  default: false
+                show_available:
+                  type: boolean
+                  default: false
+        goal_default:
+          show_config_groups: false
+          show_available: false
+        handles: {}
+      auto-state:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: state
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-setContext:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setContext
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-canSequenceEvents:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: canSequenceEvents
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                e1:
+                  type: string
+                e2:
+                  type: string
+                cur_length:
+                  type: integer
+                  default: -1
+        goal_default:
+          cur_length: -1
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Ti2 驱动（Nikon），支持 loadSystemConfiguration/saveSystemConfiguration/loadDevice/loadPyDevice/isPyDevice
+    等 218 个操作。
+  category:
+  - 普通光学显微镜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: pymmcore-plus/pymmcore-plus
+    source_file: src/pymmcore_plus/experimental/unicore/core/_unicore.py
+    candidate_class: UniMMCore
+    candidate_score: 1358
+    quality_status: usable
+    操作数: 218
+  manufacturer: Nikon
+  model:
+    name: Ti2
+    type: device
+  name: Nikon Ti2
+  tags:
+  - 普通光学显微镜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

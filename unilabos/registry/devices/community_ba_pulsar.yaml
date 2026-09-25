@@ -1,0 +1,235 @@
+community.ba.pulsar:
+  name: Pulsar
+  category:
+  - 表征设备
+  class:
+    module: unilabos.devices.awg_controller.pulsar:Pulsar
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-define_channel:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: define_channel
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                type:
+                  type: string
+                delay:
+                  type: string
+                offset:
+                  type: string
+                high:
+                  type: string
+                low:
+                  type: string
+                active:
+                  type: string
+                AWG:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-AWG_obj:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: AWG_obj
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-clock:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: clock
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                channel:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-channel_opt:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: channel_opt
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                option:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-used_AWGs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: used_AWGs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-program_awgs:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: program_awgs
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sequence:
+                  type: string
+                AWGs:
+                  type: string
+                channels:
+                  type: string
+                loop:
+                  type: string
+                allow_first_nonzero:
+                  type: string
+                verbose:
+                  type: string
+        goal_default:
+          AWGs: all
+          channels: all
+          loop: true
+          allow_first_nonzero: true
+          verbose: false
+        handles: {}
+      auto-update_channel_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_channel_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-update_AWG5014_settings:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: update_AWG5014_settings
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                AWGs:
+                  type: string
+        goal_default:
+          AWGs: all
+        handles: {}
+      auto-start:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          description: start的参数schema
+          properties:
+            feedback: {}
+            goal:
+              type: object
+              properties: {}
+            result: {}
+          required:
+          - goal
+          title: start参数
+          type: object
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          description: stop的参数schema
+          properties:
+            feedback: {}
+            goal:
+              type: object
+              properties: {}
+            result: {}
+          required:
+          - goal
+          title: stop参数
+          type: object
+        goal_default: {}
+        handles: {}
+        placeholder_keys: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: Pulsar 设备驱动，社区驱动 - 自动集成自 pulsar
+  device_params:
+    品牌: 社区开源
+    型号: Pulsar
+    设备类型: 表征设备
+    来源仓库: pulsar
+    驱动类: Pulsar
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      type: object
+      properties: {}
+      required: []
+  manufacturer: ''
+  model:
+    name: Pulsar
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

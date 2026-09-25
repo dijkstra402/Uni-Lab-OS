@@ -1,0 +1,170 @@
+community_missing_mslnz_msl_equipment:
+  class:
+    module: community_drivers.community_missing_mslnz_msl_equipment.driver:CommunityMissingMslnzMslEquipment
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/MSLNZ__msl-equipment
+          source_file:
+            type: string
+            default: src/msl/equipment/config.py
+          class_name:
+            type: string
+            default: Config
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - attrib
+            - equipment
+            - find
+            - findall
+            - registers
+            - value
+          metadata:
+            type: object
+            default:
+              repo: MSLNZ/msl-equipment
+              repo_url: https://github.com/MSLNZ/msl-equipment
+              source_file: src/msl/equipment/interfaces/prologix.py
+              candidate_score: 157
+              candidate_reason: ''
+              manufacturers:
+              - 多品牌
+              models:
+              - Sartorius, Mettler Toledo, 等ISO/IEC 17025兼容设备
+              tags: &id001
+              - 固体称量工作站
+              notes:
+              - 新西兰计量标准实验室(MSL)出品
+              comm_protocols:
+              - 串口/GPIB等多接口
+              review_status: needs_reselect
+              review_notes:
+              - 框架型仓库，无单一仪器类。Config 是加载/访问设备配置的入口，非直接控制接口。
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-attrib:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: attrib
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-equipment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: equipment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-find:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-findall:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: findall
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-registers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: registers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: 快速纳管入口。保留原始仓库源码，按需惰性导入上游驱动类。
+  category: *id001
+  device_params:
+    repo: MSLNZ/msl-equipment
+    source_file: src/msl/equipment/interfaces/prologix.py
+    candidate_class: Prologix
+    communication: 串口/GPIB等多接口
+  manufacturer: 多品牌
+  model:
+    name: Sartorius, Mettler Toledo, 等ISO/IEC 17025兼容设备
+    type: device
+  name: msl-equipment
+  tags: *id001
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

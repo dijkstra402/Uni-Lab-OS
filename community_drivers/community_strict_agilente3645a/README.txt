@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/agilent/agilentE3645A.py
+registry_id: community_strict_agilente3645a
+source_file: ivi/agilent/agilentE3645A.py
+class_name: agilentE3645A
+manufacturer: agilent
+model: agilentE3645A
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_agilente3645a.yaml

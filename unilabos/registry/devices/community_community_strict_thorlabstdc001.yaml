@@ -1,0 +1,794 @@
+community_strict_thorlabstdc001__community_strict_thorlabstdc001:
+  class:
+    module: unilabos.devices.community.community_strict_thorlabstdc001.driver:Thorlabs_TDC001
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/QCoDeS__Qcodes_contrib_drivers
+          source_file:
+            type: string
+            default: src/qcodes_contrib_drivers/drivers/Thorlabs/TDC001.py
+          class_name:
+            type: string
+            default: Thorlabs_TDC001
+          import_roots:
+            type: array
+            items:
+              type: string
+            default:
+            - src
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - identify
+            - get_idn
+            - go_home
+            - wait_for_completion
+            - is_moving
+            - move_to
+            - move_by
+            - move_continuous
+            - jog
+            - stop
+            - close
+            - get_position
+            - set_position
+            - get_max_position
+            - set_max_position
+            - get_min_position
+            - set_min_position
+            - get_velocity
+            - set_velocity
+            - get_jog_velocity
+            - set_jog_velocity
+            - get_homing_velocity
+            - set_homing_velocity
+            - get_acceleration
+            - set_acceleration
+            - get_jog_acceleration
+            - set_jog_acceleration
+            - get_jog_mode
+            - set_jog_mode
+            - get_jog_step_size
+            - set_jog_step_size
+            - get_stop_mode
+            - set_stop_mode
+            - get_soft_limits_mode
+            - set_soft_limits_mode
+            - get_backlash
+            - set_backlash
+            - enable_simulation
+            - disable_simulation
+          metadata:
+            type: object
+            default:
+              repo: QCoDeS/Qcodes_contrib_drivers
+              repo_url: https://github.com/QCoDeS/Qcodes_contrib_drivers
+              source_url: https://github.com/QCoDeS/Qcodes_contrib_drivers/blob/main/src/qcodes_contrib_drivers/drivers/Thorlabs/TDC001.py
+              source_file: src/qcodes_contrib_drivers/drivers/Thorlabs/TDC001.py
+              class_name: Thorlabs_TDC001
+              manufacturer_guess: thorlabs
+              manufacturer_resolved: thorlabs
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.9
+              quality_score: 1.06
+              code_evidence: 'L15: class Thorlabs_TDC001(_Thorlabs_CC):'
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001
+                get_position: __qcodes_param_get__position
+                set_position: __qcodes_param_set__position
+                get_max_position: __qcodes_param_get__max_position
+                set_max_position: __qcodes_param_set__max_position
+                get_min_position: __qcodes_param_get__min_position
+                set_min_position: __qcodes_param_set__min_position
+                get_velocity: __qcodes_param_get__velocity
+                set_velocity: __qcodes_param_set__velocity
+                get_jog_velocity: __qcodes_param_get__jog_velocity
+                set_jog_velocity: __qcodes_param_set__jog_velocity
+                get_homing_velocity: __qcodes_param_get__homing_velocity
+                set_homing_velocity: __qcodes_param_set__homing_velocity
+                get_acceleration: __qcodes_param_get__acceleration
+                set_acceleration: __qcodes_param_set__acceleration
+                get_jog_acceleration: __qcodes_param_get__jog_acceleration
+                set_jog_acceleration: __qcodes_param_set__jog_acceleration
+                get_jog_mode: __qcodes_param_get__jog_mode
+                set_jog_mode: __qcodes_param_set__jog_mode
+                get_jog_step_size: __qcodes_param_get__jog_step_size
+                set_jog_step_size: __qcodes_param_set__jog_step_size
+                get_stop_mode: __qcodes_param_get__stop_mode
+                set_stop_mode: __qcodes_param_set__stop_mode
+                get_soft_limits_mode: __qcodes_param_get__soft_limits_mode
+                set_soft_limits_mode: __qcodes_param_set__soft_limits_mode
+                get_backlash: __qcodes_param_get__backlash
+                set_backlash: __qcodes_param_set__backlash
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-identify:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: identify
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_idn:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_idn
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-go_home:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: go_home
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                block:
+                  type: string
+                  default: true
+        goal_default:
+          block: true
+        handles: {}
+      auto-wait_for_completion:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait_for_completion
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                status:
+                  type: string
+                  default: homed
+                max_time:
+                  type: number
+                  default: 5
+        goal_default:
+          status: homed
+          max_time: 5
+        handles: {}
+      auto-is_moving:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: is_moving
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-move_to:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                position:
+                  type: number
+                block:
+                  type: string
+                  default: true
+        goal_default:
+          block: true
+        handles: {}
+      auto-move_by:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_by
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                displacement:
+                  type: number
+                block:
+                  type: boolean
+                  default: true
+        goal_default:
+          block: true
+        handles: {}
+      auto-move_continuous:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_continuous
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                direction:
+                  type: string
+                  default: forward
+        goal_default:
+          direction: forward
+        handles: {}
+      auto-jog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: jog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                direction:
+                  type: string
+                  default: forward
+                block:
+                  type: boolean
+                  default: true
+        goal_default:
+          direction: forward
+          block: true
+        handles: {}
+      auto-stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                immediate:
+                  type: boolean
+                  default: false
+        goal_default:
+          immediate: false
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_max_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_max_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_max_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_max_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_min_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_min_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_min_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_min_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_jog_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_jog_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_jog_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_jog_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_homing_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_homing_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_homing_velocity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_homing_velocity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_acceleration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_acceleration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_acceleration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_acceleration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_jog_acceleration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_jog_acceleration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_jog_acceleration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_jog_acceleration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_jog_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_jog_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_jog_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_jog_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_jog_step_size:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_jog_step_size
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_jog_step_size:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_jog_step_size
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_stop_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_stop_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_stop_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_stop_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_soft_limits_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_soft_limits_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_soft_limits_mode:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_soft_limits_mode
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_backlash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_backlash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-set_backlash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_backlash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-enable_simulation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enable_simulation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disable_simulation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disable_simulation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Thorlabs_TDC001驱动（thorlabs），支持identify/get_idn/go_home/wait_for_completion/is_moving等39个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: QCoDeS/Qcodes_contrib_drivers
+    source_file: src/qcodes_contrib_drivers/drivers/Thorlabs/TDC001.py
+    candidate_class: Thorlabs_TDC001
+    quality_score: 1.06
+    confidence: 0.9
+    quality_status: usable
+    操作数: 39
+  manufacturer: thorlabs
+  model:
+    name: Thorlabs_TDC001
+    type: device
+  name: thorlabs Thorlabs_TDC001
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

@@ -1,0 +1,95 @@
+community.ba.base_client:
+  name: BaseClient
+  category:
+  - 实验执行&合成设备
+  class:
+    module: unilabos.devices.client.instrumentserver_client:BaseClient
+    type: python
+    status_types: {}
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-ask:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ask
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                message:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  config_info: []
+  cover: ''
+  quality_status: clean
+  description: BaseClient 设备驱动，社区驱动 - 自动集成自 base_client
+  device_params:
+    品牌: 社区开源
+    型号: BaseClient
+    设备类型: 实验执行&合成设备
+    来源仓库: base_client
+    驱动类: BaseClient
+  handles: []
+  icon: ''
+  init_param_schema:
+    config:
+      type: object
+      properties:
+        host:
+          type: string
+          default: localhost
+        port:
+          type: string
+          default: 5555
+        connect:
+          type: string
+          default: true
+        timeout:
+          type: string
+          default: 20
+        raise_exceptions:
+          type: string
+          default: true
+  manufacturer: ''
+  model:
+    name: BaseClient
+    type: device
+  resource_type: device
+  scene:
+    domain: Laboratory Automation
+    scene_name: Instrument Control
+    step: Measurement
+  tags: []
+  version: 1.0.0

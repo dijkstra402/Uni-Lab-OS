@@ -1,0 +1,310 @@
+community_instrument_opentrons_temperature_module__community_instrument_opentrons_temperature_module:
+  class:
+    module: unilabos.devices.community.community_instrument_opentrons_temperature_module.driver:OpentronsTemperatureModuleBackend
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/czbiohub-sf__ot-tempdeck-control
+          source_file:
+            type: string
+            default: ot_tempdeck/_driver.py
+          class_name:
+            type: string
+            default: TempdeckControl
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - open_first_device
+            - from_usb_location
+            - from_serial_portname
+            - list_connected_devices
+            - set_target_temp
+            - get_temps
+            - get_target_temp
+            - get_current_temp
+            - deactivate
+            - model_name
+            - serial_no
+            - fw_version
+          metadata:
+            type: object
+            default:
+              repo: czbiohub-sf/ot-tempdeck-control
+              repo_url: https://github.com/czbiohub-sf/ot-tempdeck-control
+              source_file: ot_tempdeck/_driver.py
+              class_name: TempdeckControl
+              brand: Opentrons
+              model: Temperature Module
+              device_type_cn: 高低温金属浴
+              device_type_en: High/Low Temperature Metal Bath
+              source_framework: 专用驱动
+              tag_id: '4459'
+              tag_name: 高低温金属浴
+              tag_name_en: High/Low Temperature Metal Bath
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 158
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-open_first_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_first_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                usb_vidpid:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-from_usb_location:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_usb_location
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                location:
+                  type: string
+                usb_vidpid:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-from_serial_portname:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_serial_portname
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                portname:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-list_connected_devices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: list_connected_devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                usb_vidpid:
+                  type: integer
+        goal_default: {}
+        handles: {}
+      auto-set_target_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_target_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                temp:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-get_temps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_temps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_target_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_target_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_current_temp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_current_temp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-deactivate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: deactivate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-model_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: model_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-serial_no:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: serial_no
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-fw_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: fw_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Temperature Module 驱动（Opentrons），支持 open_first_device/from_usb_location/from_serial_portname/list_connected_devices/set_target_temp
+    等 12 个操作。
+  category:
+  - 高低温金属浴
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: czbiohub-sf/ot-tempdeck-control
+    source_file: ot_tempdeck/_driver.py
+    candidate_class: TempdeckControl
+    candidate_score: 158
+    quality_status: usable
+    操作数: 12
+  manufacturer: Opentrons
+  model:
+    name: Temperature Module
+    type: device
+  name: Opentrons Temperature Module
+  tags:
+  - 高低温金属浴
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

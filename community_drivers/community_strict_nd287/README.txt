@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/heidenhain/nd287.py
+registry_id: community_strict_nd287
+source_file: pymeasure/instruments/heidenhain/nd287.py
+class_name: ND287
+manufacturer: heidenhain
+model: ND287
+tag: 表征设备
+confidence: 0.8
+quality_score: 0.94
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_nd287.yaml

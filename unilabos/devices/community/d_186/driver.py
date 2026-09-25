@@ -302,3 +302,10 @@ class Device(EmptyDevice):
         """Return the identification string of the device."""
         self.port.write("*IDN?")
         return self.port.read()
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Device)
+except Exception:
+    pass

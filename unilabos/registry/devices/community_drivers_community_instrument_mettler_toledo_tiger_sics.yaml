@@ -1,0 +1,159 @@
+community_instrument_mettler_toledo_tiger_sics:
+  class:
+    module: community_drivers.community_instrument_mettler_toledo_tiger_sics.driver:CommunityInstrumentMettlerToledoTigerSics
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/GROUNDUP-GmbH__scale-hub
+          source_file:
+            type: string
+            default: hub/tests/test_mettler_tiger_adapter.py
+          class_name:
+            type: string
+            default: TestMettlerTigerAdapter
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - setup_method
+            - test_tier_and_name
+            - test_parse_weight_kg
+            - test_parse_weight_g
+            - test_parse_weight_large
+            - test_parse_weight_zero
+            - test_parse_empty_raises
+            - test_parse_invalid_weight_raises
+            - test_price_and_total_are_zero
+            - test_build_select_command
+            - test_build_plu_upload
+            - test_build_plu_delete
+            - test_build_group_upload
+            - test_build_group_delete
+            - test_build_tare_upload
+            - test_build_tax_upload
+            - test_build_datetime_sync
+            - test_build_store_name
+            - test_build_running_text
+            - test_build_label_format
+            - test_build_keyboard_map
+            - test_build_special_offer
+            - test_build_barcode_format
+            - test_build_weight_request
+          metadata:
+            type: object
+            default:
+              repo: GROUNDUP-GmbH/scale-hub
+              repo_url: https://github.com/GROUNDUP-GmbH/scale-hub
+              source_file: hub/tests/test_mettler_tiger_adapter.py
+              class_name: TestMettlerTigerAdapter
+              brand: Mettler Toledo
+              model: Tiger (SICS协议)
+              device_type_cn: 工业秤
+              device_type_en: Industrial Scale
+              source_framework: 独立仓库
+              tag_id: '4426'
+              tag_name: 电子天平
+              tag_name_en: Electronic Balance
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons:
+              - test_or_example_path
+              candidate_score: 205
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-setup_method:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: setup_method
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: cleaned
+  quality_reasons: "删除 23 个 test_* 单元测试残留"
+  description: Tiger (SICS协议) 驱动（Mettler Toledo），支持 setup_method/test_tier_and_name/test_parse_weight_kg/test_parse_weight_g/test_parse_weight_large
+    等 24 个操作。
+  category:
+  - 电子天平
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: GROUNDUP-GmbH/scale-hub
+    source_file: hub/tests/test_mettler_tiger_adapter.py
+    candidate_class: TestMettlerTigerAdapter
+    candidate_score: 205
+    quality_status: usable
+    操作数: 24
+  manufacturer: 梅特勒托利多
+  model:
+    name: Tiger (SICS协议)
+    type: device
+  name: Mettler Toledo Tiger (SICS协议)
+  tags:
+  - 电子天平
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

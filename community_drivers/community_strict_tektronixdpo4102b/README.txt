@@ -1,0 +1,12 @@
+repo: python-ivi/python-ivi
+repo_url: https://github.com/python-ivi/python-ivi
+source_url: https://github.com/python-ivi/python-ivi/blob/main/ivi/tektronix/tektronixDPO4102B.py
+registry_id: community_strict_tektronixdpo4102b
+source_file: ivi/tektronix/tektronixDPO4102B.py
+class_name: tektronixDPO4102B
+manufacturer: tektronix
+model: tektronixDPO4102B
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_tektronixdpo4102b.yaml

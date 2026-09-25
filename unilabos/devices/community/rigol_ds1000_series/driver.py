@@ -287,3 +287,10 @@ class RigolDS1000Series(SCPIInstrument, Oscilloscope):
         Releases any lockout of the local control panel.
         """
         self.sendcmd(":KEY:FORC")
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(RigolDS1000Series)
+except Exception:
+    pass

@@ -1,0 +1,371 @@
+community_instrument_horiba_labram_hr_evolution__community_instrument_horiba_labram_hr_evolution:
+  class:
+    module: unilabos.devices.community.community_instrument_horiba_labram_hr_evolution.driver:RamanSpectrum
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/Arcadia-Science__ramanalysis
+          source_file:
+            type: string
+            default: ramanalysis/spectra.py
+          class_name:
+            type: string
+            default: RamanSpectrum
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - from_openraman_csvfiles
+            - from_horiba_txtfile
+            - from_renishaw_txtfile
+            - from_wasatch_csvfile
+            - from_generic_csvfile
+            - snr
+            - between
+            - interpolate
+            - normalize
+            - standardize
+            - smooth
+            - find_n_most_prominent_wavenumbers
+            - find_prominent_wavenumbers
+          metadata:
+            type: object
+            default:
+              repo: Arcadia-Science/ramanalysis
+              repo_url: https://github.com/Arcadia-Science/ramanalysis
+              source_file: ramanalysis/spectra.py
+              class_name: RamanSpectrum
+              brand: Horiba
+              model: LabRAM HR Evolution
+              device_type_cn: 拉曼光谱仪
+              device_type_en: Raman Spectrometer
+              source_framework: 光谱分析
+              tag_id: '4392'
+              tag_name: 拉曼光谱仪
+              tag_name_en: Raman Spectrometer
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 162
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-from_openraman_csvfiles:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_openraman_csvfiles
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                csv_filepath:
+                  type: string
+                csv_filepath_excitation_calibration:
+                  type: string
+                csv_filepath_emission_calibration:
+                  type: string
+                excitation_wavelength_nm:
+                  type: number
+                kernel_size:
+                  type: integer
+                rough_calibration_residuals_threshold:
+                  type: number
+                fine_calibration_residuals_threshold:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-from_horiba_txtfile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_horiba_txtfile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                txt_filepath:
+                  type: string
+                num_skip_rows:
+                  type: integer
+                  default: 32
+        goal_default:
+          num_skip_rows: 32
+        handles: {}
+      auto-from_renishaw_txtfile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_renishaw_txtfile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                csv_filepath:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-from_wasatch_csvfile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_wasatch_csvfile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                csv_filepath:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-from_generic_csvfile:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: from_generic_csvfile
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                csv_filepath:
+                  type: string
+                wavenumber_cm1_index:
+                  type: integer
+                  default: 0
+                intensity_index:
+                  type: integer
+                  default: 1
+        goal_default:
+          wavenumber_cm1_index: 0
+          intensity_index: 1
+        handles: {}
+      auto-snr:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: snr
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-between:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: between
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                min_wavenumber_cm1:
+                  type: number
+                max_wavenumber_cm1:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-interpolate:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: interpolate
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                float_indices:
+                  type: number
+        goal_default: {}
+        handles: {}
+      auto-normalize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: normalize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-standardize:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: standardize
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-smooth:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: smooth
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                kernel_size:
+                  type: integer
+                  default: 5
+        goal_default:
+          kernel_size: 5
+        handles: {}
+      auto-find_n_most_prominent_wavenumbers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_n_most_prominent_wavenumbers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                num_peaks:
+                  type: integer
+                prominence_increment:
+                  type: number
+                  default: 0.005
+                max_iterations:
+                  type: integer
+                  default: 500
+        goal_default:
+          prominence_increment: 0.005
+          max_iterations: 500
+        handles: {}
+      auto-find_prominent_wavenumbers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: find_prominent_wavenumbers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                prominence:
+                  type: number
+                  default: 0.01
+        goal_default:
+          prominence: 0.01
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: LabRAM HR Evolution 驱动（Horiba），支持 from_openraman_csvfiles/from_horiba_txtfile/from_renishaw_txtfile/from_wasatch_csvfile/from_generic_csvfile
+    等 13 个操作。
+  category:
+  - 拉曼光谱仪
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: Arcadia-Science/ramanalysis
+    source_file: ramanalysis/spectra.py
+    candidate_class: RamanSpectrum
+    candidate_score: 162
+    quality_status: usable
+    操作数: 13
+  manufacturer: Horiba
+  model:
+    name: LabRAM HR Evolution
+    type: device
+  name: Horiba LabRAM HR Evolution
+  tags:
+  - 拉曼光谱仪
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

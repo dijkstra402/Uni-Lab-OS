@@ -1,0 +1,310 @@
+community_instrument_dobot_magician:
+  class:
+    module: community_drivers.community_instrument_dobot_magician.driver:CommunityInstrumentDobotMagician
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/luismesas__pydobot
+          source_file:
+            type: string
+            default: pydobot/dobot.py
+          class_name:
+            type: string
+            default: Dobot
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - get_eio
+            - set_eio
+            - close
+            - go
+            - move_to
+            - suck
+            - grip
+            - speed
+            - wait
+            - pose
+          metadata:
+            type: object
+            default:
+              repo: luismesas/pydobot
+              repo_url: https://github.com/luismesas/pydobot
+              source_file: pydobot/dobot.py
+              class_name: Dobot
+              brand: Dobot
+              model: Magician
+              device_type_cn: 教育机械臂
+              device_type_en: Educational Robot Arm
+              source_framework: 机器人/运动控制
+              tag_id: '4402'
+              tag_name: 机械臂
+              tag_name_en: Robotic Arm
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 138
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-get_eio:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_eio
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_eio:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_eio
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                addr:
+                  type: string
+                val:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-close:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-go:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: go
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+                r:
+                  type: string
+                  default: 0.0
+        goal_default:
+          r: 0.0
+        handles: {}
+      auto-move_to:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: move_to
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                x:
+                  type: string
+                y:
+                  type: string
+                z:
+                  type: string
+                r:
+                  type: string
+                wait:
+                  type: string
+                  default: false
+        goal_default:
+          wait: false
+        handles: {}
+      auto-suck:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: suck
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-grip:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: grip
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                enable:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-speed:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: speed
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                velocity:
+                  type: string
+                  default: 100.0
+                acceleration:
+                  type: string
+                  default: 100.0
+        goal_default:
+          velocity: 100.0
+          acceleration: 100.0
+        handles: {}
+      auto-wait:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: wait
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ms:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-pose:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: pose
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: Magician 驱动（Dobot），支持 get_eio/set_eio/close/go/move_to 等 10 个操作。
+  category:
+  - 机械臂
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: luismesas/pydobot
+    source_file: pydobot/dobot.py
+    candidate_class: Dobot
+    candidate_score: 138
+    quality_status: usable
+    操作数: 10
+  manufacturer: 越疆科技
+  model:
+    name: Magician
+    type: device
+  name: Dobot Magician
+  tags:
+  - 机械臂
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

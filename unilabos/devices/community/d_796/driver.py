@@ -425,3 +425,10 @@ class Agilent4284A(SCPIMixin, Instrument):
     def trigger_initiate(self):
         """Change the trigger state from IDLE to WAIT FOR TRIGGER for one trigger sequence."""
         self.write("TRIG:INIT:IMM")
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Agilent4284A)
+except Exception:
+    pass

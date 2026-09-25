@@ -462,3 +462,10 @@ UNITS2 = {
     Keithley195.Mode.current_ac: u.amp,
     Keithley195.Mode.resistance: u.ohm,
 }
+
+# --- unilab semantic aliases ---
+try:
+    from unilabos.devices.community._semantic_aliases import bind as _ul_bind
+    _ul_bind(Keithley195)
+except Exception:
+    pass

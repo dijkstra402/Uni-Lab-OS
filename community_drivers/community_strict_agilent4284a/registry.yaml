@@ -1,0 +1,337 @@
+community_strict_agilent4284a:
+  class:
+    module: community_drivers.community_strict_agilent4284a.driver:CommunityStrictAgilent4284a
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/strict_candidates_repos/pymeasure__pymeasure
+          source_file:
+            type: string
+            default: pymeasure/instruments/agilent/agilent4284A.py
+          class_name:
+            type: string
+            default: Agilent4284ASpot
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - measure_open
+            - measure_short
+            - measure_load
+            - check_errors
+            - measure_voltage
+            - measure_current
+            - auto_range_source
+            - apply_current
+            - apply_voltage
+            - ramp_to_voltage
+            - ramp_to_current
+          metadata:
+            type: object
+            default:
+              repo: pymeasure/pymeasure
+              repo_url: https://github.com/pymeasure/pymeasure
+              source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/agilent/agilent4284A.py
+              source_file: pymeasure/instruments/agilent/agilent4284A.py
+              class_name: Agilent4284ASpot
+              manufacturer_guess: agilent
+              manufacturer_resolved: agilent
+              tag: 表征设备
+              tag_rule: fallback
+              confidence: 0.9
+              quality_score: 1.12
+              code_evidence: 'L40: class Agilent4284ASpot(Channel):'
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              action_targets: &id001 {}
+          action_targets:
+            type: object
+            default: *id001
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-measure_open:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_open
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_short:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_short
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_load:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_load
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-check_errors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: check_errors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-measure_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nplc:
+                  type: string
+                  default: 1
+                voltage:
+                  type: string
+                  default: 21.0
+                auto_range:
+                  type: string
+                  default: true
+        goal_default:
+          nplc: 1
+          voltage: 21.0
+          auto_range: true
+        handles: {}
+      auto-measure_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: measure_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                nplc:
+                  type: string
+                  default: 1
+                current:
+                  type: string
+                  default: 0.000105
+                auto_range:
+                  type: string
+                  default: true
+        goal_default:
+          nplc: 1
+          current: 0.000105
+          auto_range: true
+        handles: {}
+      auto-auto_range_source:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: auto_range_source
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-apply_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current_range:
+                  type: string
+                compliance_voltage:
+                  type: string
+                  default: 0.1
+        goal_default:
+          compliance_voltage: 0.1
+        handles: {}
+      auto-apply_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: apply_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage_range:
+                  type: string
+                compliance_current:
+                  type: string
+                  default: 0.1
+        goal_default:
+          compliance_current: 0.1
+        handles: {}
+      auto-ramp_to_voltage:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_to_voltage
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_voltage:
+                  type: string
+                steps:
+                  type: string
+                  default: 30
+                pause:
+                  type: string
+                  default: 0.1
+        goal_default:
+          steps: 30
+          pause: 0.1
+        handles: {}
+      auto-ramp_to_current:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: ramp_to_current
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_current:
+                  type: string
+                steps:
+                  type: string
+                  default: 30
+                pause:
+                  type: string
+                  default: 0.1
+        goal_default:
+          steps: 30
+          pause: 0.1
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: Agilent4284A驱动（agilent），支持measure_open/measure_short/measure_load/check_errors/measure_voltage等11个操作。
+  category:
+  - 表征设备
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: pymeasure/pymeasure
+    source_file: pymeasure/instruments/agilent/agilent4284A.py
+    candidate_class: Agilent4284ASpot
+    quality_score: 1.12
+    confidence: 0.9
+    quality_status: usable
+    操作数: 11
+  manufacturer: agilent
+  model:
+    name: Agilent4284A
+    type: device
+  name: agilent Agilent4284A
+  tags:
+  - 表征设备
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

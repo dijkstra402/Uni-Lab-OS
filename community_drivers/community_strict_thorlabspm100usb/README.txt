@@ -1,0 +1,12 @@
+repo: pymeasure/pymeasure
+repo_url: https://github.com/pymeasure/pymeasure
+source_url: https://github.com/pymeasure/pymeasure/blob/main/pymeasure/instruments/thorlabs/thorlabspm100usb.py
+registry_id: community_strict_thorlabspm100usb
+source_file: pymeasure/instruments/thorlabs/thorlabspm100usb.py
+class_name: ThorlabsPM100USB
+manufacturer: thorlabs
+model: ThorlabsPM100USB
+tag: 表征设备
+confidence: 0.9
+quality_score: 1.12
+formal_registry: /Users/sml/work/Uni-Lab-OS/LeapLab/Uni-Lab-OS/unilabos/registry/devices/community_drivers_community_strict_thorlabspm100usb.yaml

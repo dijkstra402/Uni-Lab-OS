@@ -1,0 +1,579 @@
+community_instrument_zke_ebc_a05:
+  class:
+    module: community_drivers.community_instrument_zke_ebc_a05.driver:CommunityInstrumentZkeEbcA05
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/wirenboard__zke-ebc-axx
+          source_file:
+            type: string
+            default: zke_ebc_axx/device.py
+          class_name:
+            type: string
+            default: EBCDevice
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - connect
+            - disconnect
+            - send_command
+            - send_command_16bit
+            - send_stop
+            - encode_value
+            - decode_value
+            - start_charge_predefined
+            - adjust_charge_predefined
+            - start_charge_cccv
+            - adjust_charge_cccv
+            - start_discharge_cc
+            - adjust_discharge_cc
+            - start_discharge_cp
+            - adjust_discharge_cp
+            - discard_unread
+            - read_measurement
+            - read_until_complete
+            - charge_cccv
+            - discharge_cc
+            - discharge_cp
+            - discharge_cv
+            - charge_cv
+          metadata:
+            type: object
+            default:
+              repo: wirenboard/zke-ebc-axx
+              repo_url: https://github.com/wirenboard/zke-ebc-axx
+              source_file: zke_ebc_axx/device.py
+              class_name: EBCDevice
+              brand: ZKE
+              model: EBC-A05
+              device_type_cn: 电池测试柜
+              device_type_en: Battery Test Cabinet
+              source_framework: 专用驱动
+              tag_id: '4427'
+              tag_name: 电池测试柜
+              tag_name_en: Battery Test Cabinet
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 258
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-disconnect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: disconnect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-send_command:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                command:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-send_command_16bit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_command_16bit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                command:
+                  type: string
+                arg1:
+                  type: string
+                  default: 0
+                arg2:
+                  type: string
+                  default: 0
+                arg3:
+                  type: string
+                  default: 0
+        goal_default:
+          arg1: 0
+          arg2: 0
+          arg3: 0
+        handles: {}
+      auto-send_stop:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: send_stop
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-encode_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: encode_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-decode_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: decode_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_charge_predefined:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_charge_predefined
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                current:
+                  type: string
+                ncells:
+                  type: string
+                  default: 1
+                timeout:
+                  type: string
+        goal_default:
+          ncells: 1
+        handles: {}
+      auto-adjust_charge_predefined:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: adjust_charge_predefined
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mode:
+                  type: string
+                current:
+                  type: string
+                ncells:
+                  type: string
+                  default: 1
+                timeout:
+                  type: string
+        goal_default:
+          ncells: 1
+        handles: {}
+      auto-start_charge_cccv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_charge_cccv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage:
+                  type: string
+                current:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-adjust_charge_cccv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: adjust_charge_cccv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage:
+                  type: string
+                current:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_discharge_cc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_discharge_cc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current:
+                  type: string
+                cutoff_voltage:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-adjust_discharge_cc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: adjust_discharge_cc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current:
+                  type: string
+                cutoff_voltage:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-start_discharge_cp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: start_discharge_cp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                power:
+                  type: string
+                cutoff_voltage:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-adjust_discharge_cp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: adjust_discharge_cp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                power:
+                  type: string
+                cutoff_voltage:
+                  type: string
+                timeout:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-discard_unread:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: discard_unread
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-read_until_complete:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: read_until_complete
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                writer_cb:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-charge_cccv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: charge_cccv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                voltage:
+                  type: string
+                current:
+                  type: string
+                timeout:
+                  type: string
+                writer_cb:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-discharge_cc:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: discharge_cc
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                current:
+                  type: string
+                cutoff_voltage:
+                  type: string
+                timeout:
+                  type: string
+                writer_cb:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-discharge_cp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: discharge_cp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                power:
+                  type: string
+                cutoff_voltage:
+                  type: string
+                timeout:
+                  type: string
+                writer_cb:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-discharge_cv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: discharge_cv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_voltage:
+                  type: string
+                writer_cb:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-charge_cv:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: charge_cv
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                target_voltage:
+                  type: string
+                writer_cb:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  description: EBC-A05 驱动（ZKE），支持 connect/disconnect/send_command/send_command_16bit/send_stop
+    等 23 个操作。
+  category:
+  - 电池测试柜
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: wirenboard/zke-ebc-axx
+    source_file: zke_ebc_axx/device.py
+    candidate_class: EBCDevice
+    candidate_score: 258
+    quality_status: usable
+    操作数: 23
+  manufacturer: ZKE
+  model:
+    name: EBC-A05
+    type: device
+  name: ZKE EBC-A05
+  tags:
+  - 电池测试柜
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0

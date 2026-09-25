@@ -1,0 +1,4808 @@
+community_instrument_eurotherm_2408_2416:
+  class:
+    module: community_drivers.community_instrument_eurotherm_2408_2416.driver:CommunityInstrumentEurotherm24082416
+    type: python
+    status_types:
+      loaded: bool
+      ready: bool
+      load_error: str
+    init_param_schema:
+      config:
+        type: object
+        properties:
+          repo_root:
+            type: string
+            default: /Users/sml/work/Uni-Lab-OS/new/instrument_driver_repos/NMGRL__pychron
+          source_file:
+            type: string
+            default: pychron/database/adapters/isotope_adapter.py
+          class_name:
+            type: string
+            default: IsotopeAdapter
+          import_roots:
+            type: array
+            items:
+              type: string
+            default: []
+          candidate_methods:
+            type: array
+            items:
+              type: string
+            default:
+            - get_mass_spectrometer_names
+            - get_extraction_device_names
+            - get_flux_value
+            - get_level_identifiers
+            - get_irradiation_names
+            - get_analysis_info
+            - set_analysis_sensitivity
+            - save_flux
+            - interpreted_age_factory
+            - add_data_reduction_tag
+            - add_data_reduction_tag_set
+            - add_proc_action
+            - add_mftable
+            - add_analysis_group
+            - add_analysis_group_set
+            - add_interpreted_age_group_history
+            - add_interpreted_age_group_set
+            - add_history
+            - add_mass_calibration_history
+            - add_mass_calibration_scan
+            - add_arar_history
+            - add_arar
+            - add_load
+            - add_load_position
+            - add_tag
+            - add_import
+            - add_snapshot
+            - add_image
+            - add_sample_image
+            - add_monitor
+            - add_analysis_position
+            - add_note
+            - add_interpreted_age_history
+            - add_interpreted_age
+            - add_interpreted_age_set
+            - add_blanks_history
+            - add_blanks
+            - add_blanks_set
+            - add_blank_set_value_table
+            - add_backgrounds_history
+            - add_backgrounds
+            - add_backgrounds_set
+            - add_detector
+            - add_detector_parameter_history
+            - add_detector_parameter
+            - add_detector_intercalibration_history
+            - add_detector_intercalibration
+            - add_detector_intercalibration_set
+            - add_experiment
+            - add_extraction
+            - add_extraction_device
+            - add_figure_labnumber
+            - add_figure
+            - add_figure_preference
+            - add_figure_analysis
+            - add_fit_history
+            - add_fit
+            - add_flux
+            - add_flux_history
+            - add_flux_monitor
+            - add_irradiation
+            - add_load_holder
+            - add_irradiation_holder
+            - add_irradiation_production
+            - add_irradiation_position
+            - add_irradiation_chronology
+            - add_irradiation_level
+            - add_isotope
+            - add_isotope_result
+            - add_measurement
+            - add_mass_spectrometer
+            - add_material
+            - add_molecular_weight
+            - add_project
+            - add_peak_center
+            - add_user
+            - add_sample
+            - add_script
+            - add_selected_histories
+            - add_signal
+            - add_spectrometer_parameters
+            - add_deflection
+            - add_labnumber
+            - add_analysis
+            - add_analysis_type
+            - add_sensitivity
+            - add_gain_history
+            - add_gain
+            - get_sample_image_count
+            - get_sample_image
+            - get_adjacent_analysis
+            - make_gains_hash
+            - get_gain_histories
+            - get_gain_history
+            - get_blanks
+            - get_session_blank_histories
+            - get_blanks_history
+            - get_mftables
+            - get_mftable
+            - get_interpreted_age_group_history
+            - get_interpreted_age_groups
+            - get_analyzed_positions
+            - get_analysis_group
+            - get_analysis_groups
+            - get_latest_interpreted_age_history
+            - get_interpreted_age_histories
+            - get_project_irradiation_labnumbers
+            - get_project_labnumbers
+            - get_project_analysis_count
+            - get_project_figures
+            - get_project_date_bins
+            - get_project_date_range
+            - get_labnumber_figures
+            - get_preceding
+            - get_analysis_mass_spectrometers
+            - get_analysis_date_ranges
+            - get_min_max_analysis_timestamp
+            - get_labnumber_mass_spectrometers
+            - get_labnumber_analyses
+            - get_sample_analyses
+            - get_analyses_date_range
+            - get_loadtable
+            - get_arar
+            - get_last_labnumbers
+            - get_last_labnumber
+            - get_greatest_identifier
+            - get_greatest_aliquot
+            - get_greatest_step
+            - get_last_analysis
+            - get_unique_analysis
+            - get_analyses_uuid
+            - get_analysis_isotopes
+            - get_analysis_isotope
+            - get_analysis_runid
+            - get_analysis_uuid
+            - get_analysis_record
+            - get_image
+            - get_analysis
+            - get_analysis_type
+            - get_blanks_set
+            - retrieve_blank
+            - get_blank
+            - get_background
+            - get_backgrounds_history
+            - get_detector
+            - get_detector_intercalibration
+            - get_detector_intercalibration_history
+            - get_detector_intercalibrations_history
+            - get_experiment
+            - get_extraction
+            - get_extraction_device
+            - get_figure
+            - get_irradiation_chronology
+            - get_load_holder
+            - get_irradiation_holder
+            - get_irradiation_production
+            - get_irradiation
+            - get_irradiation_level_byid
+            - get_irradiation_level
+            - get_irradiation_position
+            - get_irradiation_labnumbers
+            - get_labnumber
+            - get_mass_spectrometer
+            - get_material
+            - get_molecular_weight
+            - get_molecular_weight_name
+            - get_user
+            - get_project
+            - get_script
+            - get_sample
+            - get_flux_history
+            - get_flux_monitor
+            - get_tag
+            - get_sensitivity
+            - get_interpreted_age_history
+            - get_data_reduction_tags
+            - get_irradiation_holders
+            - get_analyses
+            - get_figures
+            - get_aliquots
+            - get_detectors
+            - get_steps
+            - get_materials
+            - get_material_names
+            - get_years_active
+            - get_recent_labnumbers
+            - get_recent_samples
+            - get_samples
+            - get_users
+            - get_usernames
+            - get_labnumbers_startswith
+            - get_labnumbers
+            - get_flux_monitors
+            - get_labnumbers_join_analysis
+            - get_irradiations_join_analysis
+            - get_irradiations
+            - get_irradiation_productions
+            - get_projects
+            - get_sensitivities
+            - get_mass_spectrometers
+            - get_extraction_devices
+            - get_analysis_types
+            - get_spectrometer_parameters
+            - get_load_holders
+            - get_latest_load
+            - get_loads
+            - get_molecular_weights
+            - get_molecular_weight_names
+            - get_tags
+            - delete_tag
+            - delete_irradiation_position
+            - delete_analysis_group
+            - delete_user
+            - delete_project
+            - delete_material
+            - delete_sample
+            - delete_labnumber
+            - create_all
+            - session_ctx
+            - create_session
+            - close_session
+            - enabled
+            - save_username
+            - reset_connection
+            - connect
+            - rollback
+            - flush
+            - expire
+            - expire_all
+            - commit
+            - delete
+            - post_commit
+            - add_item
+            - get_migrate_version
+            - get_versions
+            - public_datasource_url
+            - public_url
+            - init_logger
+            - report_logger_stats
+            - unique_warning
+            - unique_info
+            - unique_debug
+            - warning
+            - info
+            - debug_exception
+            - warning_exception
+            - critical
+            - debug
+            - log
+            - warning_dialog
+            - confirmation_dialog
+            - information_dialog
+            - message
+            - open_file_dialog
+            - save_file_dialog
+            - open_directory_dialog
+            - save_directory_dialog
+          metadata:
+            type: object
+            default:
+              repo: NMGRL/pychron
+              repo_url: https://github.com/NMGRL/pychron
+              source_file: pychron/database/adapters/isotope_adapter.py
+              class_name: IsotopeAdapter
+              brand: Eurotherm
+              model: 2408/2416
+              device_type_cn: 箱式电阻炉
+              device_type_en: Box Resistance Furnace
+              source_framework: pychron
+              tag_id: '4438'
+              tag_name: 箱式电阻炉
+              tag_name_en: Box Resistance Furnace
+              language: Python
+              parse_status: ok
+              quality_status: usable
+              quality_reasons: []
+              candidate_score: 1749
+              action_targets: {}
+          action_targets:
+            type: object
+            default: {}
+          init_kwargs:
+            type: object
+            default: {}
+          auto_instantiate:
+            type: boolean
+            default: false
+    action_value_mappings:
+      auto-get_mass_spectrometer_names:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mass_spectrometer_names
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_extraction_device_names:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_extraction_device_names
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_flux_value:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_flux_value
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: string
+                attr:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_level_identifiers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_level_identifiers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                irrad:
+                  type: string
+                level:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_irradiation_names:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation_names
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_analysis_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                li:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-set_analysis_sensitivity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: set_analysis_sensitivity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+                v:
+                  type: string
+                e:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-save_flux:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_flux
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: string
+                v:
+                  type: string
+                e:
+                  type: string
+                inform:
+                  type: string
+                  default: true
+        goal_default:
+          inform: true
+        handles: {}
+      auto-interpreted_age_factory:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: interpreted_age_factory
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hi:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_data_reduction_tag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_data_reduction_tag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                comment:
+                  type: string
+                user:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_data_reduction_tag_set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_data_reduction_tag_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dbtag:
+                  type: string
+                an:
+                  type: string
+                sh_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_proc_action:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_proc_action
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_mftable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_mftable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                specname:
+                  type: string
+                blob:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_analysis_group:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_analysis_group
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_analysis_group_set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_analysis_group_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                group:
+                  type: string
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_interpreted_age_group_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_interpreted_age_group_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                project:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_interpreted_age_group_set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_interpreted_age_group_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hist:
+                  type: string
+                interpreted_age_id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                dbrecord:
+                  type: string
+                kind:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_mass_calibration_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_mass_calibration_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                spectrometer:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_mass_calibration_scan:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_mass_calibration_scan
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hist:
+                  type: string
+                iso:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_arar_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_arar_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_arar:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_arar
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                hist:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_load:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_load
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_load_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_load_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                labnumber:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_tag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_tag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_snapshot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_snapshot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                path:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                image:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_sample_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_sample_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sample_name:
+                  type: string
+                image_name:
+                  type: string
+                image:
+                  type: string
+                note:
+                  type: string
+                project:
+                  type: string
+                material:
+                  type: string
+                identifier:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_monitor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_monitor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_analysis_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_analysis_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                extraction:
+                  type: string
+                pos:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_note:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_note
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+                note:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_interpreted_age_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_interpreted_age_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                labnumber:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_interpreted_age:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_interpreted_age
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                history:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_interpreted_age_set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_interpreted_age_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                interpreted_age:
+                  type: string
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_blanks_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_blanks_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_blanks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_blanks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                history:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_blanks_set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_blanks_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_blank_set_value_table:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_blank_set_value_table
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                v:
+                  type: string
+                e:
+                  type: string
+                blank:
+                  type: string
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_backgrounds_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_backgrounds_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_backgrounds:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_backgrounds
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                history:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_backgrounds_set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_backgrounds_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                background:
+                  type: string
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_detector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_detector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_detector_parameter_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_detector_parameter_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_detector_parameter:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_detector_parameter
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                history:
+                  type: string
+                detector:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_detector_intercalibration_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_detector_intercalibration_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_detector_intercalibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_detector_intercalibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                history:
+                  type: string
+                detector:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_detector_intercalibration_set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_detector_intercalibration_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_extraction:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_extraction
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+                extract_device:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_extraction_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_extraction_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_figure_labnumber:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_figure_labnumber
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                figure:
+                  type: string
+                labnumber:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_figure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_figure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_figure_preference:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_figure_preference
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                figure:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_figure_analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_figure_analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                figure:
+                  type: string
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_fit_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_fit_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_fit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_fit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                history:
+                  type: string
+                isotope:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_flux:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_flux
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                j:
+                  type: string
+                j_err:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_flux_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_flux_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_flux_monitor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_flux_monitor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_irradiation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_irradiation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                chronology:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_load_holder:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_load_holder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_irradiation_holder:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_irradiation_holder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_irradiation_production:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_irradiation_production
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_irradiation_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_irradiation_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                pos:
+                  type: string
+                labnumber:
+                  type: string
+                irrad:
+                  type: string
+                level:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_irradiation_chronology:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_irradiation_chronology
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                chronblob:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_irradiation_level:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_irradiation_level
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                irradiation:
+                  type: string
+                holder:
+                  type: string
+                production:
+                  type: string
+                z:
+                  type: string
+                  default: 0
+        goal_default:
+          z: 0
+        handles: {}
+      auto-add_isotope:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_isotope
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+                molweight:
+                  type: string
+                det:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_isotope_result:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_isotope_result
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                isotope:
+                  type: string
+                history:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_measurement:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_measurement
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+                analysis_type:
+                  type: string
+                mass_spec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_mass_spectrometer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_mass_spectrometer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_material:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_material
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_molecular_weight:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_molecular_weight
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                mass:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_project:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_project
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_peak_center:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_peak_center
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_user:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_user
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_sample:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_sample
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                project:
+                  type: string
+                material:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_script:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_script
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+                blob:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_selected_histories:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_selected_histories
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                analysis:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_signal:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_signal
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                isotope:
+                  type: string
+                data:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_spectrometer_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_spectrometer_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                meas:
+                  type: string
+                params:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_deflection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_deflection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                meas:
+                  type: string
+                det:
+                  type: string
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_labnumber:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_labnumber
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                labnumber:
+                  type: string
+                sample:
+                  type: string
+                unique:
+                  type: string
+                  default: true
+        goal_default:
+          unique: true
+        handles: {}
+      auto-add_analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                labnumber:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_analysis_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_analysis_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_sensitivity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_sensitivity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ms:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_gain_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_gain_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ha:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-add_gain:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_gain
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                d:
+                  type: string
+                v:
+                  type: string
+                hist:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_sample_image_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sample_image_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sample:
+                  type: string
+                project:
+                  type: string
+                material:
+                  type: string
+                identifier:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_sample_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sample_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sid:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_adjacent_analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_adjacent_analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                timestamp:
+                  type: string
+                previous:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-make_gains_hash:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: make_gains_hash
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gains:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_gain_histories:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_gain_histories
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lpost:
+                  type: string
+                hpost:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_gain_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_gain_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                v:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_blanks:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_blanks
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ms:
+                  type: string
+                limit:
+                  type: string
+                  default: 100
+        goal_default:
+          limit: 100
+        handles: {}
+      auto-get_session_blank_histories:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_session_blank_histories
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                s:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_blanks_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_blanks_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                key:
+                  type: string
+                  default: id
+        goal_default:
+          key: id
+        handles: {}
+      auto-get_mftables:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mftables
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                spec:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_mftable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mftable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                key:
+                  type: string
+                  default: id
+        goal_default:
+          key: id
+        handles: {}
+      auto-get_interpreted_age_group_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_interpreted_age_group_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                gid:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_interpreted_age_groups:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_interpreted_age_groups
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_analyzed_positions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analyzed_positions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                level:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_analysis_group:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_group
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                v:
+                  type: string
+                key:
+                  type: string
+                  default: id
+        goal_default:
+          key: id
+        handles: {}
+      auto-get_analysis_groups:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_groups
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                projects:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_latest_interpreted_age_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_latest_interpreted_age_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                key:
+                  type: string
+                  default: identifier
+        goal_default:
+          key: identifier
+        handles: {}
+      auto-get_interpreted_age_histories:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_interpreted_age_histories
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                values:
+                  type: string
+                key:
+                  type: string
+                  default: identifier
+        goal_default:
+          key: identifier
+        handles: {}
+      auto-get_project_irradiation_labnumbers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_project_irradiation_labnumbers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project_names:
+                  type: string
+                irradiation:
+                  type: string
+                level:
+                  type: string
+                mass_spectrometers:
+                  type: string
+                analysis_types:
+                  type: string
+                filter_non_run:
+                  type: string
+                low_post:
+                  type: string
+                high_post:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_project_labnumbers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_project_labnumbers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project_names:
+                  type: string
+                filter_non_run:
+                  type: string
+                low_post:
+                  type: string
+                high_post:
+                  type: string
+                analysis_types:
+                  type: string
+                mass_spectrometers:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_project_analysis_count:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_project_analysis_count
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                projects:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_project_figures:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_project_figures
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                projects:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_project_date_bins:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_project_date_bins
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: string
+                pname:
+                  type: string
+                hours:
+                  type: string
+                  default: 10
+        goal_default:
+          hours: 10
+        handles: {}
+      auto-get_project_date_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_project_date_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                projects:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_labnumber_figures:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_labnumber_figures
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifiers:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_preceding:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_preceding
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                post:
+                  type: string
+                ms:
+                  type: string
+                atype:
+                  type: string
+                  default: blank_unknown
+        goal_default:
+          atype: blank_unknown
+        handles: {}
+      auto-get_analysis_mass_spectrometers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_mass_spectrometers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lns:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_analysis_date_ranges:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_date_ranges
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lns:
+                  type: string
+                hours:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_min_max_analysis_timestamp:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_min_max_analysis_timestamp
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lns:
+                  type: string
+                projects:
+                  type: string
+                delta:
+                  type: string
+                  default: 0
+        goal_default:
+          delta: 0
+        handles: {}
+      auto-get_labnumber_mass_spectrometers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_labnumber_mass_spectrometers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lns:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_labnumber_analyses:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_labnumber_analyses
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lns:
+                  type: string
+                low_post:
+                  type: string
+                high_post:
+                  type: string
+                omit_key:
+                  type: string
+                exclude_uuids:
+                  type: string
+                mass_spectrometers:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_sample_analyses:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sample_analyses
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                samples:
+                  type: string
+                projects:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_analyses_date_range:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analyses_date_range
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                mi:
+                  type: string
+                ma:
+                  type: string
+                labnumber:
+                  type: string
+                samples:
+                  type: string
+                irradiations:
+                  type: string
+                limit:
+                  type: string
+                analysis_type:
+                  type: string
+                mass_spectrometers:
+                  type: string
+                extract_device:
+                  type: string
+                projects:
+                  type: string
+                order:
+                  type: string
+                  default: asc
+                exclude_invalid:
+                  type: string
+                  default: true
+        goal_default:
+          order: asc
+          exclude_invalid: true
+        handles: {}
+      auto-get_loadtable:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loadtable
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_arar:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_arar
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                k:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_last_labnumbers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_last_labnumbers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sample:
+                  type: string
+                limit:
+                  type: string
+                  default: 1000
+                excludes:
+                  type: string
+        goal_default:
+          limit: 1000
+        handles: {}
+      auto-get_last_labnumber:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_last_labnumber
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sample:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_greatest_identifier:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_greatest_identifier
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_greatest_aliquot:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_greatest_aliquot
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ln:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_greatest_step:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_greatest_step
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ln:
+                  type: string
+                aliquot:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_last_analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_last_analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ln:
+                  type: string
+                aliquot:
+                  type: string
+                spectrometer:
+                  type: string
+                hours_limit:
+                  type: string
+                analysis_type:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_unique_analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_unique_analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                ln:
+                  type: string
+                ai:
+                  type: string
+                step:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_analyses_uuid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analyses_uuid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                uuids:
+                  type: string
+                attr:
+                  type: string
+                record_only:
+                  type: string
+                  default: false
+                analysis_only:
+                  type: string
+                  default: false
+        goal_default:
+          record_only: false
+          analysis_only: false
+        handles: {}
+      auto-get_analysis_isotopes:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_isotopes
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                uuid:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_analysis_isotope:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_isotope
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                uuid:
+                  type: string
+                iso:
+                  type: string
+                kind:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_analysis_runid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_runid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifier:
+                  type: string
+                aliquot:
+                  type: string
+                step:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_analysis_uuid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_uuid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_analysis_record:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_record
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_image:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_image
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                key:
+                  type: string
+                  default: lab_id
+        goal_default:
+          key: lab_id
+        handles: {}
+      auto-get_analysis_type:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_type
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_blanks_set:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_blanks_set
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                key:
+                  type: string
+                  default: set_id
+        goal_default:
+          key: set_id
+        handles: {}
+      auto-retrieve_blank:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: retrieve_blank
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                kind:
+                  type: string
+                ms:
+                  type: string
+                ed:
+                  type: string
+                last:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_blank:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_blank
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                key:
+                  type: string
+                  default: id
+        goal_default:
+          key: id
+        handles: {}
+      auto-get_background:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_background
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_backgrounds_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_backgrounds_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_detector:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_detector_intercalibration:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_intercalibration
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_detector_intercalibration_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_intercalibration_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_detector_intercalibrations_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detector_intercalibrations_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_experiment:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_experiment
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                key:
+                  type: string
+                  default: name
+        goal_default:
+          key: name
+        handles: {}
+      auto-get_extraction:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_extraction
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                key:
+                  type: string
+                  default: id
+        goal_default:
+          key: id
+        handles: {}
+      auto-get_extraction_device:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_extraction_device
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_figure:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_figure
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_irradiation_chronology:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation_chronology
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_load_holder:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_load_holder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_irradiation_holder:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation_holder
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_irradiation_production:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation_production
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_irradiation:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_irradiation_level_byid:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation_level_byid
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lid:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_irradiation_level:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation_level
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                irrad:
+                  type: string
+                level:
+                  type: string
+                mass_spectrometers:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_irradiation_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                irrad:
+                  type: string
+                level:
+                  type: string
+                pos:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_irradiation_labnumbers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation_labnumbers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                irrad:
+                  type: string
+                level:
+                  type: string
+                low_post:
+                  type: string
+                high_post:
+                  type: string
+                mass_spectrometers:
+                  type: string
+                analysis_types:
+                  type: string
+                filter_non_run:
+                  type: string
+                  default: false
+        goal_default:
+          filter_non_run: false
+        handles: {}
+      auto-get_labnumber:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_labnumber
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                labnum:
+                  type: string
+                key:
+                  type: string
+                  default: identifier
+        goal_default:
+          key: identifier
+        handles: {}
+      auto-get_mass_spectrometer:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mass_spectrometer
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_material:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_material
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_molecular_weight:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_molecular_weight
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_molecular_weight_name:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_molecular_weight_name
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_user:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_user
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_project:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_project
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_script:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_script
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_sample:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sample
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+                project:
+                  type: string
+                material:
+                  type: string
+                identifier:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_flux_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_flux_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_flux_monitor:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_flux_monitor
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_tag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_tag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_sensitivity:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sensitivity
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sid:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_interpreted_age_history:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_interpreted_age_history
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                sid:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_data_reduction_tags:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_data_reduction_tags
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                uuids:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_irradiation_holders:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation_holders
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_analyses:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analyses
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                limit:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_figures:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_figures
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_aliquots:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_aliquots
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_detectors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_detectors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_steps:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_steps
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_materials:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_materials
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_material_names:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_material_names
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_years_active:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_years_active
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_recent_labnumbers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_recent_labnumbers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lpost:
+                  type: string
+                spectrometer:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_recent_samples:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_recent_samples
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                lpost:
+                  type: string
+                spectrometer:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_samples:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_samples
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                project:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_users:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_users
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_usernames:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_usernames
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_labnumbers_startswith:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_labnumbers_startswith
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                partial_id:
+                  type: string
+                mass_spectrometers:
+                  type: string
+                filter_non_run:
+                  type: string
+                  default: true
+        goal_default:
+          filter_non_run: true
+        handles: {}
+      auto-get_labnumbers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_labnumbers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                identifiers:
+                  type: string
+                low_post:
+                  type: string
+                high_post:
+                  type: string
+                mass_spectrometers:
+                  type: string
+                filter_non_run:
+                  type: string
+                  default: false
+                projects:
+                  type: string
+        goal_default:
+          filter_non_run: false
+        handles: {}
+      auto-get_flux_monitors:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_flux_monitors
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_labnumbers_join_analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_labnumbers_join_analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_irradiations_join_analysis:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiations_join_analysis
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                order_func:
+                  type: string
+                  default: desc
+        goal_default:
+          order_func: desc
+        handles: {}
+      auto-get_irradiations:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiations
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                names:
+                  type: string
+                order_func:
+                  type: string
+                  default: desc
+                project_names:
+                  type: string
+                mass_spectrometers:
+                  type: string
+        goal_default:
+          order_func: desc
+        handles: {}
+      auto-get_irradiation_productions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_irradiation_productions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_projects:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_projects
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                irradiation:
+                  type: string
+                level:
+                  type: string
+                mass_spectrometers:
+                  type: string
+                order:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_sensitivities:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_sensitivities
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_mass_spectrometers:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_mass_spectrometers
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_extraction_devices:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_extraction_devices
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_analysis_types:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_analysis_types
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_spectrometer_parameters:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_spectrometer_parameters
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                value:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-get_load_holders:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_load_holders
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_latest_load:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_latest_load
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_loads:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_loads
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                names:
+                  type: string
+                exclude_archived:
+                  type: string
+                  default: true
+        goal_default:
+          exclude_archived: true
+        handles: {}
+      auto-get_molecular_weights:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_molecular_weights
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_molecular_weight_names:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_molecular_weight_names
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_tags:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_tags
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-delete_tag:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete_tag
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                v:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-delete_irradiation_position:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete_irradiation_position
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                p:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-delete_analysis_group:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete_analysis_group
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                id:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-delete_user:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete_user
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-delete_project:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete_project
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-delete_material:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete_material
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-delete_sample:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete_sample
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-delete_labnumber:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete_labnumber
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                name:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-create_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                metadata:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-session_ctx:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: session_ctx
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                use_parent_session:
+                  type: string
+                  default: true
+        goal_default:
+          use_parent_session: true
+        handles: {}
+      auto-create_session:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: create_session
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                force:
+                  type: string
+                  default: false
+        goal_default:
+          force: false
+        handles: {}
+      auto-close_session:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: close_session
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-enabled:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: enabled
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_username:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_username
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-reset_connection:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: reset_connection
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-connect:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: connect
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                test:
+                  type: string
+                  default: true
+                force:
+                  type: string
+                  default: false
+                warn:
+                  type: string
+                  default: true
+                version_warn:
+                  type: string
+                  default: true
+                attribute_warn:
+                  type: string
+                  default: false
+        goal_default:
+          test: true
+          force: false
+          warn: true
+          version_warn: true
+          attribute_warn: false
+        handles: {}
+      auto-rollback:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: rollback
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-flush:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: flush
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-expire:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: expire
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                i:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-expire_all:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: expire_all
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-commit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: commit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-delete:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: delete
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                obj:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-post_commit:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: post_commit
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-add_item:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: add_item
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_migrate_version:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_migrate_version
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_versions:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_versions
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-public_datasource_url:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: public_datasource_url
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-public_url:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: public_url
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-init_logger:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: init_logger
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-report_logger_stats:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: report_logger_stats
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unique_warning:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unique_warning
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unique_info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unique_info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-unique_debug:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: unique_debug
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-warning:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: warning
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-info:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: info
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                dolater:
+                  type: boolean
+                  default: false
+                color:
+                  type: string
+        goal_default:
+          dolater: false
+        handles: {}
+      auto-debug_exception:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: debug_exception
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-warning_exception:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: warning_exception
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-critical:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: critical
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-debug:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: debug
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-log:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: log
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                level:
+                  type: integer
+                  default: 10
+        goal_default:
+          level: 10
+        handles: {}
+      auto-warning_dialog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: warning_dialog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                sound:
+                  type: string
+                title:
+                  type: string
+                  default: Warning
+        goal_default:
+          title: Warning
+        handles: {}
+      auto-confirmation_dialog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: confirmation_dialog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-information_dialog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: information_dialog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+                title:
+                  type: string
+                  default: Information
+        goal_default:
+          title: Information
+        handles: {}
+      auto-message:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: message
+          type: object
+          properties:
+            goal:
+              type: object
+              properties:
+                msg:
+                  type: string
+        goal_default: {}
+        handles: {}
+      auto-open_file_dialog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_file_dialog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_file_dialog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_file_dialog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-open_directory_dialog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: open_directory_dialog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-save_directory_dialog:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: save_directory_dialog
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-probe_import:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: probe_import
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+      auto-get_metadata:
+        type: UniLabJsonCommand
+        goal: {}
+        feedback: {}
+        result: {}
+        schema:
+          title: get_metadata
+          type: object
+          properties:
+            goal:
+              type: object
+              properties: {}
+        goal_default: {}
+        handles: {}
+  quality_status: clean
+  description: 2408/2416 驱动（Eurotherm），支持 get_mass_spectrometer_names/get_extraction_device_names/get_flux_value/get_level_identifiers/get_irradiation_names
+    等 257 个操作。
+  category:
+  - 箱式电阻炉
+  config_info: []
+  handles: []
+  cover: ascii_stl__writer.webp
+  device_params:
+    repo: NMGRL/pychron
+    source_file: pychron/database/adapters/isotope_adapter.py
+    candidate_class: IsotopeAdapter
+    candidate_score: 1749
+    quality_status: usable
+    操作数: 257
+  manufacturer: 欧陆
+  model:
+    name: 2408/2416
+    type: device
+  name: Eurotherm 2408/2416
+  tags:
+  - 箱式电阻炉
+  resource_type: device
+  icon: ascii_stl__writer.webp
+  scene:
+    domain: General
+    scene_name: General
+    step: Control
+  version: 0.1.0
